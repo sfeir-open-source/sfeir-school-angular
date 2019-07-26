@@ -1,0 +1,50 @@
+<mat-card class="mat-whiteframe-2dp">
+  <mat-card-title> <span>Create new person</span> </mat-card-title>
+
+  <mat-card-content>
+    <form #f="ngForm">
+      <table style="width: 100%" cellspacing="0">
+        <tr>
+          <td>
+            <mat-form-field> <input ngModel matInput placeholder="First name *" name="firstname" /> </mat-form-field>
+            <mat-form-field> <input ngModel matInput placeholder="Last Name *" name="lastname" /> </mat-form-field>
+          </td>
+          <td class="align-right">
+            <img width="100" src="https://randomuser.me/api/portraits/lego/6.jpg" />
+            <input type="hidden" ngModel name="photo" />
+          </td>
+        </tr>
+      </table>
+
+      <p>
+        <mat-form-field>
+          <input ngModel matInput placeholder="Email *" style="width:100%" name="email" />
+        </mat-form-field>
+      </p>
+
+      <p ngModelGroup="address">
+        <mat-form-field>
+          <input ngModel matInput placeholder="Address" style="width:100%" name="street" />
+        </mat-form-field>
+      </p>
+
+      <p ngModelGroup="address">
+        <mat-form-field> <input ngModel matInput placeholder="City" name="city" /> </mat-form-field>
+        <mat-form-field> <input ngModel matInput placeholder="Postal Code" name="postalCode" /> </mat-form-field>
+      </p>
+
+      <p>
+        <mat-form-field>
+          <input ngModel matInput placeholder="Phone * (ex: 0612345678)" style="width:100%" name="phone" />
+        </mat-form-field>
+      </p>
+
+      <p><mat-checkbox>Manager</mat-checkbox></p>
+    </form>
+  </mat-card-content>
+
+  <mat-card-actions align="end">
+    <button mat-button type="button" (click)="cancel()">Cancel</button>
+    <button mat-button color="primary" type="submit" (click)="add(f.value)">Save</button>
+  </mat-card-actions>
+</mat-card>
