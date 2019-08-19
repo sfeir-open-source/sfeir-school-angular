@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { AddDialogComponent } from './add-dialog.component';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { MatDialogRef, MatDialogModule } from '@angular/material';
+import { MatDialogRef, MatDialogModule } from '@angular/material/dialog';
 import { inject } from '@angular/core/testing';
 
 class MatDialogRefMock {
