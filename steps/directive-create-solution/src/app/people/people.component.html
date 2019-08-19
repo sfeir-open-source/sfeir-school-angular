@@ -5,7 +5,7 @@
 
   <section *ngSwitchCase="'list'">
     <mat-list>
-      <mat-list-item (click)="navigate(person)" *ngFor="let person of people" class="mat-whiteframe-2dp mat-card">
+      <mat-list-item *ngFor="let person of people" class="mat-whiteframe-2dp mat-card">
         <img mat-list-avatar src="{{ person.photo }}" />
         <h3 mat-line>{{ person.firstname }} {{ person.lastname }} <span sfeir-badge [person]="person"></span></h3>
         <p mat-line>

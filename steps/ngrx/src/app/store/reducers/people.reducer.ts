@@ -1,25 +1,10 @@
-import { ActionReducer, createSelector, createFeatureSelector } from '@ngrx/store';
-import * as PeopleAction from '../actions/people.action';
+import { createReducer, on, Action } from '@ngrx/store';
+import { initialState, State } from '../state/state';
 
-export interface State {
-  people: Object[];
-  search: string;
+/**
+ * Create reducer named peopleReducer
+ */
+
+export function reducer(state: State | undefined, action: Action) {
+  return null;
 }
-
-export const initialState: State = {
-  people: [],
-  search: ''
-};
-
-export function reducer(state: State = initialState, action: PeopleAction.Actions) {
-  switch (action.type) {
-    default:
-      return state;
-  }
-}
-
-// SELECTORS
-
-export const getSearch = (state: State) => {
-  return state.search;
-};

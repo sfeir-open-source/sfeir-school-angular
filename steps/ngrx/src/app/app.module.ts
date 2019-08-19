@@ -24,7 +24,8 @@ import { PeopleComponent } from './people';
 import { AddDialogComponent } from './people/add-dialog/add-dialog.component';
 import { UpdateComponent } from './update/update.component';
 import { StoreModule } from '@ngrx/store';
-import { reducers, metaReducers } from './store/index';
+import * as PeopleReducer from './store/reducers/people.reducer';
+import { metaReducers } from './store/meta-reducer';
 import { SearchComponent, CardComponent, PeopleService, NaPipe, FormComponent, SfeirBadgeDirective } from './shared';
 
 @NgModule({
@@ -44,7 +45,7 @@ import { SearchComponent, CardComponent, PeopleService, NaPipe, FormComponent, S
     HttpClientModule,
     APP_ROUTES,
     ReactiveFormsModule,
-    StoreModule.forRoot(reducers, { metaReducers })
+    StoreModule.forRoot({ people: PeopleReducer.reducer }, { metaReducers })
   ],
   declarations: [
     PeopleAppComponent,
