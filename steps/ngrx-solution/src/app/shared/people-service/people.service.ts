@@ -2,8 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 import { Store } from '@ngrx/store';
-import * as PeopleAction from '../../store/actions/people.actions';
-import * as fromRoot from '../../store/reducers';
+import { setPeople, filterPeople } from '../../store/actions/people.actions';
+import { PeopleFeature } from '../../store/state/state';
+import { getFilteredPeople } from '../../store/selectors/selectors';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -11,7 +12,7 @@ import { map } from 'rxjs/operators';
 export class PeopleService {
   private _backendURL: any;
 
-  constructor(private _http: HttpClient, private store: Store<fromRoot.State>) {
+  constructor(private _http: HttpClient, private store: Store<PeopleFeature>) {
     this._backendURL = {};
 
     // build backend base url
@@ -27,20 +28,20 @@ export class PeopleService {
   }
 
   getPeople() {
-    return this.store.select(fromRoot.getFilteredPeople);
+    return this.store.select(getFilteredPeople);
   }
 
   fetch(): Observable<any> {
     return this._http.get(this._backendURL.allPeople).pipe(
       map(people => {
-        this.store.dispatch(new PeopleAction.SetPeople(people));
+        this.store.dispatch(setPeople({ people }));
         return people;
       })
     );
   }
 
   filter(search) {
-    this.store.dispatch(new PeopleAction.FilterPeople(search));
+    this.store.dispatch(filterPeople({ search }));
   }
 
   fetchRandom(): Observable<any> {

@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { AddDialogComponent } from './add-dialog/add-dialog.component';
 import { PeopleService } from '../shared/people-service';
 import { Store } from '@ngrx/store';
-import * as fromRoot from '../store/reducers';
-import * as PeopleAction from '../store/actions/people.actions';
 import { mergeMap } from 'rxjs/operators';
+import { getSearch } from '../store/selectors/selectors';
+import { filterPeople } from '../store/actions/people.actions';
 
 @Component({
   selector: 'sfeir-people',
@@ -31,7 +31,7 @@ export class PeopleComponent implements OnInit {
    * OnInit implementation
    */
   ngOnInit() {
-    this.search = this.store.select(fromRoot.getSearch);
+    this.search = this.store.select(getSearch);
     this.people = this._peopleService.getPeople();
     this._peopleService.fetch().subscribe();
   }
@@ -75,6 +75,6 @@ export class PeopleComponent implements OnInit {
   }
 
   onSearch(search) {
-    this.store.dispatch(new PeopleAction.FilterPeople(search));
+    this.store.dispatch(filterPeople({ search }));
   }
 }

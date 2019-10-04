@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { AddDialogComponent } from './add-dialog/add-dialog.component';
 import { PeopleService } from '../shared/people-service';
 import { HttpClient } from '@angular/common/http';

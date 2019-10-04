@@ -4,7 +4,7 @@ import { inject } from '@angular/core/testing';
 
 import { TestBed, async, ComponentFixture } from '@angular/core/testing';
 import { SfeirBadgeDirective } from './sfeir-badge.directive';
-import { ElementRef, Renderer, Component } from '@angular/core';
+import { ElementRef, Component, Renderer2 } from '@angular/core';
 
 export class MockElementRef extends ElementRef {
   constructor() {
