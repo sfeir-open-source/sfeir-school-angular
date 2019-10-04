@@ -1486,6 +1486,202 @@
         }
       }
     },
+    "router-lazyloading-guard": {
+      "root": "steps/router-lazyloading-guard/",
+      "sourceRoot": "steps/router-lazyloading-guard/src",
+      "projectType": "application",
+      "prefix": "sfeir",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/router-lazyloading-guard",
+            "index": "steps/router-lazyloading-guard/src/index.html",
+            "main": "steps/router-lazyloading-guard/src/main.ts",
+            "polyfills": "steps/router-lazyloading-guard/src/polyfills.ts",
+            "tsConfig": "steps/router-lazyloading-guard/tsconfig.app.json",
+            "assets": [
+              "steps/router-lazyloading-guard/src/favicon.ico",
+              "steps/router-lazyloading-guard/src/assets"
+            ],
+            "styles": [
+              "steps/router-lazyloading-guard/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "steps/router-lazyloading-guard/src/environments/environment.ts",
+                  "with": "steps/router-lazyloading-guard/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "router-lazyloading-guard:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "router-lazyloading-guard:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "router-lazyloading-guard:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "steps/router-lazyloading-guard/src/test.ts",
+            "polyfills": "steps/router-lazyloading-guard/src/polyfills.ts",
+            "tsConfig": "steps/router-lazyloading-guard/tsconfig.spec.json",
+            "karmaConfig": "steps/router-lazyloading-guard/karma.conf.js",
+            "styles": [
+              "steps/router-lazyloading-guard/src/styles.css"
+            ],
+            "scripts": [],
+            "assets": [
+              "steps/router-lazyloading-guard/src/favicon.ico",
+              "steps/router-lazyloading-guard/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "steps/router-lazyloading-guard/tsconfig.app.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "router-lazyloading-guard-solution": {
+      "root": "steps/router-lazyloading-guard-solution/",
+      "sourceRoot": "steps/router-lazyloading-guard-solution/src",
+      "projectType": "application",
+      "prefix": "sfeir",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/router-lazyloading-guard-solution",
+            "index": "steps/router-lazyloading-guard-solution/src/index.html",
+            "main": "steps/router-lazyloading-guard-solution/src/main.ts",
+            "polyfills": "steps/router-lazyloading-guard-solution/src/polyfills.ts",
+            "tsConfig": "steps/router-lazyloading-guard-solution/tsconfig.app.json",
+            "assets": [
+              "steps/router-lazyloading-guard-solution/src/favicon.ico",
+              "steps/router-lazyloading-guard-solution/src/assets"
+            ],
+            "styles": [
+              "steps/router-lazyloading-guard-solution/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "steps/router-lazyloading-guard-solution/src/environments/environment.ts",
+                  "with": "steps/router-lazyloading-guard-solution/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "router-lazyloading-guard-solution:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "router-lazyloading-guard-solution:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "router-lazyloading-guard-solution:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "steps/router-lazyloading-guard-solution/src/test.ts",
+            "polyfills": "steps/router-lazyloading-guard-solution/src/polyfills.ts",
+            "tsConfig": "steps/router-lazyloading-guard-solution/tsconfig.spec.json",
+            "karmaConfig": "steps/router-lazyloading-guard-solution/karma.conf.js",
+            "styles": [
+              "steps/router-lazyloading-guard-solution/src/styles.css"
+            ],
+            "scripts": [],
+            "assets": [
+              "steps/router-lazyloading-guard-solution/src/favicon.ico",
+              "steps/router-lazyloading-guard-solution/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "steps/router-lazyloading-guard-solution/tsconfig.app.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
     "ngfor": {
       "root": "steps/ngfor/",
       "sourceRoot": "steps/ngfor/src",
