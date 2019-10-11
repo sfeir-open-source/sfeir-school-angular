@@ -15,8 +15,8 @@ import { filterPeople } from '../store/actions/people.actions';
 })
 export class PeopleComponent implements OnInit {
   private addDialog: MatDialogRef<AddDialogComponent>;
-  people;
-  search;
+  people$;
+  search$;
   dialogStatus = 'inactive';
   view = 'card';
 
@@ -31,13 +31,13 @@ export class PeopleComponent implements OnInit {
    * OnInit implementation
    */
   ngOnInit() {
-    this.search = this.store.select(getSearch);
-    this.people = this._peopleService.getPeople();
+    this.search$ = this.store.select(getSearch);
+    this.people$ = this._peopleService.getPeople();
     this._peopleService.fetch().subscribe();
   }
 
   delete(person: any) {
-    this._peopleService.delete(person.id).subscribe(people => (this.people = people));
+    this._peopleService.delete(person.id).subscribe(people => (this.people$ = people));
   }
 
   add(person: any) {
@@ -45,7 +45,7 @@ export class PeopleComponent implements OnInit {
       .update(person)
       .pipe(mergeMap(res => this._peopleService.fetch()))
       .subscribe((people: any[]) => {
-        this.people = people;
+        this.people$ = people;
         this.hideDialog();
       });
   }
