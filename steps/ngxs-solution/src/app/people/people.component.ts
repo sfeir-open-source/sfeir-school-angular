@@ -1,8 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { AddDialogComponent } from './add-dialog/add-dialog.component';
 import { PeopleService } from '../shared/people-service';
-import { HttpClient } from '@angular/common/http';
 import { mergeMap, takeUntil } from 'rxjs/operators';
 import { Store } from '@ngxs/store';
 import { Observable, Subject } from 'rxjs';
@@ -21,12 +20,7 @@ export class PeopleComponent implements OnInit, OnDestroy {
   dialogStatus = 'inactive';
   view = 'card';
 
-  constructor(
-    private _http: HttpClient,
-    public dialog: MatDialog,
-    private _peopleService: PeopleService,
-    private _store: Store
-  ) {}
+  constructor(public dialog: MatDialog, private _peopleService: PeopleService, private _store: Store) {}
 
   /**
    * OnInit implementation
@@ -52,7 +46,7 @@ export class PeopleComponent implements OnInit, OnDestroy {
   add(person: any) {
     this._peopleService
       .update(person)
-      .pipe(mergeMap((updatedPerson: any) => this._peopleService.fetch()))
+      .pipe(mergeMap(() => this._peopleService.fetch()))
       .subscribe((peopleList: Array<any>) => {
         this.people = peopleList;
         this.hideDialog();

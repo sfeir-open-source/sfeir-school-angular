@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { AddDialogComponent } from './add-dialog/add-dialog.component';
 
 const BASE_URL = 'http://localhost:9000';
@@ -35,7 +35,7 @@ export class PeopleComponent implements OnInit {
       data: {}
     });
 
-    this.addDialog.afterClosed().subscribe(result => {
+    this.addDialog.afterClosed().subscribe(() => {
       this.dialogStatus = 'inactive';
       console.log('The dialog was closed');
     });

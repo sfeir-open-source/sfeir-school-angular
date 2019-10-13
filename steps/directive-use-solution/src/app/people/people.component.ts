@@ -1,7 +1,6 @@
 import { mergeMap } from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { AddDialogComponent } from './add-dialog/add-dialog.component';
 import { PeopleService } from '../shared/people-service';
 
@@ -16,7 +15,7 @@ export class PeopleComponent implements OnInit {
   dialogStatus = 'inactive';
   view = 'card';
 
-  constructor(private _http: HttpClient, public dialog: MatDialog, private _peopleService: PeopleService) {}
+  constructor(public dialog: MatDialog, private _peopleService: PeopleService) {}
 
   /**
    * OnInit implementation
@@ -32,7 +31,7 @@ export class PeopleComponent implements OnInit {
   add(person: any) {
     this._peopleService
       .update(person)
-      .pipe(mergeMap(res => this._peopleService.fetch()))
+      .pipe(mergeMap(() => this._peopleService.fetch()))
       .subscribe((people: any[]) => {
         this.people = people;
         this.hideDialog();

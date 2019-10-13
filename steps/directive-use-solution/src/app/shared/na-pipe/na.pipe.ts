@@ -8,11 +8,10 @@ export class NaPipe implements PipeTransform {
    * Function to transform input value
    *
    * @param value
-   * @param args
    *
    * @returns {any|string}
    */
-  transform(value: any, args?: any): any {
+  transform(value: any): any {
     return value || 'N/A';
   }
 }

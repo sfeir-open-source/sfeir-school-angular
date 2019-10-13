@@ -27,6 +27,8 @@ import { UpdateComponent } from './update/update.component';
 import * as fromPeopleReducer from './store/reducers/people.reducer';
 import { metaReducers } from './store/meta-reducers';
 import { CardComponent, FormComponent, NaPipe, PeopleService, SearchComponent, SfeirBadgeDirective } from './shared';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
 
 @NgModule({
   imports: [
@@ -45,7 +47,8 @@ import { CardComponent, FormComponent, NaPipe, PeopleService, SearchComponent, S
     HttpClientModule,
     APP_ROUTES,
     ReactiveFormsModule,
-    StoreModule.forRoot({ people: fromPeopleReducer.reducer }, { metaReducers })
+    StoreModule.forRoot({ people: fromPeopleReducer.reducer }, { metaReducers }),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],
   declarations: [
     PeopleAppComponent,

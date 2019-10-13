@@ -2,7 +2,6 @@ import { mergeMap, map } from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { Observable } from 'rxjs';
 import { PeopleService } from '../shared/people-service';
 
 @Component({
