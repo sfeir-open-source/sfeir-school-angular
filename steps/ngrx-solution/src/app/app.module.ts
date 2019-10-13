@@ -16,6 +16,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { APP_ROUTES } from './app.routes';
 
@@ -27,7 +28,6 @@ import { UpdateComponent } from './update/update.component';
 import * as fromPeopleReducer from './store/reducers/people.reducer';
 import { metaReducers } from './store/meta-reducers';
 import { CardComponent, FormComponent, NaPipe, PeopleService, SearchComponent, SfeirBadgeDirective } from './shared';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 
 @NgModule({
