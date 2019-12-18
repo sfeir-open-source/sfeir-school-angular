@@ -38,7 +38,7 @@ export class FormComponent implements OnInit, OnChanges {
     this.cancel$.emit();
   }
 
-  submit(person: any) {
+  submit() {
     this.submit$.emit(this.model);
   }
 }

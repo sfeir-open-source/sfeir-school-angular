@@ -3,8 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { Observable } from 'rxjs';
-
 const BASE_URL = 'http://localhost:9000';
 
 @Component({
