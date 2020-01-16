@@ -31,7 +31,7 @@ export class FormComponent implements OnInit, OnChanges {
   ngOnChanges(record) {
     if (record.model && record.model.currentValue) {
       this.model = record.model.currentValue;
-      this.isUpdateMode = !!this.model;
+      this.isUpdateMode = Boolean(this.model);
     }
   }
   cancel() {
