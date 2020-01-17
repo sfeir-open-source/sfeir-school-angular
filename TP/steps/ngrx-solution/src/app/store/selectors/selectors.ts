@@ -11,11 +11,7 @@ const filterPeople = (searchFilter: string, people) => {
 
 export const getPeopleState = (state: PeopleFeature) => state.people;
 
-export const getFilteredPeople = createSelector(
-  getPeopleState,
-  (state: State) => filterPeople(state.search, state.people)
+export const getFilteredPeople = createSelector(getPeopleState, (state: State) =>
+  filterPeople(state.search, state.people)
 );
-export const getSearch = createSelector(
-  getPeopleState,
-  (state: State) => state.search
-);
+export const getSearch = createSelector(getPeopleState, (state: State) => state.search);

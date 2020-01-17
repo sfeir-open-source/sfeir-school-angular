@@ -16,13 +16,8 @@
             "main": "src/main.ts",
             "tsConfig": "src/tsconfig.app.json",
             "polyfills": "src/polyfills.ts",
-            "assets": [
-              "src/assets",
-              "src/favicon.ico"
-            ],
-            "styles": [
-              "src/styles.css"
-            ],
+            "assets": ["src/assets", "src/favicon.ico"],
+            "styles": ["src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -70,22 +65,14 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.spec.json",
             "scripts": [],
-            "styles": [
-              "src/styles.css"
-            ],
-            "assets": [
-              "src/assets",
-              "src/favicon.ico"
-            ]
+            "styles": ["src/styles.css"],
+            "assets": ["src/assets", "src/favicon.ico"]
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "src/tsconfig.app.json",
-              "src/tsconfig.spec.json"
-            ],
+            "tsConfig": ["src/tsconfig.app.json", "src/tsconfig.spec.json"],
             "exclude": []
           }
         }
@@ -106,9 +93,7 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "e2e/tsconfig.e2e.json"
-            ],
+            "tsConfig": ["e2e/tsconfig.e2e.json"],
             "exclude": []
           }
         }
@@ -129,13 +114,8 @@
             "main": "steps/hands-on/src/main.ts",
             "polyfills": "steps/hands-on/src/polyfills.ts",
             "tsConfig": "steps/hands-on/tsconfig.app.json",
-            "assets": [
-              "steps/hands-on/src/favicon.ico",
-              "steps/hands-on/src/assets"
-            ],
-            "styles": [
-              "steps/hands-on/src/styles.css"
-            ],
+            "assets": ["steps/hands-on/src/favicon.ico", "steps/hands-on/src/assets"],
+            "styles": ["steps/hands-on/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -189,25 +169,16 @@
             "polyfills": "steps/hands-on/src/polyfills.ts",
             "tsConfig": "steps/hands-on/tsconfig.spec.json",
             "karmaConfig": "steps/hands-on/karma.conf.js",
-            "styles": [
-              "steps/hands-on/src/styles.css"
-            ],
+            "styles": ["steps/hands-on/src/styles.css"],
             "scripts": [],
-            "assets": [
-              "steps/hands-on/src/favicon.ico",
-              "steps/hands-on/src/assets"
-            ]
+            "assets": ["steps/hands-on/src/favicon.ico", "steps/hands-on/src/assets"]
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "steps/hands-on/tsconfig.app.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["steps/hands-on/tsconfig.app.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -227,13 +198,8 @@
             "main": "steps/hands-on-solution/src/main.ts",
             "polyfills": "steps/hands-on-solution/src/polyfills.ts",
             "tsConfig": "steps/hands-on-solution/tsconfig.app.json",
-            "assets": [
-              "steps/hands-on-solution/src/favicon.ico",
-              "steps/hands-on-solution/src/assets"
-            ],
-            "styles": [
-              "steps/hands-on-solution/src/styles.css"
-            ],
+            "assets": ["steps/hands-on-solution/src/favicon.ico", "steps/hands-on-solution/src/assets"],
+            "styles": ["steps/hands-on-solution/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -287,25 +253,16 @@
             "polyfills": "steps/hands-on-solution/src/polyfills.ts",
             "tsConfig": "steps/hands-on-solution/tsconfig.spec.json",
             "karmaConfig": "steps/hands-on-solution/karma.conf.js",
-            "styles": [
-              "steps/hands-on-solution/src/styles.css"
-            ],
+            "styles": ["steps/hands-on-solution/src/styles.css"],
             "scripts": [],
-            "assets": [
-              "steps/hands-on-solution/src/favicon.ico",
-              "steps/hands-on-solution/src/assets"
-            ]
+            "assets": ["steps/hands-on-solution/src/favicon.ico", "steps/hands-on-solution/src/assets"]
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "steps/hands-on-solution/tsconfig.app.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["steps/hands-on-solution/tsconfig.app.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -325,13 +282,8 @@
             "main": "steps/ngg/src/main.ts",
             "polyfills": "steps/ngg/src/polyfills.ts",
             "tsConfig": "steps/ngg/tsconfig.app.json",
-            "assets": [
-              "steps/ngg/src/favicon.ico",
-              "steps/ngg/src/assets"
-            ],
-            "styles": [
-              "steps/ngg/src/styles.css"
-            ],
+            "assets": ["steps/ngg/src/favicon.ico", "steps/ngg/src/assets"],
+            "styles": ["steps/ngg/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -385,25 +337,16 @@
             "polyfills": "steps/ngg/src/polyfills.ts",
             "tsConfig": "steps/ngg/tsconfig.spec.json",
             "karmaConfig": "steps/ngg/karma.conf.js",
-            "styles": [
-              "steps/ngg/src/styles.css"
-            ],
+            "styles": ["steps/ngg/src/styles.css"],
             "scripts": [],
-            "assets": [
-              "steps/ngg/src/favicon.ico",
-              "steps/ngg/src/assets"
-            ]
+            "assets": ["steps/ngg/src/favicon.ico", "steps/ngg/src/assets"]
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "steps/ngg/tsconfig.app.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["steps/ngg/tsconfig.app.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -423,13 +366,8 @@
             "main": "steps/ngg-solution/src/main.ts",
             "polyfills": "steps/ngg-solution/src/polyfills.ts",
             "tsConfig": "steps/ngg-solution/tsconfig.app.json",
-            "assets": [
-              "steps/ngg-solution/src/favicon.ico",
-              "steps/ngg-solution/src/assets"
-            ],
-            "styles": [
-              "steps/ngg-solution/src/styles.css"
-            ],
+            "assets": ["steps/ngg-solution/src/favicon.ico", "steps/ngg-solution/src/assets"],
+            "styles": ["steps/ngg-solution/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -483,25 +421,16 @@
             "polyfills": "steps/ngg-solution/src/polyfills.ts",
             "tsConfig": "steps/ngg-solution/tsconfig.spec.json",
             "karmaConfig": "steps/ngg-solution/karma.conf.js",
-            "styles": [
-              "steps/ngg-solution/src/styles.css"
-            ],
+            "styles": ["steps/ngg-solution/src/styles.css"],
             "scripts": [],
-            "assets": [
-              "steps/ngg-solution/src/favicon.ico",
-              "steps/ngg-solution/src/assets"
-            ]
+            "assets": ["steps/ngg-solution/src/favicon.ico", "steps/ngg-solution/src/assets"]
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "steps/ngg-solution/tsconfig.app.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["steps/ngg-solution/tsconfig.app.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -521,13 +450,8 @@
             "main": "steps/cpt-hierarchy/src/main.ts",
             "polyfills": "steps/cpt-hierarchy/src/polyfills.ts",
             "tsConfig": "steps/cpt-hierarchy/tsconfig.app.json",
-            "assets": [
-              "steps/cpt-hierarchy/src/favicon.ico",
-              "steps/cpt-hierarchy/src/assets"
-            ],
-            "styles": [
-              "steps/cpt-hierarchy/src/styles.css"
-            ],
+            "assets": ["steps/cpt-hierarchy/src/favicon.ico", "steps/cpt-hierarchy/src/assets"],
+            "styles": ["steps/cpt-hierarchy/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -581,25 +505,16 @@
             "polyfills": "steps/cpt-hierarchy/src/polyfills.ts",
             "tsConfig": "steps/cpt-hierarchy/tsconfig.spec.json",
             "karmaConfig": "steps/cpt-hierarchy/karma.conf.js",
-            "styles": [
-              "steps/cpt-hierarchy/src/styles.css"
-            ],
+            "styles": ["steps/cpt-hierarchy/src/styles.css"],
             "scripts": [],
-            "assets": [
-              "steps/cpt-hierarchy/src/favicon.ico",
-              "steps/cpt-hierarchy/src/assets"
-            ]
+            "assets": ["steps/cpt-hierarchy/src/favicon.ico", "steps/cpt-hierarchy/src/assets"]
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "steps/cpt-hierarchy/tsconfig.app.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["steps/cpt-hierarchy/tsconfig.app.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -619,13 +534,8 @@
             "main": "steps/cpt-hierarchy-solution/src/main.ts",
             "polyfills": "steps/cpt-hierarchy-solution/src/polyfills.ts",
             "tsConfig": "steps/cpt-hierarchy-solution/tsconfig.app.json",
-            "assets": [
-              "steps/cpt-hierarchy-solution/src/favicon.ico",
-              "steps/cpt-hierarchy-solution/src/assets"
-            ],
-            "styles": [
-              "steps/cpt-hierarchy-solution/src/styles.css"
-            ],
+            "assets": ["steps/cpt-hierarchy-solution/src/favicon.ico", "steps/cpt-hierarchy-solution/src/assets"],
+            "styles": ["steps/cpt-hierarchy-solution/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -679,25 +589,16 @@
             "polyfills": "steps/cpt-hierarchy-solution/src/polyfills.ts",
             "tsConfig": "steps/cpt-hierarchy-solution/tsconfig.spec.json",
             "karmaConfig": "steps/cpt-hierarchy-solution/karma.conf.js",
-            "styles": [
-              "steps/cpt-hierarchy-solution/src/styles.css"
-            ],
+            "styles": ["steps/cpt-hierarchy-solution/src/styles.css"],
             "scripts": [],
-            "assets": [
-              "steps/cpt-hierarchy-solution/src/favicon.ico",
-              "steps/cpt-hierarchy-solution/src/assets"
-            ]
+            "assets": ["steps/cpt-hierarchy-solution/src/favicon.ico", "steps/cpt-hierarchy-solution/src/assets"]
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "steps/cpt-hierarchy-solution/tsconfig.app.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["steps/cpt-hierarchy-solution/tsconfig.app.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -717,13 +618,8 @@
             "main": "steps/binding/src/main.ts",
             "polyfills": "steps/binding/src/polyfills.ts",
             "tsConfig": "steps/binding/tsconfig.app.json",
-            "assets": [
-              "steps/binding/src/favicon.ico",
-              "steps/binding/src/assets"
-            ],
-            "styles": [
-              "steps/binding/src/styles.css"
-            ],
+            "assets": ["steps/binding/src/favicon.ico", "steps/binding/src/assets"],
+            "styles": ["steps/binding/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -777,25 +673,16 @@
             "polyfills": "steps/binding/src/polyfills.ts",
             "tsConfig": "steps/binding/tsconfig.spec.json",
             "karmaConfig": "steps/binding/karma.conf.js",
-            "styles": [
-              "steps/binding/src/styles.css"
-            ],
+            "styles": ["steps/binding/src/styles.css"],
             "scripts": [],
-            "assets": [
-              "steps/binding/src/favicon.ico",
-              "steps/binding/src/assets"
-            ]
+            "assets": ["steps/binding/src/favicon.ico", "steps/binding/src/assets"]
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "steps/binding/tsconfig.app.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["steps/binding/tsconfig.app.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -815,13 +702,8 @@
             "main": "steps/binding-solution/src/main.ts",
             "polyfills": "steps/binding-solution/src/polyfills.ts",
             "tsConfig": "steps/binding-solution/tsconfig.app.json",
-            "assets": [
-              "steps/binding-solution/src/favicon.ico",
-              "steps/binding-solution/src/assets"
-            ],
-            "styles": [
-              "steps/binding-solution/src/styles.css"
-            ],
+            "assets": ["steps/binding-solution/src/favicon.ico", "steps/binding-solution/src/assets"],
+            "styles": ["steps/binding-solution/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -875,25 +757,16 @@
             "polyfills": "steps/binding-solution/src/polyfills.ts",
             "tsConfig": "steps/binding-solution/tsconfig.spec.json",
             "karmaConfig": "steps/binding-solution/karma.conf.js",
-            "styles": [
-              "steps/binding-solution/src/styles.css"
-            ],
+            "styles": ["steps/binding-solution/src/styles.css"],
             "scripts": [],
-            "assets": [
-              "steps/binding-solution/src/favicon.ico",
-              "steps/binding-solution/src/assets"
-            ]
+            "assets": ["steps/binding-solution/src/favicon.ico", "steps/binding-solution/src/assets"]
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "steps/binding-solution/tsconfig.app.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["steps/binding-solution/tsconfig.app.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -913,13 +786,8 @@
             "main": "steps/events/src/main.ts",
             "polyfills": "steps/events/src/polyfills.ts",
             "tsConfig": "steps/events/tsconfig.app.json",
-            "assets": [
-              "steps/events/src/favicon.ico",
-              "steps/events/src/assets"
-            ],
-            "styles": [
-              "steps/events/src/styles.css"
-            ],
+            "assets": ["steps/events/src/favicon.ico", "steps/events/src/assets"],
+            "styles": ["steps/events/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -973,25 +841,16 @@
             "polyfills": "steps/events/src/polyfills.ts",
             "tsConfig": "steps/events/tsconfig.spec.json",
             "karmaConfig": "steps/events/karma.conf.js",
-            "styles": [
-              "steps/events/src/styles.css"
-            ],
+            "styles": ["steps/events/src/styles.css"],
             "scripts": [],
-            "assets": [
-              "steps/events/src/favicon.ico",
-              "steps/events/src/assets"
-            ]
+            "assets": ["steps/events/src/favicon.ico", "steps/events/src/assets"]
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "steps/events/tsconfig.app.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["steps/events/tsconfig.app.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -1011,13 +870,8 @@
             "main": "steps/events-solution/src/main.ts",
             "polyfills": "steps/events-solution/src/polyfills.ts",
             "tsConfig": "steps/events-solution/tsconfig.app.json",
-            "assets": [
-              "steps/events-solution/src/favicon.ico",
-              "steps/events-solution/src/assets"
-            ],
-            "styles": [
-              "steps/events-solution/src/styles.css"
-            ],
+            "assets": ["steps/events-solution/src/favicon.ico", "steps/events-solution/src/assets"],
+            "styles": ["steps/events-solution/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -1071,25 +925,16 @@
             "polyfills": "steps/events-solution/src/polyfills.ts",
             "tsConfig": "steps/events-solution/tsconfig.spec.json",
             "karmaConfig": "steps/events-solution/karma.conf.js",
-            "styles": [
-              "steps/events-solution/src/styles.css"
-            ],
+            "styles": ["steps/events-solution/src/styles.css"],
             "scripts": [],
-            "assets": [
-              "steps/events-solution/src/favicon.ico",
-              "steps/events-solution/src/assets"
-            ]
+            "assets": ["steps/events-solution/src/favicon.ico", "steps/events-solution/src/assets"]
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "steps/events-solution/tsconfig.app.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["steps/events-solution/tsconfig.app.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -1109,13 +954,8 @@
             "main": "steps/http/src/main.ts",
             "polyfills": "steps/http/src/polyfills.ts",
             "tsConfig": "steps/http/tsconfig.app.json",
-            "assets": [
-              "steps/http/src/favicon.ico",
-              "steps/http/src/assets"
-            ],
-            "styles": [
-              "steps/http/src/styles.css"
-            ],
+            "assets": ["steps/http/src/favicon.ico", "steps/http/src/assets"],
+            "styles": ["steps/http/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -1169,25 +1009,16 @@
             "polyfills": "steps/http/src/polyfills.ts",
             "tsConfig": "steps/http/tsconfig.spec.json",
             "karmaConfig": "steps/http/karma.conf.js",
-            "styles": [
-              "steps/http/src/styles.css"
-            ],
+            "styles": ["steps/http/src/styles.css"],
             "scripts": [],
-            "assets": [
-              "steps/http/src/favicon.ico",
-              "steps/http/src/assets"
-            ]
+            "assets": ["steps/http/src/favicon.ico", "steps/http/src/assets"]
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "steps/http/tsconfig.app.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["steps/http/tsconfig.app.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -1207,13 +1038,8 @@
             "main": "steps/http-solution/src/main.ts",
             "polyfills": "steps/http-solution/src/polyfills.ts",
             "tsConfig": "steps/http-solution/tsconfig.app.json",
-            "assets": [
-              "steps/http-solution/src/favicon.ico",
-              "steps/http-solution/src/assets"
-            ],
-            "styles": [
-              "steps/http-solution/src/styles.css"
-            ],
+            "assets": ["steps/http-solution/src/favicon.ico", "steps/http-solution/src/assets"],
+            "styles": ["steps/http-solution/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -1267,25 +1093,16 @@
             "polyfills": "steps/http-solution/src/polyfills.ts",
             "tsConfig": "steps/http-solution/tsconfig.spec.json",
             "karmaConfig": "steps/http-solution/karma.conf.js",
-            "styles": [
-              "steps/http-solution/src/styles.css"
-            ],
+            "styles": ["steps/http-solution/src/styles.css"],
             "scripts": [],
-            "assets": [
-              "steps/http-solution/src/favicon.ico",
-              "steps/http-solution/src/assets"
-            ]
+            "assets": ["steps/http-solution/src/favicon.ico", "steps/http-solution/src/assets"]
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "steps/http-solution/tsconfig.app.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["steps/http-solution/tsconfig.app.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -1305,13 +1122,8 @@
             "main": "steps/router/src/main.ts",
             "polyfills": "steps/router/src/polyfills.ts",
             "tsConfig": "steps/router/tsconfig.app.json",
-            "assets": [
-              "steps/router/src/favicon.ico",
-              "steps/router/src/assets"
-            ],
-            "styles": [
-              "steps/router/src/styles.css"
-            ],
+            "assets": ["steps/router/src/favicon.ico", "steps/router/src/assets"],
+            "styles": ["steps/router/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -1365,25 +1177,16 @@
             "polyfills": "steps/router/src/polyfills.ts",
             "tsConfig": "steps/router/tsconfig.spec.json",
             "karmaConfig": "steps/router/karma.conf.js",
-            "styles": [
-              "steps/router/src/styles.css"
-            ],
+            "styles": ["steps/router/src/styles.css"],
             "scripts": [],
-            "assets": [
-              "steps/router/src/favicon.ico",
-              "steps/router/src/assets"
-            ]
+            "assets": ["steps/router/src/favicon.ico", "steps/router/src/assets"]
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "steps/router/tsconfig.app.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["steps/router/tsconfig.app.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -1403,13 +1206,8 @@
             "main": "steps/router-solution/src/main.ts",
             "polyfills": "steps/router-solution/src/polyfills.ts",
             "tsConfig": "steps/router-solution/tsconfig.app.json",
-            "assets": [
-              "steps/router-solution/src/favicon.ico",
-              "steps/router-solution/src/assets"
-            ],
-            "styles": [
-              "steps/router-solution/src/styles.css"
-            ],
+            "assets": ["steps/router-solution/src/favicon.ico", "steps/router-solution/src/assets"],
+            "styles": ["steps/router-solution/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -1463,25 +1261,16 @@
             "polyfills": "steps/router-solution/src/polyfills.ts",
             "tsConfig": "steps/router-solution/tsconfig.spec.json",
             "karmaConfig": "steps/router-solution/karma.conf.js",
-            "styles": [
-              "steps/router-solution/src/styles.css"
-            ],
+            "styles": ["steps/router-solution/src/styles.css"],
             "scripts": [],
-            "assets": [
-              "steps/router-solution/src/favicon.ico",
-              "steps/router-solution/src/assets"
-            ]
+            "assets": ["steps/router-solution/src/favicon.ico", "steps/router-solution/src/assets"]
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "steps/router-solution/tsconfig.app.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["steps/router-solution/tsconfig.app.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -1501,13 +1290,8 @@
             "main": "steps/router-lazyloading-guard/src/main.ts",
             "polyfills": "steps/router-lazyloading-guard/src/polyfills.ts",
             "tsConfig": "steps/router-lazyloading-guard/tsconfig.app.json",
-            "assets": [
-              "steps/router-lazyloading-guard/src/favicon.ico",
-              "steps/router-lazyloading-guard/src/assets"
-            ],
-            "styles": [
-              "steps/router-lazyloading-guard/src/styles.css"
-            ],
+            "assets": ["steps/router-lazyloading-guard/src/favicon.ico", "steps/router-lazyloading-guard/src/assets"],
+            "styles": ["steps/router-lazyloading-guard/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -1561,25 +1345,16 @@
             "polyfills": "steps/router-lazyloading-guard/src/polyfills.ts",
             "tsConfig": "steps/router-lazyloading-guard/tsconfig.spec.json",
             "karmaConfig": "steps/router-lazyloading-guard/karma.conf.js",
-            "styles": [
-              "steps/router-lazyloading-guard/src/styles.css"
-            ],
+            "styles": ["steps/router-lazyloading-guard/src/styles.css"],
             "scripts": [],
-            "assets": [
-              "steps/router-lazyloading-guard/src/favicon.ico",
-              "steps/router-lazyloading-guard/src/assets"
-            ]
+            "assets": ["steps/router-lazyloading-guard/src/favicon.ico", "steps/router-lazyloading-guard/src/assets"]
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "steps/router-lazyloading-guard/tsconfig.app.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["steps/router-lazyloading-guard/tsconfig.app.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -1603,9 +1378,7 @@
               "steps/router-lazyloading-guard-solution/src/favicon.ico",
               "steps/router-lazyloading-guard-solution/src/assets"
             ],
-            "styles": [
-              "steps/router-lazyloading-guard-solution/src/styles.css"
-            ],
+            "styles": ["steps/router-lazyloading-guard-solution/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -1659,9 +1432,7 @@
             "polyfills": "steps/router-lazyloading-guard-solution/src/polyfills.ts",
             "tsConfig": "steps/router-lazyloading-guard-solution/tsconfig.spec.json",
             "karmaConfig": "steps/router-lazyloading-guard-solution/karma.conf.js",
-            "styles": [
-              "steps/router-lazyloading-guard-solution/src/styles.css"
-            ],
+            "styles": ["steps/router-lazyloading-guard-solution/src/styles.css"],
             "scripts": [],
             "assets": [
               "steps/router-lazyloading-guard-solution/src/favicon.ico",
@@ -1672,12 +1443,8 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "steps/router-lazyloading-guard-solution/tsconfig.app.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["steps/router-lazyloading-guard-solution/tsconfig.app.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -1697,13 +1464,8 @@
             "main": "steps/ngfor/src/main.ts",
             "polyfills": "steps/ngfor/src/polyfills.ts",
             "tsConfig": "steps/ngfor/tsconfig.app.json",
-            "assets": [
-              "steps/ngfor/src/favicon.ico",
-              "steps/ngfor/src/assets"
-            ],
-            "styles": [
-              "steps/ngfor/src/styles.css"
-            ],
+            "assets": ["steps/ngfor/src/favicon.ico", "steps/ngfor/src/assets"],
+            "styles": ["steps/ngfor/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -1757,25 +1519,16 @@
             "polyfills": "steps/ngfor/src/polyfills.ts",
             "tsConfig": "steps/ngfor/tsconfig.spec.json",
             "karmaConfig": "steps/ngfor/karma.conf.js",
-            "styles": [
-              "steps/ngfor/src/styles.css"
-            ],
+            "styles": ["steps/ngfor/src/styles.css"],
             "scripts": [],
-            "assets": [
-              "steps/ngfor/src/favicon.ico",
-              "steps/ngfor/src/assets"
-            ]
+            "assets": ["steps/ngfor/src/favicon.ico", "steps/ngfor/src/assets"]
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "steps/ngfor/tsconfig.app.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["steps/ngfor/tsconfig.app.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -1795,13 +1548,8 @@
             "main": "steps/ngfor-solution/src/main.ts",
             "polyfills": "steps/ngfor-solution/src/polyfills.ts",
             "tsConfig": "steps/ngfor-solution/tsconfig.app.json",
-            "assets": [
-              "steps/ngfor-solution/src/favicon.ico",
-              "steps/ngfor-solution/src/assets"
-            ],
-            "styles": [
-              "steps/ngfor-solution/src/styles.css"
-            ],
+            "assets": ["steps/ngfor-solution/src/favicon.ico", "steps/ngfor-solution/src/assets"],
+            "styles": ["steps/ngfor-solution/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -1855,25 +1603,16 @@
             "polyfills": "steps/ngfor-solution/src/polyfills.ts",
             "tsConfig": "steps/ngfor-solution/tsconfig.spec.json",
             "karmaConfig": "steps/ngfor-solution/karma.conf.js",
-            "styles": [
-              "steps/ngfor-solution/src/styles.css"
-            ],
+            "styles": ["steps/ngfor-solution/src/styles.css"],
             "scripts": [],
-            "assets": [
-              "steps/ngfor-solution/src/favicon.ico",
-              "steps/ngfor-solution/src/assets"
-            ]
+            "assets": ["steps/ngfor-solution/src/favicon.ico", "steps/ngfor-solution/src/assets"]
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "steps/ngfor-solution/tsconfig.app.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["steps/ngfor-solution/tsconfig.app.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -1893,13 +1632,8 @@
             "main": "steps/input/src/main.ts",
             "polyfills": "steps/input/src/polyfills.ts",
             "tsConfig": "steps/input/tsconfig.app.json",
-            "assets": [
-              "steps/input/src/favicon.ico",
-              "steps/input/src/assets"
-            ],
-            "styles": [
-              "steps/input/src/styles.css"
-            ],
+            "assets": ["steps/input/src/favicon.ico", "steps/input/src/assets"],
+            "styles": ["steps/input/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -1953,25 +1687,16 @@
             "polyfills": "steps/input/src/polyfills.ts",
             "tsConfig": "steps/input/tsconfig.spec.json",
             "karmaConfig": "steps/input/karma.conf.js",
-            "styles": [
-              "steps/input/src/styles.css"
-            ],
+            "styles": ["steps/input/src/styles.css"],
             "scripts": [],
-            "assets": [
-              "steps/input/src/favicon.ico",
-              "steps/input/src/assets"
-            ]
+            "assets": ["steps/input/src/favicon.ico", "steps/input/src/assets"]
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "steps/input/tsconfig.app.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["steps/input/tsconfig.app.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -1991,13 +1716,8 @@
             "main": "steps/input-solution/src/main.ts",
             "polyfills": "steps/input-solution/src/polyfills.ts",
             "tsConfig": "steps/input-solution/tsconfig.app.json",
-            "assets": [
-              "steps/input-solution/src/favicon.ico",
-              "steps/input-solution/src/assets"
-            ],
-            "styles": [
-              "steps/input-solution/src/styles.css"
-            ],
+            "assets": ["steps/input-solution/src/favicon.ico", "steps/input-solution/src/assets"],
+            "styles": ["steps/input-solution/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -2051,25 +1771,16 @@
             "polyfills": "steps/input-solution/src/polyfills.ts",
             "tsConfig": "steps/input-solution/tsconfig.spec.json",
             "karmaConfig": "steps/input-solution/karma.conf.js",
-            "styles": [
-              "steps/input-solution/src/styles.css"
-            ],
+            "styles": ["steps/input-solution/src/styles.css"],
             "scripts": [],
-            "assets": [
-              "steps/input-solution/src/favicon.ico",
-              "steps/input-solution/src/assets"
-            ]
+            "assets": ["steps/input-solution/src/favicon.ico", "steps/input-solution/src/assets"]
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "steps/input-solution/tsconfig.app.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["steps/input-solution/tsconfig.app.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -2089,13 +1800,8 @@
             "main": "steps/input-b/src/main.ts",
             "polyfills": "steps/input-b/src/polyfills.ts",
             "tsConfig": "steps/input-b/tsconfig.app.json",
-            "assets": [
-              "steps/input-b/src/favicon.ico",
-              "steps/input-b/src/assets"
-            ],
-            "styles": [
-              "steps/input-b/src/styles.css"
-            ],
+            "assets": ["steps/input-b/src/favicon.ico", "steps/input-b/src/assets"],
+            "styles": ["steps/input-b/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -2149,25 +1855,16 @@
             "polyfills": "steps/input-b/src/polyfills.ts",
             "tsConfig": "steps/input-b/tsconfig.spec.json",
             "karmaConfig": "steps/input-b/karma.conf.js",
-            "styles": [
-              "steps/input-b/src/styles.css"
-            ],
+            "styles": ["steps/input-b/src/styles.css"],
             "scripts": [],
-            "assets": [
-              "steps/input-b/src/favicon.ico",
-              "steps/input-b/src/assets"
-            ]
+            "assets": ["steps/input-b/src/favicon.ico", "steps/input-b/src/assets"]
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "steps/input-b/tsconfig.app.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["steps/input-b/tsconfig.app.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -2187,13 +1884,8 @@
             "main": "steps/output/src/main.ts",
             "polyfills": "steps/output/src/polyfills.ts",
             "tsConfig": "steps/output/tsconfig.app.json",
-            "assets": [
-              "steps/output/src/favicon.ico",
-              "steps/output/src/assets"
-            ],
-            "styles": [
-              "steps/output/src/styles.css"
-            ],
+            "assets": ["steps/output/src/favicon.ico", "steps/output/src/assets"],
+            "styles": ["steps/output/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -2247,25 +1939,16 @@
             "polyfills": "steps/output/src/polyfills.ts",
             "tsConfig": "steps/output/tsconfig.spec.json",
             "karmaConfig": "steps/output/karma.conf.js",
-            "styles": [
-              "steps/output/src/styles.css"
-            ],
+            "styles": ["steps/output/src/styles.css"],
             "scripts": [],
-            "assets": [
-              "steps/output/src/favicon.ico",
-              "steps/output/src/assets"
-            ]
+            "assets": ["steps/output/src/favicon.ico", "steps/output/src/assets"]
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "steps/output/tsconfig.app.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["steps/output/tsconfig.app.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -2285,13 +1968,8 @@
             "main": "steps/output-solution/src/main.ts",
             "polyfills": "steps/output-solution/src/polyfills.ts",
             "tsConfig": "steps/output-solution/tsconfig.app.json",
-            "assets": [
-              "steps/output-solution/src/favicon.ico",
-              "steps/output-solution/src/assets"
-            ],
-            "styles": [
-              "steps/output-solution/src/styles.css"
-            ],
+            "assets": ["steps/output-solution/src/favicon.ico", "steps/output-solution/src/assets"],
+            "styles": ["steps/output-solution/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -2345,25 +2023,16 @@
             "polyfills": "steps/output-solution/src/polyfills.ts",
             "tsConfig": "steps/output-solution/tsconfig.spec.json",
             "karmaConfig": "steps/output-solution/karma.conf.js",
-            "styles": [
-              "steps/output-solution/src/styles.css"
-            ],
+            "styles": ["steps/output-solution/src/styles.css"],
             "scripts": [],
-            "assets": [
-              "steps/output-solution/src/favicon.ico",
-              "steps/output-solution/src/assets"
-            ]
+            "assets": ["steps/output-solution/src/favicon.ico", "steps/output-solution/src/assets"]
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "steps/output-solution/tsconfig.app.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["steps/output-solution/tsconfig.app.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -2383,13 +2052,8 @@
             "main": "steps/form/src/main.ts",
             "polyfills": "steps/form/src/polyfills.ts",
             "tsConfig": "steps/form/tsconfig.app.json",
-            "assets": [
-              "steps/form/src/favicon.ico",
-              "steps/form/src/assets"
-            ],
-            "styles": [
-              "steps/form/src/styles.css"
-            ],
+            "assets": ["steps/form/src/favicon.ico", "steps/form/src/assets"],
+            "styles": ["steps/form/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -2443,25 +2107,16 @@
             "polyfills": "steps/form/src/polyfills.ts",
             "tsConfig": "steps/form/tsconfig.spec.json",
             "karmaConfig": "steps/form/karma.conf.js",
-            "styles": [
-              "steps/form/src/styles.css"
-            ],
+            "styles": ["steps/form/src/styles.css"],
             "scripts": [],
-            "assets": [
-              "steps/form/src/favicon.ico",
-              "steps/form/src/assets"
-            ]
+            "assets": ["steps/form/src/favicon.ico", "steps/form/src/assets"]
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "steps/form/tsconfig.app.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["steps/form/tsconfig.app.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -2481,13 +2136,8 @@
             "main": "steps/form-solution/src/main.ts",
             "polyfills": "steps/form-solution/src/polyfills.ts",
             "tsConfig": "steps/form-solution/tsconfig.app.json",
-            "assets": [
-              "steps/form-solution/src/favicon.ico",
-              "steps/form-solution/src/assets"
-            ],
-            "styles": [
-              "steps/form-solution/src/styles.css"
-            ],
+            "assets": ["steps/form-solution/src/favicon.ico", "steps/form-solution/src/assets"],
+            "styles": ["steps/form-solution/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -2541,25 +2191,16 @@
             "polyfills": "steps/form-solution/src/polyfills.ts",
             "tsConfig": "steps/form-solution/tsconfig.spec.json",
             "karmaConfig": "steps/form-solution/karma.conf.js",
-            "styles": [
-              "steps/form-solution/src/styles.css"
-            ],
+            "styles": ["steps/form-solution/src/styles.css"],
             "scripts": [],
-            "assets": [
-              "steps/form-solution/src/favicon.ico",
-              "steps/form-solution/src/assets"
-            ]
+            "assets": ["steps/form-solution/src/favicon.ico", "steps/form-solution/src/assets"]
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "steps/form-solution/tsconfig.app.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["steps/form-solution/tsconfig.app.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -2579,13 +2220,8 @@
             "main": "steps/form-b/src/main.ts",
             "polyfills": "steps/form-b/src/polyfills.ts",
             "tsConfig": "steps/form-b/tsconfig.app.json",
-            "assets": [
-              "steps/form-b/src/favicon.ico",
-              "steps/form-b/src/assets"
-            ],
-            "styles": [
-              "steps/form-b/src/styles.css"
-            ],
+            "assets": ["steps/form-b/src/favicon.ico", "steps/form-b/src/assets"],
+            "styles": ["steps/form-b/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -2639,25 +2275,16 @@
             "polyfills": "steps/form-b/src/polyfills.ts",
             "tsConfig": "steps/form-b/tsconfig.spec.json",
             "karmaConfig": "steps/form-b/karma.conf.js",
-            "styles": [
-              "steps/form-b/src/styles.css"
-            ],
+            "styles": ["steps/form-b/src/styles.css"],
             "scripts": [],
-            "assets": [
-              "steps/form-b/src/favicon.ico",
-              "steps/form-b/src/assets"
-            ]
+            "assets": ["steps/form-b/src/favicon.ico", "steps/form-b/src/assets"]
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "steps/form-b/tsconfig.app.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["steps/form-b/tsconfig.app.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -2677,13 +2304,8 @@
             "main": "steps/form-b-solution/src/main.ts",
             "polyfills": "steps/form-b-solution/src/polyfills.ts",
             "tsConfig": "steps/form-b-solution/tsconfig.app.json",
-            "assets": [
-              "steps/form-b-solution/src/favicon.ico",
-              "steps/form-b-solution/src/assets"
-            ],
-            "styles": [
-              "steps/form-b-solution/src/styles.css"
-            ],
+            "assets": ["steps/form-b-solution/src/favicon.ico", "steps/form-b-solution/src/assets"],
+            "styles": ["steps/form-b-solution/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -2737,25 +2359,16 @@
             "polyfills": "steps/form-b-solution/src/polyfills.ts",
             "tsConfig": "steps/form-b-solution/tsconfig.spec.json",
             "karmaConfig": "steps/form-b-solution/karma.conf.js",
-            "styles": [
-              "steps/form-b-solution/src/styles.css"
-            ],
+            "styles": ["steps/form-b-solution/src/styles.css"],
             "scripts": [],
-            "assets": [
-              "steps/form-b-solution/src/favicon.ico",
-              "steps/form-b-solution/src/assets"
-            ]
+            "assets": ["steps/form-b-solution/src/favicon.ico", "steps/form-b-solution/src/assets"]
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "steps/form-b-solution/tsconfig.app.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["steps/form-b-solution/tsconfig.app.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -2775,13 +2388,8 @@
             "main": "steps/form-validation/src/main.ts",
             "polyfills": "steps/form-validation/src/polyfills.ts",
             "tsConfig": "steps/form-validation/tsconfig.app.json",
-            "assets": [
-              "steps/form-validation/src/favicon.ico",
-              "steps/form-validation/src/assets"
-            ],
-            "styles": [
-              "steps/form-validation/src/styles.css"
-            ],
+            "assets": ["steps/form-validation/src/favicon.ico", "steps/form-validation/src/assets"],
+            "styles": ["steps/form-validation/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -2835,26 +2443,16 @@
             "polyfills": "steps/form-validation/src/polyfills.ts",
             "tsConfig": "steps/form-validation/tsconfig.spec.json",
             "karmaConfig": "steps/form-validation/karma.conf.js",
-            "styles": [
-              "steps/form-validation/src/styles.css"
-            ],
+            "styles": ["steps/form-validation/src/styles.css"],
             "scripts": [],
-            "assets": [
-              "steps/form-validation/src/favicon.ico",
-              "steps/form-validation/src/assets"
-            ]
+            "assets": ["steps/form-validation/src/favicon.ico", "steps/form-validation/src/assets"]
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "steps/form-validation/tsconfig.app.json",
-              "steps/form-validation/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["steps/form-validation/tsconfig.app.json", "steps/form-validation/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -2874,13 +2472,8 @@
             "main": "steps/form-validation-solution/src/main.ts",
             "polyfills": "steps/form-validation-solution/src/polyfills.ts",
             "tsConfig": "steps/form-validation-solution/tsconfig.app.json",
-            "assets": [
-              "steps/form-validation-solution/src/favicon.ico",
-              "steps/form-validation-solution/src/assets"
-            ],
-            "styles": [
-              "steps/form-validation-solution/src/styles.css"
-            ],
+            "assets": ["steps/form-validation-solution/src/favicon.ico", "steps/form-validation-solution/src/assets"],
+            "styles": ["steps/form-validation-solution/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -2934,14 +2527,9 @@
             "polyfills": "steps/form-validation-solution/src/polyfills.ts",
             "tsConfig": "steps/form-validation-solution/tsconfig.spec.json",
             "karmaConfig": "steps/form-validation-solution/karma.conf.js",
-            "styles": [
-              "steps/form-validation-solution/src/styles.css"
-            ],
+            "styles": ["steps/form-validation-solution/src/styles.css"],
             "scripts": [],
-            "assets": [
-              "steps/form-validation-solution/src/favicon.ico",
-              "steps/form-validation-solution/src/assets"
-            ]
+            "assets": ["steps/form-validation-solution/src/favicon.ico", "steps/form-validation-solution/src/assets"]
           }
         },
         "lint": {
@@ -2951,9 +2539,7 @@
               "steps/form-validation-solution/tsconfig.app.json",
               "steps/form-validation-solution/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -2973,13 +2559,8 @@
             "main": "steps/form-model-driven/src/main.ts",
             "polyfills": "steps/form-model-driven/src/polyfills.ts",
             "tsConfig": "steps/form-model-driven/tsconfig.app.json",
-            "assets": [
-              "steps/form-model-driven/src/favicon.ico",
-              "steps/form-model-driven/src/assets"
-            ],
-            "styles": [
-              "steps/form-model-driven/src/styles.css"
-            ],
+            "assets": ["steps/form-model-driven/src/favicon.ico", "steps/form-model-driven/src/assets"],
+            "styles": ["steps/form-model-driven/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -3033,26 +2614,16 @@
             "polyfills": "steps/form-model-driven/src/polyfills.ts",
             "tsConfig": "steps/form-model-driven/tsconfig.spec.json",
             "karmaConfig": "steps/form-model-driven/karma.conf.js",
-            "styles": [
-              "steps/form-model-driven/src/styles.css"
-            ],
+            "styles": ["steps/form-model-driven/src/styles.css"],
             "scripts": [],
-            "assets": [
-              "steps/form-model-driven/src/favicon.ico",
-              "steps/form-model-driven/src/assets"
-            ]
+            "assets": ["steps/form-model-driven/src/favicon.ico", "steps/form-model-driven/src/assets"]
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "steps/form-model-driven/tsconfig.app.json",
-              "steps/form-model-driven/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["steps/form-model-driven/tsconfig.app.json", "steps/form-model-driven/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -3076,9 +2647,7 @@
               "steps/form-model-driven-solution/src/favicon.ico",
               "steps/form-model-driven-solution/src/assets"
             ],
-            "styles": [
-              "steps/form-model-driven-solution/src/styles.css"
-            ],
+            "styles": ["steps/form-model-driven-solution/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -3132,9 +2701,7 @@
             "polyfills": "steps/form-model-driven-solution/src/polyfills.ts",
             "tsConfig": "steps/form-model-driven-solution/tsconfig.spec.json",
             "karmaConfig": "steps/form-model-driven-solution/karma.conf.js",
-            "styles": [
-              "steps/form-model-driven-solution/src/styles.css"
-            ],
+            "styles": ["steps/form-model-driven-solution/src/styles.css"],
             "scripts": [],
             "assets": [
               "steps/form-model-driven-solution/src/favicon.ico",
@@ -3149,9 +2716,7 @@
               "steps/form-model-driven-solution/tsconfig.app.json",
               "steps/form-model-driven-solution/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -3171,13 +2736,8 @@
             "main": "steps/form-custom-validator/src/main.ts",
             "polyfills": "steps/form-custom-validator/src/polyfills.ts",
             "tsConfig": "steps/form-custom-validator/tsconfig.app.json",
-            "assets": [
-              "steps/form-custom-validator/src/favicon.ico",
-              "steps/form-custom-validator/src/assets"
-            ],
-            "styles": [
-              "steps/form-custom-validator/src/styles.css"
-            ],
+            "assets": ["steps/form-custom-validator/src/favicon.ico", "steps/form-custom-validator/src/assets"],
+            "styles": ["steps/form-custom-validator/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -3231,14 +2791,9 @@
             "polyfills": "steps/form-custom-validator/src/polyfills.ts",
             "tsConfig": "steps/form-custom-validator/tsconfig.spec.json",
             "karmaConfig": "steps/form-custom-validator/karma.conf.js",
-            "styles": [
-              "steps/form-custom-validator/src/styles.css"
-            ],
+            "styles": ["steps/form-custom-validator/src/styles.css"],
             "scripts": [],
-            "assets": [
-              "steps/form-custom-validator/src/favicon.ico",
-              "steps/form-custom-validator/src/assets"
-            ]
+            "assets": ["steps/form-custom-validator/src/favicon.ico", "steps/form-custom-validator/src/assets"]
           }
         },
         "lint": {
@@ -3248,9 +2803,7 @@
               "steps/form-custom-validator/tsconfig.app.json",
               "steps/form-custom-validator/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -3274,9 +2827,7 @@
               "steps/form-custom-validator-solution/src/favicon.ico",
               "steps/form-custom-validator-solution/src/assets"
             ],
-            "styles": [
-              "steps/form-custom-validator-solution/src/styles.css"
-            ],
+            "styles": ["steps/form-custom-validator-solution/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -3330,9 +2881,7 @@
             "polyfills": "steps/form-custom-validator-solution/src/polyfills.ts",
             "tsConfig": "steps/form-custom-validator-solution/tsconfig.spec.json",
             "karmaConfig": "steps/form-custom-validator-solution/karma.conf.js",
-            "styles": [
-              "steps/form-custom-validator-solution/src/styles.css"
-            ],
+            "styles": ["steps/form-custom-validator-solution/src/styles.css"],
             "scripts": [],
             "assets": [
               "steps/form-custom-validator-solution/src/favicon.ico",
@@ -3347,9 +2896,7 @@
               "steps/form-custom-validator-solution/tsconfig.app.json",
               "steps/form-custom-validator-solution/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -3369,13 +2916,8 @@
             "main": "steps/service/src/main.ts",
             "polyfills": "steps/service/src/polyfills.ts",
             "tsConfig": "steps/service/tsconfig.app.json",
-            "assets": [
-              "steps/service/src/favicon.ico",
-              "steps/service/src/assets"
-            ],
-            "styles": [
-              "steps/service/src/styles.css"
-            ],
+            "assets": ["steps/service/src/favicon.ico", "steps/service/src/assets"],
+            "styles": ["steps/service/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -3429,26 +2971,16 @@
             "polyfills": "steps/service/src/polyfills.ts",
             "tsConfig": "steps/service/tsconfig.spec.json",
             "karmaConfig": "steps/service/karma.conf.js",
-            "styles": [
-              "steps/service/src/styles.css"
-            ],
+            "styles": ["steps/service/src/styles.css"],
             "scripts": [],
-            "assets": [
-              "steps/service/src/favicon.ico",
-              "steps/service/src/assets"
-            ]
+            "assets": ["steps/service/src/favicon.ico", "steps/service/src/assets"]
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "steps/service/tsconfig.app.json",
-              "steps/service/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["steps/service/tsconfig.app.json", "steps/service/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -3468,13 +3000,8 @@
             "main": "steps/service-solution/src/main.ts",
             "polyfills": "steps/service-solution/src/polyfills.ts",
             "tsConfig": "steps/service-solution/tsconfig.app.json",
-            "assets": [
-              "steps/service-solution/src/favicon.ico",
-              "steps/service-solution/src/assets"
-            ],
-            "styles": [
-              "steps/service-solution/src/styles.css"
-            ],
+            "assets": ["steps/service-solution/src/favicon.ico", "steps/service-solution/src/assets"],
+            "styles": ["steps/service-solution/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -3528,26 +3055,16 @@
             "polyfills": "steps/service-solution/src/polyfills.ts",
             "tsConfig": "steps/service-solution/tsconfig.spec.json",
             "karmaConfig": "steps/service-solution/karma.conf.js",
-            "styles": [
-              "steps/service-solution/src/styles.css"
-            ],
+            "styles": ["steps/service-solution/src/styles.css"],
             "scripts": [],
-            "assets": [
-              "steps/service-solution/src/favicon.ico",
-              "steps/service-solution/src/assets"
-            ]
+            "assets": ["steps/service-solution/src/favicon.ico", "steps/service-solution/src/assets"]
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "steps/service-solution/tsconfig.app.json",
-              "steps/service-solution/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["steps/service-solution/tsconfig.app.json", "steps/service-solution/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -3567,13 +3084,8 @@
             "main": "steps/pipe/src/main.ts",
             "polyfills": "steps/pipe/src/polyfills.ts",
             "tsConfig": "steps/pipe/tsconfig.app.json",
-            "assets": [
-              "steps/pipe/src/favicon.ico",
-              "steps/pipe/src/assets"
-            ],
-            "styles": [
-              "steps/pipe/src/styles.css"
-            ],
+            "assets": ["steps/pipe/src/favicon.ico", "steps/pipe/src/assets"],
+            "styles": ["steps/pipe/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -3627,26 +3139,16 @@
             "polyfills": "steps/pipe/src/polyfills.ts",
             "tsConfig": "steps/pipe/tsconfig.spec.json",
             "karmaConfig": "steps/pipe/karma.conf.js",
-            "styles": [
-              "steps/pipe/src/styles.css"
-            ],
+            "styles": ["steps/pipe/src/styles.css"],
             "scripts": [],
-            "assets": [
-              "steps/pipe/src/favicon.ico",
-              "steps/pipe/src/assets"
-            ]
+            "assets": ["steps/pipe/src/favicon.ico", "steps/pipe/src/assets"]
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "steps/pipe/tsconfig.app.json",
-              "steps/pipe/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["steps/pipe/tsconfig.app.json", "steps/pipe/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -3666,13 +3168,8 @@
             "main": "steps/pipe-solution/src/main.ts",
             "polyfills": "steps/pipe-solution/src/polyfills.ts",
             "tsConfig": "steps/pipe-solution/tsconfig.app.json",
-            "assets": [
-              "steps/pipe-solution/src/favicon.ico",
-              "steps/pipe-solution/src/assets"
-            ],
-            "styles": [
-              "steps/pipe-solution/src/styles.css"
-            ],
+            "assets": ["steps/pipe-solution/src/favicon.ico", "steps/pipe-solution/src/assets"],
+            "styles": ["steps/pipe-solution/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -3726,26 +3223,16 @@
             "polyfills": "steps/pipe-solution/src/polyfills.ts",
             "tsConfig": "steps/pipe-solution/tsconfig.spec.json",
             "karmaConfig": "steps/pipe-solution/karma.conf.js",
-            "styles": [
-              "steps/pipe-solution/src/styles.css"
-            ],
+            "styles": ["steps/pipe-solution/src/styles.css"],
             "scripts": [],
-            "assets": [
-              "steps/pipe-solution/src/favicon.ico",
-              "steps/pipe-solution/src/assets"
-            ]
+            "assets": ["steps/pipe-solution/src/favicon.ico", "steps/pipe-solution/src/assets"]
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "steps/pipe-solution/tsconfig.app.json",
-              "steps/pipe-solution/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["steps/pipe-solution/tsconfig.app.json", "steps/pipe-solution/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -3765,13 +3252,8 @@
             "main": "steps/pipe-b/src/main.ts",
             "polyfills": "steps/pipe-b/src/polyfills.ts",
             "tsConfig": "steps/pipe-b/tsconfig.app.json",
-            "assets": [
-              "steps/pipe-b/src/favicon.ico",
-              "steps/pipe-b/src/assets"
-            ],
-            "styles": [
-              "steps/pipe-b/src/styles.css"
-            ],
+            "assets": ["steps/pipe-b/src/favicon.ico", "steps/pipe-b/src/assets"],
+            "styles": ["steps/pipe-b/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -3825,26 +3307,16 @@
             "polyfills": "steps/pipe-b/src/polyfills.ts",
             "tsConfig": "steps/pipe-b/tsconfig.spec.json",
             "karmaConfig": "steps/pipe-b/karma.conf.js",
-            "styles": [
-              "steps/pipe-b/src/styles.css"
-            ],
+            "styles": ["steps/pipe-b/src/styles.css"],
             "scripts": [],
-            "assets": [
-              "steps/pipe-b/src/favicon.ico",
-              "steps/pipe-b/src/assets"
-            ]
+            "assets": ["steps/pipe-b/src/favicon.ico", "steps/pipe-b/src/assets"]
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "steps/pipe-b/tsconfig.app.json",
-              "steps/pipe-b/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["steps/pipe-b/tsconfig.app.json", "steps/pipe-b/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -3864,13 +3336,8 @@
             "main": "steps/pipe-b-solution/src/main.ts",
             "polyfills": "steps/pipe-b-solution/src/polyfills.ts",
             "tsConfig": "steps/pipe-b-solution/tsconfig.app.json",
-            "assets": [
-              "steps/pipe-b-solution/src/favicon.ico",
-              "steps/pipe-b-solution/src/assets"
-            ],
-            "styles": [
-              "steps/pipe-b-solution/src/styles.css"
-            ],
+            "assets": ["steps/pipe-b-solution/src/favicon.ico", "steps/pipe-b-solution/src/assets"],
+            "styles": ["steps/pipe-b-solution/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -3924,26 +3391,16 @@
             "polyfills": "steps/pipe-b-solution/src/polyfills.ts",
             "tsConfig": "steps/pipe-b-solution/tsconfig.spec.json",
             "karmaConfig": "steps/pipe-b-solution/karma.conf.js",
-            "styles": [
-              "steps/pipe-b-solution/src/styles.css"
-            ],
+            "styles": ["steps/pipe-b-solution/src/styles.css"],
             "scripts": [],
-            "assets": [
-              "steps/pipe-b-solution/src/favicon.ico",
-              "steps/pipe-b-solution/src/assets"
-            ]
+            "assets": ["steps/pipe-b-solution/src/favicon.ico", "steps/pipe-b-solution/src/assets"]
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "steps/pipe-b-solution/tsconfig.app.json",
-              "steps/pipe-b-solution/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["steps/pipe-b-solution/tsconfig.app.json", "steps/pipe-b-solution/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -3963,13 +3420,8 @@
             "main": "steps/directive-use/src/main.ts",
             "polyfills": "steps/directive-use/src/polyfills.ts",
             "tsConfig": "steps/directive-use/tsconfig.app.json",
-            "assets": [
-              "steps/directive-use/src/favicon.ico",
-              "steps/directive-use/src/assets"
-            ],
-            "styles": [
-              "steps/directive-use/src/styles.css"
-            ],
+            "assets": ["steps/directive-use/src/favicon.ico", "steps/directive-use/src/assets"],
+            "styles": ["steps/directive-use/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -4023,26 +3475,16 @@
             "polyfills": "steps/directive-use/src/polyfills.ts",
             "tsConfig": "steps/directive-use/tsconfig.spec.json",
             "karmaConfig": "steps/directive-use/karma.conf.js",
-            "styles": [
-              "steps/directive-use/src/styles.css"
-            ],
+            "styles": ["steps/directive-use/src/styles.css"],
             "scripts": [],
-            "assets": [
-              "steps/directive-use/src/favicon.ico",
-              "steps/directive-use/src/assets"
-            ]
+            "assets": ["steps/directive-use/src/favicon.ico", "steps/directive-use/src/assets"]
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "steps/directive-use/tsconfig.app.json",
-              "steps/directive-use/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["steps/directive-use/tsconfig.app.json", "steps/directive-use/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -4062,13 +3504,8 @@
             "main": "steps/directive-use-solution/src/main.ts",
             "polyfills": "steps/directive-use-solution/src/polyfills.ts",
             "tsConfig": "steps/directive-use-solution/tsconfig.app.json",
-            "assets": [
-              "steps/directive-use-solution/src/favicon.ico",
-              "steps/directive-use-solution/src/assets"
-            ],
-            "styles": [
-              "steps/directive-use-solution/src/styles.css"
-            ],
+            "assets": ["steps/directive-use-solution/src/favicon.ico", "steps/directive-use-solution/src/assets"],
+            "styles": ["steps/directive-use-solution/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -4122,14 +3559,9 @@
             "polyfills": "steps/directive-use-solution/src/polyfills.ts",
             "tsConfig": "steps/directive-use-solution/tsconfig.spec.json",
             "karmaConfig": "steps/directive-use-solution/karma.conf.js",
-            "styles": [
-              "steps/directive-use-solution/src/styles.css"
-            ],
+            "styles": ["steps/directive-use-solution/src/styles.css"],
             "scripts": [],
-            "assets": [
-              "steps/directive-use-solution/src/favicon.ico",
-              "steps/directive-use-solution/src/assets"
-            ]
+            "assets": ["steps/directive-use-solution/src/favicon.ico", "steps/directive-use-solution/src/assets"]
           }
         },
         "lint": {
@@ -4139,9 +3571,7 @@
               "steps/directive-use-solution/tsconfig.app.json",
               "steps/directive-use-solution/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -4161,13 +3591,8 @@
             "main": "steps/directive-create/src/main.ts",
             "polyfills": "steps/directive-create/src/polyfills.ts",
             "tsConfig": "steps/directive-create/tsconfig.app.json",
-            "assets": [
-              "steps/directive-create/src/favicon.ico",
-              "steps/directive-create/src/assets"
-            ],
-            "styles": [
-              "steps/directive-create/src/styles.css"
-            ],
+            "assets": ["steps/directive-create/src/favicon.ico", "steps/directive-create/src/assets"],
+            "styles": ["steps/directive-create/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -4221,26 +3646,16 @@
             "polyfills": "steps/directive-create/src/polyfills.ts",
             "tsConfig": "steps/directive-create/tsconfig.spec.json",
             "karmaConfig": "steps/directive-create/karma.conf.js",
-            "styles": [
-              "steps/directive-create/src/styles.css"
-            ],
+            "styles": ["steps/directive-create/src/styles.css"],
             "scripts": [],
-            "assets": [
-              "steps/directive-create/src/favicon.ico",
-              "steps/directive-create/src/assets"
-            ]
+            "assets": ["steps/directive-create/src/favicon.ico", "steps/directive-create/src/assets"]
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "steps/directive-create/tsconfig.app.json",
-              "steps/directive-create/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["steps/directive-create/tsconfig.app.json", "steps/directive-create/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -4260,13 +3675,8 @@
             "main": "steps/directive-create-solution/src/main.ts",
             "polyfills": "steps/directive-create-solution/src/polyfills.ts",
             "tsConfig": "steps/directive-create-solution/tsconfig.app.json",
-            "assets": [
-              "steps/directive-create-solution/src/favicon.ico",
-              "steps/directive-create-solution/src/assets"
-            ],
-            "styles": [
-              "steps/directive-create-solution/src/styles.css"
-            ],
+            "assets": ["steps/directive-create-solution/src/favicon.ico", "steps/directive-create-solution/src/assets"],
+            "styles": ["steps/directive-create-solution/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -4320,14 +3730,9 @@
             "polyfills": "steps/directive-create-solution/src/polyfills.ts",
             "tsConfig": "steps/directive-create-solution/tsconfig.spec.json",
             "karmaConfig": "steps/directive-create-solution/karma.conf.js",
-            "styles": [
-              "steps/directive-create-solution/src/styles.css"
-            ],
+            "styles": ["steps/directive-create-solution/src/styles.css"],
             "scripts": [],
-            "assets": [
-              "steps/directive-create-solution/src/favicon.ico",
-              "steps/directive-create-solution/src/assets"
-            ]
+            "assets": ["steps/directive-create-solution/src/favicon.ico", "steps/directive-create-solution/src/assets"]
           }
         },
         "lint": {
@@ -4337,9 +3742,7 @@
               "steps/directive-create-solution/tsconfig.app.json",
               "steps/directive-create-solution/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -4359,13 +3762,8 @@
             "main": "steps/input-b-solution/src/main.ts",
             "polyfills": "steps/input-b-solution/src/polyfills.ts",
             "tsConfig": "steps/input-b-solution/tsconfig.app.json",
-            "assets": [
-              "steps/input-b-solution/src/favicon.ico",
-              "steps/input-b-solution/src/assets"
-            ],
-            "styles": [
-              "steps/input-b-solution/src/styles.css"
-            ],
+            "assets": ["steps/input-b-solution/src/favicon.ico", "steps/input-b-solution/src/assets"],
+            "styles": ["steps/input-b-solution/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -4419,26 +3817,16 @@
             "polyfills": "steps/input-b-solution/src/polyfills.ts",
             "tsConfig": "steps/input-b-solution/tsconfig.spec.json",
             "karmaConfig": "steps/input-b-solution/karma.conf.js",
-            "styles": [
-              "steps/input-b-solution/src/styles.css"
-            ],
+            "styles": ["steps/input-b-solution/src/styles.css"],
             "scripts": [],
-            "assets": [
-              "steps/input-b-solution/src/favicon.ico",
-              "steps/input-b-solution/src/assets"
-            ]
+            "assets": ["steps/input-b-solution/src/favicon.ico", "steps/input-b-solution/src/assets"]
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "steps/input-b-solution/tsconfig.app.json",
-              "steps/input-b-solution/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["steps/input-b-solution/tsconfig.app.json", "steps/input-b-solution/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -4458,13 +3846,8 @@
             "main": "steps/pipe-demo/src/main.ts",
             "polyfills": "steps/pipe-demo/src/polyfills.ts",
             "tsConfig": "steps/pipe-demo/tsconfig.app.json",
-            "assets": [
-              "steps/pipe-demo/src/favicon.ico",
-              "steps/pipe-demo/src/assets"
-            ],
-            "styles": [
-              "steps/pipe-demo/src/styles.css"
-            ],
+            "assets": ["steps/pipe-demo/src/favicon.ico", "steps/pipe-demo/src/assets"],
+            "styles": ["steps/pipe-demo/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -4518,26 +3901,16 @@
             "polyfills": "steps/pipe-demo/src/polyfills.ts",
             "tsConfig": "steps/pipe-demo/tsconfig.spec.json",
             "karmaConfig": "steps/pipe-demo/karma.conf.js",
-            "styles": [
-              "steps/pipe-demo/src/styles.css"
-            ],
+            "styles": ["steps/pipe-demo/src/styles.css"],
             "scripts": [],
-            "assets": [
-              "steps/pipe-demo/src/favicon.ico",
-              "steps/pipe-demo/src/assets"
-            ]
+            "assets": ["steps/pipe-demo/src/favicon.ico", "steps/pipe-demo/src/assets"]
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "steps/pipe-demo/tsconfig.app.json",
-              "steps/pipe-demo/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["steps/pipe-demo/tsconfig.app.json", "steps/pipe-demo/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -4557,13 +3930,8 @@
             "main": "steps/unit-tests/src/main.ts",
             "polyfills": "steps/unit-tests/src/polyfills.ts",
             "tsConfig": "steps/unit-tests/tsconfig.app.json",
-            "assets": [
-              "steps/unit-tests/src/favicon.ico",
-              "steps/unit-tests/src/assets"
-            ],
-            "styles": [
-              "steps/unit-tests/src/styles.css"
-            ],
+            "assets": ["steps/unit-tests/src/favicon.ico", "steps/unit-tests/src/assets"],
+            "styles": ["steps/unit-tests/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -4617,26 +3985,16 @@
             "polyfills": "steps/unit-tests/src/polyfills.ts",
             "tsConfig": "steps/unit-tests/tsconfig.spec.json",
             "karmaConfig": "steps/unit-tests/karma.conf.js",
-            "styles": [
-              "steps/unit-tests/src/styles.css"
-            ],
+            "styles": ["steps/unit-tests/src/styles.css"],
             "scripts": [],
-            "assets": [
-              "steps/unit-tests/src/favicon.ico",
-              "steps/unit-tests/src/assets"
-            ]
+            "assets": ["steps/unit-tests/src/favicon.ico", "steps/unit-tests/src/assets"]
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "steps/unit-tests/tsconfig.app.json",
-              "steps/unit-tests/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["steps/unit-tests/tsconfig.app.json", "steps/unit-tests/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -4656,13 +4014,8 @@
             "main": "steps/unit-tests-solution/src/main.ts",
             "polyfills": "steps/unit-tests-solution/src/polyfills.ts",
             "tsConfig": "steps/unit-tests-solution/tsconfig.app.json",
-            "assets": [
-              "steps/unit-tests-solution/src/favicon.ico",
-              "steps/unit-tests-solution/src/assets"
-            ],
-            "styles": [
-              "steps/unit-tests-solution/src/styles.css"
-            ],
+            "assets": ["steps/unit-tests-solution/src/favicon.ico", "steps/unit-tests-solution/src/assets"],
+            "styles": ["steps/unit-tests-solution/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -4716,26 +4069,16 @@
             "polyfills": "steps/unit-tests-solution/src/polyfills.ts",
             "tsConfig": "steps/unit-tests-solution/tsconfig.spec.json",
             "karmaConfig": "steps/unit-tests-solution/karma.conf.js",
-            "styles": [
-              "steps/unit-tests-solution/src/styles.css"
-            ],
+            "styles": ["steps/unit-tests-solution/src/styles.css"],
             "scripts": [],
-            "assets": [
-              "steps/unit-tests-solution/src/favicon.ico",
-              "steps/unit-tests-solution/src/assets"
-            ]
+            "assets": ["steps/unit-tests-solution/src/favicon.ico", "steps/unit-tests-solution/src/assets"]
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "steps/unit-tests-solution/tsconfig.app.json",
-              "steps/unit-tests-solution/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["steps/unit-tests-solution/tsconfig.app.json", "steps/unit-tests-solution/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -4755,13 +4098,8 @@
             "main": "steps/ngxs/src/main.ts",
             "polyfills": "steps/ngxs/src/polyfills.ts",
             "tsConfig": "steps/ngxs/tsconfig.app.json",
-            "assets": [
-              "steps/ngxs/src/favicon.ico",
-              "steps/ngxs/src/assets"
-            ],
-            "styles": [
-              "steps/ngxs/src/styles.css"
-            ],
+            "assets": ["steps/ngxs/src/favicon.ico", "steps/ngxs/src/assets"],
+            "styles": ["steps/ngxs/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -4815,26 +4153,16 @@
             "polyfills": "steps/ngxs/src/polyfills.ts",
             "tsConfig": "steps/ngxs/tsconfig.spec.json",
             "karmaConfig": "steps/ngxs/karma.conf.js",
-            "styles": [
-              "steps/ngxs/src/styles.css"
-            ],
+            "styles": ["steps/ngxs/src/styles.css"],
             "scripts": [],
-            "assets": [
-              "steps/ngxs/src/favicon.ico",
-              "steps/ngxs/src/assets"
-            ]
+            "assets": ["steps/ngxs/src/favicon.ico", "steps/ngxs/src/assets"]
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "steps/ngxs/tsconfig.app.json",
-              "steps/ngxs/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["steps/ngxs/tsconfig.app.json", "steps/ngxs/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -4854,13 +4182,8 @@
             "main": "steps/ngxs-solution/src/main.ts",
             "polyfills": "steps/ngxs-solution/src/polyfills.ts",
             "tsConfig": "steps/ngxs-solution/tsconfig.app.json",
-            "assets": [
-              "steps/ngxs-solution/src/favicon.ico",
-              "steps/ngxs-solution/src/assets"
-            ],
-            "styles": [
-              "steps/ngxs-solution/src/styles.css"
-            ],
+            "assets": ["steps/ngxs-solution/src/favicon.ico", "steps/ngxs-solution/src/assets"],
+            "styles": ["steps/ngxs-solution/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -4914,26 +4237,16 @@
             "polyfills": "steps/ngxs-solution/src/polyfills.ts",
             "tsConfig": "steps/ngxs-solution/tsconfig.spec.json",
             "karmaConfig": "steps/ngxs-solution/karma.conf.js",
-            "styles": [
-              "steps/ngxs-solution/src/styles.css"
-            ],
+            "styles": ["steps/ngxs-solution/src/styles.css"],
             "scripts": [],
-            "assets": [
-              "steps/ngxs-solution/src/favicon.ico",
-              "steps/ngxs-solution/src/assets"
-            ]
+            "assets": ["steps/ngxs-solution/src/favicon.ico", "steps/ngxs-solution/src/assets"]
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "steps/ngxs-solution/tsconfig.app.json",
-              "steps/ngxs-solution/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["steps/ngxs-solution/tsconfig.app.json", "steps/ngxs-solution/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -4953,13 +4266,8 @@
             "main": "steps/ngrx/src/main.ts",
             "polyfills": "steps/ngrx/src/polyfills.ts",
             "tsConfig": "steps/ngrx/tsconfig.app.json",
-            "assets": [
-              "steps/ngrx/src/favicon.ico",
-              "steps/ngrx/src/assets"
-            ],
-            "styles": [
-              "steps/ngrx/src/styles.css"
-            ],
+            "assets": ["steps/ngrx/src/favicon.ico", "steps/ngrx/src/assets"],
+            "styles": ["steps/ngrx/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -5013,26 +4321,16 @@
             "polyfills": "steps/ngrx/src/polyfills.ts",
             "tsConfig": "steps/ngrx/tsconfig.spec.json",
             "karmaConfig": "steps/ngrx/karma.conf.js",
-            "styles": [
-              "steps/ngrx/src/styles.css"
-            ],
+            "styles": ["steps/ngrx/src/styles.css"],
             "scripts": [],
-            "assets": [
-              "steps/ngrx/src/favicon.ico",
-              "steps/ngrx/src/assets"
-            ]
+            "assets": ["steps/ngrx/src/favicon.ico", "steps/ngrx/src/assets"]
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "steps/ngrx/tsconfig.app.json",
-              "steps/ngrx/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["steps/ngrx/tsconfig.app.json", "steps/ngrx/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -5052,13 +4350,8 @@
             "main": "steps/ngrx-solution/src/main.ts",
             "polyfills": "steps/ngrx-solution/src/polyfills.ts",
             "tsConfig": "steps/ngrx-solution/tsconfig.app.json",
-            "assets": [
-              "steps/ngrx-solution/src/favicon.ico",
-              "steps/ngrx-solution/src/assets"
-            ],
-            "styles": [
-              "steps/ngrx-solution/src/styles.css"
-            ],
+            "assets": ["steps/ngrx-solution/src/favicon.ico", "steps/ngrx-solution/src/assets"],
+            "styles": ["steps/ngrx-solution/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -5112,26 +4405,16 @@
             "polyfills": "steps/ngrx-solution/src/polyfills.ts",
             "tsConfig": "steps/ngrx-solution/tsconfig.spec.json",
             "karmaConfig": "steps/ngrx-solution/karma.conf.js",
-            "styles": [
-              "steps/ngrx-solution/src/styles.css"
-            ],
+            "styles": ["steps/ngrx-solution/src/styles.css"],
             "scripts": [],
-            "assets": [
-              "steps/ngrx-solution/src/favicon.ico",
-              "steps/ngrx-solution/src/assets"
-            ]
+            "assets": ["steps/ngrx-solution/src/favicon.ico", "steps/ngrx-solution/src/assets"]
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "steps/ngrx-solution/tsconfig.app.json",
-              "steps/ngrx-solution/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["steps/ngrx-solution/tsconfig.app.json", "steps/ngrx-solution/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
