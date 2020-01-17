@@ -1,6 +1,9 @@
 .reveal .slides section .bold {
   font-weight: 600; }
 
+.reveal .slides section .center {
+  text-align: center; }
+
 .reveal .slides section .half {
   width: 50%; }
 
