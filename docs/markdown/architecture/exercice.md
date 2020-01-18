@@ -16,4 +16,4 @@ Notes:
 
 <!-- .slide: class="sfeir-bg-blue exercice" -->
 ## Solution
-<span>La solution se trouve dans le dossier TP/steps/hands-on-solution</span>
+<span class="bold full-center">folder: steps/hands-on-solution</span>
