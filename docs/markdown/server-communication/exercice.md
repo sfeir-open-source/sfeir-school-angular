@@ -13,4 +13,5 @@ Notes
 ##==##
 
 <!-- .slide: class="sfeir-bg-blue exercice" -->
+## Solution
 <span class="full-center bold">steps/http-solution</span>
