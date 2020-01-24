@@ -1,6 +1,10 @@
 .reveal .slides section .bold {
   font-weight: 600; }
 
+.reveal .slides section .important {
+  font-weight: 400;
+  color: darkred; }
+
 .reveal .slides section .center {
   text-align: center; }
 
