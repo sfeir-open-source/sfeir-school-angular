@@ -6,6 +6,7 @@ import { Store } from '@ngrx/store';
 import { mergeMap } from 'rxjs/operators';
 import { getSearch } from '../store/selectors/selectors';
 import { filterPeople } from '../store/actions/people.actions';
+import { PeopleFeature } from '../store/state/state';
 
 @Component({
   selector: 'sfeir-people',
@@ -19,7 +20,7 @@ export class PeopleComponent implements OnInit {
   dialogStatus = 'inactive';
   view = 'card';
 
-  constructor(private store: Store<any>, public dialog: MatDialog, private _peopleService: PeopleService) {}
+  constructor(private store: Store<PeopleFeature>, public dialog: MatDialog, private _peopleService: PeopleService) {}
 
   /**
    * OnInit implementation
