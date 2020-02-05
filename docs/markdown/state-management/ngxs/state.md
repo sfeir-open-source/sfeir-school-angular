@@ -28,6 +28,7 @@ export class AnimalsState {
   defaults: []
 })
 ```
+<!-- .element: class="big-code" -->
 <br><br>
 Ici notre state indique: <br><br>
 - qu'il s'agit d'un tableau de strings: __<strings[]>__
@@ -39,7 +40,7 @@ Notes
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide with-code" -->
-# State: Déclarer nos actions (rappel)
+# State: Réduire nos actions (rappel)
 Rappel: dans notre fichier __todos.actions.ts__ nous avions ce contenu
 <br><br>
 ```typescript
@@ -69,18 +70,16 @@ export namespace Todo {
 
 <!-- .slide: class="sfeir-basic-slide with-code" -->
 # State: déclarer nos actions
-<br><br>
+<br>
 ```typescript
 import { State, Action, StateContext } from '@ngxs/store';
 import { Todo } from './todo.action';
-
 @State<string[]>({
     name: 'todo',
     default: [],
 })
 export class TodoState {
-    constructor() { }
-    
+    constructor() { }    
     @Action(Todo.Add)
     addTodo(ctx: StateContext<string[]>, action: any): void {
         const state: strings[] = ctx.getState();

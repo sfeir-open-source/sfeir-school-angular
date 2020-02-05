@@ -1,6 +1,6 @@
 <!-- .slide: class="sfeir-basic-slide with-code" -->
 # Utilisation dans le composant
-<br><br>
+<br>
 ```typescript
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, Params } from '@angular/router';
@@ -10,17 +10,16 @@ import { ActivatedRoute, Router, Params } from '@angular/router';
 })
 export class FooComponent implements OnInit {
   constructor(private readonly route: ActivatedRoute, private readonly router: Router ) { }
-
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
     let id = params['id'];
     });
   }
-
   go(): void {
     this.router.navigate(['/people/']);
   }
-  ```
+```
+<!-- .element: class="big-code" -->
 Notes
 - La méthode navigate renvoie une promesse
 

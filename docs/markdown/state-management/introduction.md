@@ -22,11 +22,11 @@ __Répercussion__: Complication à suivre de la logique, difficile à débugger<
 <!-- .slide: class="sfeir-basic-slide" -->
 # 3 façon de communiquer
 <br><br>
-Il existe deux grandes famille de communication<br><br>
+Il existe deux grandes familles de communication<br><br>
 - __Parent - Enfant__:
     - Input / Output [ exemple => @Input() , @Output dans un application Angular ]
 <br><br>
-- __Éléments indépendant les uns des autres__
+- __Éléments indépendants les uns des autres__
     - Bus de communication [ système de notification, event emitter … ]
     - Architecture flux
 

@@ -52,9 +52,9 @@ export class MyDirective {}
 # Comment passer des props à ma directive
 <br>
 <ul>
-    <li>Lister des inputs grâce l'annotation <strong>@Input()</strong></li><br>
-    <li>Ces inputs peuvent être aliasé</li><br>
-    <li><strong>Exactement comme les composants</strong></li>
+    <li>Lister des inputs grâce l'annotation <strong>@Input()</strong></li>
+    <li>Ces inputs peuvent être aliasé</li>
+    <li><strong>Exactement comme les composants</strong>
 </ul>
 <br><br>
 ```typescript
@@ -68,7 +68,7 @@ export class MyDirective {
   @Input('alias') myProp2: string;
 }
 ```
-<!-- element: class="big-code" -->
+<!-- .element: class="big-code" -->
 
 ##==##
 

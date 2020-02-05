@@ -17,7 +17,7 @@
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide" -->
+<!-- .slide: class="sfeir-basic-slide with-code" -->
 # Angular et les propriétés
 <br><br>
 - Un monde sans attributs
@@ -26,12 +26,13 @@
 ```html
 <button type="submit" [disabled]="form.invalid">Submit</button>
 ```
+<!-- .element: class="big-code" -->
 <br>
 - Permet de passer des objets
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide" -->
+<!-- .slide: class="sfeir-basic-slide with-code" -->
 # Et si je veux agir sur un attribut ?
 <br>
 Certains élément n'ont pas obligatoirement la propriété (svg, colspan)
@@ -40,13 +41,16 @@ Certains élément n'ont pas obligatoirement la propriété (svg, colspan)
 ```html
 <td [attr.colspan]="1+1">a cell!!</td>
 ```
+<!-- .element: class="big-code" -->
 <br>
 - Pour les classes, on précède le nom de la classe par: <strong>class</strong>
 ```html
 <div [class.isSpecial]="isSpecial">special class</div>
 ```
+<!-- .element: class="big-code" -->
 <br>
 - Pour le style, on précède le nom de la propriété par style
 ```html
 <div [style.color]="isSpecial ? 'red' : 'green'">Special class</div>
 ```
+<!-- .element: class="big-code" -->

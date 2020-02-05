@@ -22,7 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
 # Injection dans un Composant
 <br><br>
 Pour utiliser un service dans un composant, il est nécessaire de l'injecter.<br>
-Injectons le service http qui provient du module HttpCLientModule
+Injectons le service http qui provient du module HttpClientModule
 <br><br>
 <img alt="h-600" src="assets/images/school/serveur-communication/injection.png" />
 <img alt="h-500" src="assets/images/school/serveur-communication/injection_astuce.png" />

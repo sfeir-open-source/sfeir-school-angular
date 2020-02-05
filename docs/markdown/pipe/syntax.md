@@ -1,20 +1,29 @@
 <!-- .slide: class="sfeir-basic-slide with-code" -->
 # Syntax
 <br>
-- A la suite d'une expression d'interpolation
+<ul>
+    <li>A la suite d'une expression d'interpolation</li>
+</ul>
 ```html
 <span> {{ expression |filter1 }}</span>
 ```
+<!-- .element: class="big-code" -->
 <br>
-- On peut chaînes les pipes
+<ul>
+    <li>On peut chaînes les pipes</li>
+</ul>
 ```html
 <span> {{ expression |filter1 |filter2 }}</span>
 ```
+<!-- .element: class="big-code" -->
 <br>
-- On peut passer des paramètres aux pipes
+<ul>
+    <li>On peut passer des paramètres aux pipes</li>
+</ul>
 ```html
 <span>{{ expression |filter1 :param1 :param2 }}</span>
 ```
+<!-- .element: class="big-code" -->
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide with-code" -->

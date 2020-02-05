@@ -16,7 +16,7 @@ providers: [ { provide: V8, useValue: { cylinder: 8 } }]
 <br><br><br>
 ```typescript
 providers: [ { provide: V8, useClass: V8 }]
-providers: [V8]
+providers: [ V8 ]
 providers: [{ provide: V8, useClass: V8Mock }]
 ```
 <!-- .element: class="big-code" -->
@@ -28,13 +28,17 @@ Notes
 <!-- .slide: class="sfeir-basic-slide with-code" -->
 # La résolution par class aliasée: useExisting
 <br>
-- <span class="important">Création de 2 instances de V8</span>
+<ul>
+    <li class="important bold">Création de 2 instances de V8</li>
+</ul>
 ```typescript
 providers: [ V8, { provide: V8, useClass: V8 }]
 ```
 <!-- .element: class="big-code" -->
 <br><br>
-- <span class="important">Réutilisation de l'instance de V8</span>
+<ul>
+    <li class="important bold">Réutilisation de l'instance de V8</li>
+</ul>
 ```typescript
 providers: [ V8, { provide: V8Engine, useExisting: V8 } ]
 ```
@@ -44,12 +48,12 @@ providers: [ V8, { provide: V8Engine, useExisting: V8 } ]
 
 <!-- .slide: class="sfeir-basic-slide with-code" -->
 # La résolution par factory: useFactory
-<br><br><br>
+<br><br>
 ```typescript
 export const function createEngineFactory(dep: V8Engine) {
 	return new Engine(dep.cylinders);
 }
-providers: [ V8Engine, { provide: Engine, useFactory: createEngineFactory, deps: [V8Engine] } ]
+providers: [ V8Engine, { provide: Engine, useFactory: createEngineFactory, deps: [ V8Engine ] } ]
 ```
 <!-- .element: class="big-code" -->
 Notes:

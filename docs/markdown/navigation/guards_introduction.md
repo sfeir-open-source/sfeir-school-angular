@@ -3,7 +3,7 @@
 <br><br>
 - Hook de vérification / ou de préfetching avant la navigation vers une route <br><br>
 - Il existe plusieurs guards en fonction de sa navigation (2 types vérification, fetching)<br><br>
-- Un gaurds consiste en un service Angular
+- Un guard consiste en un service Angular
 
 ##==##
 

@@ -31,29 +31,32 @@
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide" -->
+<!-- .slide: class="sfeir-basic-slide with-code" -->
 # Syntax binding
-<br>
 <span class="bold">Events</span>
 ```html
 <button type="button" (click)="changeName()">Refresh</button>
 ```
+<!-- .element: class="big-code"-->
 <br>
 <span class="bold">Properties</span>
 ```html
 <button type="submit" [disabled]="myForm.invalid">Submit</button>
 ```
+<!-- .element: class="big-code"-->
 <br>
 <span class="bold">Reference</span>
 ```html
 <input #myName type="text" />
 <span>{{ myName.value }}</span>
 ```
+<!-- .element: class="big-code"-->
 <br>
 <span class="bold">Interpolation</span>
 ```html
 <span>{{ name }}</span>
 ```
+<!-- .element: class="big-code"-->
 
 ##==##
 

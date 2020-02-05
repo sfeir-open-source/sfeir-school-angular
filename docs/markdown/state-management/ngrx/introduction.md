@@ -10,7 +10,7 @@ De même que la librairies NGXS, NGRX est une librairie externe à Angular.
 <br><br>
 __Installation__:
 ```sh
-npm run install --save-dev ngrx
+npm install --save-dev ngrx
 ```
 <!-- .element: class="big-code" -->
 <br><br>

@@ -29,7 +29,7 @@ export class AppModule { }
 <br><br>
 <ul>
     <li><strong>#authentificationForm="ngForm"</strong>: On déclare une référence sur un formulaire</li><br>
-    <li><strong>authentificationForm.value</strong> permet de récupérer en format JSON object, toutes les valeurs des champs du formulaire</li>
+    <li><strong>authentificationForm.value</strong> permet de récupérer en format JSON objet, toutes les valeurs des champs du formulaire</li>
 </ul>
 <br><br>
 ```html
@@ -47,28 +47,35 @@ Deux composantes obligatoires:
     <li><strong>ngModel</strong>: le binding d'un contrôle</li>
     <li><strong>name</strong>: associer un nom au contrôle du champs</li>
 </ul>
-<br><br>
-- <strong>Exemple 1</strong>: binding View -> Model
+<br>
+<ul>
+    <li><strong>Exemple 1</strong>: binding View -> Model</li>
+</ul>
 ```html
 <input type="text" name="title" ngModel />
 ```
-<br>
-- <strong>Exemple 2</strong>: binding Model -> View
+<!-- .element: class="big-code" -->
+<ul>
+    <li><strong>Exemple 2</strong>: binding Model -> View</li>
+</ul>
 ```html
 <input type="text" name="title" [ngModel]="person.name" />
 ```
-<br>
-- <strong>Exemple 2</strong>: binding bidirectionnel
+<!-- .element: class="big-code" -->
+<ul>
+    <li><strong>Exemple 3</strong>: binding bidirectionnel</li>
+</ul>
 ```html
 <input [(ngModel)]="postalCode" name="postalCode" type="text" />
 ```
+<!-- .element: class="big-code" -->
 
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide with-code" -->
-# Regrouper des champs dans un sous object
+# Regrouper des champs dans un sous objet
 <br><br>
-<strong>ngModelGroup</strong> regroupe des contrôles dans un sous object
+<strong>ngModelGroup</strong> regroupe des contrôles dans un sous objet
 <br><br>
 ```html
 <p ngModelGroup="address">

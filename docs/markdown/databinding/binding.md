@@ -33,12 +33,12 @@
             <td>Evènements</td>
         </tr>
         <tr>
-            <td>Biderectionnel</td>
+            <td>Bidirectionnel</td>
             <td>
                 <p>[(targetFooBar)] = expression</p>
                 <p>bindonTargetFooBar = expression</p>
             </td>
-            <td>Biderctionnel</td>
+            <td>Bidirectionnel</td>
         </tr>
     </tbody>
 </table>

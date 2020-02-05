@@ -3,11 +3,11 @@
 <br><br>
 - <strong>path: </strong>l’URL de route (ex: /people/:id)<br><br>
 - <strong>component: </strong>le composant associé à cette route (ex: PeopleComponent)<br><br>
-- <strong>redirectTo</strong>le fragment d’URL vers lequel rediriger route courante (ex: '/home')<br><br>
+- <strong>redirectTo: </strong>le fragment d’URL vers lequel rediriger route courante (ex: '/home')<br><br>
 - <strong>pathMatch: </strong>stratégie de redirection (full / prefix)
 <ul>
     <li>full: tente une reconnaissance depuis la racine de la route</li>
-    <li>prefix: prefix: tente une reconnaissance partielle de la route</li>
+    <li>prefix: tente une reconnaissance partielle de la route</li>
 </ul>
 
 ##--##

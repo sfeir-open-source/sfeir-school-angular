@@ -4,7 +4,7 @@
 Les effects sont dans un package différent , il faut donc les installer égalements (si on souhaite les utiliser)
 <br><br>
 ```sh
-npm install --save @ngrx/effects
+npm install --save @ngrx/effects // ng add @ngrx/effects
 ```
 <!-- .element: class="big-code" -->
 <br><br>
@@ -19,19 +19,17 @@ npm install --save @ngrx/effects
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide" -->
+<!-- .slide: class="sfeir-basic-slide with-code" -->
 # NGRX: Ecrire un effet
-<br><br>
 <ul>
     <li>Créer une action (mais ne pas l'enregistrer dans le reducers)</li>
     <li>Créer un service classique Angular</li>
     <li>Utiliser la méthode createEffect ou l'annotation __@Effect__</li>
 </ul>
-<br><br>
+<br>
 ```typescript
 @Injectable()
 export class MovieEffects {
-
   constructor(private readonly actions$: Actions, private readonly moviesService: MoviesService) {}
  
   // avec la méthode createEffect 
@@ -57,5 +55,6 @@ export class MovieEffects {
     )
 }
 ```
+<!-- .element: class="big-code" -->
 Notes:
 - en utilisant l'annotation les erreurs dans l'ide (au niveau du checking type) est bien plus claire

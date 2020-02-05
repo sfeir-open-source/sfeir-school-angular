@@ -20,27 +20,36 @@ platformBrowserDynamic().bootstrapModule(AppModule);
 
 <!-- .slide: class="sfeir-basic-slide with-code" -->
 # Bootstaping dans sa totalité
+<div class="flex-row">
+    <div class="fill-rest">
+        <pre class="big-code">
+            <code data-trim>
+               import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+               import { AppModule } from './app.module';
 
-<strong>fichier: app.module.ts</strong>
-```typescript
-@NgModule({
-  imports: [BrowserModule, ...],
-  declaration: [AppComponent, ...],
-  exports: [],
-  bootstrap: [AppComponent],
-})
-export class AppModule { }
-```
-<br>
-<strong>fichier: main.ts</strong>
-```typescript
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { AppModule } from './app.module';
-
-platformBrowserDynamic().bootstrapModule(AppModule);
-```
-<br>
-<strong>fichier: index.html</strong>
-```html
-<sfeir-app></sfei-app>
-```
+               platformBrowserDynamic().bootstrapModule(AppModule);
+            </code>
+        </pre>
+    </div>
+   <div class="tiers">
+        <pre class="big-code">
+            <code data-trim>
+                @NgModule({
+                imports: [BrowserModule],
+                declaration: [AppComponent],
+                exports: [],
+                bootstrap: [AppComponent],
+                })
+                export class AppModule { }
+            </code>
+        </pre>
+   </div>
+</div>
+<br><br>
+<div>
+    <pre class="big-code">
+        <code data-trim>
+            <sfeir-app></sfeir-app>
+        </code>
+    </pre>
+</div>

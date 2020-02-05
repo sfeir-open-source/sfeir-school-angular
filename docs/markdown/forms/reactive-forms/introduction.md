@@ -26,7 +26,7 @@ export class AppModule { }
 
 <!-- .slide: class="sfeir-basic-slide with-code" -->
 # Syntax Global dans les formulaires Reactive forms
-<br>
+
 ```html
 <form [formGroup]="editForm">
    <input type="text" formControlName="firstname">
@@ -34,7 +34,8 @@ export class AppModule { }
    <button type="submit" [disabled]="!editForm.valid">Modifier</button>
 </form>
 ```
-<br><br>
+<!-- .element: class="big-code" -->
+<br>
 ```typescript
 import { Validators, FormControl, FormGroup } from '@angular/forms';
 @Component({...})
@@ -47,7 +48,7 @@ export class FormComponent {
    }
 }
 ```
-
+<!-- .element: class="big-code" -->
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide with-code" -->

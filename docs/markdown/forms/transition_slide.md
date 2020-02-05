@@ -15,7 +15,7 @@ Notes:
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide" -->
-# Les Formulaire en Angular
+# Les Formulaires en Angular
 <br><br>
 Il existe deux types de formulaire en Angular:<br><br>
 - <strong>Template driven form</strong>: formulaire piloté par le template<br><br>

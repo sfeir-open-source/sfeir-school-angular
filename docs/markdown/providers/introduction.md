@@ -38,27 +38,36 @@ Notes
 
 <!-- .slide: class="sfeir-basic-slide with-code" -->
 # Utiliser son service en local
-<br>
-```typescript
-@Injectable()
-class TodoService {
-  constructor() { }
+<br><br>
+<div class="flex-row">
+    <div class="tiers">
+        <pre class="big-code">
+            <code data-trim>
+                @Injectable()
+                class TodoService {
+                  constructor() { }
   
-  get Name(): string {
-    return 'SFEIR';
-  }
-}
-```
-<br>
-```typescript
-@Component({
-  ...
-  providers: [TodoService]
-})
-export class AppComponent { 
-  constructor(private readonly todoService: TodoService) { 
-    console.log(todoService.name); // SFEIR
-  }
-}
-```
+                  get Name(): string {
+                    return 'SFEIR';
+                  }
+                }
+            </code>
+        </pre>
+    </div>
+    <div class="fill-rest">
+        <pre class="big-code">
+            <code data-trim>
+                @Component({
+                  ...
+                  providers: [TodoService]
+                })
+                export class AppComponent { 
+                  constructor(private readonly todoService: TodoService) { 
+                    console.log(todoService.name); // SFEIR
+                  }
+                }
+            </code>
+        </pre>
+    </div>
+</div>
 

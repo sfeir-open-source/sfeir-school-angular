@@ -11,7 +11,8 @@ La validation se fait à l'aide des attributs html classique de validations:<br>
 Et bien on utilise la propriété lié à l'attribut
 <br>
 ```html
-<input type="text" name="lastname" [(ngModel)]="person.lastname" [required]="person.firstname" />
+<input type="text" name="lastname" [(ngModel)]="person.lastname"
+  [required]="person.firstname" />
 ```
 <!-- .element: class="big-code" -->
 

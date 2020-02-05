@@ -9,11 +9,12 @@
 __NGXS__ est une librairie externe à Angular, il faut donc l'installer en dépendance de notre projet
 <br><br>
 ```sh
-npm install --save @ngxs/store
+npm install --save @ngxs/store // ng add @ngxs/store
 ```
+<!-- .element: class="big-code" -->
 <br>
 Et l'importer dans notre projet
-<br><br>
+<br>
 ```typescript
 import { NgModule } from '@angular/core';
 import { NgxsModule } from '@ngxs/store';
@@ -24,6 +25,7 @@ import { ZooState } from './store';
 })
 export class AppModule {}
 ```
+<!-- .element: class="big-code" -->
 Notes
 - ZooState correspond au state de notre application
 

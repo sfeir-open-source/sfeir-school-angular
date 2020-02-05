@@ -38,6 +38,7 @@ Carte d'identité d'un composant<br>
   ...
 })
 ```
+<!-- .element: class="big-code" -->
 
 ##==##
 
@@ -58,3 +59,4 @@ import { FooDirective } from './app/shared/foo.directive';
   declarations: [HomeComponent, FooDirective]  
 })
 ```
+<!-- .element: class="big-code" -->

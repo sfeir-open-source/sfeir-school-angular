@@ -1,8 +1,8 @@
 <!-- .slide: class="sfeir-basic-slide" -->
 # Principe de la DI en Angular
 <ul>
-    <li><strong>L'Injector</strong>expose l'API pour créer des instances de dépendances</li>
-    <li>Le <strong>Provider</strong>indique à <strong>l’Injector</strong> comment créer la dépendance</li>
+    <li><strong>L'Injector</strong> expose l'API pour créer des instances de dépendances</li>
+    <li>Le <strong>Provider</strong> indique à <strong>l’Injector</strong> comment créer la dépendance</li>
     <li>La dépendance est le type d’objet à créer</li>
 </ul>
 <br><br>

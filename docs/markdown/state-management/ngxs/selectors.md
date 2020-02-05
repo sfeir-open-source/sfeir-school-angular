@@ -14,18 +14,14 @@ Dans __NGXS__ il existe eux méthodes pour séléctionner notre state (ou partie
 ```typescript
 import { Select } from '@ngxs/store';
 import { ZooState, ZooStateModel } from './zoo.state';
-
 @Component({ ... })
 export class ZooComponent {
   // Reads the name of the state from the state class
   @Select(ZooState) animals$: Observable<string[]>;
-
   // Uses the pandas memoized selector to only return pandas
   @Select(ZooState.pandas) pandas$: Observable<string[]>;
-
   // Also accepts a function like our select method
   @Select(state => state.zoo.animals) animals$: Observable<string[]>;
-
   // Reads the name of the state from the parameter
   @Select() zoo$: Observable<ZooStateModel>;
 }
@@ -37,16 +33,14 @@ export class ZooComponent {
 <!-- .slide: class="sfeir-basic-slide with-code" -->
 # Selectors: Select Function
 <br>
-Le store possède une méthod __select__ qui peut être utile lorsque l'on ne peut pas déclarer statiquement un sélecteur avec l'annotation __@Select.<br>
+Le store possède une méthod __select__ qui peut être utile lorsque l'on ne peut pas déclarer statiquement un sélecteur avec l'annotation __@Select__.<br>
 Attention cette méthode renvoie un observable
 <br><br>
 ```typescript
 import { Store } from '@ngxs/store';
-
 @Component({ ... })
 export class ZooComponent {
   animals$: Observable<string[]>;
-
   constructor(private store: Store) {
     this.animals$ = this.store.select(state => state.zoo.animals);
   }
@@ -78,7 +72,13 @@ export class ZooState {
   }
 }
 ```
-<br>
+<!-- .element: class="big-code" -->
+
+##==##
+
+<!-- .slide: class="sfeir-basic-slide with-code" -->
+# Selectors: Memoized Selectors
+<br><br>
 ```typescript
 @Component({...})
 export class AppComponent {
@@ -89,3 +89,4 @@ export class AppComponent {
   this.pandas$ = this.store.select(ZooState.pandas);
 }
 ```
+<!-- .element: class="big-code" -->

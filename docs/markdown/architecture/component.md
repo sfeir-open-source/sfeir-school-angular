@@ -56,7 +56,7 @@ Notes
 
 <!-- .slide: class="sfeir-basic-slide with-code" -->
 # Le composant: sa globalité
-<br><br>
+<br>
 L'écriture d'un composant dans sa totalité est donc la suivante
 <br><br>
 ```typescript

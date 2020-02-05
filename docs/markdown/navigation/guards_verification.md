@@ -12,18 +12,15 @@
 
 <!-- .slide: class="sfeir-basic-slide with-code" -->
 # Un exemple plus parlant
-<br><br>
 ```typescript
 @Injectable({
   providedIn: CoreModule,
 })
 export class LoginGuards implements CanLoad {
   constructor(private readonly authentificationService: AuthentificationService, private readonly router: Router) {}
-
   canLoad(next: Route, segments: UrlSegment[]): Observable<boolean> | boolean {
     return this.verifyToken();
   }
-
   verifyToken(): Observable<boolean> {
     return this.authentificationService.verifyToken()
       .pipe(
@@ -43,7 +40,7 @@ export class LoginGuards implements CanLoad {
 <!-- .slide: class="sfeir-basic-slide with-code" -->
 # Un exemple plus parlant
 <br><br><br>
-Une fois créé, le guards s'enregistre de la manière suivante dans le tableau de route
+Une fois créé, le guard s'enregistre de la manière suivante dans le tableau de route
 <br><br>
 ```typescript
 { path: 'dashboard', canLoad: [LoginGuards], loadChildren: () =>

@@ -1,7 +1,7 @@
 {
-  "name": "sfeirschoolmongodb",
+  "name": "sfeir-school-angular",
   "version": "1.0.0",
-  "description": "Sfeir School Mongdb with revealJS",
+  "description": "Sfeir School Angular with revealJS",
   "main": "index.js",
   "scripts": {
     "sass": "node-sass ./scss/angular.scss -o ./css/ --source-map=true --watch=\"scss\" --recursive=\"scss\"",
@@ -11,7 +11,7 @@
     "start": "parallelshell \"npm run serve\" \"npm run sass\""
   },
   "keywords": [
-    "vue js",
+    "Angular",
     "sfeir"
   ],
   "author": "Nicolas FRIZZARIN (Nicoss54)",

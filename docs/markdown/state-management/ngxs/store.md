@@ -10,7 +10,7 @@ Le __store__ est un gestionnaire d'état global/par feature qui permet:
 
 <!-- .slide: class="sfeir-basic-slide with-code" -->
 # Store: Actions 
-<br>
+<br><br>
 Create the action:
 ```typescript
 export class AddAnimal {
@@ -18,6 +18,12 @@ export class AddAnimal {
   constructor(public name: string) {}
 }
 ```
+<!-- .element: class="big-code" -->
+
+##==##
+
+<!-- .slide: class="sfeir-basic-slide with-code" -->
+# Store: Actions 
 <br><br>
 Use the action:
 ```typescript
@@ -33,3 +39,4 @@ export class ZooComponent {
   }
 }
 ```
+<!-- .element: class="big-code" -->

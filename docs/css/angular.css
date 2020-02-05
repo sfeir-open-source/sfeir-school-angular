@@ -1,6 +1,9 @@
 .reveal .slides section .bold {
   font-weight: 600; }
 
+.reveal .slides section .file-name {
+  font-size: 12px; }
+
 .reveal .slides section .important {
   font-weight: 400;
   color: darkred; }
@@ -11,11 +14,24 @@
 .reveal .slides section .half {
   width: 50%; }
 
+.reveal .slides section .tiers {
+  width: 30%; }
+
+.reveal .slides section .fill-rest {
+  flex: 2; }
+
 .reveal .slides section.sfeir-bg-white-5 h1 {
   position: absolute;
   bottom: 3em;
   right: 1em;
   color: #880e4f !important; }
+
+.reveal .slides section.with-code pre code, .reveal .slides section.with-code-dark pre code {
+  max-height: 800px !important;
+  overflow: auto !important; }
+
+.reveal .slides section.with-code pre.big-code, .reveal .slides section.with-code-dark pre.big-code {
+  font-size: 16px; }
 
 .reveal .slides section.with-code pre.big-code:not(.literal), .reveal .slides section.with-code-dark pre.big-code:not(.literal) {
   position: relative;

@@ -10,7 +10,7 @@
     <li>Permet de regrouper des fonctionnalités</li><br>
     <li>Au moins un module par application (obligatoire, sans ce module, l'app ne démarre pas)</li><br>
     <li>Peut être chargé de façon asynchrone (lazy loading)</li><br>
-    <li>Différents types de module (Root Module, Navigation Module, Feature Module, Shared Module, Core Module</li><br>
+    <li>Différents types de module (Root Module, Navigation Module, Feature Module, Shared Module, Core Module, ...)</li><br>
 </ul>
 Notes
 - Root Module, contient en général les autres modules de l'application

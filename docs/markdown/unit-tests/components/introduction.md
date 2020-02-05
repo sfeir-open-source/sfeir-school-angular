@@ -26,7 +26,6 @@ beforeEach(() => {
   const instance = fixture.componentInstance;
   const element = fixture.nativeElement;
   const debug   = fixture.debugElement;
-
   fixture.detectChanges();
 });
 ```

@@ -1,6 +1,6 @@
 <!-- .slide: class="sfeir-basic-slide with-code" -->
 # Les helpers services
-<br>
+
 ```typescript
 @Injectable()
 export class UserService {
@@ -10,6 +10,7 @@ export class UserService {
   }
 }
 ```
+<!-- .element: class="big-code" -->
 <br>
 ```typescript
 // setup
@@ -20,3 +21,4 @@ it('should return a valid name', inject([ UserService ], (service) => {
   expect(name.length).toEqual(4);
 }));
 ```
+<!-- .element: class="big-code" -->

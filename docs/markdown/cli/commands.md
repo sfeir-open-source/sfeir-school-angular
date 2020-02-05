@@ -23,7 +23,7 @@ Notes
 ng generate component user
 ```
 <!-- .element: class="big-code" -->
-<br><br>
+<br>
 Cette commande génère les fichiers suivant:<br>
 <ul>
     <li>src/app/user/user.component.css</li><br>
@@ -59,7 +59,7 @@ Notes
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide" -->
-# Et sinon on peut générer quoi d'autre ?
+# Et sinon on peut générer quoi d'autre?
 <br>
 <img alt="h-800 center" src="assets/images/school/cli/generate_helper.png" />
 

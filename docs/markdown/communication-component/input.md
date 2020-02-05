@@ -3,7 +3,7 @@
 <ul>
     <li>Enfant</li>
 </ul>
-<br><br>
+<br>
 ```typescript
 import { Component, Input} from '@angular/core';
 @Component({
@@ -13,13 +13,15 @@ export class ChildComponent {
    @Input() name: string;
 }
 ```
-<br><br>
+<!-- .element: class="big-code" -->
+<br>
 <ul>
     <li>Parent - template</li>
 </ul>
-<br><br>
+<br>
 ```html
 <section>
     <app-child [name]="person.name"></app-child>
 </section>
 ```
+<!-- .element: class="big-code" -->

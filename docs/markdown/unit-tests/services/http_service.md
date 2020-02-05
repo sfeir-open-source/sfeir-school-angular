@@ -27,11 +27,10 @@ export class UserService {
 
 <!-- .slide: class="sfeir-basic-slide with-code" -->
 # Test avec HttpModule
-<br><br>
 ```typescript
 let service: UserService;
 beforeEach(() => {
-  TestBed.configureTestingModule({
+    TestBed.configureTestingModule({
     imports: [ HttpModule ],
     providers: [ UserService ]
   })
@@ -41,27 +40,26 @@ beforeEach(() => {
 it('should return a valid name', () => {
   service.getNameFromServer().subscribe(name => { 
      expect(name).toContain('Igor');
-  	expect(name.length).toEqual(4);
+     expect(name.length).toEqual(4);
   });
 });
 ```
 <!-- .element: class="big-code" -->
 
-##==## 
+##==##
+
 <!-- .slide: class="sfeir-basic-slide with-code" -->
 # Test avec HttpClientTestModule
-<br><br>
 ```typescript
 let service: UserService;
 let httpTestingController: HttpTestingController;
-
 beforeEach(() => {
-  TestBed.configureTestingModule({
-    imports: [ HttpClientTestingModule ],
-    providers: [ UserService ]
-  })
-  service = TestBed.get(UserService);
-  httpTestingController = TestBed.get(HttpTestingController);
+    TestBed.configureTestingModule({
+      imports: [ HttpClientTestingModule ],
+      providers: [ UserService ]
+    })
+    service = TestBed.get(UserService);
+    httpTestingController = TestBed.get(HttpTestingController);
 });
 it('should return mocked username', () => {
   let response = 'Brad'; 
@@ -73,7 +71,9 @@ it('should return mocked username', () => {
   req.flush(response);
   httpTestingController.verify();
 });
+
 ```
 <!-- .element: class="big-code" -->
+
 Notes
 - HttpTestingController et HttpClientTestingModule proviennent du package @angular/common/http/testing'
