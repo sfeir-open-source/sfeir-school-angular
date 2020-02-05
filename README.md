@@ -9,18 +9,18 @@ A [SFEIR School](https://www.sfeir.com/formation/school/)
 ## Installation
 
 - `git clone https://github.com/sfeir-open-source/sfeir-school-angular.git`
-- `cd sfeir-school-angular`
+- `cd sfeir-school-angular/TP`
 - `npm install`
 
 ## Slides
 
-Les slides sont disponibles ici : [Sfeir School Angular](https://docs.google.com/presentation/d/1JlOSH5bJWHEqF8sRc1mISOVRHJjJFLOLrDvIMbjjjOA/edit?usp=sharing)
+Les slides sont disponibles ici : [Sfeir School Angular](https://sfeir-open-source.github.io/sfeir-school-angular/)
 
 Les Slides sont derrière une license [CC BY ND 3.0](https://github.com/sfeir-open-source/sfeir-school-angular/blob/master/docs/LICENSE)
 
 ## Commandes
 
-La formation se déroule step by step, chaque TP ayant deux projets associés dans le dossier [`steps/`](steps), un pour la réalisation de l'excice et un autre avec la solution pour cet exercice, toujours intitulé avec le nom du projet step suivi de `-solution`.
+La formation se déroule step by step, chaque TP ayant deux projets associés dans le dossier [`TP/steps/`](TP/steps), un pour la réalisation de l'excice et un autre avec la solution pour cet exercice, toujours intitulé avec le nom du projet step suivi de `-solution`.
 
 Chacun de ces projets étant un projet Angular CLI, vous pouvez utiliser les commande Angular CLI habituelles.
 Exemple : `ng test <projet>`

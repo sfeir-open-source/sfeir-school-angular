@@ -1,0 +1,75 @@
+@import 'angular-color';
+
+.reveal .slides section {
+  .bold {
+    font-weight: 600;
+  }
+
+  .file-name {
+    font-size: 12px;
+  }
+
+  .important {
+    font-weight: 400;
+    color: darkred;
+  }
+
+  .center {
+    text-align: center;
+  }
+
+  .half {
+    width: 50%;
+  }
+
+  .tiers {
+    width: 30%;
+  }
+
+  .fill-rest {
+    flex: 2;
+  }
+
+  &.sfeir-bg-white-5 {
+    h1 {
+      position: absolute;
+      bottom: 3em;
+      right: 1em;
+      color: #880e4f !important
+    }
+  }
+
+  &.with-code,
+  &.with-code-dark {
+    pre {
+      code {
+        max-height: 800px !important;
+        overflow: auto !important;
+      }
+    }
+    pre.big-code {
+      font-size: 16px;
+    }
+    pre.big-code:not(.literal) {
+      position: relative;
+      top: 0;
+    }
+  }
+
+  img[alt*='full-width-screen'] {
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  img[alt*='bottom'] {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+/** Specific **/
+
+@import 'exercice';
+@import 'custom-directive';

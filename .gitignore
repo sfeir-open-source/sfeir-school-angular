@@ -6,8 +6,8 @@
 /out-tsc
 
 # dependencies
-/node_modules
-/bower_components
+node_modules
+bower_components
 
 # IDEs and editors
 /.idea
@@ -44,4 +44,4 @@ testem.log
 Thumbs.db
 
 #Utility tool
-pick.sh 
+pick.sh
