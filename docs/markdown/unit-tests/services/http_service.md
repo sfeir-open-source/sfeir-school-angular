@@ -34,7 +34,7 @@ beforeEach(() => {
     imports: [ HttpModule ],
     providers: [ UserService ]
   })
-  service = TestBed.get(UserService);
+  service = TestBed.inject(UserService);
 });
   
 it('should return a valid name', () => {
@@ -58,8 +58,8 @@ beforeEach(() => {
       imports: [ HttpClientTestingModule ],
       providers: [ UserService ]
     })
-    service = TestBed.get(UserService);
-    httpTestingController = TestBed.get(HttpTestingController);
+    service = TestBed.inject(UserService);
+    httpTestingController = TestBed.inject(HttpTestingController);
 });
 it('should return mocked username', () => {
   let response = 'Brad'; 
