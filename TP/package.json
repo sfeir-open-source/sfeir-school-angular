@@ -15,7 +15,8 @@
   "authors": [
     "Wassim Chegham <chegham.w@sfeir.com>",
     "Cyril Balit <balit.c@sfeir.com>",
-    "Noël Macé <mace.n@sfeir.com"
+    "Noël Macé <mace.n@sfeir.com",
+    "Nicolas Frizzarin <frizzarin.n@sfeir.com>"
   ],
   "private": true,
   "dependencies": {
