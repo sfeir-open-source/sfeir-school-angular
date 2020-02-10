@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
-import { catchError } from 'rxjs/operators';
+import { catchError, map } from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
+import { Store } from '@ngxs/store';
+import { SetPeople } from '../../app.state';
 @Injectable()
 export class PeopleService {
   backendURL: any;
 
-  constructor(private _http: HttpClient) {
+  constructor(private _http: HttpClient, private store: Store) {
     this.backendURL = {};
 
     // build backend base url
@@ -31,7 +33,10 @@ export class PeopleService {
   }
 
   fetch(): Observable<any> {
-    return this._http.get(this.backendURL.allPeople).pipe(catchError(this.handleError([])));
+    return this._http.get(this.backendURL.allPeople).pipe(
+      map(people => this.store.dispatch(new SetPeople(people))),
+      catchError(this.handleError([]))
+    );
   }
 
   fetchRandom(): Observable<any> {
