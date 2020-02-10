@@ -32,7 +32,7 @@
     "@angular/router": "^9.0.0",
     "@ngrx/store": "^8.2.0",
     "@ngrx/store-devtools": "^8.3.0",
-    "@ngxs/store": "^3.3.4",
+    "@ngxs/store": "^3.6.2",
     "body-parser": "1.18.3",
     "core-js": "2.6.2",
     "cors": "2.8.5",
