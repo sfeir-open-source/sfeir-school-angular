@@ -45,10 +45,10 @@ export class MockActivatedRoute {
 
 export class MockPeopleService {
   fetchOne(id) {
-    return Observable.create(o => o.next(expectedResponse));
+    return new Observable(o => o.next(expectedResponse));
   }
   update(person: any) {
-    return Observable.create(o => o.next(Object.assign(expectedResponse, person)));
+    return new Observable(o => o.next(Object.assign(expectedResponse, person)));
   }
 }
 

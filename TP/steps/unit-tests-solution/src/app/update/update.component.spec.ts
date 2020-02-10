@@ -1,14 +1,11 @@
 /* tslint:disable:no-unused-variable */
 
-import { PeopleService } from './../shared/people-service/people.service';
-import { ActivatedRoute, Router } from '@angular/router';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
-
-import { UpdateComponent } from './update.component';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { PeopleService } from './../shared/people-service/people.service';
+import { UpdateComponent } from './update.component';
 
 const expectedResponse = {
   id: '123',
@@ -44,11 +41,11 @@ export class MockActivatedRoute {
 }
 
 export class MockPeopleService {
-  fetchOne(id) {
-    return Observable.create(o => o.next(expectedResponse));
+  fetchOne() {
+    return new Observable(o => o.next(expectedResponse));
   }
   update(person: any) {
-    return Observable.create(o => o.next(Object.assign(expectedResponse, person)));
+    return new Observable(o => o.next(Object.assign(expectedResponse, person)));
   }
 }
 

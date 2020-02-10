@@ -1,7 +1,6 @@
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { PeopleService } from './people.service';
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import { HttpClient } from '@angular/common/http';
 
 describe('PeopleService', () => {
   const expectedResponse = [
@@ -46,7 +45,7 @@ describe('PeopleService', () => {
 
   describe('fetch()', () => {
     it('should fetch all people when status === 200', () => {
-      service.fetch().subscribe(response => {
+      service.fetch().subscribe(() => {
         // TODO
         expect(true).toBe(false);
       });
@@ -67,7 +66,7 @@ describe('PeopleService', () => {
     it('should return an empty array when status !== 200', () => {
       const emsg = 'deliberate 404 error';
 
-      service.fetch().subscribe(response => {
+      service.fetch().subscribe(() => {
         // TODO
         expect(true).toBe(false);
       }, fail);
@@ -81,7 +80,7 @@ describe('PeopleService', () => {
 
   describe('fetchRandom()', () => {
     it('should fetch random person when status === 200', () => {
-      service.fetchRandom().subscribe(person => {
+      service.fetchRandom().subscribe(() => {
         // TODO
         expect(true).toBe(false);
       });
@@ -96,7 +95,7 @@ describe('PeopleService', () => {
     it('should fetch person with id=456 when status === 200', () => {
       const id = '456';
 
-      service.fetchOne('456').subscribe(person => {
+      service.fetchOne('456').subscribe(() => {
         // TODO
         expect(true).toBe(false);
       });
@@ -111,7 +110,7 @@ describe('PeopleService', () => {
     it('should delete person with id=456 when status === 200', () => {
       const id = '456';
 
-      service.delete(id).subscribe(response => {
+      service.delete(id).subscribe(() => {
         // TODO
         expect(true).toBe(false);
       });
@@ -132,7 +131,7 @@ describe('PeopleService', () => {
 
       const body = { ...expectedResponse[0], ...newData };
 
-      service.update(body).subscribe(person => {
+      service.update(body).subscribe(() => {
         // TODO
         expect(true).toBe(false);
       });
@@ -152,7 +151,7 @@ describe('PeopleService', () => {
         twitter: '@manekinekko'
       };
 
-      service.create(body).subscribe(person => {
+      service.create(body).subscribe(() => {
         // TODO
         expect(true).toBe(false);
       });

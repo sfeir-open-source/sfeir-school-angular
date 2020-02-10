@@ -1,10 +1,7 @@
-import { BrowserModule, By } from '@angular/platform-browser';
-import { inject } from '@angular/core/testing';
+import { Component, ElementRef } from '@angular/core';
 /* tslint:disable:no-unused-variable */
-
-import { TestBed, async, ComponentFixture } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { SfeirBadgeDirective } from './sfeir-badge.directive';
-import { ElementRef, Component, Renderer2 } from '@angular/core';
 
 export class MockElementRef extends ElementRef {
   constructor() {
@@ -13,7 +10,7 @@ export class MockElementRef extends ElementRef {
 }
 
 export class MockRenderer {
-  setElementProperty(...args) {}
+  setElementProperty() {}
 }
 
 @Component({
