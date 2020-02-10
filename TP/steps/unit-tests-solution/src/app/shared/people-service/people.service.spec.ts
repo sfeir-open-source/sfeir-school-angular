@@ -35,8 +35,8 @@ describe('PeopleService', () => {
     });
 
     // Inject the http service and test controller for each test
-    service = TestBed.get(PeopleService);
-    httpTestingController = TestBed.get(HttpTestingController);
+    service = TestBed.inject(PeopleService);
+    httpTestingController = TestBed.inject(HttpTestingController);
   });
 
   afterEach(() => {
