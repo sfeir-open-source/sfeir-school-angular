@@ -26,12 +26,12 @@ export class PeopleComponent implements OnInit, OnDestroy {
    * OnInit implementation
    */
   ngOnInit() {
+    this._peopleService.fetch().subscribe();
     this._store
       .select(AppState.filteredPeople)
       .pipe(takeUntil(this.destroyPeopleSubscription))
       .subscribe((people: Array<Object>) => (this.people = people));
     this.search$ = this._store.select(AppState.search);
-    this._store.dispatch(new LoadPeople());
   }
 
   ngOnDestroy() {

@@ -1,6 +1,4 @@
-import { PeopleService } from './shared';
-import { State, Selector, Action, StateContext } from '@ngxs/store';
-import { map } from 'rxjs/operators';
+import { Action, Selector, State, StateContext } from '@ngxs/store';
 
 export interface AppStateModel {
   people: Object[];
@@ -52,12 +50,7 @@ export class AppState {
     return state.people.filter(AppState.filterPerson(state.search));
   }
 
-  constructor(private peopleService: PeopleService) {}
-
-  @Action(LoadPeople)
-  loadPeople({ dispatch }: StateContext<AppStateModel>) {
-    return this.peopleService.fetch().pipe(map(p => dispatch(new SetPeople(p))));
-  }
+  constructor() {}
 
   @Action(SetPeople)
   setPeople({ getState, setState }: StateContext<AppStateModel>, { payload }: SetPeople) {
