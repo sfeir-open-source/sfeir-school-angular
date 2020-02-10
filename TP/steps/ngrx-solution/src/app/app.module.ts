@@ -62,7 +62,6 @@ import { environment } from '../environments/environment';
     SfeirBadgeDirective,
     SearchComponent
   ],
-  entryComponents: [AddDialogComponent],
   providers: [PeopleService],
   bootstrap: [PeopleAppComponent]
 })

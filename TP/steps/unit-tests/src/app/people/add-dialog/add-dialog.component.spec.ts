@@ -28,6 +28,7 @@ describe('AddDialogComponent', () => {
   });
 
   it('should create', () => {
+    console.log(component);
     expect(true).toBe(false);
   });
 
@@ -43,6 +44,7 @@ describe('AddDialogComponent', () => {
 
   it('closeDialog should call closing service of dialog', inject([MatDialogRef], dialogRef => {
     // TODO
+    console.log(dialogRef);
     expect(true).toBe(false);
   }));
 });
