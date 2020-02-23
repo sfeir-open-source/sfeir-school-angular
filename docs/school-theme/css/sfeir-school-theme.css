@@ -451,7 +451,7 @@ body {
 }
 
 /*
-* 
+*
 * MIXINS
 **/
 img[alt*='h-50'],
@@ -1337,8 +1337,7 @@ img[alt*='wm-1000'],
   top: 300px;
   width: 400px;
   margin-top: 20px;
-  -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  border-radius: 200px;
 }
 .reveal .slides section[data-background].speaker-slide img[alt*='company'] {
   position: absolute;
