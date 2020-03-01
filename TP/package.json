@@ -16,7 +16,8 @@
     "Wassim Chegham <chegham.w@sfeir.com>",
     "Cyril Balit <balit.c@sfeir.com>",
     "Noël Macé <mace.n@sfeir.com",
-    "Nicolas Frizzarin <frizzarin.n@sfeir.com>"
+    "Nicolas Frizzarin <frizzarin.n@sfeir.com>",
+    "Tine Kondo <kondo.t@sfeir.com>"
   ],
   "private": true,
   "dependencies": {
@@ -31,8 +32,8 @@
     "@angular/platform-browser": "^9.0.0",
     "@angular/platform-browser-dynamic": "^9.0.0",
     "@angular/router": "^9.0.0",
-    "@ngrx/store": "^8.2.0",
-    "@ngrx/store-devtools": "^8.3.0",
+    "@ngrx/store": "^9.0.0-beta.2",
+    "@ngrx/store-devtools": "^9.0.0-beta.2",
     "@ngxs/store": "^3.6.2",
     "body-parser": "1.18.3",
     "core-js": "2.6.2",
