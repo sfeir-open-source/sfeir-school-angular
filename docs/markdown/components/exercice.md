@@ -4,7 +4,7 @@
 <br><br>
 <ul>
     <li>Faire en sorte que PeopleComponent utilise HomeComponent</li>
-    <li>Voir le contenue du fichier home.component.html</li>
+    <li>Voir le contenu du fichier home.component.html</li>
     <li>Mettre à jour les fichiers nécessaires</li>
 </ul>
 Notes

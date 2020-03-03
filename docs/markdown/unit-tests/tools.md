@@ -31,6 +31,6 @@
 <!-- .slide: class="sfeir-basic-slide" -->
 # Angular CLI et les test
 <br><br>
-- Angular vient avec tous ce dont on a besoin pour réaliser des tests unitaires (aucune configuration requise)
+- Angular vient avec tout ce dont on a besoin pour réaliser des tests unitaires (aucune configuration requise)
 <br><br>
 <img alt="center h-700" src="assets/images/school/unit-tests/ng_test_helper.png" />

@@ -3,7 +3,7 @@
 <span class="center bold">steps/form</span>
 <br>
 <ul>
-  <li>Le composant PeopleComponent vient d'être compléter par deux méthodes:
+  <li>Le composant PeopleComponent vient d'être complété par deux méthodes:
     - showDialog(): affiche une modal
     - hideDialog(): permet de cacher la modal
   </li>

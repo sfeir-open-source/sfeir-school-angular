@@ -2,7 +2,7 @@
 ## Exercice
 <span class="center bold">steps/events</span>
 <ul>
-    <li>Un bouton random a été ajouter dans le fichier app.component.html</li><br>
+    <li>Un bouton random a été ajouté dans le fichier app.component.html</li><br>
     <li>Ajouter une click sur ce bouton pour afficher une personne au hasard</li>
 </ul>
 Notes

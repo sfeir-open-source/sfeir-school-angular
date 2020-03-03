@@ -4,7 +4,7 @@
     <thead>
         <tr>
             <td>Direction</td>
-            <td>Syntax</td>
+            <td>Syntaxe</td>
             <td>Type</td>
         </tr>
     </thead>

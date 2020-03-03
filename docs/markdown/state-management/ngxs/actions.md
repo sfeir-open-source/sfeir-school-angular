@@ -21,7 +21,7 @@ Ici name et hayAmount
 <!-- .slide: class="sfeir-basic-slide with-code" -->
 # Action: Comment la déclancher
 <br>
-- Dans le composant, l'action est déclancher grâce au mot clé __disptach__
+- Dans le composant, l'action est déclenché grâce au mot clé __disptach__
 - Une action renvoie toujours un observable
 <br><br>
 ```typescript

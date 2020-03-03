@@ -11,7 +11,7 @@
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide" -->
-# Angular et ses pipes déjà existant
+# Angular et ses pipes déjà existants
 <br>
 - currency
 - date

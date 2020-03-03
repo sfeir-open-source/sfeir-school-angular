@@ -1,5 +1,5 @@
 <!-- .slide: class="sfeir-basic-slide with-code" -->
-# Syntax
+# Syntaxe
 <br>
 <ul>
     <li>A la suite d'une expression d'interpolation</li>
@@ -27,7 +27,7 @@
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide with-code" -->
-# Syntax du pipe currency
+# Syntaxe du pipe currency
 <br><br>
 ```typescript
 this.amount = 1234.56
@@ -48,7 +48,7 @@ Notes
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide with-code" -->
-# Syntax du pipe date
+# Syntaxe du pipe date
 <br><br>
 - Formate une date selon un certain format et selon une locale
 ```html
