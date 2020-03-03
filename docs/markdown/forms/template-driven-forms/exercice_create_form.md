@@ -3,7 +3,7 @@
 <span class="center bold">steps/form</span>
 <br>
 <ul>
-  <li>Le composant PeopleComponent vient d'être compléter par deux méthodes:
+  <li>Le composant PeopleComponent vient d'être complété par deux méthodes:
     - showDialog(): affiche une modal
     - hideDialog(): permet de cacher la modal
   </li>
@@ -19,7 +19,7 @@
 ## Exercice
 <span class="center bold">steps/form</span>
 <br>
-- A l'aide du CLI, créer dans le dossir shared, le composant FormComponent
+- A l'aide du CLI, créer dans le dossier shared, le composant FormComponent
 - Intégrer FormComponent dans AddDialogComponent
 - Rendre le formulaire template driven form
 - Faire communiquer FormComponent avec AddDialogComponent à l'aide des évènements cancel et personAdd

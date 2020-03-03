@@ -1,7 +1,7 @@
 <!-- .slide: class="sfeir-basic-slide with-code" -->
 # State: définition
 <br><br>
-Le __State__ est une classe précédé de l'annotation __@State__ qui défini notre state container
+Le __State__ est une est déclenchée de l'annotation __@State__ qui définie notre state container
 <br><br>
 ```typescript
 import { State } from '@ngxs/store';

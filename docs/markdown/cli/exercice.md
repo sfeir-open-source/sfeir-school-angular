@@ -19,7 +19,7 @@ Notes
 <ul>
     <li>Ajouter ce composant dans les "declarations" du fichier app.module.ts</li>
     <li>Remplacer dans "bootstrap" le composant AppComponent par HomeComponent</li>
-    <li>Dans le fichier index.html, utilser le sélécteur de HomeComponent pour pouvoir l'afficher</li>
+    <li>Dans le fichier index.html, utiliser le sélécteur de HomeComponent pour pouvoir l'afficher</li>
 </ul>
 
 ##==##

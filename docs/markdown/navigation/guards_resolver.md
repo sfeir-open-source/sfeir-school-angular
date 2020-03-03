@@ -7,12 +7,12 @@
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide with-code" -->
-# Un example plus parlant (le résolver définition)
+# Un exemple plus parlant (le résolver définition)
 <br><br>
 ```typescript
 @Injectable({ providedIn: CoreModule })
 export class UserResolver implements Resolve<User[]> {
-  constructor(private readonlyn userService: UserService) {}
+  constructor(private readonly userService: UserService) {}
 
   resolve() {
     return this.userService.getUsers();

@@ -25,7 +25,7 @@ export class AppModule { }
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide with-code" -->
-# Syntax Global dans les formulaires Reactive forms
+# Syntaxe Global dans les formulaires Reactive forms
 
 ```html
 <form [formGroup]="editForm">
@@ -52,7 +52,7 @@ export class FormComponent {
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide with-code" -->
-# La Syntax dans le template
+# La Syntaxe dans le template
 <br>
 <ul>
     <li>Référence au modèle de formulaire via <strong>formGroup</strong></li>
@@ -96,7 +96,7 @@ Notes
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide with-code" -->
-# La syntax dans la classe
+# La syntaxe dans la classe
 <br><br>
 ```typescript
 import { Validators, FormControl, FormGroup } from '@angular/forms';
