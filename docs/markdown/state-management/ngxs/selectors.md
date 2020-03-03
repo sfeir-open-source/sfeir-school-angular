@@ -33,7 +33,7 @@ export class ZooComponent {
 <!-- .slide: class="sfeir-basic-slide with-code" -->
 # Selectors: Select Function
 <br>
-Le store possède une méthod __select__ qui peut être utile lorsque l'on ne peut pas déclarer statiquement un sélecteur avec l'annotation __@Select__.<br>
+Le store possède une méthode __select__ qui peut être utile lorsque l'on ne peut pas déclarer statiquement un sélecteur avec l'annotation __@Select__.<br>
 Attention cette méthode renvoie un observable
 <br><br>
 ```typescript
@@ -56,7 +56,7 @@ Notes
 <!-- .slide: class="sfeir-basic-slide with-code" -->
 # Selectors: Memoized Selectors
 <br>
-Lorsque l'on souhaite utiiser une sélécteur dans différents endroits de son application ou encore avoir une logique de sélectors plus compliqué qu'un simple renvoie de state courant, les __Memoized Selectors__ sont vos alliés.
+Lorsque l'on souhaite utiiser une sélécteur dans différents endroits de son application ou encore avoir une logique de sélectors plus compliquée qu'un simple renvoie de state courant, les __Memoized Selectors__ sont vos alliés.
 <br>
 ```typescript
 import { State, Selector } from '@ngxs/store';

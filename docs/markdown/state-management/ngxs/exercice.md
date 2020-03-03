@@ -2,7 +2,7 @@
 ## Exercice
 <span class="center bold">steps/ngxs</span>
 <br><br>
-- Une barre de recherche a été ajouté à votre application
+- Une barre de recherche a été ajoutée à votre application
 - Lors de la recherche vous devez filtrer la liste des personnes
 - Mettre en place une architecture NGXS afin de parvenir à ce resultat
 Notes

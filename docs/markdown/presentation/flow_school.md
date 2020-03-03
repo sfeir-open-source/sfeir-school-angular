@@ -55,6 +55,6 @@ npm run server
 <span><strong>Chaque concept clé d'Angular est accompagné d'un TP.</strong></span>
 <br><br><br>
 Déroulement du TP :
- - <strong>une page d'excercice : steps/src/pages/`name_tp`</strong>
+ - <strong>une page d'excercice : steps/`name_tp`</strong>
 
- - <strong>une page de solution : steps/src/pages/`name_tp_solution`</strong>
+ - <strong>une page de solution : steps/`name_tp-solution`</strong>

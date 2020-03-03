@@ -1,7 +1,7 @@
 <!-- .slide: class="sfeir-basic-slide with-code" -->
 # Qu'est ce qu'un Service
 <ul>
-    <li>Une classe exporté</li><br>
+    <li>Une classe exportée</li><br>
     <li>Une annotation <strong>@Injectable</strong></li>
 </ul>
 ```typescript

@@ -8,7 +8,7 @@ La validation se fait à l'aide des attributs html classique de validations:<br>
 <br><br>
 <span class="important">Ok mais si un champs est requis en fonction d'un autre?</span>
 <br><br>
-Et bien on utilise la propriété lié à l'attribut
+Et bien on utilise la propriété liée à l'attribut
 <br>
 ```html
 <input type="text" name="lastname" [(ngModel)]="person.lastname"

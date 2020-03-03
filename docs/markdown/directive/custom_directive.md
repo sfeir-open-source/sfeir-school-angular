@@ -38,7 +38,7 @@ export class MyDirective {}
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide" -->
-# Quelques exemples seront plus parlant
+# Quelques exemples seront plus parlants
 <br><br>
 <div class="flex-row">
     <img alt="h-400" src="assets/images/school/directive/attribut_directive.png" />

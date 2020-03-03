@@ -4,7 +4,7 @@
 <br>
 <ul>
     <li>Créer un composant CardComponent dans le dossier shared à l'aide du CLI</li>
-    <li>Copier le contenue du template et du Style du composant HomeComponant</li>
+    <li>Copier le contenu du template et du Style du composant HomeComponant</li>
     <li>Passer la variable person au composant CardComponent</li>
 </ul>
 Notes

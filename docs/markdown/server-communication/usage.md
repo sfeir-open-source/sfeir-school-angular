@@ -33,7 +33,7 @@ http.post(
 <br><br>
 <ul>
     <li>Chaque méthode renvoie un observable</li><br>
-    <li>La requête vers le serveur est envoyé seulement si l'on souscrit à cet observable</li>
+    <li>La requête vers le serveur est envoyée seulement si l'on souscrit à cet observable</li>
 </ul>
 <br><br>
 ```typescript

@@ -7,7 +7,7 @@ ng new my-awesome-app
 <!-- .element: class="big-code" -->
 <br><br>
 <ul>
-    <li>Initialise un projet entier, prêt à être mise en production</li><br>
+    <li>Initialise un projet entier, prêt à être mis en production</li><br>
     <li>Initialise un repo GIT, avec un premier commit (option que l'on peut désactiver)</li><br>
     <li>Install les dépendances (on peut choisir entre npm ou yarn)</li>
 </ul>
@@ -24,7 +24,7 @@ ng generate component user
 ```
 <!-- .element: class="big-code" -->
 <br>
-Cette commande génère les fichiers suivant:<br>
+Cette commande génère les fichiers suivants:<br>
 <ul>
     <li>src/app/user/user.component.css</li><br>
     <li>src/app/user/user.component.html</li><br>
