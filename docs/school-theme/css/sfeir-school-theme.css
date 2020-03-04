@@ -451,7 +451,7 @@ body {
 }
 
 /*
-* 
+*
 * MIXINS
 **/
 img[alt*='h-50'],
@@ -1295,6 +1295,13 @@ img[alt*='wm-1000'],
 }
 .reveal .slides section[data-background].first-slide div.sfeir-logo[data-sfeir-level='3']:after {
   background: url('../images/star.png'), url('../images/star.png'), url('../images/star.png');
+  background-position: calc(50% - 35px) 25px, calc(50% + 35px) 25px, 50% 65px;
+  background-repeat: no-repeat;
+  background-size: 55px;
+}
+
+.reveal .slides section[data-background].first-slide div.sfeir-logo[data-sfeir-level='4']:after {
+  background: url('../images/star.png'), url('../images/star.png'), url('../images/star.png'), url('../images/star.png');
   background-position: calc(50% - 35px) 25px, calc(50% + 35px) 25px, 50% 65px;
   background-repeat: no-repeat;
   background-size: 55px;

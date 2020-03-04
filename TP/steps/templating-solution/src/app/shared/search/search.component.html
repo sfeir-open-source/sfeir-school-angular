@@ -1,0 +1,17 @@
+<section class="search-input">
+  <mat-icon>search</mat-icon>
+  <mat-form-field autocomplete="off" color="light">
+    <input
+      matInput
+      #mdInputRef
+      autocomplete="off"
+      (input)="search(mdInputRef.value)"
+      (keyup.enter)="onSelect()"
+      (keydown.ArrowUp)="prev()"
+      (keydown.ArrowDown)="next()"
+      (keydown.ArrowLeft)="prev()"
+      (keydown.ArrowRight)="next()"
+      [value]="initValue | uppercase"
+    />
+  </mat-form-field>
+</section>
