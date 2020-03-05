@@ -5270,6 +5270,196 @@
           }
         }
       }
+    },
+    "hostbinding": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:component": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:module": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        }
+      },
+      "root": "steps/hostbinding",
+      "sourceRoot": "steps/hostbinding/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/hostbinding",
+            "index": "steps/hostbinding/src/index.html",
+            "main": "steps/hostbinding/src/main.ts",
+            "polyfills": "steps/hostbinding/src/polyfills.ts",
+            "tsConfig": "steps/hostbinding/tsconfig.app.json",
+            "aot": true,
+            "assets": ["steps/hostbinding/src/favicon.ico", "steps/hostbinding/src/assets"],
+            "styles": ["steps/hostbinding/src/styles.css"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "steps/hostbinding/src/environments/environment.ts",
+                  "with": "steps/hostbinding/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "hostbinding:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "hostbinding:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "hostbinding:build"
+          }
+        }
+      }
+    },
+    "hostbinding-solution": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:component": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:module": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        }
+      },
+      "root": "steps/hostbinding-solution",
+      "sourceRoot": "steps/hostbinding-solution/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/hostbinding-solution",
+            "index": "steps/hostbinding-solution/src/index.html",
+            "main": "steps/hostbinding-solution/src/main.ts",
+            "polyfills": "steps/hostbinding-solution/src/polyfills.ts",
+            "tsConfig": "steps/hostbinding-solution/tsconfig.app.json",
+            "aot": true,
+            "assets": ["steps/hostbinding-solution/src/favicon.ico", "steps/hostbinding-solution/src/assets"],
+            "styles": ["steps/hostbinding-solution/src/styles.css"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "steps/hostbinding-solution/src/environments/environment.ts",
+                  "with": "steps/hostbinding-solution/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "hostbinding-solution:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "hostbinding-solution:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "hostbinding-solution:build"
+          }
+        }
+      }
     }
   },
   "defaultProject": "angular-200",
