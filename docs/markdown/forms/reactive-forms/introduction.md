@@ -1,10 +1,13 @@
 <!-- .slide: class="sfeir-bg-white-5" -->
+
 # Reactive forms
 
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide with-code" -->
+
 # La Fondation du Reactive forms
+
 <br>
 Pour réaliser des formulaires avec Reactive Forms, il est nécessaire d'importer le module <strong>ReactiveFormsModule</strong> provenant également du package <strong>@angular/forms</strong>
 <br><br>
@@ -13,42 +16,16 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  imports: [BrowserModule, ReactiveFormsModule],
-  declarations: [ ],
-  providers: [],
-  bootstrap: []
+imports: [BrowserModule, ReactiveFormsModule],
+declarations: [ ],
+providers: [],
+bootstrap: []
 })
 export class AppModule { }
+
 ```
 <!-- .element: class="big-code" -->
 
-##==##
-
-<!-- .slide: class="sfeir-basic-slide with-code" -->
-# Syntax Global dans les formulaires Reactive forms
-
-```html
-<form [formGroup]="editForm">
-   <input type="text" formControlName="firstname">
-   <div [hidden]="!editForm.controls.firstname.valid">Firstname est d'un format invalid</div> 
-   <button type="submit" [disabled]="!editForm.valid">Modifier</button>
-</form>
-```
-<!-- .element: class="big-code" -->
-<br>
-```typescript
-import { Validators, FormControl, FormGroup } from '@angular/forms';
-@Component({...})
-export class FormComponent {
-  editForm: FormGroup;
-   constructor() {
-    this.editForm = new FormGroup({
-        firstname: new FormControl('', [Validators.required, Validators.minLength(2)])
-    })
-   }
-}
-```
-<!-- .element: class="big-code" -->
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide with-code" -->
@@ -62,19 +39,24 @@ export class FormComponent {
 ```html
 <form [formGroup]="editForm">
    <input type="text" formControlName="firstname">
-   <div [hidden]="!editForm.controls.firstname.valid">Firstname est d'un format invalid</div> 
+   <div [hidden]="!editForm.controls.firstname.valid">Firstname est d'un format invalid</div>
    <button type="submit" [disabled]="!editForm.valid">Modifier</button>
 </form>
 ```
+
 <!-- .element: class="big-code" -->
+
 Notes
-- formGroup déclare comme pour le template driven form une référence sur le modèle editForm
-- formControlName: effectue le binding d'un contrôle présent dans le modèle
+
+-   formGroup déclare comme pour le template driven form une référence sur le modèle editForm
+-   formControlName: effectue le binding d'un contrôle présent dans le modèle
 
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide with-code" -->
+
 # Regrouper les champs dans le template
+
 <br>
 <ul>
     <li>Regrouper les champs dans un sous object grâce à <strong>FormGroupName</strong></li>
@@ -96,8 +78,11 @@ Notes
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide with-code" -->
+
 # La syntax dans la classe
+
 <br><br>
+
 ```typescript
 import { Validators, FormControl, FormGroup } from '@angular/forms';
 @Component({...})
@@ -105,12 +90,40 @@ export class FormComponent {
   editForm: FormGroup;
    constructor() {
     this.editForm = new FormGroup({
-        firstname: new FormControl('', [Validators.required, Validators.minLength(2)])
+        firstname: new FormControl('', [Validators.required, Validators.minLength(2)]),
+        secondname: new FormControl(''),
     })
    }
 }
 ```
+
 <!-- .element: class="big-code" -->
+
 Notes
-- firstname est de type AbstracteControl, si l'on souhaite update ça value lors d'un certain évènement comme le click d'un bouton, il existe la méthode patchValue
-- coup de pouce: Réaliser des getters qui renvoie l'AbstractControl. Ca allégerera votre template => this.editForm.get('firstname')
+
+-   firstname est de type AbstracteControl, si l'on souhaite update ça value lors d'un certain évènement comme le click d'un bouton, il existe la méthode patchValue
+-   coup de pouce: Réaliser des getters qui renvoie l'AbstractControl. Ca allégerera votre template => this.editForm.get('firstname')
+
+##==##
+
+<!-- .slide: class="sfeir-basic-slide with-code" -->
+
+# FormBuilder
+
+<br></br>
+
+```typescript
+import { Validators, FormControl, FormGroup, FormBuilder } from '@angular/forms';
+@Component({...})
+export class FormComponent {
+  editForm: FormGroup;
+   constructor(private fb: FormBuilder) {
+    this.editForm = this.fb.group({
+        firstname: ['', [Validators.required, Validators.minLength(2)]]
+        secondname: [''],
+    })
+   }
+}
+```
+
+<!-- .element: class="big-code" -->

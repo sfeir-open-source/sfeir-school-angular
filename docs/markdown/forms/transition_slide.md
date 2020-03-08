@@ -18,5 +18,5 @@ Notes:
 # Les Formulaires en Angular
 <br><br>
 Il existe deux types de formulaire en Angular:<br><br>
-- <strong>Template driven form</strong>: formulaire piloté par le template<br><br>
-- <strong>Reactive forms</strong>: formulaire piloté par la logique composant
+- <strong>Template driven form</strong>: Créé par des directives, non structuré, utile pour des formulaires très simples<br><br>
+- <strong>Reactive forms</strong>: Créé dans le component, structuré, plus explicite
