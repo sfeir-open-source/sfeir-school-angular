@@ -96,7 +96,7 @@ Notes
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide with-code" -->
-# La syntax dans la classe
+# La syntaxe dans la classe
 <br><br>
 ```typescript
 import { Validators, FormControl, FormGroup } from '@angular/forms';

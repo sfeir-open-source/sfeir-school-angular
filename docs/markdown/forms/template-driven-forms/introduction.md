@@ -25,7 +25,7 @@ export class AppModule { }
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide with-code" -->
-# La syntax dans le template driven forms
+# La syntaxe dans le template driven forms
 <br><br>
 <ul>
     <li><strong>#authentificationForm="ngForm"</strong>: On déclare une référence sur un formulaire</li><br>
