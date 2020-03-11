@@ -1,0 +1,12 @@
+<span id="sfeir-input">
+  <mat-form-field>
+    <input
+      #InputElement
+      matInput
+      type="text"
+      [placeholder]="placeholder"
+      (keyup)="changeValue(InputElement.value, $event)"
+      (blur)="loseFocus(InputElement.value)"
+    />
+  </mat-form-field>
+</span>
