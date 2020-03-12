@@ -3,7 +3,7 @@
 <br><br>
 - Responsable du layout
 - Manipule les éléments du DOM (ajout, suppression, etc)
-- s'applique sur un 'host' élément
+- S'applique sur un 'host' élément
 - Facilement reconnaissable grâce à l'asterix (ex: *ngIf)
 - Une seule directive structurelle par élément 'host'
 
