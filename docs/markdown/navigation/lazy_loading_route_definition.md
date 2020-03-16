@@ -1,12 +1,11 @@
 <!-- .slide: class="sfeir-basic-slide with-code" -->
-# Définiton dans les routes 
+# Définiton dans les routes du module principal
 <br><br>
 ```typescript
 const ROUTES: Routes = [
 { path: '', redirectTo: 'home', pathMatch: 'full' },
 { path: 'home', component: HomeComponent },
-{path: 'people', loadChildren: () => import('./people/people.module').then(mod => mod.PeopleModule) },
-{ path: 'people/:id', loadChildren: () => import('./people/people.module').then(mod => mod.PeopleModule) },
+{ path: 'people', loadChildren: () => import('./people/people.module').then(mod => mod.PeopleModule) }
 ];
 ```
 <!-- .element: class="big-code" -->
