@@ -7,7 +7,7 @@ import { FormControl, Validators, FormGroup } from '@angular/forms';
   styleUrls: ['form.component.css']
 })
 export class FormComponent implements OnInit, OnChanges {
-  private form: FormGroup;
+  form: FormGroup;
   @Input() model: any;
   isUpdateMode: boolean;
 

@@ -9,7 +9,7 @@ import { CustomValidators } from './custom-validators';
   styleUrls: ['form.component.css']
 })
 export class FormComponent implements OnInit, OnChanges {
-  private form: FormGroup;
+  form: FormGroup;
   @Input() model: any;
   isUpdateMode: boolean;
 
