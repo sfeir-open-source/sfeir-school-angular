@@ -21,4 +21,4 @@ Notes
 
 <!-- .slide: class="sfeir-bg-blue exercice" -->
 ## Solution
-<span class="full-center bold">steps/ngxs</span>
+<span class="full-center bold">steps/ngxs-solution</span>

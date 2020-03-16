@@ -2,9 +2,9 @@
 # Action: Définition
 <br>
 Les __actions__ sont des commandes qui doivent déclancher une mutation de l'état (state).<br><br>
-C'est uniquement à travers des actions que l'on modifie l'état de notre state
+C'est uniquement à travers des actions que l'on modifie le contenu du state
 <br><br>
-Chaque action doit obligatoirement contenir un champs qui l'identifiant unique de l'action<br><br><br>
+Chaque action doit obligatoirement contenir un champs type qui est l'identifiant unique de l'action<br><br><br>
 ```typescript
 export class FeedZebra {
   static readonly type = '[Zoo] Feed Zebra';
@@ -22,7 +22,6 @@ Ici name et hayAmount
 # Action: Comment la déclancher
 <br>
 - Dans le composant, l'action est déclenché grâce au mot clé __disptach__
-- Une action renvoie toujours un observable
 <br><br>
 ```typescript
 @Component({ ... })
@@ -30,7 +29,7 @@ export class ZooComponent {
     constructor(private readonly store: Store) {}
 
     addFee({ name: string, hayAmount: number }): void {
-        this.store.dispatch(name, hayAmount);
+        this.store.dispatch(new FeedZebra(name, hayAmount));
     }
 }
 ```
@@ -41,7 +40,7 @@ export class ZooComponent {
 <!-- .slide: class="sfeir-basic-slide" -->
 # Actions: Convention de nommage
 <br><br>
-Une __bonne__ action doit contenir trois parties:<br><br>
+Bonne pratique: Une __bonne__ action doit être identifiée par:<br><br>
 - d'ou vient l'action [PAGE, API, ...]
 - un verbe décrivant l'action [GETUSER]
 - l'entité sur laquel agit l'action

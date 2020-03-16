@@ -1,7 +1,8 @@
 <!-- .slide: class="sfeir-basic-slide with-code" -->
 # State: définition
 <br><br>
-Le __State__ est une est déclenchée de l'annotation __@State__ qui définie notre state container
+Le __State__ est une classe annoté par l'annotation __@State__.
+Cette classe définie les éléments à persister dans le store.
 <br><br>
 ```typescript
 import { State } from '@ngxs/store';
@@ -40,35 +41,6 @@ Notes
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide with-code" -->
-# State: Réduire nos actions (rappel)
-Rappel: dans notre fichier __todos.actions.ts__ nous avions ce contenu
-<br><br>
-```typescript
-export namespace Todo {
-  export class Add {
-    static readonly type = '[Todo] Add';
-    constructor(public payload: any) {}
-  }
-
-  export class Edit {
-    static readonly type = '[Todo] Edit';
-    constructor(public payload: any) {}
-  }
-
-  export class FetchAll {
-    static readonly type = '[Todo] Fetch All';
-  }
-
-  export class Delete {
-    static readonly type = '[Todo] Delete';
-    constructor(public id: number) {}
-  }
-}
-```
-
-##==##
-
-<!-- .slide: class="sfeir-basic-slide with-code" -->
 # State: déclarer nos actions
 <br>
 ```typescript
@@ -81,7 +53,7 @@ import { Todo } from './todo.action';
 export class TodoState {
     constructor() { }    
     @Action(Todo.Add)
-    addTodo(ctx: StateContext<string[]>, action: any): void {
+    addTodo(ctx: StateContext<string[]>, action: Todo.Add): void {
         const state: strings[] = ctx.getState();
         ctx.setState([...state, action.payload])
     }
@@ -96,8 +68,8 @@ export class TodoState {
 <br><br>
 - Pour résumé une action se caractérise par:
 <br><br>
-    - une fonction prenant en paramètre le context de type __StateContext__  et le payload<br>
-    - l'annotation __@Action__
+    - une fonction prenant en paramètre le context de type __StateContext__  et l'objet action correspondante<br>
+    - annoté par __@Action__
 <br><br>
 - Le __StateContext__ possède les méthodes suivantes:<br><br>
     - setState: pour setter un nouvelle état du state dans son entièreté
