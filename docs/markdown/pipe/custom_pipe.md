@@ -15,10 +15,10 @@
 <!-- .slide: class="sfeir-basic-slide" -->
 # Comment se compose un pipe
 <br><br>
-- De l'annotation <strong>@Pipe</strong> qui prend comme propriété name qui sera appelé dans le template  <br><br>
-- D'une est déclenchée par l'annotation <strong>@Pipe</strong> <br><br>
-- Cette classe implémente la une méthode transform qui prend en paramètre une valeur et éventuellement un tableau d'arguments <br><br>
-- Cette méthode tranform retourn une nouvelle valeur
+- Un pipe est une classe décorée avec l'annotation <strong>@Pipe</strong><br> et implémente l'interface <strong>PipeTransform</strong>
+- L'annotation <strong>@Pipe</strong> possède la propriété <strong>name</strong> avec laquelle vous pourrez utiliser votre pipe dans les templates  <br><br>
+- Cette classe implémente une méthode <strong>transform</strong> qui prend en paramètre une valeur et éventuellement un tableau d'arguments <br>
+- Cette méthode tranform retourne une nouvelle valeur transformée.<br>
 - Penser à enregistrer votre Pipe dans le tableau déclaration de votre module
 
 ##==##

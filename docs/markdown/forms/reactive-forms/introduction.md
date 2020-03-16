@@ -25,7 +25,7 @@ export class AppModule { }
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide with-code" -->
-# Syntaxe Global dans les formulaires Reactive forms
+# Syntaxe dans les formulaires Reactive forms
 
 ```html
 <form [formGroup]="editForm">
@@ -43,7 +43,7 @@ export class FormComponent {
   editForm: FormGroup;
    constructor() {
     this.editForm = new FormGroup({
-        firstname: new FormControl('', [Validators.required, Validators.minLength(2)])
+        firstname: new FormControl('', Validators.compose([Validators.required, Validators.minLength(2)]))
     })
    }
 }
@@ -105,12 +105,16 @@ export class FormComponent {
   editForm: FormGroup;
    constructor() {
     this.editForm = new FormGroup({
-        firstname: new FormControl('', [Validators.required, Validators.minLength(2)])
+        firstname: new FormControl('', Validators.compose([Validators.required, Validators.minLength(2)]))
+        address: new FormGroup({
+                country: new FormControl(''),
+                zipCode: new FormControl('')
+        }),
     })
    }
 }
 ```
 <!-- .element: class="big-code" -->
 Notes
-- firstname est de type AbstracteControl, si l'on souhaite update ça value lors d'un certain évènement comme le click d'un bouton, il existe la méthode patchValue
+- firstname est de type AbstractControl, si l'on souhaite update ça value lors d'un certain évènement comme le click d'un bouton, il existe la méthode patchValue
 - coup de pouce: Réaliser des getters qui renvoie l'AbstractControl. Ca allégerera votre template => this.editForm.get('firstname')

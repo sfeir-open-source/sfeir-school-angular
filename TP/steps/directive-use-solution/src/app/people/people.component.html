@@ -21,6 +21,10 @@
 
   <button (click)="switchView()" mat-fab color="warn">
     <i class="material-icons" *ngIf="view === 'card'; else listIcon">list</i>
-    <ng-template #listIcon> <i class="material-icons">view_stream</i> </ng-template>
+
   </button>
 </section>
+
+
+
+<ng-template #listIcon> <i class="material-icons">view_stream</i> </ng-template>

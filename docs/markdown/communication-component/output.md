@@ -1,7 +1,7 @@
 <!-- .slide: class="sfeir-basic-slide with-code" -->
-# Communication parent - enfant: @Ouput
+# Communication parent - enfant: @Output
 <br>
-Dans l'enfant:
+Dans le composant enfant: déclaration de l'output: EventEmitter
 <br><br>
 ```typescript
 import { Component, Output, EventEmitter } from '@angular/core';
@@ -26,7 +26,7 @@ export class ChildComponent {
 # Communication parent - enfant: @Ouput
 <br>
 <ul>
-    <li>Dans le parent template</li>
+    <li>Parent - Template: binding de l'evenement enfant</li>
 </ul>
 ```html
 <section>
@@ -36,7 +36,7 @@ export class ChildComponent {
 <!-- .element: class="big-code" -->
 <br>
 <ul>
-    <li>Dans le parent component.ts</li>
+    <li>Parent - Component: Implémentation de la méthode bindée sur l'evenement</li>
 </ul>
 ```typescript
 onChildEvent(myPassVariable: string): void {

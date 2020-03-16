@@ -6,7 +6,7 @@
 <!-- .slide: class="sfeir-basic-slide with-code" -->
 # Bootsraping: main.ts
 <br><br>
-Dans une application Angular, le premier ficher chargé correspond au fichier main.ts
+Dans une application Angular, le premier ficher chargé est le fichier main.ts
 <br><br>
 ```typescript
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
@@ -22,6 +22,7 @@ platformBrowserDynamic().bootstrapModule(AppModule);
 # Bootstaping dans sa totalité
 <div class="flex-row">
     <div class="fill-rest">
+        main.ts
         <pre class="big-code">
             <code data-trim>
                import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
@@ -32,6 +33,7 @@ platformBrowserDynamic().bootstrapModule(AppModule);
         </pre>
     </div>
    <div class="tiers">
+        app.module.ts
         <pre class="big-code">
             <code data-trim>
                 @NgModule({
@@ -47,6 +49,7 @@ platformBrowserDynamic().bootstrapModule(AppModule);
 </div>
 <br><br>
 <div>
+    index.html
     <pre class="big-code">
         <code data-trim>
             <sfeir-app></sfeir-app>

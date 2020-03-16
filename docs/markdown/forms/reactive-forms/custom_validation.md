@@ -6,7 +6,7 @@
 <!-- .slide: class="sfeir-basic-slide with-code" -->
 # Créer ses propres validateurs
 <br>
-- un validateur custom est une simple <strong>fonction</strong>
+- un validateur custom est une simple <strong>fonction</strong> static
 - Si la validation est bonne: renvoie <strong>null</strong>
 - Si la validation n'est pas correct: renvoie un object de cette forme <strong>{ nomErreur: true }</strong>
 <br><br>

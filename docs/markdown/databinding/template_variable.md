@@ -10,7 +10,7 @@
 - Références:
 <ul>
     <li>Élement (# ou ref-XXX)</li>
-    <li>disponible dans tout le template et le composant (@ViewChild('reference', { static: false })</li>
+    <li>disponible dans tout le template et le composant</li>
 </ul>
 ```html
 <input #phone type="text" />
@@ -19,3 +19,9 @@
 <button type="button" (click)="fax(fax.value)">Click</button>
 ```
 <!-- .element: class="big-code" -->
+
+```typescript
+@ViewChild('phone') myPhoneInputElement: ElementRef;
+```
+<!-- .element: class="big-code" -->
+

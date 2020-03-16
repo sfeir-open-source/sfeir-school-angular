@@ -4,6 +4,7 @@
 <ul>
     <li>Un bouton random a été ajouté dans le fichier app.component.html</li><br>
     <li>Ajouter une click sur ce bouton pour afficher une personne au hasard</li>
+    PEOPLE[Math.floor(Math.random() * PEOPLE.length)];
 </ul>
 Notes
 - Exploiter le tableau PEOPLE fourni

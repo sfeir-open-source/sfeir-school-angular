@@ -1,7 +1,7 @@
 <!-- .slide: class="sfeir-basic-slide with-code" -->
 # Communication parent - enfant: @Input
 <ul>
-    <li>Enfant</li>
+    <li>Enfant - Composant : Déclaration de l'input</li>
 </ul>
 <br>
 ```typescript
@@ -16,7 +16,7 @@ export class ChildComponent {
 <!-- .element: class="big-code" -->
 <br>
 <ul>
-    <li>Parent - template</li>
+    <li>Parent - Template: utilisation du composant enfant avec affectation de l'input</li>
 </ul>
 <br>
 ```html

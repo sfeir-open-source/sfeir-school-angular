@@ -1,6 +1,6 @@
 <!-- .slide: class="sfeir-bg-pink exercice" -->
 ## Exercice
-<span class="bold center">steps/ngFor</span>
+<span class="bold center">steps/ngfor</span>
 <br>
 <ul>
     <li>Créer un composant PeopleComponent à l'aide du CLI</li>
@@ -16,4 +16,4 @@ Notes
 
 <!-- .slide: class="sfeir-bg-blue exercice" -->
 ## Solution
-<span class="full-center bold">steps/ngFor-solution</span>
+<span class="full-center bold">steps/ngfor-solution</span>

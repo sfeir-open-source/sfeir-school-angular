@@ -5,7 +5,7 @@
 <ul>
     <li>Créer un service PeopleService dans le répertoire shared/people-service</li>
     <li>Créer toutes les autres opérations du CRUD</li>
-    <li>Enregistrer votre service de manière global ou local</li>
+    <li>Enregistrer votre service de manière globale ou locale</li>
 </ul>
 Notes
 - Remplacer dans le composant le http.get par peopleService.fetch qui contiendra votre Http.get

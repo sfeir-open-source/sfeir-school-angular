@@ -41,6 +41,7 @@ Notes
 <br><br>
 <div class="flex-row">
     <div class="tiers">
+        todo.service.ts
         <pre class="big-code">
             <code data-trim>
                 @Injectable()
@@ -55,6 +56,7 @@ Notes
         </pre>
     </div>
     <div class="fill-rest">
+        app.component.ts
         <pre class="big-code">
             <code data-trim>
                 @Component({

@@ -35,7 +35,7 @@
 <!-- .slide: class="sfeir-basic-slide with-code" -->
 # Et si je veux agir sur un attribut ?
 <br>
-Certains élément n'ont pas obligatoirement la propriété (svg, colspan)
+Certains éléments n'ont pas obligatoirement la propriété (svg, colspan)
 <br><br>
 - On peut cibler un attribut en précédent son nom par <strong>attr</strong>
 ```html

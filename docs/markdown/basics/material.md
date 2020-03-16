@@ -12,9 +12,9 @@
 # Un petit mot sur le Material Design
 <br><br>
 <ul>
-    <li>Le TP utilise des composant Material Design (mat-toolbar; mat-checkbox; mat-card ...)</li><br>
-    <li>Cette Formation ne porte pas sur la Material Design, ni sur les directives Angular Material</li><br>
-    <li>Vos Projets ne sont pas obligés d'utiliser le Material Design</li><br>
+    <li>Le TP utilise des composant Materials Design (mat-toolbar; mat-checkbox; mat-card ...)</li><br>
+    <li>Cette formation ne porte pas sur la Material Design, ni sur les directives Angular Material</li><br>
+    <li>Vos projets ne sont pas obligés d'utiliser le Material Design</li><br>
 </ul>
 Notes:
 - Le Material Design sont un ensemble de directives de Design établi par Google. Ce design consiste à espacer nos composants et les rendre plus 'arrondis'

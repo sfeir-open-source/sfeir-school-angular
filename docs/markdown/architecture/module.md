@@ -22,9 +22,9 @@ Notes
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide with-code" -->
-# Le module: son écriture
+# Le module: sa déclaration
 <br><br>
-Comme le composant, l'écriture du module se fait à l'aide d'une classe et d'une annotation
+Comme le composant, la déclaration du module se réalise à l'aide d'une classe et d'une annotation
 <br><br>
 ```typescript
 @NgModule({

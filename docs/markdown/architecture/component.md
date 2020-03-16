@@ -15,7 +15,7 @@ Le composant est composé de trois concepts de base.
 <!-- .slide: class="sfeir-basic-slide with-code" -->
 # Le component: sa logique
 <br><br>
-La Logique du composant utilise la syntax de classe de ES2015
+La Logique du composant utilise la syntaxe de classe de ES2015
 <br><br>
 ```typescript
 export class AppComponent {
