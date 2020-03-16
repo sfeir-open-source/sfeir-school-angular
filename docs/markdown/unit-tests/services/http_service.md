@@ -69,7 +69,7 @@ it('should return mocked username', () => {
   });
   const req = httpTestingController.expectOne('/service-url');
   req.flush(response);
-  httpTestingController.verify();
+  httpTestingController.verify(); // => afterEach verify pending request
 });
 
 ```
