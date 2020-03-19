@@ -2,11 +2,11 @@
 ## Exercice
 <span class="center bold">steps/interceptors</span>
 <br>
-- Une ébauche d'interceptor a été réalisé dans le dossier shared/interceptor
-- A chaque requête il faut setter le headers authorization à Sfeir
-- Vérifier votre travail en analysant la requête qui part dans l'inspecteur
+- Une ébauche d'interceptor a été réalisée dans le dossier shared/interceptor
+- A chaque requête il faut setter le header "Authorization" à "Sfeir"
+- Vérifier votre travail en analysant la requête qui part dans l'inspecteur de votre navigateur
 Notes
-- pensez à utiliser la méthode clone et setHeaders
+- pensez à utiliser la méthode "clone()" et "setHeaders()"
 
 ##==##
 

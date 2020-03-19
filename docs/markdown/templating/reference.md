@@ -41,4 +41,4 @@ export class AppComponent implements OnInit, AfterViewInit {
 Notes
 - Dans la version 9 il n'est plus obligatoire de préciser static, false est sa valeur par défaut
 - Si static est true, on peut accéder à la référence dans le OnInit (perte de performance)
-- read est très utile lorsque l'on associe une directive à une référence (ex: #myForm = 'ngForm') si on en précise pas la lecture par défaut on aura accès au méthode du ngForm et non à l'elementRef
+- read est très utile lorsque l'on associe une directive à une référence (ex: #myForm = 'ngForm') si on ne précise pas la lecture par défaut on aura accès au méthode du ngForm et non à l'elementRef

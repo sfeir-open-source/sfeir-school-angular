@@ -42,9 +42,9 @@ Notes:
 
 # Implémenter l'interface ControlValueAccessor
 <br><br>
-- Permet de préciser à Angular comment accéder au 'control' value
+- Permet de préciser à Angular comment accéder à la valeur du contrôle
 - 'Pont' entre le contrôle et l'élement natif (ici l'élement sfeir-dropdown)
-- Doit obligatoirement implémenter les méthodes suivante:
+- Doit obligatoirement implémenter les méthodes suivantes:
  - writeValue
  - registerOnChange
  - registerOnTouched
@@ -56,9 +56,9 @@ Notes:
 
 # WriteValue: modèle -> vue
 <br><br>
-Ecrit une valeur dans l'élement. Cette méthode est appelée quand:
+Ecrit une valeur dans l'élement. Cette méthode est appelée:
 <ul>
-    <li>instanciation d'un nouveau FormControl</li>
+    <li>lors de l'instanciation d'un nouveau FormControl</li>
     <li>quand on appelle la méthode patchValue/setValue</li>
 </ul>
 
@@ -69,7 +69,7 @@ Ecrit une valeur dans l'élement. Cette méthode est appelée quand:
 # registerOnChange: vue -> modèle
 <br>
 <ul>
-    <li>Set une fonction à appeler quand il y a un changement dans votre composant</li>
+    <li>Définit une fonction ou callback à appeler quand il y a un changement dans votre composant</li>
 </ul>
 ```typescript
 @Component({
@@ -96,7 +96,7 @@ export class SfeirDropDownComponent implements ControlValueAccessor {
 # registerOnTouched: vue -> modèle
 <br>
 <ul>
-    <li>Set une fonction à appeler quand votre composant a été "touched"</li>
+    <li>Définit une fonction ou callback à appeler quand votre composant a été "touched"</li>
 </ul>
 ```typescript
 @Component({
