@@ -26,7 +26,7 @@ Notes
 # Utilisation de la directive ng-template
 <br>
 <ul>
-    <li>S'utilise principalement avec les directives structurels (*ngIf, *ngFor, ...)</li>
+    <li>S'utilise principalement avec les directives structurelles (*ngIf, *ngFor, ...)</li>
 </ul>
 <br><br>
 ```html

@@ -2,7 +2,7 @@
 ## Exercice
 <span class="center bold">steps/custom-control</span>
 <br>
-- Un nouveau composant SfeirInput a été ajouter au dossier shared
+- Un nouveau composant SfeirInput a été ajouté au dossier shared
 - Implémenter le composant de sorte de créer un 'custom input'
 - Remplacer l'ensemble mat-form-field input avec votre composant SfeirInput dans le fichier form.component.html
 
