@@ -38,3 +38,28 @@ Notes
 </ng-template>
 ```
 <!-- .element: class="big-code" -->
+
+
+##==##
+
+<!-- .slide: class="sfeir-basic-slide with-code" -->
+# Utilisation de la directive ng-template
+<br>
+<ul>
+    <li>En fait, les directives structurelless (*ngIf, *ngFor, ...) sont elle-mêmes des 'ng-template'!</li>
+</ul>
+<br><br>
+Par exemple:
+```html
+<div *ngIf="condition">
+    ...
+</div>
+```
+<!-- .element: class="big-code" -->
+est un raccourci pour :
+```html
+<ng-template [ngIf]="condition">
+    <div>...</div>
+</ng-template>
+```
+<!-- .element: class="big-code" -->
