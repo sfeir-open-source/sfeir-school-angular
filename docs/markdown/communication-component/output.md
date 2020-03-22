@@ -26,7 +26,7 @@ export class ChildComponent {
 # Communication parent - enfant: @Ouput
 <br>
 <ul>
-    <li>Parent - Template: binding de l'evenement enfant</li>
+    <li>Parent - Template: binding de l'événement enfant</li>
 </ul>
 ```html
 <section>
@@ -36,7 +36,7 @@ export class ChildComponent {
 <!-- .element: class="big-code" -->
 <br>
 <ul>
-    <li>Parent - Component: Implémentation de la méthode bindée sur l'evenement</li>
+    <li>Parent - Component: Implémentation de la méthode bindée sur l'événement</li>
 </ul>
 ```typescript
 onChildEvent(myPassVariable: string): void {
