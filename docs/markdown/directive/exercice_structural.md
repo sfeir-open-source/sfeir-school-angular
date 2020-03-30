@@ -2,7 +2,7 @@
 ## Exercice
 <span class="center bold">steps/structural-directive</span>
 <br>
-- Un skelette de directive a été ajouté dans le dossier shared/display
+- Un squelette de directive a été ajouté dans le dossier shared/display
 - Vous allez recoder une partie de la directive *ngIf
 - Dans le composant Card, afficher uniquement le nom et prénom des personnes qui sont manager
 

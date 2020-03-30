@@ -3,8 +3,8 @@
 <br><br>
 - Permet d'avoir un contrôle complet sur la statégie de détection
 - 4 méthodes
- - detectChanges (détect un changement)
- - markForCheck (détect une mutation d'état pratique pour les observables)
+ - detectChanges (détecte un changement)
+ - markForCheck (détecte une mutation d'état pratique pour les observables)
  - detach (permet de ne plus observer une variable)
  - reattach (permet de nouveau regarder les changements)
 

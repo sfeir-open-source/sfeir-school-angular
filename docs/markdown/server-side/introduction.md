@@ -8,7 +8,7 @@
 # A quoi peut servir le server side rendering?
 <br><br>
 - Amélioration de l'indexation ce qui implique une performance de SEO<br><br>
-- Amélioration des performances sur mobile et appareils avec connection internet faible<br><br>
+- Amélioration des performances sur mobile et les appareils avec connection internet faible<br><br>
 - Affichage de la première page plus rapide
 
 ##==##
