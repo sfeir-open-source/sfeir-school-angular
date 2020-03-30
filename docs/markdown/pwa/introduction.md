@@ -1,7 +1,13 @@
 <!-- .slide: class="sfeir-basic-slide" -->
 # Qu'est ce qu'une progressive web app (PWA)
-<br>
-<span class="full-center important">Application web installable sur mobile</span>
+<br><br>
+<span class="center important">Application web installable sur mobile</span>
+<br><br>
+<ul>
+    <li>Cache pour Asset</li>
+    <li>Application offline</li>
+    <li>Application responsive</li>
+</ul>
 Notes
 - Pour plus d'information sur le sujet, il existe une school dédiée à ce sujet
 
