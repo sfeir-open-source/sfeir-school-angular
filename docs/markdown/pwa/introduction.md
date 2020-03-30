@@ -11,7 +11,7 @@ Notes
 # De quoi est composé une PWA
 <br><br>
 - Service worker qui détient la logique de votre PWA (stratégie de caching, vos différents caches, lifecycle)
-- Manifest: décrit comment doit etre installer votre application
+- Manifest: décrit comment doit être installer votre application
 
 ##==##
 

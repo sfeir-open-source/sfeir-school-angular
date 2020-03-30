@@ -13,15 +13,15 @@ Notes
 <!-- .slide: class="sfeir-basic-slide" -->
 # Interface AssetGroup
 <br><br>
-- name: requis, il permet de d'identifier un group d'assets entre deux versions de configuration
+- name: requis, il permet d'identifier un groupe d'assets entre deux versions de configuration
 - installMode: prefetch | lazy -> détermine comment les ressources sont initialement cachées
-- updateMode: prefetch | lazy -> détermine comment modifié les ressources déjà en cache
+- updateMode: prefetch | lazy -> détermine comment modifier les ressources déjà en cache
 - ressources
- - files: list de fichiers qui match un certain pattern à cacher
+ - files: liste de fichiers qui match un certain pattern à cacher
  - urls: url / url pattern qui match au runtime
 
 Notes
-- prefetch: install toutes les ressources à l'initialisation
+- prefetch: installe toutes les ressources à l'initialisation
 - lazy: attend d'avoir la requête avant de mettre en cache
 
 ##==##
@@ -29,14 +29,14 @@ Notes
 <!-- .slide: class="sfeir-basic-slide" -->
 # Interface DataGroup
 <br><br>
-- name: requis, il permet de d'identifier un group de data entre deux versions de configuration
-- version: un integer qui permet de suivre la version des apis que l'on cache
+- name: requis, il permet de d'identifier un groupe de data entre deux versions de configuration
+- version: un entier qui permet de suivre la version des apis que l'on cache
 - cacheConfig
- - maxSize: taille maximum du group
+ - maxSize: taille maximum du groupe
  - maxAge: temps maximum pendant lequel le cache est valide
  - timeout: temps avant que la réponse vienne du cache
  - strategy: performance | freshness
 
 Notes
 - performance: réponse toujours du cache (si la version du cache match à celle qui existe déjà), dépend également du maxAge
-- freshness: recupère déjà la réponse du network sauf si le timeout a expiré
+- freshness: récupère déjà la réponse du network sauf si le timeout a expiré

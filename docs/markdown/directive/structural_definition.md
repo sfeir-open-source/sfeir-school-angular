@@ -14,8 +14,8 @@
 <br><br>
 <ul>
     <li>Permet une lecture plus simple, et réduit la verbosité</li>
-    <li>Le mot clé <strong>let</strong> permet de déclarer une variable utilisé dans le template</li>
-    <li>Lorsque la variable n'est pas définie, il utilise le context implicit: $implicit</li>
+    <li>Le mot clé <strong>let</strong> permet de déclarer une variable utilisée dans le template</li>
+    <li>Lorsque la variable n'est pas définie, il utilise le context implicite: $implicit</li>
 </ul>
 
 ##==##

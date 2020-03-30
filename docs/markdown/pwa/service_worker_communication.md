@@ -2,7 +2,7 @@
 <br><br>
  - 2 hooks
   - available: nouvelle version de l'application à loader si la page est rafraîchis
-  - activated: service woker commence à déployer une nouvelle version de l'application  
+  - activated: le service woker commence à déployer une nouvelle version de l'application  
 
 
 <br>
