@@ -2,7 +2,7 @@
 # L'itération avec la directive *ngFor
 <ul>
     <li>Itère dans une collection et génère un template par élément</li><br>
-    <li><strong>index, odd, event, last</strong> à utiliser en alias dans des variables</li>
+    <li><strong>index, odd, even, last</strong> à utiliser en alias dans des variables</li>
 </ul>
 <br><br>
 ```typescript
