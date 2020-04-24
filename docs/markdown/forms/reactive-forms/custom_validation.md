@@ -11,8 +11,8 @@
 - Si la validation n'est pas correct: renvoie un object de cette forme <strong>{ nomErreur: true }</strong>
 <br><br>
 ```typescript
-import { ValidationErrors } from '@angular/forms';
-abstract class CustomValidators {
+import { FormControl, ValidationErrors } from '@angular/forms';
+export class CustomValidators {
     protected constructor() {}
 
     static CustomEmailValidator(c: FormControl): ValidationErrors | null {   
