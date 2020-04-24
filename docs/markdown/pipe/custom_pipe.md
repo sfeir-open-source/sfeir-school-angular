@@ -16,7 +16,7 @@
 # Comment se compose un pipe
 <br><br>
 - De l'annotation <strong>@Pipe</strong> qui prend comme propriété name qui sera appelé dans le template  <br><br>
-- D'une est déclenchée par l'annotation <strong>@Pipe</strong> <br><br>
+- D'une classe qui est déclenchée par l'annotation <strong>@Pipe</strong> <br><br>
 - Cette classe implémente la une méthode transform qui prend en paramètre une valeur et éventuellement un tableau d'arguments <br><br>
 - Cette méthode tranform retourn une nouvelle valeur
 - Penser à enregistrer votre Pipe dans le tableau déclaration de votre module
