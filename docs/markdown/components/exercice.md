@@ -1,9 +1,9 @@
 <!-- .slide: class="sfeir-bg-pink exercice" -->
 ## Exercice
-<span class="center bold">steps/cpt-hierarchie</span>
+<span class="center bold">steps/cpt-hierarchy</span>
 <br><br>
 <ul>
-    <li>Faire en sorte que PeopleComponent utilise HomeComponent</li>
+    <li>Faire en sorte que PeopleAppComponent utilise HomeComponent</li>
     <li>Voir le contenu du fichier home.component.html</li>
     <li>Mettre à jour les fichiers nécessaires</li>
 </ul>
@@ -24,7 +24,7 @@ Les fichiers à mettre à jour sont les suivants:
 
  <!-- .slide: class="sfeir-bg-blue exercice" -->
  ## Solution
- <span class="full-center bold">steps/cpt-hierarchie-solution</span>
+ <span class="full-center bold">steps/cpt-hierarchy-solution</span>
 
 ##==##
 
