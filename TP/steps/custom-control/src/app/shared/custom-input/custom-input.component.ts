@@ -17,5 +17,5 @@ export class SfeirInputComponent implements ControlValueAccessor {
 
   registerOnTouched(fn: () => void) {}
 
-  registerOnChange(fn: (x: string) => void) {}
+  registerOnChange(fn: (inputValue: string) => void) {}
 }
