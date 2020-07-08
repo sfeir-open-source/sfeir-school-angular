@@ -1,7 +1,7 @@
 <!-- .slide: class="sfeir-basic-slide with-code" -->
 # State: définition
 <br><br>
-Le __State__ est une est déclenchée de l'annotation __@State__ qui définie notre state container
+Le __State__ est une class préfixée de l'annotation __@State__ qui définit notre state container.
 <br><br>
 ```typescript
 import { State } from '@ngxs/store';
@@ -32,8 +32,8 @@ export class AnimalsState {
 <br><br>
 Ici notre state indique: <br><br>
 - qu'il s'agit d'un tableau de strings: __<strings[]>__
-- que le nom de notre state est 'animals' (name est une props obligatoire)
-- notre state initial est un tableau vide: (props default sert d'initialisation)
+- que le nom de notre state est 'animals' (name est une prop obligatoire)
+- notre state initial est un tableau vide: (la prop default sert d'initialisation)
 Notes
 - Il existe encore une props: children qui sont les states associés
 
@@ -94,7 +94,7 @@ export class TodoState {
 <!-- .slide: class="sfeir-basic-slide with-code" -->
 # State: Déclarer nos actions
 <br><br>
-- Pour résumé une action se caractérise par:
+- Pour résumer une action se caractérise par:
 <br><br>
     - une fonction prenant en paramètre le context de type __StateContext__  et le payload<br>
     - l'annotation __@Action__
