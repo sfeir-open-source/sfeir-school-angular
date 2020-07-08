@@ -1,10 +1,10 @@
 <!-- .slide: class="sfeir-basic-slide with-code" -->
 # Action: Définition
 <br>
-Les __actions__ sont des commandes qui doivent déclancher une mutation de l'état (state).<br><br>
-C'est uniquement à travers des actions que l'on modifie l'état de notre state
+Les __actions__ sont des commandes qui doivent déclencher une mutation de l'état (state).<br><br>
+C'est uniquement à travers des actions que l'on modifie l'état de notre state.
 <br><br>
-Chaque action doit obligatoirement contenir un champs qui l'identifiant unique de l'action<br><br><br>
+Chaque action doit obligatoirement contenir un champ comme identifiant unique de l'action.<br><br><br>
 ```typescript
 export class FeedZebra {
   static readonly type = '[Zoo] Feed Zebra';
@@ -19,9 +19,9 @@ Ici name et hayAmount
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide with-code" -->
-# Action: Comment la déclancher
+# Action: Comment la déclencher
 <br>
-- Dans le composant, l'action est déclenché grâce au mot clé __disptach__
+- Dans le composant, l'action est déclenchée grâce au mot clé __disptach__
 - Une action renvoie toujours un observable
 <br><br>
 ```typescript
@@ -44,9 +44,9 @@ export class ZooComponent {
 Une __bonne__ action doit contenir trois parties:<br><br>
 - d'ou vient l'action [PAGE, API, ...]
 - un verbe décrivant l'action [GETUSER]
-- l'entité sur laquel agit l'action
+- l'entité sur laquelle agit l'action
 <br><br>
-__Exemple__: au click j'ajoute un utilisateur dans un tableau 
+__Exemple__: au clic j'ajoute un utilisateur dans un tableau 
 <br><br>
 __[USER PAGE] addUser__
 

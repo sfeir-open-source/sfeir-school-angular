@@ -2,7 +2,7 @@
 # Selectors: Définition
 <br><br>
 Les sélecteurs sont des fonctions qui récupèrent une partie ou totalement notre state<br><br>
-Dans __NGXS__ il existe eux méthodes pour séléctionner notre state (ou partie de notre state):<br><br>
+Dans __NGXS__ il existe deux méthodes pour séléctionner notre state (ou partie de notre state):<br><br>
 - méthode select du store<br><br>
 - l'annotation __@Select__
 
@@ -49,14 +49,14 @@ export class ZooComponent {
 <!-- .element: class="big-code" -->
 Notes
 - Il existe la méthode selectOnce qui permet de prendre l'état courant et ne plus regarder le stream
-- Il existe également une méthode snapchot qui permet de récupérer l'état courant sans observable très utiles dans les Interceptors
+- Il existe également une méthode snapchot qui permet de récupérer l'état courant sans observable très utile dans les Interceptors
 
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide with-code" -->
 # Selectors: Memoized Selectors
 <br>
-Lorsque l'on souhaite utiiser une sélécteur dans différents endroits de son application ou encore avoir une logique de sélectors plus compliquée qu'un simple renvoie de state courant, les __Memoized Selectors__ sont vos alliés.
+Lorsque l'on souhaite utiliser une sélecteur dans différents endroits de son application ou encore avoir une logique de sélectors plus compliquée qu'un simple renvoi de state courant, les __Memoized Selectors__ sont vos alliés.
 <br>
 ```typescript
 import { State, Selector } from '@ngxs/store';
