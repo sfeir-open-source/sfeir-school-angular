@@ -1,20 +1,365 @@
+/*
+  This is a "Solution Style" tsconfig.json file, and is used by editors and TypeScript’s language server to improve development experience.
+  It is not intended to be used to perform a compilation.
+
+  To learn more about this file see: https://angular.io/config/solution-tsconfig.
+*/
 {
-  "compileOnSave": false,
-  "compilerOptions": {
-    "downlevelIteration": true,
-    "importHelpers": true,
-    "outDir": "./dist/out-tsc",
-    "baseUrl": "src",
-    "sourceMap": true,
-    "declaration": false,
-    "moduleResolution": "node",
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "target": "es2015",
-    "typeRoots": ["node_modules/@types"],
-    "lib": ["es2018", "dom"],
-    "module": "esnext"
-  }
+  "files": [],
+  "references": [
+    {
+      "path": "./src/tsconfig.app.json"
+    },
+    {
+      "path": "./src/tsconfig.spec.json"
+    },
+    {
+      "path": "./steps/hands-on/tsconfig.app.json"
+    },
+    {
+      "path": "./steps/hands-on/tsconfig.spec.json"
+    },
+    {
+      "path": "./steps/hands-on-solution/tsconfig.app.json"
+    },
+    {
+      "path": "./steps/hands-on-solution/tsconfig.spec.json"
+    },
+    {
+      "path": "./steps/ngg/tsconfig.app.json"
+    },
+    {
+      "path": "./steps/ngg/tsconfig.spec.json"
+    },
+    {
+      "path": "./steps/ngg-solution/tsconfig.app.json"
+    },
+    {
+      "path": "./steps/ngg-solution/tsconfig.spec.json"
+    },
+    {
+      "path": "./steps/cpt-hierarchy/tsconfig.app.json"
+    },
+    {
+      "path": "./steps/cpt-hierarchy/tsconfig.spec.json"
+    },
+    {
+      "path": "./steps/cpt-hierarchy-solution/tsconfig.app.json"
+    },
+    {
+      "path": "./steps/cpt-hierarchy-solution/tsconfig.spec.json"
+    },
+    {
+      "path": "./steps/binding/tsconfig.app.json"
+    },
+    {
+      "path": "./steps/binding/tsconfig.spec.json"
+    },
+    {
+      "path": "./steps/binding-solution/tsconfig.app.json"
+    },
+    {
+      "path": "./steps/binding-solution/tsconfig.spec.json"
+    },
+    {
+      "path": "./steps/events/tsconfig.app.json"
+    },
+    {
+      "path": "./steps/events/tsconfig.spec.json"
+    },
+    {
+      "path": "./steps/events-solution/tsconfig.app.json"
+    },
+    {
+      "path": "./steps/events-solution/tsconfig.spec.json"
+    },
+    {
+      "path": "./steps/http/tsconfig.app.json"
+    },
+    {
+      "path": "./steps/http/tsconfig.spec.json"
+    },
+    {
+      "path": "./steps/http-solution/tsconfig.app.json"
+    },
+    {
+      "path": "./steps/http-solution/tsconfig.spec.json"
+    },
+    {
+      "path": "./steps/router/tsconfig.app.json"
+    },
+    {
+      "path": "./steps/router/tsconfig.spec.json"
+    },
+    {
+      "path": "./steps/router-solution/tsconfig.app.json"
+    },
+    {
+      "path": "./steps/router-solution/tsconfig.spec.json"
+    },
+    {
+      "path": "./steps/router-lazyloading-guard/tsconfig.app.json"
+    },
+    {
+      "path": "./steps/router-lazyloading-guard/tsconfig.spec.json"
+    },
+    {
+      "path": "./steps/router-lazyloading-guard-solution/tsconfig.app.json"
+    },
+    {
+      "path": "./steps/router-lazyloading-guard-solution/tsconfig.spec.json"
+    },
+    {
+      "path": "./steps/ngfor/tsconfig.app.json"
+    },
+    {
+      "path": "./steps/ngfor/tsconfig.spec.json"
+    },
+    {
+      "path": "./steps/ngfor-solution/tsconfig.app.json"
+    },
+    {
+      "path": "./steps/ngfor-solution/tsconfig.spec.json"
+    },
+    {
+      "path": "./steps/input/tsconfig.app.json"
+    },
+    {
+      "path": "./steps/input/tsconfig.spec.json"
+    },
+    {
+      "path": "./steps/input-solution/tsconfig.app.json"
+    },
+    {
+      "path": "./steps/input-solution/tsconfig.spec.json"
+    },
+    {
+      "path": "./steps/input-b/tsconfig.app.json"
+    },
+    {
+      "path": "./steps/input-b/tsconfig.spec.json"
+    },
+    {
+      "path": "./steps/output/tsconfig.app.json"
+    },
+    {
+      "path": "./steps/output/tsconfig.spec.json"
+    },
+    {
+      "path": "./steps/output-solution/tsconfig.app.json"
+    },
+    {
+      "path": "./steps/output-solution/tsconfig.spec.json"
+    },
+    {
+      "path": "./steps/form/tsconfig.app.json"
+    },
+    {
+      "path": "./steps/form/tsconfig.spec.json"
+    },
+    {
+      "path": "./steps/form-solution/tsconfig.app.json"
+    },
+    {
+      "path": "./steps/form-solution/tsconfig.spec.json"
+    },
+    {
+      "path": "./steps/form-b/tsconfig.app.json"
+    },
+    {
+      "path": "./steps/form-b/tsconfig.spec.json"
+    },
+    {
+      "path": "./steps/form-b-solution/tsconfig.app.json"
+    },
+    {
+      "path": "./steps/form-b-solution/tsconfig.spec.json"
+    },
+    {
+      "path": "./steps/form-validation/tsconfig.app.json"
+    },
+    {
+      "path": "./steps/form-validation/tsconfig.spec.json"
+    },
+    {
+      "path": "./steps/form-validation-solution/tsconfig.app.json"
+    },
+    {
+      "path": "./steps/form-validation-solution/tsconfig.spec.json"
+    },
+    {
+      "path": "./steps/form-model-driven/tsconfig.app.json"
+    },
+    {
+      "path": "./steps/form-model-driven/tsconfig.spec.json"
+    },
+    {
+      "path": "./steps/form-model-driven-solution/tsconfig.app.json"
+    },
+    {
+      "path": "./steps/form-model-driven-solution/tsconfig.spec.json"
+    },
+    {
+      "path": "./steps/form-custom-validator/tsconfig.app.json"
+    },
+    {
+      "path": "./steps/form-custom-validator/tsconfig.spec.json"
+    },
+    {
+      "path": "./steps/form-custom-validator-solution/tsconfig.app.json"
+    },
+    {
+      "path": "./steps/form-custom-validator-solution/tsconfig.spec.json"
+    },
+    {
+      "path": "./steps/service/tsconfig.app.json"
+    },
+    {
+      "path": "./steps/service/tsconfig.spec.json"
+    },
+    {
+      "path": "./steps/service-solution/tsconfig.app.json"
+    },
+    {
+      "path": "./steps/service-solution/tsconfig.spec.json"
+    },
+    {
+      "path": "./steps/pipe/tsconfig.app.json"
+    },
+    {
+      "path": "./steps/pipe/tsconfig.spec.json"
+    },
+    {
+      "path": "./steps/pipe-solution/tsconfig.app.json"
+    },
+    {
+      "path": "./steps/pipe-solution/tsconfig.spec.json"
+    },
+    {
+      "path": "./steps/pipe-b/tsconfig.app.json"
+    },
+    {
+      "path": "./steps/pipe-b/tsconfig.spec.json"
+    },
+    {
+      "path": "./steps/pipe-b-solution/tsconfig.app.json"
+    },
+    {
+      "path": "./steps/pipe-b-solution/tsconfig.spec.json"
+    },
+    {
+      "path": "./steps/directive-use/tsconfig.app.json"
+    },
+    {
+      "path": "./steps/directive-use/tsconfig.spec.json"
+    },
+    {
+      "path": "./steps/directive-use-solution/tsconfig.app.json"
+    },
+    {
+      "path": "./steps/directive-use-solution/tsconfig.spec.json"
+    },
+    {
+      "path": "./steps/directive-create/tsconfig.app.json"
+    },
+    {
+      "path": "./steps/directive-create/tsconfig.spec.json"
+    },
+    {
+      "path": "./steps/directive-create-solution/tsconfig.app.json"
+    },
+    {
+      "path": "./steps/directive-create-solution/tsconfig.spec.json"
+    },
+    {
+      "path": "./steps/input-b-solution/tsconfig.app.json"
+    },
+    {
+      "path": "./steps/input-b-solution/tsconfig.spec.json"
+    },
+    {
+      "path": "./steps/pipe-demo/tsconfig.app.json"
+    },
+    {
+      "path": "./steps/pipe-demo/tsconfig.spec.json"
+    },
+    {
+      "path": "./steps/unit-tests/tsconfig.app.json"
+    },
+    {
+      "path": "./steps/unit-tests/tsconfig.spec.json"
+    },
+    {
+      "path": "./steps/unit-tests-solution/tsconfig.app.json"
+    },
+    {
+      "path": "./steps/unit-tests-solution/tsconfig.spec.json"
+    },
+    {
+      "path": "./steps/ngxs/tsconfig.app.json"
+    },
+    {
+      "path": "./steps/ngxs/tsconfig.spec.json"
+    },
+    {
+      "path": "./steps/ngxs-solution/tsconfig.app.json"
+    },
+    {
+      "path": "./steps/ngxs-solution/tsconfig.spec.json"
+    },
+    {
+      "path": "./steps/ngrx/tsconfig.app.json"
+    },
+    {
+      "path": "./steps/ngrx/tsconfig.spec.json"
+    },
+    {
+      "path": "./steps/ngrx-solution/tsconfig.app.json"
+    },
+    {
+      "path": "./steps/ngrx-solution/tsconfig.spec.json"
+    },
+    {
+      "path": "./steps/resolvers/tsconfig.app.json"
+    },
+    {
+      "path": "./steps/resolvers/tsconfig.spec.json"
+    },
+    {
+      "path": "./steps/resolvers-solution/tsconfig.app.json"
+    },
+    {
+      "path": "./steps/resolvers-solution/tsconfig.spec.json"
+    },
+    {
+      "path": "./steps/templating/tsconfig.app.json"
+    },
+    {
+      "path": "./steps/templating-solution/tsconfig.app.json"
+    },
+    {
+      "path": "./steps/interceptors/tsconfig.app.json"
+    },
+    {
+      "path": "./steps/interceptors-solution/tsconfig.app.json"
+    },
+    {
+      "path": "./steps/hostbinding/tsconfig.app.json"
+    },
+    {
+      "path": "./steps/hostbinding-solution/tsconfig.app.json"
+    },
+    {
+      "path": "./steps/custom-control/tsconfig.app.json"
+    },
+    {
+      "path": "./steps/custom-control-solution/tsconfig.app.json"
+    },
+    {
+      "path": "./steps/structural-directive/tsconfig.app.json"
+    },
+    {
+      "path": "./steps/structural-directive-solution/tsconfig.app.json"
+    }
+  ]
 }

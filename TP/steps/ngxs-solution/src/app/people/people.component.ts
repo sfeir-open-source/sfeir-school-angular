@@ -1,11 +1,11 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
-import { AddDialogComponent } from './add-dialog/add-dialog.component';
-import { PeopleService } from '../shared/people-service';
-import { mergeMap, takeUntil } from 'rxjs/operators';
 import { Store } from '@ngxs/store';
 import { Observable, Subject } from 'rxjs';
-import { AppState, LoadPeople, FilterPeople } from '../app.state';
+import { mergeMap, takeUntil } from 'rxjs/operators';
+import { AppState, FilterPeople } from '../app.state';
+import { PeopleService } from '../shared/people-service';
+import { AddDialogComponent } from './add-dialog/add-dialog.component';
 
 @Component({
   selector: 'sfeir-people',
@@ -47,8 +47,7 @@ export class PeopleComponent implements OnInit, OnDestroy {
     this._peopleService
       .update(person)
       .pipe(mergeMap(() => this._peopleService.fetch()))
-      .subscribe((peopleList: Array<any>) => {
-        this.people = peopleList;
+      .subscribe(() => {
         this.hideDialog();
       });
   }

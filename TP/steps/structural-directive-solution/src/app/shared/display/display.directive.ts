@@ -10,12 +10,8 @@ export class NgDisplayDirective<T = unknown> {
   ) {}
 
   @Input() set ngDisplay(condition: T) {
-    if (condition) {
-      if (!!condition) {
-        this.viewContainer.createEmbeddedView(this.templateRef);
-      } else {
-        this.viewContainer.clear();
-      }
+    if (!!condition) {
+      this.viewContainer.createEmbeddedView(this.templateRef);
     } else {
       this.viewContainer.clear();
     }

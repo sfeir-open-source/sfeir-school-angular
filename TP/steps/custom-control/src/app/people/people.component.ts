@@ -39,8 +39,7 @@ export class PeopleComponent implements OnInit {
     this._peopleService
       .update(person)
       .pipe(mergeMap(() => this._peopleService.fetch()))
-      .subscribe((people: any[]) => {
-        this.people$ = people;
+      .subscribe(() => {
         this.hideDialog();
       });
   }

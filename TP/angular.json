@@ -5849,7 +5849,7 @@
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "sfeir",
-      "styleext": "css"
+      "style": "css"
     },
     "@schematics/angular:directive": {
       "prefix": "sfeir"

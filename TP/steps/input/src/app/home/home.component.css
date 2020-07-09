@@ -129,6 +129,8 @@ a.truncate {
 img {
   border-radius: 50%;
   margin-right: 18px;
+  max-height: 128px;
+  max-width: 128px;
 }
 
 @media (max-width: 412px) {
