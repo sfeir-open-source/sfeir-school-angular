@@ -1,11 +1,11 @@
-<!-- .slide: class="sfeir-bg-white-5" -->
+<!-- .slide: class="transition-bg-grey-1 underline" -->
 # Tester ses composants
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide" -->
+<!-- .slide-->
 # Qu'implique réellement les tests?
-<br><br>
+<br><br><br>
 
 - "la magie" d'instance d'Angular ne se fait plus totalement<br><br>
 - Il faut mocker ses services et les données qu'utilisent nos composants<br><br>
@@ -14,9 +14,10 @@
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # Le Setup des tests du composant
-<br><br>
+<br><br><br>
+
 ```typescript
 beforeEach(() => {
   TestBed.configureTestingModule({
@@ -33,13 +34,15 @@ beforeEach(() => {
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # Détails sur les fonctions utilisées
 <br>
+
 - __TestBed__
     - __TestBed.createComponent__: crée une instance du composant (fixture)
     - __TestBed.overrideComponent __: surcharge une instance d'un composant
 <br><br>
+
 - __ComponentFixture__
     - __fixture.componentInstance__ : accès à l’instance du composant
     - __fixture.nativeElement__ : accès au DOM du composant
@@ -48,12 +51,14 @@ beforeEach(() => {
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code" -->
 # Et si mon composant utilise d'autre composant ?
 <br>
+
 Mais si je dois tous mocker __ça risque d'être long__ si mon composant utilise une dizaine de composant enfant !!<br><br>
 <span class="important">Et bien non il existe une astuce: masquer les erreurs liées aux compoants imbriqués! :) grâce à __NO_ERRORS_SCHEMA__</span>
 <br><br>
+
 ```typescript
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 beforeEach(() => {

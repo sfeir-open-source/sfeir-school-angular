@@ -1,45 +1,43 @@
-<!-- .slide: class="sfeir-bg-pink exercice" -->
-## Informations
-<span class="center bold">steps/form</span>
-<br>
-<ul>
-  <li>Le composant PeopleComponent vient d'être complété par deux méthodes:
-    - showDialog(): affiche une modal
-    - hideDialog(): permet de cacher la modal
-  </li>
-  <li>Le template du composant PeopleComponent a été complété:
-    - un bouton pour ajouter une personne, affiche la modal
+<!-- .slide: class="exercice" -->
+# Exercice: form
+## Enoncé
+<br><br><br>
+
+- Le composant PeopleComponent vient d'être complété
+    - showDialog(): affiche une modal dialogue
+    - hideDialog(): permet de cacher cette modal<br><br>
+- Le template du composant PeopleComponent a été complété
+    - un boutton pour ajouter une personne, affiche la modal
     - HTML de la modal
-  </li>
-</ul>
 
 ##==##
 
-<!-- .slide: class="sfeir-bg-pink exercice" -->
+<!-- .slide: class="exercice" -->
+# Exercice: forms
 ## Exercice
-<span class="center bold">steps/form</span>
-<br>
+<br><br><br>
+
 - A l'aide du CLI, créer dans le dossier shared, le composant FormComponent
+- Copier le contenue des fichiers du dossier static
 - Intégrer FormComponent dans AddDialogComponent
 - Rendre le formulaire template driven form
 - Faire communiquer FormComponent avec AddDialogComponent à l'aide des évènements cancel et personAdd
 
 ##==##
-
 <!-- .slide: class="sfeir-bg-pink exercice" -->
+# Exerice: forms
 ## Exercice
-<span class="center bold">steps/form</span>
-<br>
-<ul>
-    <li>Lors de l'event cancel, la dialog se ferme</li>
-    <li>Lors de l'event personAdd, la dialog se ferme en envoyant la persone au composant PeopleComponent</li>
-    <li>Si lors de la fermeture de la modal PeopleComponent reçoit une personne, implémenter une méthode qui ajoute un contact</li>
-</ul>
+<br><br><br>
+
+- Lors de l'évent cancel, la dialog se ferme
+- Lors de l'évent personAdd, la dialogue se ferme en envoyant la personne au composant PeopleComponent
+- Si lors de la fermeture de la modal PeopleComponent reçoit un personne, implémenter une méthode qui ajoute un contact
 Notes:
 - api à utiliser: POST http://localhost:9000/api/peoples retourne la personne créée
 
 ##==##
 
-<!-- .slide: class="sfeir-bg-blue exercice" -->
+<!-- .slide: class="full-center exercice" -->
+# Exercice: forms
 ## Solution
-<span class="full-center bold">steps/form-solution</span>
+<b>steps/form-solution</b>

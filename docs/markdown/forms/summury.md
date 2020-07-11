@@ -1,38 +1,37 @@
-<!-- .slide: class="sfeir-bg-white-5" -->
+<!-- .slide: class="transition-bg-grey-1 underline" -->
 # Résumé
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide" -->
+<!-- .slide: class="two-column-layout" -->
 # Template Driven vs Reactive Forms
+<br><br><br><br><br><br><br>
+![h-350](assets/images/school/forms/template_driven.png)
+![h-350](assets/images/school/forms/reactive_forms.png)
+
+##--##
 <br><br>
-<div class="flex-row">
-    <ul>
-        <li>La classe expose le modèle de données</li>
-        <li>Binding et validation se font dans la vue</li>
-        <li>la vue contient le data binding</li>
-    </ul>
-    <ul>
-        <li>La classe expose le modèle du formulaire</li>
-        <li>Binding et validation se font dans la classe</li>
-        <li>La vue contient le mapping</li>
-    </ul>
-</div>
-<br>
-<img alt="h-350" src="assets/images/school/forms/template_driven.png" />
-<img alt="h-350" src="assets/images/school/forms/reactive_forms.png" />
+- La classe expose le modèle de données
+- Binding et validation se font dans la vue
+- La vue contient le data binding
+##--##
+<br><br>
+- La classe expose le modèle du formulaire
+- Binding et validation se font dans la classe
+- La vue contient le mapping
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide" -->
+<!-- .slide: class="two-column-layout"-->
 # Avantages du Model-Driven
-<br><br>
-<div class="flex-row">
-    <ul>
-        <li>La logique est dans le code et non dans le template</li>
-        <li>Plus facile à tester</li>
-        <li>Prêt pour de futurs scénarios (Data-Driven-Form)</li>
-    </ul>
-    <img  alt="h-450" src="assets/images/school/forms/avantage_reactive_forms.png" />
-</div>
+##--##
+<br><br><br>
 
+- La logique est dans le code et non dans le template
+- PLus facile à tester
+- Prêt pour de futur scénarios (Data-Driven-Form)
+
+##--##
+<br><br><br>
+
+![h-450](assets/images/school/forms/avantage_reactive_forms.png)

@@ -1,12 +1,13 @@
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # La directive ng-container
 <br><br>
-<ul>
-    <li>Créer un template sans créer un élement supplémentaire</li>
-    <li>Pratique lorsque l'on a besoin d'utiliser plusieurs directives structurelles sur le même élément</li>
-    <li>Utile pour téléporter un contenue d'une balise ng-template</li>
-</ul>
+
+- Créer un template sans créer un élement suppplémentaire
+- Pratique lorsque l'on a besoin d'utiliser plusieurs directives structurelles sur le même élément
+- Utile pour téléporter un contenue d'une balise ng-template
+
 <br><br>
+
 ```html
 <ng-container *ngIf="lessons.length > 0">
     <div class="lesson" *ngFor="let lesson of lessons">
@@ -20,13 +21,11 @@
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # La directive structurelle ngTemplateOutlet
+- Prend deux paramètres, un template et un context
+- Le context doit être obligatoirement un object<br><br>
 
-<ul>
-    <li>prend deux paramètres un template et un context</li>
-    <li>le context doit être obligatoirement un object</li>
-</ul>
 ```typescript
 @Component({
   selector: 'app-root',
@@ -43,7 +42,7 @@ export class AppComponent {
   ctx = { estimate: this.totalEstimate };
 }
 ```
-<!-- .element: class="big-code" -->
+<!-- .element: class="medium-code" -->
 Notes:
 - Ici let-lessonsCounter doit absolement être égal à estimate, puisque dans le context c'est ainsi que l'on nomme la variable
 - Si l'on souhaite utiliser une autre variable qu'estimate, donner un nom aléatoire, il est obligatoire de passer par $implicit => ctx = { $implicit: this.totalEstimate }

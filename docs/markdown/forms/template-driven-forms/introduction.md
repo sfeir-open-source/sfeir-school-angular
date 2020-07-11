@@ -1,13 +1,13 @@
-<!-- .slide: class="sfeir-bg-white-5" -->
+<!-- .slide: class="transition-bg-grey-1 underline" -->
 # Template Driven Form
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # La Fondation du Template driven Form
 <br>
-Pour réaliser des formulaires avec le template driven forms, il est nécessaire d'importer le module <strong>FormsModule</strong> provenant du package <strong>@angular/forms</strong>
-<br><br>
+Pour réaliser des formulaires avec le template driven forms, il est nécessaire d'importer le module <b>FormsModule</b> provenant du package <b>@angular/forms</b><br><br>
+
 ```typescript
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -23,15 +23,13 @@ export class AppModule { }
 <!-- .element: class="big-code" -->
 
 ##==##
-
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # La syntaxe dans le template driven forms
 <br><br>
-<ul>
-    <li><strong>#authentificationForm="ngForm"</strong>: On déclare une référence sur un formulaire</li><br>
-    <li><strong>authentificationForm.value</strong> permet de récupérer en format JSON objet, toutes les valeurs des champs du formulaire</li>
-</ul>
-<br><br>
+
+- <b>#authentificationForm="ngForm"</b>: On déclare une référence sur un formulaire prenant comme valeur la directive ngForm<br><br>
+- <b>authentification.value</b> permnet de récupérer en format JSON objet, toutes les valeurs des champs du formulaire <br><br>
+
 ```html
 <form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
 </form>
@@ -40,31 +38,26 @@ export class AppModule { }
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # Le binding dans le template driven form
-Deux composantes obligatoires:
-<ul>
-    <li><strong>ngModel</strong>: le binding d'un contrôle</li>
-    <li><strong>name</strong>: associer un nom au contrôle du champs</li>
-</ul>
 <br>
-<ul>
-    <li><strong>Exemple 1</strong>: binding View -> Model</li>
-</ul>
+
+- Deux composantes obligatoires:
+    - <b>ngModel</b>: le binding d'un contrôle
+    - <b>name</b>: associer unn nom au contrôle du champs
+<br><br>
+
+- <b>Exemple 1</b>: binding View -> Model</li>
 ```html
 <input type="text" name="title" ngModel />
 ```
 <!-- .element: class="big-code" -->
-<ul>
-    <li><strong>Exemple 2</strong>: binding Model -> View</li>
-</ul>
+- <b>Exemple 2</b>: binding Model -> View</li>
 ```html
 <input type="text" name="title" [ngModel]="person.name" />
 ```
 <!-- .element: class="big-code" -->
-<ul>
-    <li><strong>Exemple 3</strong>: binding bidirectionnel</li>
-</ul>
+- <b>Exemple 3</b>: binding bidirectionnel</li>
 ```html
 <input [(ngModel)]="postalCode" name="postalCode" type="text" />
 ```
@@ -72,11 +65,12 @@ Deux composantes obligatoires:
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # Regrouper des champs dans un sous objet
 <br><br>
-<strong>ngModelGroup</strong> regroupe des contrôles dans un sous objet
-<br><br>
+
+<b>ngModelGroup</b> regroupe des contrôles dans un sous objet<br><br>
+
 ```html
 <p ngModelGroup="address">
   <input ngModel name="city" />

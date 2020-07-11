@@ -1,11 +1,12 @@
-<!-- .slide: class="sfeir-bg-pink exercice" -->
+<!-- .slide: class="exercice"-->
+# Exercice: ngxs
 ## Exercice
-<span class="center bold">steps/ngxs</span>
-<br><br>
-- Une barre de recherche a été ajoutée à votre application
-- Lors de la recherche vous devez filtrer la liste des personnes
+<br><br><br>
+
+- Une barre de recherche a été ajoutée à votre application<br><br>
+- Lors de la recherche vous devez filtrer la liste des personnes<br><br>
 - Mettre en place une architecture NGXS afin de parvenir à ce resultat
-Notes
+Notes:
 - vous devez modifier uniquement les fichiers people.component.ts / people.component.html / app.state.ts
 - créer trois actions
     - LoadPeople permet de récupérer uniquement la liste des peoples
@@ -19,6 +20,7 @@ Notes
 
 ##==##
 
-<!-- .slide: class="sfeir-bg-blue exercice" -->
+<!-- .slide: class="full-center exercice" -->
+# Exercice: ngxs
 ## Solution
-<span class="full-center bold">steps/ngxs</span>
+__steps/ngxs__

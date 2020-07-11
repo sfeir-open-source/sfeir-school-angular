@@ -1,6 +1,7 @@
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # Un exemple plus parlant
 <br><br>
+
 ```typescript
 @Pipe({
   name: 'capitalise'
@@ -18,9 +19,10 @@ export class UpPipe implements PipeTransform {
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # Un exemple plus parlant
 <br><br>
+
 ```typescript
 it('should capitalise', () => {
   const pipe = new UpPipe();
@@ -31,9 +33,10 @@ it('should capitalise', () => {
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # Un exemple plus parlant
 <br><br>
+
 ```typescript
 it('should capitalise', () => {
   const pipe = new UpPipe();

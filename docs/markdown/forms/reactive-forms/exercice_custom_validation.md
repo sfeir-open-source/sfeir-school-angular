@@ -1,16 +1,18 @@
-<!-- .slide: class="sfeir-bg-pink exercice" -->
+<!-- .slide: class="exercice" -->
+# Exercice: form-custom-validator
 ## Exercice
-<span class="center bold">steps/form-custom-validator</span>
-<br><br>
+<br><br><br>
+
 - Générer une class à l'aide du CLI dans le shared/forms
 - Créer un validateur permettant de vérifier si l'adresse mail respect le format nom.p@sfeir.com
 - Associer ce validateur au contrôle Email
 - Afficher dans le HTML le message correspondant au type d’erreur
-Notes
+Notes:
 - regex pattern: /^\w+\.\w@sfeir\.com$/
 
 ##==##
 
-<!-- .slide: class="sfeir-bg-blue exercice" -->
+<!-- .slide: class="full-center exercice" -->
+# Exercice: form-custom-validator
 ## Solution
-<span class="full-center bold">steps/form-custom-validator-solution</span>
+<b>steps/form-custom-validator-solution</b>

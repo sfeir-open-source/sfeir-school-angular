@@ -1,20 +1,22 @@
-<!-- .slide: class="sfeir-bg-white-5" -->
+<!-- .slide: class="transition-bg-grey-1 underline" -->
 # Host Binding
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide" -->
+<!-- .slide -->
 # Host binding définition
-<br>
-- Permet de setter une proprité sur l'élement courant de la directive
-- Décorateur @HostBinding()
-- watcher sur les propriété du host et mise à jour automatique
+<br><br>
+
+- Permet de setter une proprité sur l'élement courant de la directive<br><br>
+- Décorateur @HostBinding()<br><br>
+- Watcher sur les propriété du host et mise à jour automatique
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="inconsolata with-code" -->
 # Host binding exemple
-<br>
+<br><br>
+
 ```typescript
 @Directive({selector: '[ngModel]'})
 class NgModelStatus {
@@ -24,5 +26,5 @@ class NgModelStatus {
 }
 ```
 <!-- .element: class="big-code" -->
-Notes
+Notes:
 - ici set la propriété class à valid si le control est valide ou invalid si le control est invalid

@@ -1,17 +1,20 @@
-<!-- .slide: class="sfeir-basic-slide" -->
+<!-- .slide -->
 # Store: Définition
 <br><br>
+
 Le __store__ est un gestionnaire d'état global/par feature qui permet:
 <br><br>
+
  - de dispatcher des actions<br><br>
  - sélectionner le state dans son entièreté ou partiellement
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # Store: Actions 
 <br><br>
-Créer l'action:
+
+Créer l'action:<br><br>
 ```typescript
 export class AddAnimal {
   static readonly type = '[Zoo] Add Animal';
@@ -22,10 +25,12 @@ export class AddAnimal {
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # Store: Actions 
 <br><br>
-Utiliser l' action:
+
+Utiliser l' action:<br><br>
+
 ```typescript
 import { Store } from '@ngxs/store';
 import { AddAnimal } from './animal.actions';

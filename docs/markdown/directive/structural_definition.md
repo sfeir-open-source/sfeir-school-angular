@@ -1,6 +1,7 @@
-<!-- .slide: class="sfeir-basic-slide" -->
+<!-- .slide -->
 # Définition et cas d'utilisation
 <br><br>
+
 - Responsable du layout
 - Manipule les éléments du DOM (ajout, suppression, etc)
 - S'applique sur un 'host' élément
@@ -9,25 +10,26 @@
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide" -->
+<!-- .slide-->
 # * une microsyntax
 <br><br>
-<ul>
-    <li>Permet une lecture plus simple, et réduit la verbosité</li>
-    <li>Le mot clé <strong>let</strong> permet de déclarer une variable utilisée dans le template</li>
-    <li>Lorsque la variable n'est pas définie, il utilise le contexte implicite: $implicit</li>
-</ul>
+
+- Permet une lecture plus simple, et réduit la verbosité
+- Le mot clé __let__ permet de déclarer une variable utilisée dans le template
+- Lorsque la variable n'est pas définie, il utilise le context implicite: $implicit
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # *ngFor en profondeur
 <br><br><br>
+
 ```html
 <div *ngFor="let hero of heroes; let odd = odd; index as i"></div>
 ```
 <!-- .element: class="big-code" -->
 <br><br>
+
 ```html
 <ng-template let-hero [ngForOf]="heroes" let-odd="odd" let-i="index"></ng-template>
 ```

@@ -1,6 +1,7 @@
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # La résolution par valeur
 <br><br><br>
+
 ```typescript
 providers: [ { provide: V8, useValue: 8 }]
 providers: [ { provide: V8, useValue: 'V8' }]
@@ -11,34 +12,36 @@ providers: [ { provide: V8, useValue: { cylinder: 8 } }]
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # La résolution par classe alternative: useClass
 <br><br><br>
+
 ```typescript
 providers: [ { provide: V8, useClass: V8 }]
 providers: [ V8 ]
 providers: [{ provide: V8, useClass: V8Mock }]
 ```
 <!-- .element: class="big-code" -->
-Notes
+Notes:
 - C'est de cette manière que nous enregistrons les interceptors par exemple
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # La résolution par class aliasée: useExisting
 <br>
-<ul>
-    <li class="important bold">Création de 2 instances de V8</li>
-</ul>
+
+- <b>Création de deux instance de V8</b><br><br>
+
 ```typescript
 providers: [ V8, { provide: V8, useClass: V8 }]
 ```
 <!-- .element: class="big-code" -->
+
 <br><br>
-<ul>
-    <li class="important bold">Réutilisation de l'instance de V8</li>
-</ul>
+
+- <b>Réutilisation de l'instance de V8</b><br><br>
+
 ```typescript
 providers: [ V8, { provide: V8Engine, useExisting: V8 } ]
 ```
@@ -46,9 +49,10 @@ providers: [ V8, { provide: V8Engine, useExisting: V8 } ]
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # La résolution par factory: useFactory
-<br><br>
+<br><br><br>
+
 ```typescript
 export const function createEngineFactory(dep: V8Engine) {
 	return new Engine(dep.cylinders);

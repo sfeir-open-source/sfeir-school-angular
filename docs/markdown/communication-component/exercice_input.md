@@ -1,33 +1,32 @@
-<!-- .slide: class="sfeir-bg-pink exercice" -->
+<!-- .slide: class="exercice" -->
+# Exercice: input
 ## Exercice
-<span class="center bold">steps/input</span>
-<br>
-<ul>
-    <li>Créer un composant CardComponent dans le dossier shared à l'aide du CLI</li>
-    <li>Copier le contenu du template et du Style du composant HomeComponant</li>
-    <li>Passer la variable person au composant CardComponent</li>
-</ul>
-Notes
+<br><br><br>
+
+- Créer un composqnt CardComponent dans le dossier share à l'aide du CLI
+- Copier le contenu du template et du style du composqnt HomeComponent
+- Passer la variable person au composant CardComponent
+Notes:
 - Faire en sorte d'utiliser le CardComponant dans le template de HomeComponent de la manière suivante: <sfeir-card [person]="person"></sfeir-card>
 
 ##==##
-<!-- .slide: class="sfeir-bg-blue exercice" -->
+<!-- .slide: class="exercice full-center" -->
+# Exercice: input
 ## Solution
-<span class="full-center bold">steps/input-solution</span>
+<b>steps/input-solution</b>
 
 ##==##
-
-<!-- .slide: class="sfeir-bg-pink exercice" -->
+<!-- .slide: class="exercice" -->
+# Exercice: input-b
 ## Exercice
-<span class="center bold">steps/input-b</span>
-<br><br>
-<ul>
-    <li>Replacer le template de PeopleComponent en utilisant CardComponent</li>
-    <li>Indice: Pensez à utiliser la directive *ngFor pour répéter le composant CardComponent</li>
-</ul>
+<br><br><br>
+
+- Replacer le template de PeopleComponent en utilisant CardComponent<br><br>
+- Indice: Pensez à utiliser la directive *ngFor pour répéter le composant CardComponent
+
 
 ##==##
-
-<!-- .slide: class="sfeir-bg-blue exercice" -->
+<!-- .slide: class="exercice full-center" -->
+# Exercice: input-b
 ## Solution
-<span class="full-center bold">steps/input-b-solution</span>
+<b>steps/input-b-solution</b>

@@ -1,9 +1,11 @@
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # Action: Définition
 <br>
+
 Les __actions__ sont des commandes qui doivent déclencher une mutation de l'état (state).<br><br>
 C'est uniquement à travers des actions que l'on modifie l'état de notre state.
 <br><br>
+
 Chaque action doit obligatoirement contenir un champ comme identifiant unique de l'action.<br><br><br>
 ```typescript
 export class FeedZebra {
@@ -12,49 +14,50 @@ export class FeedZebra {
 }
 ```
 <!-- .element: class="big-code" -->
-Notes
+Notes:
 - dans cette exemple on peut voir que je passe des arguments lorsque je dispatch mon action
 Ici name et hayAmount
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # Action: Comment la déclencher
 <br>
+
 - Dans le composant, l'action est déclenchée grâce au mot clé __disptach__
-- Une action renvoie toujours un observable
-<br><br>
+- Une action renvoie toujours un observable<br><br>
+
 ```typescript
 @Component({ ... })
 export class ZooComponent {
-    constructor(private readonly store: Store) {}
+  constructor(private readonly store: Store) {}
 
-    addFee({ name: string, hayAmount: number }): void {
-        this.store.dispatch(name, hayAmount);
-    }
+  addFee({ name: string, hayAmount: number }): void {
+    this.store.dispatch(new FeedZebra(name, hayAmount));
+  }
 }
 ```
 <!-- .element: class="big-code" -->
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide" -->
+<!-- .slide -->
 # Actions: Convention de nommage
 <br><br>
+
 Une __bonne__ action doit contenir trois parties:<br><br>
 - d'ou vient l'action [PAGE, API, ...]
 - un verbe décrivant l'action [GETUSER]
-- l'entité sur laquelle agit l'action
-<br><br>
-__Exemple__: au clic j'ajoute un utilisateur dans un tableau 
-<br><br>
+- l'entité sur laquelle agit l'action<br><br>
+__Exemple__: au clic j'ajoute un utilisateur dans un tableau <br><br>
 __[USER PAGE] addUser__
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # Actions: regrouper des actions
 <br>
+
 ```typescript
 export namespace Todo {
   export class Add {
@@ -77,4 +80,4 @@ export namespace Todo {
   }
 }
 ```
-<!-- .element: class="big-code" -->
+<!-- .element: class="medium-code" -->

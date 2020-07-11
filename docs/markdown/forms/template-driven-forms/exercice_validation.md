@@ -1,17 +1,19 @@
-<!-- .slide: class="sfeir-bg-pink exercice" -->
+<!-- .slide: class="exercice" -->
+# Exercice: form-validation
 ## Exercice
-<span class="bold center">steps/form-validation</span>
-<br>
+<br><br><br>
+
 - Valider les champs:
-Firstname : required + min 2 lettres;
-Lastname : required + min 2 lettres;
-Email : required;
-Phone: required et 10 digits ⇒ \d{10};
+    - Firstname : required + min 2 lettres;
+    - Lastname : required + min 2 lettres;
+    - Email : required;
+    - Phone: required et 10 digits ⇒ \d{10};
 - Afficher des messages en fonction des erreurs
 - Utiliser [class.errors]="control.errors" pour appliquer une classe CSS “errors”
 
 ##==##
 
-<!-- .slide: class="sfeir-bg-blue exercice" -->
+<!-- .slide: class="exercice full-center" -->
+# Exercice: form-validation
 ## Solution
-<span class="bold full-center">steps/form-validation-solution</span>
+<b>steps/form-validation-solution</b>

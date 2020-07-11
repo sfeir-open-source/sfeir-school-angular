@@ -1,9 +1,7 @@
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # Communication parent - enfant: @Input
-<ul>
-    <li>Enfant</li>
-</ul>
-<br>
+- Enfant - Composant <br>
+
 ```typescript
 import { Component, Input} from '@angular/core';
 @Component({
@@ -15,10 +13,9 @@ export class ChildComponent {
 ```
 <!-- .element: class="big-code" -->
 <br>
-<ul>
-    <li>Parent - template</li>
-</ul>
-<br>
+
+- Parent - template <br>
+
 ```html
 <section>
     <app-child [name]="person.name"></app-child>

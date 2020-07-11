@@ -1,6 +1,7 @@
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # Un exemple plus parlant
 <br><br>
+
 ```typescript
 describe('myBadgeDirective', () => {
   beforeEach(() => {
@@ -14,9 +15,10 @@ describe('myBadgeDirective', () => {
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # Un exemple plus parlant
 <br><br>
+
 ```typescript
 it('should ...', () => {
   let fixture = TestBed

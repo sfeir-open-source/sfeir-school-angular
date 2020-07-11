@@ -1,14 +1,16 @@
 <!-- .slide: class="sfeir-basic-slide" -->
 # Fonctionnement des guards de préfetching
-<br><br>
+<br><br><br>
+
 - Optimiser le rendu de page<br><br>
 - Renvoie un observable, une promesse ou des données bruts<br><br>
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # Un exemple plus parlant (le résolver définition)
 <br><br>
+
 ```typescript
 @Injectable({ providedIn: CoreModule })
 export class UserResolver implements Resolve<User[]> {
@@ -23,9 +25,10 @@ export class UserResolver implements Resolve<User[]> {
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # Un exemple plus parlant (enregistrement du resolver)
-<br><br>
+<br><br><br><br>
+
 ```typescript
 { path: 'users', component: TopComponent, resolve: { users: UserResolver } }
 ```
@@ -33,16 +36,17 @@ export class UserResolver implements Resolve<User[]> {
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # Un exemple plus parlant (utilisation dans le composant)
 <br><br>
+
 ```typescript
 @Component({ ... })
 class UsersComponent implements ngOnInit {
     constructor(private route: ActivatedRoute) {}
 
     ngOnInit() {
-        this.route.data.subscribe((data: { users: User[] } => this.users = data.users);
+        this.route.data.subscribe((data: { users: User[] }) => this.users = data.users);
     }
 }
 ```

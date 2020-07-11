@@ -1,13 +1,15 @@
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # NGRX: Effects (Installation)
 <br>
 Les effects sont dans un package différent , il faut donc les installer égalements (si on souhaite les utiliser)
 <br><br>
+
 ```sh
 npm install --save @ngrx/effects // ng add @ngrx/effects
 ```
 <!-- .element: class="big-code" -->
 <br><br>
+
 ```typescript
 @NgModule({
   imports: [
@@ -19,14 +21,14 @@ npm install --save @ngrx/effects // ng add @ngrx/effects
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # NGRX: Ecrire un effet
-<ul>
-    <li>Créer une action (mais ne pas l'enregistrer dans le reducers)</li>
-    <li>Créer un service classique Angular</li>
-    <li>Utiliser la méthode createEffect ou l'annotation __@Effect__</li>
-</ul>
+
+- Créer une action (mais ne pas l'enregistrer dans le reducers)
+- Créer un service classique Angular
+- Utiliser la méthode createEffect ou l'annotation __@Effect__
 <br>
+
 ```typescript
 @Injectable()
 export class MovieEffects {
@@ -37,7 +39,7 @@ export class MovieEffects {
     ofType('[Movies Page] Load Movies'),
     mergeMap(() => this.moviesService.getAll()
       .pipe(
-        map(movies => ({ type: '[Movies API] Movies Loaded Success', payload: movies })),
+        map(movies => movieLoadSucces({ movies })),
         catchError(() => EMPTY)
       ))
     )
@@ -49,12 +51,12 @@ export class MovieEffects {
     ofType('[Movies Page] Load Movies'),
     mergeMap(() => this.moviesService.getAll()
       .pipe(
-        map(movies => ({ type: '[Movies API] Movies Loaded Success', payload: movies })),
+        map(movies => movieLoadSuccess({ movies })),
         catchError(() => EMPTY)
       ))
     )
 }
 ```
-<!-- .element: class="big-code" -->
+<!-- .element: class="medium-code" -->
 Notes:
 - en utilisant l'annotation les erreurs dans l'ide (au niveau du checking type) est bien plus claire

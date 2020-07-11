@@ -1,13 +1,14 @@
-<!-- .slide: class="sfeir-bg-pink exercice" -->
+<!-- .slide: class="exercice" -->
+# Exercice: unit-tests
 ## Exercice
-<span class="center bold">steps/unit-tests</span>
-<br><br>
-- Etudier et compléter les tests du pipe NaPipe
+<br><br><br>
+- Etudier et compléter les tests du pipe NaPipe<br><br>
 - Lancer vos tests à l'aide de la command: npm run test -- unit-tests
 
 ##==##
 
-<!-- .slide: class="sfeir-bg-blue exercice" -->
+<!-- .slide: class="full-center exercice" -->
+# Exercice: unit-tests
 ## Solution
-<span class="full-center bold">steps/unit-tests-solution</span>
+__steps/unit-tests-solution__
 

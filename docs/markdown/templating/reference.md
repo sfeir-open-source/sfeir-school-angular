@@ -1,12 +1,12 @@
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # Les références
 <br>
-<ul>
-    <li>Se matérialise par un # dans le template</li>
-    <li>Disponible dans tout le template</li>
-    <li>On peut récupérer cette élement dans le composant grâce à l'annotation @ViewChild</li>
-</ul>
+
+- Se matérialise par un # / ref- dans le template<br><br>
+- Disponible dans tout le template<br><br>
+- On peut récupéer cette élément dans le composant grâce à l'annotation @ViewChild
 <br><br>
+
 ```html
 <input #searchInput type="text" />
 ```
@@ -14,14 +14,14 @@
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # L'annotation @ViewChild
 <br>
-<ul>
-    <li>Permet de récupérer une référence dans le composant</li>
-    <li>Prend deux paramètres en entrée (nom de la référence, un object: { static, read })</li>
-</ul>
+
+- Permet de récupérer une référencde dans le composant
+- Prend deut paramètres en entrée (nom de la référence,, un object d'option: { static, read })
 <br><br>
+
 ```html
 <myComponent #component></myComponent>
 ```
@@ -38,7 +38,7 @@ export class AppComponent implements OnInit, AfterViewInit {
 }
 ```
 <!-- .element: class="big-code" -->
-Notes
+Notes:
 - Dans la version 9 il n'est plus obligatoire de préciser static, false est sa valeur par défaut
 - Si static est true, on peut accéder à la référence dans le OnInit (perte de performance)
 - read est très utile lorsque l'on associe une directive à une référence (ex: #myForm = 'ngForm') si on ne précise pas la lecture par défaut on aura accès au méthode du ngForm et non à l'elementRef

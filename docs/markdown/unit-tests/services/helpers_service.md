@@ -1,4 +1,4 @@
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # Les helpers services
 
 ```typescript
@@ -12,6 +12,7 @@ export class UserService {
 ```
 <!-- .element: class="big-code" -->
 <br>
+
 ```typescript
 // setup
 beforeEach(() => TestBed.configureTestingModule({ providers:[ UserService ] }));

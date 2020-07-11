@@ -1,29 +1,29 @@
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # HttpClientModule
-<br>
-<ul>
-    <li>Angular procure le client HTTP nécessaire pour une communication serveur</li>
-    <li>Ce package se nomme <strong>HttpClientModule</strong></li>
-    <li>HttpClientModule provient du package <strong>@angular/common/http</strong</li>
-</ul>
 <br><br>
+
+- Angular procure le client HTTP nécessaire pour une communication serveur
+- Ce package se nomme <b>HttpClientModule</b>
+- HttpClientModule provient du package <b>@angular/common/http</b>
+<br><br>
+
 ```typescript
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   imports: [..., HttpClientModule]  
 })
+export class AppModule { }
 ```
 <!-- .element: class="big-code" -->
 
 ##==##
-
-<!-- .slide: class="sfeir-basic-slide" -->
+<!-- .slide -->
 # Injection dans un Composant
 <br><br>
 Pour utiliser un service dans un composant, il est nécessaire de l'injecter.<br>
 Injectons le service http qui provient du module HttpClientModule
 <br><br>
-<img alt="h-600" src="assets/images/school/serveur-communication/injection.png" />
-<img alt="h-500" src="assets/images/school/serveur-communication/injection_astuce.png" />
 
+![h-600](assets/images/school/serveur-communication/injection.png)
+![h-500](assets/images/school/serveur-communication/injection_astuce.png)

@@ -1,6 +1,7 @@
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # La validation avec les reactives forms
 <br><br>
+
 ```html
 <form [formGroup]="editForm">
   <div>

@@ -1,4 +1,4 @@
-<!-- .slide: class="sfeir-basic-slide" -->
+<!-- .slide-->
 # Selectors: Définition
 <br><br>
 Les sélecteurs sont des fonctions qui récupèrent une partie ou totalement notre state<br><br>
@@ -8,9 +8,10 @@ Dans __NGXS__ il existe deux méthodes pour séléctionner notre state (ou parti
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # Selectors: Annotation @Select
 <br><br>
+
 ```typescript
 import { Select } from '@ngxs/store';
 import { ZooState, ZooStateModel } from './zoo.state';
@@ -30,12 +31,14 @@ export class ZooComponent {
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # Selectors: Select Function
 <br>
+
 Le store possède une méthode __select__ qui peut être utile lorsque l'on ne peut pas déclarer statiquement un sélecteur avec l'annotation __@Select__.<br>
 Attention cette méthode renvoie un observable
 <br><br>
+
 ```typescript
 import { Store } from '@ngxs/store';
 @Component({ ... })
@@ -47,17 +50,19 @@ export class ZooComponent {
 }
 ```
 <!-- .element: class="big-code" -->
-Notes
+Notes:
 - Il existe la méthode selectOnce qui permet de prendre l'état courant et ne plus regarder le stream
 - Il existe également une méthode snapchot qui permet de récupérer l'état courant sans observable très utile dans les Interceptors
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # Selectors: Memoized Selectors
 <br>
+
 Lorsque l'on souhaite utiliser une sélecteur dans différents endroits de son application ou encore avoir une logique de sélectors plus compliquée qu'un simple renvoi de state courant, les __Memoized Selectors__ sont vos alliés.
-<br>
+<br><br>
+
 ```typescript
 import { State, Selector } from '@ngxs/store';
 
@@ -76,9 +81,10 @@ export class ZooState {
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # Selectors: Memoized Selectors
 <br><br>
+
 ```typescript
 @Component({...})
 export class AppComponent {

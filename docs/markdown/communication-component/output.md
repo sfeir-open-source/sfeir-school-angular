@@ -1,8 +1,9 @@
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # Communication parent - enfant: @Ouput
 <br>
-Dans l'enfant:
-<br><br>
+
+- Dans l'enfant composant<br><br>
+
 ```typescript
 import { Component, Output, EventEmitter } from '@angular/core';
 @Component({
@@ -21,13 +22,12 @@ export class ChildComponent {
 <!-- .element: class="big-code" -->
 
 ##==##
-
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # Communication parent - enfant: @Ouput
 <br>
-<ul>
-    <li>Dans le parent template</li>
-</ul>
+
+- Dans le parent template <br><br>
+
 ```html
 <section>
     <app-child (childEvent)="onChildEvent($event)"></app-child>
@@ -35,9 +35,9 @@ export class ChildComponent {
 ```
 <!-- .element: class="big-code" -->
 <br>
-<ul>
-    <li>Dans le parent component.ts</li>
-</ul>
+
+- Dans le parent composant<br><br>
+
 ```typescript
 onChildEvent(myPassVariable: string): void {
   console.info(myPassVariable); // event from child 

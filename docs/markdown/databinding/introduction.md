@@ -1,26 +1,37 @@
-<!-- .slide: class="sfeir-basic-slide" -->
+<!-- .slide: class="two-column-layout" -->
 # Le binding en Javascript
-<br><br>
-<div class="flex-row">
-    <img alt="h-600" src="assets/images/school/databinding/template_pure_js.png" />
-    <img alt="h-600" src="assets/images/school/databinding/pure_js.png" />
-</div>
+
+##--##
+<br><br><br>
+
+![h-600](assets/images/school/databinding/template_pure_js.png)
+
+##--##
+<br><br><br>
+
+![h-600](assets/images/school/databinding/pure_js.png)
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide" -->
+<!-- .slide: class="two-column-layout" -->
 # Le binding avec Jquery
-<br><br>
-<div class="flex-row">
-    <img alt="h-600" src="assets/images/school/databinding/template_pure_js.png" />
-    <img alt="h-600" src="assets/images/school/databinding/jquery.png" />
-</div>
+
+##--##
+<br><br><br>
+
+![h-600](assets/images/school/databinding/template_pure_js.png)
+
+##--##
+<br><br><br>
+
+![h-600](assets/images/school/databinding/jquery.png)
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # Le binding en Angular
 <br><br><br>
+
 ```html
 <div>
   <input type="text" name="myName" [(ngModel)]="myName" />
@@ -31,37 +42,39 @@
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # Syntax binding
-<span class="bold">Events</span>
+<b>Events</b>
 ```html
 <button type="button" (click)="changeName()">Refresh</button>
 ```
-<!-- .element: class="big-code"-->
+<!-- .element: class="medium-code"-->
 <br>
-<span class="bold">Properties</span>
+
+<b>Properties</b>
 ```html
 <button type="submit" [disabled]="myForm.invalid">Submit</button>
 ```
-<!-- .element: class="big-code"-->
+<!-- .element: class="medium-code"-->
 <br>
-<span class="bold">Reference</span>
+
+<b>Reference</b>
 ```html
 <input #myName type="text" />
 <span>{{ myName.value }}</span>
 ```
-<!-- .element: class="big-code"-->
+<!-- .element: class="medium-code"-->
 <br>
-<span class="bold">Interpolation</span>
+
+<b>Interpolation</b>
 ```html
 <span>{{ name }}</span>
 ```
-<!-- .element: class="big-code"-->
+<!-- .element: class="medium-code"-->
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide" -->
+<!-- .slide: class="sfeir-basic-slide full-center" -->
 # Zoom sur un binding
-<div class="full-center">
-    <span class="bold">Target = "expression"</span>
-</div>
+<b>Target = "expression"</b>
+

@@ -1,11 +1,12 @@
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # NGRX: Selectors
 <br>
-<ul>
-    <li>Permettent de retourner partiellement ou entièrement le store</li><br>
-    <li>Renvoie toujours un observable</li>
-</ul>
+
+- Permettent de retourner partiellement ou entièrement le store
+- Renvoie toujours un observable
+
 <br><br>
+
 ```typescript
 export const getPeopleState = (state: PeopleFeature) => state.people;
 

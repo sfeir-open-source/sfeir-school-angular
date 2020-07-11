@@ -1,2 +1,2 @@
-<!-- .slide: class="transition-white sfeir-bg-pink" -->
+<!-- .slide: class="transition underline" -->
 # Les pipes ou transformer les données avant de les afficher

@@ -1,21 +1,23 @@
-<!-- .slide: class="transition-white sfeir-bg-pink" -->
+<!-- .slide: class="transition-bg-grey-1 underline" -->
 # Créer vos propres directives
 
 ##==##
-
 <!-- .slide: class="sfeir-basic-slide" -->
 # Quelques rappels sur les directives
 <br><br>
-<img alt="h-300" class="float-right" src="assets/images/school/directive/directive_schema.png"/>
+
+![h-300 center](assets/images/school/directive/directive_schema.png) <br><br>
+
 - les directives structurelles: modifie le DOM<br><br>
 - les directives attributales: modifie l'apparence ou le comportement d'un élement<br><br>
 - composant: directive avec une vue<br><br>
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # Définition d'une directive
 <br><br><br>
+
 ```typescript
 import { Directive } from '@angular/core';
 
@@ -25,38 +27,37 @@ export class MyDirective {}
 <!-- .element: class="big-code" -->
 
 ##==##
-
-<!-- .slide: class="sfeir-basic-slide" -->
+<!-- .slide -->
 # Comment invoquer une directive ?
 <br><br>
-- <strong>element-name</strong>: pour restreindre à un élement<br><br>
-- <strong>[attribute]</strong>: pour restreindre à un attribut<br><br>
-- <strong>.class</strong>: pour restreindre à une classe<br><br>
-- <strong>[attribute=value]</strong>: pour restreindre à un attribut avec une certaine valeur<br><br>
-- <strong>:not(sub_selector)</strong>: si l'élement ne match pas le sous sélécteur
+
+- <b>element-name</b>: pour restreindre à un élement<br><br>
+- <b>[attribute]</b>: pour restreindre à un attribut<br><br>
+- <b>.class</b>: pour restreindre à une classe<br><br>
+- <b>[attribute=value]</b>: pour restreindre à un attribut avec une certaine valeur<br><br>
+- <b>:not(sub_selector)</b>: si l'élement ne match pas le sous sélécteur
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide" -->
+<!-- .slide -->
 # Quelques exemples seront plus parlants
 <br><br>
-<div class="flex-row">
-    <img alt="h-400" src="assets/images/school/directive/attribut_directive.png" />
-    <img alt="h-400" src="assets/images/school/directive/element_attibute_directive.png" />
-    <img alt="h-400" src="assets/images/school/directive/css_direcitive.png" />
-</div>
+
+![h-400](assets/images/school/directive/attribut_directive.png)
+![h-400](assets/images/school/directive/element_attibute_directive.png)
+![h-400](assets/images/school/directive/css_direcitive.png)
+
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # Comment passer des props à ma directive
 <br>
-<ul>
-    <li>Lister des inputs grâce l'annotation <strong>@Input()</strong></li>
-    <li>Ces inputs peuvent être aliasé</li>
-    <li><strong>Exactement comme les composants</strong>
-</ul>
-<br><br>
+
+- Lister des inputs grâce à l'annotation <b>@Input()</b>
+- Ces inputs peuvent être aliasé
+- <b>Exactement comme pour les composants</b> <br><br>
+
 ```typescript
 import {Directive, Input} from '@angular/core';
 @Directive({
@@ -72,14 +73,13 @@ export class MyDirective {
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # Comment intéragir avec les éléments du DOM
 <br>
-<ul>
-    <li>ElementRef (service) permet de récupérer directment l'élement sur lequel agit la directive</li>
-    <li>Renderer2 (service) permet d'intéragir avec le DOM</li>
-</ul>
-<br><br>
+
+- ElementRef (service) permet de récupérer directement l'élément sur lequel agit la directive
+- Rendere2 (service) permet d'intéragir avec le DOM<br><br>
+
 ```typescript
 import { Directive, ElementRef, Renderer2 } from '@angular/core';
 @Directive({
@@ -88,16 +88,15 @@ import { Directive, ElementRef, Renderer2 } from '@angular/core';
 export class MyDirective {
    constructor(private readonly element: ElementRef, private readonly renderer: Renderer2) {}
 }
-
 ```
 <!-- .element: class="big-code" -->
-<br><br>
+
 
 ##==##
-
-<!-- .slide: class="sfeir-basic-slide" -->
+<!-- .slide -->
 # L'intéraction avec le DOM
 <br><br>
+
 - Préférez l'utilisation du Render au lieu de ElementRef<br><br>
 - Aucune dépendance direct avec le DOM<br><br>
 - Permet d'éxécuter l'application dans d'autre environnements (EDGE, Firefox)
@@ -123,19 +122,17 @@ export class MyDirective {
 </div>
 
 ##==##
-
-<!-- .slide: class="sfeir-basic-slide" -->
+<!-- .slide: class="with-code inconsolata" -->
 # Les évènements
-<ul>
-    <li><strong>@Hostlistener()</strong> pour écouter des évènements sur l'élément host</li><br>
-    <li><strong>@Output()</strong>pour propager des évènements</li><br>
-    <li class="bold">Exactement comme pour les composants</li>
-</ul>
-<br><br>
+<br>
+
+- <b>@Hostlistener()</b> pour écouter des évènements sur l'élément host
+- <b>@Output()</b> pour propager des évènements
+- <b>Exactement comme pour les composants</b><br><br>
+
 ```typescript
 @Directive({})
 export class MyDirective {
-
   @Output() somethingChange$: EventEmitter<any>;
 
   constructor(){
@@ -147,3 +144,4 @@ export class MyDirective {
   }
 }
 ```
+<!-- .element: class="medium-code" -->

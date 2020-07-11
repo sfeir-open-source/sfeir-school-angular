@@ -1,11 +1,12 @@
-<!-- .slide: class="sfeir-bg-white-5" -->
+<!-- .slide: class="transition-bg-grey-1 underline" -->
 # Concepts
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide" -->
+<!-- .slide-->
 # Concepts généraux de TDD
 <br><br>
+
 - __describe(string, function)__: un scénario de specs à exécuter<br><br>
 - __it(string, function)__: une spec contient un ou plusieurs vérifications<br><br>
 - __toXXXX(expected) ⇒ toBe(expected)__: un comparateur compare le résultat obtenu avec un résultat attendu<br><br>
@@ -13,9 +14,10 @@
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # Concepts TDD (exemple)
-<br><br>
+<br><br><br>
+
 ```typescript
 describe('scenario description...', () => {
   // setup
@@ -31,18 +33,19 @@ describe('scenario description...', () => {
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide" -->
+<!-- .slide -->
 # Un exemple complet
-<div class="full-size">
-    <img alt="full-center" src="assets/images/school/unit-tests/exemple_concepts.png" />
-</div>
+![full-center full-size](assets/images/school/unit-tests/exemple_concepts.png)
+
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # L'API d'Angular pour la TDD
 <br>
+
 __TestBed__: module de configuration des tests(similaire à NgModule)
+
 ```typescript
 TestBed.configureTestingModule({
     declarations: [ UserComponent ],
@@ -51,7 +54,9 @@ TestBed.configureTestingModule({
 ```
 <!-- .element: class="big-code" -->
 <br><br>
+
 __Inject__: injection des dépendances
+
 ```typescript
 inject([ UserService ], (user) => { 
     // sync test

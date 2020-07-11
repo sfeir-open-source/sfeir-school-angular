@@ -1,17 +1,17 @@
-<!-- .slide: class="sfeir-bg-pink exercice" -->
+<!-- .slide: class="exercice" -->
+# Exercice: http
 ## Exercice
-<span class="center bold">steps/http</span>
-<ul>
-    <li>Importer le module HttpClientModule et ajouter dans votre NgModule</li><br>
-    <li>Injecter le service Http dans HomeComponent</li><br>
-    <li>Réaliser les calls nécessaires pour récupérer une liste de personne et une personne au hasard</li>
-</ul>
-Notes
+<br><br><br>
+
+- Importer le module HttpClientModule et ajouter dans votre NgModule<br><br>
+- Injecter le service Http dans HomeComponent<br><br>
+- Réaliser les call nécessaires pour récupérer une liste de personne et une personne au hasard
+Notes:
 - http://localhost:9000/api/peoples retrourne une liste de personne
 - http://localhost:9000/api/peoples/random retourne une personne au hasard
 
 ##==##
-
-<!-- .slide: class="sfeir-bg-blue exercice" -->
+<!-- .slide: class="exercice full-center" -->
+# Exercice: http
 ## Solution
-<span class="full-center bold">steps/http-solution</span>
+<b>steps/http-solution</b>

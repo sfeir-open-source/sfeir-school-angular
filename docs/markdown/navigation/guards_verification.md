@@ -1,16 +1,15 @@
-<!-- .slide: class="sfeir-basic-slide" -->
+<!-- .slide -->
 # Fonctionnement des guards de "vérification"
 <br><br>
-<ul>
-    <li>Peut renvoyer un observable, une promesse ou encore un boolean</li><br>
-    <li>Un gards est un service classique</li><br>
-    <li>Si true alors on navigue vers l'url demandé</li><br>
-    <li>Si false on ne navigue pas vers l'url demandé</li><br>
-</ul>
+
+- Peut renvoyer un observable, une promnesse ou encore un boolean<br><br>
+- Un guards est un service classique<br><br>
+- Si true alors on navigue vers l'url demandée<br><br>
+- Si false on ne navigue pas vers l'url demandé
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # Un exemple plus parlant
 ```typescript
 @Injectable({
@@ -37,11 +36,13 @@ export class LoginGuards implements CanLoad {
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # Un exemple plus parlant
 <br><br><br>
+
 Une fois créé, le guard s'enregistre de la manière suivante dans le tableau de route
 <br><br>
+
 ```typescript
 { path: 'dashboard', canLoad: [LoginGuards], loadChildren: () =>
     import('app/feature/dashboard/dashboard.module').then(m => m.DashboardModule)

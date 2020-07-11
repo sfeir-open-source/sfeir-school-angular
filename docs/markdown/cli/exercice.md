@@ -1,29 +1,29 @@
-<!-- .slide: class="sfeir-bg-pink exercice" -->
+<!-- .slide: class="exercice" -->
+# Exercice: ngg
 ## Exercice
-<span class="bold center">folder: steps/ngg</span>
-<br>
-<ul>
-    <li>Créer le composant HomeComponent à l'aide du CLI</li><br>
-    <li>Examiner les fichiers générés</li><br>
-    <li>Compléter les fichers, afin d'afficher la chaîne Hello {{ name }}</li>
-</ul>
-Notes
+<br><br>
+En utilsant le CLI <br><br>
+- Créer le composant HomeComponent
+- Examner les fichier générés
+- Compléter les fichiers, afin d'afficher le chaîne Hello {{ name }}
+Notes:
 - La commande a tapé est la suivante. Placez vous dans le dossier steps/ngg puis ng g c ./src/app/home --module ./src/app (utilise le cli installé en global)
 
 ##==##
 
-<!-- .slide: class="sfeir-bg-pink exercice" -->
+<!-- .slide: class="exercice" -->
+# Exercice: ngg
 ## Exercice
-<span class="bold center">folder: steps/ngg</span>
-<br>
-<ul>
-    <li>Ajouter ce composant dans les "declarations" du fichier app.module.ts</li>
-    <li>Remplacer dans "bootstrap" le composant AppComponent par HomeComponent</li>
-    <li>Dans le fichier index.html, utiliser le sélécteur de HomeComponent pour pouvoir l'afficher</li>
-</ul>
+<br><br><br>
+
+- Ajouter ce composqnt dans les "declarations" du ficher app.module.ts
+- Remplacer dans "bootstrap" le composant AppComponent par HomeComponent
+- Dans le fichier index.html, utiliser le sélecteur de HomeComponent pour pouvoir l'afficher
 
 ##==##
 
-<!-- .slide: class="sfeir-bg-blue exercice" -->
+<!-- .slide: class="exercice full-center" -->
+# Exercice: ngg
 ## Solution
-<span class="bold full-center">folder: steps/ngg-solution</span>
+
+<b>folder: steps/ngg-solution</b>

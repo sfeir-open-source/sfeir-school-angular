@@ -1,6 +1,7 @@
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # Utilisation dans le composant
 <br>
+
 ```typescript
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, Params } from '@angular/router';
@@ -19,15 +20,17 @@ export class FooComponent implements OnInit {
     this.router.navigate(['/people/']);
   }
 ```
-<!-- .element: class="big-code" -->
-Notes
+<!-- .element: class="medium-code" -->
+Notes:
 - La méthode navigate renvoie une promesse
+- Nous ne sommes pas obligé d'utiliser la propriété params du router, il existe également le props paramsMap
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # Utilisation dans le template
 <br><br><br>
+
 ```html
 <a class="btn btn-info" routerLink="/people">Movies Liste</a>
 <a class="btn btn-info" [routerLink]="['/people']">Movies Liste</a>

@@ -1,16 +1,16 @@
-<!-- .slide: class="sfeir-bg-pink exercice" -->
+<!-- .slide: class="exercice" -->
+# Exercice: events
 ## Exercice
-<span class="center bold">steps/events</span>
-<ul>
-    <li>Un bouton random a été ajouté dans le fichier app.component.html</li><br>
-    <li>Ajouter une click sur ce bouton pour afficher une personne au hasard</li>
-</ul>
-Notes
+<br><br><br>
+
+- Un bouton random a été ajouté dans le fichier app.component.html<br><br>
+- Ajouter un click sur ce bouton pour afficher une personne au hasard
+Notes:
 - Exploiter le tableau PEOPLE fourni
 - Pour choisir une personne au hasard:  this.person = PEOPLE[Math.floor(Math.random() * PEOPLE.length)]
 
 ##==##
-
-<!-- .slide: class="sfeir-bg-blue exercice" -->
+<!-- .slide: class="exercice full-center" -->
+# Exercice: events
 ## Solution
-<span class="full-center bold">steps/events-solution</span>
+<b>steps/events-solution</b>

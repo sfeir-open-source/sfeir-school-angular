@@ -1,12 +1,15 @@
-<!-- .slide: class="sfeir-bg-pink exercice" -->
+<!-- .slide: class="exercice" -->
+# Exercice: hostbinding
 ## Exercice
-<span class="center bold">steps/hostbinding</span>
-- Compléter la directive sfeir-badge 
-- Afficher le badge en rouge quand la souris est sur l'icon
+<br><br><br>
+
+- Compléter la directive sfeir-badge <br><br>
+- Afficher le badge en rouge quand la souris est sur l'icon <br><br>
 - Afficher le badge en noir quand la souris est en dehors de l'icon
 
 ##==##
 
-<!-- .slide: class="sfeir-bg-blue exercice" -->
+<!-- .slide: class="full-center exercice" -->
+# Exercice: hostbinding
 ## Solution
-<span class="full-center bold">steps/hostbinding-solution</span>
+__steps/hostbinding-solution__

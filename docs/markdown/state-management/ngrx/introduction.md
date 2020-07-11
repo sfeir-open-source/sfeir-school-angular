@@ -1,19 +1,21 @@
-<!-- .slide: class="sfeir-bg-white-5" -->
+<!-- .slide: class="transition-bg-grey-1 underline" -->
 # NGRX
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # NGRX: Installation
 <br>
 De même que la librairies NGXS, NGRX est une librairie externe à Angular.
 <br><br>
+
 __Installation__:
 ```sh
 npm install --save-dev ngrx
 ```
 <!-- .element: class="big-code" -->
 <br><br>
+
 __Import__:
 ```typescript
 @NgModule({
@@ -25,7 +27,7 @@ export class AppModule() { }
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide" -->
+<!-- .slide -->
 # NGRX: Concepts
 <br><br>
 4 concepts clés: <br><br>
@@ -36,8 +38,9 @@ export class AppModule() { }
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide" -->
+<!-- .slide -->
 # NGRX: Architecture Global
 <br>
-<img alt="full-center h-800" src="assets/images/school/state-management/ngrx/state_management_lifecycle.png" />
+
+![full-center h-800](assets/images/school/state-management/ngrx/state_management_lifecycle.png)
 

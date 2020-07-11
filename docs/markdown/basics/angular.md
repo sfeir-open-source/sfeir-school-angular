@@ -1,26 +1,30 @@
-<!-- .slide: class="transition-white sfeir-bg-blue" -->
+<!-- .slide: class="transition-bg-grey-1 underline" -->
 # Angular Configuration
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # Installation du CLI
 <br>
+
 ```sh
 npm install -g @angular/cli
 ```
 <!-- .element: class="big-code" -->
 <br>
-<img alt="center h-600" src="assets/images/school/basics/angular_cli_helper.png" />
-<br>
-<a class="center" href="https://cli.angular.io/">Documentation</a>
+
+![h-600 center](assets/images/school/basics/angular_cli_helper.png)
+<br><br>
+
+[Documentation](https://cli.angular.io/)
+<!-- .element: class="center" -->
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide" -->
+<!-- .slide"-->
 # Le fichier angular.json
-<br>
+<br><br>
 Le fichier Angular.json est la carte d'identité de votre projet.
 <br><br>
-<img alt="center h-700" src="assets/images/school/basics/angular_json.png" />
 
+![center h-700](assets/images/school/basics/angular_json.png)
