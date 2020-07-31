@@ -2,7 +2,7 @@
 # NGRX: Store
 
 - service à injecter dans nos composants
-- possèd les méthodes __dispatch__ et __select__<br><br>
+- possède les méthodes __dispatch__ et __select__<br><br>
 
 ```typescript
 @Component({...})

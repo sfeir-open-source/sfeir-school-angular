@@ -9,8 +9,8 @@
 
 - Permet de regrouper des fonctionnalités<br><br>
 - Au moins un module par application (obligatoire sans ce module, l'app ne démarre pas)<br><br>
-- Peut être chargé de façon asynchrone (lasy loading)<br><br>
-- Différents types de module (Root :odule, Navigation Module, Feature Module, Shared Module, Core Module ...)
+- Peut être chargé de façon asynchrone (lazy loading)<br><br>
+- Différents types de module (Root Module, Navigation Module, Feature Module, Shared Module, Core Module ...)
 Notes:
 - Root Module, contient en général les autres modules de l'application
 - Feature Module, il en existe un par fonctionnalité (ex: fonctionnalité user => update, creation ...)

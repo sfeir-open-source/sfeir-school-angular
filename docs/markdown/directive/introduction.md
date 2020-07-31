@@ -63,6 +63,6 @@
 ```
 <!-- .element: class="big-code" -->
 Notes:
-- Live démonstration de la création d'une directives structurel cas simple: afficher ou cacher un mot de passe au click sur un bouton
+- Live démonstration de la création d'une directive structurelle cas simple: afficher ou cacher un mot de passe au click sur un bouton
 
  

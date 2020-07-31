@@ -15,12 +15,12 @@
 ```
 <!-- .element: class="big-code" -->
 <br><br>
-Ouhlà!! D'ou soirt tout ça ?
+Ouhlà!! D'où sort tout ça ?
 <!-- .element: class="center important" -->
 <br>
 Notes:
 - Ici on pousse le component SfeirDropDownComponent dans le provider NG_VALUE_ACCESSOR grâce à provide: NG_VALUE_ACCESSOR
-- multi: true permet de préciser qu'il peut y avoir plusieurs composant qui vont utiliser NG_VALUE_ACCESSOR
+- multi: true permet de préciser qu'il peut y avoir plusieurs composants qui vont utiliser NG_VALUE_ACCESSOR
 ##==##
 
 <!-- .slide: class="inconsolata with-code" -->
@@ -28,7 +28,7 @@ Notes:
 # Pourquoi utiliser forwardRef ?
 <br><br>
 
-- Fait référence à quelque chose aui n'est pas définie
+- Fait référence à quelque chose qui n'est pas définie
 <br><br><br>
 
 Heu ça veut dire que la class SfeirDropDownComponent n'est pas définie ? 
@@ -72,7 +72,7 @@ Notes:
 # registerOnChange: vue -> modèle
 <br>
 
-- Définit une fonction ou callback à appeler quand il y a un changement dasn votre composant
+- Définit une fonction ou callback à appeler quand il y a un changement dans votre composant
 
 ```typescript
 @Component({
@@ -99,7 +99,7 @@ export class SfeirDropDownComponent implements ControlValueAccessor {
 # registerOnTouched: vue -> modèle
 <br>
 
-- Définit une fonction ou callback à appeler quand vote composant a été 'touched''
+- Définit une fonction ou callback à appeler quand votre composant a été 'touched''
 
 ```typescript
 @Component({

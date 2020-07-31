@@ -7,7 +7,7 @@
 - Dans le composant Card, afficher uniquement le nom et prénom des personnes qui sont manager
 
 Notes:
-- Cette directive est assez simple a écrire, il vous faut appeler les services containerRef et templateRef pour cacher afficher un template
+- Cette directive est assez simple a écrire, il vous faut appeler les services containerRef et templateRef pour afficher ou détruire une vue
 - afficher: containerRef.createEmbeddedView(template)
 - cacher: containerRef.clear()
 

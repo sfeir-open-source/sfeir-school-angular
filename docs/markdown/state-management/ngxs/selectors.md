@@ -60,7 +60,7 @@ Notes:
 # Selectors: Memoized Selectors
 <br>
 
-Lorsque l'on souhaite utiliser une sélecteur dans différents endroits de son application ou encore avoir une logique de sélectors plus compliquée qu'un simple renvoi de state courant, les __Memoized Selectors__ sont vos alliés.
+Lorsque l'on souhaite utiliser un sélecteur dans différents endroits de son application ou encore avoir une logique de sélectors plus compliquée qu'un simple renvoi de state courant, les __Memoized Selectors__ sont vos alliés.
 <br><br>
 
 ```typescript

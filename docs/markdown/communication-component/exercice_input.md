@@ -3,11 +3,11 @@
 ## Exercice
 <br><br><br>
 
-- Créer un composqnt CardComponent dans le dossier share à l'aide du CLI
-- Copier le contenu du template et du style du composqnt HomeComponent
+- Créer un composant CardComponent dans le dossier share à l'aide du CLI
+- Copier le contenu du template et du style du composant HomeComponent
 - Passer la variable person au composant CardComponent
 Notes:
-- Faire en sorte d'utiliser le CardComponant dans le template de HomeComponent de la manière suivante: <sfeir-card [person]="person"></sfeir-card>
+- Faire en sorte d'utiliser le CardComponent dans le template de HomeComponent de la manière suivante: <sfeir-card [person]="person"></sfeir-card>
 
 ##==##
 <!-- .slide: class="exercice full-center" -->
@@ -21,7 +21,7 @@ Notes:
 ## Exercice
 <br><br><br>
 
-- Replacer le template de PeopleComponent en utilisant CardComponent<br><br>
+- Remplacer le template de PeopleComponent en utilisant CardComponent<br><br>
 - Indice: Pensez à utiliser la directive *ngFor pour répéter le composant CardComponent
 
 

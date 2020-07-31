@@ -112,5 +112,5 @@ export class TodoState {
     - patchState: modifier partiellement le state
     - dispatch: lance une nouvelle action
 Notes:
-- coup de puce: penser au spreed opérator pour récupérer directement la méthode qui vous interesse
+- coup de puce: penser au spread opérator pour récupérer directement la méthode qui vous interesse
 - il également possible d'utiliser des librairies tiers comme immer permettant de rendre chaque modification immutable (https://immerjs.github.io/immer/docs/introduction)

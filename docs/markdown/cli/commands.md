@@ -1,5 +1,5 @@
 <!-- .slide: class="with-code inconsolata" -->
-# Commands: Créer un projet
+# Commande: Créer un projet
 <br><br>
 
 ```sh
@@ -17,7 +17,7 @@ Notes:
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Commands: Créer un composant
+# Commande: Créer un composant
 <br><br>
 
 ```sh
@@ -40,7 +40,7 @@ Notes:
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Commands: Créer un service
+# Commande: Créer un service
 <br><br>
 
 ```sh
@@ -53,8 +53,8 @@ ng generate service user
     - src/app/user.service.ts<br><br>
     - src/app/user.service.spec.ts
 Notes:
-- Imaginons que l'on tape la commande ng generate service shared/user, le cli créera les même fichier que précédemment mais dans le dossier shared
-- Il existe un raccourcie de cette commande n g service user
+- Imaginons que l'on tape la commande ng generate service shared/user, le cli créera les mêmes fichiers que précédemment mais dans le dossier shared
+- Il existe un raccourci de cette commande n g service user
 
 ##==##
 

@@ -4,7 +4,7 @@
 
 - Se matérialise par un # / ref- dans le template<br><br>
 - Disponible dans tout le template<br><br>
-- On peut récupéer cette élément dans le composant grâce à l'annotation @ViewChild
+- On peut récupéer cet élément dans le composant grâce à l'annotation @ViewChild
 <br><br>
 
 ```html
@@ -18,8 +18,8 @@
 # L'annotation @ViewChild
 <br>
 
-- Permet de récupérer une référencde dans le composant
-- Prend deut paramètres en entrée (nom de la référence,, un object d'option: { static, read })
+- Permet de récupérer une référence dans le composant
+- Prend deux paramètres en entrée (nom de la référence,, un object d'option: { static, read })
 <br><br>
 
 ```html

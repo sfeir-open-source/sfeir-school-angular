@@ -18,7 +18,7 @@
 <br><br><br>
 
 - A l'aide du CLI, créer dans le dossier shared, le composant FormComponent
-- Copier le contenue des fichiers du dossier static
+- Copier le contenu des fichiers du dossier static
 - Intégrer FormComponent dans AddDialogComponent
 - Rendre le formulaire template driven form
 - Faire communiquer FormComponent avec AddDialogComponent à l'aide des évènements cancel et personAdd

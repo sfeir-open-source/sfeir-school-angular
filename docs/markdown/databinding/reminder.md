@@ -31,7 +31,7 @@
 <!-- .slide: class="with-code inconsolata" -->
 # Et si je veux agir sur un attribut ?
 <br><br>
-Certains élément n'ont pas obligatoirement la propriété (svg, colspan)
+Certains éléments n'ont pas obligatoirement la propriété (svg, colspan)
 <br><br>
 
 - On peut cibler un attribut en précédent son nom par <b>attr</b>

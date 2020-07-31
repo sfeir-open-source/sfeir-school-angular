@@ -42,7 +42,7 @@ ng add @angular/pwa
 <br><br><br>
 
 - ajoute le package @angular/service-worker à votre projet
-- authorise le support du service worker in CLI (modifie le fichier angular.json)
+- autorise le support du service worker in CLI (modifie le fichier angular.json)
 - Importe et enregistre le service worker dans le AppModule
 - Modifie le fichier index.html (importe le manifest et meta tag pour le theme couleur)
 - Installe les icons (icon d'installation pwa)

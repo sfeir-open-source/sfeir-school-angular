@@ -17,6 +17,6 @@
 - Vos projets ne sont pas obligés d'utiliser le Material Design<br><br>
 Notes:
 - Le Material Design sont un ensemble de directives de Design établi par Google. Ce design consiste à espacer nos composants et les rendre plus 'arrondis'
-- Il existe bien d'autre framework de design:
+- Il existe bien d'autres frameworks de design:
  - materialize
  - bootstrap / ng-bootstrap

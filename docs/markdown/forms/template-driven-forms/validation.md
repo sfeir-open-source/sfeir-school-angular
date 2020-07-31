@@ -8,7 +8,7 @@
     - maxLength
 <br><br>
 
-Ok mais si un champs est requis en fonction d'un autre?
+Ok mais si un champ est requis en fonction d'un autre?
 <!-- .element: class="important" -->
 <br>
 Et bien on utilise la propriété liée à l'attribut
@@ -36,7 +36,7 @@ Et bien on utilise la propriété liée à l'attribut
 ##==##
 
 <!-- .slide-->
-# Les difféntes classes disponibles pour le style
+# Les différentes classes disponibles pour le style
 <br><br><br>
 
 - .ng-valid / .ng-invalid <br><br>

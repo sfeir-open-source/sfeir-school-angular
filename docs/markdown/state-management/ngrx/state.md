@@ -3,7 +3,7 @@
 
 - Mapping clé-valeur
 - Récupérer grâce à nos  sélectors
-- Retourne toujlurs un observable <br><br>
+- Retourne toujours un observable <br><br>
 
 ```typescript
 export interface State {

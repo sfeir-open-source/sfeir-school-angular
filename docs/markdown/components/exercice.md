@@ -4,7 +4,7 @@
 <br><br><br>
 
 - Faire en sorte que PeopleComponent utilise HomeComponent
-- Voir le contenue du fichier home.component.html
+- Voir le contenu du fichier home.component.html
 - Mettre à jour les fichiers nécessaires
 Notes:
 Les fichiers à mettre à jour sont les suivants:

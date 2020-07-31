@@ -17,5 +17,5 @@ Sous le capot, Angular utilise webpack pour builder notre application
 
 ![h-800](assets/images/school/architecture/build_exemple.png)
 Notes:
-- Angular version 9 apporte son lot de nouveauté avec Ivy nouveau renderer et Bazel pour un build plus léger
+- Angular version 9 apporte son lot de nouveautés avec Ivy nouveau renderer et Bazel pour un build plus léger
 - Attention Bazel ne remplacera pas webpack, mais webpack utilisera bazel

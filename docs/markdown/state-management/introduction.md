@@ -13,7 +13,7 @@ Soit une application web classique avec trois composants A, B, C et une variable
 - Composant C peut modifier uniquement une propriété de la variable toto
 <br><br>
 
-__Problème__: schématisation d’accès et de modification à la donnée semblable à une toile d'araigné dont chaque cas est dépendant du contexte! <br><br>
+__Problème__: schématisation d’accès et de modification à la donnée semblable à une toile d'araignée dont chaque cas est dépendant du contexte! <br><br>
 __Répercussion__: Complication à suivre de la logique, difficile à débugger<br><br>
 
 Trouver un moyen de communication commun

@@ -2,9 +2,9 @@
 # Principe de la DI en Angular
 <br>
 
-- <b>L'Injector</> expose l'API pour crée des instances de dépendances
+- <b>L'Injector</> expose l'API pour céer des instances de dépendances
 - Le <b>Provider</b> indique à <b>l'Injector</b> comment créer la dépendance
-- La dépendance est le de type d'objet à créer<br><br>
+- La dépendance constitue l'objet à créer<br><br>
 ![center h-600](assets/images/school/dependancy-injection/di_working.png)
 
 
@@ -153,7 +153,7 @@ export class ItemService {
 - Fait le lien entre <b>InjectionToken</b> (token) et une <b>Factory</b><br><br>
 - Permet de découpler la dépendance et son implémentation<br><br>
 - API pour lier une simple valeur
-    - Faire des alia de token
+    - Faire des  alias de token
     - Créer des factory synchrones ou pas (toFactory, toAsyncFactory)
 
 ##==##

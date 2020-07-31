@@ -23,7 +23,7 @@ export class FooComponent implements OnInit {
 <!-- .element: class="medium-code" -->
 Notes:
 - La méthode navigate renvoie une promesse
-- Nous ne sommes pas obligé d'utiliser la propriété params du router, il existe également le props paramsMap
+- Nous ne sommes pas obligés d'utiliser la propriété params du router, il existe également le props paramsMap
 
 ##==##
 

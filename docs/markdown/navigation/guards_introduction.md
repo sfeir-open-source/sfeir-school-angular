@@ -12,7 +12,7 @@
 # Les différents guards
 <br><br>
 
-- __CanActivate__: hook avant de naviger vers une route<br><br>
+- __CanActivate__: hook avant de naviguer vers une route<br><br>
 - __CanActivateChild__: hook avant de naviguer vers une route enfant<br><br>
 - __CanDeactivate__: hook lorsque l'on quitte la route courante<br><br>
 - __CanLoad__: hook lorsque l'on navigue vers un module lazyloader<br><br>

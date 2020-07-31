@@ -52,10 +52,10 @@ beforeEach(() => {
 ##==##
 
 <!-- .slide: class="with-code" -->
-# Et si mon composant utilise d'autre composant ?
+# Et si mon composant utilise d'autres composants ?
 <br>
 
-Mais si je dois tous mocker __ça risque d'être long__ si mon composant utilise une dizaine de composant enfant !!<br><br>
+Mais si je dois tout mocker __ça risque d'être long__ si mon composant utilise une dizaine de composant enfant !!<br><br>
 <span class="important">Et bien non il existe une astuce: masquer les erreurs liées aux compoants imbriqués! :) grâce à __NO_ERRORS_SCHEMA__</span>
 <br><br>
 

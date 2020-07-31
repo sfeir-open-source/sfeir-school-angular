@@ -28,7 +28,7 @@ export class AppModule { }
 <br><br>
 
 - <b>#authentificationForm="ngForm"</b>: On déclare une référence sur un formulaire prenant comme valeur la directive ngForm<br><br>
-- <b>authentification.value</b> permnet de récupérer en format JSON objet, toutes les valeurs des champs du formulaire <br><br>
+- <b>authentification.value</b> permet de récupérer en format JSON objet, toutes les valeurs des champs du formulaire <br><br>
 
 ```html
 <form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
@@ -44,7 +44,7 @@ export class AppModule { }
 
 - Deux composantes obligatoires:
     - <b>ngModel</b>: le binding d'un contrôle
-    - <b>name</b>: associer unn nom au contrôle du champs
+    - <b>name</b>: associer un nom au contrôle du champ
 <br><br>
 
 - <b>Exemple 1</b>: binding View -> Model</li>

@@ -60,7 +60,7 @@ Interpolation: <br><br>
 
 Expression:  <br><br>
 - Dans le context du composant
-- Du Javascrip mais !!
+- Du Javascript mais !!
     - pas d'affectation (sauf pour les events comme le click sur un boutton)
     - pas d'accès aux variables globales (window, document, ...)
     - Pour les opérateurs logiques, tout est évalué
@@ -171,7 +171,9 @@ Expression:  <br><br>
 - Equivalent à
 
 ```html
-<input [ngModel]="firstname" (ngModelChange)="firstname = $event" />
+<input 
+  [ngModel]="firstname"
+  (ngModelChange)="firstname = $event" />
 ```
 <!-- .element: class="big-code" -->
 <br>

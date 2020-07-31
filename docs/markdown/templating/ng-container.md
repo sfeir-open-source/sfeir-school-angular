@@ -2,9 +2,9 @@
 # La directive ng-container
 <br><br>
 
-- Créer un template sans créer un élement suppplémentaire
+- Créer un template sans créer un élement supplémentaire
 - Pratique lorsque l'on a besoin d'utiliser plusieurs directives structurelles sur le même élément
-- Utile pour téléporter un contenue d'une balise ng-template
+- Utile pour téléporter un contenu d'une balise ng-template
 
 <br><br>
 

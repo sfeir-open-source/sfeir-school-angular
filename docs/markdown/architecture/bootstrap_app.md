@@ -6,7 +6,7 @@
 <!-- .slide: class="with-code inconsolata" -->
 # Bootstraping: main.ts
 <br><br>
-Dans une application Angular, le premier ficher chargé correspond au fichier main.ts
+Dans une application Angular, le fichier __main.ts__ est chargé en premier
 <br><br>
 
 ```typescript

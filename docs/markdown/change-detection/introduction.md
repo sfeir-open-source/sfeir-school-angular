@@ -2,7 +2,7 @@
 # Les Fondements
 
 <br><br>
-- Angular lance un changement de détection sur tous les composants (du parents à tous les enfants)<br><br>
+- Angular lance un changement de détection sur tous les composants (du parent à tous les enfants)<br><br>
 - Lancement d'un changement de détection à chaque fois que quelque chose change dans l'app (user event)<br><br>
 - Performant mais pour des applications plus complexes, risque de lague.
 <br>
@@ -109,5 +109,5 @@ export class ChildComponent {
 
 Notes:
 - Dans cette exemple, on ne verra aucun changement, puisque la référence ne change pas ! 
-- Si l'on souhaite chnager de reférence, penser à la destructuration => this.foods = [...this.foods, food];
+- Si l'on souhaite changer de reférence, penser à la destructuration => this.foods = [...this.foods, food];
 

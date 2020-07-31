@@ -4,7 +4,7 @@
 <br><br><br>
 
 - Transformer FormComponent en Reactive Forms<br><br>
-- N'oublier pas de prendre en compte le mode création et update<br><br>
+- Ne pas oublier de prendre en compte le mode création et update<br><br>
 - Validators à utiliser: Validators.required, Validators.minLength(2), Validators.pattern('\\d{10}')
 
 ##==##

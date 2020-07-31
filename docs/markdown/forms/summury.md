@@ -28,7 +28,7 @@
 <br><br><br>
 
 - La logique est dans le code et non dans le template
-- PLus facile à tester
+- Plus facile à tester
 - Prêt pour de futur scénarios (Data-Driven-Form)
 
 ##--##

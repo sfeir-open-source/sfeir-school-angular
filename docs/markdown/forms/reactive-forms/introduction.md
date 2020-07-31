@@ -124,5 +124,5 @@ export class FormComponent {
 ```
 <!-- .element: class="big-code" -->
 Notes:
-- firstname est de type AbstracteControl, si l'on souhaite update ça value lors d'un certain évènement comme le click d'un bouton, il existe la méthode patchValue
+- firstname est de type AbstracteControl, si l'on souhaite update sa valeur lors d'un certain évènement comme le click d'un bouton, il existe la méthode patchValue
 - coup de pouce: Réaliser des getters qui renvoie l'AbstractControl. Ca allégerera votre template => this.editForm.get('firstname')

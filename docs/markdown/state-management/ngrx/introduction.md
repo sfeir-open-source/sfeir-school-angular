@@ -6,7 +6,7 @@
 <!-- .slide: class="with-code inconsolata" -->
 # NGRX: Installation
 <br>
-De même que la librairies NGXS, NGRX est une librairie externe à Angular.
+De même que la librairie NGXS, NGRX est une librairie externe à Angular.
 <br><br>
 
 __Installation__:

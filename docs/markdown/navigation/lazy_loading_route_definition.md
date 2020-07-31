@@ -13,4 +13,4 @@ const ROUTES: Routes = [
 Notes:
 - Attention il s'agit de la syntax Angular version 8
 - Il est inutile d'essayer la destructuration, cela ne fonctionne pas (PeopleModule ne sera pas définit)
-- Vous pouvez également utiliser la sysntax async / await de la manière suivante: async() => (await import('./people/people.module')).PeopleModule
+- Vous pouvez également utiliser la syntax async / await de la manière suivante: async() => (await import('./people/people.module')).PeopleModule

@@ -5,7 +5,7 @@ Pour une classe il y a 3 façons de gérer une dépendance:
 
 - L'instancier avec le mot clé <b>new</b>
 - La récupérer de façon définie (variable global, singleton)
-- <b>Se la faire forunir</b> <br><br>
+- <b>Se la faire fournir</b> <br><br>
 
 ```typescript
 class Car {

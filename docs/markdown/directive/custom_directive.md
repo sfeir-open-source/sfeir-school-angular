@@ -78,7 +78,7 @@ export class MyDirective {
 <br>
 
 - ElementRef (service) permet de récupérer directement l'élément sur lequel agit la directive
-- Rendere2 (service) permet d'intéragir avec le DOM<br><br>
+- Renderer2 (service) permet d'intéragir avec le DOM<br><br>
 
 ```typescript
 import { Directive, ElementRef, Renderer2 } from '@angular/core';
@@ -97,7 +97,7 @@ export class MyDirective {
 # L'intéraction avec le DOM
 <br><br>
 
-- Préférez l'utilisation du Render au lieu de ElementRef<br><br>
+- Préférez l'utilisation du Renderer au lieu de ElementRef<br><br>
 - Aucune dépendance direct avec le DOM<br><br>
 - Permet d'éxécuter l'application dans d'autre environnements (EDGE, Firefox)
 

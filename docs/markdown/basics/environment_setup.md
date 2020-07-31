@@ -15,7 +15,7 @@ Solution de JetBrains, vient avec les plugins nécessaires au développement Web
 ![h-300](assets/images/school/basics/WebStorm_logo.png)
 ![h-300 float-right](assets/images/school/basics/IntelliJ_IDEA_Logo.png)
 Notes:
-- Si l'on souhaite prendre WebStorm sur de gros projet, assurez vous de prendre la version > 2019
+- Si l'on souhaite prendre WebStorm sur de gros projets, assurez vous de prendre la version > 2019
 Le moteur d'indexation est plus performant, l'ouverture est plus rapide. Prise en charge de Vue plus performante
 
 ##==##

@@ -16,7 +16,7 @@ Le composant est composé de trois concepts de base.
 <!-- .slide: class="with-code inconsolata" -->
 # Le component: sa logique
 <br><br>
-La Logique du composant utilise la syntax de classe de ES2015
+La logique du composant utilise la syntax de classe de ES2015
 <br><br>
 
 ```typescript

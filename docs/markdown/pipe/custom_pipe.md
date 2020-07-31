@@ -6,7 +6,7 @@
 # Les différents types de pipe
 <br><br><br>
 
-- Pure: le pipe est appelé uniquement si la valeur sur laquel il agit a changé (mode par défaut)<br><br>
+- Pure: le pipe est appelé uniquement si la valeur sur laquelle il agit a changé (mode par défaut)<br><br>
 - Impure: le pipe est appelé à chaque changement de détection que la valeur sur laquelle il agit a changé ou non
 
 ##==##

@@ -4,7 +4,7 @@
 
 - <b>path: </b>l’URL de route (ex: /people/:id)<br><br>
 - <b>component: </b>le composant associé à cette route (ex: PeopleComponent)<br><br>
-- <b>redirectTo: </b>le fragment d’URL vers lequel rediriger route courante (ex: '/home')<br><br>
+- <b>redirectTo: </b>le fragment d’URL vers lequel rediriger la route courante (ex: '/home')<br><br>
 - <b>pathMatch: </b>stratégie de redirection (full / prefix)
     - full: tente une reconnaissance depuis la racine de la route
     - prefix: tente une reconnaissance partielle de la route
@@ -13,7 +13,7 @@
 <!-- .slide -->
 # Configuration avancé (complète)
 <br>
-Il existe d'autre options de configuration, permettant de réaliser du routing plus avancé.
+Il existe d'autres options de configuration, permettant de réaliser du routing plus avancé.
 <br><br> 
 
 - <b>outlet: </b>le nom de l'emplacement dans lequel le composant doit s'afficher<br><br>
@@ -39,7 +39,7 @@ const ROUTES: Routes = [
 ```
 <!-- .element: class="big-code" -->
 Notes:
-- Attention l'ordre de déclaration des routes est importante
+- Attention l'ordre de déclaration des routes est important
 
 ##==##
 

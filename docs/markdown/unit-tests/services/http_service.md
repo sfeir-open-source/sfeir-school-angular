@@ -4,7 +4,7 @@
 
 Il faut importer le client Http d'Angular pour exécuter nos requêtes<br><br>
 - __HttpModule__: qui va réaliser de vrais calls<br><br>
-- __HttpClientTestModule__: qui ne vas pas réaliser de vrais call, il faudra donc mocker la réponse
+- __HttpClientTestModule__: qui ne vas pas réaliser de vrais calls, il faudra donc mocker la réponse
 
 ##==##
 

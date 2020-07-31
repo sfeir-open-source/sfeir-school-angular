@@ -47,7 +47,7 @@ this.http.get(url, options).subscribe(datas => {
 <br><br>
 
 - Par défaut le réponse est sous format JSON<br><br>
-- Pour l'avoir en type textt, dans les options { responseType: text }<br><br>
+- Pour l'avoir en type text, dans les options { responseType: text }<br><br>
 
 ```typescript
 this.http.get(url, options).subscribe(datas => {

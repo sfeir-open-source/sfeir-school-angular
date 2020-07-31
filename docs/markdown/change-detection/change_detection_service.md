@@ -7,7 +7,7 @@
     - detectChanges (détecte un changement)
     - markForCheck (détecte une mutation d'état pratique pour les observables)
     - detach (permet de ne plus observer une variable)
-    - reattach (permet de nouveau regarder les changements)
+    - reattach (permet d'écouter à nouveau les changements)
 
 ##==##
 
