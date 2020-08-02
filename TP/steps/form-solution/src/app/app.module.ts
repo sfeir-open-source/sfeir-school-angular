@@ -1,7 +1,8 @@
 // CORE DEPS
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 // MATERIAL DESIGN MODULES
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -16,14 +17,15 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { APP_ROUTES } from './app.routes';
-
 import { PeopleAppComponent } from './app.component';
 import { HomeComponent } from './home';
 import { PeopleComponent } from './people';
 import { CardComponent } from './shared/card';
 import { AddDialogComponent } from './people/add-dialog/add-dialog.component';
 import { FormComponent } from './shared/form';
-import { FormsModule } from '@angular/forms';
+import { NaPipe } from './shared/na-pipe';
+import { SfeirBadgeDirective } from './shared/badge';
+import { PeopleService } from './shared/people-service';
 
 @NgModule({
   imports: [
@@ -43,9 +45,17 @@ import { FormsModule } from '@angular/forms';
     APP_ROUTES,
     FormsModule
   ],
-  declarations: [PeopleAppComponent, HomeComponent, PeopleComponent, CardComponent, AddDialogComponent, FormComponent],
-  entryComponents: [AddDialogComponent],
-  providers: [HttpClient],
+  declarations: [
+    PeopleAppComponent,
+    HomeComponent,
+    PeopleComponent,
+    CardComponent,
+    AddDialogComponent,
+    NaPipe,
+    SfeirBadgeDirective,
+    FormComponent
+  ],
+  providers: [PeopleService],
   bootstrap: [PeopleAppComponent]
 })
 export class AppModule {}

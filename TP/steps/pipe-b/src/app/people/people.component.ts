@@ -1,7 +1,5 @@
-import { mergeMap } from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
-import { AddDialogComponent } from './add-dialog/add-dialog.component';
+import { mergeMap } from 'rxjs/operators';
 import { PeopleService } from '../shared/people-service';
 
 @Component({
@@ -10,11 +8,9 @@ import { PeopleService } from '../shared/people-service';
   styleUrls: ['people.component.css']
 })
 export class PeopleComponent implements OnInit {
-  private addDialog: MatDialogRef<AddDialogComponent>;
   people;
-  dialogStatus = 'inactive';
 
-  constructor(public dialog: MatDialog, private _peopleService: PeopleService) {}
+  constructor(private _peopleService: PeopleService) {}
 
   /**
    * OnInit implementation
@@ -33,27 +29,6 @@ export class PeopleComponent implements OnInit {
       .pipe(mergeMap(() => this._peopleService.fetch()))
       .subscribe((people: any[]) => {
         this.people = people;
-        this.hideDialog();
       });
-  }
-
-  showDialog() {
-    this.dialogStatus = 'active';
-    this.addDialog = this.dialog.open(AddDialogComponent, {
-      width: '450px',
-      data: {}
-    });
-
-    this.addDialog.afterClosed().subscribe(person => {
-      this.dialogStatus = 'inactive';
-      if (person) {
-        this.add(person);
-      }
-    });
-  }
-
-  hideDialog() {
-    this.dialogStatus = 'inactive';
-    this.addDialog.close();
   }
 }

@@ -1,7 +1,3 @@
 <section>
   <sfeir-card [person]="person" (personDelete)="delete($event)" *ngFor="let person of people"></sfeir-card>
 </section>
-
-<button (click)="showDialog()" *ngIf="dialogStatus == 'inactive'" mat-fab color="accent">
-  <i class="material-icons">add</i>
-</button>

@@ -1,7 +1,7 @@
 // CORE DEPS
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 // MATERIAL DESIGN MODULES
 import { MatButtonModule } from '@angular/material/button';
@@ -22,9 +22,6 @@ import { PeopleAppComponent } from './app.component';
 import { HomeComponent } from './home';
 import { PeopleComponent } from './people';
 import { CardComponent } from './shared/card';
-import { AddDialogComponent } from './people/add-dialog/add-dialog.component';
-import { FormComponent } from './shared/form';
-import { UpdateComponent } from './update/update.component';
 
 @NgModule({
   imports: [
@@ -44,17 +41,7 @@ import { UpdateComponent } from './update/update.component';
     HttpClientModule,
     ReactiveFormsModule
   ],
-  declarations: [
-    PeopleAppComponent,
-    HomeComponent,
-    PeopleComponent,
-    CardComponent,
-    AddDialogComponent,
-    FormComponent,
-    UpdateComponent
-  ],
-  entryComponents: [AddDialogComponent],
-  providers: [HttpClient],
+  declarations: [PeopleAppComponent, HomeComponent, PeopleComponent, CardComponent],
   bootstrap: [PeopleAppComponent]
 })
 export class AppModule {}

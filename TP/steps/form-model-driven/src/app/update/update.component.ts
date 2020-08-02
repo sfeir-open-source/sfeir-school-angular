@@ -1,9 +1,7 @@
-import { mergeMap, map } from 'rxjs/operators';
+import { map, mergeMap } from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
-
-const BASE_URL = 'http://localhost:9000';
+import { PeopleService } from '../shared/people-service';
 
 @Component({
   selector: 'sfeir-update',
@@ -16,7 +14,7 @@ export class UpdateComponent implements OnInit {
   /**
    * Component constructor
    */
-  constructor(private _route: ActivatedRoute, private _router: Router, private _http: HttpClient) {
+  constructor(private _route: ActivatedRoute, private _router: Router, private peopleService: PeopleService) {
     this.person = {
       address: {}
     };
@@ -29,13 +27,15 @@ export class UpdateComponent implements OnInit {
     this._route.params
       .pipe(
         map((params: any) => params.id),
-        mergeMap((id: string) => this._http.get(`${BASE_URL}/api/peoples/${id}`))
+        mergeMap((id: string) => this.peopleService.fetchOne(id))
       )
       .subscribe((person: any) => (this.person = person));
   }
 
   submit(person: any) {
-    this._http.put(`${BASE_URL}/api/peoples/${person.id}`, person).subscribe(() => this._router.navigate(['/people']));
+    this.peopleService.update(person).subscribe(() => {
+      this._router.navigate(['/people']);
+    });
   }
 
   cancel() {
