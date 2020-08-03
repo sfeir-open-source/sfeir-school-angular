@@ -1,11 +1,11 @@
-<!-- .slide: class="sfeir-bg-pink exercice" -->
+<!-- .slide: class="exercice" -->
+# Exercice : ngrx
 ## Exercice
-<span class="bold center">steps/ngrx</span>
-<br><br>
-- Une barre de recherche a été ajoutée à votre application
-- Lors de la recherche vous devez filtrer la liste des personnes
+<br><br><br>
+- Une barre de recherche a été ajoutée à votre application<br><br>
+- Lors de la recherche vous devez filtrer la liste des personnes<br><br>
 - Mettre en place une architecture NGRX afin de parvenir à ce resultat
-Notes
+Notes:
 - vous devez modifier uniquement les fichiers:
     - people.component.ts
     - people.component.html
@@ -23,6 +23,7 @@ Notes
 
 ##==##
 
-<!-- .slide: class="sfeir-bg-blue exercice" -->
+<!-- .slide: class="full-center exercice" -->
+# Exercice : ngrx
 ## Solution
-<span class="bold full-center">steps/ngrx-solution</span>
+__steps/ngrx-solution__

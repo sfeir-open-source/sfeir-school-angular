@@ -1,6 +1,7 @@
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # Enregistrer son interceptor
 <br><br>
+
 ```typescript
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from './token.interceptor';
@@ -18,6 +19,6 @@ import { TokenInterceptor } from './token.interceptor';
 export class AppModule { }
 ```
 <!-- .element: class="big-code" -->
-Notes
+Notes:
 - le multi permet d'enregistrer plusieurs interceptors
 - les interceptors s'executent dans l'ordre de register

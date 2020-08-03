@@ -1,12 +1,14 @@
-<!-- .slide: class="sfeir-bg-pink exercice" -->
+<!-- .slide: class="exercice" -->
+# Exercice : pipe
 ## Exercice
-<span class="bold center">steps/pipe</span>
-<br><br>
-- Une date de naissance a été ajoutée dans le composant CardComponent
-- Afficher cette date sous le format: <strong>dd/MM/yyyy</strong>
+<br><br><br>
+
+- Une date de naissance a été ajoutée dans le composant CardComponent<br><br>
+- Afficher cette date sous le format: <b>dd/MM/yyyy</b>
 
 ##==##
 
-<!-- .slide: class="sfeir-bg-blue exercice" -->
+<!-- .slide: class="exercice full-center" -->
+# Exercice : pipe
 ## Solution
-<span class="full-center">steps/pipe-solution</span>
+<b>steps/pipe-solution</b>

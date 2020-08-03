@@ -1,19 +1,21 @@
-<!-- .slide: class="transition-white sfeir-bg-pink" -->
+<!-- .slide: class="transition-bg-grey-1 underline" -->
 # Host Listener
 
 ##==## 
 
-<!-- .slide: class="sfeir-basic-slide" -->
+<!-- .slide-->
 # Host Listener: définition
 <br><br>
-- Permet d'écouter un event du DOM et d'appeler un callback
+
+- Permet d'écouter un event du DOM et d'appeler un callback <br><br>
 - Décorateur @HostListener()
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="inconsolata with-code" -->
 # Host Listener: exemple
 <br><br>
+
 ```typescript
 @Directive({ selector: '[blDragAndDrop]' })
 export class DragAndDropDirective {

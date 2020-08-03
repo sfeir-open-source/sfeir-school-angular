@@ -1,9 +1,8 @@
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # Qu'est ce qu'un Service
-<ul>
-    <li>Une classe exportée</li><br>
-    <li>Une annotation <strong>@Injectable</strong></li>
-</ul>
+- Une classe exportée
+- une annotation <b>@Injectable</b><br><br>
+
 ```typescript
 @Injectable({
 	provideIn: AdminModule
@@ -19,55 +18,52 @@ export class TodoService {
 }
 ```
 <!-- .element: class="big-code" -->
-Notes
+Notes:
 - Ici on enregistre directement dans notre module AdminModule (penser à l'import sinon il y aura une erreur)
-- Angular 9 propose le provideIn: any qui enregistre un service par module lazy loader (attention dans ce cas plusieurs instances)
+- Angular 9 propose le providedIn: any qui enregistre un service par module lazy loader (attention dans ce cas plusieurs instances)
 
 ##==##
-
-<!-- .slide: class="sfeir-basic-slide" -->
+<!-- .slide: class="two-column-layout" -->
 # Utiliser son service (en global)
-<div class="flew-row center">
-    <img alt="h-600" src="assets/images/school/providers/service.png" />
-    <img alt="h-600" src="assets/images/school/providers/service_register.png" />
-</div>
-<img alt="h-400 center" src="assets/images/school/providers/service_injection.png" />
-
+##--##
+![h-600](assets/images/school/providers/service.png)
+##--##
+![h-600](assets/images/school/providers/service_register.png)
+![h-400 center](assets/images/school/providers/service_injection.png)
 
 ##==##
-
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="two-column-layout" -->
 # Utiliser son service en local
-<br><br>
-<div class="flex-row">
-    <div class="tiers">
-        <pre class="big-code">
-            <code data-trim>
-                @Injectable()
-                class TodoService {
-                  constructor() { }
+##--##
+<!-- .slide: class="with-code inconsolata" -->
+<br><br><br>
+
+```typescript
+@Injectable()
+class TodoService {
+  constructor() { }
   
-                  get Name(): string {
-                    return 'SFEIR';
-                  }
-                }
-            </code>
-        </pre>
-    </div>
-    <div class="fill-rest">
-        <pre class="big-code">
-            <code data-trim>
-                @Component({
-                  ...
-                  providers: [TodoService]
-                })
-                export class AppComponent { 
-                  constructor(private readonly todoService: TodoService) { 
-                    console.log(todoService.name); // SFEIR
-                  }
-                }
-            </code>
-        </pre>
-    </div>
-</div>
+  get Name(): string {
+    return 'SFEIR';
+  }
+}
+```
+<!-- .element: class="big-code" -->
+
+##--##
+<!-- .slide: class="with-code inconsolata" -->
+<br><br><br>
+
+```typescript
+@Component({
+  ...
+  providers: [TodoService]
+})
+export class AppComponent {
+  constructor(private readonly todoService: TodoService) {
+    console.info(todoService.name); // SFEIR
+  }
+}
+```
+<!-- .element: class="big-code" -->
 

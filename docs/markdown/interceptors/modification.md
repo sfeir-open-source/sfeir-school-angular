@@ -1,6 +1,7 @@
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # Modification de la requête
 <br><br>
+
 ```typescript
 @Injectable()
 export class MyInterceptor implements HttpInterceptor {
@@ -15,9 +16,10 @@ export class MyInterceptor implements HttpInterceptor {
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # Modification de la réponse
 <br><br>
+
 ```typescript
 @Injectable()
 export class MyInterceptor implements HttpInterceptor {

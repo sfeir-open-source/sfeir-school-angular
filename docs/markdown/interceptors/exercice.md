@@ -1,15 +1,18 @@
-<!-- .slide: class="sfeir-bg-pink exercice" -->
+<!-- .slide: class="exercice" -->
+# Exercice : interceptors
 ## Exercice
-<span class="center bold">steps/interceptors</span>
-<br>
+<br><br><br>
+
 - Une ébauche d'interceptor a été réalisée dans le dossier shared/interceptor
 - A chaque requête il faut setter le header "Authorization" à "Sfeir"
 - Vérifier votre travail en analysant la requête qui part dans l'inspecteur de votre navigateur
-Notes
+
+Notes:
 - pensez à utiliser la méthode "clone()" et "setHeaders()"
 
 ##==##
 
-<!-- .slide: class="sfeir-bg-blue exercice" -->
+<!-- .slide: class="full-center exercice" -->
+# Exercice : interceptors
 ## Solution
-<span class="full-center bold">steps/interceptors-solution</span>
+__steps/interceptors-solution__

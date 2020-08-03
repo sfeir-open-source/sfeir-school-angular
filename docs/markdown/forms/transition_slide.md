@@ -1,22 +1,23 @@
-<!-- .slide: class="transition-white sfeir-bg-pink" -->
+<!-- .slide: class="transition" -->
 # Les Formulaires
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide" -->
+<!-- .slide-->
 # Problématique des formulaires
-<br><br>
+<br><br><br><br>
+
 - Permettre de collecter des données saisies par l'utilisateur<br><br>
 - Valider les données saisies<br>
-<br>
 Notes:
 - Attention même s'il y a une validation front des données saisies, il est nécessaire de réaliser une validation côté serveur
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide" -->
+<!-- .slide -->
 # Les Formulaires en Angular
-<br><br>
-Il existe deux types de formulaire en Angular:<br><br>
-- <strong>Template driven form</strong>: formulaire piloté par le template<br><br>
-- <strong>Reactive forms</strong>: formulaire piloté par la logique composant
+<br><br><br>
+
+- Il existe deux types de formulaire en Angular:<br><br>
+    - <b>Template driven form</b>: formulaire piloté par le template<br><br>
+    - <b>Reactive forms</b>: formulaire piloté par la logique composant

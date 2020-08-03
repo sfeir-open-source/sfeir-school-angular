@@ -1,18 +1,18 @@
-<!-- .slide: class="sfeir-basic-slide" -->
+<!-- .slide -->
 # Exemple
-<img alt="full-center h-800" src="assets/images/school/pipe/exemple_filter_uppercase.png" />
+![full-center h-800](assets/images/school/pipe/exemple_filter_uppercase.png)
+
+##==##
+<!-- .slide-->
+# Exemple
+![full-center h-800](assets/images/school/pipe/exemple_filter_date.png)
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide" -->
-# Exemple
-<img alt="full-center h-800" src="assets/images/school/pipe/exemple_filter_date.png" />
-
-##==##
-
-<!-- .slide: class="sfeir-basic-slide" -->
+<!-- .slide -->
 # Angular et ses pipes déjà existants
-<br>
+<br><br><br>
+
 - currency
 - date
 - lowercase
@@ -20,7 +20,7 @@
 - json
 - decimal
 - percent
-Notes
+Notes:
 - async est très pratique pour résoudre des observables dans le template
 - json permet d'afficher de manière "pretty" des variables (object, array) dans le template (utile pour débugger)
 - date très utile pour afficher une date dans un certain format (peut fonctionner avec moment)

@@ -1,39 +1,32 @@
-<!-- .slide: class="transition-white sfeir-bg-blue" -->
+<!-- .slide: class="transition-bg-grey-1 underline" -->
 # IDE's
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide" -->
+<!-- .slide -->
 # IntellJ / Webstorm
 <br><br>
-Solution de JetBrains, vient avec les plugins nécessaires au développement Web:<br>
-<ul>
-    <li>Auto-completion</li><br>
-    <li>Language / Framework Syntax</li><br>
-    <li>Pre - Debug configuration</li>
-</ul>
+Solution de JetBrains, vient avec les plugins nécessaires au développement Web:<br><br>
+- Auto-complétion<br>
+- Language / Framework Syntax<br>
+- Pre - Debug configuration<br>
 <br><br>
-<div class="flex-row">
-    <img alt="h-300" src="assets/images/school/basics/WebStorm_logo.png"/>
-    <img alt="h-300" src="assets/images/school/basics/IntelliJ_IDEA_Logo.png" />
-</div>
+
+![h-300](assets/images/school/basics/WebStorm_logo.png)
+![h-300 float-right](assets/images/school/basics/IntelliJ_IDEA_Logo.png)
 Notes:
-- Si l'on souhaite prendre WebStorm sur de gros projet, assurez vous de prendre la version > 2019
+- Si l'on souhaite prendre WebStorm sur de gros projets, assurez vous de prendre la version > 2019
 Le moteur d'indexation est plus performant, l'ouverture est plus rapide. Prise en charge de Vue plus performante
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide" -->
+<!-- .slide -->
 # Visual Studio Code
 <br><br>
-Solution de Microsoft, vient seul, il faut installer des plugins pour avoir un IDE performant
-<ul>
-    <li>Angular language service: autorise le Framework Syntaxe + auto-completion</li><br>
-    <li>Visual Studio IntelliCode pour de l'auto-completion intelligente</li><br>
-    <li>Editor Config: pour avoir une config d'éditeur commune avec tous les membres de votre equipe</li><br>
-</ul>
-<br>
-<div class="flex-row">
-    <img alt="h-300" src="assets/images/school/basics/vscode.svg" />
-    <img alt="h-300" src="assets/images/school/basics/editor_config.png" />
-</div>
+Solution de Microsoft, vient seul, il faut installer des plugins pour avoir un IDE performant<br><br>
+- Angular language service: autorise le Framework Syntaxe + auto-completion<br><br>
+- Visual Studio IntelliCode pour de l'auto-complétion intelligente<br><br>
+- Editor Config: pour avoir un config de l'éditeur commune avec tous les membres de votre équipe<br><br>
+
+![h-300](assets/images/school/basics/vscode.svg)
+![h-300 float-right](assets/images/school/basics/editor_config.png)

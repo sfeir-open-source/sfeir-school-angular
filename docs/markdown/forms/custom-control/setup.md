@@ -1,10 +1,10 @@
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # Enregistrer son composant dans le service NG_VALUE_ACCESSOR
 <br>
-<ul>
-    <li>NG_VALUE_ACCESSOR est un service global donnée par @angular/forms</li>
-</ul>
+
+- NG_VALUE_ACCESSOR est un service global donnée par @angular/forms
 <br><br>
+
 ```typescript
 @Component({
   selector: 'msfeir-dropdown',
@@ -15,21 +15,24 @@
 ```
 <!-- .element: class="big-code" -->
 <br><br>
-<span class="important center">Ouhla! D'ou sort tout ça ?</span>
+Ouhlà!! D'où sort tout ça ?
+<!-- .element: class="center important" -->
+<br>
 Notes:
 - Ici on pousse le component SfeirDropDownComponent dans le provider NG_VALUE_ACCESSOR grâce à provide: NG_VALUE_ACCESSOR
-- multi: true permet de préciser qu'il peut y avoir plusieurs composant qui vont utiliser NG_VALUE_ACCESSOR
+- multi: true permet de préciser qu'il peut y avoir plusieurs composants qui vont utiliser NG_VALUE_ACCESSOR
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="inconsolata with-code" -->
 
 # Pourquoi utiliser forwardRef ?
 <br><br>
-<ul>
-  <li>Fait référence à quelque chose qui n'est pas définie</li><br>
-</ul>
-<br>
-<span class="center important">Heu ça veut dire que la class SfeirDropDownComponent n'est pas définie ? </span>
+
+- Fait référence à quelque chose qui n'est pas définie
+<br><br><br>
+
+Heu ça veut dire que la class SfeirDropDownComponent n'est pas définie ? 
+<!-- .element: class="center important"-->
 <br>
 Et bien non ! Les classes ne sont pas au 'top' du runtime JS, ce qui insinue que dans les métadatas de l'annotation @Component, la classe n'est pas définie
 
@@ -38,10 +41,11 @@ Notes:
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide" -->
+<!-- .slide -->
 
 # Implémenter l'interface ControlValueAccessor
 <br><br>
+
 - Permet de préciser à Angular comment accéder à la valeur du contrôle
 - 'Pont' entre le contrôle et l'élement natif (ici l'élement sfeir-dropdown)
 - Doit obligatoirement implémenter les méthodes suivantes:
@@ -55,22 +59,21 @@ Notes:
 <!-- .slide: class="sfeir-basic-slide" -->
 
 # WriteValue: modèle -> vue
-<br><br>
-Ecrit une valeur dans l'élement. Cette méthode est appelée:
-<ul>
-    <li>lors de l'instanciation d'un nouveau FormControl</li>
-    <li>quand on appelle la méthode patchValue/setValue</li>
-</ul>
+<br><br><br>
+
+- Ecrit une valeur dans l'élement. Cette méthode est appelée:
+    - lors de l'instanciation d'un nouveeau FormControl
+    - quand on appelle la méthode patchValue/setValue
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 
 # registerOnChange: vue -> modèle
 <br>
-<ul>
-    <li>Définit une fonction ou callback à appeler quand il y a un changement dans votre composant</li>
-</ul>
+
+- Définit une fonction ou callback à appeler quand il y a un changement dans votre composant
+
 ```typescript
 @Component({
   selector: 'msfeir-dropdown',
@@ -91,13 +94,13 @@ export class SfeirDropDownComponent implements ControlValueAccessor {
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 
 # registerOnTouched: vue -> modèle
 <br>
-<ul>
-    <li>Définit une fonction ou callback à appeler quand votre composant a été "touched"</li>
-</ul>
+
+- Définit une fonction ou callback à appeler quand votre composant a été 'touched''
+
 ```typescript
 @Component({
   selector: 'msfeir-dropdown',

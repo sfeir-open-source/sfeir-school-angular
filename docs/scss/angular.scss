@@ -1,4 +1,32 @@
-@import 'angular-color';
+/**
+  - modify the top of icon to avoid the icon be just below the name of the speaker
+**/
+.reveal .slides section[data-background].speaker-slide img[alt*=badge] {
+  top: 800px
+}
+
+/**
+  - add a new class to display code correctly when there is a lot of code on the diapo
+**/
+.reveal .slides section.with-code pre.medium-code:not(.literal) code {
+  font-size: 1.1em;
+  line-height: 2em;
+}
+
+.reveal .slides section.with-code pre.big-code:not(.literal) code {
+  font-size: 1.3em;
+  line-height: 2em;
+}
+
+.reveal .slides section.with-code pre code {
+  max-height: 800px !important;
+  overflow: auto !important;
+}
+
+.reveal .slides section .important {
+  font-weight: bold;
+  color: darkred;
+}
 
 .reveal .slides section {
   .bold {
@@ -7,15 +35,6 @@
 
   .file-name {
     font-size: 12px;
-  }
-
-  .important {
-    font-weight: 400;
-    color: darkred;
-  }
-
-  .center {
-    text-align: center;
   }
 
   .half {
@@ -28,32 +47,6 @@
 
   .fill-rest {
     flex: 2;
-  }
-
-  &.sfeir-bg-white-5 {
-    h1 {
-      position: absolute;
-      bottom: 3em;
-      right: 1em;
-      color: #880e4f !important
-    }
-  }
-
-  &.with-code,
-  &.with-code-dark {
-    pre {
-      code {
-        max-height: 800px !important;
-        overflow: auto !important;
-      }
-    }
-    pre.big-code {
-      font-size: 16px;
-    }
-    pre.big-code:not(.literal) {
-      position: relative;
-      top: 0;
-    }
   }
 
   img[alt*='full-width-screen'] {
@@ -71,5 +64,4 @@
 
 /** Specific **/
 
-@import 'exercice';
 @import 'custom-directive';

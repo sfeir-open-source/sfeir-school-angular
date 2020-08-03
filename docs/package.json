@@ -1,28 +1,50 @@
 {
-  "name": "sfeir-school-angular",
-  "version": "1.0.0",
-  "description": "Sfeir School Angular with revealJS",
+  "name": "sfeirschoolangular",
+  "version": "2.0.0",
+  "description": "Sfeir School Vue with revealJS",
   "main": "index.js",
   "scripts": {
     "sass": "node-sass ./scss/angular.scss -o ./css/ --source-map=true --watch=\"scss\" --recursive=\"scss\"",
     "sass-once": "node-sass ./scss/angular.scss -o ./css/ --source-map=true ",
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "live-server --port=4242 --open=\"./index.html\" --watch=\"markdown/\"",
-    "start": "parallelshell \"npm run serve\" \"npm run sass\""
+    "start": "parallelshell \"npm run serve\" \"npm run sass\"",
+    "copy-highlight": "cpx \"node_modules/highlight.js/styles/**/*\" \"web_modules/highlight.js/styles\" ",
+    "copy-reveal": "cpx \"node_modules/reveal.js/**/*\" \"web_modules/reveal.js\" ",
+    "prepare": "parallelshell \"npm run copy-reveal\"  \"npm run copy-highlight\" \"snowpack\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jefBinomed/SfeirSchoolTheme.git"
   },
   "keywords": [
-    "Angular",
+    "typescript",
     "sfeir"
   ],
-  "author": "Nicolas FRIZZARIN (Nicoss54)",
+  "authors": [
+    "Nicolas Frizzarin: frizzarin.n@sfeir.com"
+  ],
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jefBinomed/SfeirSchoolTheme/issues"
+  },
+  "homepage": "https://github.com/jefBinomed/SfeirSchoolTheme#readme",
   "dependencies": {
-    "chokidar-cli": "^1.2.1",
+    "chokidar-cli": "^1.2.2",
     "cpx": "^1.5.0",
-    "highlight.js": "^9.13.1",
+    "highlight.js": "^9.15.6",
+    "lit-html": "^1.1.2",
     "live-server": "^1.2.1",
-    "node-sass": "^4.13.0",
+    "node-sass": "^4.12.0",
     "parallelshell": "3.0.1",
-    "reveal.js": "^3.7.0"
+    "reveal.js": "^3.9.2",
+    "snowpack": "^1.6.0",
+    "sfeir-school-theme": "2.0.1"
+  },
+  "snowpack": {
+    "webDependencies": [
+      "sfeir-school-theme/dist/**/*",
+      "lit-html"
+    ]
   }
 }

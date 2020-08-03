@@ -1,15 +1,17 @@
 <!-- .slide: class="sfeir-basic-slide" -->
 # Les services http
 <br><br>
+
 Il faut importer le client Http d'Angular pour exécuter nos requêtes<br><br>
-- __HttpModule__: qui va réaliser de vrais calls<br><br>
-- __HttpClientTestModule__: qui ne vas pas réaliser de vrais call, il faudra donc mocker la réponse
+- __HttpModule__ : qui va réaliser de vrais calls<br><br>
+- __HttpClientTestModule__ : qui ne vas pas réaliser de vrais calls, il faudra donc mocker la réponse
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # Test avec HttpModule
 <br><br>
+
 ```typescript
 @Injectable()
 export class UserService {
@@ -25,7 +27,7 @@ export class UserService {
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # Test avec HttpModule
 ```typescript
 let service: UserService;
@@ -48,7 +50,7 @@ it('should return a valid name', () => {
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # Test avec HttpClientTestModule
 ```typescript
 let service: UserService;
@@ -73,7 +75,7 @@ it('should return mocked username', () => {
 });
 
 ```
-<!-- .element: class="big-code" -->
+<!-- .element: class="medium-code" -->
 
-Notes
+Notes:
 - HttpTestingController et HttpClientTestingModule proviennent du package @angular/common/http/testing'

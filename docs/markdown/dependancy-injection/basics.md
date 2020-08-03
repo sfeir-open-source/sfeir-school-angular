@@ -1,12 +1,12 @@
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # Principe
 <br>
 Pour une classe il y a 3 façons de gérer une dépendance:
-<ul>
-    <li>L'instancier avec le mot clé <strong>new</strong></li>
-    <li>La récupérer de façon définie (variable globale, singleton)</li>
-    <li><strong>Se la faire fournir</strong></li>
-</ul>
+
+- L'instancier avec le mot clé <b>new</b>
+- La récupérer de façon définie (variable global, singleton)
+- <b>Se la faire fournir</b> <br><br>
+
 ```typescript
 class Car {
   constructor() {
@@ -19,10 +19,10 @@ class Car {
 <!-- .element: class="big-code" -->
 
 ##==##
-
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # L'injection en Angular (typescript)
-<br>
+<br><br>
+
 ```typescript
 import { EngineService, TiresService, DoorsService } from './shared';
  @Component({...})
@@ -32,7 +32,6 @@ import { EngineService, TiresService, DoorsService } from './shared';
        public tires: TiresService,
        public doors: DoorsService
    ) {}
-
 }
 ```
 <!-- .element: class="big-code" -->

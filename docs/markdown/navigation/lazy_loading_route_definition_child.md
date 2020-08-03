@@ -1,6 +1,7 @@
 <!-- .slide: class="sfeir-basic-slide with-code" -->
 # Définiton dans les routes dans le module enfant
 <br><br>
+
 ```typescript
 const peopleModuleRoutes: Routes = [
 { path: '', component: PeopleComponent },

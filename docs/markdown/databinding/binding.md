@@ -1,4 +1,4 @@
-<!-- .slide: class="sfeir-basic-slide" -->
+<!-- .slide -->
 # Les différents types de binding
 <table>
     <thead>
@@ -45,122 +45,137 @@
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide" -->
+<!-- .slide: class="with-code inconsolata" -->
 # Interpolation et expression
-<br><br>
-- Interpolation
 <br>
+
+Interpolation: <br><br>
+
 ```html
 <div>Hello {{ name }}</div>
 <img src="{{ myUrl }}" />
 ```
+<!-- .element: class="medium-code" -->
 <br>
-- Expression
-<ul>
-    <li>Dans le context du composant</li>
-    <li>Du Javascript mais !!<br>
-        - pas d'affectation (sauf pour les events comme le click sur un boutton)<br>
-        - pas d'accès aux variables globals (window, document, ...)<br>
-        - Pour les opérateurs logiques, tout est évalué<br>
-        - Pas de new, ++, --
-    </li>
-</ul>
+
+Expression:  <br><br>
+- Dans le context du composant
+- Du Javascript mais !!
+    - pas d'affectation (sauf pour les events comme le click sur un boutton)
+    - pas d'accès aux variables globales (window, document, ...)
+    - Pour les opérateurs logiques, tout est évalué
+    - Pas de new, ++, --
 
 ##==##
-
-<!-- .slide: class="sfeir-basic-slide" -->
+<!-- .slide: class="two-column-layout" -->
 # Properties binding
-<div class="flex-row">
-    <table>
-        <thead>
-            <tr>
-                <td>Type</td>
-                <td>Cible</td>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Propriété</td>
-                <td>
-                    <p>Attribut de l'élement</p>
-                    <p>Attribut de component</p>
-                    <p>Attribut de directive</p>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <img alt="center h-400" src="assets/images/school/databinding/properties_binding.png"/>
-</div>
-<br>
+
+##--##
+<br><br>
+<table>
+    <thead>
+        <tr>
+            <td>Type</td>
+            <td>Cible</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Propriété</td>
+            <td>
+                <p>Attribut de l'élement</p>
+                <p>Attribut de component</p>
+                <p>Attribut de directive</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+![center h-400](assets/images/school/databinding/properties_binding.png)
+
+##--##
+<!-- .slide: class="with-code inconsolata" -->
+<br><br>
+
 - Forme canonique: bindCapitalAttr (ex: bindDisabled)<br><br>
 - Constant
+
 ```html
 <show-title [title]="'My title'"></show-title>
 <show-title title="My title"></show-title>
 ```
+<!-- .element: class="medium-code" -->
 
 ##==##
-
-<!-- .slide: class="sfeir-basic-slide" -->
+<!-- .slide: class="two-column-layout" -->
 # Event Binding
-<br>
-<div class="flex-row">
-    <table>
-        <thead>
-            <tr>
-                <td>Type</td>
-                <td>Cible</td>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Évènement</td>
-                <td>
-                    <p>Évènement d'élements</p>
-                    <p>Évènement de composants</p>
-                    <p>Évènement de directives</p>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <img alt="center h-400" src="assets/images/school/databinding/event_binding.png"/>
-</div>
+
+##--##
 <br><br>
+<table>
+    <thead>
+        <tr>
+            <td>Type</td>
+            <td>Cible</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Évènement</td>
+            <td>
+                <p>Évènement d'élements</p>
+                <p>Évènement de composants</p>
+                <p>Évènement de directives</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+![center h-400](assets/images/school/databinding/event_binding.png)
+
+##--##
+<br><br>
+
 - Forme canonique: onCapitalAttr (ex: onClick)
 - Référence à l'évent grâce à $event
 
 ##==##
-
-<!-- .slide: class="sfeir-basic-slide" -->
+<!-- .slide: class="two-column-layout" -->
 # 2 way binding
-<br>
-<div class="flex-row">
-    <table>
-        <thead>
-            <tr>
-                <td>Type</td>
-                <td>Cible</td>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>bidirectionnel</td>
-                <td>
-                    <p>Propriétés</p>
-                    <p>Évènement de directives</p>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <img alt="center h-350" src="assets/images/school/databinding/two_way_binding.png"/>
-</div>
+##--##
 <br><br>
+<table>
+    <thead>
+        <tr>
+            <td>Type</td>
+            <td>Cible</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>bidirectionnel</td>
+            <td>
+                <p>Propriétés</p>
+                <p>Évènement de directives</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+![center h-500](assets/images/school/databinding/two_way_binding.png)
+
+##--##
+<!-- .slide: class="with-code inconsolata" -->
+<br><br>
+
 - Equivalent à
+
 ```html
-<input [ngModel]="firstname" (ngModelChange)="firstname = $event" />
+<input 
+  [ngModel]="firstname"
+  (ngModelChange)="firstname = $event" />
 ```
+<!-- .element: class="big-code" -->
 <br>
-- <strong>ngModel</strong> provient de la librairie <strong>@angular/forms</strong>
 
-
-
+- <bg>ngModel</bg> provient de la librairie <strong>@angular/forms</strong>

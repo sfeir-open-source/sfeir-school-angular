@@ -1,13 +1,14 @@
-<!-- .slide: class="sfeir-bg-pink exercice" -->
+<!-- .slide: class="exercice" -->
+# Exercice : router
 ## Exercice
-<span class="center bold">steps/router</span><br>
-<ul>
-    <li>Compléter le fichier app.routes.ts</li><br>
-    <li>Importer la balise <router-outlet></router-outlet> dans le fichier app.component.html</li>
-</ul>
+<br><br><br>
+
+- Compléter le fichier qpp.routes.ts<br><br>
+- Importer le balise <router-outlet><router-outlet> dans le fichier app.component.html
 
 ##==##
 
-<!-- .slide: class="sfeir-bg-blue exercice" -->
+<!-- .slide: class="exercice full-center" -->
+# Exercice : router
 ## Solution
-<span class="full-center bold">steps/router-solution</span>
+<b>steps/router-solution</b>

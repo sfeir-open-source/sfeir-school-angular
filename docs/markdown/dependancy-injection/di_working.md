@@ -1,30 +1,29 @@
-<!-- .slide: class="sfeir-basic-slide" -->
+<!-- .slide-->
 # Principe de la DI en Angular
-<ul>
-    <li><strong>L'Injector</strong> expose l'API pour créer des instances de dépendances</li>
-    <li>Le <strong>Provider</strong> indique à <strong>l’Injector</strong> comment créer la dépendance</li>
-    <li>La dépendance est le type d’objet à créer</li>
-</ul>
-<br><br>
-<img alt="center h-600" src="assets/images/school/dependancy-injection/di_working.png" />
-
-##==##
-
-<!-- .slide: class="sfeir-basic-slide" -->
-# Types d'Injector
 <br>
-- Il existe 2 hierarchies d'injector dans Angular :
-<ul>
-    <br>
-    <li><strong>ModuleInjector</strong>: configuré dans la configuration du @NgModule ou de l'annotation @Injectable (utiliser si possible @Injectable pour profiter du Tree Shaking)</li>
-    <br>
-    <li><strong>ElementInjector</strong>: créé implicitement pour chaque élément du DOM (composants) </li>
-</ul>
+
+- <b>L'Injector</> expose l'API pour céer des instances de dépendances
+- Le <b>Provider</b> indique à <b>l'Injector</b> comment créer la dépendance
+- La dépendance constitue l'objet à créer<br><br>
+![center h-600](assets/images/school/dependancy-injection/di_working.png)
+
 
 ##==##
+<!-- .slide-->
+# Types d'Injector
+<br><br>
 
-<!-- .slide: class="sfeir-basic-slide" -->
+- Il existe 2 hierarchies d'injector dans Angular :<br><br>
+    - <b>ModuleInjector</b>: confguré dans la configuration du @NgModule ou de l'annotation @Injectable (utliser si possible @Injectable pour profiter du Tree Shaking)<br><br>
+    - <b>ElementInjector</b>: créé implicitement pour chaque élément du DOM (composant)
+
+##==##
+<!-- .slide: class="two-column-layout"-->
 # Types d'Injector: ModuleInjector
+##--##
+<!-- .slide: class="with-code inconsolata" -->
+<br><br>
+
 ```typescript
 @NgModule({
   imports: [
@@ -36,6 +35,8 @@
 })
 export class ItemModule {}
 ```
+<!-- .element: class="medium-code"-->
+
 ```typescript
 import { Injectable } from '@angular/core';
 @Injectable()
@@ -43,7 +44,12 @@ export class ItemService {
   name = 'telephone';
 }
 ```
-<strong>ou</strong>
+<!-- .element: class="medium-code"-->
+
+##--##
+<!-- .slide: class="with-code inconsolata" -->
+<br><br>
+
 ```typescript
 @NgModule({
   imports: [
@@ -54,6 +60,8 @@ export class ItemService {
 })
 export class ItemModule {}
 ```
+<!-- .element: class="medium-code"-->
+
 ```typescript
 import { Injectable } from '@angular/core';
 @Injectable({
@@ -63,14 +71,15 @@ export class ItemService {
   name = 'telephone';
 }
 ```
+<!-- .element: class="medium-code"-->
 
 ##==##
-
-<!-- .slide: class="sfeir-basic-slide" -->
+<!-- .slide: class="with-code inconsolata" -->
 # Types d'Injector: ModuleInjector
-<br>
-- Il existe pour chaque application un ModuleInjector appelé <strong>'root'</strong> au sommet de la hierarchie
-<br>
+<br><br>
+
+- Il existe pour chaque application un ModuleInjector appelé <b>'root'</b> au sommet de la hierarchie
+<br><br>
 
 ```typescript
 import { Injectable } from '@angular/core';
@@ -81,11 +90,13 @@ export class ItemService {
   name = 'telephone';
 }
 ```
+<!-- .element: class="big-code" -->
 
 ##==##
-<!-- .slide: class="sfeir-basic-slide" -->
+<!-- .slide: class="with-code inconsolata" -->
 # Hierarchy Injection
-<img alt="center h-600" src="assets/images/school/dependancy-injection/DI-module.png" />
+![center h-500](assets/images/school/dependancy-injection/DI-module.png)
+
 
 ```typescript
 import { Injectable } from '@angular/core';
@@ -96,11 +107,14 @@ export class ItemService {
   name = 'telephone';
 }
 ```
+<!-- .element: class="medium-code" -->
 
 ##==##
-<!-- .slide: class="sfeir-basic-slide" -->
+<!-- .slide: class="with-code inconsolata" -->
 # Hierarchy Injection
-<img alt="center h-600" src="assets/images/school/dependancy-injection/DI-parent.png" />
+![center h-450](assets/images/school/dependancy-injection/DI-parent.png)
+<br>
+
 ```typescript
 @Component({
   selector: 'parent',
@@ -112,11 +126,12 @@ export class ParentComponent {
   ...
 }
 ```
+<!-- .element: class="medium-code" -->
 
 ##==##
-<!-- .slide: class="sfeir-basic-slide" -->
+<!-- .slide: class="with-code inconsolata" -->
 # Hierarchy Injection
-<img alt="center h-600" src="assets/images/school/dependancy-injection/DI-root.png" />
+![center h-500](assets/images/school/dependancy-injection/DI-root.png)
 
 ```typescript
 import { Injectable } from '@angular/core';
@@ -127,25 +142,26 @@ export class ItemService {
   name = 'telephone';
 }
 ```
+<!-- .element: class="medium-code" -->
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide" -->
+<!-- .slide -->
 # Le rôle du Provider
 <br><br>
-- Fait le lien entre un <strong>InjectionToken</strong> (token) et une <strong>Factory</strong><br><br>
+
+- Fait le lien entre <b>InjectionToken</b> (token) et une <b>Factory</b><br><br>
 - Permet de découpler la dépendance et son implémentation<br><br>
-- Api pour lier une simple valeur
-<ul>
-    <li>faire des alias de token</li>
-    <li>créer des factory synchrones ou pas ( toFactory, toAsyncFactory)</li>
-</ul>
+- API pour lier une simple valeur
+    - Faire des  alias de token
+    - Créer des factory synchrones ou pas (toFactory, toAsyncFactory)
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide" -->
+<!-- .slide -->
 # Les différents type de résolution
 <br><br>
+
 - Valeur<br><br>
 - Classe alternative<br><br>
 - Classes aliasée<br><br>

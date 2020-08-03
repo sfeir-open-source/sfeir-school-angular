@@ -1,13 +1,15 @@
-<!-- .slide: class="sfeir-bg-pink exercice" -->
+<!-- .slide: class="exercice" -->
+# Exercice : custom-control
 ## Exercice
-<span class="center bold">steps/custom-control</span>
-<br>
-- Un nouveau composant SfeirInput a été ajouté au dossier shared
-- Implémenter le composant de sorte de créer un 'custom input'
+<br><br><br>
+
+- Un nouveau composant SfeirInput a été ajouté au dossier shared<br><br>
+- Implémenter le composant de sorte de créer un 'custom input'<br><br>
 - Remplacer l'ensemble mat-form-field input avec votre composant SfeirInput dans le fichier form.component.html
 
 ##==##
 
-<!-- .slide: class="sfeir-bg-blue exercice" -->
+<!-- .slide: class="full-center exercice" -->
+# Exercice : custom-control
 ## Solution
-<span class="full-center bold">steps/custom-control-solution</span>
+__steps/custom-control-solution__

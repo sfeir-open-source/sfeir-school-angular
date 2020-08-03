@@ -1,2 +1,2 @@
-<!-- .slide: class="transition-white sfeir-bg-pink" -->
+<!-- .slide: class="transition underline" -->
 # Créer son propre controleur de formulaire

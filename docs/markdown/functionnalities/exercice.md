@@ -1,19 +1,19 @@
-<!-- .slide: class="sfeir-bg-pink exercice" -->
+<!-- .slide: class="exercice" -->
+# Exercice : loop
 ## Exercice
-<span class="bold center">steps/ngFor</span>
-<br>
-<ul>
-    <li>Créer un composant PeopleComponent à l'aide du CLI</li>
-    <li>Associer la route /people à ce composant</li>
-    <li>Dupliquer le style et le template du component HomeComponent</li>
-    <li>Appeler le serveur pour récupérer la liste des personnes</li>
-</ul>
-Notes
+<br><br><br>
+
+- Créer un composant PeopleComponent à l'aide du CLI
+- Associer la route /people à ce template
+- Dupliquer le style et le template du component HomeComponent
+- Appeler le serveur pour récupérer la liste des personnes
+Notes:
 - Il est inutile de dupliquer le bouton random, nous verrons comment faire plus tard pour éviter de dupliquer le template et le style
 - l'url à appeler http://localhost:9000/api/peoples
 
 ##==##
 
-<!-- .slide: class="sfeir-bg-blue exercice" -->
+<!-- .slide: class="exercice full-center" -->
+# Exercice : loop
 ## Solution
-<span class="full-center bold">steps/ngFor-solution</span>
+<b>steps/ngFor-solution</b>

@@ -1,10 +1,10 @@
-<!-- .slide class="sfeir-basic-slide with-code" -->
+<!-- .slide class="inconsolata with-code" -->
 # La directive ng-template
 <br>
-<ul>
-    <li>Permet de définir un template</li>
-</ul>
+
+- Permet de définir un template
 <br><br>
+
 ```html
 <div *ngIf="lessons.length > 0">
     ...
@@ -13,22 +13,25 @@
     <div>Loading ...</div>
 </ng-template>
 ```
+<!-- .element: class="big-code" -->
 <br>
+
 - Loading ici ne s'affichera jamais
 <br><br>
+
 - On vient de définir le template mais on ne l'utilise pas
-Notes
+Notes:
 - ng-template revient à déclarer une simple variable, dans ce cas si la variable est un template
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="inconsolata with-code" -->
 # Utilisation de la directive ng-template
 <br>
-<ul>
-    <li>S'utilise principalement avec les directives structurelles (*ngIf, *ngFor, ...)</li>
-</ul>
+
+- S'utilise principalement avec les directives structurelles (*ngIf, *ngFor, ...)
 <br><br>
+
 ```html
 <div *ngIf="lessons.length > 0; else loadingTemplate">
     ...
@@ -42,14 +45,14 @@ Notes
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # Utilisation de la directive ng-template
 <br>
-<ul>
-    <li>En fait, les directives structurelless (*ngIf, *ngFor, ...) sont elle-mêmes des 'ng-template'!</li>
-</ul>
+
+- En fait, les directives structurelles (*ngIf, *ngFor, ...) sont elle-même des 'ng-template' !
 <br><br>
-Par exemple:
+Par exemple :
+
 ```html
 <div *ngIf="condition">
     ...
@@ -57,6 +60,7 @@ Par exemple:
 ```
 <!-- .element: class="big-code" -->
 est un raccourci pour :
+
 ```html
 <ng-template [ngIf]="condition">
     <div>...</div>

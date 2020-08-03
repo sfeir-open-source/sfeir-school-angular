@@ -1,11 +1,9 @@
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # L'itération avec la directive *ngFor
-<ul>
-    <li>Itère dans une collection et génère un template par élément</li><br>
-    <li><strong>index, odd, even, last</strong> à utiliser en alias dans des variables</li>
-</ul>
-<br><br>
-```typescript
+- Itère dans une collection et génère un template par élément<br><br>
+- <b>index, odd, event, last</b> à utiliser en alias dans des variables<br><br>
+
+```html
 <ul>
    <li *ngFor="let fruit of fruits; let i=index">
        {{ i }} : {{ fruit.name }}

@@ -1,13 +1,15 @@
-<!-- .slide: class="sfeir-bg-pink exercice" -->
+<!-- .slide: class="exercice" -->
+# Exercice : unit-tests
 ## Exercice
-<span class="center bold">steps/unit-tests</span>
-<br><br>
-- Etudier et compléter les tests du composant UpdateComponent
-- Lancer vos tests à l'aide de la command: npm run test -- unit-tests
+<br><br><br>
+
+- Etudier et compléter les tests du composant UpdateComponent<br><br>
+- Lancer vos tests à l'aide de la command : npm run test -- unit-tests
 
 ##==##
 
-<!-- .slide: class="sfeir-bg-blue exercice" -->
+<!-- .slide: class="exercice full-center" -->
+# Exercice : unit-tests
 ## Solution
-<span class="full-center bold">steps/unit-tests-solution</span>
+__steps/unit-tests-solution__
 

@@ -1,4 +1,4 @@
-<!-- .slide: class="sfeir-bg-white-5" -->
+<!-- .slide: class="transition-bg-grey-1 underline" -->
 # Tester vos pipes
 
 ##==##

@@ -1,18 +1,18 @@
-<!-- .slide: class="sfeir-bg-pink exercice" -->
+<!-- .slide: class="exercice" -->
+# Exercice : service
 ## Exercice
-<span class="center bold">steps/service</span>
-<br>
-<ul>
-    <li>Créer un service PeopleService dans le répertoire shared/people-service</li>
-    <li>Créer toutes les autres opérations du CRUD</li>
-    <li>Enregistrer votre service de manière global ou local</li>
-</ul>
-Notes
+
+<br><br><br>
+
+- Créer un service PeopleService dans le répertoire shared/people-service
+- Créer toutes les autres opérations du CRUD
+- Enregistrer votre service de manière global ou local
+Notes:
 - Remplacer dans le composant le http.get par peopleService.fetch qui contiendra votre Http.get
 - Replacer tous les http. par votre nouveau service peopleService
 
 ##==##
-
-<!-- .slide: class="sfeir-bg-blue exercice" -->
+<!-- .slide: class="exercice full-center" -->
+# Exercice : service
 ## Solution
-<span class="full-center bold">steps/service-solution</span>
+<b>steps/service-solution</b>

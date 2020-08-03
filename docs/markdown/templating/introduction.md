@@ -1,8 +1,11 @@
-<!-- .slide: class="sfeir-basic-slide" -->
+<!-- .slide-->
 # ng-template / ng-container
 <br><br>
- - Directives de templates<br>
- - Toutes deux utilisées pour modifier le DOM<br>
+
+ - Directives de templates<br><br>
+ - Toutes deux utilisées pour modifier le DOM<br><br>
  - Template d'Angular<br>
 <br><br>
-<span class="important center">Ok super, et on utilise ça comment?</span>
+
+Ok, et on utilise ça comment ?
+<!-- .element: class="important center" -->

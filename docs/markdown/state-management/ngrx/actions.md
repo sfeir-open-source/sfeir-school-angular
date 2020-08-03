@@ -1,11 +1,11 @@
-<!-- .slide: class="sfeir-basic-slide with-code" -->
-# NGRX: Actions
+<!-- .slide: class="with-code inconsolata" -->
+# NGRX : Actions
 <br>
-<ul>
-    <li>Seul moyen de modifier l'état</li><br>
-    <li>Types (moyen unique de les identifier)</li><br>
-    <li>déclanchée par un dispatch</li><br>
-</ul>
+
+- Seul moyen de modifier l'état
+- Types (moyen unique de les identifier)
+- Déclanchée par un dispatch<br><br>
+
 ```typescript
 import { createAction } from '@ngrx/store';
 

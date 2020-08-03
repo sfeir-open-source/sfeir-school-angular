@@ -1,2 +1,2 @@
-<!-- .slide: class="sfeir-bg-pink transition-white" -->
+<!-- .slide: class="transition" -->
 # Angular Universal

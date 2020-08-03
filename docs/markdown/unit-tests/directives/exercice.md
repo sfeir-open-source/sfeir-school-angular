@@ -1,13 +1,15 @@
-<!-- .slide: class="sfeir-bg-pink exercice" -->
+<!-- .slide: class="exercice" -->
+# Exercice : unit-tests
 ## Exercice
-<span class="center bold">steps/unit-tests</span>
-<br><br>
-- Etudier et compléter les tests de la directive SfeirBadgeDirective
+<br><br><br>
+
+- Etudier et compléter les tests de la directive SfeirBadgeDirective<br><br>
 - Lancer vos tests à l'aide de la command: npm run test -- unit-tests
 
 ##==##
 
-<!-- .slide: class="sfeir-bg-blue exercice" -->
+<!-- .slide: class="full-center exercice" -->
+# Exercice : units-test
 ## Solution
-<span class="full-center bold">steps/unit-tests-solution</span>
+__steps/unit-tests-solution__
 

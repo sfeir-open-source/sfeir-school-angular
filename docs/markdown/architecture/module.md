@@ -1,18 +1,17 @@
-<!-- .slide: class="transition-white sfeir-bg-blue" -->
+<!-- .slide: class="transition-bg-grey-1 underline" -->
 # Le module
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide" -->
+<!-- .slide-->
 # Le module: généralités
-<br><br>
-<ul>
-    <li>Permet de regrouper des fonctionnalités</li><br>
-    <li>Au moins un module par application (obligatoire, sans ce module, l'app ne démarre pas)</li><br>
-    <li>Peut être chargé de façon asynchrone (lazy loading)</li><br>
-    <li>Différents types de module (Root Module, Navigation Module, Feature Module, Shared Module, Core Module, ...)</li><br>
-</ul>
-Notes
+<br><br><br>
+
+- Permet de regrouper des fonctionnalités<br><br>
+- Au moins un module par application (obligatoire sans ce module, l'app ne démarre pas)<br><br>
+- Peut être chargé de façon asynchrone (lazy loading)<br><br>
+- Différents types de module (Root Module, Navigation Module, Feature Module, Shared Module, Core Module ...)
+Notes:
 - Root Module, contient en général les autres modules de l'application
 - Feature Module, il en existe un par fonctionnalité (ex: fonctionnalité user => update, creation ...)
 - Shared Module, il en existe également plusieurs, un pour toute l'application et parfois un dans les features modules
@@ -21,11 +20,12 @@ Notes
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code" -->
 # Le module: son écriture
 <br><br>
 Comme le composant, l'écriture du module se fait à l'aide d'une classe et d'une annotation
 <br><br>
+
 ```typescript
 @NgModule({
   imports: [BrowserModule, ...],
