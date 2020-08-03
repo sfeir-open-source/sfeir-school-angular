@@ -61,7 +61,7 @@ RouterModule.forRoot(routes, { useHash: true });
 ##--##
 ![h-600](assets/images/school/navigation/navigation_routing_module.png)
 ##--##
-![h=400](assets/images/school/navigation/navigation_root_module.png)
-![h=100](assets/images/school/navigation/navigation_router_outlet.png)
+![h-500](assets/images/school/navigation/navigation_root_module.png)
+![h-500](assets/images/school/navigation/navigation_router_outlet.png)
 
 
