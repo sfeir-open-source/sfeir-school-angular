@@ -1,5 +1,5 @@
 <!-- .slide: class="exercice" -->
-# Exercice: unit-tests
+# Exercice : unit-tests
 ## Exercice
 <br><br><br>
 
@@ -9,7 +9,7 @@
 ##==##
 
 <!-- .slide: class="full-center exercice" -->
-# Exercice: units-test
+# Exercice : units-test
 ## Solution
 __steps/unit-tests-solution__
 

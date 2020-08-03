@@ -1,5 +1,5 @@
 <!-- .slide: class="exercice" -->
-# Exercice: form-custom-validator
+# Exercice : form-custom-validator
 ## Exercice
 <br><br><br>
 
@@ -13,6 +13,6 @@ Notes:
 ##==##
 
 <!-- .slide: class="full-center exercice" -->
-# Exercice: form-custom-validator
+# Exercice : form-custom-validator
 ## Solution
 <b>steps/form-custom-validator-solution</b>

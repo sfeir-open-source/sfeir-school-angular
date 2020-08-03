@@ -1,5 +1,5 @@
 <!-- .slide: class="exercice" -->
-# Exercice: form
+# Exercice : form
 ## Enoncé
 <br><br><br>
 
@@ -13,7 +13,7 @@
 ##==##
 
 <!-- .slide: class="exercice" -->
-# Exercice: forms
+# Exercice : forms
 ## Exercice
 <br><br><br>
 
@@ -38,6 +38,6 @@ Notes:
 ##==##
 
 <!-- .slide: class="full-center exercice" -->
-# Exercice: forms
+# Exercice : forms
 ## Solution
 <b>steps/form-solution</b>

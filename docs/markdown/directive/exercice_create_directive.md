@@ -1,5 +1,5 @@
 <!-- .slide: class="exercice" -->
-# Exercice: directive-create
+# Exercice : directive-create
 ## Exercice
 <br><br><br>
 
@@ -14,6 +14,6 @@ Notes:
 ##==##
  
 <!-- .slide: class="full-center exercice" -->
-# Exercice: directive-create
+# Exercice : directive-create
 ## Solution
 <b>steps/directive-create-solution</b>

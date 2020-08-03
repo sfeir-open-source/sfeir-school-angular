@@ -1,5 +1,5 @@
 <!-- .slide: class="exercice" -->
-# Exercice: router
+# Exercice : router
 ## Exercice
 <br><br><br>
 
@@ -9,6 +9,6 @@
 ##==##
 
 <!-- .slide: class="exercice full-center" -->
-# Exercice: router
+# Exercice : router
 ## Solution
 <b>steps/router-solution</b>

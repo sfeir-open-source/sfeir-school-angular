@@ -1,5 +1,5 @@
 <!-- .slide: class="exercice" -->
-# Exercice: sturtural-directive
+# Exercice : sturtural-directive
 ## Exercice
 <br><br><br>
 - Un squelette de directive a été ajouté dans le dossier shared/display<br><br>
@@ -14,6 +14,6 @@ Notes:
 ##==##
 
 <!-- .slide: class="full-center exercice" -->
-# Exercice: structural-directive
+# Exercice : structural-directive
 ## Solution
 __steps/structural-directive-solution__

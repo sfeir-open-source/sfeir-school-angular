@@ -1,5 +1,5 @@
 <!-- .slide: class="exercice" -->
-# Exercice: hands-on
+# Exercice : hands-on
 ## Exercice
 <br><br>
 Sans utiliser le CLI d'Angular<br><br>
@@ -14,7 +14,7 @@ Notes:
 ##==##
 
 <!-- .slide: class="exercice full-center" -->
-# Exercice: hands-on
+# Exercice : hands-on
 ## Solution
 folder: steps/hands-on-solution
 <!-- .element: class="bold"-->

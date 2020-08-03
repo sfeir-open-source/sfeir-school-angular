@@ -1,5 +1,5 @@
 <!-- .slide: class="exercice" -->
-# Exercice: unit-tests
+# Exercice : unit-tests
 ## Exercice
 <br><br><br>
 - Etudier et compléter les tests du service PeopleService<br><br>
@@ -8,7 +8,7 @@
 ##==##
 
 <!-- .slide: class="full-center exercice" -->
-# Exercice: unit-tests
+# Exercice : unit-tests
 ## Solution
 __steps/unit-tests-solution__
 

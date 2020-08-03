@@ -1,5 +1,5 @@
 <!-- .slide: class="two-column-layout" -->
-# NGRX: Reducers
+# NGRX : Reducers
 ##--##
 <br><br>
 

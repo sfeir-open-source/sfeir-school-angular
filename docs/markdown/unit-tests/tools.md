@@ -19,7 +19,7 @@
 # Un petit mot sur la TDD
 <br><br>
 
-- __TDD__: test driven developement<br><br>
+- __TDD__ : test driven developement<br><br>
 - Tester d'abord<br><br>
 - Rendre fonctionnel<br><br>
 - Améliorer<br><br>

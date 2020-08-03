@@ -1,5 +1,5 @@
 <!-- .slide: class="with-code inconsolata" -->
-# NGRX: Actions
+# NGRX : Actions
 <br>
 
 - Seul moyen de modifier l'état

@@ -1,5 +1,5 @@
 <!-- .slide: class="with-code inconsolata" -->
-# State: définition
+# State : définition
 <br><br>
 
 Le __State__ est une class préfixée de l'annotation __@State__ qui définit notre state container.
@@ -22,7 +22,7 @@ export class AnimalsState {
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# State: configuration
+# State : configuration
 <br>
 
 ```typescript
@@ -44,7 +44,7 @@ Notes:
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# State: Réduire nos actions (rappel)
+# State : Réduire nos actions (rappel)
 Rappel: dans notre fichier __todos.actions.ts__ nous avions ce contenu
 <br><br>
 
@@ -74,7 +74,7 @@ export namespace Todo {
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# State: déclarer nos actions
+# State : déclarer nos actions
 <br>
 
 ```typescript
@@ -98,7 +98,7 @@ export class TodoState {
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# State: Déclarer nos actions
+# State : Déclarer nos actions
 <br><br>
 
 - Pour résumer une action se caractérise par:

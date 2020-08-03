@@ -8,9 +8,9 @@
 
 ![h-300 center](assets/images/school/directive/directive_schema.png) <br><br>
 
-- les directives structurelles: modifie le DOM<br><br>
-- les directives attributales: modifie l'apparence ou le comportement d'un élement<br><br>
-- composant: directive avec une vue<br><br>
+- les directives structurelles : modifie le DOM<br><br>
+- les directives attributales : modifie l'apparence ou le comportement d'un élement<br><br>
+- composant : directive avec une vue<br><br>
 
 ##==##
 
@@ -31,11 +31,11 @@ export class MyDirective {}
 # Comment invoquer une directive ?
 <br><br>
 
-- <b>element-name</b>: pour restreindre à un élement<br><br>
-- <b>[attribute]</b>: pour restreindre à un attribut<br><br>
-- <b>.class</b>: pour restreindre à une classe<br><br>
-- <b>[attribute=value]</b>: pour restreindre à un attribut avec une certaine valeur<br><br>
-- <b>:not(sub_selector)</b>: si l'élement ne match pas le sous sélécteur
+- <b>element-name</b> : pour restreindre à un élement<br><br>
+- <b>[attribute]</b> : pour restreindre à un attribut<br><br>
+- <b>.class</b> : pour restreindre à une classe<br><br>
+- <b>[attribute=value]</b> : pour restreindre à un attribut avec une certaine valeur<br><br>
+- <b>:not(sub_selector)</b> : si l'élement ne match pas le sous sélécteur
 
 ##==##
 

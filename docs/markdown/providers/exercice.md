@@ -1,5 +1,5 @@
 <!-- .slide: class="exercice" -->
-# Exercice: service
+# Exercice : service
 ## Exercice
 
 <br><br><br>
@@ -13,6 +13,6 @@ Notes:
 
 ##==##
 <!-- .slide: class="exercice full-center" -->
-# Exercice: service
+# Exercice : service
 ## Solution
 <b>steps/service-solution</b>

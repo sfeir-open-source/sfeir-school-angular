@@ -1,5 +1,5 @@
 <!-- .slide: class="exercice" -->
-# Exercice: hostbinding
+# Exercice : hostbinding
 ## Exercice
 <br><br><br>
 
@@ -10,6 +10,6 @@
 ##==##
 
 <!-- .slide: class="full-center exercice" -->
-# Exercice: hostbinding
+# Exercice : hostbinding
 ## Solution
 __steps/hostbinding-solution__

@@ -16,7 +16,7 @@
 
 - Permet une lecture plus simple, et réduit la verbosité
 - Le mot clé __let__ permet de déclarer une variable utilisée dans le template
-- Lorsque la variable n'est pas définie, il utilise le context implicite: $implicit
+- Lorsque la variable n'est pas définie, il utilise le context implicite : $implicit
 
 ##==##
 

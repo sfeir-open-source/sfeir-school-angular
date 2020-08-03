@@ -1,5 +1,5 @@
 <!-- .slide: class="exercice" -->
-# Exercice: http
+# Exercice : http
 ## Exercice
 <br><br><br>
 
@@ -12,6 +12,6 @@ Notes:
 
 ##==##
 <!-- .slide: class="exercice full-center" -->
-# Exercice: http
+# Exercice : http
 ## Solution
 <b>steps/http-solution</b>

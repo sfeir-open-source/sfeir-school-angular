@@ -1,5 +1,5 @@
 <!-- .slide: class="with-code inconsolata" -->
-# Action: Définition
+# Action : Définition
 <br>
 
 Les __actions__ sont des commandes qui doivent déclencher une mutation de l'état (state).<br><br>
@@ -21,7 +21,7 @@ Ici name et hayAmount
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Action: Comment la déclencher
+# Action : Comment la déclencher
 <br>
 
 - Dans le composant, l'action est déclenchée grâce au mot clé __disptach__
@@ -42,7 +42,7 @@ export class ZooComponent {
 ##==##
 
 <!-- .slide -->
-# Actions: Convention de nommage
+# Actions : Convention de nommage
 <br><br>
 
 Une __bonne__ action doit contenir trois parties:<br><br>
@@ -55,7 +55,7 @@ __[USER PAGE] addUser__
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Actions: regrouper des actions
+# Actions : regrouper des actions
 <br>
 
 ```typescript

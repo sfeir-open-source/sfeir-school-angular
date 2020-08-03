@@ -1,5 +1,5 @@
 <!-- .slide: class="exercice" -->
-# Exercice: cpt-hierarchy
+# Exercice : cpt-hierarchy
 ## Exercice
 <br><br><br>
 
@@ -21,13 +21,13 @@ Les fichiers à mettre à jour sont les suivants:
  ##==##
 
  <!-- .slide: class="exercice full-center" -->
- # Exercice: cpt-hierarchy
+ # Exercice : cpt-hierarchy
  ## Solution
  <b>steps/cpt-hierarchy-solution</b>
 
 ##==##
 <!-- .slide: class="exercice" -->
-# Exercice: binding
+# Exercice : binding
 ## Exercice
 <br><br><br>
 
@@ -46,6 +46,6 @@ Notes:
 
 ##==##
 <!-- .slide: class="exercice full-center" -->
-# Exercice: binding
+# Exercice : binding
 ## Solution
 <b>steps/binding-solution</b>

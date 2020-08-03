@@ -26,12 +26,12 @@ Et bien on utilise la propriété liée à l'attribut
 # Les différents états d'un contrôle
 <br><br><br>
 
-- <b>control.pristine</b>: l’utilisateur n’a pas interagi avec le contrôle
-- <b>control.dirty</b>: l’utilisateur a déjà interagi avec le contrôle
-- <b>control.valid</b>: le contrôle est valide
-- <b>control.invalid</b>: le contrôle n’est pas valide
-- <b>control.touched</b>: le contrôle a perdu le focus
-- <b>control.untouched</b>: le contrôle n’a pas encore perdu le focus
+- <b>control.pristine</b> : l’utilisateur n’a pas interagi avec le contrôle
+- <b>control.dirty</b> : l’utilisateur a déjà interagi avec le contrôle
+- <b>control.valid</b> : le contrôle est valide
+- <b>control.invalid</b> : le contrôle n’est pas valide
+- <b>control.touched</b> : le contrôle a perdu le focus
+- <b>control.untouched</b> : le contrôle n’a pas encore perdu le focus
 
 ##==##
 

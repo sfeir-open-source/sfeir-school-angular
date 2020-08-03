@@ -1,5 +1,5 @@
 <!-- .slide: class="exercice" -->
-# Exercice: input
+# Exercice : input
 ## Exercice
 <br><br><br>
 
@@ -11,13 +11,13 @@ Notes:
 
 ##==##
 <!-- .slide: class="exercice full-center" -->
-# Exercice: input
+# Exercice : input
 ## Solution
 <b>steps/input-solution</b>
 
 ##==##
 <!-- .slide: class="exercice" -->
-# Exercice: input-b
+# Exercice : input-b
 ## Exercice
 <br><br><br>
 
@@ -27,6 +27,6 @@ Notes:
 
 ##==##
 <!-- .slide: class="exercice full-center" -->
-# Exercice: input-b
+# Exercice : input-b
 ## Solution
 <b>steps/input-b-solution</b>

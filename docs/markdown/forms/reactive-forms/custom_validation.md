@@ -8,8 +8,8 @@
 <br>
 
 - un validateur custom est une simple <b>fonction</b>
-- Si la validation est bonne: renvoie <b>null</b>
-- Si la validation n'est pas correct: renvoie un object de cette forme <b>{ nomErreur: true }</b>
+- Si la validation est bonne : renvoie <b>null</b>
+- Si la validation n'est pas correct : renvoie un object de cette forme <b>{ nomErreur: true }</b>
 <br><br>
 
 ```typescript

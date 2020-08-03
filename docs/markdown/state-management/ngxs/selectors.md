@@ -1,5 +1,5 @@
 <!-- .slide-->
-# Selectors: Définition
+# Selectors : Définition
 <br><br>
 Les sélecteurs sont des fonctions qui récupèrent une partie ou totalement notre state<br><br>
 Dans __NGXS__ il existe deux méthodes pour séléctionner notre state (ou partie de notre state):<br><br>
@@ -9,7 +9,7 @@ Dans __NGXS__ il existe deux méthodes pour séléctionner notre state (ou parti
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Selectors: Annotation @Select
+# Selectors : Annotation @Select
 <br><br>
 
 ```typescript
@@ -32,7 +32,7 @@ export class ZooComponent {
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Selectors: Select Function
+# Selectors : Select Function
 <br>
 
 Le store possède une méthode __select__ qui peut être utile lorsque l'on ne peut pas déclarer statiquement un sélecteur avec l'annotation __@Select__.<br>
@@ -57,7 +57,7 @@ Notes:
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Selectors: Memoized Selectors
+# Selectors : Memoized Selectors
 <br>
 
 Lorsque l'on souhaite utiliser un sélecteur dans différents endroits de son application ou encore avoir une logique de sélectors plus compliquée qu'un simple renvoi de state courant, les __Memoized Selectors__ sont vos alliés.
@@ -82,7 +82,7 @@ export class ZooState {
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Selectors: Memoized Selectors
+# Selectors : Memoized Selectors
 <br><br>
 
 ```typescript

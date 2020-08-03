@@ -1,5 +1,5 @@
 <!-- .slide: class="exercice" -->
-# Exercice: templating
+# Exercice : templating
 ## Exercice
 <br><br><br>
 
@@ -9,7 +9,7 @@
 ##==##
 
 <!-- .slide: class="exercice" -->
-# Exercice: templating
+# Exercice : templating
 ## Exercice
 <br><br><br>
 
@@ -23,6 +23,6 @@ Notes:
 ##==##
 
 <!-- .slide: class="full-center exercice" -->
-# Exercice: templating
+# Exercice : templating
 ## Solution
 __steps/templating-solution__

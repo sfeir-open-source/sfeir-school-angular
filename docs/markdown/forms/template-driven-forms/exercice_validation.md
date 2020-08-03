@@ -1,5 +1,5 @@
 <!-- .slide: class="exercice" -->
-# Exercice: form-validation
+# Exercice : form-validation
 ## Exercice
 <br><br><br>
 
@@ -14,6 +14,6 @@
 ##==##
 
 <!-- .slide: class="exercice full-center" -->
-# Exercice: form-validation
+# Exercice : form-validation
 ## Solution
 <b>steps/form-validation-solution</b>

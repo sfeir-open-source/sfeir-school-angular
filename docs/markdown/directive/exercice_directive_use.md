@@ -1,5 +1,5 @@
 <!-- .slide: class="exercice" -->
-# Exercice: directive-user
+# Exercice : directive-user
 ## Exercice
 <br><br><br>
 
@@ -9,6 +9,6 @@
 
 ##==##
 <!-- .slide: class="exercice full-center" -->
-# Exercice: directive-use
+# Exercice : directive-use
 ## Solution
 <b>steps/directives-use-solution</b>

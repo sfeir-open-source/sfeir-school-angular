@@ -1,5 +1,5 @@
 <!-- .slide: class="exercice" -->
-# Exercice: loop
+# Exercice : loop
 ## Exercice
 <br><br><br>
 
@@ -14,6 +14,6 @@ Notes:
 ##==##
 
 <!-- .slide: class="exercice full-center" -->
-# Exercice: loop
+# Exercice : loop
 ## Solution
 <b>steps/ngFor-solution</b>

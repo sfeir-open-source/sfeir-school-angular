@@ -1,5 +1,5 @@
 <!-- .slide: class="exercice" -->
-# Exercice: ngg
+# Exercice : ngg
 ## Exercice
 <br><br>
 En utilsant le CLI <br><br>
@@ -12,7 +12,7 @@ Notes:
 ##==##
 
 <!-- .slide: class="exercice" -->
-# Exercice: ngg
+# Exercice : ngg
 ## Exercice
 <br><br><br>
 
@@ -23,7 +23,7 @@ Notes:
 ##==##
 
 <!-- .slide: class="exercice full-center" -->
-# Exercice: ngg
+# Exercice : ngg
 ## Solution
 
 <b>folder: steps/ngg-solution</b>

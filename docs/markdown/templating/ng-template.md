@@ -49,9 +49,9 @@ Notes:
 # Utilisation de la directive ng-template
 <br>
 
-- En fait, les directives structurelles (*ngIf, *ngFor, ...) sont elle-même des 'ng-template'!
+- En fait, les directives structurelles (*ngIf, *ngFor, ...) sont elle-même des 'ng-template' !
 <br><br>
-Par exemple:
+Par exemple :
 
 ```html
 <div *ngIf="condition">

@@ -1,5 +1,5 @@
 <!-- .slide: class="with-code inconsolata" -->
-# NGRX: Store
+# NGRX : Store
 
 - service à injecter dans nos composants
 - possède les méthodes __dispatch__ et __select__<br><br>

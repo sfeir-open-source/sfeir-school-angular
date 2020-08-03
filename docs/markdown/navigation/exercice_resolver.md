@@ -1,5 +1,5 @@
 <!-- .slide: class="exercice" -->
-# Exercice: resolvers
+# Exercice : resolvers
 ## Exercice
 <br><br><br>
 
@@ -16,6 +16,6 @@ Notes:
 ##==##
 
 <!-- .slide: class="full-center exercice" -->
-# Exercice: resolvers
+# Exercice : resolvers
 ## Solution
 __steps/resolvers-solution__

@@ -1,5 +1,5 @@
 <!-- .slide: class="with-code inconsolata" -->
-# NGRX: Effects (Installation)
+# NGRX : Effects (Installation)
 <br>
 Les effects sont dans un package différent , il faut donc les installer également (si on souhaite les utiliser)
 <br><br>
@@ -22,7 +22,7 @@ npm install --save @ngrx/effects // ng add @ngrx/effects
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# NGRX: Ecrire un effet
+# NGRX : Ecrire un effet
 
 - Créer une action (mais ne pas l'enregistrer dans le reducer)
 - Créer un service classique Angular

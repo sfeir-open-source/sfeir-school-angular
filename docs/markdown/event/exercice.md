@@ -1,5 +1,5 @@
 <!-- .slide: class="exercice" -->
-# Exercice: events
+# Exercice : events
 ## Exercice
 <br><br><br>
 
@@ -11,6 +11,6 @@ Notes:
 
 ##==##
 <!-- .slide: class="exercice full-center" -->
-# Exercice: events
+# Exercice : events
 ## Solution
 <b>steps/events-solution</b>

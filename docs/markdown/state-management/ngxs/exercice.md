@@ -1,5 +1,5 @@
 <!-- .slide: class="exercice"-->
-# Exercice: ngxs
+# Exercice : ngxs
 ## Exercice
 <br><br><br>
 
@@ -21,6 +21,6 @@ Notes:
 ##==##
 
 <!-- .slide: class="full-center exercice" -->
-# Exercice: ngxs
+# Exercice : ngxs
 ## Solution
 __steps/ngxs__

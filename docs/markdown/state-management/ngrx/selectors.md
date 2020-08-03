@@ -1,5 +1,5 @@
 <!-- .slide: class="with-code inconsolata" -->
-# NGRX: Selectors
+# NGRX : Selectors
 <br>
 
 - Permettent de retourner partiellement ou entièrement le store

@@ -9,6 +9,6 @@
 
 ##==##
 <!-- .slide: class="exercice full-center" -->
-# Exercice: form-model-driven
+# Exercice : form-model-driven
 ## Solution
 <b>steps/form-model-driven-solution</b>

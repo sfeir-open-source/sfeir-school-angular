@@ -39,8 +39,8 @@ beforeEach(() => {
 <br>
 
 - __TestBed__
-    - __TestBed.createComponent__: crée une instance du composant (fixture)
-    - __TestBed.overrideComponent __: surcharge une instance d'un composant
+    - __TestBed.createComponent__ : crée une instance du composant (fixture)
+    - __TestBed.overrideComponent__ : surcharge une instance d'un composant
 <br><br>
 
 - __ComponentFixture__
@@ -56,7 +56,7 @@ beforeEach(() => {
 <br>
 
 Mais si je dois tout mocker __ça risque d'être long__ si mon composant utilise une dizaine de composant enfant !!<br><br>
-<span class="important">Et bien non il existe une astuce: masquer les erreurs liées aux compoants imbriqués! :) grâce à __NO_ERRORS_SCHEMA__</span>
+<span class="important">Et bien non il existe une astuce : masquer les erreurs liées aux compoants imbriqués! :) grâce à __NO_ERRORS_SCHEMA__</span>
 <br><br>
 
 ```typescript

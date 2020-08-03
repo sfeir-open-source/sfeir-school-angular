@@ -48,16 +48,19 @@ export class AppModule { }
 <br><br>
 
 - <b>Exemple 1</b>: binding View -> Model</li>
+
 ```html
 <input type="text" name="title" ngModel />
 ```
 <!-- .element: class="big-code" -->
 - <b>Exemple 2</b>: binding Model -> View</li>
+
 ```html
 <input type="text" name="title" [ngModel]="person.name" />
 ```
 <!-- .element: class="big-code" -->
 - <b>Exemple 3</b>: binding bidirectionnel</li>
+
 ```html
 <input [(ngModel)]="postalCode" name="postalCode" type="text" />
 ```

@@ -1,5 +1,5 @@
 <!-- .slide: class="exercice" -->
-# Exercice: pipe-b
+# Exercice : pipe-b
 ## Exercice
 <br><br><br>
 
@@ -10,6 +10,6 @@ Notes:
 
 ##==##
 <!-- .slide: class="exercice full-center" -->
-# Exercice: pipe-b
+# Exercice : pipe-b
 ## Solution
 <b>steps/pipe-b-solution</b>

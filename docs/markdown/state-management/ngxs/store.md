@@ -1,5 +1,5 @@
 <!-- .slide -->
-# Store: Définition
+# Store : Définition
 <br><br>
 
 Le __store__ est un gestionnaire d'état global/par feature qui permet:
@@ -11,7 +11,7 @@ Le __store__ est un gestionnaire d'état global/par feature qui permet:
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Store: Actions 
+# Store : Actions 
 <br><br>
 
 Créer l'action:<br><br>
@@ -26,7 +26,7 @@ export class AddAnimal {
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Store: Actions 
+# Store : Actions 
 <br><br>
 
 Utiliser l' action:<br><br>

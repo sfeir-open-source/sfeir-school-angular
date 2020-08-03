@@ -1,5 +1,5 @@
 <!-- .slide: class="exercice" -->
-# Exercice: custom-control
+# Exercice : custom-control
 ## Exercice
 <br><br><br>
 
@@ -10,6 +10,6 @@
 ##==##
 
 <!-- .slide: class="full-center exercice" -->
-# Exercice: custom-control
+# Exercice : custom-control
 ## Solution
 __steps/custom-control-solution__

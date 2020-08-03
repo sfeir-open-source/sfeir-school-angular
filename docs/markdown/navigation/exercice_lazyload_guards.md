@@ -1,5 +1,5 @@
 <!-- .slide: class="exercice" -->
-# Exercice: router-lazyloading-guard
+# Exercice : router-lazyloading-guard
 ## Exercice
 <br><br><br>
 
@@ -12,6 +12,6 @@ Notes:
 ##==##
 
 <!-- .slide: class="full-center exercice" -->
-# Exercice: router-lazyloading-guard
+# Exercice : router-lazyloading-guard
 ## Solution
 __steps/router-lazyloading-guard-solution__

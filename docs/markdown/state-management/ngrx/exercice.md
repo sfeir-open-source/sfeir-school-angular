@@ -1,5 +1,5 @@
 <!-- .slide: class="exercice" -->
-# Exercice: ngrx
+# Exercice : ngrx
 ## Exercice
 <br><br><br>
 - Une barre de recherche a été ajoutée à votre application<br><br>
@@ -24,6 +24,6 @@ Notes:
 ##==##
 
 <!-- .slide: class="full-center exercice" -->
-# Exercice: ngrx
+# Exercice : ngrx
 ## Solution
 __steps/ngrx-solution__

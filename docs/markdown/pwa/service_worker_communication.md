@@ -2,15 +2,15 @@
 <br><br>
 
  - 2 hooks
-    - available: nouvelle version de l'application à loader si la page est rafraîchie
-    - activated: le service woker commence à déployer une nouvelle version de l'application  
+    - available : nouvelle version de l'application à loader si la page est rafraîchie
+    - activated : le service woker commence à déployer une nouvelle version de l'application  
 
 
 <br><br>
 
 - 2 méthodes
- - checkForUpdate: demande au service worker de vérifier si une nouvelle version est disponible
- - activateUpdate: force la mise à jour de l'application
+ - checkForUpdate : demande au service worker de vérifier si une nouvelle version est disponible
+ - activateUpdate : force la mise à jour de l'application
 
 ##==##
 

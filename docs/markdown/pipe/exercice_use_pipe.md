@@ -1,5 +1,5 @@
 <!-- .slide: class="exercice" -->
-# Exercice: pipe
+# Exercice : pipe
 ## Exercice
 <br><br><br>
 
@@ -9,6 +9,6 @@
 ##==##
 
 <!-- .slide: class="exercice full-center" -->
-# Exercice: pipe
+# Exercice : pipe
 ## Solution
 <b>steps/pipe-solution</b>

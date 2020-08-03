@@ -1,5 +1,5 @@
 <!-- .slide: class="exercice" -->
-# Exercice: form-b
+# Exercice : form-b
 ## Exercice
 <br><br><br>
 
@@ -12,7 +12,7 @@ Notes:
 
 ##==##
 <!-- .slide: class="exercice" -->
-# Exercice: form-b
+# Exercice : form-b
 ## Exercice
 <br><br><br>
 
