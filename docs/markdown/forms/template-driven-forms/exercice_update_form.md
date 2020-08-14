@@ -1,5 +1,5 @@
 <!-- .slide: class="exercice" -->
-# Exercice : form-b
+# Exercice 18 : form-b
 ## Exercice<br>
 
 - A l'aide du CLI, créer un composant UpdateComponant
@@ -11,7 +11,7 @@ Notes:
 
 ##==##
 <!-- .slide: class="exercice" -->
-# Exercice : form-b
+# Exercice 18 : form-b
 ## Exercice<br>
 
 - Utiliser FormComponent dans UpdateComponent
@@ -26,6 +26,6 @@ Notes:
 ##==##
 
 <!-- .slide: class="exercice full-center" -->
-# Exercice: form-b
+# Exercice 18 : form-b
 ## Solution
-<b>steps/form-b-solution</b>
+<b>steps/18-form-b-solution</b>

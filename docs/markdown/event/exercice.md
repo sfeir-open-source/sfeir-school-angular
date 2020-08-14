@@ -1,5 +1,5 @@
 <!-- .slide: class="exercice" -->
-# Exercice : events
+# Exercice 05 : events
 ## Exercice<br>
 
 - Un bouton random a été ajouté dans le fichier app.component.html<br><br>
@@ -10,6 +10,6 @@ Notes:
 
 ##==##
 <!-- .slide: class="exercice full-center" -->
-# Exercice : events
+# Exercice 05 : events
 ## Solution
-<b>steps/events-solution</b>
+<b>steps/05-events-solution</b>

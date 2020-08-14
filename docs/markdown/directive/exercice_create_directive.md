@@ -1,5 +1,5 @@
 <!-- .slide: class="exercice" -->
-# Exercice : directive-create
+# Exercice 16 : directive-create
 ## Exercice<br>
 
 - Créer à l'aide du CLI dans le répertoire shared une directive SfeirBadge
@@ -13,6 +13,6 @@ Notes:
 ##==##
  
 <!-- .slide: class="full-center exercice" -->
-# Exercice : directive-create
+# Exercice 16 : directive-create
 ## Solution
-<b>steps/directive-create-solution</b>
+<b>steps/16-directive-create-solution</b>

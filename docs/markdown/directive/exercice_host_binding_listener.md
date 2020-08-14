@@ -1,5 +1,5 @@
 <!-- .slide: class="exercice" -->
-# Exercice : hostbinding
+# Exercice 29 : hostbinding
 ## Exercice<br>
 
 - Compléter la directive sfeir-badge <br><br>
@@ -9,6 +9,6 @@
 ##==##
 
 <!-- .slide: class="full-center exercice" -->
-# Exercice : hostbinding
+# Exercice 29 : hostbinding
 ## Solution
-__steps/hostbinding-solution__
+__steps/29-hostbinding-solution__

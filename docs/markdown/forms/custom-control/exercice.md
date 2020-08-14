@@ -1,5 +1,5 @@
 <!-- .slide: class="exercice" -->
-# Exercice : custom-control
+# Exercice 30 : custom-control
 ## Exercice<br>
 
 - Un nouveau composant SfeirInput a été ajouté au dossier shared<br><br>
@@ -9,6 +9,6 @@
 ##==##
 
 <!-- .slide: class="full-center exercice" -->
-# Exercice : custom-control
+# Exercice 30 : custom-control
 ## Solution
-__steps/custom-control-solution__
+__steps/30-custom-control-solution__

@@ -1,5 +1,5 @@
 <!-- .slide: class="exercice" -->
-# Exercice : form-custom-validator
+# Exercice 21 : form-custom-validator
 ## Exercice<br>
 
 - Générer une class à l'aide du CLI dans le shared/forms
@@ -12,6 +12,6 @@ Notes:
 ##==##
 
 <!-- .slide: class="full-center exercice" -->
-# Exercice : form-custom-validator
+# Exercice 21 : form-custom-validator
 ## Solution
-<b>steps/form-custom-validator-solution</b>
+<b>steps/21-form-custom-validator-solution</b>

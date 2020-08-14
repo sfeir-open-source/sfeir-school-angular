@@ -1,5 +1,5 @@
 <!-- .slide: class="exercice" -->
-# Exercice : router-lazyloading-guard
+# Exercice 25 : router-lazyloading-guard
 ## Exercice<br>
 
 - Dans le dossier secret créer un secret Module
@@ -11,6 +11,6 @@ Notes:
 ##==##
 
 <!-- .slide: class="full-center exercice" -->
-# Exercice : router-lazyloading-guard
+# Exercice 25 : router-lazyloading-guard
 ## Solution
-__steps/router-lazyloading-guard-solution__
+__steps/25-router-lazyloading-guard-solution__

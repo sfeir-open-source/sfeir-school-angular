@@ -1,5 +1,5 @@
 <!-- .slide: class="exercice" -->
-# Exercice : form
+# Exercice 17 : form
 ## Enoncé<br>
 
 - Le composant PeopleComponent vient d'être complété
@@ -12,7 +12,7 @@
 ##==##
 
 <!-- .slide: class="exercice" -->
-# Exercice : forms
+# Exercice 17 : forms
 ## Exercice<br>
 
 - A l'aide du CLI, créer dans le dossier shared, le composant FormComponent
@@ -23,8 +23,14 @@
 
 ##==##
 <!-- .slide: class="sfeir-bg-pink exercice" -->
+<<<<<<< HEAD
 # Exerice: forms
 ## Exercice<br>
+=======
+# Exercice 17 : form
+## Exercice
+<br><br><br>
+>>>>>>> (feature) Sort TP folders according to slides
 
 - Lors de l'évent cancel, la dialog se ferme
 - Lors de l'évent personAdd, la dialogue se ferme en envoyant la personne au composant PeopleComponent
@@ -35,6 +41,6 @@ Notes:
 ##==##
 
 <!-- .slide: class="full-center exercice" -->
-# Exercice : forms
+# Exercice 17 : form
 ## Solution
-<b>steps/form-solution</b>
+<b>steps/17-form-solution</b>

@@ -1,5 +1,5 @@
 <!-- .slide: class="exercice" -->
-# Exercice : output
+# Exercice 11 : output
 ## Exercice
 
 - Ajouter un évènement click sur le bouton suppression du CardComponent
@@ -13,6 +13,6 @@ Notes:
 ##==##
 
 <!-- .slide: class="exercice full-center" -->
-# Exercice : output
+# Exercice 11 : output
 ## Solution
-<b>steps/output-solution</b>
+<b>steps/11-output-solution</b>

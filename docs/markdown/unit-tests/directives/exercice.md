@@ -1,5 +1,5 @@
 <!-- .slide: class="exercice" -->
-# Exercice : unit-tests
+# Exercice 24 : unit-tests
 ## Exercice<br>
 
 - Etudier et compléter les tests de la directive SfeirBadgeDirective<br><br>
@@ -8,7 +8,7 @@
 ##==##
 
 <!-- .slide: class="full-center exercice" -->
-# Exercice : units-test
+# Exercice 24 : units-test
 ## Solution
-__steps/unit-tests-solution__
+__steps/24-unit-tests-solution__
 

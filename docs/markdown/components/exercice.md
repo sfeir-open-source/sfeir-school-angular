@@ -1,5 +1,5 @@
 <!-- .slide: class="exercice" -->
-# Exercice : cpt-hierarchy
+# Exercice 03 : cpt-hierarchy
 ## Exercice<br>
 
 - Faire en sorte que PeopleComponent utilise HomeComponent
@@ -20,13 +20,13 @@ Les fichiers à mettre à jour sont les suivants:
  ##==##
 
  <!-- .slide: class="exercice full-center" -->
- # Exercice : cpt-hierarchy
+ # Exercice 03 : cpt-hierarchy
  ## Solution
- <b>steps/cpt-hierarchy-solution</b>
+ <b>steps/03-cpt-hierarchy-solution</b>
 
 ##==##
 <!-- .slide: class="exercice" -->
-# Exercice : binding
+# Exercice 04 : binding
 ## Exercice<br>
 
 - Dans le composant HomeComponent, nous allons afficher les détails d'une personne
@@ -44,6 +44,6 @@ Notes:
 
 ##==##
 <!-- .slide: class="exercice full-center" -->
-# Exercice : binding
+# Exercice 04 : binding
 ## Solution
-<b>steps/binding-solution</b>
+<b>steps/04-binding-solution</b>
