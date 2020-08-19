@@ -9,10 +9,9 @@ const BASE_URL = 'http://localhost:9000';
   providedIn: 'root'
 })
 export class UserResolverService implements Resolve<any> {
+  constructor(private _http: HttpClient) {}
 
-  constructor(private _http: HttpClient) { }
-
-  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any {
+  resolve(_route: ActivatedRouteSnapshot, _state: RouterStateSnapshot): Observable<any> | Promise<any> | any {
     return this._http.get(`${BASE_URL}/api/peoples/`);
   }
 }

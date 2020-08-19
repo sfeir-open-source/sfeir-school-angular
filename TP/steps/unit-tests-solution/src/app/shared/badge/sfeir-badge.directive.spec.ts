@@ -1,7 +1,6 @@
-import { Component, ElementRef } from '@angular/core';
-/* tslint:disable:no-unused-variable */
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { SfeirBadgeDirective } from './sfeir-badge.directive';
+import { ElementRef, Component } from '@angular/core';
 
 export class MockElementRef extends ElementRef {
   constructor() {
@@ -14,9 +13,11 @@ export class MockRenderer {
 }
 
 @Component({
+  // tslint:disable-next-line: component-selector
   selector: 'test-badge-directive',
   template: ``
 })
+// tslint:disable-next-line: component-class-suffix
 export class HostComponentForBadgeDirective {
   person = {};
 }

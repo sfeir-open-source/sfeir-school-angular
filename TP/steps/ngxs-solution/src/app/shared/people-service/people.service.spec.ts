@@ -1,7 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { PeopleService } from './people.service';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import { HttpClient } from '@angular/common/http';
 
 describe('PeopleService', () => {
   const expectedResponse = [

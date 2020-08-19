@@ -3,14 +3,10 @@
 import { PeopleService } from './../shared/people-service/people.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 import { UpdateComponent } from './update.component';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
 
 const expectedResponse = {
   id: '123',
@@ -46,7 +42,7 @@ export class MockActivatedRoute {
 }
 
 export class MockPeopleService {
-  fetchOne(id) {
+  fetchOne() {
     return new Observable(o => o.next(expectedResponse));
   }
   update(person: any) {
