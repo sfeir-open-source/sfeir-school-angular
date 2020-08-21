@@ -23,7 +23,7 @@ export class HostComponentForBadgeDirective {
 
 // const MANAGER_BADGE_HTML = '<i class="material-icons">supervisor_account</i>';
 
-describe('SfeirBadgeDirective', () => {
+xdescribe('SfeirBadgeDirective', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [HostComponentForBadgeDirective, SfeirBadgeDirective]

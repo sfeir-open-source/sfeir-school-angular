@@ -2,7 +2,7 @@ import { HttpClientTestingModule, HttpTestingController } from '@angular/common/
 import { TestBed } from '@angular/core/testing';
 import { PeopleService } from './people.service';
 
-describe('PeopleService', () => {
+xdescribe('PeopleService', () => {
   const expectedResponse = [
     {
       id: '123',

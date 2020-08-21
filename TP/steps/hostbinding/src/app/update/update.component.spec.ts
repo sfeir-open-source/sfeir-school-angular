@@ -1,12 +1,12 @@
-/* tslint:disable:no-unused-variable */
-
-import { PeopleService } from './../shared/people-service/people.service';
-import { ActivatedRoute, Router } from '@angular/router';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ActivatedRoute, Router } from '@angular/router';
+import { provideMockStore } from '@ngrx/store/testing';
+import { BehaviorSubject, Observable, of } from 'rxjs';
+
+import { PeopleService } from './../shared/people-service/people.service';
 
 import { UpdateComponent } from './update.component';
-import { BehaviorSubject, Observable } from 'rxjs';
 
 const expectedResponse = {
   id: '123',
@@ -31,6 +31,9 @@ export class MockActivatedRoute {
   private paramsSubject: BehaviorSubject<any>;
   constructor() {
     this.paramsSubject = new BehaviorSubject(this._params);
+  }
+  get data() {
+    return of({ user: expectedResponse });
   }
   get params() {
     return this.paramsSubject.asObservable();
@@ -65,7 +68,8 @@ describe('UpdateComponent', () => {
       providers: [
         { provide: ActivatedRoute, useValue: mockActivatedRoute },
         { provide: Router, useValue: mockRouter },
-        { provide: PeopleService, useValue: mockPeopleService }
+        { provide: PeopleService, useValue: mockPeopleService },
+        provideMockStore({ initialState: {} })
       ],
       // Tells the compiler not to error on unknown elements and attributes
       schemas: [NO_ERRORS_SCHEMA]

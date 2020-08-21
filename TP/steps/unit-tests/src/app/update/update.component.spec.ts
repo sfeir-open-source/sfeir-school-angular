@@ -49,7 +49,7 @@ export class MockPeopleService {
   }
 }
 
-describe('UpdateComponent', () => {
+xdescribe('UpdateComponent', () => {
   let component: UpdateComponent;
   let fixture: ComponentFixture<UpdateComponent>;
   let mockActivatedRoute: MockActivatedRoute;

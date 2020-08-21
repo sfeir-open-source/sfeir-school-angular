@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { environment } from '../../../environments/environment';
-import { catchError, map } from 'rxjs/operators';
-import { Observable, of } from 'rxjs';
 import { Store } from '@ngxs/store';
+import { Observable, of } from 'rxjs';
+import { catchError, map, flatMap } from 'rxjs/operators';
+
+import { environment } from '../../../environments/environment';
 import { SetPeople } from '../../app.state';
+
 @Injectable()
 export class PeopleService {
   backendURL: any;
@@ -34,7 +36,7 @@ export class PeopleService {
 
   fetch(): Observable<any> {
     return this._http.get(this.backendURL.allPeople).pipe(
-      map(people => this.store.dispatch(new SetPeople(people))),
+      flatMap(people => this.store.dispatch(new SetPeople(people)).pipe(map(() => people))),
       catchError(this.handleError([]))
     );
   }

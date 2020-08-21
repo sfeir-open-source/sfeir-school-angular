@@ -1,4 +1,5 @@
 import { TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { UserResolverService } from './user-resolver.service';
 
@@ -6,7 +7,9 @@ describe('UserResolverService', () => {
   let service: UserResolverService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule]
+    });
     service = TestBed.inject(UserResolverService);
   });
 
