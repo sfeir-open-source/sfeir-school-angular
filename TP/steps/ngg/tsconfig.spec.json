@@ -1,4 +1,5 @@
 {
   "extends": "../../tsconfig.base.spec.json",
-  "files": ["src/test.ts", "src/polyfills.ts"]
+  "files": ["src/test.ts", "src/polyfills.ts"],
+  "include": ["**/*.spec.ts", "**/*.d.ts"]
 }

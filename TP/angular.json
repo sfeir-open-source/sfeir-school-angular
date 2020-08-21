@@ -4893,32 +4893,7 @@
     },
     "templating": {
       "projectType": "application",
-      "schematics": {
-        "@schematics/angular:class": {
-          "skipTests": true
-        },
-        "@schematics/angular:component": {
-          "skipTests": true
-        },
-        "@schematics/angular:directive": {
-          "skipTests": true
-        },
-        "@schematics/angular:guard": {
-          "skipTests": true
-        },
-        "@schematics/angular:interceptor": {
-          "skipTests": true
-        },
-        "@schematics/angular:module": {
-          "skipTests": true
-        },
-        "@schematics/angular:pipe": {
-          "skipTests": true
-        },
-        "@schematics/angular:service": {
-          "skipTests": true
-        }
-      },
+      "schematics": {},
       "root": "steps/templating",
       "sourceRoot": "steps/templating/src",
       "prefix": "app",
@@ -4983,37 +4958,24 @@
           "options": {
             "browserTarget": "templating:build"
           }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "steps/templating/src/test.ts",
+            "polyfills": "steps/templating/src/polyfills.ts",
+            "tsConfig": "steps/templating/tsconfig.spec.json",
+            "karmaConfig": "steps/templating/karma.conf.js",
+            "styles": ["steps/templating/src/styles.css"],
+            "scripts": [],
+            "assets": ["steps/templating/src/favicon.ico", "steps/templating/src/assets"]
+          }
         }
       }
     },
     "templating-solution": {
       "projectType": "application",
-      "schematics": {
-        "@schematics/angular:class": {
-          "skipTests": true
-        },
-        "@schematics/angular:component": {
-          "skipTests": true
-        },
-        "@schematics/angular:directive": {
-          "skipTests": true
-        },
-        "@schematics/angular:guard": {
-          "skipTests": true
-        },
-        "@schematics/angular:interceptor": {
-          "skipTests": true
-        },
-        "@schematics/angular:module": {
-          "skipTests": true
-        },
-        "@schematics/angular:pipe": {
-          "skipTests": true
-        },
-        "@schematics/angular:service": {
-          "skipTests": true
-        }
-      },
+      "schematics": {},
       "root": "steps/templating-solution",
       "sourceRoot": "steps/templating-solution/src",
       "prefix": "app",
@@ -5078,37 +5040,24 @@
           "options": {
             "browserTarget": "templating-solution:build"
           }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "steps/templating-solution/src/test.ts",
+            "polyfills": "steps/templating-solution/src/polyfills.ts",
+            "tsConfig": "steps/templating-solution/tsconfig.spec.json",
+            "karmaConfig": "steps/templating-solution/karma.conf.js",
+            "styles": ["steps/templating-solution/src/styles.css"],
+            "scripts": [],
+            "assets": ["steps/templating-solution/src/favicon.ico", "steps/templating-solution/src/assets"]
+          }
         }
       }
     },
     "interceptors": {
       "projectType": "application",
-      "schematics": {
-        "@schematics/angular:class": {
-          "skipTests": true
-        },
-        "@schematics/angular:component": {
-          "skipTests": true
-        },
-        "@schematics/angular:directive": {
-          "skipTests": true
-        },
-        "@schematics/angular:guard": {
-          "skipTests": true
-        },
-        "@schematics/angular:interceptor": {
-          "skipTests": true
-        },
-        "@schematics/angular:module": {
-          "skipTests": true
-        },
-        "@schematics/angular:pipe": {
-          "skipTests": true
-        },
-        "@schematics/angular:service": {
-          "skipTests": true
-        }
-      },
+      "schematics": {},
       "root": "steps/interceptors",
       "sourceRoot": "steps/interceptors/src",
       "prefix": "app",
@@ -5173,37 +5122,24 @@
           "options": {
             "browserTarget": "interceptors:build"
           }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "steps/interceptors/src/test.ts",
+            "polyfills": "steps/interceptors/src/polyfills.ts",
+            "tsConfig": "steps/interceptors/tsconfig.spec.json",
+            "karmaConfig": "steps/interceptors/karma.conf.js",
+            "styles": ["steps/interceptors/src/styles.css"],
+            "scripts": [],
+            "assets": ["steps/interceptors/src/favicon.ico", "steps/interceptors/src/assets"]
+          }
         }
       }
     },
     "interceptors-solution": {
       "projectType": "application",
-      "schematics": {
-        "@schematics/angular:class": {
-          "skipTests": true
-        },
-        "@schematics/angular:component": {
-          "skipTests": true
-        },
-        "@schematics/angular:directive": {
-          "skipTests": true
-        },
-        "@schematics/angular:guard": {
-          "skipTests": true
-        },
-        "@schematics/angular:interceptor": {
-          "skipTests": true
-        },
-        "@schematics/angular:module": {
-          "skipTests": true
-        },
-        "@schematics/angular:pipe": {
-          "skipTests": true
-        },
-        "@schematics/angular:service": {
-          "skipTests": true
-        }
-      },
+      "schematics": {},
       "root": "steps/interceptors-solution",
       "sourceRoot": "steps/interceptors-solution/src",
       "prefix": "app",
@@ -5268,37 +5204,24 @@
           "options": {
             "browserTarget": "interceptors-solution:build"
           }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "steps/interceptors-solution/src/test.ts",
+            "polyfills": "steps/interceptors-solution/src/polyfills.ts",
+            "tsConfig": "steps/interceptors-solution/tsconfig.spec.json",
+            "karmaConfig": "steps/interceptors-solution/karma.conf.js",
+            "styles": ["steps/interceptors-solution/src/styles.css"],
+            "scripts": [],
+            "assets": ["steps/interceptors-solution/src/favicon.ico", "steps/interceptors-solution/src/assets"]
+          }
         }
       }
     },
     "hostbinding": {
       "projectType": "application",
-      "schematics": {
-        "@schematics/angular:class": {
-          "skipTests": true
-        },
-        "@schematics/angular:component": {
-          "skipTests": true
-        },
-        "@schematics/angular:directive": {
-          "skipTests": true
-        },
-        "@schematics/angular:guard": {
-          "skipTests": true
-        },
-        "@schematics/angular:interceptor": {
-          "skipTests": true
-        },
-        "@schematics/angular:module": {
-          "skipTests": true
-        },
-        "@schematics/angular:pipe": {
-          "skipTests": true
-        },
-        "@schematics/angular:service": {
-          "skipTests": true
-        }
-      },
+      "schematics": {},
       "root": "steps/hostbinding",
       "sourceRoot": "steps/hostbinding/src",
       "prefix": "app",
@@ -5363,37 +5286,24 @@
           "options": {
             "browserTarget": "hostbinding:build"
           }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "steps/hostbinding/src/test.ts",
+            "polyfills": "steps/hostbinding/src/polyfills.ts",
+            "tsConfig": "steps/hostbinding/tsconfig.spec.json",
+            "karmaConfig": "steps/hostbinding/karma.conf.js",
+            "styles": ["steps/hostbinding/src/styles.css"],
+            "scripts": [],
+            "assets": ["steps/hostbinding/src/favicon.ico", "steps/hostbinding/src/assets"]
+          }
         }
       }
     },
     "hostbinding-solution": {
       "projectType": "application",
-      "schematics": {
-        "@schematics/angular:class": {
-          "skipTests": true
-        },
-        "@schematics/angular:component": {
-          "skipTests": true
-        },
-        "@schematics/angular:directive": {
-          "skipTests": true
-        },
-        "@schematics/angular:guard": {
-          "skipTests": true
-        },
-        "@schematics/angular:interceptor": {
-          "skipTests": true
-        },
-        "@schematics/angular:module": {
-          "skipTests": true
-        },
-        "@schematics/angular:pipe": {
-          "skipTests": true
-        },
-        "@schematics/angular:service": {
-          "skipTests": true
-        }
-      },
+      "schematics": {},
       "root": "steps/hostbinding-solution",
       "sourceRoot": "steps/hostbinding-solution/src",
       "prefix": "app",
@@ -5458,37 +5368,24 @@
           "options": {
             "browserTarget": "hostbinding-solution:build"
           }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "steps/hostbinding-solution/src/test.ts",
+            "polyfills": "steps/hostbinding-solution/src/polyfills.ts",
+            "tsConfig": "steps/hostbinding-solution/tsconfig.spec.json",
+            "karmaConfig": "steps/hostbinding-solution/karma.conf.js",
+            "styles": ["steps/hostbinding-solution/src/styles.css"],
+            "scripts": [],
+            "assets": ["steps/hostbinding-solution/src/favicon.ico", "steps/hostbinding-solution/src/assets"]
+          }
         }
       }
     },
     "custom-control": {
       "projectType": "application",
-      "schematics": {
-        "@schematics/angular:class": {
-          "skipTests": true
-        },
-        "@schematics/angular:component": {
-          "skipTests": true
-        },
-        "@schematics/angular:directive": {
-          "skipTests": true
-        },
-        "@schematics/angular:guard": {
-          "skipTests": true
-        },
-        "@schematics/angular:interceptor": {
-          "skipTests": true
-        },
-        "@schematics/angular:module": {
-          "skipTests": true
-        },
-        "@schematics/angular:pipe": {
-          "skipTests": true
-        },
-        "@schematics/angular:service": {
-          "skipTests": true
-        }
-      },
+      "schematics": {},
       "root": "steps/custom-control",
       "sourceRoot": "steps/custom-control/src",
       "prefix": "app",
@@ -5553,37 +5450,24 @@
           "options": {
             "browserTarget": "custom-control:build"
           }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "steps/custom-control/src/test.ts",
+            "polyfills": "steps/custom-control/src/polyfills.ts",
+            "tsConfig": "steps/custom-control/tsconfig.spec.json",
+            "karmaConfig": "steps/custom-control/karma.conf.js",
+            "styles": ["steps/custom-control/src/styles.css"],
+            "scripts": [],
+            "assets": ["steps/custom-control/src/favicon.ico", "steps/custom-control/src/assets"]
+          }
         }
       }
     },
     "custom-control-solution": {
       "projectType": "application",
-      "schematics": {
-        "@schematics/angular:class": {
-          "skipTests": true
-        },
-        "@schematics/angular:component": {
-          "skipTests": true
-        },
-        "@schematics/angular:directive": {
-          "skipTests": true
-        },
-        "@schematics/angular:guard": {
-          "skipTests": true
-        },
-        "@schematics/angular:interceptor": {
-          "skipTests": true
-        },
-        "@schematics/angular:module": {
-          "skipTests": true
-        },
-        "@schematics/angular:pipe": {
-          "skipTests": true
-        },
-        "@schematics/angular:service": {
-          "skipTests": true
-        }
-      },
+      "schematics": {},
       "root": "steps/custom-control-solution",
       "sourceRoot": "steps/custom-control-solution/src",
       "prefix": "app",
@@ -5648,37 +5532,24 @@
           "options": {
             "browserTarget": "custom-control-solution:build"
           }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "steps/custom-control-solution/src/test.ts",
+            "polyfills": "steps/custom-control-solution/src/polyfills.ts",
+            "tsConfig": "steps/custom-control-solution/tsconfig.spec.json",
+            "karmaConfig": "steps/custom-control-solution/karma.conf.js",
+            "styles": ["steps/custom-control-solution/src/styles.css"],
+            "scripts": [],
+            "assets": ["steps/custom-control-solution/src/favicon.ico", "steps/custom-control-solution/src/assets"]
+          }
         }
       }
     },
     "structural-directive": {
       "projectType": "application",
-      "schematics": {
-        "@schematics/angular:class": {
-          "skipTests": true
-        },
-        "@schematics/angular:component": {
-          "skipTests": true
-        },
-        "@schematics/angular:directive": {
-          "skipTests": true
-        },
-        "@schematics/angular:guard": {
-          "skipTests": true
-        },
-        "@schematics/angular:interceptor": {
-          "skipTests": true
-        },
-        "@schematics/angular:module": {
-          "skipTests": true
-        },
-        "@schematics/angular:pipe": {
-          "skipTests": true
-        },
-        "@schematics/angular:service": {
-          "skipTests": true
-        }
-      },
+      "schematics": {},
       "root": "steps/structural-directive",
       "sourceRoot": "steps/structural-directive/src",
       "prefix": "app",
@@ -5743,37 +5614,24 @@
           "options": {
             "browserTarget": "structural-directive:build"
           }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "steps/structural-directive/src/test.ts",
+            "polyfills": "steps/structural-directive/src/polyfills.ts",
+            "tsConfig": "steps/structural-directive/tsconfig.spec.json",
+            "karmaConfig": "steps/structural-directive/karma.conf.js",
+            "styles": ["steps/structural-directive/src/styles.css"],
+            "scripts": [],
+            "assets": ["steps/structural-directive/src/favicon.ico", "steps/structural-directive/src/assets"]
+          }
         }
       }
     },
     "structural-directive-solution": {
       "projectType": "application",
-      "schematics": {
-        "@schematics/angular:class": {
-          "skipTests": true
-        },
-        "@schematics/angular:component": {
-          "skipTests": true
-        },
-        "@schematics/angular:directive": {
-          "skipTests": true
-        },
-        "@schematics/angular:guard": {
-          "skipTests": true
-        },
-        "@schematics/angular:interceptor": {
-          "skipTests": true
-        },
-        "@schematics/angular:module": {
-          "skipTests": true
-        },
-        "@schematics/angular:pipe": {
-          "skipTests": true
-        },
-        "@schematics/angular:service": {
-          "skipTests": true
-        }
-      },
+      "schematics": {},
       "root": "steps/structural-directive-solution",
       "sourceRoot": "steps/structural-directive-solution/src",
       "prefix": "app",
@@ -5840,6 +5698,21 @@
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
             "browserTarget": "structural-directive-solution:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "steps/structural-directive-solution/src/test.ts",
+            "polyfills": "steps/structural-directive-solution/src/polyfills.ts",
+            "tsConfig": "steps/structural-directive-solution/tsconfig.spec.json",
+            "karmaConfig": "steps/structural-directive-solution/karma.conf.js",
+            "styles": ["steps/structural-directive-solution/src/styles.css"],
+            "scripts": [],
+            "assets": [
+              "steps/structural-directive-solution/src/favicon.ico",
+              "steps/structural-directive-solution/src/assets"
+            ]
           }
         }
       }

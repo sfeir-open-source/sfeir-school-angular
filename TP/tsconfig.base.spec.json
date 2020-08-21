@@ -4,6 +4,5 @@
     "outDir": "./out-tsc/spec",
     "baseUrl": "",
     "types": ["jasmine", "node"]
-  },
-  "include": ["**/*.spec.ts", "**/*.d.ts"]
+  }
 }
