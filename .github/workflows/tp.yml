@@ -3,7 +3,7 @@ name: TP CI Action
 on: [push]
 
 jobs:
-  build-and-deploy:
+  build-and-run-tests:
     runs-on: ubuntu-latest
 
     steps:
