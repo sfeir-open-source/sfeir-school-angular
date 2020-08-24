@@ -34,6 +34,7 @@ module.exports = function(config) {
     autoWatch: true,
     browsers: ['Chrome'],
     singleRun: false,
+    failOnEmptyTestSuite: false,
     customLaunchers: {
       Puppeteer: {
         base: 'ChromeHeadless',
