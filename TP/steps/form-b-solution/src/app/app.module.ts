@@ -1,7 +1,7 @@
 // CORE DEPS
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 // MATERIAL DESIGN MODULES
 import { MatButtonModule } from '@angular/material/button';
@@ -25,6 +25,9 @@ import { CardComponent } from './shared/card';
 import { AddDialogComponent } from './people/add-dialog/add-dialog.component';
 import { FormComponent } from './shared/form';
 import { UpdateComponent } from './update/update.component';
+import { SfeirBadgeDirective } from './shared/badge';
+import { NaPipe } from './shared/na-pipe';
+import { PeopleService } from './shared/people-service';
 
 @NgModule({
   imports: [
@@ -51,10 +54,11 @@ import { UpdateComponent } from './update/update.component';
     CardComponent,
     AddDialogComponent,
     FormComponent,
-    UpdateComponent
+    UpdateComponent,
+    SfeirBadgeDirective,
+    NaPipe
   ],
-  entryComponents: [AddDialogComponent],
-  providers: [HttpClient],
+  providers: [PeopleService],
   bootstrap: [PeopleAppComponent]
 })
 export class AppModule {}

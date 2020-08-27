@@ -1,7 +1,6 @@
 // CORE DEPS
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 // MATERIAL DESIGN MODULES
 import { MatButtonModule } from '@angular/material/button';
@@ -14,17 +13,13 @@ import { MatListModule } from '@angular/material/list';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-import { APP_ROUTES } from './app.routes';
-
 import { PeopleAppComponent } from './app.component';
+import { APP_ROUTES } from './app.routes';
 import { HomeComponent } from './home';
 import { PeopleComponent } from './people';
 import { CardComponent } from './shared/card';
-import { AddDialogComponent } from './people/add-dialog/add-dialog.component';
-import { FormComponent } from './shared/form';
-import { UpdateComponent } from './update/update.component';
 import { PeopleService } from './shared/people-service';
 
 @NgModule({
@@ -45,17 +40,8 @@ import { PeopleService } from './shared/people-service';
     HttpClientModule,
     ReactiveFormsModule
   ],
-  declarations: [
-    PeopleAppComponent,
-    HomeComponent,
-    PeopleComponent,
-    CardComponent,
-    AddDialogComponent,
-    FormComponent,
-    UpdateComponent
-  ],
-  entryComponents: [AddDialogComponent],
-  providers: [HttpClient, PeopleService],
+  declarations: [PeopleAppComponent, HomeComponent, PeopleComponent, CardComponent],
+  providers: [PeopleService],
   bootstrap: [PeopleAppComponent]
 })
 export class AppModule {}

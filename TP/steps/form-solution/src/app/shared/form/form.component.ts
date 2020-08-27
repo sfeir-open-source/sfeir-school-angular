@@ -8,6 +8,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class FormComponent implements OnInit {
   @Output('cancel') cancel$: EventEmitter<any>;
   @Output('personAdd') add$: EventEmitter<any>;
+  customImage = 'Nicolas';
 
   constructor() {
     this.add$ = new EventEmitter();

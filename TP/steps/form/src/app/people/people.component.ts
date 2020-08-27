@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { PeopleService } from '../shared/people-service';
 import { AddDialogComponent } from './add-dialog/add-dialog.component';
-
-const BASE_URL = 'http://localhost:9000';
 
 @Component({
   selector: 'sfeir-people',
@@ -14,18 +12,23 @@ export class PeopleComponent implements OnInit {
   private addDialog: MatDialogRef<AddDialogComponent>;
   people;
   dialogStatus = 'inactive';
+  view = 'card';
 
-  constructor(private _http: HttpClient, public dialog: MatDialog) {}
+  constructor(private readonly peopleService: PeopleService, public dialog: MatDialog) {}
 
   /**
    * OnInit implementation
    */
   ngOnInit() {
-    this._http.get(`${BASE_URL}/api/peoples/`).subscribe(people => (this.people = people));
+    this.peopleService.fetch().subscribe(people => {
+      this.people = people;
+    });
   }
 
   delete(person: any) {
-    this._http.delete(`${BASE_URL}/api/peoples/${person.id}`).subscribe(people => (this.people = people));
+    this.peopleService.delete(person.id).subscribe(people => {
+      this.people = people;
+    });
   }
 
   showDialog() {
@@ -44,5 +47,9 @@ export class PeopleComponent implements OnInit {
   hideDialog() {
     this.dialogStatus = 'inactive';
     this.addDialog.close();
+  }
+
+  switchView() {
+    this.view = this.view === 'card' ? 'list' : 'card';
   }
 }
