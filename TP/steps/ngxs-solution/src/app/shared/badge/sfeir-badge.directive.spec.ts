@@ -1,10 +1,6 @@
-import { BrowserModule, By } from '@angular/platform-browser';
-import { inject } from '@angular/core/testing';
-/* tslint:disable:no-unused-variable */
-
-import { TestBed, async, ComponentFixture } from '@angular/core/testing';
+import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { SfeirBadgeDirective } from './sfeir-badge.directive';
-import { ElementRef, Component, Renderer2 } from '@angular/core';
+import { ElementRef, Component } from '@angular/core';
 
 export class MockElementRef extends ElementRef {
   constructor() {
@@ -13,13 +9,15 @@ export class MockElementRef extends ElementRef {
 }
 
 export class MockRenderer {
-  setElementProperty(...args) {}
+  setElementProperty() {}
 }
 
 @Component({
+  // tslint:disable-next-line: component-selector
   selector: 'test-badge-directive',
   template: ``
 })
+// tslint:disable-next-line: component-class-suffix
 export class HostComponentForBadgeDirective {
   person = {};
 }

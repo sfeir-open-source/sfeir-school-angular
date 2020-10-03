@@ -1,7 +1,9 @@
 import { TestBed } from '@angular/core/testing';
-import { PeopleService } from './people.service';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import { HttpClient } from '@angular/common/http';
+import { NgxsModule } from '@ngxs/store';
+
+import { AppState } from '../../app.state';
+import { PeopleService } from './people.service';
 
 describe('PeopleService', () => {
   const expectedResponse = [
@@ -30,7 +32,7 @@ describe('PeopleService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
+      imports: [HttpClientTestingModule, NgxsModule.forRoot([AppState])],
       providers: [PeopleService]
     });
 

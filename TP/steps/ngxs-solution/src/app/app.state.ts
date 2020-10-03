@@ -1,4 +1,5 @@
 import { Action, Selector, State, StateContext } from '@ngxs/store';
+import { Injectable } from '@angular/core';
 
 export interface AppStateModel {
   people: Object[];
@@ -26,6 +27,7 @@ export class FilterPeople {
     search: ''
   }
 })
+@Injectable()
 export class AppState {
   // HELPERS
   static filterPerson(search) {

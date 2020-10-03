@@ -1,19 +1,15 @@
-import { Subject } from 'rxjs/Subject';
-import { HttpModule } from '@angular/http';
-import { MockBackend } from '@angular/http/testing';
-/* tslint:disable:no-unused-variable */
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import { TestBed, inject } from '@angular/core/testing';
 
-import { TestBed, async, fakeAsync, inject, tick } from '@angular/core/testing';
+import { environment } from '../../../environments/environment';
+
 import { PeopleService } from './people.service';
-import { Http, XHRBackend, Response, ResponseOptions } from '@angular/http';
-import 'rxjs/add/operator/map';
-// @todo(wassim): there is a weird behavior with mock responses
-// they return Promises instead of the actual "expectedResponse" object.
+import { provideMockStore } from '@ngrx/store/testing';
+
+const BASE_URL = `${environment.backend.protocol}://${environment.backend.host}:${environment.backend.port}`;
+
 describe('PeopleService', () => {
-  let service;
-  let mockbackend;
-  let lastConnection;
-  let expectedResponse = [
+  const expectedResponse = [
     {
       id: '123',
       lastname: 'Powers',
@@ -34,106 +30,109 @@ describe('PeopleService', () => {
     }
   ];
 
-  const responseOptions = (body, status = 200) => {
-    return new ResponseOptions({
-      status,
-      body: JSON.stringify(body)
-    });
-  };
-
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpModule],
-      providers: [PeopleService, { provide: XHRBackend, useClass: MockBackend }]
+      imports: [HttpClientTestingModule],
+      providers: [PeopleService, provideMockStore({ initialState: {} })]
     });
   });
 
   describe('fetch()', () => {
-    it('should fetch all people when status === 200', inject([PeopleService, XHRBackend], (service, mockbackend) => {
-      mockbackend.connections.subscribe(connection => {
-        connection.mockRespond(new Response(new ResponseOptions(responseOptions(expectedResponse))));
-      });
+    it('should fetch all people when status === 200', inject(
+      [PeopleService, HttpTestingController],
+      (service: PeopleService, httpTestingController: HttpTestingController) => {
+        service.fetch().subscribe(response => {
+          expect(response.length).toEqual(3);
+          expect(response).toEqual(expectedResponse);
+        });
 
-      service.fetch().subscribe(response => {
-        expect(response.length).toEqual(3);
-        expect(response).toEqual(expectedResponse);
-      });
-    }));
+        const req = httpTestingController.expectOne(BASE_URL + environment.backend.endpoints.allPeople);
+        expect(req.request.method).toEqual('GET');
+        req.flush(expectedResponse);
+        httpTestingController.verify();
+      }
+    ));
 
-    it('should fetch empty array when status !== 200', inject([PeopleService, XHRBackend], (service, mockbackend) => {
-      mockbackend.connections.subscribe(connection => {
-        connection.mockRespond(new Response(new ResponseOptions(responseOptions(expectedResponse, 404))));
-      });
+    it('should fetch empty array when status !== 200', inject(
+      [PeopleService, HttpTestingController],
+      (service: PeopleService, httpTestingController: HttpTestingController) => {
+        service.fetch().subscribe(response => {
+          expect(response).toEqual([]);
+        });
 
-      service.fetch().subscribe(response => {
-        expect(response).toEqual([]);
-      });
-    }));
+        const req = httpTestingController.expectOne(BASE_URL + environment.backend.endpoints.allPeople);
+        expect(req.request.method).toEqual('GET');
+        req.flush(expectedResponse, { status: 404, statusText: 'Not Found' });
+        httpTestingController.verify();
+      }
+    ));
   });
 
   describe('fetchRandom()', () => {
-    it('should fetch random person when status === 200', inject([PeopleService, XHRBackend], (service, mockbackend) => {
-      mockbackend.connections.subscribe(connection => {
-        connection.mockRespond(new Response(new ResponseOptions(responseOptions(expectedResponse[1]))));
-      });
+    it('should fetch random person when status === 200', inject(
+      [PeopleService, HttpTestingController],
+      (service: PeopleService, httpTestingController: HttpTestingController) => {
+        service.fetchRandom().subscribe(person => {
+          expect(person.id).toBe('456');
+        });
 
-      service.fetchRandom().subscribe(person => {
-        expect(person.id).toBe('456');
-      });
-    }));
+        const req = httpTestingController.expectOne(BASE_URL + environment.backend.endpoints.randomPeople);
+        expect(req.request.method).toEqual('GET');
+        req.flush(expectedResponse[1]);
+        httpTestingController.verify();
+      }
+    ));
   });
 
   describe('fetchOne()', () => {
     it('should fetch person with id=456 when status === 200', inject(
-      [PeopleService, XHRBackend],
-      (service, mockbackend) => {
-        mockbackend.connections.subscribe(connection => {
-          connection.mockRespond(new Response(new ResponseOptions(responseOptions(expectedResponse[1]))));
-        });
-
+      [PeopleService, HttpTestingController],
+      (service: PeopleService, httpTestingController: HttpTestingController) => {
         service.fetchOne('456').subscribe(person => {
           expect(person.id).toBe('456');
         });
+
+        const req = httpTestingController.expectOne(
+          BASE_URL + environment.backend.endpoints.onePeople.replace(':id', '456')
+        );
+        expect(req.request.method).toEqual('GET');
+        req.flush(expectedResponse[1]);
+        httpTestingController.verify();
       }
     ));
   });
 
   describe('delete()', () => {
     it('should delete person with id=456 when status === 200', inject(
-      [PeopleService, XHRBackend],
-      (service, mockbackend) => {
-        mockbackend.connections.subscribe(connection => {
-          const _expectedResponse = Array.from(expectedResponse);
-          _expectedResponse.splice(1, 1); // remove entry=1
-
-          connection.mockRespond(new Response(new ResponseOptions(responseOptions(_expectedResponse))));
-        });
+      [PeopleService, HttpTestingController],
+      (service: PeopleService, httpTestingController: HttpTestingController) => {
+        const _expectedResponse = Array.from(expectedResponse);
+        _expectedResponse.splice(1, 1); // remove entry=1
 
         service.delete('456').subscribe(response => {
           expect(response.length).toBe(2);
           expect(response[0].id).toBe('123');
           expect(response[1].id).toBe('789');
         });
+
+        const req = httpTestingController.expectOne(
+          BASE_URL + environment.backend.endpoints.onePeople.replace(':id', '456')
+        );
+        expect(req.request.method).toEqual('DELETE');
+        req.flush(_expectedResponse);
+        httpTestingController.verify();
       }
     ));
   });
 
   describe('update()', () => {
     it('should update person with id=456 when status === 200', inject(
-      [PeopleService, XHRBackend],
-      (service, mockbackend) => {
+      [PeopleService, HttpTestingController],
+      (service: PeopleService, httpTestingController: HttpTestingController) => {
         const body = expectedResponse[1];
         body.firstname = 'Wassim';
         body.lastname = 'Chegham';
         body.twitter = '@manekinekko';
-
-        mockbackend.connections.subscribe(connection => {
-          expectedResponse[1].firstname = 'Wassim';
-          expectedResponse[1].lastname = 'Chegham';
-          expectedResponse[1].twitter = '@manekinekko';
-
-          connection.mockRespond(new Response(new ResponseOptions(responseOptions(expectedResponse[1]))));
-        });
 
         service.update(body).subscribe(person => {
           expect(person.id).toBe('456');
@@ -141,29 +140,45 @@ describe('PeopleService', () => {
           expect(person.lastname).toBe('Chegham');
           expect(person.twitter).toBe('@manekinekko');
         });
+
+        const req = httpTestingController.expectOne(
+          BASE_URL + environment.backend.endpoints.onePeople.replace(':id', '456')
+        );
+        expect(req.request.method).toEqual('PUT');
+
+        expectedResponse[1].firstname = 'Wassim';
+        expectedResponse[1].lastname = 'Chegham';
+        expectedResponse[1].twitter = '@manekinekko';
+
+        req.flush(expectedResponse[1]);
+        httpTestingController.verify();
       }
     ));
   });
 
   describe('create()', () => {
-    it('should create person when status === 200', inject([PeopleService, XHRBackend], (service, mockbackend) => {
-      const body = {
-        id: '900',
-        firstname: 'Wassim',
-        lastname: 'Chegham',
-        twitter: '@manekinekko'
-      };
+    it('should create person when status === 200', inject(
+      [PeopleService, HttpTestingController],
+      (service: PeopleService, httpTestingController: HttpTestingController) => {
+        const body = {
+          id: '900',
+          firstname: 'Wassim',
+          lastname: 'Chegham',
+          twitter: '@manekinekko'
+        };
 
-      mockbackend.connections.subscribe(connection => {
-        connection.mockRespond(new Response(new ResponseOptions(responseOptions(body))));
-      });
+        service.create(body).subscribe(person => {
+          expect(person.id).toBe('900');
+          expect(person.firstname).toBe('Wassim');
+          expect(person.lastname).toBe('Chegham');
+          expect(person.twitter).toBe('@manekinekko');
+        });
 
-      service.create(body).subscribe(person => {
-        expect(person.id).toBe('900');
-        expect(person.firstname).toBe('Wassim');
-        expect(person.lastname).toBe('Chegham');
-        expect(person.twitter).toBe('@manekinekko');
-      });
-    }));
+        const req = httpTestingController.expectOne(BASE_URL + environment.backend.endpoints.allPeople);
+        expect(req.request.method).toEqual('POST');
+        req.flush(body);
+        httpTestingController.verify();
+      }
+    ));
   });
 });
