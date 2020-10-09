@@ -4986,13 +4986,13 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "steps/templating/src/test.ts",
-            "polyfills": "steps/templating/src/polyfills.ts",
-            "tsConfig": "steps/templating/tsconfig.spec.json",
-            "karmaConfig": "steps/templating/karma.conf.js",
-            "styles": ["steps/templating/src/styles.css"],
+            "main": "steps/28-templating/src/test.ts",
+            "polyfills": "steps/28-templating/src/polyfills.ts",
+            "tsConfig": "steps/28-templating/tsconfig.spec.json",
+            "karmaConfig": "steps/28-templating/karma.conf.js",
+            "styles": ["steps/28-templating/src/styles.css"],
             "scripts": [],
-            "assets": ["steps/templating/src/favicon.ico", "steps/templating/src/assets"]
+            "assets": ["steps/28-templating/src/favicon.ico", "steps/28-templating/src/assets"]
           }
         }
       }
@@ -5068,13 +5068,13 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "steps/templating-solution/src/test.ts",
-            "polyfills": "steps/templating-solution/src/polyfills.ts",
-            "tsConfig": "steps/templating-solution/tsconfig.spec.json",
-            "karmaConfig": "steps/templating-solution/karma.conf.js",
-            "styles": ["steps/templating-solution/src/styles.css"],
+            "main": "steps/28-templating-solution/src/test.ts",
+            "polyfills": "steps/28-templating-solution/src/polyfills.ts",
+            "tsConfig": "steps/28-templating-solution/tsconfig.spec.json",
+            "karmaConfig": "steps/28-templating-solution/karma.conf.js",
+            "styles": ["steps/28-templating-solution/src/styles.css"],
             "scripts": [],
-            "assets": ["steps/templating-solution/src/favicon.ico", "steps/templating-solution/src/assets"]
+            "assets": ["steps/28-templating-solution/src/favicon.ico", "steps/28-templating-solution/src/assets"]
           }
         }
       }
@@ -5150,13 +5150,13 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "steps/interceptors/src/test.ts",
-            "polyfills": "steps/interceptors/src/polyfills.ts",
-            "tsConfig": "steps/interceptors/tsconfig.spec.json",
-            "karmaConfig": "steps/interceptors/karma.conf.js",
-            "styles": ["steps/interceptors/src/styles.css"],
+            "main": "steps/27-interceptors/src/test.ts",
+            "polyfills": "steps/27-interceptors/src/polyfills.ts",
+            "tsConfig": "steps/27-interceptors/tsconfig.spec.json",
+            "karmaConfig": "steps/27-interceptors/karma.conf.js",
+            "styles": ["steps/27-interceptors/src/styles.css"],
             "scripts": [],
-            "assets": ["steps/interceptors/src/favicon.ico", "steps/interceptors/src/assets"]
+            "assets": ["steps/27-interceptors/src/favicon.ico", "steps/27-interceptors/src/assets"]
           }
         }
       }
@@ -5232,13 +5232,13 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "steps/interceptors-solution/src/test.ts",
-            "polyfills": "steps/interceptors-solution/src/polyfills.ts",
-            "tsConfig": "steps/interceptors-solution/tsconfig.spec.json",
-            "karmaConfig": "steps/interceptors-solution/karma.conf.js",
-            "styles": ["steps/interceptors-solution/src/styles.css"],
+            "main": "steps/27-interceptors-solution/src/test.ts",
+            "polyfills": "steps/27-interceptors-solution/src/polyfills.ts",
+            "tsConfig": "steps/27-interceptors-solution/tsconfig.spec.json",
+            "karmaConfig": "steps/27-interceptors-solution/karma.conf.js",
+            "styles": ["steps/27-interceptors-solution/src/styles.css"],
             "scripts": [],
-            "assets": ["steps/interceptors-solution/src/favicon.ico", "steps/interceptors-solution/src/assets"]
+            "assets": ["steps/27-interceptors-solution/src/favicon.ico", "steps/27-interceptors-solution/src/assets"]
           }
         }
       }
@@ -5314,13 +5314,13 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "steps/hostbinding/src/test.ts",
-            "polyfills": "steps/hostbinding/src/polyfills.ts",
-            "tsConfig": "steps/hostbinding/tsconfig.spec.json",
-            "karmaConfig": "steps/hostbinding/karma.conf.js",
-            "styles": ["steps/hostbinding/src/styles.css"],
+            "main": "steps/29-hostbinding/src/test.ts",
+            "polyfills": "steps/29-hostbinding/src/polyfills.ts",
+            "tsConfig": "steps/29-hostbinding/tsconfig.spec.json",
+            "karmaConfig": "steps/29-hostbinding/karma.conf.js",
+            "styles": ["steps/29-hostbinding/src/styles.css"],
             "scripts": [],
-            "assets": ["steps/hostbinding/src/favicon.ico", "steps/hostbinding/src/assets"]
+            "assets": ["steps/29-hostbinding/src/favicon.ico", "steps/29-hostbinding/src/assets"]
           }
         }
       }
@@ -5396,13 +5396,13 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "steps/hostbinding-solution/src/test.ts",
-            "polyfills": "steps/hostbinding-solution/src/polyfills.ts",
-            "tsConfig": "steps/hostbinding-solution/tsconfig.spec.json",
-            "karmaConfig": "steps/hostbinding-solution/karma.conf.js",
-            "styles": ["steps/hostbinding-solution/src/styles.css"],
+            "main": "steps/29-hostbinding-solution/src/test.ts",
+            "polyfills": "steps/29-hostbinding-solution/src/polyfills.ts",
+            "tsConfig": "steps/29-hostbinding-solution/tsconfig.spec.json",
+            "karmaConfig": "steps/29-hostbinding-solution/karma.conf.js",
+            "styles": ["steps/29-hostbinding-solution/src/styles.css"],
             "scripts": [],
-            "assets": ["steps/hostbinding-solution/src/favicon.ico", "steps/hostbinding-solution/src/assets"]
+            "assets": ["steps/29-hostbinding-solution/src/favicon.ico", "steps/29-hostbinding-solution/src/assets"]
           }
         }
       }
@@ -5478,13 +5478,13 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "steps/custom-control/src/test.ts",
-            "polyfills": "steps/custom-control/src/polyfills.ts",
-            "tsConfig": "steps/custom-control/tsconfig.spec.json",
-            "karmaConfig": "steps/custom-control/karma.conf.js",
-            "styles": ["steps/custom-control/src/styles.css"],
+            "main": "steps/30-custom-control/src/test.ts",
+            "polyfills": "steps/30-custom-control/src/polyfills.ts",
+            "tsConfig": "steps/30-custom-control/tsconfig.spec.json",
+            "karmaConfig": "steps/30-custom-control/karma.conf.js",
+            "styles": ["steps/30-custom-control/src/styles.css"],
             "scripts": [],
-            "assets": ["steps/custom-control/src/favicon.ico", "steps/custom-control/src/assets"]
+            "assets": ["steps/30-custom-control/src/favicon.ico", "steps/30-custom-control/src/assets"]
           }
         }
       }
@@ -5563,13 +5563,13 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "steps/custom-control-solution/src/test.ts",
-            "polyfills": "steps/custom-control-solution/src/polyfills.ts",
-            "tsConfig": "steps/custom-control-solution/tsconfig.spec.json",
-            "karmaConfig": "steps/custom-control-solution/karma.conf.js",
-            "styles": ["steps/custom-control-solution/src/styles.css"],
+            "main": "steps/30-custom-control-solution/src/test.ts",
+            "polyfills": "steps/30-custom-control-solution/src/polyfills.ts",
+            "tsConfig": "steps/30-custom-control-solution/tsconfig.spec.json",
+            "karmaConfig": "steps/30-custom-control-solution/karma.conf.js",
+            "styles": ["steps/30-custom-control-solution/src/styles.css"],
             "scripts": [],
-            "assets": ["steps/custom-control-solution/src/favicon.ico", "steps/custom-control-solution/src/assets"]
+            "assets": ["steps/30-custom-control-solution/src/favicon.ico", "steps/30-custom-control-solution/src/assets"]
           }
         }
       }
@@ -5645,13 +5645,13 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "steps/structural-directive/src/test.ts",
-            "polyfills": "steps/structural-directive/src/polyfills.ts",
-            "tsConfig": "steps/structural-directive/tsconfig.spec.json",
-            "karmaConfig": "steps/structural-directive/karma.conf.js",
-            "styles": ["steps/structural-directive/src/styles.css"],
+            "main": "steps/31-structural-directive/src/test.ts",
+            "polyfills": "steps/31-structural-directive/src/polyfills.ts",
+            "tsConfig": "steps/31-structural-directive/tsconfig.spec.json",
+            "karmaConfig": "steps/31-structural-directive/karma.conf.js",
+            "styles": ["steps/31-structural-directive/src/styles.css"],
             "scripts": [],
-            "assets": ["steps/structural-directive/src/favicon.ico", "steps/structural-directive/src/assets"]
+            "assets": ["steps/31-structural-directive/src/favicon.ico", "steps/31-structural-directive/src/assets"]
           }
         }
       }
@@ -5730,15 +5730,15 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "steps/structural-directive-solution/src/test.ts",
-            "polyfills": "steps/structural-directive-solution/src/polyfills.ts",
-            "tsConfig": "steps/structural-directive-solution/tsconfig.spec.json",
-            "karmaConfig": "steps/structural-directive-solution/karma.conf.js",
-            "styles": ["steps/structural-directive-solution/src/styles.css"],
+            "main": "steps/31-structural-directive-solution/src/test.ts",
+            "polyfills": "steps/31-structural-directive-solution/src/polyfills.ts",
+            "tsConfig": "steps/31-structural-directive-solution/tsconfig.spec.json",
+            "karmaConfig": "steps/31-structural-directive-solution/karma.conf.js",
+            "styles": ["steps/31-structural-directive-solution/src/styles.css"],
             "scripts": [],
             "assets": [
-              "steps/structural-directive-solution/src/favicon.ico",
-              "steps/structural-directive-solution/src/assets"
+              "steps/31-structural-directive-solution/src/favicon.ico",
+              "steps/31-structural-directive-solution/src/assets"
             ]
           }
         }

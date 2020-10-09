@@ -6,7 +6,7 @@ import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UpdateComponent } from './update.component';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 
 const expectedResponse = {
   id: '123',
@@ -31,6 +31,9 @@ export class MockActivatedRoute {
   private paramsSubject: BehaviorSubject<any>;
   constructor() {
     this.paramsSubject = new BehaviorSubject(this._params);
+  }
+  get data() {
+    return of({ user: expectedResponse });
   }
   get params() {
     return this.paramsSubject.asObservable();

@@ -1,12 +1,10 @@
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { TestBed, inject } from '@angular/core/testing';
-
-import { environment } from '../../../environments/environment';
-
-import { PeopleService } from './people.service';
 import { provideMockStore } from '@ngrx/store/testing';
 
-const BASE_URL = `${environment.backend.protocol}://${environment.backend.host}:${environment.backend.port}`;
+import { State } from '../../store/state/state';
+
+import { PeopleService } from './people.service';
 
 describe('PeopleService', () => {
   const expectedResponse = [
@@ -33,7 +31,15 @@ describe('PeopleService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
-      providers: [PeopleService, provideMockStore({ initialState: {} })]
+      providers: [
+        PeopleService,
+        provideMockStore<State>({
+          initialState: {
+            people: [],
+            search: ''
+          }
+        })
+      ]
     });
   });
 
@@ -46,10 +52,9 @@ describe('PeopleService', () => {
           expect(response).toEqual(expectedResponse);
         });
 
-        const req = httpTestingController.expectOne(BASE_URL + environment.backend.endpoints.allPeople);
+        const req = httpTestingController.expectOne(service.backendURL.allPeople);
         expect(req.request.method).toEqual('GET');
         req.flush(expectedResponse);
-        httpTestingController.verify();
       }
     ));
 
@@ -60,10 +65,9 @@ describe('PeopleService', () => {
           expect(response).toEqual([]);
         });
 
-        const req = httpTestingController.expectOne(BASE_URL + environment.backend.endpoints.allPeople);
+        const req = httpTestingController.expectOne(service.backendURL.allPeople);
         expect(req.request.method).toEqual('GET');
         req.flush(expectedResponse, { status: 404, statusText: 'Not Found' });
-        httpTestingController.verify();
       }
     ));
   });
@@ -76,10 +80,9 @@ describe('PeopleService', () => {
           expect(person.id).toBe('456');
         });
 
-        const req = httpTestingController.expectOne(BASE_URL + environment.backend.endpoints.randomPeople);
+        const req = httpTestingController.expectOne(service.backendURL.randomPeople);
         expect(req.request.method).toEqual('GET');
         req.flush(expectedResponse[1]);
-        httpTestingController.verify();
       }
     ));
   });
@@ -92,12 +95,9 @@ describe('PeopleService', () => {
           expect(person.id).toBe('456');
         });
 
-        const req = httpTestingController.expectOne(
-          BASE_URL + environment.backend.endpoints.onePeople.replace(':id', '456')
-        );
+        const req = httpTestingController.expectOne(service.backendURL.onePeople.replace(':id', '456'));
         expect(req.request.method).toEqual('GET');
         req.flush(expectedResponse[1]);
-        httpTestingController.verify();
       }
     ));
   });
@@ -115,12 +115,9 @@ describe('PeopleService', () => {
           expect(response[1].id).toBe('789');
         });
 
-        const req = httpTestingController.expectOne(
-          BASE_URL + environment.backend.endpoints.onePeople.replace(':id', '456')
-        );
+        const req = httpTestingController.expectOne(service.backendURL.onePeople.replace(':id', '456'));
         expect(req.request.method).toEqual('DELETE');
         req.flush(_expectedResponse);
-        httpTestingController.verify();
       }
     ));
   });
@@ -141,9 +138,7 @@ describe('PeopleService', () => {
           expect(person.twitter).toBe('@manekinekko');
         });
 
-        const req = httpTestingController.expectOne(
-          BASE_URL + environment.backend.endpoints.onePeople.replace(':id', '456')
-        );
+        const req = httpTestingController.expectOne(service.backendURL.onePeople.replace(':id', '456'));
         expect(req.request.method).toEqual('PUT');
 
         expectedResponse[1].firstname = 'Wassim';
@@ -151,7 +146,6 @@ describe('PeopleService', () => {
         expectedResponse[1].twitter = '@manekinekko';
 
         req.flush(expectedResponse[1]);
-        httpTestingController.verify();
       }
     ));
   });
@@ -174,10 +168,9 @@ describe('PeopleService', () => {
           expect(person.twitter).toBe('@manekinekko');
         });
 
-        const req = httpTestingController.expectOne(BASE_URL + environment.backend.endpoints.allPeople);
+        const req = httpTestingController.expectOne(service.backendURL.allPeople);
         expect(req.request.method).toEqual('POST');
         req.flush(body);
-        httpTestingController.verify();
       }
     ));
   });

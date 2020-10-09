@@ -12,6 +12,9 @@ import { getFilteredPeople } from '../../store/selectors/selectors';
 @Injectable()
 export class PeopleService {
   private _backendURL: any;
+  public get backendURL(): any {
+    return this._backendURL;
+  }
 
   constructor(private _http: HttpClient, private store: Store<PeopleFeature>) {
     this._backendURL = {};
