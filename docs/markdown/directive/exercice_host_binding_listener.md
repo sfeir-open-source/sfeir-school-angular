@@ -1,7 +1,6 @@
 <!-- .slide: class="exercice" -->
 # Exercice : hostbinding
-## Exercice
-<br><br><br>
+## Exercice<br>
 
 - Compléter la directive sfeir-badge <br><br>
 - Afficher le badge en rouge quand la souris est sur l'icon <br><br>

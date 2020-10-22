@@ -1,6 +1,5 @@
 <!-- .slide class="inconsolata with-code" -->
 # La directive ng-template
-<br>
 
 - Permet de définir un template
 <br><br>
@@ -27,7 +26,6 @@ Notes:
 
 <!-- .slide: class="inconsolata with-code" -->
 # Utilisation de la directive ng-template
-<br>
 
 - S'utilise principalement avec les directives structurelles (*ngIf, *ngFor, ...)
 <br><br>
@@ -47,7 +45,6 @@ Notes:
 
 <!-- .slide: class="with-code inconsolata" -->
 # Utilisation de la directive ng-template
-<br>
 
 - En fait, les directives structurelles (*ngIf, *ngFor, ...) sont elle-même des 'ng-template' !
 <br><br>

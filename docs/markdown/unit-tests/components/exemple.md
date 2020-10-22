@@ -2,8 +2,6 @@
 
 # Un exemple est plus parlant
 
-<br><br>
-
 ```typescript
 @Component({
     selector: 'user-profile',
@@ -23,8 +21,6 @@ export class UserComponent {
 <!-- .slide: class="with-code inconsolata" -->
 
 # Un exemple est plus parlant
-
-<br><br>
 
 ```typescript
 // setup
@@ -47,8 +43,6 @@ it('should render `Hi Igor!`', () => {
 
 # DebugElement: outil bien pratique pour chercher des éléments
 
-<br><br>
-
 ```typescript
 debugElement.query(By.css('button')); // renvoit un DebugElement du button
 debugElement.queryAll(By.css('dnl-line')); // renvoit un tableau de DebugElement
@@ -67,10 +61,7 @@ expect(nameDiv).nativeElement.textContent.toEqual('Durand');
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-
 # DebugElement: aussi pour déclencher des événements !
-
-<br><br><br>
 
 ```typescript
 debugElement.query(By.css('button')).triggerEventHandler('click', null);
@@ -86,10 +77,7 @@ debugElement.query(By.css('my-form')).triggerEventHandler('submit', mockSubmitDa
 ##==##
 
 <!-- .slide -->
-
 # Mocker via l’Injector dans les provider
-
-<br><br><br>
 
 -   Permet de changer une classe injectée (par exemple un service) par une autre (mock class)<br><br>
 -   Pratique si tous les tests doivent utilisés les mêmes mock
@@ -99,8 +87,6 @@ debugElement.query(By.css('my-form')).triggerEventHandler('submit', mockSubmitDa
 <!-- .slide: class="with-code inconsolata" -->
 
 # Mocker (exemple)
-
-<br>
 
 ```typescript
 beforeEach(() => {
@@ -126,8 +112,6 @@ beforeEach(() => {
 
 # Mocker (exemple)
 
-<br>
-
 ```typescript
 export class MockUserService {
     isLoggedIn: boolean = true;
@@ -151,8 +135,6 @@ export class MockUserService {
 
 # Mocker (exemple)
 
-<br>
-
 ```typescript
 beforeEach(() => {
   TestBed.configureTestingModule({
@@ -174,8 +156,6 @@ beforeEach(() => {
 <!-- .slide: class="with-code inconsolata" -->
 
 # Mocker (exemple)
-
-<br>
 
 ```typescript
 let userServiceStub: Partial<UserService>;

@@ -1,7 +1,6 @@
 <!-- .slide: class="exercice" -->
 # Exercice : unit-tests
-## Exercice
-<br><br><br>
+## Exercice<br>
 - Etudier et compléter les tests du pipe NaPipe<br><br>
 - Lancer vos tests à l'aide de la command: npm run test -- unit-tests
 

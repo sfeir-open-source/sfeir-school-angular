@@ -1,7 +1,6 @@
 <!-- .slide: class="exercice" -->
 # Exercice : resolvers
-## Exercice
-<br><br><br>
+## Exercice<br>
 
 - Compléter le fichier user-details.resolver.ts
 - Modifier le fichier app.routes.ts pour importer le résolver sur la route edit/:id

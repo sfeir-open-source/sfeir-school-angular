@@ -2,7 +2,6 @@
 
 # Selectors : Définition
 
-<br><br>
 Les sélecteurs sont des fonctions qui récupèrent une partie ou totalement notre state<br><br>
 Dans **NGXS** il existe deux méthodes pour séléctionner notre state (ou partie de notre state):<br><br>
 
@@ -38,8 +37,6 @@ export class ZooComponent {
 <!-- .slide: class="with-code inconsolata" -->
 
 # Selectors : Select Function
-
-<br>
 
 Le store possède une méthode **select** qui peut être utile lorsque l'on ne peut pas déclarer statiquement un sélecteur avec l'annotation **@Select**.<br>
 Attention cette méthode renvoie un observable

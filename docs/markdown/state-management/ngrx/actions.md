@@ -1,6 +1,5 @@
 <!-- .slide: class="with-code inconsolata" -->
 # NGRX : Actions
-<br>
 
 - Seul moyen de modifier l'état
 - Types (moyen unique de les identifier)

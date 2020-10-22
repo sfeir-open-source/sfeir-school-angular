@@ -8,8 +8,6 @@
 
 # Installation du CLI
 
-<br>
-
 ```sh
 npm install -g @angular/cli
 ```
@@ -29,7 +27,6 @@ npm install -g @angular/cli
 <!-- .slide"-->
 
 # Le fichier angular.json
-
 Le fichier Angular.json est la carte d'identité de votre projet.
 
 ![center h-700](assets/images/school/basics/angular_json.png)

@@ -1,6 +1,5 @@
 <!-- .slide: class="with-code inconsolata" -->
-# La résolution par valeur
-<br><br><br>
+# La résolution par valeur<br>
 
 ```typescript
 providers: [ { provide: V8, useValue: 8 }]
@@ -13,8 +12,7 @@ providers: [ { provide: V8, useValue: { cylinder: 8 } }]
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# La résolution par classe alternative: useClass
-<br><br><br>
+# La résolution par classe alternative: useClass<br>
 
 ```typescript
 providers: [ { provide: V8, useClass: V8 }]
@@ -29,7 +27,6 @@ Notes:
 
 <!-- .slide: class="with-code inconsolata" -->
 # La résolution par class aliasée: useExisting
-<br>
 
 - <b>Création de deux instance de V8</b><br><br>
 
@@ -50,8 +47,7 @@ providers: [ V8, { provide: V8Engine, useExisting: V8 } ]
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# La résolution par factory: useFactory
-<br><br><br>
+# La résolution par factory: useFactory<br>
 
 ```typescript
 export const function createEngineFactory(dep: V8Engine) {

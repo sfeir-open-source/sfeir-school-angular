@@ -1,7 +1,6 @@
 <!-- .slide: class="exercice" -->
 # Exercice : interceptors
-## Exercice
-<br><br><br>
+## Exercice<br>
 
 - Une ébauche d'interceptor a été réalisée dans le dossier shared/interceptor
 - A chaque requête il faut setter le header "Authorization" à "Sfeir"

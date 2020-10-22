@@ -4,8 +4,7 @@
 ##==##
 
 <!-- .slide-->
-# Le module: généralités
-<br><br><br>
+# Le module: généralités<br>
 
 - Permet de regrouper des fonctionnalités<br><br>
 - Au moins un module par application (obligatoire sans ce module, l'app ne démarre pas)<br><br>
@@ -22,7 +21,6 @@ Notes:
 
 <!-- .slide: class="with-code" -->
 # Le module: son écriture
-<br><br>
 Comme le composant, l'écriture du module se fait à l'aide d'une classe et d'une annotation
 <br><br>
 

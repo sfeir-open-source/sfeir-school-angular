@@ -5,7 +5,6 @@
 
 <!-- .slide: class="with-code inconsolata" -->
 # Le Setup
-<br><br>
 
 - __Même API que pour les composants__: TestBed, ComponentFixture..<br><br>
 - Nécessite la création d'un composant de test pour accueillir la directive<br><br>
@@ -26,7 +25,6 @@ Notes:
 
 <!-- .slide: class="with-code inconsolata" -->
 # Initialisation du HostComponent
-<br><br>
 
 ```typescript
 TestBed

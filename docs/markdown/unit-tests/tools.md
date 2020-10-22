@@ -22,8 +22,6 @@
 
 # Un petit mot sur la TDD
 
-<br><br>
-
 -   **TDD** : test driven developement<br><br>
 -   Tester d'abord<br><br>
 -   Rendre fonctionnel<br><br>

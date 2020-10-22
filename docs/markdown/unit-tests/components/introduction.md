@@ -5,10 +5,7 @@
 ##==##
 
 <!-- .slide-->
-
 # Qu'implique réellement les tests?
-
-<br><br><br>
 
 -   "la magie" d'instance d'Angular ne se fait plus totalement<br><br>
 -   Il faut mocker ses services et les données qu'utilisent nos composants<br><br>
@@ -18,10 +15,7 @@
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-
 # Le Setup des tests du composant
-
-<br><br><br>
 
 ```typescript
 beforeEach(() => {
@@ -43,8 +37,6 @@ beforeEach(() => {
 <!-- .slide: class="with-code inconsolata" -->
 
 # Détails sur les fonctions utilisées
-
-<br>
 
 -   **TestBed** - **TestBed.createComponent** : crée une instance du composant (fixture) - **TestBed.overrideComponent** : surcharge une instance d'un composant
     <br><br>

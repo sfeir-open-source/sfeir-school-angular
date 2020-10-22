@@ -2,8 +2,6 @@
 
 # Enregistrer son composant dans le service NG_VALUE_ACCESSOR
 
-<br>
-
 -   NG_VALUE_ACCESSOR est un service global donnée par @angular/forms
     <br><br>
 
@@ -32,8 +30,6 @@ Notes:
 
 # Pourquoi utiliser forwardRef ?
 
-<br><br>
-
 -   Fait référence à quelque chose qui n'est pas définie
     <br><br><br>
 
@@ -53,8 +49,6 @@ Notes:
 
 # Implémenter l'interface ControlValueAccessor
 
-<br><br>
-
 -   Permet de préciser à Angular comment accéder à la valeur du contrôle
 -   'Pont' entre le contrôle et l'élement natif (ici l'élement sfeir-dropdown)
 -   Doit obligatoirement implémenter les méthodes suivantes:
@@ -68,8 +62,6 @@ Notes:
 <!-- .slide: class="sfeir-basic-slide" -->
 
 # WriteValue: modèle -> vue
-
-<br><br><br>
 
 -   Ecrit une valeur dans l'élement. Cette méthode est appelée:
     -   lors de l'instanciation d'un nouveeau FormControl

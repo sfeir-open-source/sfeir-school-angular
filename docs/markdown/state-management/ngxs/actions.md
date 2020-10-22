@@ -2,8 +2,6 @@
 
 # Action : Définition
 
-<br>
-
 Les **actions** sont des commandes qui doivent déclencher une mutation de l'état (state).<br><br>
 C'est uniquement à travers des actions que l'on modifie l'état de notre state.
 <br><br>
@@ -30,8 +28,6 @@ Notes:
 
 # Action : Comment la déclencher
 
-<br>
-
 -   Dans le composant, l'action est déclenchée grâce au mot clé **disptach**
 -   Une action renvoie toujours un observable<br><br>
 
@@ -53,8 +49,6 @@ export class ZooComponent {
 <!-- .slide -->
 
 # Actions : Convention de nommage
-
-<br><br>
 
 Une **bonne** action doit contenir trois parties:<br><br>
 

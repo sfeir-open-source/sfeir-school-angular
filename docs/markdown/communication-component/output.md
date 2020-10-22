@@ -28,8 +28,6 @@ export class ChildComponent {
 
 # Communication parent - enfant: @Ouput
 
-<br>
-
 -   Dans le parent template <br><br>
 
 ```html

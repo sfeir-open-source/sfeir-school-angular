@@ -1,6 +1,5 @@
 <!-- .slide: class="with-code inconsolata" -->
 # NGRX : Effects (Installation)
-<br>
 Les effects sont dans un package différent , il faut donc les installer également (si on souhaite les utiliser)
 <br><br>
 

@@ -2,8 +2,6 @@
 
 # Configuration simple
 
-<br><br>
-
 -   <b>path: </b>l’URL de route (ex: /people/:id)<br><br>
 -   <b>component: </b>le composant associé à cette route (ex: PeopleComponent)<br><br>
 -   <b>redirectTo: </b>le fragment d’URL vers lequel rediriger la route courante (ex: '/home')<br><br>
@@ -17,7 +15,6 @@
 
 # Configuration avancé (complète)
 
-<br>
 Il existe d'autres options de configuration, permettant de réaliser du routing plus avancé.
 <br><br>
 
@@ -32,8 +29,6 @@ Il existe d'autres options de configuration, permettant de réaliser du routing 
 <!-- .slide: class="with-code inconsolata" -->
 
 # Un exemple de configuration de routes
-
-<br><br>
 
 ```typescript
 const ROUTES: Routes = [
@@ -57,7 +52,6 @@ Notes:
 
 # La stratégie de navigation
 
-<br><br>
 2 types de stratégie<br><br>
 
 -   Par 'Path', aussi nommé PathLocationStrategy (Mode HTML5 et psuhState=>Par défaut) [ex: localhost:4200/people/1]: { useHash: false }<br><br>

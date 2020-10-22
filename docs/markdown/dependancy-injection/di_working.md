@@ -1,5 +1,4 @@
 <!-- .slide-->
-
 # Principe de la DI en Angular
 
 -   <b>L'Injector</> expose l'API pour céer des instances de dépendances
@@ -12,8 +11,6 @@
 <!-- .slide-->
 
 # Types d'Injector
-
-<br><br>
 
 -   Il existe 2 hierarchies d'injector dans Angular :<br><br>
     -   <b>ModuleInjector</b>: confguré dans la configuration du @NgModule ou de l'annotation @Injectable (utliser si possible @Injectable pour profiter du Tree Shaking)<br><br>
@@ -174,8 +171,6 @@ export class ItemService {
 <!-- .slide -->
 
 # Le rôle du Provider
-
-<br><br>
 
 -   Fait le lien entre <b>InjectionToken</b> (token) et une <b>Factory</b><br><br>
 -   Permet de découpler la dépendance et son implémentation<br><br>

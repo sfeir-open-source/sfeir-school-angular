@@ -1,6 +1,5 @@
 <!-- .slide: class="with-code inconsolata" -->
 # Principe
-<br>
 Pour une classe il y a 3 façons de gérer une dépendance:
 
 - L'instancier avec le mot clé <b>new</b>
@@ -21,7 +20,6 @@ class Car {
 ##==##
 <!-- .slide: class="with-code inconsolata" -->
 # L'injection en Angular (typescript)
-<br><br>
 
 ```typescript
 import { EngineService, TiresService, DoorsService } from './shared';

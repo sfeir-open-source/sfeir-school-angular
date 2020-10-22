@@ -1,7 +1,6 @@
 <!-- .slide: class="exercice" -->
 # Exercice : pipe-b
-## Exercice
-<br><br><br>
+## Exercice<br>
 
 - Créer à l'aide du CLI, dans le répertoire shared, le pipe NaPipe<br><br>
 - Afficher "N/A" s'il n'y a pas de manager et si ce pipe ne prend aucun argument

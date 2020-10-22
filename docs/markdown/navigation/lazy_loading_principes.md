@@ -1,6 +1,5 @@
 <!-- .slide-->
-# Le principe du Lazyloading
-<br><br><br>
+# Le principe du Lazyloading<br>
 
 - Lazy Loading des modules<br><br>
 - Evite de charger tout le code des modules dans un unique bundle<br><br>

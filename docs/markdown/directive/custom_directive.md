@@ -17,10 +17,7 @@
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-
 # Définition d'une directive
-
-<br><br><br>
 
 ```typescript
 import { Directive } from '@angular/core';
@@ -36,8 +33,6 @@ export class MyDirective {}
 <!-- .slide -->
 
 # Comment invoquer une directive ?
-
-<br><br>
 
 -   <b>element-name</b> : pour restreindre à un élement<br><br>
 -   <b>[attribute]</b> : pour restreindre à un attribut<br><br>
@@ -60,8 +55,6 @@ export class MyDirective {}
 <!-- .slide: class="with-code inconsolata" -->
 
 # Comment passer des props à ma directive
-
-<br>
 
 -   Lister des inputs grâce à l'annotation <b>@Input()</b>
 -   Ces inputs peuvent être aliasé
@@ -87,8 +80,6 @@ export class MyDirective {
 
 # Comment intéragir avec les éléments du DOM
 
-<br>
-
 -   ElementRef (service) permet de récupérer directement l'élément sur lequel agit la directive
 -   Renderer2 (service) permet d'intéragir avec le DOM<br><br>
 
@@ -110,8 +101,6 @@ export class MyDirective {
 
 # L'intéraction avec le DOM
 
-<br><br>
-
 -   Préférez l'utilisation du Renderer au lieu de ElementRef<br><br>
 -   Aucune dépendance direct avec le DOM<br><br>
 -   Permet d'éxécuter l'application dans d'autre environnements (EDGE, Firefox)
@@ -121,8 +110,6 @@ export class MyDirective {
 <!-- .slide: class="sfeir-basic-slide" -->
 
 # L'interaction avec le DOM: Practices
-
-<br><br>
 
 <div class="container-practice border-red">
     <div class="icon-satisfaction">X</div>

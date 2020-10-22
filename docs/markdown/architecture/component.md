@@ -5,7 +5,6 @@
 
 <!-- .slide -->
 # Le composant
-<br><br>
 Le composant est composé de trois concepts de base.
 <br><br>
 
@@ -15,7 +14,6 @@ Le composant est composé de trois concepts de base.
 
 <!-- .slide: class="with-code inconsolata" -->
 # Le component: sa logique
-<br><br>
 La logique du composant utilise la syntax de classe de ES2015
 <br><br>
 
@@ -34,7 +32,6 @@ export class AppComponent {
 
 <!-- .slide: class="with-code inconsolata" -->
 # Le composant: son affichage
-<br><br>
 L'affichage du composant dans la page se fait à l'aide des annotations
 <br><br>
 ```typescript
@@ -59,7 +56,6 @@ Notes:
 
 <!-- .slide: class="with-code inconsolata" -->
 # Le composant: sa globalité
-<br>
 L'écriture d'un composant dans sa totalité est donc la suivante
 <br><br>
 

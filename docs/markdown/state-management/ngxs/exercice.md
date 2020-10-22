@@ -1,7 +1,6 @@
 <!-- .slide: class="exercice"-->
 # Exercice : ngxs
-## Exercice
-<br><br><br>
+## Exercice<br>
 
 - Une barre de recherche a été ajoutée à votre application<br><br>
 - Lors de la recherche vous devez filtrer la liste des personnes<br><br>

@@ -1,7 +1,6 @@
 <!-- .slide: class="exercice" -->
 # Exercice : hands-on
 ## Exercice
-<br><br>
 Sans utiliser le CLI d'Angular<br><br>
 - Créer le composant AppComponent
 - Configurer le module de l'application: app.module.ts

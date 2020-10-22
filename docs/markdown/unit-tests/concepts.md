@@ -8,8 +8,6 @@
 
 # Concepts généraux de TDD
 
-<br><br>
-
 -   **describe(string, function)** : un scénario de specs à exécuter<br><br>
 -   **it(string, function)** : une spec contient un ou plusieurs vérifications<br><br>
 -   **toXXXX(expected) ⇒ toBe(expected)** : un comparateur compare le résultat obtenu avec un résultat attendu<br><br>
@@ -18,10 +16,7 @@
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-
 # Concepts TDD (exemple)
-
-<br><br><br>
 
 ```typescript
 describe('scenario description...', () => {
@@ -50,8 +45,6 @@ describe('scenario description...', () => {
 <!-- .slide: class="with-code inconsolata" -->
 
 # L'API d'Angular pour la TDD
-
-<br>
 
 **TestBed** : module de configuration des tests(similaire à NgModule)
 

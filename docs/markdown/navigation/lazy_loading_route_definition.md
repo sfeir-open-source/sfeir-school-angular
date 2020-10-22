@@ -1,6 +1,5 @@
 <!-- .slide: class="with-code inconsolata" -->
 # Définiton dans les routes du module principal
-<br><br>
 
 ```typescript
 const ROUTES: Routes = [

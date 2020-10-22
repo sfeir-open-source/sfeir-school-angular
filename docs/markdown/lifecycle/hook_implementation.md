@@ -1,6 +1,5 @@
 <!-- .slide: class="with-code inconsolata" -->
 # Implémentation d'un lifecycle
-<br><br>
 
 ```typescript
 import { Component, OnInit } from '@angular/core';
@@ -20,7 +19,6 @@ export class UserComponent implements OnInit {
 ##==##
 <!-- .slide -->
 # Les différents lifecycle
-<br><br>
 
 - <b>ngOnChanges(): </b>répond à chaque fois que les propriétés en entrée changent
 - <b>ngOnInit(): </b>initialise le composant/la directive après sa création (1 fois)

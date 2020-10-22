@@ -6,7 +6,6 @@
 
 <!-- .slide -->
 # A quoi peut servir le server side rendering?
-<br><br>
 
 - Amélioration de l'indexation ce qui implique une performance de SEO<br><br>
 - Amélioration des performances sur mobile et les appareils avec connection internet faible<br><br>
@@ -16,7 +15,6 @@
 
 <!-- .slide: class="with-code inconsolata" -->
 # Et Angular universal dans tout ça? 
-<br><br>
 
 - Angular Universal est le package permettant de réaliser du server side rendering en Angular
 - Il s'agit d'un simple package à installer<br><br>
@@ -29,16 +27,14 @@ ng add @nguniversal/express-engine
 ##==##
 
 <!-- .slide -->
-# Que me réalise cette commande?
-<br><br><br>
+# Que me réalise cette commande?<br>
 - Modifie votre architecture racine<br><br>
 - Crée le server-side module nommé app.server.module
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Comment lancer mon application
-<br><br><br>
+# Comment lancer mon application<br>
 
 ```sh
 npm run build:ssr && npm run serve:ssr

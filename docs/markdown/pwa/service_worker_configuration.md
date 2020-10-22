@@ -12,7 +12,6 @@ Notes:
 
 <!-- .slide-->
 # Interface AssetGroup
-<br><br>
 
 - name : requis, il permet d'identifier un groupe d'assets entre deux versions de configuration<br><br>
 - installMode : prefetch | lazy -> détermine comment les ressources sont initialement cachées<br><br>
@@ -29,7 +28,6 @@ Notes:
 
 <!-- .slide -->
 # Interface DataGroup
-<br><br>
 
 - name : requis, il permet de d'identifier un groupe de data entre deux versions de configuration<br><br>
 - version : un entier qui permet de suivre la version des apis que l'on cache<br><br>

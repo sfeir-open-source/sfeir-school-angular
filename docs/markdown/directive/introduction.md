@@ -1,6 +1,5 @@
 <!-- .slide: class="with-code inconsolata" -->
 # La directive *ngFor (rappel)
-<br><br>
 
 - Itère dans une collection et génère un template par élément <br><br>
 - <b>index, odd, event, last</b> à utiliser en alias dans des variables <br><br>
@@ -17,7 +16,6 @@
 ##==##
 <!-- .slide: class="with-code inconsolata" -->
 # La directive *ngIf
-<br><br>
 
 - Change la structure du DOM de manière conditionnel (apparaît ou non dans le DOM)<br><br>
 
@@ -31,7 +29,6 @@
 ##==##
 <!-- .slide: class="with-code inconsolata" -->
 # La directive *ngSwitch
-<br><br>
 
 - Change la structure du DOM de manière conditionnel (à la manière d'un switch case)<br><br>
 
@@ -47,7 +44,6 @@
 ##==##
 <!-- .slide: class="with-code inconsolata" -->
 # Mais c'est quoi ces étoiles
-<br><br>
 
 - Elle matérialise les directives structurelles (comme NgIF NgFor et NgSwith)
 - Sucre syntaxique

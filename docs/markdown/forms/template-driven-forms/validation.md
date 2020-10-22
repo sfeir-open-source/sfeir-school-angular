@@ -1,6 +1,5 @@
 <!-- .slide: class="with-code inconsolata" -->
 # La validation avec Template driven form
-<br>
 
 - La validation se fait à l'aide des attributs html classique de validations:<br><br>
     - required
@@ -23,8 +22,7 @@ Et bien on utilise la propriété liée à l'attribut
 ##==##
 
 <!-- .slide -->
-# Les différents états d'un contrôle
-<br><br><br>
+# Les différents états d'un contrôle<br>
 
 - <b>control.pristine</b> : l’utilisateur n’a pas interagi avec le contrôle
 - <b>control.dirty</b> : l’utilisateur a déjà interagi avec le contrôle
@@ -36,8 +34,7 @@ Et bien on utilise la propriété liée à l'attribut
 ##==##
 
 <!-- .slide-->
-# Les différentes classes disponibles pour le style
-<br><br><br>
+# Les différentes classes disponibles pour le style<br>
 
 - .ng-valid / .ng-invalid <br><br>
 - .ng-pristine / .ng-dirty<br><br>
@@ -47,8 +44,7 @@ Et bien on utilise la propriété liée à l'attribut
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Gérer les erreurs
-<br><br><br>
+# Gérer les erreurs<br>
 
 ```html
 <input type="text" name="user" ngModel #userRef="ngModel" required>    

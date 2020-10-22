@@ -2,8 +2,6 @@
 
 # Modification de la requête
 
-<br><br>
-
 ```typescript
 @Injectable()
 export class MyInterceptor implements HttpInterceptor {

@@ -1,6 +1,5 @@
 <!-- .slide: class="with-code inconsolata" -->
 # NGRX : Selectors
-<br>
 
 - Permettent de retourner partiellement ou entièrement le store
 - Renvoie toujours un observable

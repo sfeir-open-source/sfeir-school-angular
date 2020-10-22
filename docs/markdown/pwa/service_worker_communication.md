@@ -1,5 +1,4 @@
 # Communication avec le service worker
-<br><br>
 
  - 2 hooks
     - available : nouvelle version de l'application à loader si la page est rafraîchie
@@ -16,7 +15,6 @@
 
 <!-- .slide: class="with-code inconsolata" -->
 # Exemple
-<br><br>
 
 ```typescript
 @Injectable()

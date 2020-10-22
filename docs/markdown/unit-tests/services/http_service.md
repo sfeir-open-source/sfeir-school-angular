@@ -1,6 +1,5 @@
 <!-- .slide: class="sfeir-basic-slide" -->
 # Les services http
-<br><br>
 
 Il faut importer le client Http d'Angular pour exécuter nos requêtes<br><br>
 - __HttpModule__ : qui va réaliser de vrais calls<br><br>
@@ -10,7 +9,6 @@ Il faut importer le client Http d'Angular pour exécuter nos requêtes<br><br>
 
 <!-- .slide: class="with-code inconsolata" -->
 # Test avec HttpModule
-<br><br>
 
 ```typescript
 @Injectable()

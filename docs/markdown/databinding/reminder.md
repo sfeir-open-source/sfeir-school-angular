@@ -2,8 +2,6 @@
 
 # Attribut vs Propriétés
 
-<br><br>
-
 -   Les attributs c'est du <b>HTML</b>, les propriétés c'est du <b>DOM</b><br>
     -   mapping strict (id)
     -   attribut sans propriétés (colspan)
@@ -18,8 +16,6 @@
 <!-- .slide: class="with-code inconsolata" -->
 
 # Angular et les propriétés
-
-<br><br>
 
 -   Un monde sans attributs<br><br>
 -   Avec le binding, nous travaillons uniquement sur les propriétés<br><br>
@@ -39,7 +35,6 @@
 <!-- .slide: class="with-code inconsolata" -->
 
 # Et si je veux agir sur un attribut ?
-
 Certains éléments n'ont pas obligatoirement la propriété (svg, colspan)
 <br>
 

@@ -1,7 +1,6 @@
 <!-- .slide: class="exercice" -->
 # Exercice : ngg
 ## Exercice
-<br><br>
 En utilsant le CLI <br><br>
 - Créer le composant HomeComponent
 - Examiner les fichier générés
@@ -13,8 +12,7 @@ Notes:
 
 <!-- .slide: class="exercice" -->
 # Exercice : ngg
-## Exercice
-<br><br><br>
+## Exercice<br>
 
 - Ajouter ce composant dans les "declarations" du ficher app.module.ts
 - Remplacer dans "bootstrap" le composant AppComponent par HomeComponent

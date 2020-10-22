@@ -1,6 +1,5 @@
 <!-- .slide -->
 # Le service ChangeDetectorRef
-<br><br>
 
 - Permet d'avoir un contrôle complet sur la statégie de détection<br><br>
 - 4 méthodes

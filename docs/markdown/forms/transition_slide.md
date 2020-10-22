@@ -4,8 +4,7 @@
 ##==##
 
 <!-- .slide-->
-# Problématique des formulaires
-<br><br><br><br>
+# Problématique des formulaires<br><br>
 
 - Permettre de collecter des données saisies par l'utilisateur<br><br>
 - Valider les données saisies<br>
@@ -15,8 +14,7 @@ Notes:
 ##==##
 
 <!-- .slide -->
-# Les Formulaires en Angular
-<br><br><br>
+# Les Formulaires en Angular<br>
 
 - Il existe deux types de formulaire en Angular:<br><br>
     - <b>Template driven form</b>: formulaire piloté par le template<br><br>

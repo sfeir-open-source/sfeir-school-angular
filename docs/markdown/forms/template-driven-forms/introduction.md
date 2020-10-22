@@ -7,8 +7,11 @@
 <!-- .slide: class="with-code inconsolata" -->
 
 # La Fondation du Template driven Form
+<<<<<<< HEAD
 
 <br>
+=======
+>>>>>>> 693b0de... fix: Remove extraneous br below titles
 Pour réaliser des formulaires avec le template driven forms, il est nécessaire d'importer le module <b>FormsModule</b> provenant du package <b>@angular/forms</b><br><br>
 
 ```typescript
@@ -31,8 +34,6 @@ export class AppModule {}
 <!-- .slide: class="with-code inconsolata" -->
 
 # La syntaxe dans le template driven forms
-
-<br><br>
 
 -   <b>#authentificationForm="ngForm"</b>: On déclare une référence sur un formulaire prenant comme valeur la directive ngForm<br><br>
 -   <b>authentification.value</b> permet de récupérer en format JSON objet, toutes les valeurs des champs du formulaire <br><br>
@@ -83,8 +84,6 @@ export class AppModule {}
 <!-- .slide: class="with-code inconsolata" -->
 
 # Regrouper des champs dans un sous objet
-
-<br><br>
 
 <b>ngModelGroup</b> regroupe des contrôles dans un sous objet<br><br>
 

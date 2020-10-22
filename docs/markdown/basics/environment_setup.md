@@ -8,7 +8,6 @@
 
 # IntellJ / Webstorm
 
-<br><br>
 Solution de JetBrains, vient avec les plugins nécessaires au développement Web:<br><br>
 
 -   Auto-complétion<br>

@@ -2,8 +2,6 @@
 
 # Store : Définition
 
-<br><br>
-
 Le **store** est un gestionnaire d'état global/par feature qui permet:
 <br><br>
 
@@ -13,7 +11,6 @@ Le **store** est un gestionnaire d'état global/par feature qui permet:
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-
 # Store : Actions
 
 Créer l'action:
@@ -30,7 +27,6 @@ export class AddAnimal {
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-
 # Store : Actions
 
 Utiliser l' action:

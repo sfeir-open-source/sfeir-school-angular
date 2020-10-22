@@ -5,7 +5,6 @@
 
 <!-- .slide: class="with-code inconsolata" -->
 # Créer ses propres validateurs
-<br>
 
 - un validateur custom est une simple <b>fonction</b>
 - Si la validation est bonne : renvoie <b>null</b>
@@ -27,7 +26,6 @@ export abstract class CustomValidators {
 ##==##
 <!-- .slide: class="with-code inconsolata" -->
 # Utiliser son validateur
-<br>
 
 - Se fait lors de la création du control <br><br>
 

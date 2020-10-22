@@ -1,7 +1,6 @@
 <!-- .slide: class="exercice" -->
 # Exercice : form-custom-validator
-## Exercice
-<br><br><br>
+## Exercice<br>
 
 - Générer une class à l'aide du CLI dans le shared/forms
 - Créer un validateur permettant de vérifier si l'adresse mail respect le format nom.p@sfeir.com

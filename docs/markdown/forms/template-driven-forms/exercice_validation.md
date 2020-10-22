@@ -1,7 +1,6 @@
 <!-- .slide: class="exercice" -->
 # Exercice : form-validation
-## Exercice
-<br><br><br>
+## Exercice<br>
 
 - Valider les champs:
     - Firstname : required + min 2 lettres;

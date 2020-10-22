@@ -2,8 +2,6 @@
 
 # Commande: Créer un projet
 
-<br><br>
-
 ```sh
 ng new my-awesome-app
 ```
@@ -44,8 +42,6 @@ ng generate component user
 
 # Commande: Créer un service
 
-<br>
-
 ```sh
 ng generate service user
 ```
@@ -62,9 +58,6 @@ ng generate service user
 ##==##
 
 <!-- .slide: class="full-center"  -->
-
-# Et sinon on peut générer quoi d'autre ?
-
-<br><br>
+# Et sinon on peut générer quoi d'autre ? 
 
 ![h-800](assets/images/school/cli/generate_helper.png)

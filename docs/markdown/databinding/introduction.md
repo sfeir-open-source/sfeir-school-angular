@@ -31,10 +31,7 @@
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-
 # Le binding en Angular
-
-<br><br><br>
 
 ```html
 <div><input type="text" name="myName" [(ngModel)]="myName" /> <span>Bonjour {{ myName }}</span></div>

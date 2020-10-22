@@ -9,7 +9,6 @@ Tour de table ...
 ##==##
 
 # Repositories
-<br><br>
 
 - <b>Slides de la formation</b>
     - https://sfeir-open-source.github.io/sfeir-school-angular<br><br>
@@ -23,7 +22,6 @@ Tour de table ...
 ##==##
 
 # Bootstrapping de l'application
-<br><br>
 
 ```bash
 git clone https://github.com/sfeir-open-source/sfeir-school-angular
@@ -50,7 +48,6 @@ npm run server
 ##==##
 
 # Déroulement des exercices
-<br><br>
 
 - <b>Chaque concept clé d'Angular est accompagné d'un TP.</b>
 <br><br><br>

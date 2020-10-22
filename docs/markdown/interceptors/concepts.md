@@ -2,8 +2,6 @@
 
 # Interceptors: Définitions
 
-<br><br>
-
 -   Intercepte une requête<br><br>
 -   Renvoie la requête retravaillée<br><br>
 -   Service Angular implémentant HttpInterceptor<br><br>

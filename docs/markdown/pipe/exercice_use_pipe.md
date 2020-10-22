@@ -1,7 +1,6 @@
 <!-- .slide: class="exercice" -->
 # Exercice : pipe
-## Exercice
-<br><br><br>
+## Exercice<br>
 
 - Une date de naissance a été ajoutée dans le composant CardComponent<br><br>
 - Afficher cette date sous le format: <b>dd/MM/yyyy</b>

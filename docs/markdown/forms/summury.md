@@ -4,8 +4,7 @@
 ##==##
 
 <!-- .slide: class="two-column-layout" -->
-# Template Driven vs Reactive Forms
-<br><br><br><br><br><br><br>
+# Template Driven vs Reactive Forms<br><br><br><br><br>
 ![h-350](assets/images/school/forms/template_driven.png)
 ![h-350](assets/images/school/forms/reactive_forms.png)
 

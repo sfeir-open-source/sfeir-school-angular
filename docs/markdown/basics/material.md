@@ -9,8 +9,7 @@
 ##==##
 
 <!-- .slide -->
-# Un petit mot sur le Material Design
-<br><br><br>
+# Un petit mot sur le Material Design<br>
 
 - Le TP utilise des composants Material Design (mat-toolbar, mat-checkbox, mat-card ...)<br><br>
 - Cette formation ne porte pas sur le Material Design, ni sur les directives Angular Material<br><br>

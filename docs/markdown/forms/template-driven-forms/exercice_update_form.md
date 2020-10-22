@@ -1,7 +1,6 @@
 <!-- .slide: class="exercice" -->
 # Exercice : form-b
-## Exercice
-<br><br><br>
+## Exercice<br>
 
 - A l'aide du CLI, créer un composant UpdateComponant
 - Rendre accessible ce composant via l'url: /edit/:id (modifier la définition des routes)
@@ -13,8 +12,7 @@ Notes:
 ##==##
 <!-- .slide: class="exercice" -->
 # Exercice : form-b
-## Exercice
-<br><br><br>
+## Exercice<br>
 
 - Utiliser FormComponent dans UpdateComponent
 - Ajouter une propriété person au FormComponent
