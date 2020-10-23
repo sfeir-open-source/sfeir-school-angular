@@ -1,5 +1,4 @@
-<!-- .slide -->
-
+<!-- .slide: class="no-title-margin" -->
 # Les différents types de binding
 
 <table>

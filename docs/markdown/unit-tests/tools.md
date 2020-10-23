@@ -4,8 +4,7 @@
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide" -->
-
+<!-- .slide: class="sfeir-basic-slide no-title-margin" -->
 # Configuration
 
 ![h-250](assets/images/school/unit-tests/karma.png)

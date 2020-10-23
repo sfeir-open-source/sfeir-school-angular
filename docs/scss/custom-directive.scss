@@ -35,7 +35,44 @@ div.container-practice {
     flex: 2;
     display: flex;
     align-items: center;
-    padding: 1em 0 1em 3em
+    padding: 1em 0 1em 3em;
   }
-
 }
+
+// ===============
+// = Theme fixes =
+// ===============
+
+// Add a class to remove the top margin on specific slides
+.reveal .slides section.sfeir-basic-slide.no-title-margin {
+  h1 + * {
+    top: -90px; //Applies to relative elements
+    margin-top: -90px; //Applies to static elements
+  }
+}
+
+// Fix negative padding on sub-headers when they are not directly after a header
+.reveal .slides section:not(.sfeir-specific-slide):not(.stack):not([class*='transition']),
+.reveal .slides section.sfeir-basic-slide:not(.stack):not([class*='transition']),
+.reveal .slides section.sfeir-specific-slide.sfeir-bg-axololt:not(.stack):not([class*='transition']) {
+  h1 ~ h2,
+  h2 ~ h3,
+  h1 ~ h3 {
+    margin-top: 0;
+  }
+  h1 + h2,
+  h2 + h3,
+  h1 + h3 {
+    margin-top: -90px;
+  }
+}
+
+// Two-column layout: Place lists inside to not overlap with previous column
+// This is because the 1em left margin has been removed on all lists in layout
+// .two-column-layout {
+.sfeir-basic-slide ul,
+.sfeir-basic-slide ol,
+.sfeir-basic-slide dl {
+  list-style-position: inside;
+}
+// }

@@ -1,5 +1,4 @@
-<!-- .slide: class="with-code inconsolata" -->
-
+<!-- .slide: class="with-code inconsolata no-title-margin" -->
 # Les helpers services
 
 ```typescript
