@@ -26,6 +26,6 @@ Notes:
 ##==##
 
 <!-- .slide: class="exercice full-center" -->
-# Exerice: form-b
+# Exercice: form-b
 ## Solution
 <b>steps/form-b-solution</b>
