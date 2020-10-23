@@ -4,20 +4,24 @@
 ##==##
 
 <!-- .slide: class="two-column-layout" -->
-# Template Driven vs Reactive Forms<br><br><br><br><br>
-![h-350](assets/images/school/forms/template_driven.png)
-![h-350](assets/images/school/forms/reactive_forms.png)
+# Template Driven vs Reactive Forms
 
 ##--##
 <br><br>
 - La classe expose le modèle de données
 - Binding et validation se font dans la vue
 - La vue contient le data binding
+
+![h-350](assets/images/school/forms/template_driven.png)
+
 ##--##
 <br><br>
+
 - La classe expose le modèle du formulaire
 - Binding et validation se font dans la classe
 - La vue contient le mapping
+
+![h-350](assets/images/school/forms/reactive_forms.png)
 
 ##==##
 
