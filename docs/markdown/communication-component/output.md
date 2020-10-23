@@ -2,7 +2,7 @@
 
 # Communication parent - enfant: @Ouput
 
--   Dans l'enfant composant<br>
+- Dans l'enfant composant
 
 ```typescript
 import { Component, Output, EventEmitter } from '@angular/core';

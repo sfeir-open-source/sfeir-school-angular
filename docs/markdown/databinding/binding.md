@@ -69,7 +69,7 @@
 
 # Interpolation et expression
 
-Interpolation: <br>
+## Interpolation:
 
 ```html
 <div>Hello {{ name }}</div>
@@ -78,14 +78,13 @@ Interpolation: <br>
 
 <!-- .element: class="medium-code" -->
 
-Expression: <br>
-
--   Dans le context du composant
--   Du Javascript mais !!
-    -   pas d'affectation (sauf pour les events comme le click sur un boutton)
-    -   pas d'accès aux variables globales (window, document, ...)
-    -   Pour les opérateurs logiques, tout est évalué
-    -   Pas de new, ++, --
+## Expression:
+- Dans le context du composant
+- Du Javascript mais !!
+    - pas d'affectation (sauf pour les events comme le click sur un boutton)
+    - pas d'accès aux variables globales (window, document, ...)
+    - Pour les opérateurs logiques, tout est évalué
+    - Pas de new, ++, --
 
 ##==##
 

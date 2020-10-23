@@ -36,7 +36,7 @@ export class LoginGuards implements CanLoad {
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Un exemple plus parlant<br>
+# Un exemple plus parlant
 
 Une fois créé, le guard s'enregistre de la manière suivante dans le tableau de route
 <br><br>

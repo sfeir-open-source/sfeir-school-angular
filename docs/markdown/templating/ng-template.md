@@ -16,9 +16,11 @@
 <br>
 
 - Loading ici ne s'affichera jamais
+
 <br><br>
 
 - On vient de définir le template mais on ne l'utilise pas
+
 Notes:
 - ng-template revient à déclarer une simple variable, dans ce cas si la variable est un template
 

@@ -38,8 +38,10 @@ beforeEach(() => {
 
 # Détails sur les fonctions utilisées
 
--   **TestBed** - **TestBed.createComponent** : crée une instance du composant (fixture) - **TestBed.overrideComponent** : surcharge une instance d'un composant
-    <br><br>
+- **TestBed**
+    - **TestBed.createComponent** : crée une instance du composant (fixture)
+    - **TestBed.overrideComponent** : surcharge une instance d'un composant
+
 
 -   **ComponentFixture**
     -   **fixture.componentInstance** : accès à l’instance du composant

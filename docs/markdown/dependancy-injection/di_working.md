@@ -26,8 +26,6 @@
 
 <!-- .slide: class="with-code inconsolata" -->
 
-<br><br>
-
 ```typescript
 @NgModule({
   imports: [
@@ -55,8 +53,6 @@ export class ItemService {
 ##--##
 
 <!-- .slide: class="with-code inconsolata" -->
-
-<br><br>
 
 ```typescript
 @NgModule({

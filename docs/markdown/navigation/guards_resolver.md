@@ -24,7 +24,7 @@ export class UserResolver implements Resolve<User[]> {
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Un exemple plus parlant (enregistrement du resolver)<br><br>
+# Un exemple plus parlant (enregistrement du resolver)
 
 ```typescript
 { path: 'users', component: TopComponent, resolve: { users: UserResolver } }

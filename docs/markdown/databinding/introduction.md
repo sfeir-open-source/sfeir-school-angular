@@ -44,33 +44,28 @@
 <!-- .slide: class="with-code inconsolata" -->
 
 # Syntax binding
-
-<b>Events</b>
-
+## Events
 ```html
 <button type="button" (click)="changeName()">Refresh</button>
 ```
 
 <!-- .element: class="medium-code"-->
 
-<b>Properties</b>
-
+## Properties
 ```html
 <button type="submit" [disabled]="myForm.invalid">Submit</button>
 ```
 
 <!-- .element: class="medium-code"-->
 
-<b>Reference</b>
-
+## Reference
 ```html
 <input #myName type="text" /> <span>{{ myName.value }}</span>
 ```
 
 <!-- .element: class="medium-code"-->
 
-<b>Interpolation</b>
-
+## Interpolation
 ```html
 <span>{{ name }}</span>
 ```

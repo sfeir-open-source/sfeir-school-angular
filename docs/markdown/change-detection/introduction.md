@@ -96,7 +96,7 @@ export class AppComponent {
 
 <!-- .element: class="medium-code" -->
 
-<br><br>
+<br>
 
 ```html
 <input #newFood type="text" placeholder="Enter a new food" />

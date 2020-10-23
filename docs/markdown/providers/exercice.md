@@ -2,7 +2,7 @@
 # Exercice : service
 ## Exercice
 
-<br><br><br>
+<br>
 
 - Créer un service PeopleService dans le répertoire shared/people-service
 - Créer toutes les autres opérations du CRUD

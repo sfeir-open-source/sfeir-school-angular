@@ -22,8 +22,8 @@
 
 # La directive structurelle ngTemplateOutlet
 
--   Prend deux paramètres, un template et un context
--   Le context doit être obligatoirement un object<br><br>
+- Prend deux paramètres, un template et un context
+- Le context doit être obligatoirement un object
 
 ```typescript
 @Component({
