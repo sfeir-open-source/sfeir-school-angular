@@ -7,11 +7,7 @@
 <!-- .slide: class="with-code inconsolata" -->
 
 # La Fondation du Template driven Form
-<<<<<<< HEAD
 
-<br>
-=======
->>>>>>> 693b0de... fix: Remove extraneous br below titles
 Pour réaliser des formulaires avec le template driven forms, il est nécessaire d'importer le module <b>FormsModule</b> provenant du package <b>@angular/forms</b><br><br>
 
 ```typescript
@@ -50,28 +46,27 @@ export class AppModule {}
 
 # Le binding dans le template driven form
 
--   Deux composantes obligatoires:
+- Deux composantes obligatoires:
+  - **ngModel**: le binding d'un contrôle
+  - **name**: associer un nom au contrôle du champ
 
-    -   <b>ngModel</b>: le binding d'un contrôle
-    -   <b>name</b>: associer un nom au contrôle du champ
+<br><br>
 
--   <b>Exemple 1</b>: binding View -> Model</li>
+- **Exemple 1**: binding View -> Model
 
 ```html
 <input type="text" name="title" ngModel />
 ```
 
 <!-- .element: class="big-code" -->
-
--   <b>Exemple 2</b>: binding Model -> View</li>
+- **Exemple 2**: binding Model -> View
 
 ```html
 <input type="text" name="title" [ngModel]="person.name" />
 ```
 
 <!-- .element: class="big-code" -->
-
--   <b>Exemple 3</b>: binding bidirectionnel</li>
+- **Exemple 3**: binding bidirectionnel
 
 ```html
 <input [(ngModel)]="postalCode" name="postalCode" type="text" />
