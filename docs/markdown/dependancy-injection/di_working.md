@@ -103,12 +103,19 @@ export class ItemService {
 <!-- .element: class="big-code" -->
 
 ##==##
-
-<!-- .slide: class="with-code inconsolata" -->
-
+<!-- .slide: class="two-column-layout"-->
 # Hierarchy Injection
 
+##--##
+
+<br>
+
 ![center h-500](assets/images/school/dependancy-injection/DI-module.png)
+
+##--##
+<!-- .slide: class="with-code inconsolata" -->
+
+<br>
 
 ```typescript
 import { Injectable } from '@angular/core';
@@ -123,12 +130,19 @@ export class ItemService {
 <!-- .element: class="medium-code" -->
 
 ##==##
-
-<!-- .slide: class="with-code inconsolata" -->
-
+<!-- .slide: class="two-column-layout"-->
 # Hierarchy Injection
 
+##--##
+
+<br>
+
 ![center h-450](assets/images/school/dependancy-injection/DI-parent.png)
+
+##--##
+<!-- .slide: class="with-code inconsolata" -->
+
+<br>
 
 ```typescript
 @Component({
@@ -143,12 +157,19 @@ export class ParentComponent { ... }
 <!-- .element: class="medium-code" -->
 
 ##==##
-
-<!-- .slide: class="with-code inconsolata" -->
-
+<!-- .slide: class="two-column-layout"-->
 # Hierarchy Injection
 
+##--##
+
+<br>
+
 ![center h-500](assets/images/school/dependancy-injection/DI-root.png)
+
+##--##
+<!-- .slide: class="with-code inconsolata" -->
+
+<br>
 
 ```typescript
 import { Injectable } from '@angular/core';
