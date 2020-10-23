@@ -1,5 +1,7 @@
 <!-- .slide -->
+
 # Les différents types de binding
+
 <table>
     <thead>
         <tr>
@@ -23,7 +25,25 @@
                 <p>Attribut</p>
                 <p>Style</p>
             </td>
+        </tr>       
+    </tbody>
+</table>
+
+##==##
+
+<!-- .slide -->
+
+# Les différents types de binding
+
+<table>
+    <thead>
+        <tr>
+            <td>Direction</td>
+            <td>Syntaxe</td>
+            <td>Type</td>
         </tr>
+    </thead>
+    <tbody>        
         <tr>
             <td>Unidirectionnel: vue vers modèle</td>
             <td>
@@ -46,32 +66,36 @@
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Interpolation et expression
-<br>
 
-Interpolation: <br><br>
+# Interpolation et expression
+
+Interpolation: <br>
 
 ```html
 <div>Hello {{ name }}</div>
 <img src="{{ myUrl }}" />
 ```
-<!-- .element: class="medium-code" -->
-<br>
 
-Expression:  <br><br>
-- Dans le context du composant
-- Du Javascript mais !!
-    - pas d'affectation (sauf pour les events comme le click sur un boutton)
-    - pas d'accès aux variables globales (window, document, ...)
-    - Pour les opérateurs logiques, tout est évalué
-    - Pas de new, ++, --
+<!-- .element: class="medium-code" -->
+
+Expression: <br>
+
+-   Dans le context du composant
+-   Du Javascript mais !!
+    -   pas d'affectation (sauf pour les events comme le click sur un boutton)
+    -   pas d'accès aux variables globales (window, document, ...)
+    -   Pour les opérateurs logiques, tout est évalué
+    -   Pas de new, ++, --
 
 ##==##
+
 <!-- .slide: class="two-column-layout" -->
+
 # Properties binding
 
 ##--##
 <br><br>
+
 <table>
     <thead>
         <tr>
@@ -94,24 +118,29 @@ Expression:  <br><br>
 ![center h-400](assets/images/school/databinding/properties_binding.png)
 
 ##--##
+
 <!-- .slide: class="with-code inconsolata" -->
+
 <br><br>
 
-- Forme canonique: bindCapitalAttr (ex: bindDisabled)<br><br>
-- Constant
+-   Forme canonique: bindCapitalAttr (ex: bindDisabled)<br><br>
+-   Constant
 
 ```html
-<show-title [title]="'My title'"></show-title>
-<show-title title="My title"></show-title>
+<show-title [title]="'My title'"></show-title> <show-title title="My title"></show-title>
 ```
+
 <!-- .element: class="medium-code" -->
 
 ##==##
+
 <!-- .slide: class="two-column-layout" -->
+
 # Event Binding
 
 ##--##
 <br><br>
+
 <table>
     <thead>
         <tr>
@@ -136,14 +165,18 @@ Expression:  <br><br>
 ##--##
 <br><br>
 
-- Forme canonique: onCapitalAttr (ex: onClick)
-- Référence à l'évent grâce à $event
+-   Forme canonique: onCapitalAttr (ex: onClick)
+-   Référence à l'évent grâce à \$event
 
 ##==##
+
 <!-- .slide: class="two-column-layout" -->
+
 # 2 way binding
+
 ##--##
 <br><br>
+
 <table>
     <thead>
         <tr>
@@ -165,17 +198,18 @@ Expression:  <br><br>
 ![center h-500](assets/images/school/databinding/two_way_binding.png)
 
 ##--##
+
 <!-- .slide: class="with-code inconsolata" -->
+
 <br><br>
 
-- Equivalent à
+-   Equivalent à
 
 ```html
-<input 
-  [ngModel]="firstname"
-  (ngModelChange)="firstname = $event" />
+<input [ngModel]="firstname" (ngModelChange)="firstname = $event" />
 ```
+
 <!-- .element: class="big-code" -->
 <br>
 
-- <bg>ngModel</bg> provient de la librairie <strong>@angular/forms</strong>
+-   <bg>ngModel</bg> provient de la librairie <strong>@angular/forms</strong>

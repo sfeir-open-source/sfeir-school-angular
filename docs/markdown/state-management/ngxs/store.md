@@ -1,35 +1,39 @@
 <!-- .slide -->
+
 # Store : Définition
+
 <br><br>
 
-Le __store__ est un gestionnaire d'état global/par feature qui permet:
+Le **store** est un gestionnaire d'état global/par feature qui permet:
 <br><br>
 
- - de dispatcher des actions<br><br>
- - sélectionner le state dans son entièreté ou partiellement
+-   de dispatcher des actions<br><br>
+-   sélectionner le state dans son entièreté ou partiellement
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Store : Actions 
-<br><br>
 
-Créer l'action:<br><br>
+# Store : Actions
+
+Créer l'action:
+
 ```typescript
 export class AddAnimal {
-  static readonly type = '[Zoo] Add Animal';
-  constructor(public name: string) {}
+    static readonly type = '[Zoo] Add Animal';
+    constructor(public name: string) {}
 }
 ```
+
 <!-- .element: class="big-code" -->
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Store : Actions 
-<br><br>
 
-Utiliser l' action:<br><br>
+# Store : Actions
+
+Utiliser l' action:
 
 ```typescript
 import { Store } from '@ngxs/store';
@@ -44,4 +48,5 @@ export class ZooComponent {
   }
 }
 ```
+
 <!-- .element: class="big-code" -->

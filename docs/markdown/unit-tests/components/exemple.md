@@ -1,22 +1,29 @@
 <!-- .slide: class="with-code inconsolata" -->
+
 # Un exemple est plus parlant
+
 <br><br>
 
 ```typescript
 @Component({
-  selector: 'user-profile',
-  template: `<h1>Hi {{name}}!</h1>`
+    selector: 'user-profile',
+    template: `
+        <h1>Hi {{ name }}!</h1>
+    `
 })
-export class UserComponent { 
-  @Input() name;
+export class UserComponent {
+    @Input() name;
 }
 ```
+
 <!-- .element: class="big-code" -->
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
+
 # Un exemple est plus parlant
+
 <br><br>
 
 ```typescript
@@ -31,32 +38,38 @@ it('should render `Hi Igor!`', () => {
    expect(debugElement.query(By.css('h1')).nativeElement.innerText).toBe('Hi Igor!');
 });
 ```
+
 <!-- .element: class="big-code" -->
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
+
 # DebugElement: outil bien pratique pour chercher des éléments
+
 <br><br>
 
 ```typescript
-debugElement.query(By.css('button')) // renvoit un DebugElement du button
-debugElement.queryAll(By.css('dnl-line')) // renvoit un tableau de DebugElement
-debugElement.query(By.css('#id-component')) // renvoit le debugElement du composant portant l’id 'id-component'
-debugElement.query(By.css('[test-id=button-1]')) // renvoit le debugElement du premier composant ayant un attribut css test-id avec la valeur 'button-1'
-debugElement.query(By.css('button[type=submit]')) // renvoit le debugElement du premier button ayant l’attribut 'type' avec la valeur 'submit'
-debugElement.query(By.css('.class-name')) // renvoit le debugElement du premier element ayant la classe css 'class-name'
+debugElement.query(By.css('button')); // renvoit un DebugElement du button
+debugElement.queryAll(By.css('dnl-line')); // renvoit un tableau de DebugElement
+debugElement.query(By.css('#id-component')); // renvoit le debugElement du composant portant l’id 'id-component'
+debugElement.query(By.css('[test-id=button-1]')); // renvoit le debugElement du premier composant ayant un attribut css test-id avec la valeur 'button-1'
+debugElement.query(By.css('button[type=submit]')); // renvoit le debugElement du premier button ayant l’attribut 'type' avec la valeur 'submit'
+debugElement.query(By.css('.class-name')); // renvoit le debugElement du premier element ayant la classe css 'class-name'
 
 const nameDiv = debugElement.query(By.css('.name-container'));
 expect(nameDiv).toBeTruthy();
 expect(nameDiv).nativeElement.textContent.toEqual('Durand');
 ```
+
 <!-- .element: class="big-code" -->
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
+
 # DebugElement: aussi pour déclencher des événements !
+
 <br><br><br>
 
 ```typescript
@@ -67,22 +80,26 @@ debugElement.query(By.css('my-form')).triggerEventHandler('cancel', null);
 const mockSubmitData = {name: 'titi' , … , … }
 debugElement.query(By.css('my-form')).triggerEventHandler('submit', mockSubmitData);
 ```
-<!-- .element: class="big-code" -->
 
+<!-- .element: class="big-code" -->
 
 ##==##
 
 <!-- .slide -->
+
 # Mocker via l’Injector dans les provider
+
 <br><br><br>
 
-- Permet de changer une classe injectée (par exemple un service) par une autre (mock class)<br><br>
-- Pratique si tous les tests doivent utilisés les mêmes mock
+-   Permet de changer une classe injectée (par exemple un service) par une autre (mock class)<br><br>
+-   Pratique si tous les tests doivent utilisés les mêmes mock
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
+
 # Mocker (exemple)
+
 <br>
 
 ```typescript
@@ -100,34 +117,40 @@ beforeEach(() => {
   fixture.detectChanges();
 });
 ```
+
 <!-- .element: class="big-code" -->
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
+
 # Mocker (exemple)
+
 <br>
 
 ```typescript
 export class MockUserService {
     isLoggedIn: boolean = true;
-    user = { name: 'Test User'}
-	disconnect() {
-      this.isLoggedIn = false;
-      this.user = null;
+    user = { name: 'Test User' };
+    disconnect() {
+        this.isLoggedIn = false;
+        this.user = null;
     }
     connect(user: User) {
-      this.isLoggedIn = true;
-      this.user = { name: 'Test User'}
+        this.isLoggedIn = true;
+        this.user = { name: 'Test User' };
     }
 }
 ```
+
 <!-- .element: class="big-code" -->
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
+
 # Mocker (exemple)
+
 <br>
 
 ```typescript
@@ -143,12 +166,15 @@ beforeEach(() => {
 
 });
 ```
+
 <!-- .element: class="big-code" -->
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
+
 # Mocker (exemple)
+
 <br>
 
 ```typescript
@@ -169,25 +195,26 @@ beforeEach(() => {
   ...
 });
 ```
+
 <!-- .element: class="medium-code" -->
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Mocker spyOn (Jasmine)
-<br><br>
 
-- Permet de tester le nombre d’appels d’une méthode<br><br>
-- Permet de tester les paramètres d’appel d’une méthode.<br><br>
-- ! Permet de mocker le retour des méthodes !
+# Mocker spyOn (Jasmine)
+
+-   Permet de tester le nombre d’appels d’une méthode<br><br>
+-   Permet de tester les paramètres d’appel d’une méthode.<br><br>
+-   ! Permet de mocker le retour des méthodes !
 
 <!-- .element: class="big-code" -->
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
+
 # Mocker spyOn (Jasmine)
-<br>
 
 ```typescript
 let userService: UserService;
@@ -205,14 +232,14 @@ it('test', () => {
   expect(spy).toHaveBeenCalled();
 });
 ```
-<!-- .element: class="big-code" -->
 
+<!-- .element: class="big-code" -->
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
+
 # Mocker spyOn (Jasmine)
-<br><br>
 
 ```typescript
 let spy = spyOn(userService, 'getUsers').and.returnValues(fakeUsers);
@@ -226,4 +253,5 @@ expect(spy).toHaveBeenCalledTimes(number);
 expect(spy).toHaveBeenCalledBefore(otherSpy);
 
 ```
+
 <!-- .element: class="big-code" -->
