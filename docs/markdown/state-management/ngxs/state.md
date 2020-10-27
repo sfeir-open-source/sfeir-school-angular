@@ -102,15 +102,18 @@ export class TodoState {
 
 # State : Déclarer nos actions
 
--   Pour résumer une action se caractérise par:
+- Pour résumer une action se caractérise par:
     - une fonction prenant en paramètre le context de type **StateContext** et le payload
     - l'annotation **@Action**
 
--   Le **StateContext** possède les méthodes suivantes:
+<br><br>
+
+- Le **StateContext** possède les méthodes suivantes:
     - setState: pour setter un nouvelle état du state dans son entièreté
     - getState: récupère le state dans son entièreté
     - patchState: modifier partiellement le state
     - dispatch: lance une nouvelle action
+
 Notes:
 -   coup de puce: penser au spread opérator pour récupérer directement la méthode qui vous interesse
 -   il également possible d'utiliser des librairies tiers comme immer permettant de rendre chaque modification immutable (https://immerjs.github.io/immer/docs/introduction)
