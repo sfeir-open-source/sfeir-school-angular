@@ -1,63 +1,62 @@
 <!-- .slide: class="transition-bg-grey-1 underline" -->
+
 # Tester ses composants
 
 ##==##
 
 <!-- .slide-->
 # Qu'implique réellement les tests?
-<br><br><br>
 
-- "la magie" d'instance d'Angular ne se fait plus totalement<br><br>
-- Il faut mocker ses services et les données qu'utilisent nos composants<br><br>
-- J'ai 100% de code coverage ne signifie pas que vos tests sont corrects<br><br>
-- Garder à l'esprit que tester ce n'est pas douter, mais rendre un projet/une application de qualité<br><br>
+-   "la magie" d'instance d'Angular ne se fait plus totalement<br><br>
+-   Il faut mocker ses services et les données qu'utilisent nos composants<br><br>
+-   J'ai 100% de code coverage ne signifie pas que vos tests sont corrects<br><br>
+-   Garder à l'esprit que tester ce n'est pas douter, mais rendre un projet/une application de qualité<br><br>
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
 # Le Setup des tests du composant
-<br><br><br>
 
 ```typescript
 beforeEach(() => {
-  TestBed.configureTestingModule({
-    declarations: [ UserProfileComponent ]
-  });
-  const fixture = TestBed.createComponent(UserProfileComponent);
-  const instance = fixture.componentInstance;
-  const element = fixture.nativeElement;
-  const debug   = fixture.debugElement;
-  fixture.detectChanges();
+    TestBed.configureTestingModule({
+        declarations: [UserProfileComponent]
+    });
+    const fixture = TestBed.createComponent(UserProfileComponent);
+    const instance = fixture.componentInstance;
+    const element = fixture.nativeElement;
+    const debug = fixture.debugElement;
+    fixture.detectChanges();
 });
 ```
+
 <!-- .element: class="big-code" -->
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
+
 # Détails sur les fonctions utilisées
-<br>
 
-- __TestBed__
-    - __TestBed.createComponent__ : crée une instance du composant (fixture)
-    - __TestBed.overrideComponent__ : surcharge une instance d'un composant
-<br><br>
+- **TestBed**
+    - **TestBed.createComponent** : crée une instance du composant (fixture)
+    - **TestBed.overrideComponent** : surcharge une instance d'un composant
 
-- __ComponentFixture__
-    - __fixture.componentInstance__ : accès à l’instance du composant
-    - __fixture.nativeElement__ : accès au DOM du composant
-    - __fixture.debugElement__ : fonction helper
-    - __fixture.detectChanges__ : déclenche la détection du changement
+
+-   **ComponentFixture**
+    -   **fixture.componentInstance** : accès à l’instance du composant
+    -   **fixture.nativeElement** : accès au DOM du composant
+    -   **fixture.debugElement** : fonction helper
+    -   **fixture.detectChanges** : déclenche la détection du changement
 
 ##==##
 
 <!-- .slide: class="with-code" -->
-# Et si mon composant utilise d'autres composants ?
-<br>
 
-Mais si je dois tout mocker __ça risque d'être long__ si mon composant utilise une dizaine de composant enfant !!<br><br>
-<span class="important">Et bien non il existe une astuce : masquer les erreurs liées aux compoants imbriqués! :) grâce à __NO_ERRORS_SCHEMA__</span>
-<br><br>
+# Et si mon composant utilise d'autres composants ?
+
+Mais si je dois tout mocker **ça risque d'être long** si mon composant utilise une dizaine de composant enfant !!<br>
+<span class="important">Et bien non il existe une astuce : masquer les erreurs liées aux compoants imbriqués! :) grâce à **NO_ERRORS_SCHEMA**</span>
 
 ```typescript
 import { NO_ERRORS_SCHEMA } from '@angular/core';
@@ -69,4 +68,5 @@ beforeEach(() => {
   });
 });
 ```
+
 <!-- .element: class="big-code" -->

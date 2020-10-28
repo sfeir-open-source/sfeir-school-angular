@@ -4,6 +4,5 @@
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide" -->
-# Test de fonctions
-<br><br><br>
+# Test de fonctions<br>
 Les pipes sont assez simples à tester, il suffit de tester la fonction transform

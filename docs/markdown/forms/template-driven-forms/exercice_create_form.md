@@ -1,7 +1,6 @@
 <!-- .slide: class="exercice" -->
 # Exercice : form
-## Enoncé
-<br><br><br>
+## Enoncé<br>
 
 - Le composant PeopleComponent vient d'être complété
     - showDialog(): affiche une modal dialogue
@@ -14,8 +13,7 @@
 
 <!-- .slide: class="exercice" -->
 # Exercice : forms
-## Exercice
-<br><br><br>
+## Exercice<br>
 
 - A l'aide du CLI, créer dans le dossier shared, le composant FormComponent
 - Copier le contenu des fichiers du dossier static
@@ -26,8 +24,7 @@
 ##==##
 <!-- .slide: class="sfeir-bg-pink exercice" -->
 # Exerice: forms
-## Exercice
-<br><br><br>
+## Exercice<br>
 
 - Lors de l'évent cancel, la dialog se ferme
 - Lors de l'évent personAdd, la dialogue se ferme en envoyant la personne au composant PeopleComponent

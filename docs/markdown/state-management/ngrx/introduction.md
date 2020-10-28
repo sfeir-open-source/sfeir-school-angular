@@ -5,7 +5,6 @@
 
 <!-- .slide: class="with-code inconsolata" -->
 # NGRX : Installation
-<br>
 De même que la librairie NGXS, NGRX est une librairie externe à Angular.
 <br><br>
 
@@ -29,7 +28,6 @@ export class AppModule() { }
 
 <!-- .slide -->
 # NGRX : Concepts
-<br><br>
 4 concepts clés: <br><br>
 - __actions__ : dévrivent des évènements uniques qui sont distribués à partir du composant ou du service
 - __state__ : géré par de simple fonction nommées reducers
@@ -40,7 +38,6 @@ export class AppModule() { }
 
 <!-- .slide -->
 # NGRX : Architecture Global
-<br>
 
 ![full-center h-800](assets/images/school/state-management/ngrx/state_management_lifecycle.png)
 

@@ -1,6 +1,5 @@
 <!-- .slide" -->
 # Les deux types de composants
-<br><br>
 
 - La <b>Directive</b> permet d'enrichir un élément HTML<br><br>
 - Le <b>Component</b> est une directive avec une vue et des styles CSS
@@ -22,7 +21,6 @@
 ##==##
 <!-- .slide: class="with-code inconsolata" -->
 # L'annotation @Component
-<br>
 Carte d'identité d'un composant<br>
 
 - selector
@@ -44,7 +42,6 @@ Carte d'identité d'un composant<br>
 
 <!-- .slide: class="with-code inconsolata" -->
 # Imbrication des composants
-<br><br>
 Lorsqu'un composant parent souhaite utiliser des composants enfants<br>
 
 - les composants enfants doivent être tous référencés

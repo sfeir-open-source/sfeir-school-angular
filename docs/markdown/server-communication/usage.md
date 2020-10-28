@@ -1,6 +1,5 @@
 <!-- .slide -->
 # Les méthodes du service HttpClient
-<br><br>
 HttpClient vous procure les méthodes suivantes:<br><br>
 
 - this.http.get(url, options)<br><br>
@@ -11,7 +10,6 @@ HttpClient vous procure les méthodes suivantes:<br><br>
 ##==##
 <!-- .slide: class="with-code inconsolata" -->
 # L'envoie de données avec POST et PUT
-<br><br>
 
 - Le format des données doit être obligatoirement en format JSON<br><br>
 - le troisième argument est réservé pour les entêtes<br><br>
@@ -28,7 +26,6 @@ http.post(
 ##==##
 <!-- .slide: class="with-code inconsolata" -->
 # Déclencheur et type de retour
-<br><br>
 
 - Chaque méthode renvoie un observable<br><br>
 - Le requête vers le serveur est envoyée seulement si l'on souscrit à cet obervable<br><br>
@@ -44,7 +41,6 @@ this.http.get(url, options).subscribe(datas => {
 
 <!-- .slide: class="with-code inconsolata" -->
 # Gérer ses retours
-<br><br>
 
 - Par défaut le réponse est sous format JSON<br><br>
 - Pour l'avoir en type text, dans les options { responseType: text }<br><br>
@@ -58,8 +54,7 @@ this.http.get(url, options).subscribe(datas => {
 
 ##==##
 <!-- .slide: class="with-code inconsolata" -->
-# Et si je souhaite accéder à ma réponse complète
-<br><br><br>
+# Et si je souhaite accéder à ma réponse complète<br>
 
 ```typescript
 this.http.get(url, { observe: 'response' }).subscribe((response: HttpResponse)=> {

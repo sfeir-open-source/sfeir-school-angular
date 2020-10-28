@@ -1,6 +1,5 @@
 <!-- .slide: class="with-code inconsolata" -->
 # Les références
-<br>
 
 - Se matérialise par un # / ref- dans le template<br><br>
 - Disponible dans tout le template<br><br>
@@ -16,7 +15,6 @@
 
 <!-- .slide: class="with-code inconsolata" -->
 # L'annotation @ViewChild
-<br>
 
 - Permet de récupérer une référence dans le composant
 - Prend deux paramètres en entrée (nom de la référence,, un object d'option: { static, read })

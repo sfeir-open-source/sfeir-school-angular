@@ -1,6 +1,6 @@
 class SfeirTheme {
 	constructor(){
-		document.addEventListener('DOMContentLoaded', () => setTimeout(this._pageload.bind(this), 500));
+		Reveal.addEventListener('ready', () => setTimeout(this._pageload.bind(this), 500));
 		this.path = "";
 	}
 
@@ -18,6 +18,12 @@ class SfeirTheme {
 
 		// ManageSpecificsColumnsSlides
 		this._manageSpecificsColumnsSlides();
+
+		// ManageListFragements
+		this._manageListFragment();
+
+		// Manage Hack to speakers images
+		this._manageSpeakersBorders();
 		
 		if (Reveal){
 			Reveal.sync();
@@ -169,6 +175,35 @@ class SfeirTheme {
 					subSections[0].style.display='block';
 				}
 			});
+		}
+	}
+
+	_manageListFragment(){
+		const listItemWithFragments = [...document.querySelectorAll('.reveal .slides section .list-fragment')];
+		for(let lisItemWithFragmentTag of listItemWithFragments){
+			let parentOfListItem = lisItemWithFragmentTag.parentElement; // Ul or OL
+			if (parentOfListItem.nodeName === 'LI'){ 
+				// Specific case when you have some markdown bold or italic 
+				parentOfListItem = parentOfListItem.parentElement;
+			}
+			if (parentOfListItem.nodeName === 'UL' || parentOfListItem.nodeName === 'OL'){
+				const listItemsOfParent = [...parentOfListItem.querySelectorAll('li')];
+				for (let listItem of listItemsOfParent){
+					listItem.classList.add('fragment');
+				}
+			}
+		}
+	}
+
+	_manageSpeakersBorders(){
+		const imgOfSpeakersToReplaces = [...document.querySelectorAll('.reveal .slides section img[alt*=speaker]')];
+		for(let imgToReplace of imgOfSpeakersToReplaces){
+			let parentOfImg = imgToReplace.parentElement;
+			const divWithBgElement = document.createElement('DIV');
+			divWithBgElement.classList.add('speaker');
+			divWithBgElement.style['background-image'] = `url(${imgToReplace.src})`;
+			parentOfImg.appendChild(divWithBgElement);
+			parentOfImg.removeChild(imgToReplace);
 		}
 	}
 

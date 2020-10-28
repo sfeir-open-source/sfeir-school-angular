@@ -1,7 +1,6 @@
 <!-- .slide: class="exercice" -->
 # Exercice : loop
-## Exercice
-<br><br><br>
+## Exercice<br>
 
 - Créer un composant PeopleComponent à l'aide du CLI
 - Associer la route /people à ce template

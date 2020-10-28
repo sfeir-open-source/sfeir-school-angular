@@ -1,7 +1,6 @@
 <!-- .slide: class="exercice" -->
 # Exerice: form-model-driven
-## Exercice
-<br><br><br>
+## Exercice<br>
 
 - Transformer FormComponent en Reactive Forms<br><br>
 - Ne pas oublier de prendre en compte le mode création et update<br><br>

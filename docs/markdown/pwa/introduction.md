@@ -1,6 +1,5 @@
 <!-- .slide -->
 # Qu'est ce qu'une progressive web app (PWA)
-<br><br>
 __Application web doté de super pouvoirs__
 <!-- .element: class="important center" -->
 <br><br>
@@ -16,8 +15,7 @@ Notes:
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide" -->
-# De quoi est composé une PWA
-<br><br><br>
+# De quoi est composé une PWA<br>
 - Service worker qui détient la logique de votre PWA (stratégie de caching, vos différents caches, lifecycle)<br><br>
 - Manifest : décrit comment doit être installer votre application<br><br>
 
@@ -25,7 +23,6 @@ Notes:
 
 <!-- .slide: class="with-code inconsolata" -->
 # Comment rendre mon app Angular PWA
-<br><br>
 
 Une simple ligne de commande
 <br><br>
@@ -38,8 +35,7 @@ ng add @angular/pwa
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide" -->
-# Les conséquences de cette ligne de commande
-<br><br><br>
+# Les conséquences de cette ligne de commande<br>
 
 - ajoute le package @angular/service-worker à votre projet
 - autorise le support du service worker in CLI (modifie le fichier angular.json)

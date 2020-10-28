@@ -1,7 +1,6 @@
 <!-- .slide: class="exercice" -->
 # Exercice : custom-control
-## Exercice
-<br><br><br>
+## Exercice<br>
 
 - Un nouveau composant SfeirInput a été ajouté au dossier shared<br><br>
 - Implémenter le composant de sorte de créer un 'custom input'<br><br>

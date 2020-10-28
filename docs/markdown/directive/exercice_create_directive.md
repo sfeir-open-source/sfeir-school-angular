@@ -1,7 +1,6 @@
 <!-- .slide: class="exercice" -->
 # Exercice : directive-create
-## Exercice
-<br><br><br>
+## Exercice<br>
 
 - Créer à l'aide du CLI dans le répertoire shared une directive SfeirBadge
 - Cette directive doit afficher une icon si la personne est un manager

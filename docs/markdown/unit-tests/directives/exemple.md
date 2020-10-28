@@ -1,6 +1,5 @@
 <!-- .slide: class="with-code inconsolata" -->
 # Un exemple plus parlant
-<br><br>
 
 ```typescript
 describe('myBadgeDirective', () => {
@@ -17,7 +16,6 @@ describe('myBadgeDirective', () => {
 
 <!-- .slide: class="with-code inconsolata" -->
 # Un exemple plus parlant
-<br><br>
 
 ```typescript
 it('should ...', () => {

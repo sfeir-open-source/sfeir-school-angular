@@ -1,7 +1,6 @@
 <!-- .slide: class="exercice" -->
 # Exercice : http
-## Exercice
-<br><br><br>
+## Exercice<br>
 
 - Importer le module HttpClientModule et ajouter dans votre NgModule<br><br>
 - Injecter le service Http dans HomeComponent<br><br>

@@ -5,7 +5,6 @@
 
 <!-- .slide: class="sfeir-basic-slide" -->
 # Cas concret
-<br><br>
 Soit une application web classique avec trois composants A, B, C et une variable ‘toto’.<br><br>
 
 - Composant A peut créer et modifier la variable toto
@@ -23,7 +22,6 @@ Trouver un moyen de communication commun
 
 <!-- .slide -->
 # 3 façon de communiquer
-<br><br>
 
 Il existe deux grandes familles de communication<br><br>
 - __Parent - Enfant__ :
@@ -37,7 +35,6 @@ Il existe deux grandes familles de communication<br><br>
 
 <!-- .slide -->
 # Notification dans un bus de communication
-<br>
 
 - Notification via un EventEmitter
 - Global ou dans des services

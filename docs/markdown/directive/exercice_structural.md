@@ -1,7 +1,6 @@
 <!-- .slide: class="exercice" -->
 # Exercice : sturtural-directive
-## Exercice
-<br><br><br>
+## Exercice<br>
 - Un squelette de directive a été ajouté dans le dossier shared/display<br><br>
 - Vous allez recoder une partie de la directive *ngIf<br><br>
 - Dans le composant Card, afficher uniquement le nom et prénom des personnes qui sont manager

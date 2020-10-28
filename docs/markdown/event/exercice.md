@@ -1,7 +1,6 @@
 <!-- .slide: class="exercice" -->
 # Exercice : events
-## Exercice
-<br><br><br>
+## Exercice<br>
 
 - Un bouton random a été ajouté dans le fichier app.component.html<br><br>
 - Ajouter un click sur ce bouton pour afficher une personne au hasard

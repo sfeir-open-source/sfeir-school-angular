@@ -1,6 +1,5 @@
 <!-- .slide: class="with-code inconsolata" -->
 # Utilisation dans le composant
-<br>
 
 ```typescript
 import { Component, OnInit } from '@angular/core';
@@ -28,8 +27,7 @@ Notes:
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Utilisation dans le template
-<br><br><br>
+# Utilisation dans le template<br>
 
 ```html
 <a class="btn btn-info" routerLink="/people">Movies Liste</a>

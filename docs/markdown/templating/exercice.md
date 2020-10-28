@@ -1,7 +1,6 @@
 <!-- .slide: class="exercice" -->
 # Exercice : templating
-## Exercice
-<br><br><br>
+## Exercice<br>
 
 - Dans le dossier Shared un composant header a été créé<br><br>
 - L'objectif de cette exercice est de 'téléporter le header dans le composant header'
@@ -10,8 +9,7 @@
 
 <!-- .slide: class="exercice" -->
 # Exercice : templating
-## Exercice
-<br><br><br>
+## Exercice<br>
 
 - le composant header.component.ts doit prendre en input le template du header<br><br>
 - A l'aide de la directive ngTemplateOutlet, afficher le header

@@ -1,7 +1,6 @@
 <!-- .slide: class="exercice" -->
 # Exercice : input
-## Exercice
-<br><br><br>
+## Exercice<br>
 
 - Créer un composant CardComponent dans le dossier share à l'aide du CLI
 - Copier le contenu du template et du style du composant HomeComponent
@@ -18,8 +17,7 @@ Notes:
 ##==##
 <!-- .slide: class="exercice" -->
 # Exercice : input-b
-## Exercice
-<br><br><br>
+## Exercice<br>
 
 - Remplacer le template de PeopleComponent en utilisant CardComponent<br><br>
 - Indice: Pensez à utiliser la directive *ngFor pour répéter le composant CardComponent

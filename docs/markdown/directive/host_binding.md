@@ -5,7 +5,6 @@
 
 <!-- .slide -->
 # Host binding définition
-<br><br>
 
 - Permet de setter une proprité sur l'élement courant de la directive<br><br>
 - Décorateur @HostBinding()<br><br>
@@ -15,7 +14,6 @@
 
 <!-- .slide: class="inconsolata with-code" -->
 # Host binding exemple
-<br><br>
 
 ```typescript
 @Directive({selector: '[ngModel]'})

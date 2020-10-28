@@ -3,8 +3,7 @@
 
 ##==##
 <!-- .slide -->
-# Les différents types de pipe
-<br><br><br>
+# Les différents types de pipe<br>
 
 - Pure: le pipe est appelé uniquement si la valeur sur laquelle il agit a changé (mode par défaut)<br><br>
 - Impure: le pipe est appelé à chaque changement de détection que la valeur sur laquelle il agit a changé ou non
@@ -13,7 +12,6 @@
 
 <!-- .slide -->
 # Comment se compose un pipe
-<br><br>
 
 - De l'annotation <b>@Pipe</b> qui prend comme propriété name qui sera appelé dans le template  <br><br>
 - D'une classe qui est déclenchée par l'annotation <b>@Pipe</b> <br><br>
@@ -24,7 +22,6 @@
 ##==##
 <!-- .slide: class="with-code inconsolata" -->
 # Matérialisons cela par du code
-<br><br>
 
 ```typescript
 import {Pipe} from '@angular/core';

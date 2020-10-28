@@ -1,7 +1,6 @@
 <!-- .slide: class="exercice" -->
 # Exercice : router-lazyloading-guard
-## Exercice
-<br><br><br>
+## Exercice<br>
 
 - Dans le dossier secret créer un secret Module
 - Dans le fichier app.route lazy loader ce module, lorsque vous naviguez vers /secret

@@ -1,6 +1,5 @@
 <!-- .slide-->
-# Généralités sur les Guards
-<br><br><br>
+# Généralités sur les Guards<br>
 
 - Hook de vérification / ou de préfetching avant la navigation vers une route <br><br>
 - Il existe plusieurs guards en fonction de sa navigation (2 types vérification, fetching)<br><br>
@@ -10,7 +9,6 @@
 
 <!-- .slide -->
 # Les différents guards
-<br><br>
 
 - __CanActivate__: hook avant de naviguer vers une route<br><br>
 - __CanActivateChild__: hook avant de naviguer vers une route enfant<br><br>

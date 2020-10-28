@@ -5,7 +5,6 @@
 
 <!-- .slide: class="with-code inconsolata" -->
 # La Fondation du Reactive forms
-<br>
 Pour réaliser des formulaires avec Reactive Forms, il est nécessaire d'importer le module <b>ReactiveFormsModule</b> provenant également du package <b>@angular/forms</b>
 <br><br>
 
@@ -66,7 +65,6 @@ export class FormComponent {
 ##==##
 <!-- .slide: class="with-code inconsolata" -->
 # La Syntaxe dans le template
-<br><br>
 
 - Référence au modèle du formulaire via <b>formGroup</b>
 - Mapping de controls via <b>formControlName</b><br><br>
@@ -87,7 +85,6 @@ Notes:
 
 <!-- .slide: class="with-code inconsolata" -->
 # Regrouper les champs dans le template
-<br><br>
 
 - Regrouper les champs dans un sous objet grâce à <b>FormGroupName</b> <br><br>
 
@@ -108,7 +105,6 @@ Notes:
 
 <!-- .slide: class="with-code inconsolata" -->
 # La syntaxe dans la classe
-<br><br>
 
 ```typescript
 import { Validators, FormControl, FormGroup } from '@angular/forms';

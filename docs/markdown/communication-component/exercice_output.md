@@ -1,7 +1,6 @@
 <!-- .slide: class="exercice" -->
 # Exercice : output
 ## Exercice
-<br><br>
 
 - Ajouter un évènement click sur le bouton suppression du CardComponent
 - Cet évènement click émet l'évènement personDelete

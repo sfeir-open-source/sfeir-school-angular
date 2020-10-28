@@ -1,9 +1,8 @@
 <!-- .slide: class="exercice" -->
 # Exercice : router
-## Exercice
-<br><br><br>
+## Exercice<br>
 
-- Compléter le fichier qpp.routes.ts<br><br>
+- Compléter le fichier app.routes.ts<br><br>
 - Importer le balise <router-outlet><router-outlet> dans le fichier app.component.html
 
 ##==##

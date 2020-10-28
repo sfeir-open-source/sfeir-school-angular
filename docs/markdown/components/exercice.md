@@ -1,7 +1,6 @@
 <!-- .slide: class="exercice" -->
 # Exercice : cpt-hierarchy
-## Exercice
-<br><br><br>
+## Exercice<br>
 
 - Faire en sorte que PeopleComponent utilise HomeComponent
 - Voir le contenu du fichier home.component.html
@@ -28,8 +27,7 @@ Les fichiers à mettre à jour sont les suivants:
 ##==##
 <!-- .slide: class="exercice" -->
 # Exercice : binding
-## Exercice
-<br><br><br>
+## Exercice<br>
 
 - Dans le composant HomeComponent, nous allons afficher les détails d'une personne
 - Utiliser les fichiers du dossier static pour avoir le design, style et mocks

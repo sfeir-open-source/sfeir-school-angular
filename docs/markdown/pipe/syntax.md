@@ -1,6 +1,5 @@
 <!-- .slide: class="with-code inconsolata" -->
 # Syntaxe
-<br>
 
 - A la suite d'une expression d'interpolation
 
@@ -28,7 +27,6 @@
 ##==##
 <!-- .slide: class="with-code inconsolata" -->
 # Syntaxe du pipe currency
-<br><br>
 
 ```typescript
 this.amount = 1234.56
@@ -50,7 +48,6 @@ Notes:
 
 <!-- .slide: class="with-code inconsolata" -->
 # Syntaxe du pipe date
-<br><br>
 
 - Formate une date selon un certain format et selon une locale
 

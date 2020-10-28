@@ -1,6 +1,5 @@
 <!-- .slide -->
 # Définition et cas d'utilisation
-<br><br>
 
 - Responsable du layout
 - Manipule les éléments du DOM (ajout, suppression, etc)
@@ -12,7 +11,6 @@
 
 <!-- .slide-->
 # * une microsyntax
-<br><br>
 
 - Permet une lecture plus simple, et réduit la verbosité
 - Le mot clé __let__ permet de déclarer une variable utilisée dans le template
@@ -21,8 +19,7 @@
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# *ngFor en profondeur
-<br><br><br>
+# *ngFor en profondeur<br>
 
 ```html
 <div *ngFor="let hero of heroes; let odd = odd; index as i"></div>
@@ -40,7 +37,6 @@
 <!-- .slide: class="sfeir-basic-slide" -->
 
 # Récapitulatif de la grammaire
-<br><br>
 <span class="bold important">*:prefix="( :let | :expression ) (';' | ',')? ( :let | :as | :keyExp )*"</span>
 <br><br><br>
 <table>

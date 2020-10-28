@@ -1,6 +1,5 @@
 <!-- .slide -->
 # Fonctionnement des guards de "vérification"
-<br><br>
 
 - Peut renvoyer un observable, une promesse ou encore un boolean<br><br>
 - Un guard est un service classique<br><br>
@@ -38,7 +37,6 @@ export class LoginGuards implements CanLoad {
 
 <!-- .slide: class="with-code inconsolata" -->
 # Un exemple plus parlant
-<br><br><br>
 
 Une fois créé, le guard s'enregistre de la manière suivante dans le tableau de route
 <br><br>

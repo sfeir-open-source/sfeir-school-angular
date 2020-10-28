@@ -1,6 +1,5 @@
 <!-- .slide: class="sfeir-basic-slide" -->
-# Fonctionnement des guards de préfetching
-<br><br><br>
+# Fonctionnement des guards de préfetching<br>
 
 - Optimiser le rendu de page<br><br>
 - Renvoie un observable, une promesse ou des données bruts<br><br>
@@ -9,7 +8,6 @@
 
 <!-- .slide: class="with-code inconsolata" -->
 # Un exemple plus parlant (le résolver définition)
-<br><br>
 
 ```typescript
 @Injectable({ providedIn: CoreModule })
@@ -27,7 +25,6 @@ export class UserResolver implements Resolve<User[]> {
 
 <!-- .slide: class="with-code inconsolata" -->
 # Un exemple plus parlant (enregistrement du resolver)
-<br><br><br><br>
 
 ```typescript
 { path: 'users', component: TopComponent, resolve: { users: UserResolver } }
@@ -38,7 +35,6 @@ export class UserResolver implements Resolve<User[]> {
 
 <!-- .slide: class="with-code inconsolata" -->
 # Un exemple plus parlant (utilisation dans le composant)
-<br><br>
 
 ```typescript
 @Component({ ... })
