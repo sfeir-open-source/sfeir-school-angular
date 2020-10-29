@@ -1,5 +1,5 @@
 <!-- .slide: class="exercice" -->
-# Exercice : resolvers
+# Exercice 26 : resolvers
 ## Exercice<br>
 
 - Compléter le fichier user-details.resolver.ts
@@ -15,6 +15,6 @@ Notes:
 ##==##
 
 <!-- .slide: class="full-center exercice" -->
-# Exercice : resolvers
+# Exercice 26 : resolvers
 ## Solution
-__steps/resolvers-solution__
+__steps/26-resolvers-solution__

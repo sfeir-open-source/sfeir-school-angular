@@ -1,5 +1,5 @@
 <!-- .slide: class="exercice" -->
-# Exercice : input
+# Exercice 09 : input
 ## Exercice<br>
 
 - Créer un composant CardComponent dans le dossier share à l'aide du CLI
@@ -10,13 +10,13 @@ Notes:
 
 ##==##
 <!-- .slide: class="exercice full-center" -->
-# Exercice : input
+# Exercice 09 : input
 ## Solution
-<b>steps/input-solution</b>
+<b>steps/09-input-solution</b>
 
 ##==##
 <!-- .slide: class="exercice" -->
-# Exercice : input-b
+# Exercice 10 : input-b
 ## Exercice<br>
 
 - Remplacer le template de PeopleComponent en utilisant CardComponent<br><br>
@@ -25,6 +25,6 @@ Notes:
 
 ##==##
 <!-- .slide: class="exercice full-center" -->
-# Exercice : input-b
+# Exercice 10 : input-b
 ## Solution
-<b>steps/input-b-solution</b>
+<b>steps/10-input-b-solution</b>

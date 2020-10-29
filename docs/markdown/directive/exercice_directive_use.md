@@ -1,5 +1,5 @@
 <!-- .slide: class="exercice" -->
-# Exercice : directive-user
+# Exercice 15 : directive-user
 ## Exercice<br>
 
 - Nous venons d'ajouter une liste dans la vue du composant PeopleComponent et un bouton pour le choix du mode d'affichage
@@ -8,6 +8,6 @@
 
 ##==##
 <!-- .slide: class="exercice full-center" -->
-# Exercice : directive-use
+# Exercice 15 : directive-use
 ## Solution
-<b>steps/directives-use-solution</b>
+<b>steps/15-directives-use-solution</b>

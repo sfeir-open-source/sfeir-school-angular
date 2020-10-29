@@ -1,5 +1,5 @@
 <!-- .slide: class="exercice" -->
-# Exercice : unit-tests
+# Exercice 24 : unit-tests
 ## Exercice<br>
 
 - Etudier et compléter les tests du composant UpdateComponent<br><br>
@@ -8,7 +8,7 @@
 ##==##
 
 <!-- .slide: class="exercice full-center" -->
-# Exercice : unit-tests
+# Exercice 24 : unit-tests
 ## Solution
-__steps/unit-tests-solution__
+__steps/24-unit-tests-solution__
 

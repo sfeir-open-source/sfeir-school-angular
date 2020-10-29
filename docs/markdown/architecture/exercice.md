@@ -1,5 +1,5 @@
 <!-- .slide: class="exercice" -->
-# Exercice : hands-on
+# Exercice 01 : hands-on
 ## Exercice
 Sans utiliser le CLI d'Angular<br><br>
 - Créer le composant AppComponent
@@ -13,7 +13,7 @@ Notes:
 ##==##
 
 <!-- .slide: class="exercice full-center" -->
-# Exercice : hands-on
+# Exercice 01 : hands-on
 ## Solution
-folder: steps/hands-on-solution
+folder: steps/01-hands-on-solution
 <!-- .element: class="bold"-->

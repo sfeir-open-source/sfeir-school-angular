@@ -1,5 +1,5 @@
 <!-- .slide: class="exercice" -->
-# Exercice : http
+# Exercice 06 : http
 ## Exercice<br>
 
 - Importer le module HttpClientModule et ajouter dans votre NgModule<br><br>
@@ -11,6 +11,6 @@ Notes:
 
 ##==##
 <!-- .slide: class="exercice full-center" -->
-# Exercice : http
+# Exercice 06 : http
 ## Solution
-<b>steps/http-solution</b>
+<b>steps/06-http-solution</b>

@@ -1,5 +1,5 @@
 <!-- .slide: class="exercice" -->
-# Exercice : router
+# Exercice 07 : router
 ## Exercice<br>
 
 - Compléter le fichier app.routes.ts<br><br>
@@ -8,6 +8,6 @@
 ##==##
 
 <!-- .slide: class="exercice full-center" -->
-# Exercice : router
+# Exercice 07 : router
 ## Solution
-<b>steps/router-solution</b>
+<b>steps/07-router-solution</b>

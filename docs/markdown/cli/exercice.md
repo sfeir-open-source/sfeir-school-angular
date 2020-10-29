@@ -1,5 +1,5 @@
 <!-- .slide: class="exercice" -->
-# Exercice : ngg
+# Exercice 02 : ngg
 ## Exercice
 En utilsant le CLI <br><br>
 - Créer le composant HomeComponent
@@ -11,7 +11,7 @@ Notes:
 ##==##
 
 <!-- .slide: class="exercice" -->
-# Exercice : ngg
+# Exercice 02 : ngg
 ## Exercice<br>
 
 - Ajouter ce composant dans les "declarations" du ficher app.module.ts
@@ -21,7 +21,7 @@ Notes:
 ##==##
 
 <!-- .slide: class="exercice full-center" -->
-# Exercice : ngg
+# Exercice 02 : ngg
 ## Solution
 
-<b>folder: steps/ngg-solution</b>
+<b>folder: steps/02-ngg-solution</b>

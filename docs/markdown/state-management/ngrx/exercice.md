@@ -1,5 +1,5 @@
 <!-- .slide: class="exercice" -->
-# Exercice : ngrx
+# Exercice 23 : ngrx
 ## Exercice<br>
 - Une barre de recherche a été ajoutée à votre application<br><br>
 - Lors de la recherche vous devez filtrer la liste des personnes<br><br>
@@ -23,6 +23,6 @@ Notes:
 ##==##
 
 <!-- .slide: class="full-center exercice" -->
-# Exercice : ngrx
+# Exercice 23 : ngrx
 ## Solution
-__steps/ngrx-solution__
+__steps/23-ngrx-solution__

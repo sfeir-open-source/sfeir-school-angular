@@ -1,5 +1,5 @@
 <!-- .slide: class="exercice" -->
-# Exercice : loop
+# Exercice 08 : loop
 ## Exercice<br>
 
 - Créer un composant PeopleComponent à l'aide du CLI
@@ -13,6 +13,6 @@ Notes:
 ##==##
 
 <!-- .slide: class="exercice full-center" -->
-# Exercice : loop
+# Exercice 08 : loop
 ## Solution
-<b>steps/ngFor-solution</b>
+<b>steps/08-ngFor-solution</b>

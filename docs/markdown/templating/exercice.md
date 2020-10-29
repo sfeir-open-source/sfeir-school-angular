@@ -1,5 +1,5 @@
 <!-- .slide: class="exercice" -->
-# Exercice : templating
+# Exercice 28 : templating
 ## Exercice<br>
 
 - Dans le dossier Shared un composant header a été créé<br><br>
@@ -8,7 +8,7 @@
 ##==##
 
 <!-- .slide: class="exercice" -->
-# Exercice : templating
+# Exercice 28 : templating
 ## Exercice<br>
 
 - le composant header.component.ts doit prendre en input le template du header<br><br>
@@ -21,6 +21,6 @@ Notes:
 ##==##
 
 <!-- .slide: class="full-center exercice" -->
-# Exercice : templating
+# Exercice 28 : templating
 ## Solution
-__steps/templating-solution__
+__steps/28-templating-solution__

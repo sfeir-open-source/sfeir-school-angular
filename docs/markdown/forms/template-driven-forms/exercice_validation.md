@@ -1,5 +1,5 @@
 <!-- .slide: class="exercice" -->
-# Exercice : form-validation
+# Exercice 19 : form-validation
 ## Exercice<br>
 
 - Valider les champs:
@@ -13,6 +13,6 @@
 ##==##
 
 <!-- .slide: class="exercice full-center" -->
-# Exercice : form-validation
+# Exercice 19 : form-validation
 ## Solution
-<b>steps/form-validation-solution</b>
+<b>steps/19-form-validation-solution</b>

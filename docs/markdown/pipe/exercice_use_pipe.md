@@ -1,5 +1,5 @@
 <!-- .slide: class="exercice" -->
-# Exercice : pipe
+# Exercice 13 : pipe
 ## Exercice<br>
 
 - Une date de naissance a été ajoutée dans le composant CardComponent<br><br>
@@ -8,6 +8,6 @@
 ##==##
 
 <!-- .slide: class="exercice full-center" -->
-# Exercice : pipe
+# Exercice 13 : pipe
 ## Solution
-<b>steps/pipe-solution</b>
+<b>steps/13-pipe-solution</b>

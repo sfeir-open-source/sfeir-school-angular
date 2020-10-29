@@ -1,5 +1,5 @@
 <!-- .slide: class="exercice" -->
-# Exercice : sturtural-directive
+# Exercice 31 : sturtural-directive
 ## Exercice<br>
 - Un squelette de directive a été ajouté dans le dossier shared/display<br><br>
 - Vous allez recoder une partie de la directive *ngIf<br><br>
@@ -13,6 +13,6 @@ Notes:
 ##==##
 
 <!-- .slide: class="full-center exercice" -->
-# Exercice : structural-directive
+# Exercice 31 : structural-directive
 ## Solution
-__steps/structural-directive-solution__
+__steps/31-structural-directive-solution__

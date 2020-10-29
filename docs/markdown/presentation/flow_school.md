@@ -53,5 +53,5 @@ npm run server
 <br><br><br>
 
 - Déroulement du TP :
-    - <b>une page d'excercice : steps/`name_tp`</b>
-    - <b>une page de solution : steps/`name_tp-solution`</b>
+    - <b>une page d'excercice : steps/`XX-name_tp`</b>
+    - <b>une page de solution : steps/`XX-name_tp-solution`</b>

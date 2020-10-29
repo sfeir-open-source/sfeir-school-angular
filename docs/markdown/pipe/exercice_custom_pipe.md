@@ -1,5 +1,5 @@
 <!-- .slide: class="exercice" -->
-# Exercice : pipe-b
+# Exercice 14 : pipe-b
 ## Exercice<br>
 
 - Créer à l'aide du CLI, dans le répertoire shared, le pipe NaPipe<br><br>
@@ -9,6 +9,6 @@ Notes:
 
 ##==##
 <!-- .slide: class="exercice full-center" -->
-# Exercice : pipe-b
+# Exercice 14 : pipe-b
 ## Solution
-<b>steps/pipe-b-solution</b>
+<b>steps/14-pipe-b-solution</b>

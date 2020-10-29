@@ -1,5 +1,5 @@
 <!-- .slide: class="exercice" -->
-# Exercice : interceptors
+# Exercice 27 : interceptors
 ## Exercice<br>
 
 - Une ébauche d'interceptor a été réalisée dans le dossier shared/interceptor
@@ -12,6 +12,6 @@ Notes:
 ##==##
 
 <!-- .slide: class="full-center exercice" -->
-# Exercice : interceptors
+# Exercice 27 : interceptors
 ## Solution
-__steps/interceptors-solution__
+__steps/27-interceptors-solution__

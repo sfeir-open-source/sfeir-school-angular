@@ -2,7 +2,11 @@
   "_args": [
     [
       "reveal.js@3.9.2",
+<<<<<<< HEAD
       "C:\\Users\\tanguy.j\\Work\\sfeir-school-angular\\docs"
+=======
+      "C:\\Workspace\\SFEIR\\SFEIR-SCHOOL\\sfeir-school-angular\\docs"
+>>>>>>> (feature) Sort TP folders according to slides
     ]
   ],
   "_from": "reveal.js@3.9.2",
@@ -27,7 +31,11 @@
   ],
   "_resolved": "https://registry.npmjs.org/reveal.js/-/reveal.js-3.9.2.tgz",
   "_spec": "3.9.2",
+<<<<<<< HEAD
   "_where": "C:\\Users\\tanguy.j\\Work\\sfeir-school-angular\\docs",
+=======
+  "_where": "C:\\Workspace\\SFEIR\\SFEIR-SCHOOL\\sfeir-school-angular\\docs",
+>>>>>>> (feature) Sort TP folders according to slides
   "author": {
     "name": "Hakim El Hattab",
     "email": "hakim.elhattab@gmail.com",

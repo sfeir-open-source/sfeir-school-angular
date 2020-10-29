@@ -1,5 +1,5 @@
 <!-- .slide: class="exercice"-->
-# Exercice : ngxs
+# Exercice 22 : ngxs
 ## Exercice<br>
 
 - Une barre de recherche a été ajoutée à votre application<br><br>
@@ -20,6 +20,6 @@ Notes:
 ##==##
 
 <!-- .slide: class="full-center exercice" -->
-# Exercice : ngxs
+# Exercice 22 : ngxs
 ## Solution
-__steps/ngxs__
+__steps/22-ngxs__
