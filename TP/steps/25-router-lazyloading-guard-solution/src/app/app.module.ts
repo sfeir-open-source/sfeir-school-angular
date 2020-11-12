@@ -1,7 +1,7 @@
 // CORE DEPS
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 // MATERIAL DESIGN MODULES
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -36,7 +36,6 @@ import { HomeComponent } from './home';
     HttpClientModule
   ],
   declarations: [PeopleAppComponent, HomeComponent],
-  providers: [HttpClient],
   bootstrap: [PeopleAppComponent]
 })
 export class AppModule {}
