@@ -67,7 +67,7 @@ mat-card-title-group {
 }
 
 .buttons-info [mat-button] {
-  min-width: 0;
+  min-width: 0px;
   padding: 2px;
   height: 40px;
 }
