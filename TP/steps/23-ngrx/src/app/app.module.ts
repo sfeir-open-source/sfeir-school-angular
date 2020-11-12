@@ -22,13 +22,9 @@ import { PeopleAppComponent } from './app.component';
 import { HomeComponent } from './home';
 import { PeopleComponent } from './people';
 import { AddDialogComponent } from './people/add-dialog/add-dialog.component';
-import { UpdateComponent } from './update/update.component';
-import { StoreModule } from '@ngrx/store';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import * as PeopleReducer from './store/reducers/people.reducer';
-import { metaReducers } from './store/meta-reducer';
-import { SearchComponent, CardComponent, PeopleService, NaPipe, FormComponent, SfeirBadgeDirective } from './shared';
-import { environment } from '../environments/environment';
+import { UpdateComponent } from './update';
+// import * as PeopleReducer from './store/reducers/people.reducer';
+import { CardComponent, FormComponent, NaPipe, PeopleService, SearchComponent, SfeirBadgeDirective } from './shared';
 
 @NgModule({
   imports: [
@@ -46,9 +42,9 @@ import { environment } from '../environments/environment';
     MatDialogModule,
     HttpClientModule,
     APP_ROUTES,
-    ReactiveFormsModule,
-    StoreModule.forRoot({ people: PeopleReducer.reducer }, { metaReducers }),
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
+    ReactiveFormsModule
+    // StoreModule.forRoot({ people: PeopleReducer.reducer }, { metaReducers }),
+    // StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],
   declarations: [
     PeopleAppComponent,
