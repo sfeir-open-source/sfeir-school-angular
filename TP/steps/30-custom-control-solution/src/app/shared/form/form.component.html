@@ -26,7 +26,7 @@
             </p>
 
             <p [class.errors]="form.controls.lastname.dirty && form.controls.lastname.invalid">
-              <sfeir-input placeholder="First Name" formControlName="lastname"></sfeir-input>
+              <sfeir-input placeholder="Last Name" formControlName="lastname"></sfeir-input>
 
               <span *ngIf="form.controls.lastname.dirty && form.controls.lastname.errors?.required"
                 ><br />Last name is required</span
@@ -84,7 +84,9 @@
         >
       </p>
 
-      <p><mat-checkbox name="isManager" formControlName="isManager">Manager</mat-checkbox></p>
+      <p>
+        <mat-checkbox name="isManager" formControlName="isManager">Manager</mat-checkbox>
+      </p>
     </form>
   </mat-card-content>
 
