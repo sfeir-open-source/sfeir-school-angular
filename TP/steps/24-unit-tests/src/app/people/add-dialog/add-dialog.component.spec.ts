@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { AddDialogComponent } from './add-dialog.component';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { MatDialogRef, MatDialogModule } from '@angular/material/dialog';
@@ -12,14 +12,16 @@ xdescribe('AddDialogComponent', () => {
   let component: AddDialogComponent;
   let fixture: ComponentFixture<AddDialogComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      imports: [MatDialogModule],
-      declarations: [AddDialogComponent],
-      schemas: [NO_ERRORS_SCHEMA],
-      providers: [{ provide: MatDialogRef, useClass: MatDialogRefMock }]
-    });
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        imports: [MatDialogModule],
+        declarations: [AddDialogComponent],
+        schemas: [NO_ERRORS_SCHEMA],
+        providers: [{ provide: MatDialogRef, useClass: MatDialogRefMock }]
+      });
+    })
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(AddDialogComponent);

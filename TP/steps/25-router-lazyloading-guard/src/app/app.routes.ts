@@ -10,4 +10,4 @@ const ROUTES: Routes = [
   { path: 'secret', component: SecretComponent }
 ];
 
-export const APP_ROUTES = RouterModule.forRoot(ROUTES, { useHash: true });
+export const APP_ROUTES = RouterModule.forRoot(ROUTES, { useHash: true, relativeLinkResolution: 'legacy' });

@@ -15,4 +15,4 @@ const ROUTES: Routes = [
   }
 ];
 
-export const APP_ROUTES = RouterModule.forRoot(ROUTES, { useHash: true });
+export const APP_ROUTES = RouterModule.forRoot(ROUTES, { useHash: true, relativeLinkResolution: 'legacy' });

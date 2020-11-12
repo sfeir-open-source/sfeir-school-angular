@@ -13,4 +13,4 @@ const ROUTES: Routes = [
   { path: 'edit/:id', component: UpdateComponent, resolve: { user: UserDetailsResolver } }
 ];
 
-export const APP_ROUTES = RouterModule.forRoot(ROUTES, { useHash: true });
+export const APP_ROUTES = RouterModule.forRoot(ROUTES, { useHash: true, relativeLinkResolution: 'legacy' });
