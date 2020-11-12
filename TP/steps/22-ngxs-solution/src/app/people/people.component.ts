@@ -45,7 +45,7 @@ export class PeopleComponent implements OnInit, OnDestroy {
 
   add(person: any) {
     this._peopleService
-      .update(person)
+      .create(person)
       .pipe(mergeMap(() => this._peopleService.fetch()))
       .subscribe(() => {
         this.hideDialog();
