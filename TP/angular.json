@@ -4653,7 +4653,7 @@
         }
       }
     },
-    "26-26-resolvers": {
+    "26-resolvers": {
       "projectType": "application",
       "schematics": {},
       "root": "steps/26-resolvers",
