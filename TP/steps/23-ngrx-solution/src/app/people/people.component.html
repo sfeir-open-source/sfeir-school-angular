@@ -17,6 +17,11 @@
   </section>
 </section>
 
-<button (click)="showDialog()" *ngIf="dialogStatus == 'inactive'" mat-fab color="accent">
-  <i class="material-icons">add</i>
-</button>
+<section class="buttons-fab" *ngIf="dialogStatus == 'inactive'">
+  <button (click)="showDialog()" mat-fab color="accent" class="button-add"><i class="material-icons">add</i></button>
+
+  <button (click)="switchView()" mat-fab color="warn">
+    <i class="material-icons" *ngIf="view === 'card'">list</i>
+    <i class="material-icons" *ngIf="view === 'list'">view_stream</i>
+  </button>
+</section>
