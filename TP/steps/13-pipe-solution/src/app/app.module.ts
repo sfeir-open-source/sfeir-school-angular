@@ -21,6 +21,7 @@ import { HomeComponent } from './home';
 import { PeopleComponent } from './people';
 import { CardComponent } from './shared/card';
 import { PeopleService } from './shared/people-service';
+import { NaPipe } from './shared/na-pipe';
 
 @NgModule({
   imports: [
@@ -40,7 +41,7 @@ import { PeopleService } from './shared/people-service';
     HttpClientModule,
     ReactiveFormsModule
   ],
-  declarations: [PeopleAppComponent, HomeComponent, PeopleComponent, CardComponent],
+  declarations: [PeopleAppComponent, HomeComponent, PeopleComponent, CardComponent, NaPipe],
   providers: [PeopleService],
   bootstrap: [PeopleAppComponent]
 })

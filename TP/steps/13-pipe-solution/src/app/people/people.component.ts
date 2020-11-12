@@ -8,7 +8,8 @@ import { PeopleService } from '../shared/people-service';
 })
 export class PeopleComponent implements OnInit {
   people;
-  constructor(private _peopleService: PeopleService) {}
+
+  constructor(private readonly _peopleService: PeopleService) {}
 
   /**
    * OnInit implementation
