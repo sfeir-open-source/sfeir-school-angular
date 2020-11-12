@@ -1,8 +1,8 @@
-import { flatMap } from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { flatMap } from 'rxjs/operators';
+import { PeopleService } from '../shared/people-service';
 import { AddDialogComponent } from './add-dialog/add-dialog.component';
-import { PeopleService } from '../shared/people-service/people.service';
 
 @Component({
   selector: 'sfeir-people',
@@ -10,10 +10,10 @@ import { PeopleService } from '../shared/people-service/people.service';
   styleUrls: ['people.component.css']
 })
 export class PeopleComponent implements OnInit {
+  private addDialog: MatDialogRef<AddDialogComponent>;
   people;
   dialogStatus = 'inactive';
   view = 'card';
-  private addDialog: MatDialogRef<AddDialogComponent>;
 
   constructor(private readonly peopleService: PeopleService, public dialog: MatDialog) {}
 
@@ -62,7 +62,7 @@ export class PeopleComponent implements OnInit {
     this.addDialog.close();
   }
 
-  switchView(): void {
+  switchView() {
     this.view = this.view === 'card' ? 'list' : 'card';
   }
 }
