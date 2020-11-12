@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-const BASE_URL = 'http://localhost:9000';
-
 @Component({
   selector: 'sfeir-people',
   templateUrl: 'people.component.html',
@@ -17,6 +15,6 @@ export class PeopleComponent implements OnInit {
    * OnInit implementation
    */
   ngOnInit() {
-    this._http.get(`${BASE_URL}/api/peoples/`).subscribe(people => (this.people = people));
+    this._http.get('http://localhost:9000/api/peoples').subscribe(people => (this.people = people));
   }
 }
