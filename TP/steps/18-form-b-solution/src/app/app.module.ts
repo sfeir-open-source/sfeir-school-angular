@@ -24,7 +24,7 @@ import { PeopleComponent } from './people';
 import { CardComponent } from './shared/card';
 import { AddDialogComponent } from './people/add-dialog/add-dialog.component';
 import { FormComponent } from './shared/form';
-import { UpdateComponent } from './update/update.component';
+import { UpdateComponent } from './update';
 import { SfeirBadgeDirective } from './shared/badge';
 import { NaPipe } from './shared/na-pipe';
 import { PeopleService } from './shared/people-service';
