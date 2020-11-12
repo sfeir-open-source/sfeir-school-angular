@@ -8,4 +8,4 @@ const ROUTES: Routes = [
   { path: 'home', component: HomeComponent }
 ];
 
-export const APP_ROUTES = RouterModule.forRoot(ROUTES, { useHash: true, relativeLinkResolution: 'legacy' });
+export const APP_ROUTES = RouterModule.forRoot(ROUTES, { useHash: true });
