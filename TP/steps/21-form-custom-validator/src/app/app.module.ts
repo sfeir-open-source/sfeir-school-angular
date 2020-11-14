@@ -22,6 +22,12 @@ import { PeopleAppComponent } from './app.component';
 import { HomeComponent } from './home';
 import { PeopleComponent } from './people';
 import { CardComponent } from './shared/card';
+import { AddDialogComponent } from './people/add-dialog/add-dialog.component';
+import { FormComponent } from './shared/form';
+import { UpdateComponent } from './update';
+import { NaPipe } from './shared/na-pipe';
+import { SfeirBadgeDirective } from './shared/badge';
+import { PeopleService } from './shared/people-service';
 
 @NgModule({
   imports: [
@@ -41,7 +47,18 @@ import { CardComponent } from './shared/card';
     HttpClientModule,
     ReactiveFormsModule
   ],
-  declarations: [PeopleAppComponent, HomeComponent, PeopleComponent, CardComponent],
+  declarations: [
+    PeopleAppComponent,
+    HomeComponent,
+    PeopleComponent,
+    CardComponent,
+    AddDialogComponent,
+    FormComponent,
+    UpdateComponent,
+    NaPipe,
+    SfeirBadgeDirective
+  ],
+  providers: [PeopleService],
   bootstrap: [PeopleAppComponent]
 })
 export class AppModule {}

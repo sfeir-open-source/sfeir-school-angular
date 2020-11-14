@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PEOPLE } from '../_static/people';
-import { People } from '../../../../binding/src/app/people.model';
+import { People } from '../people.model';
 
 @Component({
   selector: 'sfeir-home',

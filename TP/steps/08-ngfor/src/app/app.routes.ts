@@ -1,7 +1,7 @@
 import { RouterModule, Routes } from '@angular/router';
 
 // APP COMPONENTS
-import { HomeComponent } from './home/index';
+import { HomeComponent } from './home';
 
 const ROUTES: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },

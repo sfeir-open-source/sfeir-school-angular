@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
 import { PeopleService } from '../shared/people-service';
 
 @Component({
@@ -10,7 +9,7 @@ import { PeopleService } from '../shared/people-service';
 export class PeopleComponent implements OnInit {
   people;
 
-  constructor(public dialog: MatDialog, private _peopleService: PeopleService) {}
+  constructor(private _peopleService: PeopleService) {}
 
   /**
    * OnInit implementation

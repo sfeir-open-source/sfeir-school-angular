@@ -1,7 +1,7 @@
 import { RouterModule, Routes } from '@angular/router';
 
 // APP COMPONENTS
-import { HomeComponent } from './home/index';
+import { HomeComponent } from './home';
 import { SecretComponent } from './secret';
 
 const ROUTES: Routes = [
@@ -10,4 +10,4 @@ const ROUTES: Routes = [
   { path: 'secret', component: SecretComponent }
 ];
 
-export const APP_ROUTES = RouterModule.forRoot(ROUTES, { useHash: true });
+export const APP_ROUTES = RouterModule.forRoot(ROUTES);

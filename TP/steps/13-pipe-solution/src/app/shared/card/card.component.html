@@ -30,9 +30,15 @@
       Birth Date&nbsp;:&nbsp;<span>{{ person.birthDate | date: 'dd/MM/yyyy' }}</span>
     </div>
     <div class="buttons-info">
-      <a mat-button title="Locate" href="#/locator/1"> <mat-icon>map</mat-icon> </a>
-      <a mat-button title="Edit" [routerLink]="['/edit', person.id]"> <mat-icon>create</mat-icon> </a>
-      <a mat-button title="Delete" (click)="delete(person)"> <mat-icon>delete</mat-icon> </a>
+      <a mat-button title="Locate" href="#/locator/1">
+        <mat-icon>map</mat-icon>
+      </a>
+      <a mat-button title="Edit" [routerLink]="['/edit', person.id]">
+        <mat-icon>create</mat-icon>
+      </a>
+      <a mat-button title="Delete" (click)="delete(person)">
+        <mat-icon>delete</mat-icon>
+      </a>
     </div>
   </mat-card-content>
 </mat-card>

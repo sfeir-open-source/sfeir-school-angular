@@ -10,7 +10,7 @@ export class PeopleComponent implements OnInit {
   people;
   view = 'card';
 
-  constructor(private _peopleService: PeopleService) {}
+  constructor(private readonly _peopleService: PeopleService) {}
 
   /**
    * OnInit implementation

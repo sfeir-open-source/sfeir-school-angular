@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { mergeMap } from 'rxjs/operators';
 import { PeopleService } from '../shared/people-service';
 
 @Component({
@@ -10,7 +9,7 @@ import { PeopleService } from '../shared/people-service';
 export class PeopleComponent implements OnInit {
   people;
 
-  constructor(private _peopleService: PeopleService) {}
+  constructor(private readonly _peopleService: PeopleService) {}
 
   /**
    * OnInit implementation
@@ -21,14 +20,5 @@ export class PeopleComponent implements OnInit {
 
   delete(person: any) {
     this._peopleService.delete(person.id).subscribe(people => (this.people = people));
-  }
-
-  add(person: any) {
-    this._peopleService
-      .update(person)
-      .pipe(mergeMap(() => this._peopleService.fetch()))
-      .subscribe((people: any[]) => {
-        this.people = people;
-      });
   }
 }

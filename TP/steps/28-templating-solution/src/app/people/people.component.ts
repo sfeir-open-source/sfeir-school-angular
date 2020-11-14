@@ -37,7 +37,7 @@ export class PeopleComponent implements OnInit {
 
   add(person: any) {
     this._peopleService
-      .update(person)
+      .create(person)
       .pipe(mergeMap(() => this._peopleService.fetch()))
       .subscribe(() => {
         this.hideDialog();

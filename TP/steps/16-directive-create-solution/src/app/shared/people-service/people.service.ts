@@ -30,19 +30,7 @@ export class PeopleService {
     return this._http.get(this._backendURL.randomPeople);
   }
 
-  fetchOne(id: string): Observable<any> {
-    return this._http.get(this._backendURL.onePeople.replace(':id', id));
-  }
-
   delete(id: string): Observable<any> {
     return this._http.delete(this._backendURL.onePeople.replace(':id', id));
-  }
-
-  update(person: any): Observable<any> {
-    return this._http.put(this._backendURL.onePeople.replace(':id', person.id), person);
-  }
-
-  create(person): Observable<any> {
-    return this._http.post(this._backendURL.allPeople, person);
   }
 }
