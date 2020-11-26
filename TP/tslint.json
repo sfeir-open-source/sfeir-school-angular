@@ -67,7 +67,7 @@
     "variable-name": false,
     "whitespace": [true, "check-branch", "check-decl", "check-operator", "check-separator", "check-type"],
     "no-output-on-prefix": true,
-    "directive-selector": [true, "attribute", "sfeir", "camelCase"],
+    "directive-selector": [true, "attribute", "sfeir", "camelCase", "kebeb-case"],
     "component-selector": [true, "element", "sfeir", "kebab-case"],
     "no-inputs-metadata-property": true,
     "no-outputs-metadata-property": true,

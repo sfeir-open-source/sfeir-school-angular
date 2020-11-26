@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'app/shared/style/index.css';
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  font-size: 16px;
+}
