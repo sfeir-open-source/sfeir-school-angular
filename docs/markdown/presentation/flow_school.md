@@ -48,10 +48,10 @@ npm run server
 ##==##
 
 # Déroulement des exercices
+- __Chaque concept clé d'Angular est accompagné d'un TP.__
 
-- <b>Chaque concept clé d'Angular est accompagné d'un TP.</b>
 <br><br><br>
 
 - Déroulement du TP :
-    - <b>une page d'excercice : steps/`XX-name_tp`</b>
-    - <b>une page de solution : steps/`XX-name_tp-solution`</b>
+    - __une page d'excercice : steps/`XX-name_tp`__
+    - __une page de solution : steps/`XX-name_tp-solution`__
