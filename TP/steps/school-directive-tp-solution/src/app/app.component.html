@@ -18,6 +18,10 @@
                 {{ item.name }}
               </li>
             </ul>
+            <mat-form-field style="width: 100%;">
+              <mat-label>Satisfaction de la school</mat-label>
+              <input matInput placeholder="Ex. Content" [type]="type" *sfeirSecret="let type" />
+            </mat-form-field>
           </div>
         </sfeir-card-content>
         <sfeir-card-footer>Made with love by Nicolas Frizzarin</sfeir-card-footer>

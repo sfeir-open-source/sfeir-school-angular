@@ -1,2 +1,3 @@
 @import 'size.css';
 @import 'drag-drp.css';
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
