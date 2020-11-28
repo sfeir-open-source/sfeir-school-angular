@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
     this.today = new Date();
   }
 
-  dropFiles(files: Array<File>) {
+  dropFiles(files: Array<File>): void {
     this.files = [...(this.files || []), ...files];
   }
 }
