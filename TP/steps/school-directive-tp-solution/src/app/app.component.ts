@@ -7,8 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   today: Date;
+  files: Array<File>;
 
   ngOnInit(): void {
     this.today = new Date();
+  }
+
+  dropFiles(files: Array<File>) {
+    this.files = [...(this.files || []), ...files];
   }
 }

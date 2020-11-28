@@ -3,7 +3,16 @@
     <sfeir-card>
       <sfeir-card-title>Sfeir School: Module Directive</sfeir-card-title>
       <sfeir-card-subtitle>session du {{ today | date: 'dd/MM/YYYY' }}</sfeir-card-subtitle>
-      <sfeir-card-content>Le contenue de notre card :)</sfeir-card-content>
+      <sfeir-card-content>
+        <div class="drag-drop-zone" sfeirDragAndDrop (ondrop)="dropFiles($event)">
+          drag and droppez vos fichiers ici
+          <ul class="list-files">
+            <li *ngFor="let item of files">
+              {{ item.name }}
+            </li>
+          </ul>
+        </div>
+      </sfeir-card-content>
       <sfeir-card-footer>Made with love by Nicolas Frizzarin</sfeir-card-footer>
     </sfeir-card>
   </div>

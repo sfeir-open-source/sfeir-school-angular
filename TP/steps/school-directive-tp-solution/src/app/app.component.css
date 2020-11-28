@@ -10,3 +10,10 @@
   height: 30%;
   width: 50%;
 }
+
+#app .container-card .drag-drop-zone {
+  height: 100%;
+  overflow: auto;
+  padding: 10px;
+  box-sizing: border-box;
+}
