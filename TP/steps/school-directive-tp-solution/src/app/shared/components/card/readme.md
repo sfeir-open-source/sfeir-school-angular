@@ -31,7 +31,7 @@ Pour résussir à bien votre mission il vous faudra créer
 
 -   1 composants
 -   4 directives
--   Pensez à utiliser le renderer, et l'annotation @ContentChild
+-   Pensez à utiliser l'elementRef, le renderer, et l'annotation @ContentChild
 
 ## Petit mot pour la fin
 
