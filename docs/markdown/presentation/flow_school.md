@@ -1,7 +1,7 @@
 # Déroulement de la formation
+
 <p class="full-center">
 A quand la pause ? <br>
-A quelle heure mange t-on ? <br>
 Tour de table ...
 </p>
 <br><br>
@@ -24,7 +24,7 @@ Tour de table ...
 # Bootstrapping de l'application
 
 ```bash
-git clone https://github.com/sfeir-open-source/sfeir-school-angular
+git clone https://github.com/sfeir-open-source/sfeir-school-angular.git
 cd TP && npm i || npm ci
 ```
 
@@ -39,15 +39,16 @@ npm run client -- "nom de la step"
 ```bash
 npm run server
 ```
+
 <br><br>
 
 - <b>npm run client:</b>http://localhost:4200 <br>
 - <b>npm run server:</b>http://localhost:9000
 
-
 ##==##
 
 # Déroulement des exercices
+
 - __Chaque concept clé d'Angular est accompagné d'un TP.__
 
 <br><br><br>
