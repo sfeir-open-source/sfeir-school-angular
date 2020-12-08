@@ -5,7 +5,7 @@ import { dayFourSlides } from './day_four.js';
 import { moduleDirectivSlides } from './directive-module.js';
 
 function sfeirInstitute() {
-  const formationSLides = [...dayOneSlides(), ...dayTwoSlides(), ...dayThreeSLides(), ...dayFourSlides()];
+  const formationSLides = [ ...dayOneSlides(), ...dayTwoSlides(), ...dayThreeSLides(), ...dayFourSlides() ];
   return formationSLides.map(slidePath => {
     return { path: slidePath };
   });
