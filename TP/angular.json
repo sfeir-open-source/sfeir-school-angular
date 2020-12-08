@@ -5682,6 +5682,228 @@
           }
         }
       }
+    },
+    "school-directive-tp": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "inlineTemplate": false,
+          "inlineStyle": false,
+          "skipTests": true
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:module": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        }
+      },
+      "root": "steps/school-directive-tp",
+      "sourceRoot": "steps/school-directive-tp/src",
+      "prefix": "sfeir",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/school-directive-tp",
+            "index": "steps/school-directive-tp/src/index.html",
+            "main": "steps/school-directive-tp/src/main.ts",
+            "polyfills": "steps/school-directive-tp/src/polyfills.ts",
+            "tsConfig": "steps/school-directive-tp/tsconfig.app.json",
+            "aot": true,
+            "assets": ["steps/school-directive-tp/src/favicon.ico", "steps/school-directive-tp/src/assets"],
+            "styles": ["steps/school-directive-tp/src/styles.css"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "steps/school-directive-tp/src/environments/environment.ts",
+                  "with": "steps/school-directive-tp/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "school-directive-tp:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "school-directive-tp:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "school-directive-tp:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "steps/school-directive-tp/src/test.ts",
+            "polyfills": "steps/school-directive-tp/src/polyfills.ts",
+            "tsConfig": "steps/school-directive-tp/tsconfig.spec.json",
+            "karmaConfig": "steps/school-directive-tp/karma.conf.js",
+            "styles": ["steps/school-directive-tp/src/styles.css"],
+            "scripts": [],
+            "assets": ["steps/school-directive-tp/src/favicon.ico", "steps/school-directive-tp/src/assets"]
+          }
+        }
+      }
+    },
+    "school-directive-tp-solution": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "inlineTemplate": false,
+          "inlineStyle": false,
+          "skipTests": true
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:module": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        }
+      },
+      "root": "steps/school-directive-tp-solution",
+      "sourceRoot": "steps/school-directive-tp-solution/src",
+      "prefix": "sfeir",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/school-directive-tp-solution",
+            "index": "steps/school-directive-tp-solution/src/index.html",
+            "main": "steps/school-directive-tp-solution/src/main.ts",
+            "polyfills": "steps/school-directive-tp-solution/src/polyfills.ts",
+            "tsConfig": "steps/school-directive-tp-solution/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "steps/school-directive-tp-solution/src/favicon.ico",
+              "steps/school-directive-tp-solution/src/assets"
+            ],
+            "styles": ["steps/school-directive-tp-solution/src/styles.css"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "steps/school-directive-tp-solution/src/environments/environment.ts",
+                  "with": "steps/school-directive-tp-solution/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "school-directive-tp-solution:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "school-directive-tp-solution:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "school-directive-tp-solution:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "steps/school-directive-tp-solution/src/test.ts",
+            "polyfills": "steps/school-directive-tp-solution/src/polyfills.ts",
+            "tsConfig": "steps/school-directive-tp-solution/tsconfig.spec.json",
+            "karmaConfig": "steps/school-directive-tp-solution/karma.conf.js",
+            "styles": ["steps/school-directive-tp-solution/src/styles.css"],
+            "scripts": [],
+            "assets": [
+              "steps/school-directive-tp-solution/src/favicon.ico",
+              "steps/school-directive-tp-solution/src/assets"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "angular-200",

@@ -23,14 +23,10 @@
 
 ##==##
 <!-- .slide: class="sfeir-bg-pink exercice" -->
-<<<<<<< HEAD
-# Exerice: forms
-## Exercice<br>
-=======
+
 # Exercice 17 : form
 ## Exercice
-<br><br><br>
->>>>>>> (feature) Sort TP folders according to slides
+<br>
 
 - Lors de l'évent cancel, la dialog se ferme
 - Lors de l'évent personAdd, la dialogue se ferme en envoyant la personne au composant PeopleComponent

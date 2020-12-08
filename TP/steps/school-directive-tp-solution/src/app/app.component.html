@@ -1,0 +1,31 @@
+<section id="app">
+  <section id="app__header">
+    <div class="logo-slogan">
+      <img class="sfeir-logo" alt="sfeir-logo" src="assets/logosfeir.svg" />
+      <span class="slogan">We love <em>contributing</em></span>
+    </div>
+  </section>
+  <section id="app__content">
+    <div class="container-card">
+      <sfeir-card>
+        <sfeir-card-title>Sfeir School: Module Directive</sfeir-card-title>
+        <sfeir-card-subtitle>session du {{ today | date: 'dd/MM/YYYY' }}</sfeir-card-subtitle>
+        <sfeir-card-content>
+          <div class="drag-drop-zone" sfeirDragAndDrop (ondrop)="dropFiles($event)">
+            drag and droppez vos fichiers ici
+            <ul class="list-files">
+              <li *ngFor="let item of files">
+                {{ item.name }}
+              </li>
+            </ul>
+            <mat-form-field style="width: 100%;">
+              <mat-label>Satisfaction de la school</mat-label>
+              <input matInput placeholder="Ex. Content" [type]="type" *sfeirSecret="let type" />
+            </mat-form-field>
+          </div>
+        </sfeir-card-content>
+        <sfeir-card-footer>Made with love by Nicolas Frizzarin</sfeir-card-footer>
+      </sfeir-card>
+    </div>
+  </section>
+</section>
