@@ -4,27 +4,16 @@
  */
 
 function introductionSlides() {
-  return [
-    'presentation/welcome_school.md',
-    'presentation/flow_school.md',
-  ];
-};
+  return ['presentation/welcome_school.md', 'presentation/flow_school.md'];
+}
 
 function speakerSlides() {
-  return [
-    'speaker/nicolas_frizzarin.md',
-    'speaker/bruno_bellenoue.md',
-  ];
-};
+  return ['speaker/nicolas_frizzarin.md', 'speaker/bruno_bellenoue.md', 'speaker/anthony_pena.md'];
+}
 
 function basicsSlides() {
-  return [
-    'basics/transition_slide.md',
-    'basics/environment_setup.md',
-    'basics/angular.md',
-    'basics/material.md'
-  ];
-};
+  return ['basics/transition_slide.md', 'basics/environment_setup.md', 'basics/angular.md', 'basics/material.md'];
+}
 
 function architectureSlides() {
   return [
@@ -36,15 +25,11 @@ function architectureSlides() {
     'architecture/webpack.md',
     'architecture/exercice.md',
   ];
-};
+}
 
 function cliSlides() {
-  return [
-    'cli/transition_slide.md',
-    'cli/commands.md',
-    'cli/exercice.md',
-  ];
-};
+  return ['cli/transition_slide.md', 'cli/commands.md', 'cli/exercice.md'];
+}
 
 function dataBindingSLides() {
   return [
@@ -54,30 +39,19 @@ function dataBindingSLides() {
     'databinding/reminder.md',
     'databinding/template_variable.md',
   ];
-};
+}
 
 function componentsSlides() {
-  return [
-    'components/transition_slide.md',
-    'components/concepts.md',
-    'components/exercice.md',
-  ];
-};
+  return ['components/transition_slide.md', 'components/concepts.md', 'components/exercice.md'];
+}
 
 function lifecycleSlides() {
-  return [
-    'lifecycle/transition_slide.md',
-    'lifecycle/hook_implementation.md',
-  ];
-};
+  return ['lifecycle/transition_slide.md', 'lifecycle/hook_implementation.md'];
+}
 
 function eventSlides() {
-  return [
-    'event/transition_slide.md',
-    'event/events.md',
-    'event/exercice.md',
-  ];
-};
+  return ['event/transition_slide.md', 'event/events.md', 'event/exercice.md'];
+}
 
 function serverCommunicationSLides() {
   return [
@@ -86,7 +60,7 @@ function serverCommunicationSLides() {
     'server-communication/usage.md',
     'server-communication/exercice.md',
   ];
-};
+}
 
 function navigationSlides() {
   return [
@@ -96,17 +70,13 @@ function navigationSlides() {
     'navigation/usage.md',
     'navigation/exercice.md',
   ];
-};
+}
 
 function basicsFunctionnalitiesSlides() {
-  return [
-    'functionnalities/transition_slide.md',
-    'functionnalities/loop.md',
-    'functionnalities/exercice.md',
-  ];
-};
+  return ['functionnalities/transition_slide.md', 'functionnalities/loop.md', 'functionnalities/exercice.md'];
+}
 
-function communicationSlides(){
+function communicationSlides() {
   return [
     'communication-component/transition_slide.md',
     'communication-component/input.md',
@@ -114,7 +84,7 @@ function communicationSlides(){
     'communication-component/output.md',
     'communication-component/exercice_output.md',
   ];
-};
+}
 
 export function dayOneSlides() {
   return [
@@ -132,4 +102,4 @@ export function dayOneSlides() {
     ...basicsFunctionnalitiesSlides(),
     ...communicationSlides(),
   ];
-};
+}

@@ -1,14 +1,14 @@
 <!-- .slide: class="speaker-slide red" -->
 
-![speaker](./assets/images/speaker/bruno-bellenoue/bruno.png)
+![speaker](./assets/images/speaker/anthony-pena/anthony.jpg)
 ![company](./assets/images/speaker/logo-sfeir-blanc.png)
 
-<h2>Bruno <span>BELLENOUE</span></h2>
+<h2>Anthony <span>Pena</span></h2>
 
-### Team Leader & Developer FullStack JS
+### Developer Web FullStack
 
 <!-- .element: class="icon-rule icon-first" -->
 
-### @BrunoBellenoue
+### @\_Anthony_Pena
 
 <!-- .element: class="icon-twitter icon-second" -->
