@@ -5,8 +5,7 @@ import { NaPipe } from './na.pipe';
 xdescribe('NaPipe', () => {
   it('create an instance', () => {
     const pipe = new NaPipe();
-    console.log(pipe);
-    expect(true).toBe(false);
+    expect(pipe).toBeTruthy();
   });
 
   describe('should return N/A...', () => {

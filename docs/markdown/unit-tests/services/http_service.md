@@ -2,18 +2,18 @@
 # Les services http
 
 Il faut importer le client Http d'Angular pour exécuter nos requêtes<br><br>
-- __HttpModule__ : qui va réaliser de vrais calls<br><br>
-- __HttpClientTestModule__ : qui ne vas pas réaliser de vrais calls, il faudra donc mocker la réponse
+- __HttpClientModule__ : qui va réaliser de vrais calls<br><br>
+- __HttpClientTestingModule__ : qui ne vas pas réaliser de vrais calls, il faudra donc mocker la réponse
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Test avec HttpModule
+# Test avec HttpClientModule
 
 ```typescript
 @Injectable()
 export class UserService {
-  constructor(private http:Http) { }
+  constructor(private http: HttpClient) {}
   
   getNameFromServer(){
     return this.http.get('api/users/123?info=username')
@@ -31,7 +31,7 @@ export class UserService {
 let service: UserService;
 beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [ HttpModule ],
+    imports: [ HttpClientModule ],
     providers: [ UserService ]
   })
   service = TestBed.inject(UserService);

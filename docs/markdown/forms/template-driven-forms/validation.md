@@ -5,6 +5,8 @@
     - required
     - minLength
     - maxLength
+    - pattern
+    - ...
 <br><br>
 
 Ok mais si un champ est requis en fonction d'un autre?

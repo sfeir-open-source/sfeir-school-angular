@@ -12,7 +12,7 @@
 ##==##
 
 <!-- .slide: class="exercice" -->
-# Exercice 17 : forms
+# Exercice 17 : form
 ## Exercice<br>
 
 - A l'aide du CLI, créer dans le dossier shared, le composant FormComponent

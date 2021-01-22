@@ -2,7 +2,8 @@
 # Exercice 24 : unit-tests
 ## Exercice<br>
 - Etudier et compléter les tests du pipe NaPipe<br><br>
-- Lancer vos tests à l'aide de la command: npm run test -- unit-tests
+- Lancer vos tests à l'aide de la command: <br>
+`npm run test -- 24-unit-tests`
 
 ##==##
 
