@@ -16,5 +16,8 @@
     "typeRoots": ["node_modules/@types"],
     "lib": ["es2018", "dom"],
     "module": "esnext"
+  },
+  "angularCompilerOptions": {
+    "strictTemplates": true
   }
 }
