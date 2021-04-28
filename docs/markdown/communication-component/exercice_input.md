@@ -20,7 +20,7 @@ Notes:
 ## Exercice<br>
 
 - Remplacer le template de PeopleComponent en utilisant CardComponent<br><br>
-- Indice: Pensez à utiliser la directive *ngFor pour répéter le composant CardComponent
+- Indice: Penser à utiliser la directive *ngFor pour répéter le composant CardComponent
 
 
 ##==##

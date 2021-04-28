@@ -3,10 +3,13 @@
 
 ```typescript
 const ROUTES: Routes = [
-{ path: '', redirectTo: 'home', pathMatch: 'full' },
-{ path: 'home', component: HomeComponent },
-{ path: 'people', loadChildren: () => import('./people/people.module').then(mod => mod.PeopleModule) }
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
+    { path: 'home', component: HomeComponent},
+    { path: 'login', loadChildren: () => import('./login/login.module').then(m => m.LoginModule) },
+    { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
+    { path: 'order', loadChildren: () => import('./order/order.module').then(m => m.AdminModule) }
 ];
+
 ```
 <!-- .element: class="big-code" -->
 Notes:

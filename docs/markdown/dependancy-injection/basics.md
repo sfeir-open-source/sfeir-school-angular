@@ -1,18 +1,15 @@
 <!-- .slide: class="with-code inconsolata" -->
-# Principe
-Pour une classe il y a 3 façons de gérer une dépendance:
+# Principe: Injection de dépendances
 
-- L'instancier avec le mot clé <b>new</b>
-- La récupérer de façon définie (variable global, singleton)
-- <b>Se la faire fournir</b> <br><br>
-
+- Pattern de développement pour qu’une classe <b>se fasse fournir</b> d’autres classes ou objets (appelés dépendances) de manière <b>externe</b> plutôt que de les instancier par elle-même.
+<br></br>
 ```typescript
 class Car {
-  constructor() {
-    this.engine = new Engine();
-    this.tires = Tires.getInstance();
-    this.doors = app.get('doors');
-  }
+    constructor() {
+      this.engine = new Engine();
+      this.tires = Tires.getInstance();
+      this.doors = app.get('doors');
+    }
 }
 ```
 <!-- .element: class="big-code" -->
@@ -21,6 +18,7 @@ class Car {
 <!-- .slide: class="with-code inconsolata" -->
 # L'injection en Angular (typescript)
 
+- Dans Angular, les dépendances déclarées dans une classe spécifique sont mises à disposition lors de <b>l'instanciation</b> cette classe. <br></br>
 ```typescript
 import { EngineService, TiresService, DoorsService } from './shared';
  @Component({...})

@@ -32,7 +32,7 @@ export class AppComponent {
 
 <!-- .slide: class="with-code inconsolata" -->
 # Le composant: son affichage
-L'affichage du composant dans la page se fait à l'aide des annotations
+L'affichage du composant dans la page se fait à l'aide d'annotations
 <br><br>
 ```typescript
 @Component({

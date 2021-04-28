@@ -6,9 +6,9 @@
 <!-- .slide -->
 # Host binding définition
 
-- Permet de setter une proprité sur l'élement courant de la directive<br><br>
+- Permet de setter une propriété sur l'élément courant de la directive<br><br>
 - Décorateur @HostBinding()<br><br>
-- Watcher sur les propriété du host et mise à jour automatique
+- Watcher sur les propriétés du host et mise à jour automatique
 
 ##==##
 
@@ -25,4 +25,4 @@ class NgModelStatus {
 ```
 <!-- .element: class="big-code" -->
 Notes:
-- ici set la propriété class à valid si le control est valide ou invalid si le control est invalid
+- ici set la propriété class à valid si le control est valide ou invalid si le control est invalide

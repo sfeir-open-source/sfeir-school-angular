@@ -34,7 +34,10 @@
 # Le binding en Angular
 
 ```html
-<div><input type="text" name="myName" [(ngModel)]="myName" /> <span>Bonjour {{ myName }}</span></div>
+<div>
+    <input type="text" name="myName" [(ngModel)]="myName" /> 
+    <span>Bonjour {{ myName }}</span>
+</div>
 ```
 
 <!-- .element: class="big-code" -->

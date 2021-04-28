@@ -80,8 +80,8 @@ export class MyDirective {
 
 # Comment intéragir avec les éléments du DOM
 
--   ElementRef (service) permet de récupérer directement l'élément sur lequel agit la directive
--   Renderer2 (service) permet d'intéragir avec le DOM<br><br>
+-   ElementRef (injectable) permet de récupérer directement l'élément sur lequel agit la directive
+-   Renderer2 (injectable) permet d'intéragir avec le DOM<br><br>
 
 ```typescript
 import { Directive, ElementRef, Renderer2 } from '@angular/core';
