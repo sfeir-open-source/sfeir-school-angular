@@ -51,15 +51,15 @@
         </tr>
          <tr>
             <th>local</th>
-            <th>variable local utilisé dans le template</th>
+            <th>variable locale utilisée dans le template</th>
         </tr>
          <tr>
             <th>export</th>
-            <th>vairable exporté par la directive sous un certain nom</th>
+            <th>variable exportée par la directive sous un certain nom</th>
         </tr>
          <tr>
             <th>expression</th>
-            <th>expression standart angular</th>
+            <th>expression standard angular</th>
         </tr>
     </t-body>
 </table>

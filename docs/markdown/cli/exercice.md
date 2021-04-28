@@ -3,7 +3,7 @@
 ## Exercice
 En utilsant le CLI <br><br>
 - Créer le composant HomeComponent
-- Examiner les fichier générés
+- Examiner les fichiers générés
 - Compléter les fichiers, afin d'afficher la chaîne Hello {{ name }}
 Notes:
 - La commande à taper est la suivante. Placez vous dans le dossier steps/ngg puis ng g c ./src/app/home --module ./src/app (utilise le cli installé en global)

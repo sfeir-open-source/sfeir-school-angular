@@ -2,16 +2,17 @@
 # Définiton dans les routes dans le module enfant
 
 ```typescript
-const peopleModuleRoutes: Routes = [
-{ path: '', component: PeopleComponent },
-{ path: ':id', component: ConsultPersonComponent },
-{ path: 'update/:id', component: EditPersonComponent}];
+const adminRoutes: Routes = [
+  { path: '', component: AdminComponent },
+  { path: 'dashboard', loadChildren: () => import('./admin-dashboard/admin-dashboard.module').then(m => m.AdminDashboardModule) },
+  { path: 'users', loadChildren: () => import('./admin-users/admin-users.module').then(m => m.AdminUsersModule) }
+  ];
 
 @NgModule({
-  imports: [RouterModule.forChild(peopleModuleRoutes)],
-  declarations: [PeopleComponent, ConsultPersonComponent, EditPersonComponent]
+  imports: [RouterModule.forChild(adminRoutes)],
+  declarations: [AdminComponent]
 })
-export class PeopleModule {}
+export class AdminModule {}
 ```
 
 

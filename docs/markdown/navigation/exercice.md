@@ -3,7 +3,7 @@
 ## Exercice<br>
 
 - Compléter le fichier app.routes.ts<br><br>
-- Importer le balise <router-outlet><router-outlet> dans le fichier app.component.html
+- Importer la balise <router-outlet><router-outlet> dans le fichier app.component.html
 
 ##==##
 

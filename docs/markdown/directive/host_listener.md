@@ -8,7 +8,7 @@
 
 # Host Listener: définition
 
-- Permet d'écouter un event du DOM et d'appeler un callback <br><br>
+- Permet d'écouter un événement du DOM et d'appeler un callback <br><br>
 - Décorateur @HostListener()
 
 ##==##

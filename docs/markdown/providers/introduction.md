@@ -6,7 +6,7 @@
 
 ```typescript
 @Injectable({
-    provideIn: AdminModule
+    providedIn: AppModule
 })
 export class TodoService {
     constructor() {
@@ -23,7 +23,7 @@ export class TodoService {
 
 Notes:
 
--   Ici on enregistre directement dans notre module AdminModule (penser à l'import sinon il y aura une erreur)
+-   Ici on enregistre directement dans notre module AppModule (penser à l'import sinon il y aura une erreur)
 -   Angular 9 propose le providedIn: any qui enregistre un service par module lazy loader (attention dans ce cas plusieurs instances)
 
 ##==##

@@ -90,7 +90,7 @@ Notes:
 
 ```html
 <form [formGroup]="editForm" (ngSumit)="submitEditForm(editForm.value)">
-    <div [formGroupName]="address">
+    <div formGroupName="address">
         <input formControlName="zipCode" type="text" />
         <input formControlName="country" type="text" />
     </div>

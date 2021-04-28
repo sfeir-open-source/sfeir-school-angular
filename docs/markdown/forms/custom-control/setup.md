@@ -63,8 +63,8 @@ Notes:
 
 # WriteValue: modèle -> vue
 
--   Ecrit une valeur dans l'élement. Cette méthode est appelée:
-    -   lors de l'instanciation d'un nouveeau FormControl
+-   Ecrit une valeur dans l'élément. Cette méthode est appelée :
+    -   lors de l'instanciation d'un nouveau FormControl
     -   quand on appelle la méthode patchValue/setValue
 
 ##==##

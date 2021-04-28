@@ -17,7 +17,7 @@
 
 # Angular et les propriétés
 
--   Un monde sans attributs<br><br>
+-   Un monde sans attribut<br><br>
 -   Avec le binding, nous travaillons uniquement sur les propriétés<br><br>
 
 ```html

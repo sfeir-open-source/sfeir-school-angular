@@ -1,4 +1,5 @@
-<!-- .slide: class="no-title-margin" -->
+<!-- .slide -->
+
 # Les différents types de binding
 
 <table>
@@ -125,7 +126,8 @@
 -   Constant
 
 ```html
-<show-title [title]="'My title'"></show-title> <show-title title="My title"></show-title>
+<show-title [title]="'My title'"></show-title> 
+<show-title title="My title"></show-title>
 ```
 
 <!-- .element: class="medium-code" -->
