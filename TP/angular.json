@@ -11,7 +11,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "aot": true,
             "outputPath": "dist",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -19,7 +18,13 @@
             "polyfills": "src/polyfills.ts",
             "assets": ["src/assets", "src/favicon.ico"],
             "styles": ["src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -33,7 +38,6 @@
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -115,7 +119,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "aot": true,
             "outputPath": "dist/01-hands-on",
             "index": "steps/01-hands-on/src/index.html",
             "main": "steps/01-hands-on/src/main.ts",
@@ -123,7 +126,13 @@
             "tsConfig": "steps/01-hands-on/tsconfig.app.json",
             "assets": ["steps/01-hands-on/src/favicon.ico", "steps/01-hands-on/src/assets"],
             "styles": ["steps/01-hands-on/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -137,7 +146,6 @@
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -203,7 +211,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "aot": true,
             "outputPath": "dist/01-hands-on-solution",
             "index": "steps/01-hands-on-solution/src/index.html",
             "main": "steps/01-hands-on-solution/src/main.ts",
@@ -211,7 +218,13 @@
             "tsConfig": "steps/01-hands-on-solution/tsconfig.app.json",
             "assets": ["steps/01-hands-on-solution/src/favicon.ico", "steps/01-hands-on-solution/src/assets"],
             "styles": ["steps/01-hands-on-solution/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -225,7 +238,6 @@
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -291,7 +303,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "aot": true,
             "outputPath": "dist/02-ngg",
             "index": "steps/02-ngg/src/index.html",
             "main": "steps/02-ngg/src/main.ts",
@@ -299,7 +310,13 @@
             "tsConfig": "steps/02-ngg/tsconfig.app.json",
             "assets": ["steps/02-ngg/src/favicon.ico", "steps/02-ngg/src/assets"],
             "styles": ["steps/02-ngg/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -313,7 +330,6 @@
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -379,7 +395,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "aot": true,
             "outputPath": "dist/02-ngg-solution",
             "index": "steps/02-ngg-solution/src/index.html",
             "main": "steps/02-ngg-solution/src/main.ts",
@@ -387,7 +402,13 @@
             "tsConfig": "steps/02-ngg-solution/tsconfig.app.json",
             "assets": ["steps/02-ngg-solution/src/favicon.ico", "steps/02-ngg-solution/src/assets"],
             "styles": ["steps/02-ngg-solution/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -401,7 +422,6 @@
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -467,7 +487,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "aot": true,
             "outputPath": "dist/03-cpt-hierarchy",
             "index": "steps/03-cpt-hierarchy/src/index.html",
             "main": "steps/03-cpt-hierarchy/src/main.ts",
@@ -475,7 +494,13 @@
             "tsConfig": "steps/03-cpt-hierarchy/tsconfig.app.json",
             "assets": ["steps/03-cpt-hierarchy/src/favicon.ico", "steps/03-cpt-hierarchy/src/assets"],
             "styles": ["steps/03-cpt-hierarchy/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -489,7 +514,6 @@
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -555,7 +579,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "aot": true,
             "outputPath": "dist/03-cpt-hierarchy-solution",
             "index": "steps/03-cpt-hierarchy-solution/src/index.html",
             "main": "steps/03-cpt-hierarchy-solution/src/main.ts",
@@ -563,7 +586,13 @@
             "tsConfig": "steps/03-cpt-hierarchy-solution/tsconfig.app.json",
             "assets": ["steps/03-cpt-hierarchy-solution/src/favicon.ico", "steps/03-cpt-hierarchy-solution/src/assets"],
             "styles": ["steps/03-cpt-hierarchy-solution/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -577,7 +606,6 @@
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -643,7 +671,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "aot": true,
             "outputPath": "dist/04-binding",
             "index": "steps/04-binding/src/index.html",
             "main": "steps/04-binding/src/main.ts",
@@ -651,7 +678,13 @@
             "tsConfig": "steps/04-binding/tsconfig.app.json",
             "assets": ["steps/04-binding/src/favicon.ico", "steps/04-binding/src/assets"],
             "styles": ["steps/04-binding/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -665,7 +698,6 @@
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -731,7 +763,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "aot": true,
             "outputPath": "dist/04-binding-solution",
             "index": "steps/04-binding-solution/src/index.html",
             "main": "steps/04-binding-solution/src/main.ts",
@@ -739,7 +770,13 @@
             "tsConfig": "steps/04-binding-solution/tsconfig.app.json",
             "assets": ["steps/04-binding-solution/src/favicon.ico", "steps/04-binding-solution/src/assets"],
             "styles": ["steps/04-binding-solution/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -753,7 +790,6 @@
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -819,7 +855,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "aot": true,
             "outputPath": "dist/05-events",
             "index": "steps/05-events/src/index.html",
             "main": "steps/05-events/src/main.ts",
@@ -827,7 +862,13 @@
             "tsConfig": "steps/05-events/tsconfig.app.json",
             "assets": ["steps/05-events/src/favicon.ico", "steps/05-events/src/assets"],
             "styles": ["steps/05-events/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -841,7 +882,6 @@
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -907,7 +947,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "aot": true,
             "outputPath": "dist/05-events-solution",
             "index": "steps/05-events-solution/src/index.html",
             "main": "steps/05-events-solution/src/main.ts",
@@ -915,7 +954,13 @@
             "tsConfig": "steps/05-events-solution/tsconfig.app.json",
             "assets": ["steps/05-events-solution/src/favicon.ico", "steps/05-events-solution/src/assets"],
             "styles": ["steps/05-events-solution/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -929,7 +974,6 @@
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -995,7 +1039,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "aot": true,
             "outputPath": "dist/06-http",
             "index": "steps/06-http/src/index.html",
             "main": "steps/06-http/src/main.ts",
@@ -1003,7 +1046,13 @@
             "tsConfig": "steps/06-http/tsconfig.app.json",
             "assets": ["steps/06-http/src/favicon.ico", "steps/06-http/src/assets"],
             "styles": ["steps/06-http/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -1017,7 +1066,6 @@
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -1083,7 +1131,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "aot": true,
             "outputPath": "dist/06-http-solution",
             "index": "steps/06-http-solution/src/index.html",
             "main": "steps/06-http-solution/src/main.ts",
@@ -1091,7 +1138,13 @@
             "tsConfig": "steps/06-http-solution/tsconfig.app.json",
             "assets": ["steps/06-http-solution/src/favicon.ico", "steps/06-http-solution/src/assets"],
             "styles": ["steps/06-http-solution/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -1105,7 +1158,6 @@
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -1171,7 +1223,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "aot": true,
             "outputPath": "dist/07-router",
             "index": "steps/07-router/src/index.html",
             "main": "steps/07-router/src/main.ts",
@@ -1179,7 +1230,13 @@
             "tsConfig": "steps/07-router/tsconfig.app.json",
             "assets": ["steps/07-router/src/favicon.ico", "steps/07-router/src/assets"],
             "styles": ["steps/07-router/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -1193,7 +1250,6 @@
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -1259,7 +1315,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "aot": true,
             "outputPath": "dist/07-router-solution",
             "index": "steps/07-router-solution/src/index.html",
             "main": "steps/07-router-solution/src/main.ts",
@@ -1267,7 +1322,13 @@
             "tsConfig": "steps/07-router-solution/tsconfig.app.json",
             "assets": ["steps/07-router-solution/src/favicon.ico", "steps/07-router-solution/src/assets"],
             "styles": ["steps/07-router-solution/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -1281,7 +1342,6 @@
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -1347,7 +1407,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "aot": true,
             "outputPath": "dist/25-router-lazyloading-guard",
             "index": "steps/25-router-lazyloading-guard/src/index.html",
             "main": "steps/25-router-lazyloading-guard/src/main.ts",
@@ -1358,7 +1417,13 @@
               "steps/25-router-lazyloading-guard/src/assets"
             ],
             "styles": ["steps/25-router-lazyloading-guard/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -1372,7 +1437,6 @@
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -1441,7 +1505,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "aot": true,
             "outputPath": "dist/25-router-lazyloading-guard-solution",
             "index": "steps/25-router-lazyloading-guard-solution/src/index.html",
             "main": "steps/25-router-lazyloading-guard-solution/src/main.ts",
@@ -1452,7 +1515,13 @@
               "steps/25-router-lazyloading-guard-solution/src/assets"
             ],
             "styles": ["steps/25-router-lazyloading-guard-solution/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -1466,7 +1535,6 @@
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -1535,7 +1603,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "aot": true,
             "outputPath": "dist/08-ngfor",
             "index": "steps/08-ngfor/src/index.html",
             "main": "steps/08-ngfor/src/main.ts",
@@ -1543,7 +1610,13 @@
             "tsConfig": "steps/08-ngfor/tsconfig.app.json",
             "assets": ["steps/08-ngfor/src/favicon.ico", "steps/08-ngfor/src/assets"],
             "styles": ["steps/08-ngfor/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -1557,7 +1630,6 @@
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -1623,7 +1695,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "aot": true,
             "outputPath": "dist/08-ngfor-solution",
             "index": "steps/08-ngfor-solution/src/index.html",
             "main": "steps/08-ngfor-solution/src/main.ts",
@@ -1631,7 +1702,13 @@
             "tsConfig": "steps/08-ngfor-solution/tsconfig.app.json",
             "assets": ["steps/08-ngfor-solution/src/favicon.ico", "steps/08-ngfor-solution/src/assets"],
             "styles": ["steps/08-ngfor-solution/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -1645,7 +1722,6 @@
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -1711,7 +1787,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "aot": true,
             "outputPath": "dist/09-input",
             "index": "steps/09-input/src/index.html",
             "main": "steps/09-input/src/main.ts",
@@ -1719,7 +1794,13 @@
             "tsConfig": "steps/09-input/tsconfig.app.json",
             "assets": ["steps/09-input/src/favicon.ico", "steps/09-input/src/assets"],
             "styles": ["steps/09-input/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -1733,7 +1814,6 @@
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -1799,7 +1879,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "aot": true,
             "outputPath": "dist/09-input-solution",
             "index": "steps/09-input-solution/src/index.html",
             "main": "steps/09-input-solution/src/main.ts",
@@ -1807,7 +1886,13 @@
             "tsConfig": "steps/09-input-solution/tsconfig.app.json",
             "assets": ["steps/09-input-solution/src/favicon.ico", "steps/09-input-solution/src/assets"],
             "styles": ["steps/09-input-solution/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -1821,7 +1906,6 @@
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -1887,7 +1971,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "aot": true,
             "outputPath": "dist/10-input-b",
             "index": "steps/10-input-b/src/index.html",
             "main": "steps/10-input-b/src/main.ts",
@@ -1895,7 +1978,13 @@
             "tsConfig": "steps/10-input-b/tsconfig.app.json",
             "assets": ["steps/10-input-b/src/favicon.ico", "steps/10-input-b/src/assets"],
             "styles": ["steps/10-input-b/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -1909,7 +1998,6 @@
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -1975,7 +2063,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "aot": true,
             "outputPath": "dist/11-output",
             "index": "steps/11-output/src/index.html",
             "main": "steps/11-output/src/main.ts",
@@ -1983,7 +2070,13 @@
             "tsConfig": "steps/11-output/tsconfig.app.json",
             "assets": ["steps/11-output/src/favicon.ico", "steps/11-output/src/assets"],
             "styles": ["steps/11-output/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -1997,7 +2090,6 @@
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -2063,7 +2155,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "aot": true,
             "outputPath": "dist/11-output-solution",
             "index": "steps/11-output-solution/src/index.html",
             "main": "steps/11-output-solution/src/main.ts",
@@ -2071,7 +2162,13 @@
             "tsConfig": "steps/11-output-solution/tsconfig.app.json",
             "assets": ["steps/11-output-solution/src/favicon.ico", "steps/11-output-solution/src/assets"],
             "styles": ["steps/11-output-solution/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -2085,7 +2182,6 @@
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -2151,7 +2247,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "aot": true,
             "outputPath": "dist/17-form",
             "index": "steps/17-form/src/index.html",
             "main": "steps/17-form/src/main.ts",
@@ -2159,7 +2254,13 @@
             "tsConfig": "steps/17-form/tsconfig.app.json",
             "assets": ["steps/17-form/src/favicon.ico", "steps/17-form/src/assets"],
             "styles": ["steps/17-form/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -2173,7 +2274,6 @@
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -2239,7 +2339,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "aot": true,
             "outputPath": "dist/17-form-solution",
             "index": "steps/17-form-solution/src/index.html",
             "main": "steps/17-form-solution/src/main.ts",
@@ -2247,7 +2346,13 @@
             "tsConfig": "steps/17-form-solution/tsconfig.app.json",
             "assets": ["steps/17-form-solution/src/favicon.ico", "steps/17-form-solution/src/assets"],
             "styles": ["steps/17-form-solution/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -2261,7 +2366,6 @@
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -2327,7 +2431,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "aot": true,
             "outputPath": "dist/18-form-b",
             "index": "steps/18-form-b/src/index.html",
             "main": "steps/18-form-b/src/main.ts",
@@ -2335,7 +2438,13 @@
             "tsConfig": "steps/18-form-b/tsconfig.app.json",
             "assets": ["steps/18-form-b/src/favicon.ico", "steps/18-form-b/src/assets"],
             "styles": ["steps/18-form-b/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -2349,7 +2458,6 @@
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -2415,7 +2523,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "aot": true,
             "outputPath": "dist/18-form-b-solution",
             "index": "steps/18-form-b-solution/src/index.html",
             "main": "steps/18-form-b-solution/src/main.ts",
@@ -2423,7 +2530,13 @@
             "tsConfig": "steps/18-form-b-solution/tsconfig.app.json",
             "assets": ["steps/18-form-b-solution/src/favicon.ico", "steps/18-form-b-solution/src/assets"],
             "styles": ["steps/18-form-b-solution/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -2437,7 +2550,6 @@
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -2503,7 +2615,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "aot": true,
             "outputPath": "dist/19-form-validation",
             "index": "steps/19-form-validation/src/index.html",
             "main": "steps/19-form-validation/src/main.ts",
@@ -2511,7 +2622,13 @@
             "tsConfig": "steps/19-form-validation/tsconfig.app.json",
             "assets": ["steps/19-form-validation/src/favicon.ico", "steps/19-form-validation/src/assets"],
             "styles": ["steps/19-form-validation/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -2525,7 +2642,6 @@
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -2591,7 +2707,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "aot": true,
             "outputPath": "dist/19-form-validation-solution",
             "index": "steps/19-form-validation-solution/src/index.html",
             "main": "steps/19-form-validation-solution/src/main.ts",
@@ -2602,7 +2717,13 @@
               "steps/19-form-validation-solution/src/assets"
             ],
             "styles": ["steps/19-form-validation-solution/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -2616,7 +2737,6 @@
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -2688,7 +2808,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "aot": true,
             "outputPath": "dist/20-form-model-driven",
             "index": "steps/20-form-model-driven/src/index.html",
             "main": "steps/20-form-model-driven/src/main.ts",
@@ -2696,7 +2815,13 @@
             "tsConfig": "steps/20-form-model-driven/tsconfig.app.json",
             "assets": ["steps/20-form-model-driven/src/favicon.ico", "steps/20-form-model-driven/src/assets"],
             "styles": ["steps/20-form-model-driven/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -2710,7 +2835,6 @@
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -2779,7 +2903,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "aot": true,
             "outputPath": "dist/20-form-model-driven-solution",
             "index": "steps/20-form-model-driven-solution/src/index.html",
             "main": "steps/20-form-model-driven-solution/src/main.ts",
@@ -2790,7 +2913,13 @@
               "steps/20-form-model-driven-solution/src/assets"
             ],
             "styles": ["steps/20-form-model-driven-solution/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -2804,7 +2933,6 @@
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -2876,7 +3004,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "aot": true,
             "outputPath": "dist/21-form-custom-validator",
             "index": "steps/21-form-custom-validator/src/index.html",
             "main": "steps/21-form-custom-validator/src/main.ts",
@@ -2884,7 +3011,13 @@
             "tsConfig": "steps/21-form-custom-validator/tsconfig.app.json",
             "assets": ["steps/21-form-custom-validator/src/favicon.ico", "steps/21-form-custom-validator/src/assets"],
             "styles": ["steps/21-form-custom-validator/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -2898,7 +3031,6 @@
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -2967,7 +3099,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "aot": true,
             "outputPath": "dist/21-form-custom-validator-solution",
             "index": "steps/21-form-custom-validator-solution/src/index.html",
             "main": "steps/21-form-custom-validator-solution/src/main.ts",
@@ -2978,7 +3109,13 @@
               "steps/21-form-custom-validator-solution/src/assets"
             ],
             "styles": ["steps/21-form-custom-validator-solution/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -2992,7 +3129,6 @@
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -3064,7 +3200,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "aot": true,
             "outputPath": "dist/12-service",
             "index": "steps/12-service/src/index.html",
             "main": "steps/12-service/src/main.ts",
@@ -3072,7 +3207,13 @@
             "tsConfig": "steps/12-service/tsconfig.app.json",
             "assets": ["steps/12-service/src/favicon.ico", "steps/12-service/src/assets"],
             "styles": ["steps/12-service/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -3086,7 +3227,6 @@
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -3152,7 +3292,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "aot": true,
             "outputPath": "dist/12-service-solution",
             "index": "steps/12-service-solution/src/index.html",
             "main": "steps/12-service-solution/src/main.ts",
@@ -3160,7 +3299,13 @@
             "tsConfig": "steps/12-service-solution/tsconfig.app.json",
             "assets": ["steps/12-service-solution/src/favicon.ico", "steps/12-service-solution/src/assets"],
             "styles": ["steps/12-service-solution/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -3174,7 +3319,6 @@
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -3240,7 +3384,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "aot": true,
             "outputPath": "dist/13-pipe",
             "index": "steps/13-pipe/src/index.html",
             "main": "steps/13-pipe/src/main.ts",
@@ -3248,7 +3391,13 @@
             "tsConfig": "steps/13-pipe/tsconfig.app.json",
             "assets": ["steps/13-pipe/src/favicon.ico", "steps/13-pipe/src/assets"],
             "styles": ["steps/13-pipe/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -3262,7 +3411,6 @@
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -3328,7 +3476,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "aot": true,
             "outputPath": "dist/13-pipe-solution",
             "index": "steps/13-pipe-solution/src/index.html",
             "main": "steps/13-pipe-solution/src/main.ts",
@@ -3336,7 +3483,13 @@
             "tsConfig": "steps/13-pipe-solution/tsconfig.app.json",
             "assets": ["steps/13-pipe-solution/src/favicon.ico", "steps/13-pipe-solution/src/assets"],
             "styles": ["steps/13-pipe-solution/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -3350,7 +3503,6 @@
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -3416,7 +3568,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "aot": true,
             "outputPath": "dist/14-pipe-b",
             "index": "steps/14-pipe-b/src/index.html",
             "main": "steps/14-pipe-b/src/main.ts",
@@ -3424,7 +3575,13 @@
             "tsConfig": "steps/14-pipe-b/tsconfig.app.json",
             "assets": ["steps/14-pipe-b/src/favicon.ico", "steps/14-pipe-b/src/assets"],
             "styles": ["steps/14-pipe-b/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -3438,7 +3595,6 @@
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -3504,7 +3660,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "aot": true,
             "outputPath": "dist/14-pipe-b-solution",
             "index": "steps/14-pipe-b-solution/src/index.html",
             "main": "steps/14-pipe-b-solution/src/main.ts",
@@ -3512,7 +3667,13 @@
             "tsConfig": "steps/14-pipe-b-solution/tsconfig.app.json",
             "assets": ["steps/14-pipe-b-solution/src/favicon.ico", "steps/14-pipe-b-solution/src/assets"],
             "styles": ["steps/14-pipe-b-solution/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -3526,7 +3687,6 @@
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -3592,7 +3752,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "aot": true,
             "outputPath": "dist/15-directive-use",
             "index": "steps/15-directive-use/src/index.html",
             "main": "steps/15-directive-use/src/main.ts",
@@ -3600,7 +3759,13 @@
             "tsConfig": "steps/15-directive-use/tsconfig.app.json",
             "assets": ["steps/15-directive-use/src/favicon.ico", "steps/15-directive-use/src/assets"],
             "styles": ["steps/15-directive-use/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -3614,7 +3779,6 @@
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -3680,7 +3844,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "aot": true,
             "outputPath": "dist/15-directive-use-solution",
             "index": "steps/15-directive-use-solution/src/index.html",
             "main": "steps/15-directive-use-solution/src/main.ts",
@@ -3688,7 +3851,13 @@
             "tsConfig": "steps/15-directive-use-solution/tsconfig.app.json",
             "assets": ["steps/15-directive-use-solution/src/favicon.ico", "steps/15-directive-use-solution/src/assets"],
             "styles": ["steps/15-directive-use-solution/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -3702,7 +3871,6 @@
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -3771,7 +3939,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "aot": true,
             "outputPath": "dist/16-directive-create",
             "index": "steps/16-directive-create/src/index.html",
             "main": "steps/16-directive-create/src/main.ts",
@@ -3779,7 +3946,13 @@
             "tsConfig": "steps/16-directive-create/tsconfig.app.json",
             "assets": ["steps/16-directive-create/src/favicon.ico", "steps/16-directive-create/src/assets"],
             "styles": ["steps/16-directive-create/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -3793,7 +3966,6 @@
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -3859,7 +4031,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "aot": true,
             "outputPath": "dist/16-directive-create-solution",
             "index": "steps/16-directive-create-solution/src/index.html",
             "main": "steps/16-directive-create-solution/src/main.ts",
@@ -3870,7 +4041,13 @@
               "steps/16-directive-create-solution/src/assets"
             ],
             "styles": ["steps/16-directive-create-solution/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -3884,7 +4061,6 @@
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -3956,7 +4132,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "aot": true,
             "outputPath": "dist/10-input-b-solution",
             "index": "steps/10-input-b-solution/src/index.html",
             "main": "steps/10-input-b-solution/src/main.ts",
@@ -3964,7 +4139,13 @@
             "tsConfig": "steps/10-input-b-solution/tsconfig.app.json",
             "assets": ["steps/10-input-b-solution/src/favicon.ico", "steps/10-input-b-solution/src/assets"],
             "styles": ["steps/10-input-b-solution/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -3978,7 +4159,6 @@
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -4044,7 +4224,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "aot": true,
             "outputPath": "dist/pipe-demo",
             "index": "steps/pipe-demo/src/index.html",
             "main": "steps/pipe-demo/src/main.ts",
@@ -4052,7 +4231,13 @@
             "tsConfig": "steps/pipe-demo/tsconfig.app.json",
             "assets": ["steps/pipe-demo/src/favicon.ico", "steps/pipe-demo/src/assets"],
             "styles": ["steps/pipe-demo/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -4066,7 +4251,6 @@
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -4132,7 +4316,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "aot": true,
             "outputPath": "dist/24-unit-tests",
             "index": "steps/24-unit-tests/src/index.html",
             "main": "steps/24-unit-tests/src/main.ts",
@@ -4140,7 +4323,13 @@
             "tsConfig": "steps/24-unit-tests/tsconfig.app.json",
             "assets": ["steps/24-unit-tests/src/favicon.ico", "steps/24-unit-tests/src/assets"],
             "styles": ["steps/24-unit-tests/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -4154,7 +4343,6 @@
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -4220,7 +4408,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "aot": true,
             "outputPath": "dist/24-unit-tests-solution",
             "index": "steps/24-unit-tests-solution/src/index.html",
             "main": "steps/24-unit-tests-solution/src/main.ts",
@@ -4228,7 +4415,13 @@
             "tsConfig": "steps/24-unit-tests-solution/tsconfig.app.json",
             "assets": ["steps/24-unit-tests-solution/src/favicon.ico", "steps/24-unit-tests-solution/src/assets"],
             "styles": ["steps/24-unit-tests-solution/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -4242,7 +4435,6 @@
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -4311,7 +4503,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "aot": true,
             "outputPath": "dist/22-ngxs",
             "index": "steps/22-ngxs/src/index.html",
             "main": "steps/22-ngxs/src/main.ts",
@@ -4319,7 +4510,13 @@
             "tsConfig": "steps/22-ngxs/tsconfig.app.json",
             "assets": ["steps/22-ngxs/src/favicon.ico", "steps/22-ngxs/src/assets"],
             "styles": ["steps/22-ngxs/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -4333,7 +4530,6 @@
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -4399,7 +4595,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "aot": true,
             "outputPath": "dist/22-ngxs-solution",
             "index": "steps/22-ngxs-solution/src/index.html",
             "main": "steps/22-ngxs-solution/src/main.ts",
@@ -4407,7 +4602,13 @@
             "tsConfig": "steps/22-ngxs-solution/tsconfig.app.json",
             "assets": ["steps/22-ngxs-solution/src/favicon.ico", "steps/22-ngxs-solution/src/assets"],
             "styles": ["steps/22-ngxs-solution/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -4421,7 +4622,6 @@
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -4487,7 +4687,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "aot": true,
             "outputPath": "dist/23-ngrx",
             "index": "steps/23-ngrx/src/index.html",
             "main": "steps/23-ngrx/src/main.ts",
@@ -4495,7 +4694,13 @@
             "tsConfig": "steps/23-ngrx/tsconfig.app.json",
             "assets": ["steps/23-ngrx/src/favicon.ico", "steps/23-ngrx/src/assets"],
             "styles": ["steps/23-ngrx/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -4509,7 +4714,6 @@
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -4575,7 +4779,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "aot": true,
             "outputPath": "dist/23-ngrx-solution",
             "index": "steps/23-ngrx-solution/src/index.html",
             "main": "steps/23-ngrx-solution/src/main.ts",
@@ -4583,7 +4786,13 @@
             "tsConfig": "steps/23-ngrx-solution/tsconfig.app.json",
             "assets": ["steps/23-ngrx-solution/src/favicon.ico", "steps/23-ngrx-solution/src/assets"],
             "styles": ["steps/23-ngrx-solution/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -4597,7 +4806,6 @@
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -4668,10 +4876,15 @@
             "main": "steps/26-resolvers/src/main.ts",
             "polyfills": "steps/26-resolvers/src/polyfills.ts",
             "tsConfig": "steps/26-resolvers/tsconfig.app.json",
-            "aot": true,
             "assets": ["steps/26-resolvers/src/favicon.ico", "steps/26-resolvers/src/assets"],
             "styles": ["steps/26-resolvers/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -4772,10 +4985,15 @@
             "main": "steps/26-resolvers-solution/src/main.ts",
             "polyfills": "steps/26-resolvers-solution/src/polyfills.ts",
             "tsConfig": "steps/26-resolvers-solution/tsconfig.app.json",
-            "aot": true,
             "assets": ["steps/26-resolvers-solution/src/favicon.ico", "steps/26-resolvers-solution/src/assets"],
             "styles": ["steps/26-resolvers-solution/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -4876,10 +5094,15 @@
             "main": "steps/28-templating/src/main.ts",
             "polyfills": "steps/28-templating/src/polyfills.ts",
             "tsConfig": "steps/28-templating/tsconfig.app.json",
-            "aot": true,
             "assets": ["steps/28-templating/src/favicon.ico", "steps/28-templating/src/assets"],
             "styles": ["steps/28-templating/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -4957,10 +5180,15 @@
             "main": "steps/28-templating-solution/src/main.ts",
             "polyfills": "steps/28-templating-solution/src/polyfills.ts",
             "tsConfig": "steps/28-templating-solution/tsconfig.app.json",
-            "aot": true,
             "assets": ["steps/28-templating-solution/src/favicon.ico", "steps/28-templating-solution/src/assets"],
             "styles": ["steps/28-templating-solution/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -5038,10 +5266,15 @@
             "main": "steps/27-interceptors/src/main.ts",
             "polyfills": "steps/27-interceptors/src/polyfills.ts",
             "tsConfig": "steps/27-interceptors/tsconfig.app.json",
-            "aot": true,
             "assets": ["steps/27-interceptors/src/favicon.ico", "steps/27-interceptors/src/assets"],
             "styles": ["steps/27-interceptors/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -5119,10 +5352,15 @@
             "main": "steps/27-interceptors-solution/src/main.ts",
             "polyfills": "steps/27-interceptors-solution/src/polyfills.ts",
             "tsConfig": "steps/27-interceptors-solution/tsconfig.app.json",
-            "aot": true,
             "assets": ["steps/27-interceptors-solution/src/favicon.ico", "steps/27-interceptors-solution/src/assets"],
             "styles": ["steps/27-interceptors-solution/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -5200,10 +5438,15 @@
             "main": "steps/29-hostbinding/src/main.ts",
             "polyfills": "steps/29-hostbinding/src/polyfills.ts",
             "tsConfig": "steps/29-hostbinding/tsconfig.app.json",
-            "aot": true,
             "assets": ["steps/29-hostbinding/src/favicon.ico", "steps/29-hostbinding/src/assets"],
             "styles": ["steps/29-hostbinding/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -5281,10 +5524,15 @@
             "main": "steps/29-hostbinding-solution/src/main.ts",
             "polyfills": "steps/29-hostbinding-solution/src/polyfills.ts",
             "tsConfig": "steps/29-hostbinding-solution/tsconfig.app.json",
-            "aot": true,
             "assets": ["steps/29-hostbinding-solution/src/favicon.ico", "steps/29-hostbinding-solution/src/assets"],
             "styles": ["steps/29-hostbinding-solution/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -5362,10 +5610,15 @@
             "main": "steps/30-custom-control/src/main.ts",
             "polyfills": "steps/30-custom-control/src/polyfills.ts",
             "tsConfig": "steps/30-custom-control/tsconfig.app.json",
-            "aot": true,
             "assets": ["steps/30-custom-control/src/favicon.ico", "steps/30-custom-control/src/assets"],
             "styles": ["steps/30-custom-control/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -5443,13 +5696,18 @@
             "main": "steps/30-custom-control-solution/src/main.ts",
             "polyfills": "steps/30-custom-control-solution/src/polyfills.ts",
             "tsConfig": "steps/30-custom-control-solution/tsconfig.app.json",
-            "aot": true,
             "assets": [
               "steps/30-custom-control-solution/src/favicon.ico",
               "steps/30-custom-control-solution/src/assets"
             ],
             "styles": ["steps/30-custom-control-solution/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -5530,10 +5788,15 @@
             "main": "steps/31-structural-directive/src/main.ts",
             "polyfills": "steps/31-structural-directive/src/polyfills.ts",
             "tsConfig": "steps/31-structural-directive/tsconfig.app.json",
-            "aot": true,
             "assets": ["steps/31-structural-directive/src/favicon.ico", "steps/31-structural-directive/src/assets"],
             "styles": ["steps/31-structural-directive/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -5611,13 +5874,18 @@
             "main": "steps/31-structural-directive-solution/src/main.ts",
             "polyfills": "steps/31-structural-directive-solution/src/polyfills.ts",
             "tsConfig": "steps/31-structural-directive-solution/tsconfig.app.json",
-            "aot": true,
             "assets": [
               "steps/31-structural-directive-solution/src/favicon.ico",
               "steps/31-structural-directive-solution/src/assets"
             ],
             "styles": ["steps/31-structural-directive-solution/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -5725,10 +5993,15 @@
             "main": "steps/school-directive-tp/src/main.ts",
             "polyfills": "steps/school-directive-tp/src/polyfills.ts",
             "tsConfig": "steps/school-directive-tp/tsconfig.app.json",
-            "aot": true,
             "assets": ["steps/school-directive-tp/src/favicon.ico", "steps/school-directive-tp/src/assets"],
             "styles": ["steps/school-directive-tp/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -5833,13 +6106,18 @@
             "main": "steps/school-directive-tp-solution/src/main.ts",
             "polyfills": "steps/school-directive-tp-solution/src/polyfills.ts",
             "tsConfig": "steps/school-directive-tp-solution/tsconfig.app.json",
-            "aot": true,
             "assets": [
               "steps/school-directive-tp-solution/src/favicon.ico",
               "steps/school-directive-tp-solution/src/assets"
             ],
             "styles": ["steps/school-directive-tp-solution/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
