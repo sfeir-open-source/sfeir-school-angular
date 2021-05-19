@@ -5,6 +5,7 @@ function interceptorsSlides() {
     'interceptors/concepts.md',
     'interceptors/modification.md',
     'interceptors/register.md',
+    'interceptors/context.md',
     'interceptors/exercice.md',
   ];
 };
