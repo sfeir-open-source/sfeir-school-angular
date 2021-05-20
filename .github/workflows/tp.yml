@@ -23,6 +23,9 @@ jobs:
         with:
           node-version: 14.x
 
+      - name: Install last version of npm
+        run: npm install -g npm@latest
+
       - name: Install dependancies
         run: npm ci
         working-directory: TP

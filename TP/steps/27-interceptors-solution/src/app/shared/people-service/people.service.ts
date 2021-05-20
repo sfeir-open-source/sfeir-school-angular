@@ -1,13 +1,13 @@
+import { HttpClient, HttpContext } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Store } from '@ngrx/store';
 import { Observable, of } from 'rxjs';
-import { map, catchError } from 'rxjs/operators';
-
+import { catchError, map } from 'rxjs/operators';
 import { environment } from '../../../environments/environment';
-import { setPeople, filterPeople } from '../../store/actions/people.actions';
-import { PeopleFeature } from '../../store/state/state';
+import { filterPeople, setPeople } from '../../store/actions/people.actions';
 import { getFilteredPeople } from '../../store/selectors/selectors';
+import { PeopleFeature } from '../../store/state/state';
+import { CACHABLE } from '../interceptors/cachable.interceptor';
 
 @Injectable()
 export class PeopleService {
@@ -47,7 +47,7 @@ export class PeopleService {
   }
 
   fetchRandom(): Observable<any> {
-    return this._http.get(this._backendURL.randomPeople);
+    return this._http.get(this._backendURL.randomPeople, { context: new HttpContext().set(CACHABLE, true) });
   }
 
   fetchOne(id: string): Observable<any> {
