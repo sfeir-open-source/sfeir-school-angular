@@ -2,7 +2,7 @@
 <br><br>
 
 - Notion introduite avec la version 12 d'Angular <br><br>
-- Passer des metadatas à un interceptors<br><br>
+- Passer des metadatas à un interceptor<br><br>
 - Plus de hack<br><br>
 - __Exemple__ dire qu'une requête est 'cachable'
 
@@ -45,7 +45,7 @@ new HttpContext().set(CACHABLE, true)
 export class UserService {
   constructor(private readonly http: HttpClient) {}
 
-   getUser(): Obseravble<User> {
+   getUser(): Observable<User> {
     return this.http.get<User>(url, { context: new HttpContext().set(CACHABLE, true) })
   }
 }
