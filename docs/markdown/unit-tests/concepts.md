@@ -9,9 +9,9 @@
 # Concepts généraux de TDD
 
 -   **describe(string, function)** : un scénario de specs à exécuter<br><br>
--   **it(string, function)** : une spec contient un ou plusieurs vérifications<br><br>
+-   **it(string, function)** : une spec contient une ou plusieurs vérifications<br><br>
 -   **toXXXX(expected) ⇒ toBe(expected)** : un comparateur compare le résultat obtenu avec un résultat attendu<br><br>
--   **beforeAll/afterAll, beforeEach/afterEach** : Permet d’exécuter du code avant/après chaque scénario/test<br><br>
+-   **beforeAll/afterAll, beforeEach/afterEach** : permet d’exécuter du code avant/après chaque scénario/test<br><br>
 
 ##==##
 

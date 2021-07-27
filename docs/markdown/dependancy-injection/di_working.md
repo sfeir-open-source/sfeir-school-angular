@@ -1,7 +1,7 @@
 <!-- .slide-->
 # Principe de la DI en Angular
 
--   Les <b>3 principales notions</b> <br><br>
+-   Les <b>3 notions principales </b> <br><br>
     -   L'Injector <br><br>
     -   Le DI Token (DI: Dependency Injection) <br><br>
     -   Le Provider <br><br>
@@ -22,7 +22,7 @@
 # L'Injector
 
 -   Responsabilité :<br><br> 
-    -   <b>Créer les instances</b> de dépendances. (avec l'aide des <b>Providers</b>)<br><br>
+    -   <b>Créer les instances</b> des dépendances. (avec l'aide des <b>Providers</b>)<br><br>
     -   Garder les instances de dépendances dans son <b>"cache"</b> <br><br>
     -   <b>Mettre à disposition</b> les dépendances aux classes qui les demandent.
 
@@ -271,7 +271,7 @@ providers: [ { provide: MyService, useClass: MyService }]
 
 <!-- .slide -->
 
-# Les différents type de résolution
+# Les différents types de résolution
 
 <br><br>
 <!-- .element: class="big-code" -->

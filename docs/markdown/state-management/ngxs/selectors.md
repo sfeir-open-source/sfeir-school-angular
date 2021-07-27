@@ -39,7 +39,7 @@ export class ZooComponent {
 # Selectors : Select Function
 
 Le store possède une méthode **select** qui peut être utile lorsque l'on ne peut pas déclarer statiquement un sélecteur avec l'annotation **@Select**.<br>
-Attention cette méthode renvoie un observable
+Attention cette méthode renvoie un Observable
 <br><br>
 
 ```typescript

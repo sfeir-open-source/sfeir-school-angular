@@ -2,7 +2,7 @@
 # Exercice 18 : form-b
 ## Exercice<br>
 
-- A l'aide du CLI, créer un composant UpdateComponant
+- A l'aide du CLI, créer un composant UpdateComponent
 - Rendre accessible ce composant via l'url: /edit/:id (modifier la définition des routes)
 - Récupérer le paramètre id de l'url (ActivatedRoute)
 - A l'aide de cet id récupérer le détail de la personne

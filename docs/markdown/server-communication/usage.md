@@ -1,6 +1,6 @@
 <!-- .slide -->
 # Les méthodes du service HttpClient
-HttpClient vous procure les méthodes suivantes:<br><br>
+HttpClient vous fournit notamment les méthodes suivantes:<br><br>
 
 - this.http.get(url, options)<br><br>
 - this.http.post(url, data, options)<br><br>
@@ -11,13 +11,13 @@ HttpClient vous procure les méthodes suivantes:<br><br>
 <!-- .slide: class="with-code inconsolata" -->
 # L'envoie de données avec POST et PUT
 
-- Le format des données doit être obligatoirement en format JSON<br><br>
+- Le format des données doit être obligatoirement au format JSON<br><br>
 - le troisième argument est réservé pour les entêtes<br><br>
 
 ```typescript
 http.post(
    url,
-   datas,
+   data,
    {headers: new HttpHeaders().set('Authorization', 'my-auth-token')}
 );
 ```
@@ -28,11 +28,11 @@ http.post(
 # Déclencheur et type de retour
 
 - Chaque méthode renvoie un observable<br><br>
-- Le requête vers le serveur est envoyée seulement si l'on souscrit à cet obervable<br><br>
+- La requête vers le serveur est envoyée seulement si l'on souscrit à cet Observable<br><br>
 
 ```typescript
-this.http.get(url, options).subscribe(datas => { 
-  console.info(datas);
+this.http.get(url, options).subscribe(data => { 
+  console.info(data);
 });
 ```
 <!-- .element: class="big-code" -->
@@ -42,12 +42,12 @@ this.http.get(url, options).subscribe(datas => {
 <!-- .slide: class="with-code inconsolata" -->
 # Gérer ses retours
 
-- Par défaut le réponse est sous format JSON<br><br>
-- Pour l'avoir en type text, dans les options { responseType: text }<br><br>
+- Par défaut la réponse est au format JSON<br><br>
+- Pour l'avoir en type text, dans les options `{ responseType: text }`<br><br>
 
 ```typescript
-this.http.get(url, options).subscribe(datas => {
-  console.info(datas);
+this.http.get(url, options).subscribe(data => {
+  console.info(data);
 });
 ```
 <!-- .element: class="big-code" -->

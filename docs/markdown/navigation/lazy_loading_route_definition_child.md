@@ -1,5 +1,5 @@
 <!-- .slide: class="sfeir-basic-slide with-code" -->
-# Définiton dans les routes dans le module enfant
+# Définition dans les routes dans le module enfant
 
 ```typescript
 const adminRoutes: Routes = [

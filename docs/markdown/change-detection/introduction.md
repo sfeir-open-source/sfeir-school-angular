@@ -6,7 +6,7 @@
 
 -   Angular lance un changement de détection sur tous les composants (du parent à tous les enfants)<br><br>
 -   Lancement d'un changement de détection à chaque fois que quelque chose change dans l'app (user event)<br><br>
--   Performant mais pour des applications plus complexes, risque de lague.
+-   Performant mais pour des applications plus complexes, risque de ralentissements.
     <br>
 
 ##==##
@@ -15,7 +15,7 @@
 
 # Change Detection Strategy: OnPush
 
-Ne lance un changement de détection uniquement lorsque la référence d'une variable change
+Lance uniquement un changement lorsque la référence d'une variable change
 
 <!-- .element: class=ïmportant" -->
 

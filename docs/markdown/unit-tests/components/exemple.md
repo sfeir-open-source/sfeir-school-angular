@@ -77,10 +77,10 @@ debugElement.query(By.css('my-form')).triggerEventHandler('submit', mockSubmitDa
 ##==##
 
 <!-- .slide -->
-# Mocker via l’Injector dans les provider
+# Mocker via l’Injector dans les providers
 
 -   Permet de changer une classe injectée (par exemple un service) par une autre (mock class)<br><br>
--   Pratique si tous les tests doivent utilisés les mêmes mock
+-   Pratique si tous les tests doivent utiliser les mêmes mocks
 
 ##==##
 

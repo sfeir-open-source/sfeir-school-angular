@@ -1,8 +1,8 @@
 <!-- .slide: class="with-code inconsolata" -->
 # NGRX : Store
 
-- service à injecter dans nos composants
-- possède les méthodes __dispatch__ et __select__<br><br>
+- Service à injecter dans nos composants
+- Possède les méthodes __dispatch__ et __select__<br><br>
 
 ```typescript
 @Component({...})

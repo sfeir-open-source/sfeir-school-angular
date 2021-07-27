@@ -1,7 +1,7 @@
 <!-- .slide: class="with-code inconsolata" -->
 # La validation avec Template driven form
 
-- La validation se fait à l'aide des attributs html classique de validations:<br><br>
+- La validation se fait à l'aide des attributs html classique de validation:<br><br>
     - required
     - minLength
     - maxLength

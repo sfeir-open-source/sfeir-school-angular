@@ -2,7 +2,7 @@
 
 # State : définition
 
-Le **State** est une class préfixée de l'annotation **@State** qui définit notre state container.
+Le **State** est une classe préfixée de l'annotation **@State** qui définit notre state container.
 <br><br>
 
 ```typescript
@@ -37,11 +37,10 @@ export class AnimalsState {
 
 Ici notre state indique: <br>
 
--   qu'il s'agit d'un tableau de strings: **<strings[]>**
--   que le nom de notre state est 'animals' (name est une prop obligatoire)
--   notre state initial est un tableau vide: (la prop default sert d'initialisation)
-    Notes:
--   Il existe encore une props: children qui sont les states associés
+- qu'il s'agit d'un tableau de strings: **<string[]>**
+- que le nom de notre state est 'animals' (name est une prop obligatoire)
+- notre state initial est un tableau vide: (la prop `default` sert d'initialisation)
+- Notes: il existe encore une props: children qui sont les states associés
 
 ##==##
 
@@ -87,7 +86,7 @@ import { Todo } from './todo.action';
 export class TodoState {
     constructor() {}
     @Action(Todo.Add)
-    addTodo(ctx: StateContext<string[]>, action: any): void {
+    addTodo(ctx: StateContext<string[]>, action: Todo.Add): void {
         const state: strings[] = ctx.getState();
         ctx.setState([...state, action.payload]);
     }
@@ -103,13 +102,13 @@ export class TodoState {
 # State : Déclarer nos actions
 
 - Pour résumer une action se caractérise par:
-    - une fonction prenant en paramètre le context de type **StateContext** et le payload
+    - une fonction prenant en paramètre le contexte de type **StateContext** et le payload
     - l'annotation **@Action**
 
 <br><br>
 
 - Le **StateContext** possède les méthodes suivantes:
-    - setState: pour setter un nouvelle état du state dans son entièreté
+    - setState: pour setter un nouvel état du state dans son entièreté
     - getState: récupère le state dans son entièreté
     - patchState: modifier partiellement le state
     - dispatch: lance une nouvelle action

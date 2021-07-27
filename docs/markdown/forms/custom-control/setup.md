@@ -37,7 +37,7 @@ Heu ça veut dire que la class SfeirDropDownComponent n'est pas définie ?
 
 <!-- .element: class="center important"-->
 <br>
-Et bien non ! Les classes ne sont pas au 'top' du runtime JS, ce qui insinue que dans les métadatas de l'annotation @Component, la classe n'est pas définie
+Et bien non ! Les classes ne sont pas au 'top' du runtime JS, ce qui insinue que dans les métadata de l'annotation @Component, la classe n'est pas définie.
 
 Notes:
 

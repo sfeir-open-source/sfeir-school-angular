@@ -3,10 +3,10 @@
 ##--##
 <br><br>
 
-- contient l'ensemble des actions
-- contient le métier des actions
-- Seul endroit ou l'on modifie le state
-- une mutation est toujours synchrone
+- Contiennent l'ensemble des actions
+- Contiennent le métier des actions
+- Seul endroit où l'on modifie le state
+- Une mutation est toujours synchrone
 ##--##
 <!-- .slide: class="with-code inconsolata" -->
 <br><br>

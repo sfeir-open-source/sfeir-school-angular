@@ -9,15 +9,18 @@ import { ActivatedRoute, Router, Params } from '@angular/router';
   templateUrl: './foo.component.html'  
 })
 export class FooComponent implements OnInit {
-  constructor(private readonly route: ActivatedRoute, private readonly router: Router ) { }
+  constructor(private readonly route: ActivatedRoute, private readonly router: Router) {}
+
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
-    let id = params['id'];
+      let id = params['id'];
     });
   }
-  go(): void {
-    this.router.navigate(['/people/']);
+
+  async go(): Promise<void> {
+    await this.router.navigate(['/people/']);
   }
+}
 ```
 <!-- .element: class="medium-code" -->
 Notes:

@@ -1,2 +1,2 @@
 <!-- .slide: class="transition underline" -->
-# Créer son propre controleur de formulaire
+# Créer son propre contrôleur de formulaire

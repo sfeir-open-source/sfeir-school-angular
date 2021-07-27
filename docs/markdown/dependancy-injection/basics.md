@@ -16,9 +16,9 @@ class Car {
 
 ##==##
 <!-- .slide: class="with-code inconsolata" -->
-# L'injection en Angular (typescript)
+# L'injection en Angular (TypeScript)
 
-- Dans Angular, les dépendances déclarées dans une classe spécifique sont mises à disposition lors de <b>l'instanciation</b> cette classe. <br></br>
+- Dans Angular, les dépendances déclarées dans une classe spécifique sont mises à disposition lors de <b>l'instanciation</b> de cette classe. <br></br>
 ```typescript
 import { EngineService, TiresService, DoorsService } from './shared';
  @Component({...})

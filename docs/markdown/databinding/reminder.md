@@ -4,12 +4,12 @@
 
 -   Les attributs c'est du <b>HTML</b>, les propriétés c'est du <b>DOM</b><br>
     -   mapping strict (id)
-    -   attribut sans propriétés (colspan)
+    -   attribut sans propriété (colspan)
     -   propriété sans attribut (text-content)
     -   les 2 mais ... <br><br>
--   L'attribut permet d'initialiser les propriété la plupart du temps <br><br>
--   Il existe des attributs sans valeurs (ex: disabled sur un boutton)<br><br>
--   un attribut: une chaîne de caratères
+-   L'attribut permet d'initialiser les propriétés la plupart du temps <br><br>
+-   Il existe des attributs sans valeur (ex: disabled sur un boutton)<br><br>
+-   un attribut: une chaîne de caractères
 
 ##==##
 

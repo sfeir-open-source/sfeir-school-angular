@@ -28,9 +28,9 @@
 ## Exercice
 <br>
 
-- Lors de l'évent cancel, la dialog se ferme
-- Lors de l'évent personAdd, la dialogue se ferme en envoyant la personne au composant PeopleComponent
-- Si lors de la fermeture de la modal PeopleComponent reçoit un personne, implémenter une méthode qui ajoute un contact
+- Lors de l'event cancel, la dialog se ferme
+- Lors de l'event personAdd, la dialogue se ferme en envoyant la personne au composant PeopleComponent
+- Si lors de la fermeture de la modal PeopleComponent reçoit une personne, implémenter une méthode qui ajoute un contact
 Notes:
 - api à utiliser: POST http://localhost:9000/api/peoples retourne la personne créée
 

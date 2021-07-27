@@ -1,10 +1,10 @@
 <!-- .slide: class="with-code inconsolata" -->
-# Context
+# Contexte
 
 Imaginons que je souhaite créer un composant dropdown, et souhaite avoir la puissance de la validation des formulaires Angular.
 <br>
 
-On pourrait imaginer quelque chose dans ce genre là.
+On pourrait imaginer quelque chose dans ce genre-là.
 <br><br>
 
 ```html
