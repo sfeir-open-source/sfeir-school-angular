@@ -2,6 +2,17 @@
 
 # Les variables de template
 
+-   Références:
+    -   Élement (# our ref-XXX)
+    -   Disponible dans tout le template<br>
+
+```html
+<input #phone type="text" /> <button type="button" (click)="call(phone.value)">Click</button>
+<input ref-fax type="text" /> <button type="button" (click)="fax(fax.value)">Click</button>
+```
+
+<!-- .element: class="big-code" -->
+
 -   Variables: une valeur (let)
 
 ```html
@@ -10,13 +21,4 @@
 
 <!-- .element: class="big-code" -->
 
--   Références:
-    -   Élement (# our ref-XXX)
-    -   disponible dans tout le template et le composant (@ViewChild('reference', { static: false })<br>
 
-```html
-<input #phone type="text" /> <button type="button" (click)="call(phone.value)">Click</button>
-<input ref-fax type="text" /> <button type="button" (click)="fax(fax.value)">Click</button>
-```
-
-<!-- .element: class="big-code" -->
