@@ -30,7 +30,7 @@ import { usedSlides } from '../slides.js';
         },
 
         slideNumber: 'c/t',
-        showSlideNumber: 'speaker',
+        showSlideNumber: 'all',
 
         // Optional libraries used to extend on reveal.js
         dependencies: [
