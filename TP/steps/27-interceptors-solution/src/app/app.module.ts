@@ -18,7 +18,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
-import { PeopleAppComponent } from './app.component';
+import { AppComponent } from './app.component';
 import { APP_ROUTES } from './app.routes';
 import { HomeComponent } from './home';
 import { PeopleComponent } from './people';
@@ -51,7 +51,7 @@ import { UpdateComponent } from './update/update.component';
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],
   declarations: [
-    PeopleAppComponent,
+    AppComponent,
     HomeComponent,
     PeopleComponent,
     CardComponent,
@@ -67,6 +67,6 @@ import { UpdateComponent } from './update/update.component';
     { provide: HTTP_INTERCEPTORS, useClass: AuthorizationInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: CachableInterceptor, multi: true }
   ],
-  bootstrap: [PeopleAppComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

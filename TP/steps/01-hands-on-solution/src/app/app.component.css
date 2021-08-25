@@ -44,3 +44,7 @@ mat-toolbar-row:nth-child(2) {
   height: 56px;
   margin-top: 56px;
 }
+
+mat-card {
+  text-align: center;
+}

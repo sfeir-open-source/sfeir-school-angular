@@ -11,12 +11,12 @@ import { getFilteredPeople } from '../../store/selectors/selectors';
 
 @Injectable()
 export class PeopleService {
-  private _backendURL: any;
+  private readonly _backendURL: any;
   public get backendURL(): any {
     return this._backendURL;
   }
 
-  constructor(private _http: HttpClient, private store: Store<PeopleFeature>) {
+  constructor(private http: HttpClient, private store: Store<PeopleFeature>) {
     this._backendURL = {};
 
     // build backend base url
@@ -36,7 +36,7 @@ export class PeopleService {
   }
 
   fetch(): Observable<any> {
-    return this._http.get(this._backendURL.allPeople).pipe(
+    return this.http.get(this._backendURL.allPeople).pipe(
       map(people => {
         this.store.dispatch(setPeople({ people }));
         return people;
@@ -50,22 +50,22 @@ export class PeopleService {
   }
 
   fetchRandom(): Observable<any> {
-    return this._http.get(this._backendURL.randomPeople);
+    return this.http.get(this._backendURL.randomPeople);
   }
 
   fetchOne(id: string): Observable<any> {
-    return this._http.get(this._backendURL.onePeople.replace(':id', id));
+    return this.http.get(this._backendURL.onePeople.replace(':id', id));
   }
 
   delete(id: string): Observable<any> {
-    return this._http.delete(this._backendURL.onePeople.replace(':id', id));
+    return this.http.delete(this._backendURL.onePeople.replace(':id', id));
   }
 
   update(person: any): Observable<any> {
-    return this._http.put(this._backendURL.onePeople.replace(':id', person.id), person);
+    return this.http.put(this._backendURL.onePeople.replace(':id', person.id), person);
   }
 
   create(person): Observable<any> {
-    return this._http.post(this._backendURL.allPeople, person);
+    return this.http.post(this._backendURL.allPeople, person);
   }
 }

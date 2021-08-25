@@ -9,7 +9,7 @@ import { environment } from '../../../environments/environment';
 export class PeopleService {
   backendURL: any;
 
-  constructor(private _http: HttpClient) {
+  constructor(private http: HttpClient) {
     this.backendURL = {};
 
     // build backend base url
@@ -33,26 +33,26 @@ export class PeopleService {
   }
 
   fetch(): Observable<any> {
-    return this._http.get(this.backendURL.allPeople).pipe(catchError(this.handleError([])));
+    return this.http.get(this.backendURL.allPeople).pipe(catchError(this.handleError([])));
   }
 
   fetchRandom(): Observable<any> {
-    return this._http.get(this.backendURL.randomPeople);
+    return this.http.get(this.backendURL.randomPeople);
   }
 
   fetchOne(id: string): Observable<any> {
-    return this._http.get(this.backendURL.onePeople.replace(':id', id));
+    return this.http.get(this.backendURL.onePeople.replace(':id', id));
   }
 
   delete(id: string): Observable<any> {
-    return this._http.delete(this.backendURL.onePeople.replace(':id', id));
+    return this.http.delete(this.backendURL.onePeople.replace(':id', id));
   }
 
   update(person: any): Observable<any> {
-    return this._http.put(this.backendURL.onePeople.replace(':id', person.id), person);
+    return this.http.put(this.backendURL.onePeople.replace(':id', person.id), person);
   }
 
   create(person): Observable<any> {
-    return this._http.post(this.backendURL.allPeople, person);
+    return this.http.post(this.backendURL.allPeople, person);
   }
 }

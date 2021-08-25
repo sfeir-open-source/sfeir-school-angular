@@ -2,15 +2,16 @@
 # Exercice 03 : cpt-hierarchy
 ## Exercice<br>
 
-- Faire en sorte que PeopleComponent utilise HomeComponent
+- Faire en sorte que AppComponent utilise HomeComponent
 - Voir le contenu du fichier home.component.html
 - Mettre à jour les fichiers nécessaires
+
 Notes:
 Les fichiers à mettre à jour sont les suivants:
- - index.html
- - app.module.ts
- - app.component.html
- - app.component.ts
+- index.html
+- app.module.ts
+- app.component.html
+- app.component.ts
 
  ##==##
  <!-- .slide: class="full-center" -->

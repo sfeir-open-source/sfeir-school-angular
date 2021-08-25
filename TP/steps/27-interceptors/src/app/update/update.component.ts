@@ -14,7 +14,7 @@ export class UpdateComponent implements OnInit {
   /**
    * Component constructor
    */
-  constructor(private _route: ActivatedRoute, private _router: Router, private _peopleService: PeopleService) {
+  constructor(private route: ActivatedRoute, private router: Router, private peopleService: PeopleService) {
     this.person = {
       address: {}
     };
@@ -24,19 +24,19 @@ export class UpdateComponent implements OnInit {
    * OnInit implementation
    */
   ngOnInit() {
-    this._route.params
+    this.route.params
       .pipe(
         map((params: any) => params.id),
-        mergeMap((id: string) => this._peopleService.fetchOne(id))
+        mergeMap((id: string) => this.peopleService.fetchOne(id))
       )
       .subscribe((person: any) => (this.person = person));
   }
 
   submit(person: any) {
-    this._peopleService.update(person).subscribe(() => this._router.navigate(['/people']));
+    this.peopleService.update(person).subscribe(() => this.router.navigate(['/people']));
   }
 
   cancel() {
-    this._router.navigate(['/people']);
+    this.router.navigate(['/people']);
   }
 }

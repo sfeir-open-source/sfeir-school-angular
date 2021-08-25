@@ -9,16 +9,16 @@ import { PeopleService } from '../shared/people-service';
 export class PeopleComponent implements OnInit {
   people;
 
-  constructor(private _peopleService: PeopleService) {}
+  constructor(private peopleService: PeopleService) {}
 
   /**
    * OnInit implementation
    */
   ngOnInit() {
-    this._peopleService.fetch().subscribe(people => (this.people = people));
+    this.peopleService.fetch().subscribe(people => (this.people = people));
   }
 
   delete(person: any) {
-    this._peopleService.delete(person.id).subscribe(people => (this.people = people));
+    this.peopleService.delete(person.id).subscribe(people => (this.people = people));
   }
 }

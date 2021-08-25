@@ -16,7 +16,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { APP_ROUTES } from './app.routes';
 
-import { PeopleAppComponent } from './app.component';
+import { AppComponent } from './app.component';
 import { HomeComponent } from './home';
 
 @NgModule({
@@ -35,7 +35,7 @@ import { HomeComponent } from './home';
     APP_ROUTES,
     HttpClientModule
   ],
-  declarations: [PeopleAppComponent, HomeComponent],
-  bootstrap: [PeopleAppComponent]
+  declarations: [AppComponent, HomeComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

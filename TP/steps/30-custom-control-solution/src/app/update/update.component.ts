@@ -13,7 +13,7 @@ export class UpdateComponent implements OnInit {
   /**
    * Component constructor
    */
-  constructor(private _route: ActivatedRoute, private _router: Router, private _peopleService: PeopleService) {
+  constructor(private route: ActivatedRoute, private router: Router, private peopleService: PeopleService) {
     this.person = {
       address: {}
     };
@@ -23,14 +23,14 @@ export class UpdateComponent implements OnInit {
    * OnInit implementation
    */
   ngOnInit() {
-    this._route.data.subscribe(({ user }: { user: object }): object => (this.person = user));
+    this.route.data.subscribe(({ user }: { user: object }): object => (this.person = user));
   }
 
   submit(person: any) {
-    this._peopleService.update(person).subscribe(() => this._router.navigate(['/people']));
+    this.peopleService.update(person).subscribe(() => this.router.navigate(['/people']));
   }
 
   cancel() {
-    this._router.navigate(['/people']);
+    this.router.navigate(['/people']);
   }
 }

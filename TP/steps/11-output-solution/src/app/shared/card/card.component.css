@@ -104,6 +104,10 @@ a.truncate {
   width: 188px;
 }
 
+a:hover {
+  cursor: pointer;
+}
+
 @media (max-width: 600px) {
   a.truncate {
     width: 170px;

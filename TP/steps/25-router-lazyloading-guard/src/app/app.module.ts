@@ -16,7 +16,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { APP_ROUTES } from './app.routes';
 
-import { PeopleAppComponent } from './app.component';
+import { AppComponent } from './app.component';
 import { HomeComponent } from './home';
 import { SecretComponent } from './secret';
 
@@ -36,8 +36,8 @@ import { SecretComponent } from './secret';
     APP_ROUTES,
     HttpClientModule
   ],
-  declarations: [PeopleAppComponent, HomeComponent, SecretComponent],
+  declarations: [AppComponent, HomeComponent, SecretComponent],
   providers: [],
-  bootstrap: [PeopleAppComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

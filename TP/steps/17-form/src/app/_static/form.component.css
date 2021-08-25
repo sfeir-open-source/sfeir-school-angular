@@ -46,3 +46,7 @@ img {
 .align-right {
   text-align: right;
 }
+
+table {
+  border-spacing: 0;
+}

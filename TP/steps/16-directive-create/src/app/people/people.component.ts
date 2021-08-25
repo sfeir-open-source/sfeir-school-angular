@@ -10,17 +10,17 @@ export class PeopleComponent implements OnInit {
   people;
   view = 'card';
 
-  constructor(private readonly _peopleService: PeopleService) {}
+  constructor(private readonly peopleService: PeopleService) {}
 
   /**
    * OnInit implementation
    */
   ngOnInit() {
-    this._peopleService.fetch().subscribe(people => (this.people = people));
+    this.peopleService.fetch().subscribe(people => (this.people = people));
   }
 
   delete(person: any) {
-    this._peopleService.delete(person.id).subscribe(people => (this.people = people));
+    this.peopleService.delete(person.id).subscribe(people => (this.people = people));
   }
 
   switchView() {

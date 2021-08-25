@@ -15,23 +15,23 @@ export class PeopleComponent implements OnInit {
   dialogStatus = 'inactive';
   view = 'card';
 
-  constructor(public dialog: MatDialog, private _peopleService: PeopleService) {}
+  constructor(public dialog: MatDialog, private peopleService: PeopleService) {}
 
   /**
    * OnInit implementation
    */
   ngOnInit() {
-    this._peopleService.fetch().subscribe(people => (this.people = people));
+    this.peopleService.fetch().subscribe(people => (this.people = people));
   }
 
   delete(person: any) {
-    this._peopleService.delete(person.id).subscribe(people => (this.people = people));
+    this.peopleService.delete(person.id).subscribe(people => (this.people = people));
   }
 
   add(person: any) {
-    this._peopleService
+    this.peopleService
       .update(person)
-      .pipe(mergeMap(() => this._peopleService.fetch()))
+      .pipe(mergeMap(() => this.peopleService.fetch()))
       .subscribe((peopleList: Array<any>) => {
         this.people = peopleList;
         this.hideDialog();

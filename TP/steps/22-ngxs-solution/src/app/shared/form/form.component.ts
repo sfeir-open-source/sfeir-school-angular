@@ -11,14 +11,14 @@ export class FormComponent implements OnInit, OnChanges {
   private _form: FormGroup;
   @Input() model: any;
   isUpdateMode: boolean;
-  @Output('cancel') cancel$: EventEmitter<any>;
-  @Output('submit') submit$: EventEmitter<any>;
+  @Output('cancel') cancelEvent: EventEmitter<any>;
+  @Output('submit') submitEvent: EventEmitter<any>;
 
   constructor() {
-    this.submit$ = new EventEmitter();
-    this.cancel$ = new EventEmitter();
+    this.submitEvent = new EventEmitter();
+    this.cancelEvent = new EventEmitter();
     this.model = { address: {} };
-    this._form = this._buildForm();
+    this._form = this.buildForm();
   }
   /**
    * OnInit implementation
@@ -41,14 +41,14 @@ export class FormComponent implements OnInit, OnChanges {
    * Function to emit event to cancel process
    */
   cancel() {
-    this.cancel$.emit();
+    this.cancelEvent.emit();
   }
 
   /**
    * Function to emit event to submit form and person
    */
   submit(person: any) {
-    this.submit$.emit(person);
+    this.submitEvent.emit(person);
   }
 
   /**
@@ -56,7 +56,7 @@ export class FormComponent implements OnInit, OnChanges {
    *
    *
    */
-  private _buildForm(): FormGroup {
+  private buildForm(): FormGroup {
     return new FormGroup({
       id: new FormControl(''),
       firstname: new FormControl('', Validators.compose([Validators.required, Validators.minLength(2)])),

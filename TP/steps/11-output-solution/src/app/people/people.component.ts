@@ -9,16 +9,16 @@ import { HttpClient } from '@angular/common/http';
 export class PeopleComponent implements OnInit {
   people;
 
-  constructor(private _http: HttpClient) {}
+  constructor(private http: HttpClient) {}
 
   /**
    * OnInit implementation
    */
   ngOnInit() {
-    this._http.get('http://localhost:9000/api/peoples').subscribe(people => (this.people = people));
+    this.http.get('http://localhost:9000/api/peoples').subscribe(people => (this.people = people));
   }
 
   delete(person: any) {
-    this._http.delete(`http://localhost:9000/api/peoples/${person.id}`).subscribe(people => (this.people = people));
+    this.http.delete(`http://localhost:9000/api/peoples/${person.id}`).subscribe(people => (this.people = people));
   }
 }
