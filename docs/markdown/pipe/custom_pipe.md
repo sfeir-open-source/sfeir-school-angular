@@ -13,8 +13,8 @@
 <!-- .slide -->
 # Comment se compose un pipe
 
-- De l'annotation <b>@Pipe</b> qui prend comme propriété name qui sera appelé dans le template <br><br>
-- D'une classe qui est déclenchée par l'annotation <b>@Pipe</b> <br><br>
+- Du décorateur <b>@Pipe</b> qui prend comme propriété name qui sera appelé dans le template <br><br>
+- D'une classe qui est déclenchée par le décorateur <b>@Pipe</b> <br><br>
 - Cette classe implémente la méthode <b>transform</b> qui prend en paramètre une valeur et éventuellement un tableau d'arguments <br><br>
 - Cette méthode <b>transform</b> effectue des transformations (ou pas) mais retourne toujours une nouvelle valeur<br><br>
 - Pensez à enregistrer votre Pipe dans le tableau déclaration de votre module (comme un composant)

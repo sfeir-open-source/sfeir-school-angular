@@ -25,7 +25,7 @@ npm install --save @ngrx/effects // ng add @ngrx/effects
 
 - Créer une action (mais ne pas l'enregistrer dans le reducer)
 - Créer un service classique Angular
-- Utiliser la méthode createEffect ou l'annotation __@Effect__
+- Utiliser la méthode createEffect ou le décorateur __@Effect__
 <br>
 
 ```typescript
@@ -44,7 +44,7 @@ export class MovieEffects {
     )
   );
 
-  // avec l'annotation
+  // avec le décorateur
   @Effect
   loadMovies = this.actions$.pipe(
     ofType('[Movies Page] Load Movies'),
@@ -58,4 +58,4 @@ export class MovieEffects {
 ```
 <!-- .element: class="medium-code" -->
 Notes:
-- en utilisant l'annotation les erreurs dans l'ide (au niveau du checking type) est bien plus claire
+- en utilisant le décorateur les erreurs dans l'IDE (au niveau du checking type) est bien plus claire

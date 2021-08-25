@@ -32,7 +32,7 @@ export class AppComponent {
 
 <!-- .slide: class="with-code inconsolata" -->
 # Le composant: son affichage
-L'affichage du composant dans la page se fait à l'aide d'annotations
+L'affichage du composant dans la page se fait à l'aide d'un décorateur
 <br><br>
 ```typescript
 @Component({
@@ -50,7 +50,7 @@ L'affichage du composant dans la page se fait à l'aide d'annotations
 <!-- .element: class="big-code" -->
 <br>
 Notes:
-- Une annotation de type @Component se fait toujours au dessus d'une classe. Sans cette classe, le build et le linter affiche une erreur
+- Un décorateur de type @Component se fait toujours au dessus d'une classe. Sans cette classe, le build et le linter affiche une erreur
 
 ##==##
 

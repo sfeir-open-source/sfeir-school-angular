@@ -2,7 +2,7 @@
 
 # Qu'est ce qu'un Service
 - Une classe exportée
-- une annotation <b>@Injectable</b>
+- Un décorateur <b>@Injectable</b>
 
 ```typescript
 @Injectable({

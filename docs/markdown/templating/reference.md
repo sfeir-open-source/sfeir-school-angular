@@ -4,7 +4,7 @@
 
 - Se matérialise par un # / ref- dans le template<br><br>
 - Disponible dans tout le template<br><br>
-- On peut récupérer cet élément dans le composant grâce à l'annotation __@ViewChild__, __@ViewChildren__
+- On peut récupérer cet élément dans le composant grâce aux décorateurs __@ViewChild__, __@ViewChildren__
   <br><br>
 
 ```html
@@ -17,7 +17,7 @@
 
 <!-- .slide: class="with-code inconsolata" -->
 
-# L'annotation __@ViewChild__ et __@ViewChildren__
+# Les décorateurs __@ViewChild__ et __@ViewChildren__
 
 - Permet de récupérer une référence dans le composant<br><br>
 - Prend deux paramètres en entrée (nom de la référence, un object d'option: { static, read })<br><br>

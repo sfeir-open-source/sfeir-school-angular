@@ -20,19 +20,19 @@
 
 ##==##
 <!-- .slide: class="with-code inconsolata" -->
-# L'annotation @Component
+# Le décorateur @Component
 Carte d'identité d'un composant<br>
 
 - selector
 - template et templateUrl
-- providers
-- viewEncapsulation
-- ChangeDetection <br><br>
+- styles et styleUrls
+- ...<br><br>
 
 ```typescript
 @Component({
   selector: 'sfeir-app',
-  templateUrl: './home.component.html'
+  templateUrl: './home.component.html', 
+  styleUrls: ['./home.component.css'],
   ...
 })
 ```

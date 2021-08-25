@@ -63,11 +63,11 @@
 # Comment paramétrer ces 3 notions
 
 - Injector & Provider:<br><br>
-  - propriété <b>providedIn</b> de l'annotation <b>@Injectable</b><br><br>
-  - propriété <b>providers: []</b> des annotations <b>@NgModule, @Component, @Directive, @Pipe</b><br><br>
+  - propriété <b>providedIn</b> du décorateur <b>@Injectable</b><br><br>
+  - propriété <b>providers: []</b> des décorateurs <b>@NgModule, @Component, @Directive, @Pipe</b><br><br>
 - Token:<br><br>
   - implicite (la plupart du temps)<br><br>
-  - ou via l'annotation <b>@Inject</b><br><br>
+  - ou via le décorateur <b>@Inject</b><br><br>
 ##==##
 
 <!-- slide: class="two-column-layout"-->

@@ -21,7 +21,7 @@ Notes:
 
 <!-- .slide: class="with-code" -->
 # Le module: son écriture
-Comme le composant, l'écriture du module se fait à l'aide d'une classe et d'une annotation
+Comme le composant, l'écriture du module se fait à l'aide d'une classe et d'un décorateur
 <br><br>
 
 ```typescript

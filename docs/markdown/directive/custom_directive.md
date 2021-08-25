@@ -56,7 +56,7 @@ export class MyDirective {}
 
 # Comment passer des props à ma directive
 
--   Lister des inputs grâce à l'annotation <b>@Input()</b>
+-   Lister des inputs grâce au décorateur <b>@Input()</b>
 -   Ces inputs peuvent être aliasés
 -   <b>Exactement comme pour les composants</b> <br><br>
 
