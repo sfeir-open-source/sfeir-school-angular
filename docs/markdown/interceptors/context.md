@@ -1,14 +1,14 @@
-# Context d'un interceptor
+# Contexte d'un interceptor
 <br><br>
 
 - Notion introduite avec la version 12 d'Angular <br><br>
-- Passer des metadatas à un interceptor<br><br>
+- Passer des metadata à un interceptor<br><br>
 - Plus de hack<br><br>
 - __Exemple__ dire qu'une requête est 'cachable'
 
 ##==##
 
-# Propriété du context
+# Propriété du contexte
 <br><br>
 
 - mutable<br><br>
@@ -17,7 +17,7 @@
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Un context est un simple token
+# Un contexte est un simple token
 <br><br>
 
 ```typescript
@@ -28,9 +28,9 @@ export const CACHABLE = new  HttpContextToken<boolean>(() => false);
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Modifier le context
+# Modifier le contexte
 
-__La modification d'un context ou le setter se fait à l'aide de la classe HttpContext__
+__La modification d'un contexte ou le setter se fait à l'aide de la classe HttpContext__
 
 <br><br>
 
@@ -55,7 +55,7 @@ export class UserService {
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Récupérer le context dans notre interceptor
+# Récupérer le contexte dans notre interceptor
 
 <br><br>
 
@@ -77,8 +77,8 @@ export class CacheInterceptor implements HttpInterceptor {
 # La classe HttpContext
 <br><br>
 
-- __set__ : permet de setter un token du context<br><br>
-- __get__ : récupère la valeur du token du context <br><br>
-- __delete__ : supprime le token du context<br><br>
-- __keys__ : récupère toutes les tokens du context<br><br>
+- __set__ : permet de setter un token du contexte<br><br>
+- __get__ : récupère la valeur du token du contexte<br><br>
+- __delete__ : supprime le token du contexte<br><br>
+- __keys__ : récupère tous les tokens du contexte<br><br>
 

@@ -44,7 +44,7 @@ Carte d'identité d'un composant<br>
 # Imbrication des composants
 Lorsqu'un composant parent souhaite utiliser des composants enfants<br>
 
-- les composants enfants doivent être tous référencés
+- les composants enfants doivent tous être référencés
 - les composants enfants doivent être déclarés dans les "déclarations" du <b>@NgModule()</b><br><br>
 
 ```typescript

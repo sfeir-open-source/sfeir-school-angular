@@ -79,7 +79,7 @@
 <!-- .element: class="medium-code" -->
 
 ## Expression:
-- Dans le context du composant
+- Dans le contexte du composant
 - Du Javascript mais !!
     - pas d'affectation (sauf pour les events comme le click sur un boutton)
     - pas d'accès aux variables globales (window, document, ...)
@@ -106,8 +106,8 @@
         <tr>
             <td>Propriété</td>
             <td>
-                <p>Attribut de l'élement</p>
-                <p>Attribut de component</p>
+                <p>Attribut de l'élément</p>
+                <p>Attribut de composant</p>
                 <p>Attribut de directive</p>
             </td>
         </tr>
@@ -152,7 +152,7 @@
         <tr>
             <td>Évènement</td>
             <td>
-                <p>Évènement d'élements</p>
+                <p>Évènement d'éléments</p>
                 <p>Évènement de composants</p>
                 <p>Évènement de directives</p>
             </td>
@@ -166,7 +166,7 @@
 <br><br>
 
 -   Forme canonique: onCapitalAttr (ex: onClick)
--   Référence à l'évent grâce à \$event
+-   Référence à l'event grâce à \$event
 
 ##==##
 

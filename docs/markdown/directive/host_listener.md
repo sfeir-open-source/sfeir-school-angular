@@ -6,7 +6,7 @@
 
 <!-- .slide-->
 
-# Host Listener: définition
+# Host Listener: Définition
 
 - Permet d'écouter un événement du DOM et d'appeler un callback <br><br>
 - Décorateur @HostListener()
@@ -15,7 +15,7 @@
 
 <!-- .slide: class="inconsolata with-code" -->
 
-# Host Listener: exemple
+# Host Listener: Exemple
 
 ```typescript
 @Directive({ selector: '[blDragAndDrop]' })

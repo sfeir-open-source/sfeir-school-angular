@@ -13,7 +13,7 @@
 
 <!-- .slide -->
 
-# Configuration avancé (complète)
+# Configuration avancée (complète)
 
 Il existe d'autres options de configuration, permettant de réaliser du routing plus avancé.
 <br><br>

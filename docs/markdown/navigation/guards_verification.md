@@ -1,10 +1,10 @@
 <!-- .slide -->
 # Fonctionnement des guards de "vérification"
 
-- Peut renvoyer un observable, une promesse ou encore un boolean<br><br>
+- Peut renvoyer un Observable, une Promise ou encore un booléen<br><br>
 - Un guard est un service classique<br><br>
 - Si true alors on navigue vers l'url demandée<br><br>
-- Si false on ne navigue pas vers l'url demandé
+- Si false on ne navigue pas vers l'url demandée
 
 ##==##
 

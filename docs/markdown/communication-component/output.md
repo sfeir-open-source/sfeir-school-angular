@@ -2,7 +2,7 @@
 
 # Communication parent - enfant: @Ouput
 
-- Dans le composant enfant
+- Dans le composant enfant (`child.component.ts`)
 
 ```typescript
 import { Component, Output, EventEmitter } from '@angular/core';
@@ -28,7 +28,7 @@ export class ChildComponent {
 
 # Communication parent - enfant: @Ouput
 
--   Dans le template HTML du composant parent <br><br>
+-   Dans le template HTML du composant parent (`parent.component.html`) <br><br>
 
 ```html
 <section><app-child (childEvent)="onChildEvent($event)"></app-child></section>
@@ -37,7 +37,7 @@ export class ChildComponent {
 <!-- .element: class="big-code" -->
 <br>
 
--   Dans le composant parent <br><br>
+-   Dans le composant parent (`parent.component.ts`) <br><br>
 
 ```typescript
 onChildEvent(myPassVariable: string): void {

@@ -2,7 +2,7 @@
 # Fonctionnement des guards de préfetching<br>
 
 - Optimiser le rendu de page<br><br>
-- Renvoie un observable, une promesse ou des données bruts<br><br>
+- Renvoie un Observable, une Promise ou des données brutes<br><br>
 
 ##==##
 

@@ -17,7 +17,7 @@
 <!-- .slide: class="with-code inconsolata" -->
 # La directive *ngIf
 
-- Change la structure du DOM de manière conditionnel (apparaît ou non dans le DOM)<br><br>
+- Change la structure du DOM de manière conditionnelle (apparaît ou non dans le DOM)<br><br>
 
 ```html
 <div *ngIf="errorCount > 0" class="error">
@@ -30,7 +30,7 @@
 <!-- .slide: class="with-code inconsolata" -->
 # La directive *ngSwitch
 
-- Change la structure du DOM de manière conditionnel (à la manière d'un switch case)<br><br>
+- Change la structure du DOM de manière conditionnelle (à la manière d'un switch case)<br><br>
 
 ```html
 <div [ngSwitch]="display">

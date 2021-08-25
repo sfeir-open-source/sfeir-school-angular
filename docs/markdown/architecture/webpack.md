@@ -2,7 +2,7 @@
 
 # Webpack
 
-Sous le capot, Angular utilise webpack pour builder notre application
+Sous le capot, Angular utilise Webpack pour builder notre application
 
 ##--##
 <br><br>

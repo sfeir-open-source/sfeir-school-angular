@@ -31,7 +31,7 @@
 
 <!-- .slide -->
 
-# Angular CLI et les test
+# Angular CLI et les tests
 
 -   Angular vient avec tout ce dont on a besoin pour réaliser des tests unitaires (aucune configuration requise)<br>
 

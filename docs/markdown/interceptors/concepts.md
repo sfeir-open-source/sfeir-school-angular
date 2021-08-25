@@ -1,6 +1,6 @@
 <!-- .slide-->
 
-# Interceptors: Définitions
+# Interceptors: Définition
 
 -   Intercepte une requête<br><br>
 -   Renvoie la requête retravaillée<br><br>
@@ -26,4 +26,4 @@ export class MyInterceptor implements HttpInterceptor {
 <!-- .element: class="big-code" -->
 
 -   Si l'on souhaite modifier la requête partante, il faut cloner la requête à l'aide de la méthode clone (HttpRequest)
--   Si l'on souhaite modifier la réponse, pensez à utiliser les observables et instanceOf
+-   Si l'on souhaite modifier la réponse, pensez à utiliser les Observables et `instanceOf`

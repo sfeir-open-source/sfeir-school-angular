@@ -1,6 +1,6 @@
 <!-- .slide -->
 # Qu'est ce qu'une progressive web app (PWA)
-__Application web doté de super pouvoirs__
+__Application web dotée de super pouvoirs__
 <!-- .element: class="important center" -->
 <br><br>
 
@@ -15,7 +15,7 @@ Notes:
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide" -->
-# De quoi est composé une PWA<br>
+# De quoi est composée une PWA<br>
 - Service worker qui détient la logique de votre PWA (stratégie de caching, vos différents caches, lifecycle)<br><br>
 - Manifest : décrit comment doit être installer votre application<br><br>
 
@@ -41,7 +41,7 @@ ng add @angular/pwa
 - autorise le support du service worker in CLI (modifie le fichier angular.json)
 - Importe et enregistre le service worker dans le AppModule
 - Modifie le fichier index.html (importe le manifest et meta tag pour le theme couleur)
-- Installe les icons (icon d'installation pwa)
+- Installe les icônes (icône d'installation pwa)
 - Créé le fichier de configuration de votre service worker (ngsw-config.json)
 
 Notes:

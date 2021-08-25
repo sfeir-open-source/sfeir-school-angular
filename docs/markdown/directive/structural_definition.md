@@ -10,7 +10,7 @@
 ##==##
 
 <!-- .slide-->
-# * une microsyntax
+# * une microsyntaxe
 
 - Permet une lecture plus simple, et réduit la verbosité
 - Le mot clé __let__ permet de déclarer une variable utilisée dans le template

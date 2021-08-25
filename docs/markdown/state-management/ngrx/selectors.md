@@ -2,7 +2,7 @@
 # NGRX : Selectors
 
 - Permettent de retourner partiellement ou entièrement le store
-- Renvoie toujours un observable
+- Renvoie toujours un Observable
 
 <br><br>
 

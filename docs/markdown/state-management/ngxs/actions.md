@@ -28,8 +28,8 @@ Notes:
 
 # Action : Comment la déclencher
 
--   Dans le composant, l'action est déclenchée grâce au mot clé **disptach**
--   Une action renvoie toujours un observable<br><br>
+-   Dans le composant, l'action est déclenchée grâce au mot clé **dispatch**
+-   Une action renvoie toujours un Observable<br><br>
 
 ```typescript
 @Component({ ... })

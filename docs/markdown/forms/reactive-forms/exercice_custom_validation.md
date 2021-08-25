@@ -3,8 +3,8 @@
 ## Exercice<br>
 
 - Générer une class à l'aide du CLI dans le shared/forms
-- Créer un validateur permettant de vérifier si l'adresse mail respect le format nom.p@sfeir.com
-- Associer ce validateur au contrôle Email
+- Créer un validateur permettant de vérifier si l'adresse e-mail respecte le format nom.p@sfeir.com
+- Associer ce validateur au contrôle email
 - Afficher dans le HTML le message correspondant au type d’erreur
 Notes:
 - regex pattern: /^\w+\.\w@sfeir\.com$/

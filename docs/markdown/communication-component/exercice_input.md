@@ -2,7 +2,7 @@
 # Exercice 09 : input
 ## Exercice<br>
 
-- Créer un composant CardComponent dans le dossier shared à l'aide du CLI
+- Créer un composant CardComponent dans un dossier `shared` à l'aide du CLI
 - Copier le contenu du template et du style du composant HomeComponent
 - Passer la variable person au composant CardComponent
 Notes:

@@ -10,8 +10,8 @@
 
 ![h-300 center](assets/images/school/directive/directive_schema.png) <br>
 
--   les directives structurelles : modifie le DOM<br>
--   les directives attributales : modifie l'apparence ou le comportement d'un élement<br>
+-   les directives structurelles : modifient le DOM<br>
+-   les directives attributales : modifient l'apparence ou le comportement d'un élement<br>
 -   composant : directive avec une vue<br>
 
 ##==##
@@ -57,7 +57,7 @@ export class MyDirective {}
 # Comment passer des props à ma directive
 
 -   Lister des inputs grâce à l'annotation <b>@Input()</b>
--   Ces inputs peuvent être aliasé
+-   Ces inputs peuvent être aliasés
 -   <b>Exactement comme pour les composants</b> <br><br>
 
 ```typescript
@@ -102,8 +102,8 @@ export class MyDirective {
 # L'intéraction avec le DOM
 
 -   Préférez l'utilisation du Renderer au lieu de ElementRef<br><br>
--   Aucune dépendance direct avec le DOM<br><br>
--   Permet d'éxécuter l'application dans d'autre environnements (EDGE, Firefox)
+-   Aucune dépendance directe avec le DOM<br><br>
+-   Permet d'éxécuter l'application dans d'autres environnements (EDGE, Firefox)
 
 ##==##
 

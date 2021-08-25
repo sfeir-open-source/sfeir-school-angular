@@ -15,6 +15,8 @@
 - currency
 - date
 - lowercase
+- uppercase
+- titlecase
 - async
 - json
 - decimal

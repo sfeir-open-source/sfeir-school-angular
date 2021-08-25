@@ -1,8 +1,8 @@
 # NGRX : State
 
 - Mapping clé-valeur
-- Récupérer grâce à nos  sélectors
-- Retourne toujours un observable <br><br>
+- Récupérer grâce à nos selectors
+- Retourne toujours un Observable <br><br>
 
 ##==##
 <!-- .slide: class="with-code inconsolata" -->

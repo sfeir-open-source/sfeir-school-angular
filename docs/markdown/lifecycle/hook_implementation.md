@@ -18,9 +18,9 @@ export class UserComponent implements OnInit {
 
 ##==##
 <!-- .slide -->
-# Les différents lifecycle
+# Les différents lifecycle hooks
 
-- <b>ngOnChanges(): </b>répond à chaque fois que les propriétés en entrée changent
+- <b>ngOnChanges(): </b>répond à chaque fois qu'une des propriétés en entrée changent
 - <b>ngOnInit(): </b>initialise le composant/la directive après sa création (1 fois)
 - <b>ngDoCheck(): </b>permet d’agir sur la détection des modifications
 - <b>ngAfterContentInit(): </b>répond après l’initialisation du contenu du composant (1 fois)

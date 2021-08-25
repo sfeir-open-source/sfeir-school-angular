@@ -6,9 +6,9 @@
 <!-- .slide: class="with-code inconsolata" -->
 # Créer ses propres validateurs
 
-- un validateur custom est une simple <b>fonction</b>
+- Un validateur custom est une simple <b>fonction</b>
 - Si la validation est bonne : renvoie <b>null</b>
-- Si la validation n'est pas correct : renvoie un object de cette forme <b>{ nomErreur: true }</b>
+- Si la validation n'est pas correcte : renvoie un objet de cette forme <b>{ nomErreur: true }</b>
 <br><br>
 
 ```typescript
@@ -27,7 +27,7 @@ export abstract class CustomValidators {
 <!-- .slide: class="with-code inconsolata" -->
 # Utiliser son validateur
 
-- Se fait lors de la création du control <br><br>
+- Se fait lors de la création du contrôle <br><br>
 
 ```typescript
 import { CustomValidators } from './validators';

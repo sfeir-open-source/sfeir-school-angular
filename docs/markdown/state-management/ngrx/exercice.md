@@ -3,7 +3,7 @@
 ## Exercice<br>
 - Une barre de recherche a été ajoutée à votre application<br><br>
 - Lors de la recherche vous devez filtrer la liste des personnes<br><br>
-- Mettre en place une architecture NGRX afin de parvenir à ce resultat
+- Mettre en place une architecture NGRX afin de parvenir à ce résultat
 Notes:
 - vous devez modifier uniquement les fichiers:
     - people.component.ts

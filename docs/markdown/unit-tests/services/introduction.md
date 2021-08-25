@@ -4,9 +4,9 @@
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide" -->
-# les différents types de services
+# Les différents types de services
 
-- 2 grands familles de services:
+- 2 grandes familles de services:
     - __service http__<br><br>
     - __service "helpers"__<br><br>
 <br><br>
