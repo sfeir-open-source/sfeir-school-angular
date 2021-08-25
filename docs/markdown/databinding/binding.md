@@ -93,7 +93,6 @@
 # Properties binding
 
 ##--##
-<br><br>
 
 <table>
     <thead>
@@ -114,7 +113,33 @@
     </tbody>
 </table>
 
-![center h-400](assets/images/school/databinding/properties_binding.png)
+```html
+<!-- app.component.html -->
+<img [src]="url" />
+<sfeir-people [person]="person" ></sfeir-people>
+```
+
+<!-- .element: class="medium-code" -->
+
+```typescript
+// app.component.ts
+import { Component } from '@angular/core';
+import { Person } from '../models/person';
+
+@Component({
+    selector: 'sfeir-app',
+    templateUrl: 'app.component.html',
+    styleUrls: ['app.component.css']
+})
+export class AppComponent {
+    url = 'assets/imgs/sfeir.png';
+    person: Person = { name: 'John Smith' };
+
+    constructor() {}
+}
+```
+
+<!-- .element: class="medium-code" -->
 
 ##--##
 
@@ -122,7 +147,6 @@
 
 <br><br>
 
--   Forme canonique: bindCapitalAttr (ex: bindDisabled)<br><br>
 -   Constant
 
 ```html
@@ -139,7 +163,6 @@
 # Event Binding
 
 ##--##
-<br><br>
 
 <table>
     <thead>
@@ -160,12 +183,39 @@
     </tbody>
 </table>
 
-![center h-400](assets/images/school/databinding/event_binding.png)
+```html
+<!-- app.component.html -->
+<button (click)="onSave()"></button>
+<hero-detail (deleted)="onDeleted($event)"></hero-detail>
+<input (change)="firstName = $event"
+```
+
+<!-- .element: class="medium-code" -->
+
+```typescript
+// app.component.ts
+import { Component } from '@angular/core';
+
+@Component({
+    selector: 'sfeir-app',
+    templateUrl: 'app.component.html',
+    styleUrls: ['app.component.css']
+})
+export class AppComponent {
+     onSave(): void { console.log('Saved'); }
+    
+     onDeleted(heroId: string): void {
+       console.log(`Hero with id: ${heroId} has been deleted`);
+     }
+}
+```
+
+<!-- .element: class="medium-code" -->
+
 
 ##--##
 <br><br>
 
--   Forme canonique: onCapitalAttr (ex: onClick)
 -   Référence à l'event grâce à \$event
 
 ##==##
@@ -175,7 +225,6 @@
 # 2 way binding
 
 ##--##
-<br><br>
 
 <table>
     <thead>
@@ -195,8 +244,28 @@
     </tbody>
 </table>
 
-![center h-500](assets/images/school/databinding/two_way_binding.png)
+```html
+<!-- app.component.html -->
+<input name="firstName" [(ngModel)]="firstName" />
+```
 
+<!-- .element: class="medium-code" -->
+
+```typescript
+// app.component.ts
+import { Component } from '@angular/core';
+
+@Component({
+    selector: 'sfeir-app',
+    templateUrl: 'app.component.html',
+    styleUrls: ['app.component.css']
+})
+export class AppComponent {
+  firstName = "John";
+}
+```
+
+<!-- .element: class="medium-code" -->
 ##--##
 
 <!-- .slide: class="with-code inconsolata" -->
