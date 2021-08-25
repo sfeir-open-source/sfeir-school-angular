@@ -21,20 +21,18 @@ platformBrowserDynamic().bootstrapModule(AppModule);
 <!-- .slide: class="two-column-layout" -->
 # Bootstraping dans sa totalité
 
-##--##
-<br><br><br>
-
 ```typescript
+// main.ts
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppModule } from './app.module';
 platformBrowserDynamic().bootstrapModule(AppModule);
 ```
 <!-- .element: class="big-code" -->
 
-##--##
-<br><br><br>
+<br>
 
 ```typescript
+// app.module.ts
 @NgModule({
   imports: [BrowserModule],
   declaration: [AppComponent],
@@ -45,9 +43,10 @@ export class AppModule { }
 ```
 <!-- .element: class="big-code" -->
 
-<br><br>
+<br>
 
 ```html
+<!-- index.html -->
 <sfeir-app></sfeir-app>
 ```
 <!-- .element: class="big-code" -->

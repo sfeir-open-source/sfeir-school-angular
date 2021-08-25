@@ -34,7 +34,9 @@ export class AppComponent {
 # Le composant: son affichage
 L'affichage du composant dans la page se fait à l'aide d'un décorateur
 <br><br>
+
 ```typescript
+// app.component.ts
 @Component({
   selector: 'sfeir-app',
   templateUrl: 'app.component.html',
@@ -45,6 +47,7 @@ L'affichage du composant dans la page se fait à l'aide d'un décorateur
 <br>
 
 ```html
+<!-- index.html -->
 <sfeir-app></sfeir-app>
 ```
 <!-- .element: class="big-code" -->
@@ -60,6 +63,7 @@ L'écriture d'un composant dans sa totalité est donc la suivante
 <br><br>
 
 ```typescript
+// app.component.ts
 @Component({
   selector: 'sfeir-app',
   templateUrl: 'app.component.html',

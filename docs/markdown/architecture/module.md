@@ -25,6 +25,7 @@ Comme le composant, l'écriture du module se fait à l'aide d'une classe et d'un
 <br><br>
 
 ```typescript
+// app.module.ts
 @NgModule({
   imports: [BrowserModule, ...],
   declaration: [AppComponent, ...],
