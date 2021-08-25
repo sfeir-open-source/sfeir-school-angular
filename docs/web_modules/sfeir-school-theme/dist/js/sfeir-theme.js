@@ -24,11 +24,11 @@ class SfeirTheme {
 
 		// Manage Hack to speakers images
 		this._manageSpeakersBorders();
-		
+
 		if (Reveal){
 			Reveal.sync();
 		}
-		
+
 
 	}
 	_extractPath(){
@@ -95,12 +95,12 @@ class SfeirTheme {
 
 			for (let i = 0; i < queryElementList.length; i++){
 				const element = queryElementList[i];
-				element.classList.add('sfeir-specific-slide');			
+				element.classList.add('sfeir-specific-slide');
 				element.setAttribute('data-background',map[key]);
 			}
 		}
 
-		// Add default background for slides 
+		// Add default background for slides
 		const genericsSlides = [...document.querySelectorAll('.reveal .slides section:not([data-background]):not(.sfeir-specific-slide):not(.no-background):not(.with-code-dark):not([class*=transition])')];
 		for (let genericSlide of genericsSlides){
 			genericSlide.classList.add('sfeir-basic-slide');
@@ -159,18 +159,17 @@ class SfeirTheme {
 		if (Reveal){
 			// Need to overrides reveal inlinestyles
 			Reveal.addEventListener('slidechanged', (event)=> {
-				console.log(event);
 				const currentSlide = event.currentSlide;
 				const parentSlide = currentSlide.parentElement;
 				// Have to rewrite block due to override of reveal
-				if (parentSlide.nodeName === 'SECTION' 
+				if (parentSlide.nodeName === 'SECTION'
 				&& parentSlide.classList.contains('two-column-layout')){
 					const state = Reveal.getState();
 					state.indexv = 2;
 					Reveal.setState(state);
 					parentSlide.style.display='grid';
 
-					// Have to rewrite block due to bug 
+					// Have to rewrite block due to bug
 					const subSections = [...parentSlide.querySelectorAll('section')];
 					subSections[0].style.display='block';
 				}
@@ -182,8 +181,8 @@ class SfeirTheme {
 		const listItemWithFragments = [...document.querySelectorAll('.reveal .slides section .list-fragment')];
 		for(let lisItemWithFragmentTag of listItemWithFragments){
 			let parentOfListItem = lisItemWithFragmentTag.parentElement; // Ul or OL
-			if (parentOfListItem.nodeName === 'LI'){ 
-				// Specific case when you have some markdown bold or italic 
+			if (parentOfListItem.nodeName === 'LI'){
+				// Specific case when you have some markdown bold or italic
 				parentOfListItem = parentOfListItem.parentElement;
 			}
 			if (parentOfListItem.nodeName === 'UL' || parentOfListItem.nodeName === 'OL'){
