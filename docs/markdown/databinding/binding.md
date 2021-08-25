@@ -16,7 +16,7 @@
             <td>
                 <p>{{ expression }}</p>
                 <p>[targetFooBar] = expression</p>
-                <p>bindTargetFooBar = expression</p>
+                <p>bind-targetFooBar = expression</p>
             </td>
             <td>
                 <p>Interpolation</p>
@@ -48,15 +48,15 @@
             <td>Unidirectionnel: vue vers modèle</td>
             <td>
                 <p>(targetFooBar) = expression</p>
-                <p>onTargetFooBar = expression</p>
+                <p>on-TargetFooBar = expression</p>
             </td>
             <td>Evènements</td>
         </tr>
         <tr>
-            <td>Bidirectionnel</td>
+            <td>Bidirectionnel (2-way data binding)</td>
             <td>
                 <p>[(targetFooBar)] = expression</p>
-                <p>bindonTargetFooBar = expression</p>
+                <p>bindon-TargetFooBar = expression</p>
             </td>
             <td>Bidirectionnel</td>
         </tr>
@@ -81,7 +81,7 @@
 ## Expression:
 - Dans le contexte du composant
 - Du Javascript mais !!
-    - pas d'affectation (sauf pour les events comme le click sur un boutton)
+    - pas d'affectation (sauf pour les events comme le clic sur un bouton)
     - pas d'accès aux variables globales (window, document, ...)
     - Pour les opérateurs logiques, tout est évalué
     - Pas de new, ++, --
