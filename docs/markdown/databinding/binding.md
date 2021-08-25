@@ -80,7 +80,7 @@
 
 ## Expression:
 - Dans le contexte du composant
-- Du Javascript mais !!
+- Du TypeScript, **mais**
     - pas d'affectation (sauf pour les events comme le clic sur un bouton)
     - pas d'accès aux variables globales (window, document, ...)
     - Pour les opérateurs logiques, tout est évalué
