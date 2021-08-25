@@ -35,7 +35,7 @@
 <!-- .slide: class="with-code inconsolata" -->
 
 # Et si je veux agir sur un attribut ?
-Certains éléments n'ont pas obligatoirement la propriété (svg, colspan)
+Certains éléments n'ont pas obligatoirement la propriété souhaitée (svg, colspan)
 <br>
 
 -   On peut cibler un attribut en précédent son nom par <b>attr</b>
@@ -46,10 +46,16 @@ Certains éléments n'ont pas obligatoirement la propriété (svg, colspan)
 
 <!-- .element: class="big-code" -->
 
--   Pour les classes, on précède le nom de la classe par: <b>class</b>
+-   Pour les classes CSS, on précède le nom de la classe par: <b>class</b>
 
 ```html
-<div [class.isSpecial]="isSpecial">special class</div>
+<div [class.green]="isSpecial">special class</div>
+```
+
+```css
+.green {
+    color: green;
+}
 ```
 
 <!-- .element: class="big-code" -->
