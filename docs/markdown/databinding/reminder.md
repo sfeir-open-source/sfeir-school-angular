@@ -2,33 +2,20 @@
 
 # Attribut vs Propriétés
 
--   Les attributs c'est du <b>HTML</b>, les propriétés c'est du <b>DOM</b><br>
-    -   mapping strict (id)
-    -   attribut sans propriété (colspan)
-    -   propriété sans attribut (text-content)
-    -   les 2 mais ... <br><br>
--   L'attribut permet d'initialiser les propriétés la plupart du temps <br><br>
--   Il existe des attributs sans valeur (ex: disabled sur un boutton)<br><br>
--   un attribut: une chaîne de caractères
-
-##==##
-
-<!-- .slide: class="with-code inconsolata" -->
-
-# Angular et les propriétés
-
--   Un monde sans attribut<br><br>
--   Avec le binding, nous travaillons uniquement sur les propriétés<br><br>
-
+- Les attributs c'est du <b>HTML</b>, les propriétés c'est du <b>DOM</b>.
+- La valeur d'une propriété peut changer, les attributs ne peuvent pas être changés.
+- Le rôle des attributs est d'initialiser les propriétés du DOM, une fois effectué, le travail de l'attribut est terminé.
+- Le binding Angular ne fonctionne qu'avec les propriétés et les événements et non pas avec les attributs.
+- Une propriété peut avoir comme valeur une chaîne de caractères, un objet, une fonction... Un attribut est toujours une chaîne de caractères.<br><br>
 ```html
-<button type="submit" [disabled]="form.invalid">Submit</button>
+<!-- Attribute -->
+<input id='inputId' type='text' value='My value'> 
 ```
 
-<!-- .element: class="big-code" -->
-
-<br><br>
-
--   Permet de passer des objets
+```html
+<!-- Property -->
+<input id='inputId' type='text' [value]="value"> 
+```
 
 ##==##
 
