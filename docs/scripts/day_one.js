@@ -38,6 +38,7 @@ function dataBindingSLides() {
     'databinding/binding.md',
     'databinding/reminder.md',
     'databinding/template_variable.md',
+    'databinding/exercice.md',
   ];
 }
 
@@ -93,8 +94,8 @@ export function dayOneSlides() {
     ...basicsSlides(),
     ...architectureSlides(),
     ...cliSlides(),
-    ...dataBindingSLides(),
     ...componentsSlides(),
+    ...dataBindingSLides(),
     ...lifecycleSlides(),
     ...eventSlides(),
     ...serverCommunicationSLides(),
