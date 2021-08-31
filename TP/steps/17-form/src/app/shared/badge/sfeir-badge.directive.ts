@@ -9,14 +9,14 @@ export class SfeirBadgeDirective implements OnInit {
   /**
    * Component constructor
    */
-  constructor(private elementRef: ElementRef, private renderer2: Renderer2) {}
+  constructor(private readonly elementRef: ElementRef, private readonly renderer: Renderer2) {}
 
   /**
    * OnInit implementation
    */
   ngOnInit() {
     if (this.person && this.person.isManager) {
-      this.renderer2.setProperty(
+      this.renderer.setProperty(
         this.elementRef.nativeElement,
         'innerHTML',
         '<i class="material-icons">supervisor_account</i>'

@@ -14,7 +14,7 @@ export class UpdateComponent implements OnInit {
   /**
    * Component constructor
    */
-  constructor(private route: ActivatedRoute, private router: Router, private peopleService: PeopleService) {
+  constructor(private route: ActivatedRoute, private readonly router: Router, private peopleService: PeopleService) {
     this.person = {
       address: {}
     };

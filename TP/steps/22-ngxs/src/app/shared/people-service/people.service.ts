@@ -7,7 +7,7 @@ import { Observable, of } from 'rxjs';
 export class PeopleService {
   backendURL: any;
 
-  constructor(private http: HttpClient) {
+  constructor(private readonly http: HttpClient) {
     this.backendURL = {};
 
     // build backend base url

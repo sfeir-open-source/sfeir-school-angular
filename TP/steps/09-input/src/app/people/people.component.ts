@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 export class PeopleComponent implements OnInit {
   people;
 
-  constructor(private http: HttpClient) {}
+  constructor(private readonly http: HttpClient) {}
 
   /**
    * OnInit implementation

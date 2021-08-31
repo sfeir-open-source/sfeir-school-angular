@@ -7,7 +7,7 @@ import { environment } from '../../../environments/environment';
 export class PeopleService {
   private backendURL: any;
 
-  constructor(private http: HttpClient) {
+  constructor(private readonly http: HttpClient) {
     this.backendURL = {};
 
     // build backend base url

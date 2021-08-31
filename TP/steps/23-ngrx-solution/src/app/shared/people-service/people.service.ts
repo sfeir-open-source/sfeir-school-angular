@@ -16,7 +16,7 @@ export class PeopleService {
     return this._backendURL;
   }
 
-  constructor(private http: HttpClient, private store: Store<PeopleFeature>) {
+  constructor(private readonly http: HttpClient, private store: Store<PeopleFeature>) {
     this._backendURL = {};
 
     // build backend base url

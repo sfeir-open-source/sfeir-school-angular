@@ -11,7 +11,7 @@ import { SetPeople } from '../../app.state';
 export class PeopleService {
   backendURL: any;
 
-  constructor(private http: HttpClient, private store: Store) {
+  constructor(private readonly http: HttpClient, private store: Store) {
     this.backendURL = {};
 
     // build backend base url

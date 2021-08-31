@@ -10,7 +10,7 @@ export class SfeirBadgeDirective implements OnInit {
   /**
    * Component constructor
    */
-  constructor(private elementRef: ElementRef, private renderer: Renderer2) {}
+  constructor(private readonly elementRef: ElementRef, private readonly renderer: Renderer2) {}
 
   @HostListener('mouseenter', ['$event'])
   onMouseEnter(event) {

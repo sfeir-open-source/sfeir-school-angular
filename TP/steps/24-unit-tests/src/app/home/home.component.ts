@@ -11,7 +11,7 @@ const BASE_URL = 'http://localhost:9000';
 export class HomeComponent implements OnInit {
   private _person: any = {};
 
-  constructor(private http: HttpClient) {}
+  constructor(private readonly http: HttpClient) {}
 
   /**
    * OnInit implementation

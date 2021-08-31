@@ -13,7 +13,7 @@ import { getFilteredPeople } from '../../store/selectors/selectors';
 export class PeopleService {
   private backendURL: any;
 
-  constructor(private http: HttpClient, private store: Store<PeopleFeature>) {
+  constructor(private readonly http: HttpClient, private store: Store<PeopleFeature>) {
     this.backendURL = {};
 
     // build backend base url
