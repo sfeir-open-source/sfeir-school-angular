@@ -1,9 +1,7 @@
-// CORE DEPS
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
-// MATERIAL DESIGN MODULES
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -18,8 +16,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
-import { APP_ROUTES } from './app.routes';
-
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home';
 import { PeopleComponent } from './people';
@@ -29,6 +25,14 @@ import * as fromPeopleReducer from './store/reducers/people.reducer';
 import { metaReducers } from './store/meta-reducers';
 import { CardComponent, FormComponent, NaPipe, PeopleService, SearchComponent, SfeirBadgeDirective } from './shared';
 import { environment } from '../environments/environment';
+import { RouterModule, Routes } from '@angular/router';
+
+const ROUTES: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  { path: 'people', component: PeopleComponent },
+  { path: 'edit/:id', component: UpdateComponent }
+];
 
 @NgModule({
   imports: [
@@ -45,7 +49,7 @@ import { environment } from '../environments/environment';
     MatListModule,
     MatDialogModule,
     HttpClientModule,
-    APP_ROUTES,
+    RouterModule.forRoot(ROUTES),
     ReactiveFormsModule,
     StoreModule.forRoot({ people: fromPeopleReducer.reducer }, { metaReducers }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })

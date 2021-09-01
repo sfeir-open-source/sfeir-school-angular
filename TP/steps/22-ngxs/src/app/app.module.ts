@@ -1,9 +1,7 @@
-// CORE DEPS
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
-// MATERIAL DESIGN MODULES
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -19,8 +17,6 @@ import { NgxsModule } from '@ngxs/store';
 import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 
-import { APP_ROUTES } from './app.routes';
-
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home';
 import { PeopleComponent } from './people';
@@ -28,7 +24,15 @@ import { AddDialogComponent } from './people/add-dialog/add-dialog.component';
 import { UpdateComponent } from './update/update.component';
 import { AppState } from './app.state';
 import { environment } from '../environments/environment';
-import { CardComponent, FormComponent, NaPipe, PeopleService, SfeirBadgeDirective, SearchComponent } from './shared';
+import { CardComponent, FormComponent, NaPipe, PeopleService, SearchComponent, SfeirBadgeDirective } from './shared';
+import { RouterModule, Routes } from '@angular/router';
+
+const ROUTES: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  { path: 'people', component: PeopleComponent },
+  { path: 'edit/:id', component: UpdateComponent }
+];
 
 @NgModule({
   imports: [
@@ -45,7 +49,7 @@ import { CardComponent, FormComponent, NaPipe, PeopleService, SfeirBadgeDirectiv
     MatListModule,
     MatDialogModule,
     HttpClientModule,
-    APP_ROUTES,
+    RouterModule.forRoot(ROUTES),
     ReactiveFormsModule,
     NgxsModule.forRoot([AppState]),
     NgxsLoggerPluginModule.forRoot(),

@@ -1,8 +1,6 @@
-// CORE DEPS
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-// MATERIAL DESIGN MODULES
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -19,7 +17,6 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
-import { APP_ROUTES } from './app.routes';
 import { HomeComponent } from './home';
 import { PeopleComponent } from './people';
 import { AddDialogComponent } from './people/add-dialog/add-dialog.component';
@@ -29,6 +26,14 @@ import { CachableInterceptor } from './shared/interceptors/cachable.interceptor'
 import { metaReducers } from './store/meta-reducers';
 import * as fromPeopleReducer from './store/reducers/people.reducer';
 import { UpdateComponent } from './update/update.component';
+import { RouterModule, Routes } from '@angular/router';
+
+const ROUTES: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  { path: 'people', component: PeopleComponent },
+  { path: 'edit/:id', component: UpdateComponent }
+];
 
 @NgModule({
   imports: [
@@ -45,7 +50,7 @@ import { UpdateComponent } from './update/update.component';
     MatListModule,
     MatDialogModule,
     HttpClientModule,
-    APP_ROUTES,
+    RouterModule.forRoot(ROUTES),
     ReactiveFormsModule,
     StoreModule.forRoot({ people: fromPeopleReducer.reducer }, { metaReducers }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })

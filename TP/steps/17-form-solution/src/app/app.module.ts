@@ -1,9 +1,7 @@
-// CORE DEPS
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-// MATERIAL DESIGN MODULES
 import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -11,8 +9,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-import { APP_ROUTES } from './app.routes';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home';
 import { PeopleComponent } from './people';
@@ -25,6 +21,13 @@ import { PeopleService } from './shared/people-service';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
+import { RouterModule, Routes } from '@angular/router';
+
+const ROUTES: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  { path: 'people', component: PeopleComponent }
+];
 
 @NgModule({
   imports: [
@@ -40,7 +43,7 @@ import { MatInputModule } from '@angular/material/input';
     MatInputModule,
     MatFormFieldModule,
     HttpClientModule,
-    APP_ROUTES,
+    RouterModule.forRoot(ROUTES),
     FormsModule
   ],
   declarations: [

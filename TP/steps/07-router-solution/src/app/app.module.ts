@@ -8,11 +8,15 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { APP_ROUTES } from './app.routes';
-
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home';
 import { MatButtonModule } from '@angular/material/button';
+import { RouterModule, Routes } from '@angular/router';
+
+const ROUTES: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent }
+];
 
 @NgModule({
   imports: [
@@ -21,7 +25,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatToolbarModule,
     MatCardModule,
     MatIconModule,
-    APP_ROUTES,
+    RouterModule.forRoot(ROUTES),
     HttpClientModule,
     MatButtonModule
   ],

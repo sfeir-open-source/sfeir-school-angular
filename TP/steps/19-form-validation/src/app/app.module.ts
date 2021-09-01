@@ -1,9 +1,7 @@
-// CORE DEPS
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-// MATERIAL DESIGN MODULES
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -16,8 +14,6 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { APP_ROUTES } from './app.routes';
-
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home';
 import { PeopleComponent } from './people';
@@ -28,6 +24,14 @@ import { UpdateComponent } from './update';
 import { NaPipe } from './shared/na-pipe';
 import { SfeirBadgeDirective } from './shared/badge';
 import { PeopleService } from './shared/people-service';
+import { RouterModule, Routes } from '@angular/router';
+
+const ROUTES: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  { path: 'people', component: PeopleComponent },
+  { path: 'edit/:id', component: UpdateComponent }
+];
 
 @NgModule({
   imports: [
@@ -44,7 +48,7 @@ import { PeopleService } from './shared/people-service';
     MatListModule,
     MatDialogModule,
     HttpClientModule,
-    APP_ROUTES,
+    RouterModule.forRoot(ROUTES),
     FormsModule
   ],
   declarations: [
