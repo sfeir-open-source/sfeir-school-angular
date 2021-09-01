@@ -5,20 +5,23 @@ HttpClient vous fournit notamment les méthodes suivantes:<br><br>
 - this.http.get(url, options)<br><br>
 - this.http.post(url, data, options)<br><br>
 - this.http.put(url, data, options)<br><br>
+- this.http.patch(url, data, options)<br><br>
 - this.http.delete(url, options)<br><br>
+- ...
 
 ##==##
 <!-- .slide: class="with-code inconsolata" -->
-# L'envoie de données avec POST et PUT
+# L'envoi de données avec POST/PUT/PATCH
 
 - Le format des données doit être obligatoirement au format JSON<br><br>
-- le troisième argument est réservé pour les entêtes<br><br>
+- le troisième argument est réservé pour les options des requêtes (headers, paramètres...)<br><br>
 
 ```typescript
 http.post(
    url,
    data,
    {headers: new HttpHeaders().set('Authorization', 'my-auth-token')}
+    // OR { headers: { 'Authorization': 'my-auth-token' } }
 );
 ```
 <!-- .element: class="big-code" -->
@@ -43,10 +46,10 @@ this.http.get(url, options).subscribe(data => {
 # Gérer ses retours
 
 - Par défaut la réponse est au format JSON<br><br>
-- Pour l'avoir en type text, dans les options `{ responseType: text }`<br><br>
+- Pour l'avoir en type text, dans les options `{ responseType: 'text' }`<br><br>
 
 ```typescript
-this.http.get(url, options).subscribe(data => {
+this.http.get(url, { responseType: 'text' }).subscribe(data => {
   console.info(data);
 });
 ```
