@@ -79,11 +79,11 @@ function basicsFunctionnalitiesSlides() {
 
 function communicationSlides() {
   return [
-    'communication-component/transition_slide.md',
-    'communication-component/input.md',
-    'communication-component/exercice_input.md',
-    'communication-component/output.md',
-    'communication-component/exercice_output.md',
+    'component-communication/transition_slide.md',
+    'component-communication/input.md',
+    'component-communication/exercice_input.md',
+    'component-communication/output.md',
+    'component-communication/exercice_output.md',
   ];
 }
 

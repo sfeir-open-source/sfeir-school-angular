@@ -1,6 +1,6 @@
 <!-- .slide: class="with-code inconsolata" -->
 
-# Communication parent - enfant: @Ouput
+# Communication parent - enfant: @Output
 
 - Dans le composant enfant (`child.component.ts`)
 
@@ -26,7 +26,7 @@ export class ChildComponent {
 
 <!-- .slide: class="with-code inconsolata" -->
 
-# Communication parent - enfant: @Ouput
+# Communication parent - enfant: @Output
 
 -   Dans le template HTML du composant parent (`parent.component.html`) <br><br>
 
@@ -40,8 +40,8 @@ export class ChildComponent {
 -   Dans le composant parent (`parent.component.ts`) <br><br>
 
 ```typescript
-onChildEvent(myPassVariable: string): void {
-  console.info(myPassVariable); // event from child
+onChildEvent(value: string): void {
+  console.info(value); // event from child
 }
 ```
 
