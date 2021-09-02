@@ -74,7 +74,7 @@ function navigationSlides() {
 }
 
 function basicsFunctionnalitiesSlides() {
-  return ['functionnalities/transition_slide.md', 'functionnalities/loop.md', 'functionnalities/exercice.md'];
+  return ['functionalities/transition_slide.md', 'functionalities/loop.md', 'functionalities/exercice.md'];
 }
 
 function communicationSlides() {
