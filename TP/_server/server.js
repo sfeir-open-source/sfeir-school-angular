@@ -24,14 +24,14 @@ app.use(function(req, res, next) {
 });
 
 // JSON API
-app.get('/api/peoples', api.listAll);
-app.get('/api/peoples/random', api.getRandom);
-app.get('/api/peoples/:id', api.get);
-app.get('/api/peoples/name/:name', api.filterByName);
-app.get('/api/peoples/skill/:skill', api.filterBySkill);
-app.post('/api/peoples', api.create);
-app.put('/api/peoples/:id', api.update);
-app.delete('/api/peoples/:id', api.delete);
+app.get('/api/people', api.listAll);
+app.get('/api/people/random', api.getRandom);
+app.get('/api/people/:id', api.get);
+app.get('/api/people/name/:name', api.filterByName);
+app.get('/api/people/skill/:skill', api.filterBySkill);
+app.post('/api/people', api.create);
+app.put('/api/people/:id', api.update);
+app.delete('/api/people/:id', api.delete);
 
 app.listen(app.get('port'), function() {
   console.log('✔Express server listening on http://localhost:%d/', app.get('port'));

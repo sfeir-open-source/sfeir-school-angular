@@ -15,6 +15,6 @@ export class PeopleComponent implements OnInit {
    * OnInit implementation
    */
   ngOnInit() {
-    this.http.get('http://localhost:9000/api/peoples/').subscribe(people => (this.people = people));
+    this.http.get('http://localhost:9000/api/people/').subscribe(people => (this.people = people));
   }
 }

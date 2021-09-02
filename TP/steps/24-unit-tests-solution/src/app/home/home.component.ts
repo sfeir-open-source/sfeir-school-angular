@@ -17,14 +17,14 @@ export class HomeComponent implements OnInit {
    * OnInit implementation
    */
   ngOnInit() {
-    this.http.get(`${BASE_URL}/api/peoples/`).subscribe(people => (this._person = people[0]));
+    this.http.get(`${BASE_URL}/api/people/`).subscribe(people => (this._person = people[0]));
   }
 
   /**
    * Returns random people
    */
   random() {
-    this.http.get(`${BASE_URL}/api/peoples/random`).subscribe(person => (this._person = person));
+    this.http.get(`${BASE_URL}/api/people/random`).subscribe(person => (this._person = person));
   }
 
   get person(): any {

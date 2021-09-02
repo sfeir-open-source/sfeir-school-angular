@@ -5,8 +5,8 @@ export const environment = {
     host: '127.0.0.1',
     port: '9000',
     endpoints: {
-      allPeople: '/api/peoples',
-      randomPeople: '/api/peoples/random'
+      allPeople: '/api/people',
+      randomPeople: '/api/people/random'
     }
   }
 };
