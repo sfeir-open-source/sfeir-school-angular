@@ -1,5 +1,5 @@
 <!-- .slide: class="with-code inconsolata" -->
-# La validation avec les reactives forms
+# La validation avec les reactive forms
 
 ```html
 <form [formGroup]="editForm">
