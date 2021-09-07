@@ -55,7 +55,7 @@ function reactiveFormSlides() {
     'forms/reactive-forms/exercice_validation.md',
     'forms/reactive-forms/custom_validation.md',
     'forms/reactive-forms/exercice_custom_validation.md',
-    'forms/summury.md',
+    'forms/summary.md',
   ];
 };
 
