@@ -9,6 +9,7 @@
     - Phone: required et 10 digits ⇒ \d{10};
 - Afficher des messages en fonction des erreurs
 - Utiliser [class.errors]="control.errors" pour appliquer une classe CSS “errors”
+- Désactiver le bouton Save (propriété `[disabled]`) si le formulaire n'est pas valide 
 
 ##==##
 
