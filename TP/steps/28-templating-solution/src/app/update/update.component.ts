@@ -13,7 +13,11 @@ export class UpdateComponent implements OnInit {
   /**
    * Component constructor
    */
-  constructor(private route: ActivatedRoute, private readonly router: Router, private peopleService: PeopleService) {
+  constructor(
+    private readonly route: ActivatedRoute,
+    private readonly router: Router,
+    private readonly peopleService: PeopleService
+  ) {
     this.person = {
       address: {}
     };

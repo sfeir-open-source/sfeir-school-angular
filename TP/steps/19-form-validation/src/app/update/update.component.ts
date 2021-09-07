@@ -15,7 +15,7 @@ export class UpdateComponent implements OnInit {
    * Component constructor
    */
   constructor(
-    private route: ActivatedRoute,
+    private readonly route: ActivatedRoute,
     private readonly router: Router,
     private readonly peopleService: PeopleService
   ) {

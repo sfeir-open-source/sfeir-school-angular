@@ -20,7 +20,7 @@ export class PeopleComponent implements OnInit, OnDestroy {
   dialogStatus = 'inactive';
   view = 'card';
 
-  constructor(public dialog: MatDialog, private peopleService: PeopleService, private _store: Store) {}
+  constructor(public dialog: MatDialog, private readonly peopleService: PeopleService, private _store: Store) {}
 
   /**
    * OnInit implementation

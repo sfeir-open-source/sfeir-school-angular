@@ -9,7 +9,7 @@ import { PeopleService } from '../shared/people-service';
 export class PeopleComponent implements OnInit {
   people;
 
-  constructor(private peopleService: PeopleService) {}
+  constructor(private readonly peopleService: PeopleService) {}
 
   /**
    * OnInit implementation

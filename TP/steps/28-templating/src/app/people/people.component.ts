@@ -20,7 +20,11 @@ export class PeopleComponent implements OnInit {
   dialogStatus = 'inactive';
   view = 'card';
 
-  constructor(private store: Store<PeopleFeature>, public dialog: MatDialog, private peopleService: PeopleService) {}
+  constructor(
+    private store: Store<PeopleFeature>,
+    public dialog: MatDialog,
+    private readonly peopleService: PeopleService
+  ) {}
 
   /**
    * OnInit implementation
