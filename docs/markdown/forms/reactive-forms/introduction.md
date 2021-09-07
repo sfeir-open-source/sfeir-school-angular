@@ -32,7 +32,7 @@ export class AppModule { }
 ```html
 <form [formGroup]="editForm">
    <input type="text" formControlName="firstname">
-   <div [hidden]="!editForm.controls.firstname.valid">
+   <div *ngIf="!editForm.controls.firstname.valid">
       Firstname est d'un format invalid
    </div> 
    <button type="submit" [disabled]="!editForm.valid">
@@ -72,7 +72,7 @@ export class FormComponent {
 ```html
 <form [formGroup]="editForm">
    <input type="text" formControlName="firstname">
-   <div [hidden]="!editForm.controls.firstname.valid">Firstname est d'un format invalid</div> 
+   <div *ngIf="!editForm.controls.firstname.valid">Firstname est d'un format invalid</div> 
    <button type="submit" [disabled]="!editForm.valid">Modifier</button>
 </form>
 ```

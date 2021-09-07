@@ -5,7 +5,7 @@
 <form [formGroup]="editForm">
   <div>
     <input formControlName="firstname">  
-      <div [hidden]="!editForm.controls.firstname.errors?.required">
+      <div *ngIf="editForm.controls.firstname.errors?.required">
         <span class="help-block">Ce champ est obligatoire</span>
       </div>
    </div>
