@@ -6,13 +6,13 @@ Les sélecteurs sont des fonctions qui récupèrent une partie ou totalement not
 Dans **NGXS** il existe deux méthodes pour séléctionner notre state (ou partie de notre state):<br><br>
 
 -   méthode select du store<br><br>
--   l'annotation **@Select**
+-   le décorateur **@Select**
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
 
-# Selectors : Annotation @Select
+# Selectors : Décorateur @Select
 
 ```typescript
 import { Select } from '@ngxs/store';
@@ -38,7 +38,7 @@ export class ZooComponent {
 
 # Selectors : Select Function
 
-Le store possède une méthode **select** qui peut être utile lorsque l'on ne peut pas déclarer statiquement un sélecteur avec l'annotation **@Select**.<br>
+Le store possède une méthode **select** qui peut être utile lorsque l'on ne peut pas déclarer statiquement un sélecteur avec le décorateur **@Select**.<br>
 Attention cette méthode renvoie un Observable
 <br><br>
 
@@ -95,7 +95,7 @@ export class ZooState {
 @Component({...})
 export class AppComponent {
   constructor(private readonly store: Store) { }
-  // with the annotation method
+  // with the method decorator
   @Select(ZooState.pandas) pandas$: Observable<string[]>;
   // with the select method
   this.pandas$ = this.store.select(ZooState.pandas);

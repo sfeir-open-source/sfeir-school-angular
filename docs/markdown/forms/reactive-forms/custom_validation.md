@@ -7,8 +7,8 @@
 # Créer ses propres validateurs
 
 - Un validateur custom est une simple <b>fonction</b>
-- Si la validation est bonne : renvoie <b>null</b>
-- Si la validation n'est pas correcte : renvoie un objet de cette forme <b>{ nomErreur: true }</b>
+- Si la valeur du contrôle pass la validation : renvoie <b>null</b>
+- Sinon : renvoie un objet de cette forme <b>{ nomErreur: true }</b>
 <br><br>
 
 ```typescript
@@ -34,7 +34,7 @@ import { CustomValidators } from './validators';
 this.formModel = new FormGroup({
   email: new FormControl('', CustomValidators.CustomEmailValidator),
     // or
-  email: new FormControl('', Validators.compose([Validators.required, CustomValidators.CustomEmailValidator]))
+  email: new FormControl('', [Validators.required, CustomValidators.CustomEmailValidator])
 });
 ```
 <!-- .element: class="big-code" -->

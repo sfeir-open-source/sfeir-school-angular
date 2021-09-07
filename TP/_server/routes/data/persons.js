@@ -1,6 +1,6 @@
 'use strict';
 
-exports.peoples = [
+exports.people = [
   {
     id: '5763cd4d9d2a4f259b53c901',
     photo: 'https://randomuser.me/portraits/women/59.jpg',

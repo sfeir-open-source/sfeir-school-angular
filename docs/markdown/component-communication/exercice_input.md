@@ -4,7 +4,8 @@
 
 - Créer un composant CardComponent dans un dossier `shared` à l'aide du CLI
 - Copier le contenu du template et du style du composant HomeComponent
-- Passer la variable person au composant CardComponent
+- Passer la variable person au composant CardComponent à l'aide d'un `Input()`
+- Utiliser le composant CardComponent dans le composant Home
 Notes:
 - Faire en sorte d'utiliser le CardComponent dans le template de HomeComponent de la manière suivante: <sfeir-card [person]="person"></sfeir-card>
 

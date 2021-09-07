@@ -54,10 +54,13 @@ Notes:
 
 2 types de stratégie<br><br>
 
--   Par 'Path', aussi nommée PathLocationStrategy (Mode HTML5 et psuhState=>Par défaut) [ex: localhost:4200/people/1]: { useHash: false }<br><br>
--   Par 'Hash', aussi nommée HashLocationStrategy [ex: localhost/#/people/1]: { useHash: true } <br><br>
+- Par 'Path', aussi nommée **PathLocationStrategy** (Mode HTML5 et pushState => Par défaut)
+  - Exemple: `localhost:4200/people/1` => `{ useHash: false }`<br><br>
+- Par 'Hash', aussi nommée **HashLocationStrategy**
+  - Exemple: `localhost/#/people/1` => `{ useHash: true }` <br><br>
 
 ```typescript
+// app.module.ts
 RouterModule.forRoot(routes, { useHash: true });
 ```
 
@@ -70,7 +73,42 @@ RouterModule.forRoot(routes, { useHash: true });
 # Utiliser la navigation en Angular
 
 ##--##
-![h-600](assets/images/school/navigation/navigation_routing_module.png)
+
+<!-- .slide: class="with-code inconsolata" -->
+
+```typescript
+// app.module.ts
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './home.component';
+import { PeopleComponent } from './people.component';
+import { PersonComponent } from './person.component';
+
+const ROUTES: Routes = [
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
+    { path: 'home', component: HomeComponent },
+    { path: 'people', component: PeopleComponent },
+    { path: 'people/:id', component: PersonComponent },
+];
+
+@NgModule({
+    imports: [
+        ...
+        RouterModule.forRoot(ROUTES),
+    ],
+    ...
+})
+export class AppModule {}
+```
+
 ##--##
-![h-400](assets/images/school/navigation/navigation_root_module.png)
-![h-400](assets/images/school/navigation/navigation_router_outlet.png)
+
+<!-- .slide: class="with-code inconsolata" -->
+
+```html
+<!-- app.component.html -->
+<section class='container'>
+    <router-outler></router-outler>
+</section>
+```
+

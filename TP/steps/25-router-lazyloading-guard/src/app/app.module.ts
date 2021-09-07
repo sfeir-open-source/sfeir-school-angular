@@ -1,8 +1,6 @@
-// CORE DEPS
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-// MATERIAL DESIGN MODULES
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -14,11 +12,16 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { APP_ROUTES } from './app.routes';
-
-import { PeopleAppComponent } from './app.component';
+import { AppComponent } from './app.component';
 import { HomeComponent } from './home';
 import { SecretComponent } from './secret';
+import { RouterModule, Routes } from '@angular/router';
+
+const ROUTES: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  { path: 'secret', component: SecretComponent }
+];
 
 @NgModule({
   imports: [
@@ -33,11 +36,11 @@ import { SecretComponent } from './secret';
     MatRadioModule,
     MatIconModule,
     MatListModule,
-    APP_ROUTES,
+    RouterModule.forRoot(ROUTES),
     HttpClientModule
   ],
-  declarations: [PeopleAppComponent, HomeComponent, SecretComponent],
+  declarations: [AppComponent, HomeComponent, SecretComponent],
   providers: [],
-  bootstrap: [PeopleAppComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

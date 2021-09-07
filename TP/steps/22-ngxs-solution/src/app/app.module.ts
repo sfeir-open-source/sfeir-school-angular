@@ -1,9 +1,7 @@
-// CORE DEPS
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
-// MATERIAL DESIGN MODULES
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -19,9 +17,7 @@ import { NgxsModule } from '@ngxs/store';
 import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 
-import { APP_ROUTES } from './app.routes';
-
-import { PeopleAppComponent } from './app.component';
+import { AppComponent } from './app.component';
 import { HomeComponent } from './home';
 import { PeopleComponent } from './people';
 import { CardComponent } from './shared/card';
@@ -34,6 +30,14 @@ import { SfeirBadgeDirective } from './shared/badge';
 import { AppState } from './app.state';
 import { environment } from '../environments/environment';
 import { SearchComponent } from './shared/search/search.component';
+import { RouterModule, Routes } from '@angular/router';
+
+const ROUTES: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  { path: 'people', component: PeopleComponent },
+  { path: 'edit/:id', component: UpdateComponent }
+];
 
 @NgModule({
   imports: [
@@ -50,7 +54,7 @@ import { SearchComponent } from './shared/search/search.component';
     MatListModule,
     MatDialogModule,
     HttpClientModule,
-    APP_ROUTES,
+    RouterModule.forRoot(ROUTES),
     ReactiveFormsModule,
     NgxsModule.forRoot([AppState]),
     NgxsLoggerPluginModule.forRoot(),
@@ -59,7 +63,7 @@ import { SearchComponent } from './shared/search/search.component';
     })
   ],
   declarations: [
-    PeopleAppComponent,
+    AppComponent,
     HomeComponent,
     PeopleComponent,
     CardComponent,
@@ -72,6 +76,6 @@ import { SearchComponent } from './shared/search/search.component';
   ],
   entryComponents: [AddDialogComponent],
   providers: [PeopleService],
-  bootstrap: [PeopleAppComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

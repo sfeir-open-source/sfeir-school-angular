@@ -7,29 +7,29 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export class SearchComponent {
   @Input() initValue: string;
-  @Output('search') searchEvent$: EventEmitter<string>;
-  @Output('selectOnEnter') selectEvent$: EventEmitter<string>;
-  @Output('current') currentEvent$: EventEmitter<number>;
+  @Output('search') searchEvent: EventEmitter<string>;
+  @Output('selectOnEnter') selectEvent: EventEmitter<string>;
+  @Output('current') currentEvent: EventEmitter<number>;
 
   constructor() {
-    this.searchEvent$ = new EventEmitter<string>();
-    this.selectEvent$ = new EventEmitter<string>();
-    this.currentEvent$ = new EventEmitter<number>();
+    this.searchEvent = new EventEmitter<string>();
+    this.selectEvent = new EventEmitter<string>();
+    this.currentEvent = new EventEmitter<number>();
   }
 
   search(value: string) {
-    this.searchEvent$.emit(value);
+    this.searchEvent.emit(value);
   }
 
   onSelect() {
-    this.selectEvent$.emit();
+    this.selectEvent.emit();
   }
 
   next() {
-    this.currentEvent$.emit(1);
+    this.currentEvent.emit(1);
   }
 
   prev() {
-    this.currentEvent$.emit(-1);
+    this.currentEvent.emit(-1);
   }
 }

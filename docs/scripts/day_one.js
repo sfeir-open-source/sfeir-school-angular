@@ -38,6 +38,7 @@ function dataBindingSLides() {
     'databinding/binding.md',
     'databinding/reminder.md',
     'databinding/template_variable.md',
+    'databinding/exercice.md',
   ];
 }
 
@@ -73,16 +74,16 @@ function navigationSlides() {
 }
 
 function basicsFunctionnalitiesSlides() {
-  return ['functionnalities/transition_slide.md', 'functionnalities/loop.md', 'functionnalities/exercice.md'];
+  return ['functionalities/transition_slide.md', 'functionalities/loop.md', 'functionalities/exercice.md'];
 }
 
 function communicationSlides() {
   return [
-    'communication-component/transition_slide.md',
-    'communication-component/input.md',
-    'communication-component/exercice_input.md',
-    'communication-component/output.md',
-    'communication-component/exercice_output.md',
+    'component-communication/transition_slide.md',
+    'component-communication/input.md',
+    'component-communication/exercice_input.md',
+    'component-communication/output.md',
+    'component-communication/exercice_output.md',
   ];
 }
 
@@ -93,8 +94,8 @@ export function dayOneSlides() {
     ...basicsSlides(),
     ...architectureSlides(),
     ...cliSlides(),
-    ...dataBindingSLides(),
     ...componentsSlides(),
+    ...dataBindingSLides(),
     ...lifecycleSlides(),
     ...eventSlides(),
     ...serverCommunicationSLides(),

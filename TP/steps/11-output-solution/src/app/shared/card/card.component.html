@@ -2,7 +2,7 @@
   <mat-card-title-group>
     <img mat-card-mat-image src="{{ person.photo }}" />
     <mat-card-title>
-      <a href="#/people/1">
+      <a routerLink="/people/1">
         <span>{{ person.firstname }} {{ person.lastname }}</span>
       </a>
     </mat-card-title>
@@ -23,7 +23,7 @@
   </mat-card-title-group>
   <mat-card-content>
     <div class="contact-info">
-      Manager&nbsp;:&nbsp; <a href="#/people/1">{{ person.manager }}</a>
+      Manager&nbsp;:&nbsp; <a routerLink="/people/1">{{ person.manager }}</a>
     </div>
     <div class="contact-info">Location&nbsp;:&nbsp;<a href="http://www.sfeir.com/contact/">SFEIR</a></div>
     <div class="buttons-info">
@@ -33,7 +33,7 @@
       <a mat-button title="Edit" [routerLink]="['/edit', person.id]">
         <mat-icon>create</mat-icon>
       </a>
-      <a mat-button title="Delete" (click)="delete(person)">
+      <a mat-button title="Delete" (click)="delete.emit(person)">
         <mat-icon>delete</mat-icon>
       </a>
     </div>

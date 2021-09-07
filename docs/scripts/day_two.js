@@ -9,10 +9,10 @@ function providersSlide() {
 
 function dependancyInjectionSlides() {
   return [
-    'dependancy-injection/transition_slide.md',
-    'dependancy-injection/basics.md',
-    'dependancy-injection/di_working.md',
-    'dependancy-injection/di_resolution.md',
+    'dependency-injection/transition_slide.md',
+    'dependency-injection/basics.md',
+    'dependency-injection/di_working.md',
+    'dependency-injection/di_resolution.md',
   ];
 };
 
@@ -55,7 +55,7 @@ function reactiveFormSlides() {
     'forms/reactive-forms/exercice_validation.md',
     'forms/reactive-forms/custom_validation.md',
     'forms/reactive-forms/exercice_custom_validation.md',
-    'forms/summury.md',
+    'forms/summary.md',
   ];
 };
 

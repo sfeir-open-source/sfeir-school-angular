@@ -3,11 +3,11 @@
 ## Enoncé<br>
 
 - Le composant PeopleComponent vient d'être complété
-    - showDialog(): affiche une modal dialogue
-    - hideDialog(): permet de cacher cette modal<br><br>
+  - showDialog(): affiche une modale dialogue
+  - hideDialog(): permet de cacher cette modal<br><br>
 - Le template du composant PeopleComponent a été complété
-    - un boutton pour ajouter une personne, affiche la modal
-    - HTML de la modal
+  - un bouton pour ajouter une personne, affiche la modale
+  - HTML de la modale
 
 ##==##
 

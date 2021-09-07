@@ -26,14 +26,7 @@ Notes:
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# La résolution par class aliasée: useExisting
-
-- <b>Création de deux instance de V8</b><br><br>
-
-```typescript
-providers: [ V8, { provide: V8, useClass: V8 }]
-```
-<!-- .element: class="big-code" -->
+# La résolution par classe aliasée: useExisting
 
 <br><br>
 

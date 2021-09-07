@@ -4,8 +4,7 @@
 
 ## Exercice<br>
 
-- Nous venons d'ajouter une liste dans la vue du composant PeopleComponent et un bouton pour le choix du mode d'
-  affichage
+- Nous venons d'ajouter un nouvel affichage pour la liste des personnes dans la vue du composant PeopleComponent, ainsi qu'un bouton pour le choix de l'affichage (card ou list)
 - Utiliser la directive NgSwitch pour changer le mode d'affichage de la liste "card", "list"
 - Modifier les icônes du bouton à l'aide de NgIf
 

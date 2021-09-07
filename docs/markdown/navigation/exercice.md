@@ -2,8 +2,8 @@
 # Exercice 07 : router
 ## Exercice<br>
 
-- Compléter le fichier app.routes.ts<br><br>
-- Importer la balise <router-outlet><router-outlet> dans le fichier app.component.html
+- Compléter le fichier app.module.ts pour y définir les routes<br><br>
+- Utiliser la balise <router-outlet><router-outlet> dans le fichier app.component.html
 
 ##==##
 

@@ -9,12 +9,12 @@ export class FormComponent implements OnInit, OnChanges {
   @Input() model: any;
   isUpdateMode: boolean;
 
-  @Output('cancel') cancel$: EventEmitter<any>;
-  @Output('submit') submit$: EventEmitter<any>;
+  @Output('cancel') cancelEvent: EventEmitter<any>;
+  @Output('submit') submitEvent: EventEmitter<any>;
 
   constructor() {
-    this.submit$ = new EventEmitter();
-    this.cancel$ = new EventEmitter();
+    this.submitEvent = new EventEmitter();
+    this.cancelEvent = new EventEmitter();
     this.model = { address: {} };
   }
 
@@ -35,10 +35,10 @@ export class FormComponent implements OnInit, OnChanges {
     }
   }
   cancel() {
-    this.cancel$.emit();
+    this.cancelEvent.emit();
   }
 
   submit() {
-    this.submit$.emit(this.model);
+    this.submitEvent.emit(this.model);
   }
 }

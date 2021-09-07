@@ -20,13 +20,13 @@ export class PeopleComponent implements OnInit, OnDestroy {
   dialogStatus = 'inactive';
   view = 'card';
 
-  constructor(public dialog: MatDialog, private _peopleService: PeopleService, private _store: Store) {}
+  constructor(public dialog: MatDialog, private readonly peopleService: PeopleService, private _store: Store) {}
 
   /**
    * OnInit implementation
    */
   ngOnInit() {
-    this._peopleService.fetch().subscribe();
+    this.peopleService.fetch().subscribe();
     this._store
       .select(AppState.filteredPeople)
       .pipe(takeUntil(this.destroyPeopleSubscription))
@@ -40,13 +40,13 @@ export class PeopleComponent implements OnInit, OnDestroy {
   }
 
   delete(person: any) {
-    this._peopleService.delete(person.id).subscribe(people => (this.people = people));
+    this.peopleService.delete(person.id).subscribe(people => (this.people = people));
   }
 
   add(person: any) {
-    this._peopleService
+    this.peopleService
       .create(person)
-      .pipe(mergeMap(() => this._peopleService.fetch()))
+      .pipe(mergeMap(() => this.peopleService.fetch()))
       .subscribe(() => {
         this.hideDialog();
       });

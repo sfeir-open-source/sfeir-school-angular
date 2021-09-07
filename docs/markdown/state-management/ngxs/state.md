@@ -2,7 +2,7 @@
 
 # State : définition
 
-Le **State** est une classe préfixée de l'annotation **@State** qui définit notre state container.
+Le **State** est une classe préfixée du décorateur **@State** qui définit notre state container.
 <br><br>
 
 ```typescript
@@ -103,7 +103,7 @@ export class TodoState {
 
 - Pour résumer une action se caractérise par:
     - une fonction prenant en paramètre le contexte de type **StateContext** et le payload
-    - l'annotation **@Action**
+    - le décorateur **@Action**
 
 <br><br>
 

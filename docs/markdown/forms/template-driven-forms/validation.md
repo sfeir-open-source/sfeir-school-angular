@@ -50,7 +50,7 @@ Et bien on utilise la propriété liée à l'attribut
 
 ```html
 <input type="text" name="user" ngModel #userRef="ngModel" required>    
-<div [hidden]="!userRef.errors?.required">
+<div *ngIf="userRef.errors?.required">
   <span class="help-block">Ce champ est obligatoire</span>
 </div>
 ```

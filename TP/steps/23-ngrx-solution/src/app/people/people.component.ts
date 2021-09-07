@@ -20,25 +20,29 @@ export class PeopleComponent implements OnInit {
   dialogStatus = 'inactive';
   view = 'card';
 
-  constructor(private store: Store<PeopleFeature>, public dialog: MatDialog, private _peopleService: PeopleService) {}
+  constructor(
+    private readonly store: Store<PeopleFeature>,
+    public readonly dialog: MatDialog,
+    private readonly peopleService: PeopleService
+  ) {}
 
   /**
    * OnInit implementation
    */
   ngOnInit() {
     this.search$ = this.store.select(getSearch);
-    this.people$ = this._peopleService.getPeople();
-    this._peopleService.fetch().subscribe();
+    this.people$ = this.peopleService.getPeople();
+    this.peopleService.fetch().subscribe();
   }
 
   delete(person: any) {
-    this._peopleService.delete(person.id).subscribe(people => (this.people$ = people));
+    this.peopleService.delete(person.id).subscribe(people => (this.people$ = people));
   }
 
   add(person: any) {
-    this._peopleService
+    this.peopleService
       .create(person)
-      .pipe(mergeMap(() => this._peopleService.fetch()))
+      .pipe(mergeMap(() => this.peopleService.fetch()))
       .subscribe(() => {
         this.hideDialog();
       });

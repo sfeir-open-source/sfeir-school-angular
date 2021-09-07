@@ -9,14 +9,15 @@ Pour réaliser des formulaires avec Reactive Forms, il est nécessaire d'importe
 <br><br>
 
 ```typescript
+// app.module.ts
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  imports: [BrowserModule, ReactiveFormsModule],
-  declarations: [ ],
-  providers: [],
-  bootstrap: []
+    imports: [BrowserModule, ReactiveFormsModule],
+    declarations: [ ],
+    providers: [],
+    bootstrap: []
 })
 export class AppModule { }
 ```
@@ -28,38 +29,42 @@ export class AppModule { }
 # Syntaxe Global dans les formulaires Reactive forms
 ##--##
 <!-- .slide: class="with-code inconsolata" -->
-<br><br>
-```html
-<form [formGroup]="editForm">
-   <input type="text" formControlName="firstname">
-   <div [hidden]="!editForm.controls.firstname.valid">
-      Firstname est d'un format invalid
-   </div> 
-   <button type="submit" [disabled]="!editForm.valid">
-     Modifier
-   </button>
-</form>
+<br>
+
+```typescript
+// form.component.ts
+import { Validators, FormControl, FormGroup } from '@angular/forms';
+@Component({...})
+export class FormComponent {
+    editForm: FormGroup;
+    constructor() {
+        this.editForm = new FormGroup({
+            firstname: new FormControl('',
+                [Validators.required, Validators.minLength(2)]
+            )
+        });
+    }
+}
 ```
 <!-- .element: class="big-code" -->
 
 ##--##
 <!-- .slide: class="with-code inconsolata" -->
-<br><br>
+<br>
 
-```typescript
-import { Validators, FormControl, FormGroup } from '@angular/forms';
-@Component({...})
-export class FormComponent {
-  editForm: FormGroup;
-   constructor() {
-    this.editForm = new FormGroup({
-        firstname: new FormControl('', 
-          [Validators.required, Validators.minLength(2)]
-        )
-    });
-   }
-}
+```html
+<!-- form.component.html -->
+<form [formGroup]="editForm">
+    <input type="text" formControlName="firstname">
+    <div *ngIf="!editForm.controls.firstname.valid">
+        Firstname est d'un format invalid
+    </div>
+    <button type="submit" [disabled]="!editForm.valid">
+        Modifier
+    </button>
+</form>
 ```
+
 <!-- .element: class="big-code" -->
 
 ##==##
@@ -71,9 +76,9 @@ export class FormComponent {
 
 ```html
 <form [formGroup]="editForm">
-   <input type="text" formControlName="firstname">
-   <div [hidden]="!editForm.controls.firstname.valid">Firstname est d'un format invalid</div> 
-   <button type="submit" [disabled]="!editForm.valid">Modifier</button>
+    <input type="text" formControlName="firstname">
+    <div *ngIf="!editForm.controls.firstname.valid">Firstname est d'un format invalid</div>
+    <button type="submit" [disabled]="!editForm.valid">Modifier</button>
 </form>
 ```
 <!-- .element: class="big-code" -->
@@ -99,7 +104,7 @@ Notes:
 <!-- .element: class="big-code" -->
 Notes:
 - ngSubmit permet de soumettre le formulaire lors de la touche entrer
-- editForm.valu renvoie un object de ce format: { address: { zipCode: 57000, country: FRANCE } }
+- `editForm.value` renvoie un objet de ce format: { address: { zipCode: 57000, country: FRANCE } }
 
 ##==##
 
@@ -110,15 +115,18 @@ Notes:
 import { Validators, FormControl, FormGroup } from '@angular/forms';
 @Component({...})
 export class FormComponent {
-  editForm: FormGroup;
-   constructor() {
-    this.editForm = new FormGroup({
-        firstname: new FormControl('', [Validators.required, Validators.minLength(2)])
-    })
-   }
+    editForm: FormGroup;
+    constructor() {
+        this.editForm = new FormGroup({
+            address: new FormGroup({
+                zipCode: new FormControl('', Validators.required),
+                country: new FormControl('', Validators.required),
+            })
+        })
+    }
 }
 ```
 <!-- .element: class="big-code" -->
 Notes:
-- firstname est de type AbstracteControl, si l'on souhaite update sa valeur lors d'un certain évènement comme le click d'un bouton, il existe la méthode patchValue
+- firstname est de type AbstractControl, si l'on souhaite update sa valeur lors d'un certain évènement comme le click d'un bouton, il existe la méthode patchValue
 - coup de pouce: Réaliser des getters qui renvoie l'AbstractControl. Ca allégerera votre template => this.editForm.get('firstname')

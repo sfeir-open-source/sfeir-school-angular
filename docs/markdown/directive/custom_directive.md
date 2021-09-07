@@ -11,7 +11,7 @@
 ![h-300 center](assets/images/school/directive/directive_schema.png) <br>
 
 -   les directives structurelles : modifient le DOM<br>
--   les directives attributales : modifient l'apparence ou le comportement d'un élement<br>
+-   les directives d'attributs : modifient l'apparence ou le comportement d'un élement<br>
 -   composant : directive avec une vue<br>
 
 ##==##
@@ -22,7 +22,9 @@
 ```typescript
 import { Directive } from '@angular/core';
 
-@Directive({ ... })
+@Directive({ 
+    selector: '[myDirective]'
+})
 export class MyDirective {}
 ```
 
@@ -34,11 +36,11 @@ export class MyDirective {}
 
 # Comment invoquer une directive ?
 
--   <b>element-name</b> : pour restreindre à un élement<br><br>
+-   <b>element-name</b> : pour restreindre à un élément<br><br>
 -   <b>[attribute]</b> : pour restreindre à un attribut<br><br>
 -   <b>.class</b> : pour restreindre à une classe<br><br>
 -   <b>[attribute=value]</b> : pour restreindre à un attribut avec une certaine valeur<br><br>
--   <b>:not(sub_selector)</b> : si l'élement ne match pas le sous sélécteur
+-   <b>:not(sub_selector)</b> : si l'élément ne match pas le sous sélecteur
 
 ##==##
 
@@ -56,7 +58,7 @@ export class MyDirective {}
 
 # Comment passer des props à ma directive
 
--   Lister des inputs grâce à l'annotation <b>@Input()</b>
+-   Lister des inputs grâce au décorateur <b>@Input()</b>
 -   Ces inputs peuvent être aliasés
 -   <b>Exactement comme pour les composants</b> <br><br>
 
@@ -132,21 +134,19 @@ export class MyDirective {
 
 # Les évènements
 
--   <b>@Hostlistener()</b> pour écouter des évènements sur l'élément host
 -   <b>@Output()</b> pour propager des évènements
+-   <b>@Hostlistener()</b> pour écouter des évènements sur l'élément host
 -   <b>Exactement comme pour les composants</b>
 
 ```typescript
-@Directive({})
+@Directive({ selector: '[myDirective]' })
 export class MyDirective {
-    @Output() somethingChange$: EventEmitter<any>;
+    @Output() somethingChange: EventEmitter<{ event: MouseEvent, data: any }> = new EventEmitter();
 
-    constructor() {
-        this.somethingChange$ = new EventEmitter();
-    }
+    constructor() {}
 
-    @HostListener('click', '$event') onClick($event) {
-        this.somethingChange$.emit({ $event, data });
+    @HostListener('click', '$event') handleClick(event: MouseEvent) {
+        this.somethingChange.emit({ event, data });
     }
 }
 ```

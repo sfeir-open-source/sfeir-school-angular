@@ -32,9 +32,11 @@ export class AppComponent {
 
 <!-- .slide: class="with-code inconsolata" -->
 # Le composant: son affichage
-L'affichage du composant dans la page se fait à l'aide d'annotations
+L'affichage du composant dans la page se fait à l'aide d'un décorateur
 <br><br>
+
 ```typescript
+// app.component.ts
 @Component({
   selector: 'sfeir-app',
   templateUrl: 'app.component.html',
@@ -45,12 +47,13 @@ L'affichage du composant dans la page se fait à l'aide d'annotations
 <br>
 
 ```html
+<!-- index.html -->
 <sfeir-app></sfeir-app>
 ```
 <!-- .element: class="big-code" -->
 <br>
 Notes:
-- Une annotation de type @Component se fait toujours au dessus d'une classe. Sans cette classe, le build et le linter affiche une erreur
+- Un décorateur de type @Component se fait toujours au dessus d'une classe. Sans cette classe, le build et le linter affiche une erreur
 
 ##==##
 
@@ -60,6 +63,7 @@ L'écriture d'un composant dans sa totalité est donc la suivante
 <br><br>
 
 ```typescript
+// app.component.ts
 @Component({
   selector: 'sfeir-app',
   templateUrl: 'app.component.html',

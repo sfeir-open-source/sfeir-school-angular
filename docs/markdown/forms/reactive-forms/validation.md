@@ -1,11 +1,11 @@
 <!-- .slide: class="with-code inconsolata" -->
-# La validation avec les reactives forms
+# La validation avec les reactive forms
 
 ```html
 <form [formGroup]="editForm">
   <div>
     <input formControlName="firstname">  
-      <div [hidden]="!editForm.controls.firstname.errors?.required">
+      <div *ngIf="editForm.controls.firstname.errors?.required">
         <span class="help-block">Ce champ est obligatoire</span>
       </div>
    </div>

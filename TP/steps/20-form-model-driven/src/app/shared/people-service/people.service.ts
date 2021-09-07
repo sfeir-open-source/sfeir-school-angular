@@ -5,10 +5,10 @@ import { environment } from '../../../environments/environment';
 
 @Injectable()
 export class PeopleService {
-  private _backendURL: any;
+  private backendURL: any;
 
-  constructor(private _http: HttpClient) {
-    this._backendURL = {};
+  constructor(private readonly http: HttpClient) {
+    this.backendURL = {};
 
     // build backend base url
     let baseUrl = `${environment.backend.protocol}://${environment.backend.host}`;
@@ -18,31 +18,31 @@ export class PeopleService {
 
     // build all backend urls
     Object.keys(environment.backend.endpoints).forEach(
-      k => (this._backendURL[k] = `${baseUrl}${environment.backend.endpoints[k]}`)
+      k => (this.backendURL[k] = `${baseUrl}${environment.backend.endpoints[k]}`)
     );
   }
 
   fetch(): Observable<any> {
-    return this._http.get(this._backendURL.allPeople);
+    return this.http.get(this.backendURL.allPeople);
   }
 
   fetchRandom(): Observable<any> {
-    return this._http.get(this._backendURL.randomPeople);
+    return this.http.get(this.backendURL.randomPeople);
   }
 
   delete(id: string): Observable<any> {
-    return this._http.delete(this._backendURL.onePeople.replace(':id', id));
+    return this.http.delete(this.backendURL.onePeople.replace(':id', id));
   }
 
   create(person): Observable<any> {
-    return this._http.post(this._backendURL.allPeople, person);
+    return this.http.post(this.backendURL.allPeople, person);
   }
 
   fetchOne(id: string): Observable<any> {
-    return this._http.get(this._backendURL.onePeople.replace(':id', id));
+    return this.http.get(this.backendURL.onePeople.replace(':id', id));
   }
 
   update(person: any): Observable<any> {
-    return this._http.put(this._backendURL.onePeople.replace(':id', person.id), person);
+    return this.http.put(this.backendURL.onePeople.replace(':id', person.id), person);
   }
 }

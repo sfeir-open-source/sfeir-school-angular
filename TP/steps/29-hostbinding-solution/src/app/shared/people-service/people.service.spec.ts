@@ -106,8 +106,8 @@ describe('PeopleService', () => {
     it('should delete person with id=456 when status === 200', inject(
       [PeopleService, HttpTestingController],
       (service: PeopleService, httpTestingController: HttpTestingController) => {
-        const _expectedResponse = Array.from(expectedResponse);
-        _expectedResponse.splice(1, 1); // remove entry=1
+        const expectedResponseArray = Array.from(expectedResponse);
+        expectedResponseArray.splice(1, 1); // remove entry=1
 
         service.delete('456').subscribe(response => {
           expect(response.length).toBe(2);
@@ -119,7 +119,7 @@ describe('PeopleService', () => {
           BASE_URL + environment.backend.endpoints.onePeople.replace(':id', '456')
         );
         expect(req.request.method).toEqual('DELETE');
-        req.flush(_expectedResponse);
+        req.flush(expectedResponseArray);
         httpTestingController.verify();
       }
     ));

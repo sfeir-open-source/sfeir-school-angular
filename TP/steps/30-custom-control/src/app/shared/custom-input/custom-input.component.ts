@@ -8,14 +8,20 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
   providers: [{ provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() => SfeirInputComponent), multi: true }]
 })
 export class SfeirInputComponent implements ControlValueAccessor {
-  private onChanged: (x: string) => void;
-  private onTouched: () => void;
+  // private onChanged: (x: string) => void;
+  // private onTouched: () => void;
   @ViewChild('InputElement', { static: false }) inputElement: ElementRef;
-  constructor(private readonly renderer: Renderer2) {}
+  constructor(private readonly renderer: Renderer2) {
+    console.log(this.renderer);
+  }
 
   writeValue() {}
 
-  registerOnTouched(fn: () => void) {}
+  registerOnTouched(fn: () => void) {
+    console.log(fn);
+  }
 
-  registerOnChange(fn: (inputValue: string) => void) {}
+  registerOnChange(fn: (inputValue: string) => void) {
+    console.log(fn);
+  }
 }
