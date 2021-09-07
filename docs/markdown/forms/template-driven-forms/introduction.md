@@ -31,11 +31,11 @@ export class AppModule {}
 
 # La syntaxe dans le template driven forms
 
--   <b>#authentificationForm="ngForm"</b>: On déclare une référence sur un formulaire prenant comme valeur la directive ngForm<br><br>
--   <b>authentification.value</b> permet de récupérer en format JSON objet, toutes les valeurs des champs du formulaire <br><br>
+-   <b>#authenticationForm="ngForm"</b>: On déclare une référence sur un formulaire prenant comme valeur la directive ngForm<br><br>
+-   <b>authentication.value</b> permet de récupérer en format JSON objet, toutes les valeurs des champs du formulaire <br><br>
 
 ```html
-<form #f="ngForm" (ngSubmit)="onSubmit(f.value)"></form>
+<form #authenticationForm="ngForm" (ngSubmit)="onSubmit(f.value)"></form>
 ```
 
 <!-- .element: class="big-code" -->
@@ -83,8 +83,11 @@ export class AppModule {}
 <b>ngModelGroup</b> regroupe des contrôles dans un sous objet<br><br>
 
 ```html
-<p ngModelGroup="address"><input ngModel name="city" /></p>
-<p ngModelGroup="address"><input ngModel name="postalCode" /></p>
+<div ngModelGroup="address">
+    <p><input ngModel name="city" /></p>
+    <p><input ngModel name="postalCode" /></p>
+</div>
+
 ```
 
 <!-- .element: class="big-code" -->
