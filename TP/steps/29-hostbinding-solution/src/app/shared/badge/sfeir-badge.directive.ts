@@ -28,7 +28,7 @@ export class SfeirBadgeDirective implements OnInit {
    * OnInit implementation
    */
   ngOnInit() {
-    if (this.person && this.person.isManager) {
+    if (this.person?.isManager) {
       this.renderer.setProperty(
         this.elementRef.nativeElement,
         'innerHTML',
