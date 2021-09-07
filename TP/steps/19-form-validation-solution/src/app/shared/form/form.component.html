@@ -1,7 +1,11 @@
 <mat-card class="mat-whiteframe-2dp">
   <mat-card-title>
-    <span *ngIf="isUpdateMode">Update {{ model?.firstname || '?' }} {{ model?.lastname || '?' }}</span>
-    <span *ngIf="!isUpdateMode">Create new person</span>
+    <span *ngIf="isUpdateMode; else updateModeOff"
+      >Update {{ model?.firstname || '?' }} {{ model?.lastname || '?' }}</span
+    >
+    <ng-template #updateModeOff>
+      <span>Create new person</span>
+    </ng-template>
   </mat-card-title>
 
   <mat-card-content>
