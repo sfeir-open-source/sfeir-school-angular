@@ -6,7 +6,7 @@
 
 ```typescript
 @Injectable({
-    providedIn: AppModule
+    providedIn: 'root'
 })
 export class TodoService {
     constructor() {
@@ -33,10 +33,63 @@ Notes:
 # Utiliser son service (en global)
 
 ##--##
-![h-600](assets/images/school/providers/service.png)
+
+```typescript
+// todo.service.ts
+import { Injectable } from '@angular/core';
+
+@Injectable()
+export class TodoService {
+    name: string;
+
+    constructor() {
+        this.name = 'Hello';
+    }
+
+    getName() {
+        return this.name;
+    }
+}
+```
+
+<!-- .element: class="medium-code" -->
+
+
 ##--##
-![h-500](assets/images/school/providers/service_register.png)
-![h-400 center](assets/images/school/providers/service_injection.png)
+
+```typescript
+// app.module.ts
+import { TodoService, AppComponent } from './shared/';
+import { NgModule } from '@angular/core';
+
+@NgModule({
+    declarations: [AppComponent],
+    providers: [TodoService],
+    ...
+})
+export class AppModule {}
+```
+
+<!-- .element: class="medium-code" -->
+
+
+<br>
+
+```typescript
+// app.component.ts
+import { Component } from '@angular/core';
+import { TodoService } from './shared/';
+
+@Component({ ... })
+export class AppComponent {
+    constructor(private readonly todoService: TodoService) {
+      this.name = this.todoService.getName();
+    }
+}
+```
+
+<!-- .element: class="medium-code" -->
+
 
 ##==##
 
@@ -48,11 +101,10 @@ Notes:
 
 <!-- .slide: class="with-code inconsolata" -->
 
-<br><br><br>
-
 ```typescript
+// todo.service.ts
 @Injectable()
-class TodoService {
+export class TodoService {
     constructor() {}
 
     get Name(): string {
@@ -67,17 +119,16 @@ class TodoService {
 
 <!-- .slide: class="with-code inconsolata" -->
 
-<br><br><br>
-
 ```typescript
+// app.component.ts
 @Component({
-  ...
-  providers: [TodoService]
+    ...
+    providers: [TodoService],
 })
 export class AppComponent {
-  constructor(private readonly todoService: TodoService) {
-    console.info(todoService.name); // SFEIR
-  }
+    constructor(private readonly todoService: TodoService) {
+        console.info(todoService.name); // SFEIR
+    }
 }
 ```
 
