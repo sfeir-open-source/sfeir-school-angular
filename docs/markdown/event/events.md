@@ -15,7 +15,7 @@ export class MyComponent {
     constructor() {}
     
     updateValue(clickEvent: MouseEvent): void {
-      this.values += event.target.value + ' | ';
+      this.values += clickEvent.target.value + ' | ';
     }
 }
 ```
