@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { AddDialogComponent } from './add-dialog/add-dialog.component';
 
-const BASE_URL = 'http://localhost:9000';
+const BASE_URL = 'http://localhost:3000';
 
 @Component({
   selector: 'sfeir-people',

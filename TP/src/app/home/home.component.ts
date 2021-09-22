@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-const BASE_URL = 'http://localhost:9000';
+const BASE_URL = 'http://localhost:3000';
 
 @Component({
   selector: 'sfeir-home',

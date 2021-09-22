@@ -10,7 +10,7 @@
 
 Notes:
 - Il est inutile de dupliquer le bouton random, nous verrons comment faire plus tard pour éviter de dupliquer le template et le style
-- l'URL à appeler http://localhost:9000/api/peoples
+- l'URL à appeler http://localhost:3000/api/peoples
 
 ##==##
 

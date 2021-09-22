@@ -6,8 +6,8 @@
 - Injecter le service HttpClient dans HomeComponent<br><br>
 - Réaliser les calls nécessaires pour récupérer une liste de personnes et une personne au hasard
 <br><br>
-- http://localhost:9000/api/peoples retourne une liste de personnes
-- http://localhost:9000/api/peoples/random retourne une personne au hasard
+- http://localhost:3000/api/peoples retourne une liste de personnes
+- http://localhost:3000/api/peoples/random retourne une personne au hasard
 
 ##==##
 <!-- .slide: class="exercice full-center" -->

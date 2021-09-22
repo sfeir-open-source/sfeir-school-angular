@@ -15,10 +15,10 @@ export class PeopleComponent implements OnInit {
    * OnInit implementation
    */
   ngOnInit() {
-    this.http.get('http://localhost:9000/api/people').subscribe(people => (this.people = people));
+    this.http.get('http://localhost:3000/api/people').subscribe(people => (this.people = people));
   }
 
   delete(person: any) {
-    this.http.delete(`http://localhost:9000/api/people/${person.id}`).subscribe(people => (this.people = people));
+    this.http.delete(`http://localhost:3000/api/people/${person.id}`).subscribe(people => (this.people = people));
   }
 }

@@ -32,7 +32,7 @@
 - Lors de l'event personAdd, la dialogue se ferme en envoyant la personne au composant PeopleComponent
 - Si lors de la fermeture de la modal PeopleComponent reçoit une personne, implémenter une méthode qui ajoute un contact
 Notes:
-- api à utiliser: POST http://localhost:9000/api/peoples retourne la personne créée
+- api à utiliser: POST http://localhost:3000/api/peoples retourne la personne créée
 
 ##==##
 

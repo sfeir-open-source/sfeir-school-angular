@@ -8,7 +8,7 @@ export const environment = {
   backend: {
     protocol: 'http',
     host: '127.0.0.1',
-    port: '9000',
+    port: '3000',
     endpoints: {
       allPeople: '/api/peoples',
       onePeople: '/api/peoples/:id',

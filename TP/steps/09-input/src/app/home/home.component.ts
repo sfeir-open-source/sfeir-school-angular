@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
    * OnInit implementation
    */
   ngOnInit() {
-    this.httpCLient.get<any>('http://localhost:9000/api/people').subscribe(people => {
+    this.httpCLient.get<any>('http://localhost:3000/api/people').subscribe(people => {
       const [firstPerson] = people;
       this.person = firstPerson;
     });
@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
    * Returns random people
    */
   random() {
-    this.httpCLient.get<any>('http://localhost:9000/api/people/random').subscribe(person => {
+    this.httpCLient.get<any>('http://localhost:3000/api/people/random').subscribe(person => {
       this.person = person;
     });
   }

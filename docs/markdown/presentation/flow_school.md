@@ -43,7 +43,7 @@ npm run server
 <br><br>
 
 - <b>npm run client:</b>http://localhost:4200 <br>
-- <b>npm run server:</b>http://localhost:9000
+- <b>npm run server:</b>http://localhost:3000
 
 ##==##
 
