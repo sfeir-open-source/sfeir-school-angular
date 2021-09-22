@@ -8,7 +8,7 @@
 
 ```html
 <input #phone type="text" /> <button type="button" (click)="call(phone.value)">Click</button>
-<input ref-fax type="text" /> <button type="button" (click)="fax(fax.value)">Click</button>
+<input ref-fax type="text" /> <button type="button" (click)="call(fax.value)">Click</button>
 ```
 
 <!-- .element: class="big-code" -->
