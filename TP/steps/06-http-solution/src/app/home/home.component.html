@@ -1,10 +1,10 @@
 <section>
   <mat-card class="mat-whiteframe-2dp">
     <mat-card-title-group>
-      <img mat-card-mat-image [src]="person.photo" />
+      <img mat-card-mat-image [src]="person?.photo" />
       <mat-card-title>
         <a href="/people/1">
-          <span>{{ person.firstname }} {{ person.lastname }}</span>
+          <span>{{ person?.firstname }} {{ person?.lastname }}</span>
         </a>
       </mat-card-title>
       <mat-card-subtitle>Sfeir-Paris</mat-card-subtitle>
@@ -24,7 +24,7 @@
     </mat-card-title-group>
     <mat-card-content>
       <div class="contact-info">
-        Manager&nbsp;:&nbsp; <a href="/people/1">{{ person.manager }}</a>
+        Manager&nbsp;:&nbsp; <a href="/people/1">{{ person?.manager }}</a>
       </div>
       <div class="contact-info">Location&nbsp;:&nbsp;<a href="http://www.sfeir.com/contact/">SFEIR</a></div>
       <div class="buttons-info">
