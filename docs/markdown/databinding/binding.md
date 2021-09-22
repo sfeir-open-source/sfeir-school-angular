@@ -202,6 +202,7 @@ import { Component } from '@angular/core';
     styleUrls: ['app.component.css']
 })
 export class AppComponent {
+     firstname: string;
      onSave(): void { console.log('Saved'); }
     
      onDeleted(heroId: string): void {
