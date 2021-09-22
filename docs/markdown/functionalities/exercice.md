@@ -1,11 +1,11 @@
 <!-- .slide: class="exercice" -->
-# Exercice 08 : loop
+# Exercice 08 : ngFor
 ## Exercice<br>
 
 - Créer un composant PeopleComponent à l'aide du CLI pour afficher toutes les personnes
+- Associer la route `/people` au composant PeopleComponent
 - Dupliquer le style et le template du composant HomeComponent
 - Appeler le serveur pour récupérer la liste des personnes
-- Associer la route `/people` au composant PeopleComponent
 - Utiliser la directive `*ngFor` pour afficher chaque personne
 
 Notes:
@@ -23,7 +23,7 @@ Notes:
 ##==##
 
 <!-- .slide: class="exercice full-center" -->
-# Exercice 08 : loop
+# Exercice 08 : ngFor
 ## Solution
 <b>steps/08-ngFor-solution</b>
 
