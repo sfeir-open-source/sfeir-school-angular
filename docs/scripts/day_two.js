@@ -7,7 +7,7 @@ function providersSlide() {
   ];
 };
 
-function dependancyInjectionSlides() {
+function dependencyInjectionSlides() {
   return [
     'dependency-injection/transition_slide.md',
     'dependency-injection/basics.md',
@@ -62,7 +62,7 @@ function reactiveFormSlides() {
 export function dayTwoSlides() {
   return [
     ...providersSlide(),
-    ...dependancyInjectionSlides(),
+    ...dependencyInjectionSlides(),
     ...pipeSlides(),
     ...directiveSlides(),
     ...templateDrivenForms(),
