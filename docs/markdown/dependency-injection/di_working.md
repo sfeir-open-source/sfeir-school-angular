@@ -54,7 +54,7 @@
 # Principe de la DI en Angular
 
 
-![center h-600](../../assets/images/school/dependency-injection/di_working.png)
+![center h-600](assets/images/school/dependency-injection/di_working.png)
 
 ##==##
 
@@ -158,7 +158,7 @@ export class ItemService {
 
 <br>
 
-![center h-500](../../assets/images/school/dependency-injection/DI-module.png)
+![center h-500](assets/images/school/dependency-injection/DI-module.png)
 
 ##--##
 <!-- .slide: class="with-code inconsolata" -->
@@ -185,7 +185,7 @@ export class SimpleService {
 
 <br>
 
-![center h-450](../../assets/images/school/dependency-injection/DI-parent.png)
+![center h-450](assets/images/school/dependency-injection/DI-parent.png)
 
 ##--##
 <!-- .slide: class="with-code inconsolata" -->
@@ -212,7 +212,7 @@ export class ParentComponent { ... }
 
 <br>
 
-![center h-500](../../assets/images/school/dependency-injection/DI-root.png)
+![center h-500](assets/images/school/dependency-injection/DI-root.png)
 
 ##--##
 <!-- .slide: class="with-code inconsolata" -->
