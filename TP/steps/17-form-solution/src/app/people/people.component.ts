@@ -1,9 +1,9 @@
-import { flatMap } from 'rxjs/operators';
-
 import { Component, OnInit } from '@angular/core';
+import { PeopleService } from '../shared/people-service';
+import { People } from '../people.model';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { AddDialogComponent } from './add-dialog/add-dialog.component';
-import { PeopleService } from '../shared/people-service';
+import { flatMap } from 'rxjs/operators';
 
 @Component({
   selector: 'sfeir-people',
@@ -11,10 +11,10 @@ import { PeopleService } from '../shared/people-service';
   styleUrls: ['people.component.css']
 })
 export class PeopleComponent implements OnInit {
-  people;
+  private addDialog: MatDialogRef<AddDialogComponent>;
+  people: People[] = [];
   dialogStatus = 'inactive';
   view = 'card';
-  private addDialog: MatDialogRef<AddDialogComponent>;
 
   constructor(private readonly peopleService: PeopleService, public dialog: MatDialog) {}
 
@@ -22,18 +22,14 @@ export class PeopleComponent implements OnInit {
    * OnInit implementation
    */
   ngOnInit() {
-    this.peopleService.fetch().subscribe(people => {
-      this.people = people;
-    });
+    this.peopleService.fetch().subscribe(people => (this.people = people));
   }
 
-  delete(person: any) {
-    this.peopleService.delete(person.id).subscribe(people => {
-      this.people = people;
-    });
+  delete(person: People) {
+    this.peopleService.delete(person.id).subscribe(people => (this.people = people));
   }
 
-  add(person: any) {
+  add(person: People) {
     this.peopleService
       .create(person)
       .pipe(flatMap(() => this.peopleService.fetch()))
@@ -63,7 +59,7 @@ export class PeopleComponent implements OnInit {
     this.addDialog.close();
   }
 
-  switchView(): void {
+  switchView() {
     this.view = this.view === 'card' ? 'list' : 'card';
   }
 }

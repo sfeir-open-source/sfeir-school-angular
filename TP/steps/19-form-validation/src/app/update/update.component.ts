@@ -1,7 +1,8 @@
 import { map, mergeMap } from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { PeopleService } from '../shared/people-service/people.service';
+import { PeopleService } from '../shared/people-service';
+import { People } from '../people.model';
 
 @Component({
   selector: 'sfeir-update',
@@ -9,7 +10,7 @@ import { PeopleService } from '../shared/people-service/people.service';
   styleUrls: ['update.component.css']
 })
 export class UpdateComponent implements OnInit {
-  person: any;
+  person: People;
 
   /**
    * Component constructor
@@ -18,11 +19,7 @@ export class UpdateComponent implements OnInit {
     private readonly route: ActivatedRoute,
     private readonly router: Router,
     private readonly peopleService: PeopleService
-  ) {
-    this.person = {
-      address: {}
-    };
-  }
+  ) {}
 
   /**
    * OnInit implementation
@@ -36,13 +33,13 @@ export class UpdateComponent implements OnInit {
       .subscribe((person: any) => (this.person = person));
   }
 
-  submit(person: any) {
-    this.peopleService.update(person).subscribe(() => {
-      this.router.navigate(['/people']);
+  submit(person: People) {
+    this.peopleService.update(person).subscribe(async () => {
+      await this.router.navigate(['/people']);
     });
   }
 
-  cancel() {
-    this.router.navigate(['/people']);
+  async cancel() {
+    await this.router.navigate(['/people']);
   }
 }

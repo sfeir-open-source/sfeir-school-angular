@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PeopleService } from '../shared/people-service';
+import { People } from '../people.model';
 
 @Component({
   selector: 'sfeir-people',
@@ -7,7 +8,7 @@ import { PeopleService } from '../shared/people-service';
   styleUrls: ['people.component.css']
 })
 export class PeopleComponent implements OnInit {
-  people;
+  people: People[] = [];
 
   constructor(private readonly peopleService: PeopleService) {}
 
@@ -18,7 +19,7 @@ export class PeopleComponent implements OnInit {
     this.peopleService.fetch().subscribe(people => (this.people = people));
   }
 
-  delete(person: any) {
+  delete(person: People) {
     this.peopleService.delete(person.id).subscribe(people => (this.people = people));
   }
 }

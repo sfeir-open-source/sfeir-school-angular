@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, Input, EventEmitter, OnChanges } from '@angular/core';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
+import { People } from '../../people.model';
 
 @Component({
   selector: 'sfeir-form',
@@ -8,7 +9,25 @@ import { FormControl, Validators, FormGroup } from '@angular/forms';
 })
 export class FormComponent implements OnInit, OnChanges {
   form: FormGroup;
-  @Input() model: any;
+  @Input() model: People = {
+    address: { city: '', postalCode: 0, street: '' },
+    birthDate: '',
+    email: '',
+    entity: '',
+    entryDate: '',
+    firstname: '',
+    gender: '',
+    geo: { lat: 0, lng: 0 },
+    id: '',
+    isManager: false,
+    lastname: '',
+    links: { github: '', linkedin: '', slack: '', twitter: '' },
+    manager: '',
+    managerId: '',
+    phone: '',
+    photo: 'https://randomuser.me/api/portraits/lego/6.jpg',
+    skills: []
+  };
   isUpdateMode: boolean;
 
   @Output('cancel') cancelEvent: EventEmitter<any>;
@@ -17,7 +36,6 @@ export class FormComponent implements OnInit, OnChanges {
   constructor() {
     this.submitEvent = new EventEmitter();
     this.cancelEvent = new EventEmitter();
-    this.model = { address: {} };
     this.form = this.buildForm();
   }
 
@@ -32,7 +50,7 @@ export class FormComponent implements OnInit, OnChanges {
    * @param record
    */
   ngOnChanges(record) {
-    if (record.model && record.model.currentValue) {
+    if (record?.model?.currentValue) {
       this.model = record.model.currentValue;
       this.isUpdateMode = Boolean(this.model);
       this.form.patchValue(this.model);

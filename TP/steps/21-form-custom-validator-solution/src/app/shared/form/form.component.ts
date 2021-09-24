@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, Input, EventEmitter, OnChanges } from '@angular/core';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
-
+import { People } from '../../people.model';
 import { CustomValidators } from './custom-validators';
 
 @Component({
@@ -10,7 +10,25 @@ import { CustomValidators } from './custom-validators';
 })
 export class FormComponent implements OnInit, OnChanges {
   form: FormGroup;
-  @Input() model: any;
+  @Input() model: People = {
+    address: { city: '', postalCode: 0, street: '' },
+    birthDate: '',
+    email: '',
+    entity: '',
+    entryDate: '',
+    firstname: '',
+    gender: '',
+    geo: { lat: 0, lng: 0 },
+    id: '',
+    isManager: false,
+    lastname: '',
+    links: { github: '', linkedin: '', slack: '', twitter: '' },
+    manager: '',
+    managerId: '',
+    phone: '',
+    photo: 'https://randomuser.me/api/portraits/lego/6.jpg',
+    skills: []
+  };
   isUpdateMode: boolean;
 
   @Output('cancel') cancelEvent: EventEmitter<any>;
@@ -19,7 +37,6 @@ export class FormComponent implements OnInit, OnChanges {
   constructor() {
     this.submitEvent = new EventEmitter();
     this.cancelEvent = new EventEmitter();
-    this.model = { address: {} };
     this.form = this.buildForm();
   }
 
@@ -34,7 +51,7 @@ export class FormComponent implements OnInit, OnChanges {
    * @param record
    */
   ngOnChanges(record) {
-    if (record.model && record.model.currentValue) {
+    if (record?.model?.currentValue) {
       this.model = record.model.currentValue;
       this.isUpdateMode = Boolean(this.model);
       this.form.patchValue(this.model);
@@ -67,7 +84,7 @@ export class FormComponent implements OnInit, OnChanges {
       id: new FormControl(''),
       firstname: new FormControl('', Validators.compose([Validators.required, Validators.minLength(2)])),
       lastname: new FormControl('', Validators.compose([Validators.required, Validators.minLength(2)])),
-      email: new FormControl('', Validators.compose([Validators.required, CustomValidators.sfeirEmail])),
+      email: new FormControl('', [Validators.required, CustomValidators.sfeirEmail]),
       photo: new FormControl('https://randomuser.me/api/portraits/lego/6.jpg'),
       address: new FormGroup({
         street: new FormControl(''),

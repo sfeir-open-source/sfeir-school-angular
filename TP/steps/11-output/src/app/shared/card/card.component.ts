@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { People } from '../../people.model';
 
 @Component({
   selector: 'sfeir-card',
@@ -6,11 +7,9 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['card.component.css']
 })
 export class CardComponent implements OnInit {
-  @Input() person: any;
+  @Input() person: People;
 
-  constructor() {
-    this.person = {};
-  }
+  constructor() {}
 
   /**
    * OnInit implementation

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PeopleService } from '../shared/people-service';
+import { People } from '../people.model';
 
 @Component({
   selector: 'sfeir-home',
@@ -7,26 +8,21 @@ import { PeopleService } from '../shared/people-service';
   styleUrls: ['home.component.css']
 })
 export class HomeComponent implements OnInit {
-  person: any = {};
+  person: People;
 
   constructor(private readonly peopleService: PeopleService) {}
 
   /**
    * OnInit implementation
    */
-  ngOnInit(): void {
-    this.peopleService.fetch().subscribe(people => {
-      const [firstPerson] = people;
-      this.person = firstPerson;
-    });
+  ngOnInit() {
+    this.peopleService.fetch().subscribe(people => (this.person = people[0]));
   }
 
   /**
    * Returns random people
    */
-  random(): void {
-    this.peopleService.fetchRandom().subscribe(person => {
-      this.person = person;
-    });
+  random() {
+    this.peopleService.fetchRandom().subscribe(person => (this.person = person));
   }
 }

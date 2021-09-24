@@ -23,12 +23,12 @@
   </mat-card-title-group>
   <mat-card-content>
     <div class="contact-info">
-      Manager&nbsp;:&nbsp; <a routerLink="/people/1">{{ person?.manager }}</a>
+      Manager&nbsp;:&nbsp; <a [routerLink]="['/people', person?.managerId]">{{ person?.manager }}</a>
     </div>
     <div class="contact-info">Location&nbsp;:&nbsp;<a href="http://www.sfeir.com/contact/">SFEIR</a></div>
     <div class="buttons-info">
-      <a mat-button title="Locate" routerLink="/locator/1"> <mat-icon>map</mat-icon> </a>
-      <a mat-button title="Edit" routerLink="/edit/1"> <mat-icon>create</mat-icon> </a>
+      <a mat-button title="Locate" [routerLink]="['/locator', person?.id]"> <mat-icon>map</mat-icon> </a>
+      <a mat-button title="Edit" [routerLink]="['/edit', person?.id]"> <mat-icon>create</mat-icon> </a>
       <a mat-button title="Delete"> <mat-icon>delete</mat-icon> </a>
     </div>
   </mat-card-content>

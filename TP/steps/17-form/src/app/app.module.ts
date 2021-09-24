@@ -18,11 +18,14 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterModule, Routes } from '@angular/router';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 const ROUTES: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'people', component: PeopleComponent }
+  { path: 'people', component: PeopleComponent },
+  { path: '**', redirectTo: 'home', pathMatch: 'full' }
 ];
 
 @NgModule({
@@ -33,6 +36,8 @@ const ROUTES: Routes = [
     MatCardModule,
     MatIconModule,
     MatCheckboxModule,
+    MatFormFieldModule,
+    MatInputModule,
     MatListModule,
     MatDialogModule,
     MatButtonModule,

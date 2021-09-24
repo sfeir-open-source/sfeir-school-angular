@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PeopleService } from '../shared/people-service';
+import { People } from '../people.model';
 
 @Component({
   selector: 'sfeir-people',
@@ -7,7 +8,7 @@ import { PeopleService } from '../shared/people-service';
   styleUrls: ['people.component.css']
 })
 export class PeopleComponent implements OnInit {
-  people;
+  people: People[] = [];
 
   constructor(private readonly peopleService: PeopleService) {}
 

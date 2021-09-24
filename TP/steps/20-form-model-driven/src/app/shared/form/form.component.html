@@ -1,8 +1,6 @@
 <mat-card class="mat-whiteframe-2dp">
   <mat-card-title>
-    <span *ngIf="isUpdateMode; else updateModeOff"
-      >Update {{ model?.firstname || '?' }} {{ model?.lastname || '?' }}</span
-    >
+    <span *ngIf="isUpdateMode; else updateModeOff">Update {{ model?.firstname }} {{ model?.lastname }}</span>
     <ng-template #updateModeOff>
       <span>Create new person</span>
     </ng-template>
@@ -12,91 +10,112 @@
     <form novalidate #f="ngForm">
       <p *ngIf="isUpdateMode">
         <mat-form-field>
-          <input [ngModel]="model.id" matInput style="width:100%" placeholder="ID (disabled)" disabled name="id" />
+          <input [ngModel]="model?.id" matInput style="width:100%" placeholder="ID (disabled)" disabled name="id" />
         </mat-form-field>
       </p>
 
-      <table style="width: 100%" cellspacing="0">
+      <table style="width: 100%">
         <tr>
           <td>
-            <p [class.errors]="firstname.dirty && firstname.invalid">
+            <p [class.errors]="firstname.touched && firstname.invalid">
               <mat-form-field>
                 <input
-                  [(ngModel)]="model.firstname"
+                  [ngModel]="model?.firstname"
+                  (ngModelChange)="model.firstname = $event"
                   matInput
-                  placeholder="First name"
+                  placeholder="First name *"
+                  name="firstname"
                   minlength="2"
                   required
-                  name="firstname"
                   #firstname="ngModel"
                 />
               </mat-form-field>
-
-              <span *ngIf="firstname.dirty && firstname.errors?.required"><br />First name is required</span>
+              <span *ngIf="firstname.touched && firstname.errors?.required"><br />First name is required</span>
               <span *ngIf="firstname.dirty && firstname.errors?.minlength"><br />First name is 2 chars min</span>
             </p>
 
-            <p [class.errors]="lastname.dirty && lastname.invalid">
+            <p [class.errors]="lastname.touched && lastname.invalid">
               <mat-form-field>
                 <input
-                  [(ngModel)]="model.lastname"
+                  [ngModel]="model?.lastname"
+                  (ngModelChange)="model.lastname = $event"
                   matInput
-                  placeholder="Last Name"
+                  placeholder="Last Name *"
+                  name="lastname"
                   minlength="2"
                   required
-                  name="lastname"
                   #lastname="ngModel"
                 />
               </mat-form-field>
-              <span *ngIf="lastname.dirty && lastname.errors?.required"><br />Last name is required</span>
+              <span *ngIf="lastname.touched && lastname.errors?.required"><br />Last name is required</span>
               <span *ngIf="lastname.dirty && lastname.errors?.minlength"><br />Last name is 2 chars min</span>
             </p>
           </td>
           <td class="align-right">
-            <img width="100" src="{{ model.photo || 'https://randomuser.me/api/portraits/lego/6.jpg' }}" />
-            <input type="hidden" [(ngModel)]="model.photo" name="photo" />
+            <img alt="photo" width="100" src="{{ model?.photo || 'https://randomuser.me/api/portraits/lego/6.jpg' }}" />
+            <input type="hidden" [ngModel]="model?.photo" name="photo" />
           </td>
         </tr>
       </table>
 
-      <p [class.errors]="email.dirty && email.invalid">
+      <p [class.errors]="email.touched && email.invalid">
         <mat-form-field>
           <input
-            [(ngModel)]="model.email"
+            [ngModel]="model?.email"
+            (ngModelChange)="model.email = $event"
             matInput
-            placeholder="Email"
-            required
-            name="email"
-            type="email"
+            placeholder="Email *"
             style="width:100%"
+            name="email"
+            required
+            type="email"
             #email="ngModel"
           />
         </mat-form-field>
-
-        <span *ngIf="email.dirty && email.errors?.required">Email is mandatory</span>
+        <span *ngIf="email.touched && email.errors?.required">Email is mandatory</span>
       </p>
 
       <p ngModelGroup="address">
         <mat-form-field>
-          <input [(ngModel)]="model.address.street" matInput placeholder="Address" style="width:100%" name="street" />
+          <input
+            [ngModel]="model?.address?.street"
+            (ngModelChange)="model.address.street = $event"
+            matInput
+            placeholder="Address"
+            style="width:100%"
+            name="street"
+          />
         </mat-form-field>
       </p>
 
       <p ngModelGroup="address">
         <mat-form-field>
-          <input [(ngModel)]="model.address.city" matInput placeholder="City" name="city" />
+          <input
+            [ngModel]="model?.address?.city"
+            (ngModelChange)="model.address.city = $event"
+            matInput
+            placeholder="City"
+            name="city"
+          />
         </mat-form-field>
         <mat-form-field>
-          <input [(ngModel)]="model.address.postalCode" matInput placeholder="Postal Code" name="postalCode" />
+          <input
+            [ngModel]="model?.address?.postalCode"
+            (ngModelChange)="model.address.postalCode = $event"
+            matInput
+            placeholder="Postal Code"
+            name="postalCode"
+          />
         </mat-form-field>
       </p>
 
       <p [class.errors]="phone.dirty && phone.invalid">
         <mat-form-field>
           <input
-            [(ngModel)]="model.phone"
+            [ngModel]="model?.phone"
+            (ngModelChange)="model.phone = $event"
             matInput
-            placeholder="Phone (ex: 0612345678)"
+            placeholder="Phone * (ex: 0612345678)"
             style="width:100%"
             name="phone"
             pattern="\d{10}"
@@ -105,15 +124,19 @@
           />
         </mat-form-field>
         <span *ngIf="phone.dirty && phone.errors?.pattern">Phone number must be 10 digits</span>
-        <span *ngIf="phone.dirty && phone.errors?.required">Phone number is mandatory</span>
+        <span *ngIf="phone.touched && phone.errors?.required">Phone number is mandatory</span>
       </p>
 
-      <p><mat-checkbox name="isManager" [(ngModel)]="model.isManager">Manager</mat-checkbox></p>
+      <p>
+        <mat-checkbox name="isManager" [ngModel]="model?.isManager" (ngModelChange)="model.isManager = $event"
+          >Manager
+        </mat-checkbox>
+      </p>
     </form>
   </mat-card-content>
 
   <mat-card-actions align="end">
     <button mat-button type="button" (click)="cancel()">Cancel</button>
-    <button mat-button color="primary" type="submit" (click)="submit()" [disabled]="!f.valid">Save</button>
+    <button mat-button color="primary" type="submit" (click)="submit()" [disabled]="f.invalid">Save</button>
   </mat-card-actions>
 </mat-card>

@@ -1,4 +1,4 @@
-import { FormControl } from '@angular/forms';
+import { FormControl, ValidationErrors } from '@angular/forms';
 
 export class CustomValidators {
   /**
@@ -8,7 +8,7 @@ export class CustomValidators {
    *
    * @returns {{sfeirEmail: boolean}}
    */
-  static sfeirEmail(control: FormControl) {
+  static sfeirEmail(control: FormControl): ValidationErrors | null {
     // email regex
     const regex = /^\w+\.\w@sfeir\.com$/;
 

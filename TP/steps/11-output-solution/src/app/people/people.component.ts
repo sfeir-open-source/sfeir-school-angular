@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { People } from '../people.model';
 
 @Component({
   selector: 'sfeir-people',
@@ -7,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['people.component.css']
 })
 export class PeopleComponent implements OnInit {
-  people;
+  people: People[] = [];
 
   constructor(private readonly http: HttpClient) {}
 
@@ -15,10 +16,12 @@ export class PeopleComponent implements OnInit {
    * OnInit implementation
    */
   ngOnInit() {
-    this.http.get('http://localhost:3000/api/people').subscribe(people => (this.people = people));
+    this.http.get<People[]>('http://localhost:3000/api/people/').subscribe(people => (this.people = people));
   }
 
   delete(person: any) {
-    this.http.delete(`http://localhost:3000/api/people/${person.id}`).subscribe(people => (this.people = people));
+    this.http
+      .delete<People[]>(`http://localhost:3000/api/people/${person.id}`)
+      .subscribe(people => (this.people = people));
   }
 }

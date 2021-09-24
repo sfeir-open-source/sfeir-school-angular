@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { People } from '../../people.model';
 
 @Component({
   selector: 'sfeir-card',
@@ -6,11 +7,10 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
   styleUrls: ['card.component.css']
 })
 export class CardComponent implements OnInit {
-  @Input() person: any;
+  @Input() person: People;
   @Output('personDelete') delete: EventEmitter<any>;
 
   constructor() {
-    this.person = {};
     this.delete = new EventEmitter();
   }
 

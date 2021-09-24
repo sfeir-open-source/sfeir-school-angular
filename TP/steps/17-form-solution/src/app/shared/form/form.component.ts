@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { People } from '../../people.model';
 
 @Component({
   selector: 'sfeir-form',
@@ -7,10 +8,10 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class FormComponent implements OnInit {
   @Output('cancel') cancelEvent: EventEmitter<any>;
-  @Output('personAdd') add$: EventEmitter<any>;
+  @Output('personAdd') add: EventEmitter<People>;
 
   constructor() {
-    this.add$ = new EventEmitter();
+    this.add = new EventEmitter();
     this.cancelEvent = new EventEmitter();
   }
 
@@ -23,7 +24,7 @@ export class FormComponent implements OnInit {
     this.cancelEvent.emit();
   }
 
-  add(person: any) {
-    this.add$.emit(person);
+  addPerson(person: People) {
+    this.add.emit(person);
   }
 }

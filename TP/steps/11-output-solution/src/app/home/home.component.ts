@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { People } from '../people.model';
 
 @Component({
   selector: 'sfeir-home',
@@ -7,17 +8,16 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['home.component.css']
 })
 export class HomeComponent implements OnInit {
-  person: any = {};
+  person: People;
 
-  constructor(private readonly httpClient: HttpClient) {}
+  constructor(private readonly httpCLient: HttpClient) {}
 
   /**
    * OnInit implementation
    */
   ngOnInit() {
-    this.httpClient.get<any>('http://localhost:3000/api/people').subscribe(people => {
-      const [firstPerson] = people;
-      this.person = firstPerson;
+    this.httpCLient.get<People[]>('http://localhost:3000/api/people').subscribe(people => {
+      this.person = people[0];
     });
   }
 
@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
    * Returns random people
    */
   random() {
-    this.httpClient.get<any>('http://localhost:3000/api/people/random').subscribe(person => {
+    this.httpCLient.get<People>('http://localhost:3000/api/people/random').subscribe(person => {
       this.person = person;
     });
   }

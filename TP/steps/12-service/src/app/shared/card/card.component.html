@@ -1,38 +1,34 @@
 <mat-card class="mat-whiteframe-2dp">
   <mat-card-title-group>
-    <img mat-card-mat-image src="{{ person.photo }}" />
+    <img mat-card-mat-image src="{{ person?.photo }}" />
     <mat-card-title>
       <a routerLink="/people/1">
-        <span>{{ person.firstname }} {{ person.lastname }}</span>
+        <span>{{ person?.firstname }} {{ person?.lastname }}</span>
       </a>
     </mat-card-title>
-    <mat-card-subtitle>{{ person.entity }}</mat-card-subtitle>
+    <mat-card-subtitle>{{ person?.entity }}</mat-card-subtitle>
     <mat-card-subtitle class="contact-info">
       <mat-icon>email</mat-icon>
       <a
-        href="mailto:{{ person.firstname }} {{ person.lastname }}&lt;{{ person.email }}&gt;"
-        title="Send an email to {{ person.firstname }} {{ person.lastname }}"
+        href="mailto:{{ person?.firstname }} {{ person?.lastname }}&lt;{{ person?.email }}&gt;"
+        title="Send an email to {{ person?.firstname }} {{ person?.lastname }}"
         class="truncate"
-        >{{ person.email }}</a
+        >{{ person?.email }}</a
       >
     </mat-card-subtitle>
     <mat-card-subtitle class="contact-info">
       <mat-icon>phone</mat-icon>
-      <a href="tel:{{ person.phone }}" title="Call {{ person.firstname }}">{{ person.phone }}</a>
+      <a href="tel:{{ person?.phone }}" title="Call {{ person?.firstname }}">{{ person?.phone }}</a>
     </mat-card-subtitle>
   </mat-card-title-group>
   <mat-card-content>
     <div class="contact-info">
-      Manager&nbsp;:&nbsp; <a routerLink="/people/1">{{ person.manager }}</a>
+      Manager&nbsp;:&nbsp; <a [routerLink]="['/people', person?.managerId]">{{ person?.manager }}</a>
     </div>
     <div class="contact-info">Location&nbsp;:&nbsp;<a href="http://www.sfeir.com/contact/">SFEIR</a></div>
     <div class="buttons-info">
-      <a mat-button title="Locate" routerLink="/locator/1">
-        <mat-icon>map</mat-icon>
-      </a>
-      <a mat-button title="Edit" [routerLink]="['/edit', person.id]">
-        <mat-icon>create</mat-icon>
-      </a>
+      <a mat-button title="Locate" [routerLink]="['/locator', person?.id]"> <mat-icon>map</mat-icon> </a>
+      <a mat-button title="Edit" [routerLink]="['/edit', person?.id]"> <mat-icon>create</mat-icon> </a>
       <a mat-button title="Delete" (click)="delete.emit(person)">
         <mat-icon>delete</mat-icon>
       </a>

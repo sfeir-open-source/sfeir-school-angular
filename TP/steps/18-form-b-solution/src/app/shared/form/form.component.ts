@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, Input, EventEmitter, OnChanges } from '@angular/core';
+import { People } from '../../people.model';
 
 @Component({
   selector: 'sfeir-form',
@@ -6,7 +7,25 @@ import { Component, OnInit, Output, Input, EventEmitter, OnChanges } from '@angu
   styleUrls: ['form.component.css']
 })
 export class FormComponent implements OnInit, OnChanges {
-  @Input() model: any;
+  @Input() model: People = {
+    address: { city: '', postalCode: 0, street: '' },
+    birthDate: '',
+    email: '',
+    entity: '',
+    entryDate: '',
+    firstname: '',
+    gender: '',
+    geo: { lat: 0, lng: 0 },
+    id: '',
+    isManager: false,
+    lastname: '',
+    links: { github: '', linkedin: '', slack: '', twitter: '' },
+    manager: '',
+    managerId: '',
+    phone: '',
+    photo: 'https://randomuser.me/api/portraits/lego/6.jpg',
+    skills: []
+  };
   isUpdateMode: boolean;
 
   @Output('cancel') cancelEvent: EventEmitter<any>;
@@ -15,7 +34,6 @@ export class FormComponent implements OnInit, OnChanges {
   constructor() {
     this.submitEvent = new EventEmitter();
     this.cancelEvent = new EventEmitter();
-    this.model = { address: {} };
   }
 
   /**
@@ -29,7 +47,7 @@ export class FormComponent implements OnInit, OnChanges {
    * @param record
    */
   ngOnChanges(record) {
-    if (record.model && record.model.currentValue) {
+    if (record?.model?.currentValue) {
       this.model = record.model.currentValue;
       this.isUpdateMode = Boolean(this.model);
     }

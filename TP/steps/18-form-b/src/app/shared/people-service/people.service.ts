@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
+import { People } from '../../people.model';
 
 @Injectable()
 export class PeopleService {
@@ -22,19 +23,23 @@ export class PeopleService {
     );
   }
 
-  fetch(): Observable<any> {
-    return this.http.get(this.backendURL.allPeople);
+  fetch(): Observable<People[]> {
+    return this.http.get<People[]>(this.backendURL.allPeople);
   }
 
-  fetchRandom(): Observable<any> {
-    return this.http.get(this.backendURL.randomPeople);
+  fetchRandom(): Observable<People> {
+    return this.http.get<People>(this.backendURL.randomPeople);
   }
 
-  delete(id: string): Observable<any> {
-    return this.http.delete(this.backendURL.onePeople.replace(':id', id));
+  fetchOne(id: string): Observable<People> {
+    return this.http.get<People>(this.backendURL.onePeople.replace(':id', id));
   }
 
-  create(person): Observable<any> {
-    return this.http.post(this.backendURL.allPeople, person);
+  delete(id: string): Observable<People[]> {
+    return this.http.delete<People[]>(this.backendURL.onePeople.replace(':id', id));
+  }
+
+  create(person): Observable<People> {
+    return this.http.post<People>(this.backendURL.allPeople, person);
   }
 }
