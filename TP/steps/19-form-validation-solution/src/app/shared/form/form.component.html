@@ -10,7 +10,7 @@
     <form novalidate #f="ngForm">
       <p *ngIf="isUpdateMode">
         <mat-form-field>
-          <input [ngModel]="model?.id" matInput style="width:100%" placeholder="ID (disabled)" disabled name="id" />
+          <input [ngModel]="model.id" matInput style="width:100%" placeholder="ID (disabled)" disabled name="id" />
         </mat-form-field>
       </p>
 
@@ -20,8 +20,7 @@
             <p [class.errors]="firstname.touched && firstname.invalid">
               <mat-form-field>
                 <input
-                  [ngModel]="model?.firstname"
-                  (ngModelChange)="model.firstname = $event"
+                  [(ngModel)]="model.firstname"
                   matInput
                   placeholder="First name *"
                   name="firstname"
@@ -37,8 +36,7 @@
             <p [class.errors]="lastname.touched && lastname.invalid">
               <mat-form-field>
                 <input
-                  [ngModel]="model?.lastname"
-                  (ngModelChange)="model.lastname = $event"
+                  [(ngModel)]="model.lastname"
                   matInput
                   placeholder="Last Name *"
                   name="lastname"
@@ -53,7 +51,7 @@
           </td>
           <td class="align-right">
             <img alt="photo" width="100" src="{{ model?.photo || 'https://randomuser.me/api/portraits/lego/6.jpg' }}" />
-            <input type="hidden" [ngModel]="model?.photo" name="photo" />
+            <input type="hidden" [(ngModel)]="model.photo" name="photo" />
           </td>
         </tr>
       </table>
@@ -61,8 +59,7 @@
       <p [class.errors]="email.touched && email.invalid">
         <mat-form-field>
           <input
-            [ngModel]="model?.email"
-            (ngModelChange)="model.email = $event"
+            [(ngModel)]="model.email"
             matInput
             placeholder="Email *"
             style="width:100%"
@@ -77,43 +74,23 @@
 
       <p ngModelGroup="address">
         <mat-form-field>
-          <input
-            [ngModel]="model?.address?.street"
-            (ngModelChange)="model.address.street = $event"
-            matInput
-            placeholder="Address"
-            style="width:100%"
-            name="street"
-          />
+          <input [(ngModel)]="model.address.street" matInput placeholder="Address" style="width:100%" name="street" />
         </mat-form-field>
       </p>
 
       <p ngModelGroup="address">
         <mat-form-field>
-          <input
-            [ngModel]="model?.address?.city"
-            (ngModelChange)="model.address.city = $event"
-            matInput
-            placeholder="City"
-            name="city"
-          />
+          <input [(ngModel)]="model.address.city" matInput placeholder="City" name="city" />
         </mat-form-field>
         <mat-form-field>
-          <input
-            [ngModel]="model?.address?.postalCode"
-            (ngModelChange)="model.address.postalCode = $event"
-            matInput
-            placeholder="Postal Code"
-            name="postalCode"
-          />
+          <input [(ngModel)]="model.address.postalCode" matInput placeholder="Postal Code" name="postalCode" />
         </mat-form-field>
       </p>
 
       <p [class.errors]="phone.dirty && phone.invalid">
         <mat-form-field>
           <input
-            [ngModel]="model?.phone"
-            (ngModelChange)="model.phone = $event"
+            [(ngModel)]="model.phone"
             matInput
             placeholder="Phone * (ex: 0612345678)"
             style="width:100%"
@@ -128,9 +105,7 @@
       </p>
 
       <p>
-        <mat-checkbox name="isManager" [ngModel]="model?.isManager" (ngModelChange)="model.isManager = $event"
-          >Manager
-        </mat-checkbox>
+        <mat-checkbox name="isManager" [(ngModel)]="model.isManager">Manager </mat-checkbox>
       </p>
     </form>
   </mat-card-content>

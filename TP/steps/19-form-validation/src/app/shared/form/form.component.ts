@@ -7,25 +7,7 @@ import { People } from '../../people.model';
   styleUrls: ['form.component.css']
 })
 export class FormComponent implements OnInit, OnChanges {
-  @Input() model: People = {
-    address: { city: '', postalCode: 0, street: '' },
-    birthDate: '',
-    email: '',
-    entity: '',
-    entryDate: '',
-    firstname: '',
-    gender: '',
-    geo: { lat: 0, lng: 0 },
-    id: '',
-    isManager: false,
-    lastname: '',
-    links: { github: '', linkedin: '', slack: '', twitter: '' },
-    manager: '',
-    managerId: '',
-    phone: '',
-    photo: 'https://randomuser.me/api/portraits/lego/6.jpg',
-    skills: []
-  };
+  @Input() model: People;
   isUpdateMode: boolean;
 
   @Output('cancel') cancelEvent: EventEmitter<any>;
@@ -39,7 +21,27 @@ export class FormComponent implements OnInit, OnChanges {
   /**
    * OnInit implementation
    */
-  ngOnInit() {}
+  ngOnInit() {
+    this.model = {
+      address: { city: '', postalCode: 0, street: '' },
+      birthDate: '',
+      email: '',
+      entity: '',
+      entryDate: '',
+      firstname: '',
+      gender: '',
+      geo: { lat: 0, lng: 0 },
+      id: '',
+      isManager: false,
+      lastname: '',
+      links: { github: '', linkedin: '', slack: '', twitter: '' },
+      manager: '',
+      managerId: '',
+      phone: '',
+      photo: 'https://randomuser.me/api/portraits/lego/6.jpg',
+      skills: []
+    };
+  }
 
   /**
    * Function to handle component update
