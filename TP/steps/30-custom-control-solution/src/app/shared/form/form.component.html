@@ -68,15 +68,6 @@
       </p>
 
       <p [class.errors]="form.controls.phone.dirty && form.controls.phone.invalid">
-        <mat-form-field>
-          <input
-            formControlName="phone"
-            matInput
-            placeholder="Phone * (ex: 0612345678)"
-            style="width:100%"
-            name="phone"
-          />
-        </mat-form-field>
         <sfeir-input formControlName="phone" placeholder="Phone * (ex: 0612345678)"></sfeir-input>
 
         <span *ngIf="form.controls.phone.dirty && form.controls.phone.errors?.required">Phone number is mandatory</span>
