@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { mergeMap } from 'rxjs';
 import { PeopleService } from '../shared/people-service';
 import { AddDialogComponent } from './add-dialog/add-dialog.component';
-import { flatMap } from 'rxjs';
 
 @Component({
   selector: 'sfeir-people',
@@ -35,7 +35,7 @@ export class PeopleComponent implements OnInit {
   add(person: any) {
     this.peopleService
       .create(person)
-      .pipe(flatMap(() => this.peopleService.fetch()))
+      .pipe(mergeMap(() => this.peopleService.fetch()))
       .subscribe(people => {
         this.people = people;
         this.hideDialog();
