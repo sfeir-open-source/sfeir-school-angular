@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Store } from '@ngxs/store';
-import { Observable, of } from 'rxjs';
-import { catchError, map, flatMap } from 'rxjs/operators';
-
+import { Observable, of, catchError, map, flatMap } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { SetPeople } from '../../app.state';
 

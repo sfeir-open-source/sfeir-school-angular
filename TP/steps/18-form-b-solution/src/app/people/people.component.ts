@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
-import { flatMap } from 'rxjs/operators';
 import { PeopleService } from '../shared/people-service';
 import { AddDialogComponent } from './add-dialog/add-dialog.component';
+import { flatMap } from 'rxjs';
 
 @Component({
   selector: 'sfeir-people',

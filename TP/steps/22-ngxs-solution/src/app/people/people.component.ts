@@ -1,8 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { Store } from '@ngxs/store';
-import { Observable, Subject } from 'rxjs';
-import { mergeMap, takeUntil } from 'rxjs/operators';
+import { mergeMap, Observable, Subject, takeUntil } from 'rxjs';
 import { AppState, FilterPeople } from '../app.state';
 import { PeopleService } from '../shared/people-service';
 import { AddDialogComponent } from './add-dialog/add-dialog.component';
@@ -35,7 +34,7 @@ export class PeopleComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.destroyPeopleSubscription.next();
+    this.destroyPeopleSubscription.next([]);
     this.destroyPeopleSubscription.complete();
   }
 

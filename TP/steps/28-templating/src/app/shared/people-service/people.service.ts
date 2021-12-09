@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Store } from '@ngrx/store';
-import { Observable, of } from 'rxjs';
-import { map, catchError } from 'rxjs/operators';
-
+import { Observable, of, map, catchError } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { setPeople, filterPeople } from '../../store/actions/people.actions';
 import { PeopleFeature } from '../../store/state/state';
