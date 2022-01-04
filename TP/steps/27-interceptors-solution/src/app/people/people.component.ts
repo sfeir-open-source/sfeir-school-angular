@@ -3,10 +3,10 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { AddDialogComponent } from './add-dialog/add-dialog.component';
 import { PeopleService } from '../shared/people-service';
 import { Store } from '@ngrx/store';
-import { mergeMap } from 'rxjs/operators';
 import { getSearch } from '../store/selectors/selectors';
 import { filterPeople } from '../store/actions/people.actions';
 import { PeopleFeature } from '../store/state/state';
+import { mergeMap } from 'rxjs';
 
 @Component({
   selector: 'sfeir-people',

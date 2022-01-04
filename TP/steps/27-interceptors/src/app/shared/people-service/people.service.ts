@@ -5,8 +5,7 @@ import { Store } from '@ngrx/store';
 import { setPeople, filterPeople } from '../../store/actions/people.actions';
 import { PeopleFeature } from '../../store/state/state';
 import { getFilteredPeople } from '../../store/selectors/selectors';
-import { Observable, of } from 'rxjs';
-import { map, catchError } from 'rxjs/operators';
+import { Observable, of, map, catchError } from 'rxjs';
 
 @Injectable()
 export class PeopleService {

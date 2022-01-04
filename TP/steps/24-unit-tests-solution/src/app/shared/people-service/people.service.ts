@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
-import { catchError } from 'rxjs/operators';
-import { Observable, of } from 'rxjs';
+import { Observable, of, catchError } from 'rxjs';
 @Injectable()
 export class PeopleService {
   backendURL: any;

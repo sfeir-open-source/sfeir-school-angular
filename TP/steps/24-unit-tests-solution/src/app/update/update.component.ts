@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PeopleService } from '../shared/people-service';
-import { map, mergeMap } from 'rxjs/operators';
+import { map, mergeMap } from 'rxjs';
 
 @Component({
   selector: 'sfeir-update',

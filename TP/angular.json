@@ -78,13 +78,6 @@
             "styles": ["src/styles.css"],
             "assets": ["src/assets", "src/favicon.ico"]
           }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": ["src/tsconfig.app.json", "src/tsconfig.spec.json"],
-            "exclude": []
-          }
         }
       }
     },
@@ -98,13 +91,6 @@
           "options": {
             "protractorConfig": "./protractor.conf.js",
             "devServerTarget": "angular-200:serve"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": ["e2e/tsconfig.e2e.json"],
-            "exclude": []
           }
         }
       }
@@ -191,13 +177,6 @@
             "scripts": [],
             "assets": ["steps/01-hands-on/src/favicon.ico", "steps/01-hands-on/src/assets"]
           }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": ["steps/01-hands-on/tsconfig.app.json"],
-            "exclude": ["**/node_modules/**"]
-          }
         }
       }
     },
@@ -282,13 +261,6 @@
             "styles": ["steps/01-hands-on-solution/src/styles.css"],
             "scripts": [],
             "assets": ["steps/01-hands-on-solution/src/favicon.ico", "steps/01-hands-on-solution/src/assets"]
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": ["steps/01-hands-on-solution/tsconfig.app.json"],
-            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -375,13 +347,6 @@
             "scripts": [],
             "assets": ["steps/02-ngg/src/favicon.ico", "steps/02-ngg/src/assets"]
           }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": ["steps/02-ngg/tsconfig.app.json"],
-            "exclude": ["**/node_modules/**"]
-          }
         }
       }
     },
@@ -466,13 +431,6 @@
             "styles": ["steps/02-ngg-solution/src/styles.css"],
             "scripts": [],
             "assets": ["steps/02-ngg-solution/src/favicon.ico", "steps/02-ngg-solution/src/assets"]
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": ["steps/02-ngg-solution/tsconfig.app.json"],
-            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -559,13 +517,6 @@
             "scripts": [],
             "assets": ["steps/03-cpt-hierarchy/src/favicon.ico", "steps/03-cpt-hierarchy/src/assets"]
           }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": ["steps/03-cpt-hierarchy/tsconfig.app.json"],
-            "exclude": ["**/node_modules/**"]
-          }
         }
       }
     },
@@ -650,13 +601,6 @@
             "styles": ["steps/03-cpt-hierarchy-solution/src/styles.css"],
             "scripts": [],
             "assets": ["steps/03-cpt-hierarchy-solution/src/favicon.ico", "steps/03-cpt-hierarchy-solution/src/assets"]
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": ["steps/03-cpt-hierarchy-solution/tsconfig.app.json"],
-            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -743,13 +687,6 @@
             "scripts": [],
             "assets": ["steps/04-binding/src/favicon.ico", "steps/04-binding/src/assets"]
           }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": ["steps/04-binding/tsconfig.app.json"],
-            "exclude": ["**/node_modules/**"]
-          }
         }
       }
     },
@@ -834,13 +771,6 @@
             "styles": ["steps/04-binding-solution/src/styles.css"],
             "scripts": [],
             "assets": ["steps/04-binding-solution/src/favicon.ico", "steps/04-binding-solution/src/assets"]
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": ["steps/04-binding-solution/tsconfig.app.json"],
-            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -927,13 +857,6 @@
             "scripts": [],
             "assets": ["steps/05-events/src/favicon.ico", "steps/05-events/src/assets"]
           }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": ["steps/05-events/tsconfig.app.json"],
-            "exclude": ["**/node_modules/**"]
-          }
         }
       }
     },
@@ -1018,13 +941,6 @@
             "styles": ["steps/05-events-solution/src/styles.css"],
             "scripts": [],
             "assets": ["steps/05-events-solution/src/favicon.ico", "steps/05-events-solution/src/assets"]
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": ["steps/05-events-solution/tsconfig.app.json"],
-            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -1111,13 +1027,6 @@
             "scripts": [],
             "assets": ["steps/06-http/src/favicon.ico", "steps/06-http/src/assets"]
           }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": ["steps/06-http/tsconfig.app.json"],
-            "exclude": ["**/node_modules/**"]
-          }
         }
       }
     },
@@ -1202,13 +1111,6 @@
             "styles": ["steps/06-http-solution/src/styles.css"],
             "scripts": [],
             "assets": ["steps/06-http-solution/src/favicon.ico", "steps/06-http-solution/src/assets"]
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": ["steps/06-http-solution/tsconfig.app.json"],
-            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -1295,13 +1197,6 @@
             "scripts": [],
             "assets": ["steps/07-router/src/favicon.ico", "steps/07-router/src/assets"]
           }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": ["steps/07-router/tsconfig.app.json"],
-            "exclude": ["**/node_modules/**"]
-          }
         }
       }
     },
@@ -1386,13 +1281,6 @@
             "styles": ["steps/07-router-solution/src/styles.css"],
             "scripts": [],
             "assets": ["steps/07-router-solution/src/favicon.ico", "steps/07-router-solution/src/assets"]
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": ["steps/07-router-solution/tsconfig.app.json"],
-            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -1485,13 +1373,6 @@
               "steps/25-router-lazyloading-guard/src/assets"
             ]
           }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": ["steps/25-router-lazyloading-guard/tsconfig.app.json"],
-            "exclude": ["**/node_modules/**"]
-          }
         }
       }
     },
@@ -1583,13 +1464,6 @@
               "steps/25-router-lazyloading-guard-solution/src/assets"
             ]
           }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": ["steps/25-router-lazyloading-guard-solution/tsconfig.app.json"],
-            "exclude": ["**/node_modules/**"]
-          }
         }
       }
     },
@@ -1674,13 +1548,6 @@
             "styles": ["steps/08-ngfor/src/styles.css"],
             "scripts": [],
             "assets": ["steps/08-ngfor/src/favicon.ico", "steps/08-ngfor/src/assets"]
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": ["steps/08-ngfor/tsconfig.app.json"],
-            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -1767,13 +1634,6 @@
             "scripts": [],
             "assets": ["steps/08-ngfor-solution/src/favicon.ico", "steps/08-ngfor-solution/src/assets"]
           }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": ["steps/08-ngfor-solution/tsconfig.app.json"],
-            "exclude": ["**/node_modules/**"]
-          }
         }
       }
     },
@@ -1858,13 +1718,6 @@
             "styles": ["steps/09-input/src/styles.css"],
             "scripts": [],
             "assets": ["steps/09-input/src/favicon.ico", "steps/09-input/src/assets"]
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": ["steps/09-input/tsconfig.app.json"],
-            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -1951,13 +1804,6 @@
             "scripts": [],
             "assets": ["steps/09-input-solution/src/favicon.ico", "steps/09-input-solution/src/assets"]
           }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": ["steps/09-input-solution/tsconfig.app.json"],
-            "exclude": ["**/node_modules/**"]
-          }
         }
       }
     },
@@ -2042,13 +1888,6 @@
             "styles": ["steps/10-input-b/src/styles.css"],
             "scripts": [],
             "assets": ["steps/10-input-b/src/favicon.ico", "steps/10-input-b/src/assets"]
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": ["steps/10-input-b/tsconfig.app.json"],
-            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -2135,13 +1974,6 @@
             "scripts": [],
             "assets": ["steps/11-output/src/favicon.ico", "steps/11-output/src/assets"]
           }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": ["steps/11-output/tsconfig.app.json"],
-            "exclude": ["**/node_modules/**"]
-          }
         }
       }
     },
@@ -2226,13 +2058,6 @@
             "styles": ["steps/11-output-solution/src/styles.css"],
             "scripts": [],
             "assets": ["steps/11-output-solution/src/favicon.ico", "steps/11-output-solution/src/assets"]
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": ["steps/11-output-solution/tsconfig.app.json"],
-            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -2319,13 +2144,6 @@
             "scripts": [],
             "assets": ["steps/17-form/src/favicon.ico", "steps/17-form/src/assets"]
           }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": ["steps/17-form/tsconfig.app.json"],
-            "exclude": ["**/node_modules/**"]
-          }
         }
       }
     },
@@ -2410,13 +2228,6 @@
             "styles": ["steps/17-form-solution/src/styles.css"],
             "scripts": [],
             "assets": ["steps/17-form-solution/src/favicon.ico", "steps/17-form-solution/src/assets"]
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": ["steps/17-form-solution/tsconfig.app.json"],
-            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -2503,13 +2314,6 @@
             "scripts": [],
             "assets": ["steps/18-form-b/src/favicon.ico", "steps/18-form-b/src/assets"]
           }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": ["steps/18-form-b/tsconfig.app.json"],
-            "exclude": ["**/node_modules/**"]
-          }
         }
       }
     },
@@ -2595,13 +2399,6 @@
             "scripts": [],
             "assets": ["steps/18-form-b-solution/src/favicon.ico", "steps/18-form-b-solution/src/assets"]
           }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": ["steps/18-form-b-solution/tsconfig.app.json"],
-            "exclude": ["**/node_modules/**"]
-          }
         }
       }
     },
@@ -2686,13 +2483,6 @@
             "styles": ["steps/19-form-validation/src/styles.css"],
             "scripts": [],
             "assets": ["steps/19-form-validation/src/favicon.ico", "steps/19-form-validation/src/assets"]
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": ["steps/19-form-validation/tsconfig.app.json", "steps/19-form-validation/tsconfig.spec.json"],
-            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -2785,16 +2575,6 @@
               "steps/19-form-validation-solution/src/assets"
             ]
           }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "steps/19-form-validation-solution/tsconfig.app.json",
-              "steps/19-form-validation-solution/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**"]
-          }
         }
       }
     },
@@ -2879,16 +2659,6 @@
             "styles": ["steps/20-form-model-driven/src/styles.css"],
             "scripts": [],
             "assets": ["steps/20-form-model-driven/src/favicon.ico", "steps/20-form-model-driven/src/assets"]
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "steps/20-form-model-driven/tsconfig.app.json",
-              "steps/20-form-model-driven/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -2981,16 +2751,6 @@
               "steps/20-form-model-driven-solution/src/assets"
             ]
           }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "steps/20-form-model-driven-solution/tsconfig.app.json",
-              "steps/20-form-model-driven-solution/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**"]
-          }
         }
       }
     },
@@ -3075,16 +2835,6 @@
             "styles": ["steps/21-form-custom-validator/src/styles.css"],
             "scripts": [],
             "assets": ["steps/21-form-custom-validator/src/favicon.ico", "steps/21-form-custom-validator/src/assets"]
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "steps/21-form-custom-validator/tsconfig.app.json",
-              "steps/21-form-custom-validator/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -3177,16 +2927,6 @@
               "steps/21-form-custom-validator-solution/src/assets"
             ]
           }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "steps/21-form-custom-validator-solution/tsconfig.app.json",
-              "steps/21-form-custom-validator-solution/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**"]
-          }
         }
       }
     },
@@ -3271,13 +3011,6 @@
             "styles": ["steps/12-service/src/styles.css"],
             "scripts": [],
             "assets": ["steps/12-service/src/favicon.ico", "steps/12-service/src/assets"]
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": ["steps/12-service/tsconfig.app.json", "steps/12-service/tsconfig.spec.json"],
-            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -3364,13 +3097,6 @@
             "scripts": [],
             "assets": ["steps/12-service-solution/src/favicon.ico", "steps/12-service-solution/src/assets"]
           }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": ["steps/12-service-solution/tsconfig.app.json", "steps/12-service-solution/tsconfig.spec.json"],
-            "exclude": ["**/node_modules/**"]
-          }
         }
       }
     },
@@ -3455,13 +3181,6 @@
             "styles": ["steps/13-pipe/src/styles.css"],
             "scripts": [],
             "assets": ["steps/13-pipe/src/favicon.ico", "steps/13-pipe/src/assets"]
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": ["steps/13-pipe/tsconfig.app.json", "steps/13-pipe/tsconfig.spec.json"],
-            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -3548,13 +3267,6 @@
             "scripts": [],
             "assets": ["steps/13-pipe-solution/src/favicon.ico", "steps/13-pipe-solution/src/assets"]
           }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": ["steps/13-pipe-solution/tsconfig.app.json", "steps/13-pipe-solution/tsconfig.spec.json"],
-            "exclude": ["**/node_modules/**"]
-          }
         }
       }
     },
@@ -3639,13 +3351,6 @@
             "styles": ["steps/14-pipe-b/src/styles.css"],
             "scripts": [],
             "assets": ["steps/14-pipe-b/src/favicon.ico", "steps/14-pipe-b/src/assets"]
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": ["steps/14-pipe-b/tsconfig.app.json", "steps/14-pipe-b/tsconfig.spec.json"],
-            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -3732,13 +3437,6 @@
             "scripts": [],
             "assets": ["steps/14-pipe-b-solution/src/favicon.ico", "steps/14-pipe-b-solution/src/assets"]
           }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": ["steps/14-pipe-b-solution/tsconfig.app.json", "steps/14-pipe-b-solution/tsconfig.spec.json"],
-            "exclude": ["**/node_modules/**"]
-          }
         }
       }
     },
@@ -3823,13 +3521,6 @@
             "styles": ["steps/15-directive-use/src/styles.css"],
             "scripts": [],
             "assets": ["steps/15-directive-use/src/favicon.ico", "steps/15-directive-use/src/assets"]
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": ["steps/15-directive-use/tsconfig.app.json", "steps/15-directive-use/tsconfig.spec.json"],
-            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -3916,16 +3607,6 @@
             "scripts": [],
             "assets": ["steps/15-directive-use-solution/src/favicon.ico", "steps/15-directive-use-solution/src/assets"]
           }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "steps/15-directive-use-solution/tsconfig.app.json",
-              "steps/15-directive-use-solution/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**"]
-          }
         }
       }
     },
@@ -4010,13 +3691,6 @@
             "styles": ["steps/16-directive-create/src/styles.css"],
             "scripts": [],
             "assets": ["steps/16-directive-create/src/favicon.ico", "steps/16-directive-create/src/assets"]
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": ["steps/16-directive-create/tsconfig.app.json", "steps/16-directive-create/tsconfig.spec.json"],
-            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -4109,16 +3783,6 @@
               "steps/16-directive-create-solution/src/assets"
             ]
           }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "steps/16-directive-create-solution/tsconfig.app.json",
-              "steps/16-directive-create-solution/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**"]
-          }
         }
       }
     },
@@ -4203,13 +3867,6 @@
             "styles": ["steps/10-input-b-solution/src/styles.css"],
             "scripts": [],
             "assets": ["steps/10-input-b-solution/src/favicon.ico", "steps/10-input-b-solution/src/assets"]
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": ["steps/10-input-b-solution/tsconfig.app.json", "steps/10-input-b-solution/tsconfig.spec.json"],
-            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -4296,13 +3953,6 @@
             "scripts": [],
             "assets": ["steps/pipe-demo/src/favicon.ico", "steps/pipe-demo/src/assets"]
           }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": ["steps/pipe-demo/tsconfig.app.json", "steps/pipe-demo/tsconfig.spec.json"],
-            "exclude": ["**/node_modules/**"]
-          }
         }
       }
     },
@@ -4387,13 +4037,6 @@
             "styles": ["steps/24-unit-tests/src/styles.css"],
             "scripts": [],
             "assets": ["steps/24-unit-tests/src/favicon.ico", "steps/24-unit-tests/src/assets"]
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": ["steps/24-unit-tests/tsconfig.app.json", "steps/24-unit-tests/tsconfig.spec.json"],
-            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -4480,16 +4123,6 @@
             "scripts": [],
             "assets": ["steps/24-unit-tests-solution/src/favicon.ico", "steps/24-unit-tests-solution/src/assets"]
           }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "steps/24-unit-tests-solution/tsconfig.app.json",
-              "steps/24-unit-tests-solution/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**"]
-          }
         }
       }
     },
@@ -4574,13 +4207,6 @@
             "styles": ["steps/22-ngxs/src/styles.css"],
             "scripts": [],
             "assets": ["steps/22-ngxs/src/favicon.ico", "steps/22-ngxs/src/assets"]
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": ["steps/22-ngxs/tsconfig.app.json", "steps/22-ngxs/tsconfig.spec.json"],
-            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -4667,13 +4293,6 @@
             "scripts": [],
             "assets": ["steps/22-ngxs-solution/src/favicon.ico", "steps/22-ngxs-solution/src/assets"]
           }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": ["steps/22-ngxs-solution/tsconfig.app.json", "steps/22-ngxs-solution/tsconfig.spec.json"],
-            "exclude": ["**/node_modules/**"]
-          }
         }
       }
     },
@@ -4758,13 +4377,6 @@
             "styles": ["steps/23-ngrx/src/styles.css"],
             "scripts": [],
             "assets": ["steps/23-ngrx/src/favicon.ico", "steps/23-ngrx/src/assets"]
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": ["steps/23-ngrx/tsconfig.app.json", "steps/23-ngrx/tsconfig.spec.json"],
-            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -4851,13 +4463,6 @@
             "scripts": [],
             "assets": ["steps/23-ngrx-solution/src/favicon.ico", "steps/23-ngrx-solution/src/assets"]
           }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": ["steps/23-ngrx-solution/tsconfig.app.json", "steps/23-ngrx-solution/tsconfig.spec.json"],
-            "exclude": ["**/node_modules/**"]
-          }
         }
       }
     },
@@ -4943,17 +4548,6 @@
             "assets": ["steps/26-resolvers/src/favicon.ico", "steps/26-resolvers/src/assets"],
             "styles": ["steps/26-resolvers/src/styles.css"],
             "scripts": []
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "steps/26-resolvers/tsconfig.app.json",
-              "steps/26-resolvers/tsconfig.spec.json",
-              "steps/26-resolvers/e2e/tsconfig.json"
-            ],
-            "exclude": ["**/node_modules/**"]
           }
         },
         "e2e": {
@@ -5052,17 +4646,6 @@
             "assets": ["steps/26-resolvers-solution/src/favicon.ico", "steps/26-resolvers-solution/src/assets"],
             "styles": ["steps/26-resolvers-solution/src/styles.css"],
             "scripts": []
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "steps/26-resolvers-solution/tsconfig.app.json",
-              "steps/26-resolvers-solution/tsconfig.spec.json",
-              "steps/26-resolvers-solution/e2e/tsconfig.json"
-            ],
-            "exclude": ["**/node_modules/**"]
           }
         },
         "e2e": {
