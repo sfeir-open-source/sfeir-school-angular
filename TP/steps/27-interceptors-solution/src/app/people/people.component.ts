@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
-import { AddDialogComponent } from './add-dialog/add-dialog.component';
-import { PeopleService } from '../shared/people-service';
 import { Store } from '@ngrx/store';
-import { getSearch } from '../store/selectors/selectors';
-import { filterPeople } from '../store/actions/people.actions';
-import { PeopleFeature } from '../store/state/state';
 import { mergeMap } from 'rxjs';
+import { PeopleService } from '../shared/people-service';
+import { filterPeople } from '../store/actions/people.actions';
+import { getSearch } from '../store/selectors/selectors';
+import { PeopleFeature } from '../store/state/state';
+import { AddDialogComponent } from './add-dialog/add-dialog.component';
 
 @Component({
   selector: 'sfeir-people',
@@ -36,7 +36,10 @@ export class PeopleComponent implements OnInit {
   }
 
   delete(person: any) {
-    this.peopleService.delete(person.id).subscribe(people => (this.people$ = people));
+    this.peopleService
+      .delete(person.id)
+      .pipe(mergeMap(() => this.peopleService.fetch()))
+      .subscribe();
   }
 
   add(person: any) {
