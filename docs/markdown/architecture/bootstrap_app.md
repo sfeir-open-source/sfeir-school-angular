@@ -18,7 +18,7 @@ platformBrowserDynamic().bootstrapModule(AppModule);
 
 ##==##
 
-<!-- .slide: class="two-column-layout" -->
+<!-- .slide: class="with-code inconsolata" -->
 # Bootstraping dans sa totalité
 
 ```typescript
