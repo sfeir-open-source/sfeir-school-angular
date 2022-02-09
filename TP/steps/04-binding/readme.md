@@ -6,8 +6,8 @@ Dans le dossier src/app/\_static, vous trouverez les mocks, template et style n�
 
 ## Etape 1
 
-Dans le ficher \_home.component.html** copiez le contenue du template dans le dossier static
-Dans le fichier \_home.component.css** copiez le contenue du style dans le dossier static
+Dans le ficher **home.component.html** copiez le contenue du template du static
+Dans le fichier **home.component.css** copiez le contenue du style du dossier static
 <br><br>
 
 ## Etape 2
@@ -20,12 +20,12 @@ import { PEOPLE } from '../_static/people';
 
 Déclarez une variable person initialisé à un objet vide
 
-Dans la fonction ngOnInit, récupérez la première personne du tableau de people que vous venez d'importer et settez la variable people à cette personne
+Dans la fonction ngOnInit, récupérez la première personne du tableau de people que vous venez d'importer et settez la variable person à cette personne
 <br><br>
 
 ## Etape 3
 
-Dans le fichier **home.component.html** réaliser le binding
+Dans le fichier **home.component.html** réalisez le binding
 <br><br>
 
 ## Etape 4

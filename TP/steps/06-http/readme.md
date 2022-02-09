@@ -21,13 +21,13 @@ Dans le fichier **home.component.ts**, injecter le provider HttpClient
 ## Etape 3
 
 Dans la fonction ngOnInit, réaliser le call nécessaire pour récupérer la liste des peoples
-L'Api à utiliser est la suivante: http://localhost:9000/api/peoples
+L'Api à utiliser est la suivante: http://localhost:9000/api/people
 <br><br>
 
 ## Etape 4
 
 Dans la fonction random, réaliser le call nécessaire pour récupérer une personne de manière aléatoire
-L'Api à utiliser est la suivante: http://localhost:9000/api/peoples/random
+L'Api à utiliser est la suivante: http://localhost:9000/api/people/random
 <br><br>
 
 ## Etape 5
