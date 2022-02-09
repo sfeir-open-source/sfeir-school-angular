@@ -6,8 +6,8 @@ Dans le dossier src/app/\_static, vous trouverez les mocks, template et style n√
 
 ## Etape 1
 
-Dans le ficher **home.component.html** copiez le contenue du template du static
-Dans le fichier **home.component.css** copiez le contenue du style du dossier static
+Dans le ficher **home.component.html** copiez le contenue du fichier **home.component.html** du dossier static
+Dans le fichier **home.component.css** copiez le contenue du fichier **home.component.css** du dossier static
 <br><br>
 
 ## Etape 2

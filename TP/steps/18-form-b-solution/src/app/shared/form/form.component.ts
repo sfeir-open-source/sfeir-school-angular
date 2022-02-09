@@ -1,44 +1,28 @@
-import { Component, OnInit, Output, Input, EventEmitter, OnChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'sfeir-form',
   templateUrl: 'form.component.html',
   styleUrls: ['form.component.css']
 })
-export class FormComponent implements OnInit, OnChanges {
-  @Input() model: any;
-  isUpdateMode: boolean;
+export class FormComponent implements OnInit {
+  @Input() person: any;
+  @Output('cancel') cancelEvent: EventEmitter<any> = new EventEmitter();
+  @Output('submit') submitEvent: EventEmitter<any> = new EventEmitter();
 
-  @Output('cancel') cancelEvent: EventEmitter<any>;
-  @Output('submit') submitEvent: EventEmitter<any>;
+  constructor() {}
 
-  constructor() {
-    this.submitEvent = new EventEmitter();
-    this.cancelEvent = new EventEmitter();
-    this.model = { address: {} };
-  }
-
-  /**
-   * OnInit implementation
-   */
-  ngOnInit() {}
-
-  /**
-   * Function to handle component update
-   *
-   * @param record
-   */
-  ngOnChanges(record) {
-    if (record.model && record.model.currentValue) {
-      this.model = record.model.currentValue;
-      this.isUpdateMode = Boolean(this.model);
+  ngOnInit(): void {
+    if (!this.person) {
+      this.person = {};
     }
   }
+
   cancel() {
     this.cancelEvent.emit();
   }
 
-  submit() {
-    this.submitEvent.emit(this.model);
+  add() {
+    this.submitEvent.emit(this.person);
   }
 }

@@ -1,50 +1,35 @@
 <mat-card class="mat-whiteframe-2dp">
   <mat-card-title> <span>Create new person</span> </mat-card-title>
-
   <mat-card-content>
     <form>
-      <p>
-        <mat-form-field>
-          <input matInput style="width:100%" placeholder="ID (disabled)" disabled name="id" />
-        </mat-form-field>
-      </p>
-
-      <table style="width: 100%">
-        <tr>
-          <td>
-            <mat-form-field> <input matInput placeholder="First name *" name="firstname" /> </mat-form-field>
-            <mat-form-field> <input matInput placeholder="Last Name *" name="lastname" /> </mat-form-field>
-          </td>
-          <td class="align-right">
-            <img width="100" src="https://randomuser.me/api/portraits/lego/6.jpg" />
-            <input type="hidden" name="photo" />
-          </td>
-        </tr>
-      </table>
-
-      <p>
-        <mat-form-field> <input matInput placeholder="Email *" style="width:100%" name="email" /> </mat-form-field>
-      </p>
-
-      <p>
-        <mat-form-field> <input matInput placeholder="Address" style="width:100%" name="street" /> </mat-form-field>
-      </p>
-
-      <p>
-        <mat-form-field> <input matInput placeholder="City" name="city" /> </mat-form-field>
-        <mat-form-field> <input matInput placeholder="Postal Code" name="postalCode" /> </mat-form-field>
-      </p>
-
-      <p>
-        <mat-form-field>
-          <input matInput placeholder="Phone * (ex: 0612345678)" style="width:100%" name="phone" />
-        </mat-form-field>
-      </p>
-
-      <p><mat-checkbox>Manager</mat-checkbox></p>
-      <mat-card-actions align="end">
-        <button mat-button type="button">Cancel</button> <button mat-button color="primary" type="submit">Save</button>
-      </mat-card-actions>
+      <section class="form-container">
+        <section class="form-container__image">
+          <img width="100" src="https://randomuser.me/api/portraits/lego/6.jpg" />
+          <input type="hidden" name="photo" />
+        </section>
+        <section>
+          <mat-form-field appearance="outline">
+            <mat-label>First name</mat-label>
+            <input type="text" matInput placeholder="First name" name="firstname" />
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Last name</mat-label>
+            <input type="text" matInput placeholder="Last name" name="lastname" />
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input type="email" matInput placeholder="email" name="email" />
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>phone</mat-label>
+            <input type="phone" matInput placeholder="phone" name="phone" />
+          </mat-form-field>
+        </section>
+      </section>
     </form>
+    <mat-card-actions align="end">
+      <button mat-button type="button">Cancel</button>
+      <button mat-button color="primary" type="submit">Save</button>
+    </mat-card-actions>
   </mat-card-content>
 </mat-card>

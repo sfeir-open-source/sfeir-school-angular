@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { PeopleService } from '../shared/people-service/people.service';
 import { map, mergeMap } from 'rxjs';
+import { PeopleService } from '../shared/people-service';
 
 @Component({
   selector: 'sfeir-update',
@@ -18,11 +18,7 @@ export class UpdateComponent implements OnInit {
     private readonly route: ActivatedRoute,
     private readonly router: Router,
     private readonly peopleService: PeopleService
-  ) {
-    this.person = {
-      address: {}
-    };
-  }
+  ) {}
 
   /**
    * OnInit implementation
