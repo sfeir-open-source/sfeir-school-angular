@@ -2,7 +2,6 @@ mat-card,
 mat-list-item {
   color: rgba(0, 0, 0, 0.87);
   background-color: white;
-  margin: 10px;
   width: 360px;
 }
 
@@ -19,7 +18,7 @@ mat-list-item {
 }
 
 mat-card-title {
-  margin-bottom: 0;
+  margin-bottom: 2rem;
 }
 
 mat-card-title span {
@@ -43,10 +42,15 @@ img {
   -webkit-filter: grayscale(100%);
 }
 
-.align-right {
-  text-align: right;
+form .form-container {
+  display: flex;
 }
 
-table {
-  border-spacing: 0;
+form .form-container .form-container__image {
+  display: flex;
+  align-items: baseline;
+}
+
+mat-form-field {
+  width: 100%;
 }

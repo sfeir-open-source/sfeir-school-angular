@@ -8,7 +8,7 @@ function introductionSlides() {
 }
 
 function speakerSlides() {
-  return ['speaker/nicolas_frizzarin.md', 'speaker/bruno_bellenoue.md', 'speaker/anthony_pena.md'];
+  return ['speaker/nicolas_frizzarin.md'];
 }
 
 function basicsSlides() {

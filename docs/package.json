@@ -4,14 +4,13 @@
   "description": "Sfeir School Vue with revealJS",
   "main": "index.js",
   "scripts": {
-    "sass": "node-sass ./scss/angular.scss -o ./css/ --source-map=true --watch=\"scss\" --recursive=\"scss\"",
-    "sass-once": "node-sass ./scss/angular.scss -o ./css/ --source-map=true ",
+    "sass": "sass --watch ./scss/:css/ --source-map",
+    "sass-once": "sass /scss/:css/ --source-map",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "live-server --port=4242 --open=\"./index.html\" --watch=\"markdown/\"",
+    "serve": "live-server --port=4242 --open=\"./index.html\" --watch=\"markdown,scripts,scss/\"",
     "start": "parallelshell \"npm run serve\" \"npm run sass\"",
     "copy-highlight": "cpx \"node_modules/highlight.js/styles/**/*\" \"web_modules/highlight.js/styles\" ",
-    "copy-reveal": "cpx \"node_modules/reveal.js/**/*\" \"web_modules/reveal.js\" ",
-    "prepare": "parallelshell \"npm run copy-reveal\"  \"npm run copy-highlight\" \"snowpack\""
+    "copy-reveal": "cpx \"node_modules/reveal.js/**/*\" \"web_modules/reveal.js\" "
   },
   "repository": {
     "type": "git",
@@ -35,11 +34,10 @@
     "highlight.js": "^9.15.6",
     "lit-html": "^1.1.2",
     "live-server": "^1.2.1",
-    "node-sass": "^4.12.0",
     "parallelshell": "3.0.1",
     "reveal.js": "3.9.2",
-    "snowpack": "^1.6.0",
-    "sfeir-school-theme": "2.1.1"
+    "sass": "^1.19.0",
+    "snowpack": "^1.6.0"
   },
   "snowpack": {
     "webDependencies": [

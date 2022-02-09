@@ -1,119 +1,79 @@
 <mat-card class="mat-whiteframe-2dp">
   <mat-card-title>
-    <span *ngIf="isUpdateMode; else updateModeOff"
-      >Update {{ model?.firstname || '?' }} {{ model?.lastname || '?' }}</span
-    >
-    <ng-template #updateModeOff>
-      <span>Create new person</span>
-    </ng-template>
+    <span>{{ person.id ? 'Update Existing Person' : 'Create new person' }}</span>
   </mat-card-title>
-
   <mat-card-content>
-    <form novalidate #f="ngForm">
-      <p *ngIf="isUpdateMode">
-        <mat-form-field>
-          <input [ngModel]="model.id" matInput style="width:100%" placeholder="ID (disabled)" disabled name="id" />
-        </mat-form-field>
-      </p>
-
-      <table style="width: 100%" cellspacing="0">
-        <tr>
-          <td>
-            <p [class.errors]="firstname.dirty && firstname.invalid">
-              <mat-form-field>
-                <input
-                  [(ngModel)]="model.firstname"
-                  matInput
-                  placeholder="First name"
-                  minlength="2"
-                  required
-                  name="firstname"
-                  #firstname="ngModel"
-                />
-              </mat-form-field>
-
-              <span *ngIf="firstname.dirty && firstname.errors?.required"><br />First name is required</span>
-              <span *ngIf="firstname.dirty && firstname.errors?.minlength"><br />First name is 2 chars min</span>
-            </p>
-
-            <p [class.errors]="lastname.dirty && lastname.invalid">
-              <mat-form-field>
-                <input
-                  [(ngModel)]="model.lastname"
-                  matInput
-                  placeholder="Last Name"
-                  minlength="2"
-                  required
-                  name="lastname"
-                  #lastname="ngModel"
-                />
-              </mat-form-field>
-              <span *ngIf="lastname.dirty && lastname.errors?.required"><br />Last name is required</span>
-              <span *ngIf="lastname.dirty && lastname.errors?.minlength"><br />Last name is 2 chars min</span>
-            </p>
-          </td>
-          <td class="align-right">
-            <img width="100" src="{{ model.photo || 'https://randomuser.me/api/portraits/lego/6.jpg' }}" />
-            <input type="hidden" [(ngModel)]="model.photo" name="photo" />
-          </td>
-        </tr>
-      </table>
-
-      <p [class.errors]="email.dirty && email.invalid">
-        <mat-form-field>
-          <input
-            [(ngModel)]="model.email"
-            matInput
-            placeholder="Email"
-            required
-            name="email"
-            type="email"
-            style="width:100%"
-            #email="ngModel"
-          />
-        </mat-form-field>
-
-        <span *ngIf="email.dirty && email.errors?.required">Email is mandatory</span>
-      </p>
-
-      <p ngModelGroup="address">
-        <mat-form-field>
-          <input [(ngModel)]="model.address.street" matInput placeholder="Address" style="width:100%" name="street" />
-        </mat-form-field>
-      </p>
-
-      <p ngModelGroup="address">
-        <mat-form-field>
-          <input [(ngModel)]="model.address.city" matInput placeholder="City" name="city" />
-        </mat-form-field>
-        <mat-form-field>
-          <input [(ngModel)]="model.address.postalCode" matInput placeholder="Postal Code" name="postalCode" />
-        </mat-form-field>
-      </p>
-
-      <p [class.errors]="phone.dirty && phone.invalid">
-        <mat-form-field>
-          <input
-            [(ngModel)]="model.phone"
-            matInput
-            placeholder="Phone (ex: 0612345678)"
-            style="width:100%"
-            name="phone"
-            pattern="\d{10}"
-            required
-            #phone="ngModel"
-          />
-        </mat-form-field>
-        <span *ngIf="phone.dirty && phone.errors?.pattern">Phone number must be 10 digits</span>
-        <span *ngIf="phone.dirty && phone.errors?.required">Phone number is mandatory</span>
-      </p>
-
-      <p><mat-checkbox name="isManager" [(ngModel)]="model.isManager">Manager</mat-checkbox></p>
+    <form #f="ngForm">
+      <section class="form-container">
+        <section class="form-container__image">
+          <img width="100" [src]="person.photo || 'https://randomuser.me/api/portraits/lego/6.jpg'" />
+          <input type="hidden" [(ngModel)]="person.photo" name="photo" />
+        </section>
+        <section>
+          <mat-form-field appearance="outline">
+            <mat-label>First name</mat-label>
+            <input
+              type="text"
+              matInput
+              placeholder="First name"
+              [(ngModel)]="person.firstname"
+              name="firstname"
+              #firstName="ngModel"
+              required
+              minLength="2"
+            />
+            <mat-error *ngIf="firstName.errors?.required">Ce champs est requis</mat-error>
+            <mat-error *ngIf="firstName.errors?.minLength">Ce champs doit posséder au minimum 2 caractères </mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Last name</mat-label>
+            <input
+              type="text"
+              matInput
+              placeholder="Last name"
+              #lastName="ngModel"
+              [(ngModel)]="person.lastname"
+              name="lastname"
+              required
+              minLength="2"
+            />
+            <mat-error *ngIf="lastName.errors?.required">Ce champs est requis</mat-error>
+            <mat-error *ngIf="lastName.errors?.minLength">Ce champs doit posséder au minimum 2 caractères </mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input
+              type="email"
+              matInput
+              placeholder="email"
+              [(ngModel)]="person.email"
+              #email="ngModel"
+              name="email"
+              required
+            />
+            <mat-error *ngIf="email.errors?.required">Ce champs est requis</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>phone</mat-label>
+            <input
+              type="phone"
+              matInput
+              placeholder="phone"
+              [(ngModel)]="person.phone"
+              #phone="ngModel"
+              name="phone"
+              required
+              pattern="\d{10}"
+            />
+            <mat-error *ngIf="phone.errors?.required">Ce champs est requis</mat-error>
+            <mat-error *ngIf="phone.errors?.pattern">Pattern incorrect (10 chiffres requis) </mat-error>
+          </mat-form-field>
+        </section>
+      </section>
     </form>
+    <mat-card-actions align="end">
+      <button mat-button type="button" (click)="cancel()">Cancel</button>
+      <button mat-button color="primary" type="submit" (click)="add()" [disabled]="f.invalid">Save</button>
+    </mat-card-actions>
   </mat-card-content>
-
-  <mat-card-actions align="end">
-    <button mat-button type="button" (click)="cancel()">Cancel</button>
-    <button mat-button color="primary" type="submit" (click)="submit()" [disabled]="!f.valid">Save</button>
-  </mat-card-actions>
 </mat-card>

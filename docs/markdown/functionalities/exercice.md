@@ -1,5 +1,5 @@
 <!-- .slide: class="exercice" -->
-# Exercice 08 : loop
+# Exercice 08 : ngfor
 ## Exercice<br>
 
 - Créer un composant PeopleComponent à l'aide du CLI pour afficher toutes les personnes

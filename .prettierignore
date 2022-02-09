@@ -24,3 +24,7 @@
 /.angular-cli.json
 /package-lock.json
 /yarn.lock
+
+/docs
+
+*.md
