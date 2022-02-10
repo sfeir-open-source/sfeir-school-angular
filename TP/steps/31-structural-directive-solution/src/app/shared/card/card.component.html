@@ -4,7 +4,6 @@
     <mat-card-title>
       <a routerLink="/people/1" *ngDisplay="person.isManager">
         <span>{{ person.firstname }} {{ person.lastname }}</span>
-        <span sfeir-badge [person]="person"></span>
       </a>
     </mat-card-title>
     <mat-card-subtitle>{{ person.entity }}</mat-card-subtitle>
@@ -28,9 +27,15 @@
     </div>
     <div class="contact-info">Location&nbsp;:&nbsp;<a href="http://www.sfeir.com/contact/">SFEIR</a></div>
     <div class="buttons-info">
-      <a mat-button title="Locate" routerLink="/locator/1"> <mat-icon>map</mat-icon> </a>
-      <a mat-button title="Edit" [routerLink]="['/edit', person.id]"> <mat-icon>create</mat-icon> </a>
-      <a mat-button title="Delete" (click)="delete.emit(person)"> <mat-icon>delete</mat-icon> </a>
+      <a mat-button title="Locate" routerLink="/locator/1">
+        <mat-icon>map</mat-icon>
+      </a>
+      <a mat-button title="Edit" [routerLink]="['/edit', person.id]">
+        <mat-icon>create</mat-icon>
+      </a>
+      <a mat-button title="Delete" (click)="delete.emit(person)">
+        <mat-icon>delete</mat-icon>
+      </a>
     </div>
   </mat-card-content>
 </mat-card>
