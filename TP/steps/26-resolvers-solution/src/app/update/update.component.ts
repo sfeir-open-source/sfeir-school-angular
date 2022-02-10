@@ -17,11 +17,7 @@ export class UpdateComponent implements OnInit {
     private readonly route: ActivatedRoute,
     private readonly router: Router,
     private readonly peopleService: PeopleService
-  ) {
-    this.person = {
-      address: {}
-    };
-  }
+  ) {}
 
   /**
    * OnInit implementation
