@@ -1,75 +1,39 @@
-import { Component, OnInit, Output, Input, EventEmitter, OnChanges } from '@angular/core';
-import { FormControl, Validators, FormGroup } from '@angular/forms';
-
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CustomValidators } from './custom-validators';
 
 @Component({
   selector: 'sfeir-form',
-  templateUrl: './form.component.html',
-  styleUrls: ['./form.component.css']
+  templateUrl: 'form.component.html',
+  styleUrls: ['form.component.css']
 })
-export class FormComponent implements OnInit, OnChanges {
-  form: FormGroup;
-  @Input() model: any;
-  isUpdateMode: boolean;
+export class FormComponent implements OnInit {
+  @Input() person: any;
+  @Output('cancel') cancelEvent: EventEmitter<any> = new EventEmitter();
+  @Output('submit') submitEvent: EventEmitter<any> = new EventEmitter();
+  personForm: FormGroup;
 
-  @Output('cancel') cancelEvent: EventEmitter<any>;
-  @Output('submit') submitEvent: EventEmitter<any>;
+  constructor() {}
 
-  constructor() {
-    this.submitEvent = new EventEmitter();
-    this.cancelEvent = new EventEmitter();
-    this.model = { address: {} };
-    this.form = this.buildForm();
-  }
-
-  /**
-   * OnInit implementation
-   */
-  ngOnInit() {}
-
-  /**
-   * Function to handle component update
-   */
-  ngOnChanges(record) {
-    if (record.model && record.model.currentValue) {
-      this.model = record.model.currentValue;
-      this.isUpdateMode = Boolean(this.model);
-      this.form.patchValue(this.model);
+  ngOnInit(): void {
+    this.personForm = new FormGroup({
+      id: new FormControl(null),
+      photo: new FormControl('https://randomuser.me/api/portraits/lego/6.jpg'),
+      firstname: new FormControl(null, [Validators.required, Validators.minLength(2)]),
+      lastname: new FormControl(null, [Validators.required, Validators.minLength(2)]),
+      email: new FormControl(null, [Validators.required, CustomValidators.sfeirEmail]),
+      phone: new FormControl(null, [Validators.required, Validators.pattern(/\d{10}/)])
+    });
+    if (this.person) {
+      this.personForm.patchValue(this.person);
     }
   }
 
-  /**
-   * Function to emit event to cancel process
-   */
   cancel() {
     this.cancelEvent.emit();
   }
 
-  /**
-   * Function to emit event to submit form and person
-   */
-  submit(person: any) {
-    this.submitEvent.emit(person);
-  }
-
-  /**
-   * Function to build our form
-   */
-  private buildForm(): FormGroup {
-    return new FormGroup({
-      id: new FormControl(''),
-      firstname: new FormControl('', Validators.compose([Validators.required, Validators.minLength(2)])),
-      lastname: new FormControl('', Validators.compose([Validators.required, Validators.minLength(2)])),
-      email: new FormControl('', Validators.compose([Validators.required, CustomValidators.sfeirEmail])),
-      photo: new FormControl('https://randomuser.me/api/portraits/lego/6.jpg'),
-      address: new FormGroup({
-        street: new FormControl(''),
-        city: new FormControl(''),
-        postalCode: new FormControl('')
-      }),
-      phone: new FormControl('', Validators.compose([Validators.required, Validators.pattern('\\d{10}')])),
-      isManager: new FormControl('')
-    });
+  add() {
+    this.submitEvent.emit(this.personForm.value);
   }
 }
