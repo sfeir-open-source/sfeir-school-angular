@@ -1,92 +1,53 @@
 <mat-card class="mat-whiteframe-2dp">
   <mat-card-title>
-    <span *ngIf="isUpdateMode; else updateModeOff"
-      >Update {{ form.controls.firstname.value }} {{ form.controls.lastname.value }}</span
-    >
-    <ng-template #updateModeOff>
-      <span>Create new person</span>
-    </ng-template>
+    <span>{{ person?.id ? 'Update Existing Person' : 'Create new person' }}</span>
   </mat-card-title>
-
   <mat-card-content>
-    <form novalidate [formGroup]="form">
-      <p *ngIf="isUpdateMode">
-        <span style="width:100%">ID (disabled)</span><br />
-        <span style="width:100%">{{ model.id }}</span>
-      </p>
-
-      <table style="width: 100%" cellspacing="0">
-        <tr>
-          <td>
-            <p [class.errors]="form.controls.firstname.dirty && form.controls.firstname.invalid">
-              <sfeir-input placeholder="First Name" formControlName="firstname"></sfeir-input>
-
-              <span *ngIf="form.controls.firstname.dirty && form.controls.firstname.errors?.required"
-                ><br />First name is required</span
+    <form novalidate [formGroup]="personForm">
+      <section class="form-container">
+        <section class="form-container__image">
+          <img width="100" [src]="person?.photo || 'https://randomuser.me/api/portraits/lego/6.jpg'" />
+          <input type="hidden" formControlName="photo" name="photo" />
+        </section>
+        <section>
+          <div>
+            <sfeir-input formControlName="firstname" placeholder="First Name">
+              <mat-error *ngIf="personForm.controls.firstname.errors?.required">Ce champs est requis</mat-error>
+              <mat-error *ngIf="personForm.controls.firstname.errors?.minlength"
+                >Ce champs doit posséder au minimum 2 caractères
+              </mat-error>
+            </sfeir-input>
+          </div>
+          <div>
+            <sfeir-input formControlName="lastname" placeholder="Last Name">
+              <mat-error *ngIf="personForm.controls.lastname.errors?.required">Ce champs est requis</mat-error>
+              <mat-error *ngIf="personForm.controls.lastname.errors?.minlength"
+                >Ce champs doit posséder au minimum 2 caractères
+              </mat-error>
+            </sfeir-input>
+          </div>
+          <div>
+            <sfeir-input formControlName="email" placeholder="email">
+              <mat-error *ngIf="personForm.controls.email.errors?.required">Ce champs est requis</mat-error>
+              <mat-error *ngIf="personForm.controls.email.errors?.sfeirEmail"
+                >Le format est incorrect (frizzarin.n@sfeir.com)</mat-error
               >
-              <span *ngIf="form.controls.firstname.dirty && form.controls.firstname.errors?.minlength"
-                ><br />First name is 2 chars min</span
-              >
-            </p>
-
-            <p [class.errors]="form.controls.lastname.dirty && form.controls.lastname.invalid">
-              <sfeir-input placeholder="Last Name" formControlName="lastname"></sfeir-input>
-
-              <span *ngIf="form.controls.lastname.dirty && form.controls.lastname.errors?.required"
-                ><br />Last name is required</span
-              >
-              <span *ngIf="form.controls.lastname.dirty && form.controls.lastname.errors?.minlength"
-                ><br />Last name is 2 chars min</span
-              >
-            </p>
-          </td>
-          <td class="align-right">
-            <img width="100" src="{{ form.controls.photo.value }}" />
-            <input type="hidden" formControlName="photo" name="photo" />
-          </td>
-        </tr>
-      </table>
-
-      <p [class.errors]="form.controls.email.dirty && form.controls.email.invalid">
-        <sfeir-input placeholder="Email *" formControlName="email"></sfeir-input>
-        <span *ngIf="form.controls.email.dirty && form.controls.email.errors?.required">Email is mandatory</span>
-        <span
-          *ngIf="
-            form.controls.email.dirty && form.controls.email.errors?.sfeirEmail && !form.controls.email.errors?.required
-          "
-          ><br />Invalid email (ex: chegham.w@sfeir.com)</span
-        >
-      </p>
-
-      <p formGroupName="address">
-        <sfeir-input formControlName="street" placeholder="Address"></sfeir-input>
-      </p>
-
-      <p formGroupName="address">
-        <sfeir-input formControlName="city" placeholder="City"></sfeir-input>
-        <sfeir-input formControlName="postalCode" placeholder="Postal Code"></sfeir-input>
-      </p>
-
-      <p [class.errors]="form.controls.phone.dirty && form.controls.phone.invalid">
-        <sfeir-input formControlName="phone" placeholder="Phone * (ex: 0612345678)"></sfeir-input>
-
-        <span *ngIf="form.controls.phone.dirty && form.controls.phone.errors?.required">Phone number is mandatory</span>
-        <span
-          *ngIf="
-            form.controls.phone.dirty && !form.controls.phone.errors?.required && form.controls.phone.errors?.pattern
-          "
-          >Phone number must be 10 digits</span
-        >
-      </p>
-
-      <p>
-        <mat-checkbox name="isManager" formControlName="isManager">Manager</mat-checkbox>
-      </p>
+            </sfeir-input>
+          </div>
+          <div>
+            <sfeir-input formControlName="phone" placeholder="phone">
+              <mat-error *ngIf="personForm.controls.phone.errors?.required">Ce champs est requis</mat-error>
+              <mat-error *ngIf="personForm.controls.phone.errors?.pattern"
+                >Pattern incorrect (10 chiffres requis)
+              </mat-error>
+            </sfeir-input>
+          </div>
+        </section>
+      </section>
     </form>
+    <mat-card-actions align="end">
+      <button mat-button type="button" (click)="cancel()">Cancel</button>
+      <button mat-button color="primary" type="submit" (click)="add()" [disabled]="personForm.invalid">Save</button>
+    </mat-card-actions>
   </mat-card-content>
-
-  <mat-card-actions align="end">
-    <button mat-button type="button" (click)="cancel()">Cancel</button>
-    <button mat-button color="primary" type="submit" (click)="submit(form.value)" [disabled]="!form.valid">Save</button>
-  </mat-card-actions>
 </mat-card>

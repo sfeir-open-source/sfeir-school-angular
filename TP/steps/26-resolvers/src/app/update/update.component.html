@@ -1,1 +1,3 @@
-<section><sfeir-form [model]="person" (submit)="submit($event)" (cancel)="cancel()" class="wide"></sfeir-form></section>
+<section>
+  <sfeir-form *ngIf="person" [person]="person" (submit)="submit($event)" (cancel)="cancel()" class="wide"></sfeir-form>
+</section>

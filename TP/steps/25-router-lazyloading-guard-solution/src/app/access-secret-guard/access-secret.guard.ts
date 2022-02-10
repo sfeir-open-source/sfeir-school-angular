@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
-import { CanLoad } from '@angular/router';
+import { CanLoad, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class AccessSecretGuard implements CanLoad {
+  constructor(private readonly router: Router) {}
   canLoad(): boolean | Observable<boolean> | Promise<boolean> {
-    return window.location.hash.includes('who=me');
+    const isAuthorized = window.location.hash.includes('who=me');
+    return isAuthorized ? true : this.router.navigate(['home']);
   }
 }
