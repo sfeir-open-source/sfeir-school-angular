@@ -14,7 +14,9 @@ export class FormComponent implements OnInit {
 
   ngOnInit(): void {
     if (!this.person) {
-      this.person = {};
+      this.person = {
+        photo: 'https://randomuser.me/api/portraits/lego/6.jpg'
+      };
     }
   }
 
