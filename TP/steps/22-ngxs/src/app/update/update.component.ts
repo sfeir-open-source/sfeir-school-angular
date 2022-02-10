@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { PeopleService } from '../shared/people-service';
 import { map, mergeMap } from 'rxjs';
+import { PeopleService } from '../shared/people-service';
 
 @Component({
   selector: 'sfeir-update',
-  templateUrl: './update.component.html',
-  styleUrls: ['./update.component.css']
+  templateUrl: 'update.component.html',
+  styleUrls: ['update.component.css']
 })
 export class UpdateComponent implements OnInit {
   person: any;
@@ -18,11 +18,7 @@ export class UpdateComponent implements OnInit {
     private readonly route: ActivatedRoute,
     private readonly router: Router,
     private readonly peopleService: PeopleService
-  ) {
-    this.person = {
-      address: {}
-    };
-  }
+  ) {}
 
   /**
    * OnInit implementation
@@ -37,7 +33,9 @@ export class UpdateComponent implements OnInit {
   }
 
   submit(person: any) {
-    this.peopleService.update(person).subscribe(() => this.router.navigate(['/people']));
+    this.peopleService.update(person).subscribe(() => {
+      this.router.navigate(['/people']);
+    });
   }
 
   cancel() {

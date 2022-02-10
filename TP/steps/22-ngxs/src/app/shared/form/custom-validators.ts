@@ -9,6 +9,10 @@ export class CustomValidators {
     // email regex
     const regex = /^\w+\.\w@sfeir\.com$/;
 
+    if (!control.value) {
+      return null;
+    }
+
     // returns control
     return regex.test(control.value)
       ? null
