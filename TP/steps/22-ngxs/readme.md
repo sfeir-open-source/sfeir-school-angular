@@ -16,6 +16,8 @@ Dans le fichier **app.state.ts**, créez trois actions:
 -   SetPeople -> type = '[APP] SetPeople' (cette action prend un paramètre qui est le tableau de people)
 -   FilterPeople -> type = '[APP] FilterPeople' (cette action prend un paramètre qui la recherche de la personne)
 
+<br><br>
+
 ## Etape 2
 
 Dans le fichier **app.state.ts** et plus précisément dans la classe AppState, créez trois selectors grâce à l'annotation @Selector
@@ -39,6 +41,8 @@ Astuce: pensez à utiliser le l'opérateur rxjs mergeMap pour piper :)
 
 Attention à bien renvoyer la liste des peoples, dispatch renvoie un observable, il sera donc judicieux de le piper avec l'opérateur rxjs map pour renvoyer correctement la liste des peoples
 
+<br><br>
+
 ## Etape 4
 
 Dans le composant PeopleComponent, créez une propriété search\$ qui est une observable de type string
@@ -56,13 +60,17 @@ Dans le composant PeopleComponent, et particulièrement dans le Hook d'initialis
 
 Dans le composant PeopleComponent, créez une méthode onSearch qui prend en paramètre la recherche de l'utilisateur. Cette Fonction devra appeler votre action FilterPeople
 
+<br><br>
+
 ## Etape 5
 
 Dans le fichier, **people.component.html**, appelez la méthode onSearch lorsque l'event emitter search du composant SearchComponent est émit
 
-Dans le fichier **people.component.html**, setter la propriété 'initialValue' de contre composant SearchComponent à la valeur de la propriété search\$
+Dans le fichier \*\*people.component.html\*\*, setter la propriété 'initialValue' de contre composant SearchComponent à la valeur de la propriété search\$
 
 Astuce: pensez à utiliser le pipe async
+
+<br><br>
 
 ## Etape 6
 
