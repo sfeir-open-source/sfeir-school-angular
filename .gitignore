@@ -19,8 +19,7 @@ bower_components
 *.sublime-workspace
 
 # IDE - VSCode
-.vscode
-.vscode/*
+
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
@@ -47,3 +46,5 @@ Thumbs.db
 pick.sh
 
 .angular
+
+workshop/dist

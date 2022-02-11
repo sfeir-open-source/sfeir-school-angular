@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "projects": {
+    "01-hands-on": "apps/01-hands-on",
+    "01-hands-on-solution": "apps/01-hands-on-solution"
+  }
+}
