@@ -8,9 +8,9 @@
     "client": "nx serve",
     "client:build": "nx build",
     "client:test": "nx test",
-    "test:ci": "nx affected --target=test --base=main --head=HEAD --verbose",
-    "lint:ci": "nx affected --target=lint --base=main --head=HEAD --verbose",
-    "build:ci": "nx affected --target=build --base=main --head=HEAD --verbose"
+    "test:ci": "nx affected --target=test --base=remotes/origin/main --head=HEAD --verbose",
+    "lint:ci": "nx affected --target=lint --base=remotes/origin/main --head=HEAD --verbose",
+    "build:ci": "nx affected --target=build --base=remotes/origin/main --head=HEAD --verbose"
   },
   "private": true,
   "dependencies": {
