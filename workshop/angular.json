@@ -6,6 +6,8 @@
     "02-ngg": "apps/02-ngg",
     "02-ngg-solution": "apps/02-ngg-solution",
     "03-cpt-hierarchy": "apps/03-cpt-hierarchy",
-    "03-cpt-hierarchy-solution": "apps/03-cpt-hierarchy-solution"
+    "03-cpt-hierarchy-solution": "apps/03-cpt-hierarchy-solution",
+    "04-binding": "apps/04-binding",
+    "04-binding-solution": "apps/04-binding-solution"
   }
 }
