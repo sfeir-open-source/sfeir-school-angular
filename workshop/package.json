@@ -10,7 +10,7 @@
     "client:test": "nx test",
     "test:ci": "nx affected --target=test --base=remotes/origin/main --head=HEAD",
     "lint:ci": "nx affected --target=lint --base=remotes/origin/main --head=HEAD ",
-    "build:ci": "nx affected --target=build --base=remotes/origin/main --head=HEAD --parallel=1"
+    "build:ci": "nx affected --target=build --base=remotes/origin/main --head=HEAD"
   },
   "private": true,
   "dependencies": {

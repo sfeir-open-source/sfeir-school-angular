@@ -1,4 +1,4 @@
-# Exercice: 01:hands-on (dossier steps/01-hands-on)
+# Exercice: 01:hands-on (dossier apps/01-hands-on)
 
 Le but de cet exercice est de comprendre comment fonctionne le bootstrapping d'une application angular
 

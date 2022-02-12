@@ -1,4 +1,4 @@
-# Exercice 2: 02-ngg (dossier steps/02-ngg)
+# Exercice 2: 02-ngg (dossier apps/02-ngg)
 
 L'objectif de ce workshop est de vous entraîner à créer des composant à l'aide du CLI d'Angular
 
