@@ -2,6 +2,8 @@
   "version": 2,
   "projects": {
     "01-hands-on": "apps/01-hands-on",
-    "01-hands-on-solution": "apps/01-hands-on-solution"
+    "01-hands-on-solution": "apps/01-hands-on-solution",
+    "02-ngg": "apps/02-ngg",
+    "02-ngg-solution": "apps/02-ngg-solution"
   }
 }
