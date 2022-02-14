@@ -6,6 +6,7 @@
   "prettier.ignorePath": ".prettierignore",
   "prettier.prettierPath": "workshop/node_modules/prettier",
   "cSpell.words": [
+    "autorenew",
     "bindez",
     "cachable",
     "cillum",
