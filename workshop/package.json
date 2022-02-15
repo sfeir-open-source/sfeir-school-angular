@@ -8,9 +8,10 @@
     "client": "nx serve",
     "client:build": "nx build",
     "client:test": "nx test",
-    "test:ci": "nx affected --target=test --base=remotes/origin/main --head=HEAD",
-    "lint:ci": "nx affected --target=lint --base=remotes/origin/main --head=HEAD ",
-    "build:ci": "nx affected --target=build --base=remotes/origin/main --head=HEAD"
+    "server:start": "nx serve server-express --no-inspect",
+    "test:ci": "nx affected --target=test --base=remotes/origin/main --head=HEAD --parallel=5",
+    "lint:ci": "nx affected --target=lint --base=remotes/origin/main --head=HEAD --parallel=5",
+    "build:ci": "nx affected --target=build --base=remotes/origin/main --head=HEAD --parallel=5"
   },
   "private": true,
   "dependencies": {
@@ -25,8 +26,11 @@
     "@angular/platform-browser-dynamic": "~13.2.0",
     "@angular/router": "~13.2.0",
     "@nrwl/angular": "13.8.1",
+    "cors": "^2.8.5",
+    "express": "4.17.2",
     "rxjs": "~7.4.0",
     "tslib": "^2.0.0",
+    "underscore": "^1.13.2",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
@@ -40,10 +44,13 @@
     "@nrwl/cli": "13.8.1",
     "@nrwl/cypress": "13.8.1",
     "@nrwl/eslint-plugin-nx": "13.8.1",
+    "@nrwl/express": "13.8.1",
     "@nrwl/jest": "13.8.1",
     "@nrwl/linter": "13.8.1",
+    "@nrwl/node": "13.8.1",
     "@nrwl/tao": "13.8.1",
     "@nrwl/workspace": "13.8.1",
+    "@types/express": "4.17.13",
     "@types/jest": "27.0.2",
     "@types/node": "16.11.7",
     "@typescript-eslint/eslint-plugin": "~5.10.0",
