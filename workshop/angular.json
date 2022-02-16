@@ -11,6 +11,8 @@
     "04-binding-solution": "apps/04-binding-solution",
     "05-events": "apps/05-events",
     "05-events-solution": "apps/05-events-solution",
+    "06-http": "apps/06-http",
+    "06-http-solution": "apps/06-http-solution",
     "server-express": "apps/server-express"
   }
 }
