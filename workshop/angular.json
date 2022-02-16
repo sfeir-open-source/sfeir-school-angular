@@ -15,6 +15,8 @@
     "06-http-solution": "apps/06-http-solution",
     "07-router": "apps/07-router",
     "07-router-solution": "apps/07-router-solution",
+    "08-ng-for": "apps/08-ng-for",
+    "08-ng-for-solution": "apps/08-ng-for-solution",
     "server-express": "apps/server-express"
   }
 }
