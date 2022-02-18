@@ -19,6 +19,8 @@
     "08-ng-for-solution": "apps/08-ng-for-solution",
     "09-input": "apps/09-input",
     "09-input-solution": "apps/09-input-solution",
+    "10-output": "apps/10-output",
+    "10-output-solution": "apps/10-output-solution",
     "server-express": "apps/server-express"
   }
 }
