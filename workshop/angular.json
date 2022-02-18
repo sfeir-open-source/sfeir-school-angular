@@ -17,6 +17,8 @@
     "07-router-solution": "apps/07-router-solution",
     "08-ng-for": "apps/08-ng-for",
     "08-ng-for-solution": "apps/08-ng-for-solution",
+    "09-input": "apps/09-input",
+    "09-input-solution": "apps/09-input-solution",
     "server-express": "apps/server-express"
   }
 }
