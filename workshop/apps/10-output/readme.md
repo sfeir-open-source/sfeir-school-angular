@@ -44,5 +44,5 @@ Pensez à utiliser une nouvelle fois la fonction **random** pour éviter de dupl
 Vérifiez votre travail en vous plaçant à la racine du dossier TP et en lançant la commande:
 
 ```bash
-npm run client -- 11-output
+npm run client -- 10-output
 ```
