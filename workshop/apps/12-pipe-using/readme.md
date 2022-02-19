@@ -1,4 +1,4 @@
-# Exercice 13-pipe (dossier apps/3-pipe)
+# Exercice 12-pipe-using (dossier apps/12-pipe-use)
 
 Nous venous de rajouter la date de naissance d'une personne sur la card.
 
