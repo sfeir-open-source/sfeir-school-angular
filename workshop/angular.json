@@ -22,7 +22,9 @@
     "10-output": "apps/10-output",
     "10-output-solution": "apps/10-output-solution",
     "11-service": "apps/11-service",
-    "server-express": "apps/server-express",
-    "11-service-solution": "apps/11-service-solution"
+    "11-service-solution": "apps/11-service-solution",
+    "12-pipe-using": "apps/12-pipe-using",
+    "12-pipe-using-solution": "apps/12-pipe-using-solution",
+    "server-express": "apps/server-express"
   }
 }

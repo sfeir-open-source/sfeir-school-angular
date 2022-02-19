@@ -1,0 +1,101 @@
+{
+  "projectType": "application",
+  "root": "apps/12-pipe-using",
+  "sourceRoot": "apps/12-pipe-using/src",
+  "prefix": "sfeir",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/apps/12-pipe-using",
+        "index": "apps/12-pipe-using/src/index.html",
+        "main": "apps/12-pipe-using/src/main.ts",
+        "polyfills": "apps/12-pipe-using/src/polyfills.ts",
+        "tsConfig": "apps/12-pipe-using/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "apps/12-pipe-using/src/favicon.ico",
+          "apps/12-pipe-using/src/assets"
+        ],
+        "styles": [
+          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+          "apps/12-pipe-using/src/styles.scss"
+        ],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/12-pipe-using/src/environments/environment.ts",
+              "with": "apps/12-pipe-using/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "12-pipe-using:build:production"
+        },
+        "development": {
+          "browserTarget": "12-pipe-using:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "12-pipe-using:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/12-pipe-using/src/**/*.ts",
+          "apps/12-pipe-using/src/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/apps/12-pipe-using"
+      ],
+      "options": {
+        "jestConfig": "apps/12-pipe-using/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
