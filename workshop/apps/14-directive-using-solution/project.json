@@ -1,7 +1,7 @@
 {
   "projectType": "application",
-  "root": "apps/13-pipe-custom-solution",
-  "sourceRoot": "apps/13-pipe-custom-solution/src",
+  "root": "apps/14-directive-using-solution",
+  "sourceRoot": "apps/14-directive-using-solution/src",
   "prefix": "sfeir",
   "targets": {
     "build": {
@@ -10,19 +10,19 @@
         "{options.outputPath}"
       ],
       "options": {
-        "outputPath": "dist/apps/13-pipe-custom-solution",
-        "index": "apps/13-pipe-custom-solution/src/index.html",
-        "main": "apps/13-pipe-custom-solution/src/main.ts",
-        "polyfills": "apps/13-pipe-custom-solution/src/polyfills.ts",
-        "tsConfig": "apps/13-pipe-custom-solution/tsconfig.app.json",
+        "outputPath": "dist/apps/14-directive-using-solution",
+        "index": "apps/14-directive-using-solution/src/index.html",
+        "main": "apps/14-directive-using-solution/src/main.ts",
+        "polyfills": "apps/14-directive-using-solution/src/polyfills.ts",
+        "tsConfig": "apps/14-directive-using-solution/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
-          "apps/13-pipe-custom-solution/src/favicon.ico",
-          "apps/13-pipe-custom-solution/src/assets"
+          "apps/14-directive-using-solution/src/favicon.ico",
+          "apps/14-directive-using-solution/src/assets"
         ],
         "styles": [
           "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-          "apps/13-pipe-custom-solution/src/styles.scss"
+          "apps/14-directive-using-solution/src/styles.scss"
         ],
         "scripts": []
       },
@@ -42,8 +42,8 @@
           ],
           "fileReplacements": [
             {
-              "replace": "apps/13-pipe-custom-solution/src/environments/environment.ts",
-              "with": "apps/13-pipe-custom-solution/src/environments/environment.prod.ts"
+              "replace": "apps/14-directive-using-solution/src/environments/environment.ts",
+              "with": "apps/14-directive-using-solution/src/environments/environment.prod.ts"
             }
           ],
           "outputHashing": "all"
@@ -63,10 +63,10 @@
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "browserTarget": "13-pipe-custom-solution:build:production"
+          "browserTarget": "14-directive-using-solution:build:production"
         },
         "development": {
-          "browserTarget": "13-pipe-custom-solution:build:development"
+          "browserTarget": "14-directive-using-solution:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -74,25 +74,25 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "browserTarget": "13-pipe-custom-solution:build"
+        "browserTarget": "14-directive-using-solution:build"
       }
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
         "lintFilePatterns": [
-          "apps/13-pipe-custom-solution/src/**/*.ts",
-          "apps/13-pipe-custom-solution/src/**/*.html"
+          "apps/14-directive-using-solution/src/**/*.ts",
+          "apps/14-directive-using-solution/src/**/*.html"
         ]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
       "outputs": [
-        "coverage/apps/13-pipe-custom-solution"
+        "coverage/apps/14-directive-using-solution"
       ],
       "options": {
-        "jestConfig": "apps/13-pipe-custom-solution/jest.config.js",
+        "jestConfig": "apps/14-directive-using-solution/jest.config.js",
         "passWithNoTests": true
       }
     }

@@ -27,6 +27,8 @@
     "12-pipe-using-solution": "apps/12-pipe-using-solution",
     "13-pipe-custom": "apps/13-pipe-custom",
     "13-pipe-custom-solution": "apps/13-pipe-custom-solution",
+    "14-directive-using": "apps/14-directive-using",
+    "14-directive-using-solution": "apps/14-directive-using-solution",
     "server-express": "apps/server-express"
   }
 }

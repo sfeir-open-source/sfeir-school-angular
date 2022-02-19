@@ -1,0 +1,22 @@
+<section>
+  <sfeir-card *ngFor="let person of people$ | async" [person]="person" (personDelete)="deletePerson($event)">
+  </sfeir-card>
+</section>
+<section>
+  <mat-list>
+    <mat-list-item *ngFor="let person of people$ | async" class="mat-whiteframe-2dp mat-card">
+      <img mat-list-avatar src="{{ person.photo }}" />
+      <h3 mat-line>{{ person.firstname }} {{ person.lastname }}</h3>
+      <p mat-line>
+        <span> {{ person.entity }} </span> — <span>{{ person.email }} </span>
+      </p>
+    </mat-list-item>
+  </mat-list>
+</section>
+
+<section class="buttons-fab">
+  <button mat-fab color="warn">
+    <i class="material-icons">list</i>
+    <!-- <i class="material-icons">view_stream</i> -->
+  </button>
+</section>
