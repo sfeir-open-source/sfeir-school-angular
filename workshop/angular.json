@@ -31,6 +31,8 @@
     "14-directive-using-solution": "apps/14-directive-using-solution",
     "15-directive-custom": "apps/15-directive-custom",
     "15-directive-custom-solution": "apps/15-directive-custom-solution",
-    "server-express": "apps/server-express"
+    "16-template-driven-form": "apps/16-template-driven-form",
+    "server-express": "apps/server-express",
+    "16-template-driven-form-solution": "apps/16-template-driven-form-solution"
   }
 }
