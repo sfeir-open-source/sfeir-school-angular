@@ -32,7 +32,9 @@
     "15-directive-custom": "apps/15-directive-custom",
     "15-directive-custom-solution": "apps/15-directive-custom-solution",
     "16-template-driven-form": "apps/16-template-driven-form",
+    "16-template-driven-form-solution": "apps/16-template-driven-form-solution",
+    "17-template-driven-form-validation": "apps/17-template-driven-form-validation",
     "server-express": "apps/server-express",
-    "16-template-driven-form-solution": "apps/16-template-driven-form-solution"
+    "17-template-driven-form-validation-solution": "apps/17-template-driven-form-validation-solution"
   }
 }
