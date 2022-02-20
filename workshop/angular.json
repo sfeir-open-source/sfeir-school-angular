@@ -34,7 +34,9 @@
     "16-template-driven-form": "apps/16-template-driven-form",
     "16-template-driven-form-solution": "apps/16-template-driven-form-solution",
     "17-template-driven-form-validation": "apps/17-template-driven-form-validation",
+    "17-template-driven-form-validation-solution": "apps/17-template-driven-form-validation-solution",
+    "18-template-driven-form-update-mode": "apps/18-template-driven-form-update-mode",
     "server-express": "apps/server-express",
-    "17-template-driven-form-validation-solution": "apps/17-template-driven-form-validation-solution"
+    "18-template-driven-form-update-mode-solution": "apps/18-template-driven-form-update-mode-solution"
   }
 }
