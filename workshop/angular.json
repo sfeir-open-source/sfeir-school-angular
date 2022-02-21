@@ -36,7 +36,9 @@
     "17-template-driven-form-validation": "apps/17-template-driven-form-validation",
     "17-template-driven-form-validation-solution": "apps/17-template-driven-form-validation-solution",
     "18-template-driven-form-update-mode": "apps/18-template-driven-form-update-mode",
-    "server-express": "apps/server-express",
-    "18-template-driven-form-update-mode-solution": "apps/18-template-driven-form-update-mode-solution"
+    "18-template-driven-form-update-mode-solution": "apps/18-template-driven-form-update-mode-solution",
+    "19-reactive-form": "apps/19-reactive-form",
+    "19-reactive-form-solution": "apps/19-reactive-form-solution",
+    "server-express": "apps/server-express"
   }
 }
