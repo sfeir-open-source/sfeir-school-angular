@@ -43,6 +43,8 @@
     "20-reactive-form-custom-validator-solution": "apps/20-reactive-form-custom-validator-solution",
     "21-lazyloading": "apps/21-lazyloading",
     "21-lazyloading-solution": "apps/21-lazyloading-solution",
+    "22-guards": "apps/22-guards",
+    "22-guards-solution": "apps/22-guards-solution",
     "server-express": "apps/server-express"
   }
 }
