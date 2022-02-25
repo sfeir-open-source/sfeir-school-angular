@@ -47,6 +47,8 @@
     "22-guards-solution": "apps/22-guards-solution",
     "23-resolver": "apps/23-resolver",
     "23-resolver-solution": "apps/23-resolver-solution",
+    "24-interceptor": "apps/24-interceptor",
+    "24-interceptor-solution": "apps/24-interceptor-solution",
     "server-express": "apps/server-express"
   }
 }
