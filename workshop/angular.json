@@ -39,6 +39,8 @@
     "18-template-driven-form-update-mode-solution": "apps/18-template-driven-form-update-mode-solution",
     "19-reactive-form": "apps/19-reactive-form",
     "19-reactive-form-solution": "apps/19-reactive-form-solution",
+    "20-reactive-form-custom-validator": "apps/20-reactive-form-custom-validator",
+    "20-reactive-form-custom-validator-solution": "apps/20-reactive-form-custom-validator-solution",
     "server-express": "apps/server-express"
   }
 }
