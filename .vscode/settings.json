@@ -16,6 +16,8 @@
     "firstname",
     "hostbinding",
     "lastname",
+    "lazyloader",
+    "lazyloadez",
     "lazyloading",
     "mockée",
     "ngcc",

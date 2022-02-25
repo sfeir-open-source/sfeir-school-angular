@@ -1,0 +1,4 @@
+<section>
+  <sfeir-form *ngIf="person$ | async as person" [person]="person" (cancel)="goBack()" (save)="updatePerson($event)">
+  </sfeir-form>
+</section>
