@@ -15,6 +15,7 @@
     "devkit",
     "firstname",
     "hostbinding",
+    "hostlistener",
     "lastname",
     "lazyloader",
     "lazyloadez",

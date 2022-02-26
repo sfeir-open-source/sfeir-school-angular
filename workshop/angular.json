@@ -49,8 +49,10 @@
     "23-resolver-solution": "apps/23-resolver-solution",
     "24-interceptor": "apps/24-interceptor",
     "24-interceptor-solution": "apps/24-interceptor-solution",
-    "server-express": "apps/server-express",
     "25-teleportation": "apps/25-teleportation",
-    "25-teleportation-solution": "apps/25-teleportation-solution"
+    "25-teleportation-solution": "apps/25-teleportation-solution",
+    "26-hostbinding-hostlistener": "apps/26-hostbinding-hostlistener",
+    "26-hostbinding-hostlistener-solution": "apps/26-hostbinding-hostlistener-solution",
+    "server-express": "apps/server-express"
   }
 }
