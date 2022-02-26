@@ -1,0 +1,101 @@
+{
+  "projectType": "application",
+  "root": "apps/28-custom-control-solution",
+  "sourceRoot": "apps/28-custom-control-solution/src",
+  "prefix": "sfeir",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/apps/28-custom-control-solution",
+        "index": "apps/28-custom-control-solution/src/index.html",
+        "main": "apps/28-custom-control-solution/src/main.ts",
+        "polyfills": "apps/28-custom-control-solution/src/polyfills.ts",
+        "tsConfig": "apps/28-custom-control-solution/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "apps/28-custom-control-solution/src/favicon.ico",
+          "apps/28-custom-control-solution/src/assets"
+        ],
+        "styles": [
+          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+          "apps/28-custom-control-solution/src/styles.scss"
+        ],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/28-custom-control-solution/src/environments/environment.ts",
+              "with": "apps/28-custom-control-solution/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "28-custom-control-solution:build:production"
+        },
+        "development": {
+          "browserTarget": "28-custom-control-solution:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "28-custom-control-solution:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/28-custom-control-solution/src/**/*.ts",
+          "apps/28-custom-control-solution/src/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/apps/28-custom-control-solution"
+      ],
+      "options": {
+        "jestConfig": "apps/28-custom-control-solution/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

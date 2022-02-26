@@ -53,8 +53,10 @@
     "25-teleportation-solution": "apps/25-teleportation-solution",
     "26-hostbinding-hostlistener": "apps/26-hostbinding-hostlistener",
     "26-hostbinding-hostlistener-solution": "apps/26-hostbinding-hostlistener-solution",
-    "server-express": "apps/server-express",
     "27-structural-directive": "apps/27-structural-directive",
-    "27-structural-directive-solution": "apps/27-structural-directive-solution"
+    "27-structural-directive-solution": "apps/27-structural-directive-solution",
+    "28-custom-control": "apps/28-custom-control",
+    "28-custom-control-solution": "apps/28-custom-control-solution",
+    "server-express": "apps/server-express"
   }
 }

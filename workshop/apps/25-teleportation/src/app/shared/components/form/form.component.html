@@ -12,14 +12,14 @@
             <mat-label>First name</mat-label>
             <input type="text" matInput placeholder="First name" name="firstname" formControlName="firstname" />
             <mat-error *ngIf="personForm.controls.firstname.errors?.['required']">Ce champs est requis</mat-error>
-            <mat-error *ngIf="personForm.controls.firstname.errors?.['minLength']">Ce champs doit posséder minimum 2
+            <mat-error *ngIf="personForm.controls.firstname.errors?.['minlength']">Ce champs doit posséder minimum 2
               caractères</mat-error>
           </mat-form-field>
           <mat-form-field appearance="outline">
             <mat-label>Last name</mat-label>
             <input type="text" matInput placeholder="Last name" name="lastname" formControlName="lastname" />
             <mat-error *ngIf="personForm.controls.lastname.errors?.['required']">Ce champs est requis</mat-error>
-            <mat-error *ngIf="personForm.controls.lastname.errors?.['minLength']">Ce champs doit posséder minimum 2
+            <mat-error *ngIf="personForm.controls.lastname.errors?.['minlength']">Ce champs doit posséder minimum 2
               caractères</mat-error>
           </mat-form-field>
           <mat-form-field appearance="outline">
