@@ -49,6 +49,8 @@
     "23-resolver-solution": "apps/23-resolver-solution",
     "24-interceptor": "apps/24-interceptor",
     "24-interceptor-solution": "apps/24-interceptor-solution",
-    "server-express": "apps/server-express"
+    "server-express": "apps/server-express",
+    "25-teleportation": "apps/25-teleportation",
+    "25-teleportation-solution": "apps/25-teleportation-solution"
   }
 }
