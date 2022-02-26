@@ -1,0 +1,25 @@
+<ng-container *ngIf="view$ |async as currentView" [ngSwitch]="currentView">
+  <sfeir-form></sfeir-form>
+  <section *ngSwitchCase="'card'">
+    <sfeir-card *ngFor="let person of people$ | async" [person]="person" (personDelete)="deletePerson($event)">
+    </sfeir-card>
+  </section>
+  <section *ngSwitchCase="'list'">
+    <mat-list>
+      <mat-list-item *ngFor="let person of people$ | async" class="mat-whiteframe-2dp mat-card">
+        <img mat-list-avatar src="{{ person.photo }}" />
+        <h3 mat-line>{{ person.firstname }} {{ person.lastname }}</h3>
+        <span [sfeirBadge]="person.isManager"></span>
+        <p mat-line>
+          <span> {{ person.entity }} </span> — <span>{{ person.email }} </span>
+        </p>
+      </mat-list-item>
+    </mat-list>
+  </section>
+  <section class="buttons-fab">
+    <button mat-fab color="accent" class="button-add" (click)="showDialog()"><i class="material-icons">add</i></button>
+    <button mat-fab color="warn" (click)="changeView(currentView)">
+      <i class="material-icons">{{ currentView === 'card' ? 'list' : 'view_stream'}}</i>
+    </button>
+  </section>
+</ng-container>

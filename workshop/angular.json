@@ -57,6 +57,8 @@
     "27-structural-directive-solution": "apps/27-structural-directive-solution",
     "28-custom-control": "apps/28-custom-control",
     "28-custom-control-solution": "apps/28-custom-control-solution",
+    "29-elf-store": "apps/29-elf-store",
+    "29-elf-store-solution": "apps/29-elf-store-solution",
     "server-express": "apps/server-express"
   }
 }

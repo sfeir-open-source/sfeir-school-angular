@@ -7,7 +7,7 @@
           <img width="100" [src]="personForm.value.photo" />
           <input type="hidden" name="photo" formControlName="photo" />
         </section>
-        <section>
+        <section class="sfeir-container__form">
           <sfeir-custom-input formControlName="firstname" placeholder="First Name">
             <mat-error *ngIf="personForm.controls.firstname.errors?.['required']">Ce champs est requis</mat-error>
             <mat-error *ngIf="personForm.controls.firstname.errors?.['minlength']">Ce champs doit posséder minimum 2
