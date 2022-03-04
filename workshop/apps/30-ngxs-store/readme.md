@@ -42,8 +42,8 @@ Dans votre service, créez
 ## Etape 5
 
 Dans le service PeopleService, injectez votre service store et réalisez les sides effects suivant à l'aide de l'opérateur tap
-- lorsque vous récupérez la liste des personnes, settez votre entité people (dans son intégralité) de votre store (setPeopleEntities)
-- lorsque vous supprimez une personne, settez votre entité people (dans son intégralité ) de votre store (setPeopleEntities)
+- lorsque vous récupérez la liste des personnes, settez votre entité people (dans son intégralité) de votre store
+- lorsque vous supprimez une personne, settez votre entité people (dans son intégralité ) de votre store
 
 <br><br>
 

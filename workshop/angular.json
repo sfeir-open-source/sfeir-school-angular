@@ -61,6 +61,8 @@
     "29-elf-store-solution": "apps/29-elf-store-solution",
     "30-ngxs-store": "apps/30-ngxs-store",
     "30-ngxs-store-solution": "apps/30-ngxs-store-solution",
+    "31-ngrx-store": "apps/31-ngrx-store",
+    "31-ngrx-store-solution": "apps/31-ngrx-store-solution",
     "server-express": "apps/server-express"
   }
 }
