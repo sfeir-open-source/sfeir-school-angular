@@ -59,6 +59,8 @@
     "28-custom-control-solution": "apps/28-custom-control-solution",
     "29-elf-store": "apps/29-elf-store",
     "29-elf-store-solution": "apps/29-elf-store-solution",
+    "30-ngxs-store": "apps/30-ngxs-store",
+    "30-ngxs-store-solution": "apps/30-ngxs-store-solution",
     "server-express": "apps/server-express"
   }
 }

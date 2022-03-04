@@ -1,5 +1,5 @@
 <ng-container *ngIf="view$ |async as currentView" [ngSwitch]="currentView">
-  <sfeir-search></sfeir-search>
+  <sfeir-search [searchText]="search$ |async" (search)="setSearch($event)"></sfeir-search>
   <section *ngSwitchCase="'card'">
     <sfeir-card *ngFor="let person of people$ | async" [person]="person" (personDelete)="deletePerson($event)">
     </sfeir-card>
