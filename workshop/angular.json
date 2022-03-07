@@ -63,6 +63,8 @@
     "30-ngxs-store-solution": "apps/30-ngxs-store-solution",
     "31-ngrx-store": "apps/31-ngrx-store",
     "31-ngrx-store-solution": "apps/31-ngrx-store-solution",
-    "server-express": "apps/server-express"
+    "server-express": "apps/server-express",
+    "32-unit-tests": "apps/32-unit-tests",
+    "32-unit-tests-solution": "apps/32-unit-tests-solution"
   }
 }

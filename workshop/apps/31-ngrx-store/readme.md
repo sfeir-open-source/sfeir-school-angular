@@ -75,7 +75,7 @@ Dans le service PeopleService, injectez votre service store et réalisez les sid
 
 ## Etape 7
 
-Dans le composant PeopleComponent, réalisez les transformations nécessaires pour implémentez votre store
+Dans le composant PeopleComponent, réalisez les transformations nécessaires pour implémenter votre store
 
 <br><br>
 
