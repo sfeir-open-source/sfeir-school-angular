@@ -7,7 +7,7 @@
 
 ```typescript
 @Component({
-  selector: 'msfeir-dropdown',
+  selector: 'sfeir-dropdown',
   templateUrl: 'sfeir-dropdown.component.html',
   stylesUrl: [ 'sfeir-dropdown.component.css' ]
   providers: [{ provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() => SfeirDropDownComponent), multi: true }]

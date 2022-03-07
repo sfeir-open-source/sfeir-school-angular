@@ -1,25 +1,14 @@
 <!-- .slide: class="exercice"-->
-# Exercice 22 : ngxs
-## Exercice<br>
+# Exercice 30 : 30-ngxs-store
+## Exercice
 
-- Une barre de recherche a été ajoutée à votre application<br><br>
-- Lors de la recherche vous devez filtrer la liste des personnes<br><br>
-- Mettre en place une architecture NGXS afin de parvenir à ce resultat
-Notes:
-- vous devez modifier uniquement les fichiers people.component.ts / people.component.html / app.state.ts
-- créer trois actions
-    - LoadPeople permet de récupérer uniquement la liste des peoples
-    - SetPeople permet de setter la liste des people
-    - SetSearch permet de setter la valeur de votre recherche
-- créer trois Memoized selectors
-    - search permet de retourner la valeur de la recherche
-    - people permet de retourner la liste des peoples
-    - filterPeople permet de retourner la liste des personnes filtrées par la recherche
-- Votre state sera de type AppStateModel
+<br><br>
+
+<b>Un readme est à votre disposition dans le dossier apps/30-ngxs-store</b>
 
 ##==##
 
 <!-- .slide: class="full-center exercice" -->
-# Exercice 22 : ngxs
+# Exercice 30 : 30-ngxs-store
 ## Solution
-__steps/22-ngxs__
+__steps/30-ngxs-store__

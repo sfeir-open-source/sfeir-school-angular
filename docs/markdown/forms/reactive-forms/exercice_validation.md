@@ -1,13 +1,13 @@
 <!-- .slide: class="exercice" -->
-# Exercice 20 : form-model-driven
-## Exercice<br>
+# Exercice 19 : 19-reactive-form
+## Exercice
 
-- Transformer FormComponent en Reactive Forms<br><br>
-- Ne pas oublier de prendre en compte le mode création et update<br><br>
-- Validators à utiliser: Validators.required, Validators.minLength(2), Validators.pattern('\\d{10}')
+<br><br>
+
+<b>Un readme est à votre disposition dans le dossier apps/19-reactive-form</b>
 
 ##==##
 <!-- .slide: class="exercice full-center" -->
-# Exercice 20 : form-model-driven
+# Exercice 19 : 19-reactive-form
 ## Solution
-<b>steps/20-form-model-driven-solution</b>
+<b>apps/19-reactive-form-solution</b>

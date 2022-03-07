@@ -1,34 +1,16 @@
 <!-- .slide: class="exercice" -->
-# Exercice 27 : interceptors
+# Exercice 24 : 24-interceptor
 ## Exercice
 
-- Une ébauche d'interceptor a été réalisée dans le dossier shared/interceptor
-- A chaque requête il faut setter le header "Authorization" à "Sfeir"
-- Vérifier votre travail en analysant la requête qui part dans l'inspecteur de votre navigateur
+<br><br>
 
-Notes:
-- pensez à utiliser la méthode "clone()" et "setHeaders()"
-
-##==##
-
-<!-- .slide: class="exercice" -->
-# Exercice 27 : interceptors (bis)
-## Exercice
-
-- Une ébauche de l'intercepteur cachable a été réalisé dans le dossier shared/interceptor <br><br>
-- l'objectif est de renvoyer la réponse cachée lors du call random people <br><br>
-- Créer un HttpContextToken initialisé à false <br><br>
-- Setter le context cachable de la requête random people à true <br><br>
-- Renvoyer le mock si le context de la requête est à true
+<b>Un readme est à votre disposition dans le dossier apps/24-interceptor</b>
 
 ##==##
 
 <!-- .slide: class="full-center exercice" -->
-# Exercice 27 : interceptors
+# Exercice 24 : 24-interceptor
 ## Solution
-__steps/27-interceptors-solution__
+__apps/24-interceptor-solution__
 
-##==##
-
-<!-- .slide: class="exercice" -->
 

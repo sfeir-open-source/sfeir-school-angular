@@ -1,13 +1,13 @@
 <!-- .slide: class="exercice" -->
-# Exercice 13 : pipe
-## Exercice<br>
+# Exercice 12 : 12-pipe
+## Exercice
 
-- Une date de naissance a été ajoutée dans le composant CardComponent<br><br>
-- Afficher cette date sous le format: <b>dd/MM/yyyy</b>
+<b>Un readme est à votre disposition dans le dossier apps/12-pipe</b>
+<!-- .element: class="full-center" -->
 
 ##==##
 
 <!-- .slide: class="exercice full-center" -->
-# Exercice 13 : pipe
+# Exercice 13 : 12-pipe
 ## Solution
-<b>steps/13-pipe-solution</b>
+<b>apps/12-pipe-solution</b>

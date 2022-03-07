@@ -16,7 +16,6 @@
             <td>
                 <p>{{ expression }}</p>
                 <p>[targetFooBar] = expression</p>
-                <p>bind-targetFooBar = expression</p>
             </td>
             <td>
                 <p>Interpolation</p>
@@ -48,7 +47,6 @@
             <td>Unidirectionnel: vue vers modèle</td>
             <td>
                 <p>(targetFooBar) = expression</p>
-                <p>on-TargetFooBar = expression</p>
             </td>
             <td>Evènements</td>
         </tr>
@@ -56,7 +54,6 @@
             <td>Bidirectionnel (2-way data binding)</td>
             <td>
                 <p>[(targetFooBar)] = expression</p>
-                <p>bindon-TargetFooBar = expression</p>
             </td>
             <td>Bidirectionnel</td>
         </tr>

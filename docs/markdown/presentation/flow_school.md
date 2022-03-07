@@ -23,21 +23,34 @@ Tour de table ...
 
 # Bootstrapping de l'application
 
+Clonez le projet:
+
 ```bash
 git clone https://github.com/sfeir-open-source/sfeir-school-angular.git
-cd TP && npm i || npm ci
 ```
 
 <br>
 
+Dans le dossier, workshops
+
 ```bash
-npm run client -- "nom de la step"
+npm install || npm ci
 ```
 
 <br>
 
+Lancez un workshop: dans le dossier workshop
+
 ```bash
-npm run server
+npm run client -- "nom_du_workshop"
+```
+
+<br>
+
+Lancez le serveur de mocks: dans le dossier workshop
+
+```bash
+npm run server:start
 ```
 
 <br><br>
@@ -54,5 +67,5 @@ npm run server
 <br><br><br>
 
 - Déroulement du TP :
-    - __une page d'excercice : steps/`XX-name_tp`__
-    - __une page de solution : steps/`XX-name_tp-solution`__
+    - __une page d'excercice : apps/`workshop_name`__
+    - __une page de solution : apps/`workshop_name-solution`__

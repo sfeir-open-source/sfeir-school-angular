@@ -1,14 +1,14 @@
 <!-- .slide: class="exercice" -->
-# Exercice 30 : custom-control
-## Exercice<br>
+# Exercice 28 : 28-custom-control
+## Exercice
 
-- Un nouveau composant SfeirInput a été ajouté au dossier shared<br><br>
-- Implémenter le composant de façon à créer un 'custom input'<br><br>
-- Remplacer l'ensemble mat-form-field input avec votre composant SfeirInput dans le fichier form.component.html
+<br><br>
+
+<b>Un readme est à votre disposition dans le dossier apps/28-custom-control</b>
 
 ##==##
 
 <!-- .slide: class="full-center exercice" -->
-# Exercice 30 : custom-control
+# Exercice 28 : 28-custom-control
 ## Solution
-__steps/30-custom-control-solution__
+__apps/28-custom-control-solution__

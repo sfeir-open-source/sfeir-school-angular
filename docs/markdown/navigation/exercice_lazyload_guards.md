@@ -1,16 +1,33 @@
 <!-- .slide: class="exercice" -->
-# Exercice 25 : router-lazyloading-guard
-## Exercice<br>
+# Exercice 21: 21-lazyloading
+## Exercice
 
-- Dans le dossier secret créer un secret Module
-- Dans le fichier app.route lazy loader ce module, lorsque vous naviguez vers /secret
-- Compléter le guard access-secret.guards.ts pour autoriser la navigation vers secret seulement si le hash who=me est présent dans l'url de navigation vers secret
-Notes:
-- pour le hash pensez à utiliser window.location.hash.includes('who=me')
+<br><br>
+
+<b>Un readme est à votre disposition dans le dossier apps/21-lazyloading-solution</b>
 
 ##==##
 
 <!-- .slide: class="full-center exercice" -->
-# Exercice 25 : router-lazyloading-guard
+# Exercice 21 : 21-lazyloading-solution
 ## Solution
-__steps/25-router-lazyloading-guard-solution__
+__apps/21-router-lazyloading-solution__
+
+##==##
+
+<!--.slide: class="exercice" -->
+# Exercice 22: 22-guards
+## Exercice
+
+<br><br>
+
+<b>Un readme est à votre disposition dans le dossier apps/22-guards-solution</b>
+
+##==##
+
+<!-- .slide: class="full-center exercice" -->
+
+# Exercice 22: 22-guards
+## Solution
+__apps/22-guards-solution__
+

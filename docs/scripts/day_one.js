@@ -31,6 +31,10 @@ function cliSlides() {
   return ['cli/transition_slide.md', 'cli/commands.md', 'cli/exercice.md'];
 }
 
+function componentsSlides() {
+  return ['components/transition_slide.md', 'components/concepts.md', 'components/exercice.md'];
+}
+
 function dataBindingSLides() {
   return [
     'databinding/transition_slide.md',
@@ -40,10 +44,6 @@ function dataBindingSLides() {
     'databinding/template_variable.md',
     'databinding/exercice.md',
   ];
-}
-
-function componentsSlides() {
-  return ['components/transition_slide.md', 'components/concepts.md', 'components/exercice.md'];
 }
 
 function lifecycleSlides() {

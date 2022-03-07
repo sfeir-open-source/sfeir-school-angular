@@ -1,19 +1,12 @@
 <!-- .slide: class="exercice" -->
-# Exercice 12 : service
+# Exercice 11 : 11-service
 ## Exercice
 
-<br>
-
-- Créer un service PeopleService dans le répertoire shared/people-service (CLI: `npx ng g s src/app/shared/people-service/people`)
-- Regrouper tous les appels au backend dans ce service
-- Utiliser ce service à la place des actuels appels au backend
-- Tester d'enregistrer votre service de manière globale ou locale
-Notes:
-- Remplacer dans le composant le http.get par peopleService.fetch qui contiendra votre Http.get
-- Replacer tous les http. par votre nouveau service peopleService
+<b>Un readme est à votre disposition dans le dossier apps/11-service</b>
+<!-- .element: class="full-center" -->
 
 ##==##
 <!-- .slide: class="exercice full-center" -->
-# Exercice 12 : service
+# Exercice 11 : 11-service
 ## Solution
-<b>steps/12-service-solution</b>
+<b>apps/11-service-solution</b>

@@ -1,31 +1,14 @@
 <!-- .slide: class="exercice" -->
-# Exercice 18 : form-b
-## Exercice<br>
+# Exercice 18 : 18-template-driven-form-update-mode
+## Exercice
 
-- A l'aide du CLI, créer un composant UpdateComponent
-- Rendre accessible ce composant via l'url: /edit/:id (modifier la définition des routes)
-- Récupérer le paramètre id de l'url (ActivatedRoute)
-- A l'aide de cet id récupérer le détail de la personne
-Notes:
-- api à appeler: GET /api/peoples/:id
+<br><br>
 
-##==##
-<!-- .slide: class="exercice" -->
-# Exercice 18 : form-b
-## Exercice<br>
-
-- Utiliser FormComponent dans UpdateComponent
-- Ajouter une propriété person au FormComponent
-- Modifier le binding pour le rendre bidirectionnel
-- Changer le titre du form, "Modification" si la personne n'est pas nulle
-- Modifier la personne lors de l'event personAdd 
-Notes:
-- api à appeler: PUT /api/peoples/:id
-- Dans un vrai projet il est tout de même déconseiller d'utiliser le même formulaire pour la création et la modification
+<b>Un readme est à votre disposition dans le dossier apps/18-template-driven-form-update-mode</b>
 
 ##==##
 
 <!-- .slide: class="exercice full-center" -->
-# Exercice 18 : form-b
+# Exercice 18 : 18-template-driven-form-update-mode
 ## Solution
-<b>steps/18-form-b-solution</b>
+<b>apps/18-template-driven-form-update-mode-solution</b>

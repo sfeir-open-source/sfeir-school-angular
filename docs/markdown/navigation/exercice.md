@@ -1,13 +1,13 @@
 <!-- .slide: class="exercice" -->
-# Exercice 07 : router
-## Exercice<br>
+# Exercice 07 : 07-router
+## Exercice
 
-- Compléter le fichier app.module.ts pour y définir les routes<br><br>
-- Utiliser la balise <router-outlet><router-outlet> dans le fichier app.component.html
+<b>Un readme est à votre disposition dans le dossier apps/07-router</b>
+<!-- .element: class="full-center" -->
 
 ##==##
 
 <!-- .slide: class="exercice full-center" -->
-# Exercice 07 : router
+# Exercice 07 : 07-router
 ## Solution
-<b>steps/07-router-solution</b>
+<b>apps/07-router-solution</b>

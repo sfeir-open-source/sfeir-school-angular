@@ -1,60 +1,48 @@
-function interceptorsSlides() {
+function stateManagementNgxs() {
   return [
-    'templating/angular_400.md',
-    'interceptors/transition_slide.md',
-    'interceptors/concepts.md',
-    'interceptors/modification.md',
-    'interceptors/register.md',
-    'interceptors/context.md',
-    'interceptors/exercice.md',
+    'state-management/angular_500.md',
+    'state-management/transition_slide.md',
+    'state-management/introduction.md',
+    'state-management/ngxs/introduction.md',
+    'state-management/ngxs/store.md',
+    'state-management/ngxs/actions.md',
+    'state-management/ngxs/state.md',
+    'state-management/ngxs/selectors.md',
+    'state-management/ngxs/exercice.md',
   ];
 };
 
-function templatingSlides() {
+function stateManagementNgrx() {
   return [
-    'templating/transition_slide.md',
-    'templating/introduction.md',
-    'templating/ng-template.md',
-    'templating/ng-container.md',
-    'templating/reference.md',
-    'templating/exercice.md',
+    'state-management/ngrx/introduction.md',
+    'state-management/ngrx/actions.md',
+    'state-management/ngrx/state.md',
+    'state-management/ngrx/selectors.md',
+    'state-management/ngrx/reducers.md',
+    'state-management/ngrx/store.md',
+    'state-management/ngrx/effects.md',
+    'state-management/ngrx/exercice.md',
   ];
 };
 
-function hostDirectivesSlides() {
+function unitTestSlides() {
   return [
-    'directive/host_binding_listener.md',
-    'directive/host_binding.md',
-    'directive/host_listener.md',
-    'directive/exercice_host_binding_listener.md',
+    'unit-tests/transition_slide.md',
+    'unit-tests/tools.md',
+    'unit-tests/concepts.md',
+    'unit-tests/components/introduction.md',
+    'unit-tests/components/exemple.md',
+    'unit-tests/directives/introduction.md',
+    'unit-tests/directives/exemple.md',,
+    'unit-tests/services/introduction.md',
+    'unit-tests/services/helpers_service.md',
+    'unit-tests/services/http_service.md',
+    'unit-tests/pipes/introduction.md',
+    'unit-tests/pipes/exemple.md',
+    'unit-tests/exercice.md'
   ];
 };
 
-function customFormControlSlides() {
-  return [
-    'forms/custom-control/transition_slide.md',
-    'forms/custom-control/introduction.md',
-    'forms/custom-control/setup.md',
-    'forms/custom-control/exercice.md',
-  ];
-};
-
-function structuralDirectiveSlides() {
-  return [
-    'directive/angular_500.md',
-    'directive/structural_transition_slide.md',
-    'directive/structural_definition.md',
-    'directive/exercice_structural.md',
-  ];
-};
-
-function changeDetectionSlides() {
-  return [
-    'change-detection/transition_slide.md',
-    'change-detection/introduction.md',
-    'change-detection/change_detection_service.md',
-  ];
-};
 
 function pwaSlides() {
   return [
@@ -74,12 +62,9 @@ function serverSideSlides() {
 
 export function dayFourSlides() {
   return [
-    ...interceptorsSlides(),
-    ...templatingSlides(),
-    ...hostDirectivesSlides(),
-    ...customFormControlSlides(),
-    ...structuralDirectiveSlides(),
-    ...changeDetectionSlides(),
+    ...stateManagementNgxs(),
+    ...stateManagementNgrx(),
+    ...unitTestSlides(),
     ...pwaSlides(),
     ...serverSideSlides(),
   ];

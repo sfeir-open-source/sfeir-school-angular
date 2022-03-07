@@ -1,15 +1,13 @@
 <!-- .slide: class="exercice" -->
-# Exercice 14 : pipe-b
-## Exercice<br>
+# Exercice 13 : 13-pipe-custom
+## Exercice
 
-- Créer à l'aide du CLI, dans le répertoire shared, le pipe NaPipe<br><br>
-- Ce pipe doit retourner "N/A" si sa valeur en paramètre n'est pas définie<br><br>
-- En utilisant ce nouveau pipe: Afficher "N/A" si une personne n'a pas de manager sur la CardComponent
-Notes:
-- ng g p shared/na-pipe/na permet de générer un pipe en vous plaçant dans le dossier steps/pipe-b
+<br><br>
+
+<b>Un readme est à votre disposition dans le dossier apps/13-pipe-custom</b>
 
 ##==##
 <!-- .slide: class="exercice full-center" -->
-# Exercice 14 : pipe-b
+# Exercice 13 : 13-pipe-custom
 ## Solution
-<b>steps/14-pipe-b-solution</b>
+<b>apps/13-pipe-custom-solution</b>

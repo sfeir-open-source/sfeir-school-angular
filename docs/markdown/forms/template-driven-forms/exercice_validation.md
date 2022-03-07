@@ -1,18 +1,14 @@
 <!-- .slide: class="exercice" -->
-# Exercice 19 : form-validation
-## Exercice<br>
+# Exercice 17 : 17-template-driven-form-solution
+## Exercice
 
-- Valider les champs:
-    - Firstname : required + min 2 lettres;
-    - Lastname : required + min 2 lettres;
-    - Email : required;
-    - Phone: required et 10 digits ⇒ \d{10};
-- Afficher des messages en fonction des erreurs
-- Désactiver le bouton Save (propriété `[disabled]`) si le formulaire n'est pas valide 
+<br><br>
+
+<b>Un readme est à votre disposition dans le dossier apps/17-template-driven-form-solution</b>
 
 ##==##
 
 <!-- .slide: class="exercice full-center" -->
-# Exercice 19 : form-validation
+# Exercice 17 : 17-template-driven-form-solution
 ## Solution
-<b>steps/19-form-validation-solution</b>
+<b>apps/17-template-driven-form-solution</b>

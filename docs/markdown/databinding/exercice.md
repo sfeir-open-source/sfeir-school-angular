@@ -1,13 +1,9 @@
 <!-- .slide: class="exercice" -->
-# Exercice 04 : binding
-## Exercice<br>
+# Exercice 04 : 04-binding
+## Exercice
 
-- Dans le composant HomeComponent, nous allons afficher les détails d'une personne
-- Utiliser les fichiers du dossier `_static` pour avoir le design, style et mocks
-- Importer les mocks dans le composant
-- Effectuer le binding
-  Notes:
-- L'import de mock dans le composant se fait de la manière suivante: import { PEOPLE } from '../_static/people';
+<b>Un readme est à votre disposition dans le dossier apps/04-binding</b>
+<!-- .element: class="full-center" -->
 
 ##==##
 <!-- .slide: class="full-center" -->
@@ -17,6 +13,6 @@
 
 ##==##
 <!-- .slide: class="exercice full-center" -->
-# Exercice 04 : binding
+# Exercice 04 : 04-binding
 ## Solution
-<b>steps/04-binding-solution</b>
+<b>apps/04-binding-solution</b>

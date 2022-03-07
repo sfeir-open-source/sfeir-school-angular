@@ -13,6 +13,7 @@ import { AnimalService } from '@core/providers/animal.service';
     name: 'animals',
     defaults: []
 })
+@Injectable()
 export class AnimalsState {
     constructor(private readonly animalService: AnimalService) {}
 }
@@ -83,6 +84,7 @@ import { Todo } from './todo.action';
     name: 'todo',
     default: []
 })
+@Injectable()
 export class TodoState {
     constructor() {}
     @Action(Todo.Add)

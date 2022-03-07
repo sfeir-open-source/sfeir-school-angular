@@ -75,6 +75,7 @@ import { State, Selector } from '@ngxs/store';
     name: 'animals',
     defaults: []
 })
+@Injectable()
 export class ZooState {
     @Selector()
     static pandas(state: string[]) {

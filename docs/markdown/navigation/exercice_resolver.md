@@ -1,20 +1,14 @@
 <!-- .slide: class="exercice" -->
-# Exercice 26 : resolvers
-## Exercice<br>
+# Exercice 23 : 23-resolvers
+## Exercice
 
-- Compléter le fichier user-details.resolver.ts
-- Modifier le fichier app.module.ts pour importer le resolver sur la route edit/:id
-- Modifer le fichier update.component.ts de manière à récupérer les data de votre resolver
+<br><br>
 
-Notes:
-- le fichier user-details.resolver.ts se trouve dans le dossier shared/resolver
-- le fichier update.component.ts se trouve dans le dossier shared/update
-- Le resolver doit récupérer l'id et utiliser la méthode fetchOne du peopleService
-- le params _route du resolver vous permettra de récupérer l'id
+<b>Un readme est à votre disposition dans le dossier apps/19-reactive-form</b>
 
 ##==##
 
 <!-- .slide: class="full-center exercice" -->
-# Exercice 26 : resolvers
+# Exercice 23 : 23-resolvers
 ## Solution
-__steps/26-resolvers-solution__
+__apps/23-resolvers-solution__

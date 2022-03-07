@@ -1,15 +1,12 @@
 <!-- .slide: class="exercice" -->
-# Exercice 05 : events
-## Exercice<br>
+# Exercice 05 : 05-events
+## Exercice
 
-- Un bouton random a été ajouté dans le fichier home.component.html<br><br>
-- Ajouter un click sur ce bouton pour afficher une personne au hasard<br><br>
-- Exploiter le tableau PEOPLE fourni
-- Pour choisir une personne au hasard: `this.person = PEOPLE[Math.floor(Math.random() * PEOPLE.length)]`
-<!-- Notes: -->
+<b>Un readme est à votre disposition dans le dossier apps/05-events</b>
+<!-- .element: class="full-center" -->
 
 ##==##
 <!-- .slide: class="exercice full-center" -->
-# Exercice 05 : events
+# Exercice 05 : 05-events
 ## Solution
-<b>steps/05-events-solution</b>
+<b>apps/05-events-solution</b>

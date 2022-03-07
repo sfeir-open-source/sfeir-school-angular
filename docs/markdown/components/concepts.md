@@ -36,6 +36,7 @@ Lorsqu'un composant parent souhaite utiliser des composants enfants<br>
 <!-- app.component.html -->
 <sfeir-home></sfeir-home>
 ```
+<!-- .element: class="big-code" -->
 
 ```typescript
 // app.module.ts

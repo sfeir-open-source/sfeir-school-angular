@@ -1,19 +1,18 @@
 <!-- .slide: class="exercice" -->
 
-# Exercice 15 : directive-use
+# Exercice 14 : 14-directive-using
 
 ## Exercice<br>
 
-- Nous venons d'ajouter un nouvel affichage pour la liste des personnes dans la vue du composant PeopleComponent, ainsi qu'un bouton pour le choix de l'affichage (card ou list)
-- Utiliser la directive NgSwitch pour changer le mode d'affichage de la liste "card", "list"
-- Modifier les icônes du bouton à l'aide de NgIf
+<br><br>
+
+<b>Un readme est à votre disposition dans le dossier apps/14-directive-using</b>
 
 ##==##
 
 <!-- .slide: class="exercice full-center" -->
 
-# Exercice 15 : directive-use
-
+# Exercice 14 : 14-directive-using
 ## Solution
 
-<b>steps/15-directives-use-solution</b>
+<b>apps/14-directive-using-solution</b>

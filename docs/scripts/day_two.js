@@ -42,9 +42,10 @@ function templateDrivenForms() {
     'forms/transition_slide.md',
     'forms/template-driven-forms/introduction.md',
     'forms/template-driven-forms/exercice_create_form.md',
-    'forms/template-driven-forms/exercice_update_form.md',
     'forms/template-driven-forms/validation.md',
     'forms/template-driven-forms/exercice_validation.md',
+    'forms/template-driven-forms/exercice_update_form.md',
+
   ];
 };
 

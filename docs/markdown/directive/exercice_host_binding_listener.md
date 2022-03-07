@@ -1,14 +1,14 @@
 <!-- .slide: class="exercice" -->
-# Exercice 29 : hostbinding
-## Exercice<br>
+# Exercice 26 : 26-hostbinding-hostlistener
+## Exercice
 
-- Compléter la directive sfeir-badge <br><br>
-- Afficher le badge en rouge quand la souris est sur l'icon <br><br>
-- Afficher le badge en noir quand la souris est en dehors de l'icon
+<br><br>
+
+<b>Un readme est à votre disposition dans le dossier apps/26-hostbinding-hostlistener</b>
 
 ##==##
 
 <!-- .slide: class="full-center exercice" -->
-# Exercice 29 : hostbinding
+# Exercice 26 : 26-hostbinding-hostlistener
 ## Solution
-__steps/29-hostbinding-solution__
+__apps/26-hostbinding-hostlistener-solution__

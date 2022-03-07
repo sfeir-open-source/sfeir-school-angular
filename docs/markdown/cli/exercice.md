@@ -1,12 +1,9 @@
 <!-- .slide: class="exercice" -->
-# Exercice 02 : ngg
+# Exercice 02 : 02-ngg
 ## Exercice
-En utilsant le CLI <br><br>
-- Créer le composant HomeComponent
-- Examiner les fichiers générés
-- Compléter les fichiers, afin d'afficher la chaîne Hello {{ name }}
-Notes:
-- La commande à taper est la suivante. Placez-vous dans le dossier steps/ngg puis ng g c ./src/app/home --module ./src/app (utilise le cli installé en global)
+
+<b>Un readme est à votre disposition dans le dossier apps/02-ngg</b>
+<!-- .element: class="full-center" -->
 
 ##==##
 
@@ -21,7 +18,7 @@ Notes:
 ##==##
 
 <!-- .slide: class="exercice full-center" -->
-# Exercice 02 : ngg
+# Exercice 02 : 02-ngg
 ## Solution
 
-<b>folder: steps/02-ngg-solution</b>
+<b>folder: apps/02-ngg-solution</b>
