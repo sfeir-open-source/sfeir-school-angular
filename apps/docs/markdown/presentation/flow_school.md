@@ -31,7 +31,7 @@ git clone https://github.com/sfeir-open-source/sfeir-school-angular.git
 
 <br>
 
-Dans le dossier, workshops
+A la racine du projet
 
 ```bash
 npm install || npm ci
@@ -39,7 +39,7 @@ npm install || npm ci
 
 <br>
 
-Lancez un workshop: dans le dossier workshop
+A la racine du projet
 
 ```bash
 npm run client -- "nom_du_workshop"
@@ -47,7 +47,7 @@ npm run client -- "nom_du_workshop"
 
 <br>
 
-Lancez le serveur de mocks: dans le dossier workshop
+Lancez le serveur de mocks, à la racine du projet
 
 ```bash
 npm run server:start

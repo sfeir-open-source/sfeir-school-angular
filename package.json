@@ -1,6 +1,6 @@
 {
   "name": "sfeir-school-angular",
-  "version": "0.0.0",
+  "version": "13.2.0",
   "license": "MIT",
   "scripts": {
     "ng": "nx",
@@ -8,7 +8,7 @@
     "client": "nx serve",
     "client:build": "nx build",
     "client:test": "nx test",
-    "start-prez": "nx run docs:start-prez",
+    "start:prez": "nx run docs:start-prez",
     "server:start": "nx serve server-express --no-inspect",
     "test:ci": "nx affected --exclude=docs --target=test --base=remotes/origin/main --head=HEAD --parallel=5",
     "lint:ci": "nx affected --exclude=docs --target=lint --base=remotes/origin/main --head=HEAD --parallel=5",
