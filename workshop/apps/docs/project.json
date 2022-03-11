@@ -1,0 +1,13 @@
+{
+  "root": "apps/docs",
+  "projectType": "application",
+  "targets": {
+    "start-prez": {
+      "executor": "@nrwl/workspace:run-script",
+      "options": {
+        "script": "start"
+      }
+    }
+  },
+  "tags": []
+}

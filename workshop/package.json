@@ -9,9 +9,9 @@
     "client:build": "nx build",
     "client:test": "nx test",
     "server:start": "nx serve server-express --no-inspect",
-    "test:ci": "nx affected --target=test --base=remotes/origin/main --head=HEAD --parallel=5",
-    "lint:ci": "nx affected --target=lint --base=remotes/origin/main --head=HEAD --parallel=5",
-    "build:ci": "nx affected --target=build --base=remotes/origin/main --head=HEAD --parallel=5"
+    "test:ci": "nx affected --exclude=docs --target=test --base=remotes/origin/main --head=HEAD --parallel=5",
+    "lint:ci": "nx affected --exclude=docs --target=lint --base=remotes/origin/main --head=HEAD --parallel=5",
+    "build:ci": "nx affected --exclude=docs --target=build --base=remotes/origin/main --head=HEAD --parallel=5"
   },
   "private": true,
   "dependencies": {
@@ -35,7 +35,16 @@
     "rxjs": "~7.4.0",
     "tslib": "^2.0.0",
     "underscore": "^1.13.2",
-    "zone.js": "~0.11.4"
+    "zone.js": "~0.11.4",
+    "chokidar-cli": "^1.2.2",
+    "cpx": "^1.5.0",
+    "highlight.js": "^9.15.6",
+    "lit-html": "^1.1.2",
+    "live-server": "^1.2.1",
+    "parallelshell": "3.0.1",
+    "reveal.js": "3.9.2",
+    "sass": "^1.19.0",
+    "snowpack": "^1.6.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~13.2.0",
