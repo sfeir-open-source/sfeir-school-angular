@@ -1,5 +1,5 @@
 {
-  "npmScope": "workshop",
+  "npmScope": "sfeir-school-angular",
   "affected": {
     "defaultBase": "main"
   },

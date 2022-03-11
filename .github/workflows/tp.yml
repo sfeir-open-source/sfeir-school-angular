@@ -30,20 +30,15 @@ jobs:
 
       - name: Install dependancies
         run: npm ci
-        working-directory: workshop
 
       - name: Fetch Main Branch
         run: git fetch --all
-        working-directory: workshop
 
       - name: Run lint
         run: npm run lint:ci
-        working-directory: workshop
 
       - name: Run build
         run: npm run build:ci
-        working-directory: workshop
 
       - name: Run tests
         run: npm run test:ci
-        working-directory: workshop
