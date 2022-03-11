@@ -4,6 +4,8 @@ function stateManagementElf() {
     'state-management/transition_slide.md',
     'state-management/introduction.md',
     'state-management/elf/introduction.md',
+    'state-management/elf/store.md',
+    'state-management/elf/entities.md',
   ];
 }
 
