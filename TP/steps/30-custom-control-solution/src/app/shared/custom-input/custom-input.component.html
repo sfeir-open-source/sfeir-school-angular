@@ -1,7 +1,0 @@
-<span id="sfeir-input">
-  <mat-form-field appearance="outline">
-    <mat-label>{{ placeholder }}</mat-label>
-    <input #InputElement matInput type="text" [placeholder]="placeholder" />
-    <ng-content *ngIf="userFocus$ | async"></ng-content>
-  </mat-form-field>
-</span>

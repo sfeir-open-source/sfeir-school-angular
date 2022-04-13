@@ -28,10 +28,10 @@ Exemple : `ng test <projet>`
 Nous avons cependant mis en place différents scripts pour vous faciliter cela. Cf. (package.json)[package.json].
 La majorité de ces scripts sont simplement des alias pour une commande Angular CLI. Vous pouvez donc utiliser les options de Angular CLI, mais [après l'option `--` de npm](https://docs.npmjs.com/cli/run-script.html) afin de lui indiquer qu'il s'agit d'options à passer au script et non d'options npm.
 
-- lancer une commande Angular CLI directement via l'installation locale (recommandé): `npm run ng <commande ng>`
-- lancer le server nodejs : `npm run server` (indispensable pour tous les exercices avec des appels HTTP)
-- lancer la Web App : `npm run client <projet>`
+- lancer le server nodejs : `npm run server:start` (indispensable pour tous les exercices avec des appels HTTP)
+- lancer la Web App : `npm run client -- <projet>`
   - en mode prod : ̀npm run client -- <projet> --prod`
-- lancer les tests unitaires : `npm run test <projet>`
+- lancer les tests unitaires : `npm run client:test --  <projet>`
+- lancer les slides: `npm run start:prez`
 
 Voir la [documentation d'Angular CLI](https://angular.io/cli) pour toute autre commande.

@@ -1,0 +1,101 @@
+{
+  "projectType": "application",
+  "root": "apps/12-pipe-using-solution",
+  "sourceRoot": "apps/12-pipe-using-solution/src",
+  "prefix": "sfeir",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/apps/12-pipe-using-solution",
+        "index": "apps/12-pipe-using-solution/src/index.html",
+        "main": "apps/12-pipe-using-solution/src/main.ts",
+        "polyfills": "apps/12-pipe-using-solution/src/polyfills.ts",
+        "tsConfig": "apps/12-pipe-using-solution/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "apps/12-pipe-using-solution/src/favicon.ico",
+          "apps/12-pipe-using-solution/src/assets"
+        ],
+        "styles": [
+          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+          "apps/12-pipe-using-solution/src/styles.scss"
+        ],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/12-pipe-using-solution/src/environments/environment.ts",
+              "with": "apps/12-pipe-using-solution/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "12-pipe-using-solution:build:production"
+        },
+        "development": {
+          "browserTarget": "12-pipe-using-solution:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "12-pipe-using-solution:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/12-pipe-using-solution/src/**/*.ts",
+          "apps/12-pipe-using-solution/src/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/apps/12-pipe-using-solution"
+      ],
+      "options": {
+        "jestConfig": "apps/12-pipe-using-solution/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

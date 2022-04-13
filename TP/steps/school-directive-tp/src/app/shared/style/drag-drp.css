@@ -1,7 +1,0 @@
-.drop-zone {
-  border: 2px dotted rgb(240, 11, 81);
-}
-
-.drop-zone.drag-over {
-  opacity: 0.5;
-}

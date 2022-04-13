@@ -1,0 +1,37 @@
+{
+  "name": "sfeirschoolangular",
+  "version": "2.0.0",
+  "description": "Sfeir School Vue with revealJS",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./scss/:css/ --source-map",
+    "sass-once": "sass /scss/:css/ --source-map",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "live-server --port=4242 --open=\"./index.html\" --watch=\"markdown,scripts,scss/\"",
+    "start": "parallelshell \"npm run serve\" \"npm run sass\"",
+    "copy-highlight": "cpx \"node_modules/highlight.js/styles/**/*\" \"web_modules/highlight.js/styles\" ",
+    "copy-reveal": "cpx \"node_modules/reveal.js/**/*\" \"web_modules/reveal.js\" "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jefBinomed/SfeirSchoolTheme.git"
+  },
+  "keywords": [
+    "typescript",
+    "sfeir"
+  ],
+  "authors": [
+    "Nicolas Frizzarin: frizzarin.n@sfeir.com"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jefBinomed/SfeirSchoolTheme/issues"
+  },
+  "homepage": "https://github.com/jefBinomed/SfeirSchoolTheme#readme",
+  "snowpack": {
+    "webDependencies": [
+      "sfeir-school-theme/dist/**/*",
+      "lit-html"
+    ]
+  }
+}

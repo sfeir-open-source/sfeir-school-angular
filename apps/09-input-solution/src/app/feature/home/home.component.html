@@ -1,0 +1,4 @@
+<section>
+  <sfeir-card *ngIf="person$ |async as person" [person]="person"></sfeir-card>
+</section>
+<button mat-fab color="accent"><i class="material-icons" (click)="getRandomPerson()">autorenew</i></button>
