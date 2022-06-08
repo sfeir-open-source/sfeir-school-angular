@@ -1,14 +1,12 @@
 {
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "root": "apps/14-directive-using",
   "sourceRoot": "apps/14-directive-using/src",
   "prefix": "sfeir",
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/14-directive-using",
         "index": "apps/14-directive-using/src/index.html",
@@ -16,14 +14,8 @@
         "polyfills": "apps/14-directive-using/src/polyfills.ts",
         "tsConfig": "apps/14-directive-using/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": [
-          "apps/14-directive-using/src/favicon.ico",
-          "apps/14-directive-using/src/assets"
-        ],
-        "styles": [
-          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-          "apps/14-directive-using/src/styles.scss"
-        ],
+        "assets": ["apps/14-directive-using/src/favicon.ico", "apps/14-directive-using/src/assets"],
+        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/14-directive-using/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -80,19 +72,14 @@
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
-        "lintFilePatterns": [
-          "apps/14-directive-using/src/**/*.ts",
-          "apps/14-directive-using/src/**/*.html"
-        ]
+        "lintFilePatterns": ["apps/14-directive-using/src/**/*.ts", "apps/14-directive-using/src/**/*.html"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": [
-        "coverage/apps/14-directive-using"
-      ],
+      "outputs": ["coverage/apps/14-directive-using"],
       "options": {
-        "jestConfig": "apps/14-directive-using/jest.config.js",
+        "jestConfig": "apps/14-directive-using/jest.config.ts",
         "passWithNoTests": true
       }
     }

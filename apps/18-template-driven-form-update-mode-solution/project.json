@@ -1,14 +1,12 @@
 {
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "root": "apps/18-template-driven-form-update-mode-solution",
   "sourceRoot": "apps/18-template-driven-form-update-mode-solution/src",
   "prefix": "sfeir",
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/18-template-driven-form-update-mode-solution",
         "index": "apps/18-template-driven-form-update-mode-solution/src/index.html",
@@ -88,11 +86,9 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": [
-        "coverage/apps/18-template-driven-form-update-mode-solution"
-      ],
+      "outputs": ["coverage/apps/18-template-driven-form-update-mode-solution"],
       "options": {
-        "jestConfig": "apps/18-template-driven-form-update-mode-solution/jest.config.js",
+        "jestConfig": "apps/18-template-driven-form-update-mode-solution/jest.config.ts",
         "passWithNoTests": true
       }
     }

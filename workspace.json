@@ -65,7 +65,8 @@
     "31-ngrx-store-solution": "apps/31-ngrx-store-solution",
     "32-unit-tests": "apps/32-unit-tests",
     "32-unit-tests-solution": "apps/32-unit-tests-solution",
-    "server-express": "apps/server-express",
-    "docs": "apps/docs"
-  }
+    "docs": "apps/docs",
+    "server-express": "apps/server-express"
+  },
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json"
 }

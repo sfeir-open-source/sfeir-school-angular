@@ -1,14 +1,12 @@
 {
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "root": "apps/16-template-driven-form",
   "sourceRoot": "apps/16-template-driven-form/src",
   "prefix": "sfeir",
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/16-template-driven-form",
         "index": "apps/16-template-driven-form/src/index.html",
@@ -16,14 +14,8 @@
         "polyfills": "apps/16-template-driven-form/src/polyfills.ts",
         "tsConfig": "apps/16-template-driven-form/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": [
-          "apps/16-template-driven-form/src/favicon.ico",
-          "apps/16-template-driven-form/src/assets"
-        ],
-        "styles": [
-          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-          "apps/16-template-driven-form/src/styles.scss"
-        ],
+        "assets": ["apps/16-template-driven-form/src/favicon.ico", "apps/16-template-driven-form/src/assets"],
+        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/16-template-driven-form/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -80,19 +72,14 @@
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
-        "lintFilePatterns": [
-          "apps/16-template-driven-form/src/**/*.ts",
-          "apps/16-template-driven-form/src/**/*.html"
-        ]
+        "lintFilePatterns": ["apps/16-template-driven-form/src/**/*.ts", "apps/16-template-driven-form/src/**/*.html"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": [
-        "coverage/apps/16-template-driven-form"
-      ],
+      "outputs": ["coverage/apps/16-template-driven-form"],
       "options": {
-        "jestConfig": "apps/16-template-driven-form/jest.config.js",
+        "jestConfig": "apps/16-template-driven-form/jest.config.ts",
         "passWithNoTests": true
       }
     }

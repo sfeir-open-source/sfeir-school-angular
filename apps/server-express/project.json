@@ -1,13 +1,11 @@
 {
-  "root": "apps/server-express",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/server-express/src",
   "projectType": "application",
   "targets": {
     "build": {
-      "executor": "@nrwl/node:build",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "executor": "@nrwl/node:webpack",
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/server-express",
         "main": "apps/server-express/src/main.js",
@@ -28,7 +26,7 @@
       }
     },
     "serve": {
-      "executor": "@nrwl/node:execute",
+      "executor": "@nrwl/node:node",
       "options": {
         "buildTarget": "server-express:build",
         "watch": true
@@ -36,13 +34,9 @@
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
-      "outputs": [
-        "{options.outputFile}"
-      ],
+      "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": [
-          "apps/server-express/**/*.js"
-        ]
+        "lintFilePatterns": ["apps/server-express/**/*.js"]
       }
     }
   },

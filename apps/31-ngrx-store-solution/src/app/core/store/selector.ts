@@ -2,8 +2,10 @@ import { createSelector } from '@ngrx/store';
 import { People } from '../../shared/models/people.model';
 import { AppStore } from './state';
 
-const filterPeople: (x: string) => (people: People) => boolean = search => people =>
-  people.lastname.toLowerCase().includes(search.toLowerCase()) || people.firstname.toLowerCase().includes(search.toLowerCase());
+const filterPeople: (x: string) => (people: People) => boolean = search => people => {
+  console.log('here')
+  return people.lastname.toLowerCase().includes(search.toLowerCase()) || people.firstname.toLowerCase().includes(search.toLowerCase());
+}
 
 const selectRootStore = (rootStore: AppStore) => rootStore.store;
 

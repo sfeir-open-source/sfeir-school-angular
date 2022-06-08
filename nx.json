@@ -4,7 +4,6 @@
     "defaultBase": "main"
   },
   "cli": {
-    "defaultCollection": "@nrwl/angular",
     "packageManager": "npm"
   },
   "implicitDependencies": {
@@ -16,7 +15,7 @@
   },
   "tasksRunnerOptions": {
     "default": {
-      "runner": "@nrwl/workspace/tasks-runners/default",
+      "runner": "nx/tasks-runners/default",
       "options": {
         "cacheableOperations": [
           "build",
@@ -50,5 +49,6 @@
       "style": "scss"
     }
   },
-  "defaultProject": "01-hands-on"
+  "defaultProject": "01-hands-on",
+  "$schema": "./node_modules/nx/schemas/nx-schema.json"
 }

@@ -1,14 +1,12 @@
 {
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "root": "apps/05-events",
   "sourceRoot": "apps/05-events/src",
   "prefix": "sfeir",
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/05-events",
         "index": "apps/05-events/src/index.html",
@@ -16,14 +14,8 @@
         "polyfills": "apps/05-events/src/polyfills.ts",
         "tsConfig": "apps/05-events/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": [
-          "apps/05-events/src/favicon.ico",
-          "apps/05-events/src/assets"
-        ],
-        "styles": [
-          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-          "apps/05-events/src/styles.scss"
-        ],
+        "assets": ["apps/05-events/src/favicon.ico", "apps/05-events/src/assets"],
+        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/05-events/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -80,19 +72,14 @@
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
-        "lintFilePatterns": [
-          "apps/05-events/src/**/*.ts",
-          "apps/05-events/src/**/*.html"
-        ]
+        "lintFilePatterns": ["apps/05-events/src/**/*.ts", "apps/05-events/src/**/*.html"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": [
-        "coverage/apps/05-events"
-      ],
+      "outputs": ["coverage/apps/05-events"],
       "options": {
-        "jestConfig": "apps/05-events/jest.config.js",
+        "jestConfig": "apps/05-events/jest.config.ts",
         "passWithNoTests": true
       }
     }

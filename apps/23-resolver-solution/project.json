@@ -1,14 +1,12 @@
 {
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "root": "apps/23-resolver-solution",
   "sourceRoot": "apps/23-resolver-solution/src",
   "prefix": "sfeir",
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/23-resolver-solution",
         "index": "apps/23-resolver-solution/src/index.html",
@@ -16,14 +14,8 @@
         "polyfills": "apps/23-resolver-solution/src/polyfills.ts",
         "tsConfig": "apps/23-resolver-solution/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": [
-          "apps/23-resolver-solution/src/favicon.ico",
-          "apps/23-resolver-solution/src/assets"
-        ],
-        "styles": [
-          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-          "apps/23-resolver-solution/src/styles.scss"
-        ],
+        "assets": ["apps/23-resolver-solution/src/favicon.ico", "apps/23-resolver-solution/src/assets"],
+        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/23-resolver-solution/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -80,19 +72,14 @@
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
-        "lintFilePatterns": [
-          "apps/23-resolver-solution/src/**/*.ts",
-          "apps/23-resolver-solution/src/**/*.html"
-        ]
+        "lintFilePatterns": ["apps/23-resolver-solution/src/**/*.ts", "apps/23-resolver-solution/src/**/*.html"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": [
-        "coverage/apps/23-resolver-solution"
-      ],
+      "outputs": ["coverage/apps/23-resolver-solution"],
       "options": {
-        "jestConfig": "apps/23-resolver-solution/jest.config.js",
+        "jestConfig": "apps/23-resolver-solution/jest.config.ts",
         "passWithNoTests": true
       }
     }

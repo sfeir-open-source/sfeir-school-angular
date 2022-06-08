@@ -1,14 +1,12 @@
 {
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "root": "apps/28-custom-control-solution",
   "sourceRoot": "apps/28-custom-control-solution/src",
   "prefix": "sfeir",
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/28-custom-control-solution",
         "index": "apps/28-custom-control-solution/src/index.html",
@@ -16,14 +14,8 @@
         "polyfills": "apps/28-custom-control-solution/src/polyfills.ts",
         "tsConfig": "apps/28-custom-control-solution/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": [
-          "apps/28-custom-control-solution/src/favicon.ico",
-          "apps/28-custom-control-solution/src/assets"
-        ],
-        "styles": [
-          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-          "apps/28-custom-control-solution/src/styles.scss"
-        ],
+        "assets": ["apps/28-custom-control-solution/src/favicon.ico", "apps/28-custom-control-solution/src/assets"],
+        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/28-custom-control-solution/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -80,19 +72,14 @@
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
-        "lintFilePatterns": [
-          "apps/28-custom-control-solution/src/**/*.ts",
-          "apps/28-custom-control-solution/src/**/*.html"
-        ]
+        "lintFilePatterns": ["apps/28-custom-control-solution/src/**/*.ts", "apps/28-custom-control-solution/src/**/*.html"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": [
-        "coverage/apps/28-custom-control-solution"
-      ],
+      "outputs": ["coverage/apps/28-custom-control-solution"],
       "options": {
-        "jestConfig": "apps/28-custom-control-solution/jest.config.js",
+        "jestConfig": "apps/28-custom-control-solution/jest.config.ts",
         "passWithNoTests": true
       }
     }
