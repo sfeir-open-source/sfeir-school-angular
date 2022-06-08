@@ -42,7 +42,7 @@ export class PeopleComponent implements OnInit {
       .pipe(
         filter(personForm => !!personForm),
         switchMap(personForm => this.peopleService.addNewPerson(personForm)),
-        switchMap(() => (this.people$ = this.peopleService.getPeople().pipe(shareReplay(1))))
+        switchMap(() => this.peopleService.getPeople())
       )
       .subscribe();
   }
