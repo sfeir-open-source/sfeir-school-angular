@@ -1,7 +1,7 @@
 import { FormControl, FormGroup, UntypedFormControl, ValidationErrors, Validators } from '@angular/forms';
 import { PeopleForm } from '../../models/people.model';
 
-interface PersonFormGroup {
+export interface PersonFormGroup {
   id: FormControl<string | null>;
   photo: FormControl<string>;
   firstname: FormControl<string | null>;
