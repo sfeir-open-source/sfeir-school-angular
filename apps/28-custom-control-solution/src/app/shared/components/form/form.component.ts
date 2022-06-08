@@ -18,7 +18,7 @@ export class FormComponent implements OnInit {
   }
 
   onSave(): void {
-    this.save.emit(this.personForm.value);
+    this.save.emit(this.personForm.getRawValue());
   }
 
   onCancel(): void {
