@@ -1,7 +1,7 @@
 {
   "name": "sfeirschoolangular",
   "version": "2.0.0",
-  "description": "Sfeir School Vue with revealJS",
+  "description": "Sfeir School Angular with revealJS",
   "main": "index.js",
   "scripts": {
     "sass": "sass --watch ./scss/:css/ --source-map",
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jefBinomed/SfeirSchoolTheme.git"
+    "url": "git+https://github.com/sfeir-open-source/sfeir-school-theme.git"
   },
   "keywords": [
     "typescript",
@@ -25,9 +25,9 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jefBinomed/SfeirSchoolTheme/issues"
+    "url": "https://github.com/sfeir-open-source/sfeir-school-theme/issues"
   },
-  "homepage": "https://github.com/jefBinomed/SfeirSchoolTheme#readme",
+  "homepage": "https://github.com/sfeir-open-source/sfeir-school-theme#readme",
   "snowpack": {
     "webDependencies": [
       "sfeir-school-theme/dist/**/*",
