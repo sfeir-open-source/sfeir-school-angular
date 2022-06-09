@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
-import { UntypedFormControl } from '@angular/forms';
+import { FormControl } from '@angular/forms';
 import { Subject, takeUntil } from 'rxjs';
 
 @Component({
@@ -10,13 +10,13 @@ import { Subject, takeUntil } from 'rxjs';
 export class SearchComponent implements OnChanges, OnInit {
   @Input() searchText: string;
   @Output() search: EventEmitter<string> = new EventEmitter();
-  searchControl: UntypedFormControl;
+  searchControl: FormControl<string | null>;
   private unsubscribe$: Subject<boolean> = new Subject();
 
   ngOnChanges() {
     this.searchControl
       ? this.searchControl.patchValue(this.searchText, { emitEvent: false })
-      : (this.searchControl = new UntypedFormControl(this.searchText));
+      : (this.searchControl = new FormControl(this.searchText));
   }
 
   ngOnInit(): void {
