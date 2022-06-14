@@ -17,7 +17,7 @@ const APP_ROUTES: Routes = [
   { path: 'people', loadComponent: async () => (await import('./app/feature/people/people.component')).PeopleComponent },
   {
     path: 'people/:id',
-    loadChildren: async () => (await import('./app/feature/update-person/update-person.module')).UpdatePersonModule,
+    loadChildren: async () => (await import('./app/feature/update-person/update-person.route')).UPDATE_ROUTES,
   },
 ];
 

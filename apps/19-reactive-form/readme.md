@@ -10,9 +10,9 @@ Dans le fichier **shared.module.ts**, remplacez le module FormsModule par le mod
 
 ## Etape 2
 
-Dans le composant FormComponent, réalisez les changement nécessaire pour transformer votre formulaire en ReactiveForms
+Dans le composant FormComponent, réalisez les changement nécessaire pour transformer votre formulaire en ReactiveForms (pensez bien à typer votre formulaire)
 
-Créer une propriété personForm: FormGroup
+Créer une propriété personForm: FormGroup<PersonForm>
 
 Astuce: Utiliser les validators suivants pour réaliser vos validations
 
