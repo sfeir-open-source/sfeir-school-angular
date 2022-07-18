@@ -39,12 +39,9 @@
         "*.tsx"
       ],
       "extends": [
-        "plugin:@nrwl/nx/typescript",
-        "prettier"
+        "plugin:@nrwl/nx/typescript"
       ],
-      "rules": {
-        "prettier/prettier": "error"
-      }
+      "rules": {}
     },
     {
       "files": [
