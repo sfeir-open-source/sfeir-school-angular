@@ -51,6 +51,16 @@ function unitTestSlides() {
   ];
 }
 
+function standaloneComponents() {
+  return [
+    'standalone-components/transition_slide.md',
+    'standalone-components/introduction.md',
+    'standalone-components/routing.md',
+    'standalone-components/injector.md',
+    'standalone-components/exercice.md',
+  ];
+}
+
 function pwaSlides() {
   return ['pwa/transition_slide.md', 'pwa/introduction.md', 'pwa/service_worker_configuration.md', 'pwa/service_worker_communication.md'];
 }
@@ -60,5 +70,13 @@ function serverSideSlides() {
 }
 
 export function dayFourSlides() {
-  return [...stateManagementElf(), ...stateManagementNgxs(), ...stateManagementNgrx(), ...unitTestSlides(), ...pwaSlides(), ...serverSideSlides()];
+  return [
+    ...stateManagementElf(),
+    ...stateManagementNgxs(),
+    ...stateManagementNgrx(),
+    ...unitTestSlides(),
+    ...standaloneComponents(),
+    ...pwaSlides(),
+    ...serverSideSlides(),
+  ];
 }

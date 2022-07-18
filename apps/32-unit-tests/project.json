@@ -1,14 +1,12 @@
 {
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "root": "apps/32-unit-tests",
   "sourceRoot": "apps/32-unit-tests/src",
   "prefix": "sfeir",
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/32-unit-tests",
         "index": "apps/32-unit-tests/src/index.html",
@@ -16,14 +14,8 @@
         "polyfills": "apps/32-unit-tests/src/polyfills.ts",
         "tsConfig": "apps/32-unit-tests/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": [
-          "apps/32-unit-tests/src/favicon.ico",
-          "apps/32-unit-tests/src/assets"
-        ],
-        "styles": [
-          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-          "apps/32-unit-tests/src/styles.scss"
-        ],
+        "assets": ["apps/32-unit-tests/src/favicon.ico", "apps/32-unit-tests/src/assets"],
+        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/32-unit-tests/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -80,19 +72,14 @@
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
-        "lintFilePatterns": [
-          "apps/32-unit-tests/src/**/*.ts",
-          "apps/32-unit-tests/src/**/*.html"
-        ]
+        "lintFilePatterns": ["apps/32-unit-tests/src/**/*.ts", "apps/32-unit-tests/src/**/*.html"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": [
-        "coverage/apps/32-unit-tests"
-      ],
+      "outputs": ["coverage/apps/32-unit-tests"],
       "options": {
-        "jestConfig": "apps/32-unit-tests/jest.config.js",
+        "jestConfig": "apps/32-unit-tests/jest.config.ts",
         "passWithNoTests": true
       }
     }

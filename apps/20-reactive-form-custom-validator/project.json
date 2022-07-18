@@ -1,14 +1,12 @@
 {
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "root": "apps/20-reactive-form-custom-validator",
   "sourceRoot": "apps/20-reactive-form-custom-validator/src",
   "prefix": "sfeir",
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/20-reactive-form-custom-validator",
         "index": "apps/20-reactive-form-custom-validator/src/index.html",
@@ -16,14 +14,8 @@
         "polyfills": "apps/20-reactive-form-custom-validator/src/polyfills.ts",
         "tsConfig": "apps/20-reactive-form-custom-validator/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": [
-          "apps/20-reactive-form-custom-validator/src/favicon.ico",
-          "apps/20-reactive-form-custom-validator/src/assets"
-        ],
-        "styles": [
-          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-          "apps/20-reactive-form-custom-validator/src/styles.scss"
-        ],
+        "assets": ["apps/20-reactive-form-custom-validator/src/favicon.ico", "apps/20-reactive-form-custom-validator/src/assets"],
+        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/20-reactive-form-custom-validator/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -80,19 +72,14 @@
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
-        "lintFilePatterns": [
-          "apps/20-reactive-form-custom-validator/src/**/*.ts",
-          "apps/20-reactive-form-custom-validator/src/**/*.html"
-        ]
+        "lintFilePatterns": ["apps/20-reactive-form-custom-validator/src/**/*.ts", "apps/20-reactive-form-custom-validator/src/**/*.html"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": [
-        "coverage/apps/20-reactive-form-custom-validator"
-      ],
+      "outputs": ["coverage/apps/20-reactive-form-custom-validator"],
       "options": {
-        "jestConfig": "apps/20-reactive-form-custom-validator/jest.config.js",
+        "jestConfig": "apps/20-reactive-form-custom-validator/jest.config.ts",
         "passWithNoTests": true
       }
     }

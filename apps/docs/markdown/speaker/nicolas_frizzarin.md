@@ -6,7 +6,7 @@
 
 <h2>Nicolas <span>Frizzarin</span></h2>
 
-### Architect Web && OpenJs F Member
+### Developer Advocate && GDE Web
 <!-- .element: class="icon-rule icon-first"-->
 
 ### @Nicooss54

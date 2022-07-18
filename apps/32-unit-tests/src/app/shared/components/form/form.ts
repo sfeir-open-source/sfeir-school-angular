@@ -1,10 +1,16 @@
-import { FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import { FormControl, FormGroup, UntypedFormControl, ValidationErrors, Validators } from '@angular/forms';
 import { PeopleForm } from '../../models/people.model';
 
-export class PersonForm extends FormGroup {
-  override value: PeopleForm;
-  override controls: Record<keyof PeopleForm, FormControl>;
+export interface PersonFormGroup {
+  id: FormControl<string | null>;
+  photo: FormControl<string>;
+  firstname: FormControl<string | null>;
+  lastname: FormControl<string | null>;
+  email: FormControl<string | null>;
+  phone: FormControl<string | null>;
+}
 
+export class PersonForm extends FormGroup<PersonFormGroup> {
   constructor(data?: PeopleForm) {
     super({
       id: new FormControl(null),
@@ -18,7 +24,7 @@ export class PersonForm extends FormGroup {
     !!data && this.patchValue(data);
   }
 
-  static sfeirEmailValidator(c: FormControl): ValidationErrors {
+  static sfeirEmailValidator(c: UntypedFormControl): ValidationErrors {
     const regex = /^\w+.\w@sfeir.com$/;
     return regex.test(c.value) ? null : { sfeirEmail: true };
   }

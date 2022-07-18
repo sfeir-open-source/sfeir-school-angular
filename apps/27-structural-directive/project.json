@@ -1,14 +1,12 @@
 {
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "root": "apps/27-structural-directive",
   "sourceRoot": "apps/27-structural-directive/src",
   "prefix": "sfeir",
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/27-structural-directive",
         "index": "apps/27-structural-directive/src/index.html",
@@ -16,14 +14,8 @@
         "polyfills": "apps/27-structural-directive/src/polyfills.ts",
         "tsConfig": "apps/27-structural-directive/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": [
-          "apps/27-structural-directive/src/favicon.ico",
-          "apps/27-structural-directive/src/assets"
-        ],
-        "styles": [
-          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-          "apps/27-structural-directive/src/styles.scss"
-        ],
+        "assets": ["apps/27-structural-directive/src/favicon.ico", "apps/27-structural-directive/src/assets"],
+        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/27-structural-directive/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -80,19 +72,14 @@
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
-        "lintFilePatterns": [
-          "apps/27-structural-directive/src/**/*.ts",
-          "apps/27-structural-directive/src/**/*.html"
-        ]
+        "lintFilePatterns": ["apps/27-structural-directive/src/**/*.ts", "apps/27-structural-directive/src/**/*.html"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": [
-        "coverage/apps/27-structural-directive"
-      ],
+      "outputs": ["coverage/apps/27-structural-directive"],
       "options": {
-        "jestConfig": "apps/27-structural-directive/jest.config.js",
+        "jestConfig": "apps/27-structural-directive/jest.config.ts",
         "passWithNoTests": true
       }
     }

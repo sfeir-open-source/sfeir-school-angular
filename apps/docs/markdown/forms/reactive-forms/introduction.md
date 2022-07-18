@@ -34,9 +34,10 @@ export class AppModule { }
 ```typescript
 // form.component.ts
 import { Validators, FormControl, FormGroup } from '@angular/forms';
+import { EditForm } from './edit-form.model';
 @Component({...})
 export class FormComponent {
-    editForm: FormGroup;
+    editForm: FormGroup<EditForm>;
     constructor() {
         this.editForm = new FormGroup({
             firstname: new FormControl('',
@@ -113,9 +114,10 @@ Notes:
 
 ```typescript
 import { Validators, FormControl, FormGroup } from '@angular/forms';
+import { EditForm } from './edit-form.model';
 @Component({...})
 export class FormComponent {
-    editForm: FormGroup;
+    editForm: FormGroup<EditForm>;
     constructor() {
         this.editForm = new FormGroup({
             address: new FormGroup({

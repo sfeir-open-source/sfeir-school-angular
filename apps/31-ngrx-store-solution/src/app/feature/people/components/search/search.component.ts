@@ -10,7 +10,7 @@ import { Subject, takeUntil } from 'rxjs';
 export class SearchComponent implements OnChanges, OnInit {
   @Input() searchText: string;
   @Output() search: EventEmitter<string> = new EventEmitter();
-  searchControl: FormControl;
+  searchControl: FormControl<string | null>;
   private unsubscribe$: Subject<boolean> = new Subject();
 
   ngOnChanges() {

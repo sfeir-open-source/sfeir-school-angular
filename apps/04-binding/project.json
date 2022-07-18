@@ -1,14 +1,12 @@
 {
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "root": "apps/04-binding",
   "sourceRoot": "apps/04-binding/src",
   "prefix": "sfeir",
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/04-binding",
         "index": "apps/04-binding/src/index.html",
@@ -16,14 +14,8 @@
         "polyfills": "apps/04-binding/src/polyfills.ts",
         "tsConfig": "apps/04-binding/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": [
-          "apps/04-binding/src/favicon.ico",
-          "apps/04-binding/src/assets"
-        ],
-        "styles": [
-          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-          "apps/04-binding/src/styles.scss"
-        ],
+        "assets": ["apps/04-binding/src/favicon.ico", "apps/04-binding/src/assets"],
+        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/04-binding/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -80,19 +72,14 @@
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
-        "lintFilePatterns": [
-          "apps/04-binding/src/**/*.ts",
-          "apps/04-binding/src/**/*.html"
-        ]
+        "lintFilePatterns": ["apps/04-binding/src/**/*.ts", "apps/04-binding/src/**/*.html"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": [
-        "coverage/apps/04-binding"
-      ],
+      "outputs": ["coverage/apps/04-binding"],
       "options": {
-        "jestConfig": "apps/04-binding/jest.config.js",
+        "jestConfig": "apps/04-binding/jest.config.ts",
         "passWithNoTests": true
       }
     }

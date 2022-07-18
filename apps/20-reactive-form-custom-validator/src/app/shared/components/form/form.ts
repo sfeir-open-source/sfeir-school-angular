@@ -1,10 +1,16 @@
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { PeopleForm } from '../../models/people.model';
 
-export class PersonForm extends FormGroup {
-  override value: PeopleForm;
-  override controls: Record<keyof PeopleForm, FormControl>;
+export interface PersonFormGroup {
+  id: FormControl<string | null>;
+  photo: FormControl<string>;
+  firstname: FormControl<string | null>;
+  lastname: FormControl<string | null>;
+  email: FormControl<string | null>;
+  phone: FormControl<string | null>;
+}
 
+export class PersonForm extends FormGroup<PersonFormGroup> {
   constructor(data?: PeopleForm) {
     super({
       id: new FormControl(null),

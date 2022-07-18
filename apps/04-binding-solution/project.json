@@ -1,14 +1,12 @@
 {
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "root": "apps/04-binding-solution",
   "sourceRoot": "apps/04-binding-solution/src",
   "prefix": "sfeir",
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/04-binding-solution",
         "index": "apps/04-binding-solution/src/index.html",
@@ -16,14 +14,8 @@
         "polyfills": "apps/04-binding-solution/src/polyfills.ts",
         "tsConfig": "apps/04-binding-solution/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": [
-          "apps/04-binding-solution/src/favicon.ico",
-          "apps/04-binding-solution/src/assets"
-        ],
-        "styles": [
-          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-          "apps/04-binding-solution/src/styles.scss"
-        ],
+        "assets": ["apps/04-binding-solution/src/favicon.ico", "apps/04-binding-solution/src/assets"],
+        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/04-binding-solution/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -80,19 +72,14 @@
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
-        "lintFilePatterns": [
-          "apps/04-binding-solution/src/**/*.ts",
-          "apps/04-binding-solution/src/**/*.html"
-        ]
+        "lintFilePatterns": ["apps/04-binding-solution/src/**/*.ts", "apps/04-binding-solution/src/**/*.html"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": [
-        "coverage/apps/04-binding-solution"
-      ],
+      "outputs": ["coverage/apps/04-binding-solution"],
       "options": {
-        "jestConfig": "apps/04-binding-solution/jest.config.js",
+        "jestConfig": "apps/04-binding-solution/jest.config.ts",
         "passWithNoTests": true
       }
     }

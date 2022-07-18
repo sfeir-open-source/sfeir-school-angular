@@ -1,9 +1,9 @@
 {
-  "root": "apps/docs",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "targets": {
     "start-prez": {
-      "executor": "@nrwl/workspace:run-script",
+      "executor": "nx:run-script",
       "options": {
         "script": "start"
       }
