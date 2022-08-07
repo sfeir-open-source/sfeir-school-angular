@@ -39,7 +39,6 @@ npm install || npm ci
 
 <br>
 
-A la racine du projet
 
 ```bash
 npm run client -- "nom_du_workshop"
@@ -47,16 +46,10 @@ npm run client -- "nom_du_workshop"
 
 <br>
 
-Lancez le serveur de mocks, à la racine du projet
 
 ```bash
 npm run server:start
 ```
-
-<br><br>
-
-- <b>npm run client:</b>http://localhost:4200 <br>
-- <b>npm run server:</b>http://localhost:9000
 
 ##==##
 

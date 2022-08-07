@@ -67,7 +67,7 @@
     "32-unit-tests-solution": "apps/32-unit-tests-solution",
     "33-standalone-component": "apps/33-standalone-component",
     "33-standalone-component-solution": "apps/33-standalone-component-solution",
-    "docs": "apps/docs",
+    "docs": "docs",
     "server-express": "apps/server-express"
   },
   "$schema": "./node_modules/nx/schemas/workspace-schema.json"

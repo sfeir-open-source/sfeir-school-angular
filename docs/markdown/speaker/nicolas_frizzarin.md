@@ -1,6 +1,6 @@
 <!-- .slide: class="speaker-slide blue" -->
 ![speaker](assets/images/speaker/nicolas-frizzarin/nicoF.png)
-![company](assets/images/speaker/logo-sfeir-blanc.png)
+![company](assets/images/speaker/nicolas-frizzarin/GDE.png)
 ![badge first-badge](assets/images/speaker/nicolas-frizzarin/badgeAngular.png)
 ![badge second-badge](assets/images/speaker/nicolas-frizzarin/openjs-member.png)
 
