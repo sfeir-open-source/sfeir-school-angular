@@ -10,11 +10,7 @@ export class BadgeDirective implements OnInit {
 
   ngOnInit(): void {
     if (this.isManager) {
-      this.renderer.setProperty(
-        this.element.nativeElement,
-        'innerHTML',
-        '<i class="material-icons">supervisor_account</i>'
-      );
+      this.renderer.setProperty(this.element.nativeElement, 'innerHTML', '<i class="material-icons">supervisor_account</i>');
     }
   }
 }

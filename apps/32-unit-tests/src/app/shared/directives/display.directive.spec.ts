@@ -14,13 +14,11 @@ const overrideTemplateComponent = (template: string) =>
   TestBed.overrideComponent(HostSfeirDisplayDirective, { set: { template } }).createComponent(HostSfeirDisplayDirective);
 
 describe('SfeirDisplayDirective', () => {
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        declarations: [HostSfeirDisplayDirective, DisplayDirective],
-      }).compileComponents();
-    })
-  );
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      declarations: [HostSfeirDisplayDirective, DisplayDirective],
+    }).compileComponents();
+  }));
 
   it('should create an instante of HostSfeirDisplayDirective', () => {
     const fixture = overrideTemplateComponent(`<div>Hello</div>`);

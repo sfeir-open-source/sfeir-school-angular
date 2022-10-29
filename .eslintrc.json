@@ -16,6 +16,7 @@
         "*.jsx"
       ],
       "rules": {
+        "prettier/prettier": "error",
         "@nrwl/nx/enforce-module-boundaries": [
           "error",
           {
@@ -41,7 +42,9 @@
       "extends": [
         "plugin:@nrwl/nx/typescript"
       ],
-      "rules": {}
+      "rules": {
+        "prettier/prettier": "error"
+      }
     },
     {
       "files": [

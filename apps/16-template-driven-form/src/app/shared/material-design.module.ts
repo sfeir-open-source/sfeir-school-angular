@@ -8,15 +8,6 @@ import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
 import { MatToolbarModule } from '@angular/material/toolbar';
 @NgModule({
-  exports: [
-    MatCardModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatButtonModule,
-    MatListModule,
-    MatDialogModule,
-    MatFormFieldModule,
-    MatInputModule,
-  ],
+  exports: [MatCardModule, MatToolbarModule, MatIconModule, MatButtonModule, MatListModule, MatDialogModule, MatFormFieldModule, MatInputModule],
 })
 export class MaterialDesignModule {}

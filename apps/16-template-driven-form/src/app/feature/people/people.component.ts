@@ -29,9 +29,6 @@ export class PeopleComponent implements OnInit {
   }
 
   showDialog(): void {
-    this.matDialogService
-      .open(AddPersonDialogComponent, { width: '50%', height: 'fit-content' })
-      .afterClosed()
-      .subscribe();
+    this.matDialogService.open(AddPersonDialogComponent, { width: '50%', height: 'fit-content' }).afterClosed().subscribe();
   }
 }

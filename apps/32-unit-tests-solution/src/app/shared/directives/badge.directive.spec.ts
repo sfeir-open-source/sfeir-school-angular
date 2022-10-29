@@ -15,13 +15,11 @@ const overrideTemplate = (template: string) =>
   TestBed.overrideComponent(HostBadgeDirective, { set: { template } }).createComponent(HostBadgeDirective);
 
 describe('BadgeDirective', () => {
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        declarations: [HostBadgeDirective, BadgeDirective],
-      });
-    })
-  );
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      declarations: [HostBadgeDirective, BadgeDirective],
+    });
+  }));
 
   it('should create an instance', () => {
     const fixture = overrideTemplate('<span [sfeirBadge]="true"></span>');

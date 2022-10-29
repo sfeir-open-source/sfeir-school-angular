@@ -21,14 +21,12 @@ describe('PeopleService', () => {
   let peopleService: PeopleService;
   let httpTestingController: HttpTestingController;
 
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        imports: [HttpClientTestingModule],
-        providers: [PeopleService],
-      });
-    })
-  );
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule],
+      providers: [PeopleService],
+    });
+  }));
 
   beforeEach(() => {
     peopleService = TestBed.inject(PeopleService);

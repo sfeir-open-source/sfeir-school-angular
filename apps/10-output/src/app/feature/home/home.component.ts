@@ -15,9 +15,7 @@ export class HomeComponent implements OnInit {
   constructor(private readonly httpCLient: HttpClient) {}
 
   ngOnInit(): void {
-    this.person$ = this.httpCLient
-      .get<Array<People>>(`${environment.peopleEndpoint}/peoples`)
-      .pipe(map(([firstPerson]) => firstPerson));
+    this.person$ = this.httpCLient.get<Array<People>>(`${environment.peopleEndpoint}/peoples`).pipe(map(([firstPerson]) => firstPerson));
   }
 
   getRandomPerson(): void {
