@@ -4,13 +4,12 @@
   "description": "Sfeir School Angular with revealJS",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch ./scss/:css/ --source-map",
-    "sass-once": "sass /scss/:css/ --source-map",
+    "sass": "sass ./scss/angular.scss:./css/angular.css --source-map --watch",
+    "sass-once": "sass ./scss/angular.scss:./css/angular.css --source-map",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "live-server --port=4242 --open=\"./index.html\" --watch=\"markdown,scripts,scss/\"",
+    "serve": "live-server --port=4242 --open=\"./index.html\" --watch=\"markdown,scripts/\"",
     "start": "parallelshell \"npm run serve\" \"npm run sass\"",
-    "copy-highlight": "cpx \"node_modules/highlight.js/styles/**/*\" \"web_modules/highlight.js/styles\" ",
-    "copy-reveal": "cpx \"node_modules/reveal.js/**/*\" \"web_modules/reveal.js\" "
+    "prepare": "node ./scripts/dont-touch/prepare-script.js"
   },
   "repository": {
     "type": "git",
@@ -27,11 +26,5 @@
   "bugs": {
     "url": "https://github.com/sfeir-open-source/sfeir-school-theme/issues"
   },
-  "homepage": "https://github.com/sfeir-open-source/sfeir-school-theme#readme",
-  "snowpack": {
-    "webDependencies": [
-      "sfeir-school-theme/dist/**/*",
-      "lit-html"
-    ]
-  }
+  "homepage": "https://github.com/sfeir-open-source/sfeir-school-theme#readme"
 }
