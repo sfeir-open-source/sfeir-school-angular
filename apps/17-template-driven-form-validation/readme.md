@@ -4,18 +4,18 @@
 
 ## Etape 1
 
-Dans le composant FormComponent, et particulièrement dans le fichier **form.component.html** ajouter les règles de validations suivantes:
+Dans le composant **FormComponent**, et particulièrement dans le fichier **form.component.html**, ajoutez les règles de validations suivantes:
 
--   firstname --> required et minLength à deux caractères
--   lastname --> required et minLength à deux caractères
--   email --> required
--   phone --> required et pattern (\d{10})
+-   firstname --> **required** et **minLength** à deux caractères
+-   lastname --> **required** et **minLength** à deux caractères
+-   email --> **required**
+-   phone --> **required** et **pattern (\d{10})**
 
 <br><br>
 
 ## Etape 2
 
-A l'aide de la balise mat-error de material, afficher les messages d'erreur adéquat
+A l'aide de la balise **\<mat-error>** de material affichez les messages d'erreur adéquats
 
 Astuce: voici un example
 
@@ -40,7 +40,7 @@ Astuce: voici un example
 
 ## Etape 3
 
-Désactivez le bouton submit si le formulaire n'est pas valide
+Désactivez le bouton **submit** si le formulaire n'est pas valide
 
 <br><br>
 

@@ -18,7 +18,7 @@ export class HostComponentForDirective {}
 ```
 <!-- .element: class="big-code" -->
 Notes:
-- Un composant étant une directive mais avec une vue il est normal qu'il utilise la même api que les composants
+- Un composant étant une directive mais avec une vue il est normal qu'il utilise la même API que les composants
 - Une directive se place toujours sur un élement html présent dans la vue du composant. Il est donc nécessaire de créer un composant "tampon" qui va hoster notre directive à tester
 
 ##==##

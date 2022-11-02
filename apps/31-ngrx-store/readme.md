@@ -2,30 +2,28 @@
 
 L'objectif de ce workshop est de vous faire implémenter un store avec la technologie ngrx.
 
-Dans la feature People, un composant de recherche a été réalisé. Cette recherche va vous permettre de filter votre liste de personne
+Dans la feature People, un composant de recherche a été réalisé. Cette recherche va vous permettre de filtrer votre liste de personne
 
 <br>
 
 ## Etape 1
 
-Dans le dossier core, créez un dossier store
+Dans le dossier **core** créez un dossier **store**
 
 ## Etape 2
 
-Dans le dossier store, créez un fichiez action, et créez deux actions
+Dans le dossier **store** créez un fichier **action** et créez deux actions :
 
--   setPeople --> cette actions prend comme props un objet avec une propriété people de type array de People
--   setSearch --> cette action prend comme props un objet avec une propriété search de type string
+-   **setPeople** --> cette action prend comme props un objet avec une propriété people de type array de People
+-   **setSearch** --> cette action prend comme props un objet avec une propriété search de type string
 
 <br><br>
 
 ## Etape 3
 
-Dans le fichier store/reducer
+Dans le fichier **store/reducer** créez votre **reducer**
 
-créez votre reducer
-
-Astuce: utilisez la fonction createReducer
+Astuce: utilisez la fonction **createReducer**
 
 ```typescript
 createReducer(initialState, on(action, logicOfYourAction), on(anotherAction, logicOfYourOtherAction));
@@ -35,18 +33,18 @@ createReducer(initialState, on(action, logicOfYourAction), on(anotherAction, log
 
 ## Etape 4
 
-Dans le fichier store/selector et créez deux sélecteurs
+Dans le fichier **store/selector** créez deux sélecteurs
 
--   selectPeople --> permet de récupérer la liste de personne filtré ou non
--   selectSearch --> permet de récupérer la recherche de l'utilisateur
+-   **selectPeople** --> permet de récupérer la liste de personne filtrée ou non
+-   **selectSearch** --> permet de récupérer la recherche de l'utilisateur
 
-Astuce: utiliser la fonction createSelector de la manière suivante
+Astuce: utiliser la fonction **createSelector** de la manière suivante
 
 ```bash
 createSelector(selectRootStore, () => ...)
 ```
 
-selectRootStore est une méthode helper qui permet de récupérer le state root de votre application
+**selectRootStore** est une méthode helper qui permet de récupérer le **state root** de votre application
 
 ```typescript
 const selectRootStore = (rootStore: AppStore) => rootStore.store;
@@ -56,7 +54,7 @@ const selectRootStore = (rootStore: AppStore) => rootStore.store;
 
 ## Etape 5
 
-Dans le fichier **core.module.ts**, enregistrez votre Store grâce au module StoreModule
+Dans le fichier **core.module.ts** enregistrez votre **Store** grâce au module **StoreModule**
 
 ```typescript
 StoreModule.forRoot({ store: reducer})
@@ -67,7 +65,7 @@ StoreModule.forRoot({ store: reducer})
 ## Etape 6
 
 
-Dans le service PeopleService, injectez votre service store et réalisez les sides effects suivant à l'aide de l'opérateur tap
+Dans le service **PeopleService** injectez votre service store et réalisez les sides effects suivant à l'aide de l'opérateur **tap**
 - lorsque vous récupérez la liste des personnes, settez votre entité people (dans son intégralité) de votre store
 - lorsque vous supprimez une personne, settez votre entité people (dans son intégralité ) de votre store
 
@@ -75,7 +73,7 @@ Dans le service PeopleService, injectez votre service store et réalisez les sid
 
 ## Etape 7
 
-Dans le composant PeopleComponent, réalisez les transformations nécessaires pour implémenter votre store
+Dans le composant **PeopleComponent**, réalisez les transformations nécessaires pour implémenter votre store
 
 <br><br>
 

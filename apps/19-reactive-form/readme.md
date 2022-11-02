@@ -4,29 +4,29 @@
 
 ## Etape 1
 
-Dans le fichier **shared.module.ts**, remplacez le module FormsModule par le module ReactiveFormsModule
+Dans le fichier **shared.module.ts** remplacez le module **FormsModule** par le module **ReactiveFormsModule**
 
 <br><br>
 
 ## Etape 2
 
-Dans le composant FormComponent, réalisez les changement nécessaire pour transformer votre formulaire en ReactiveForms (pensez bien à typer votre formulaire)
+Dans le composant **FormComponent** réalisez les changements nécessaires pour transformer votre formulaire en **ReactiveForms** (pensez bien à typer votre formulaire)
 
-Créer une propriété personForm: FormGroup<PersonForm>
+Créez une propriété **personForm**: **FormGroup\<PersonForm>**
 
 Astuce: Utiliser les validators suivants pour réaliser vos validations
 
--   required --> Validator.require
--   minLength --> Validator.minLength(2)
--   pattern --> Validator.pattern(/\d{10}/)
+-   **required --> Validator.require**
+-   **minLength --> Validator.minLength(2)**
+-   **pattern --> Validator.pattern(/\d{10}/)**
 
-Pensez à bien prendre en compte le mode Update
+Pensez à bien prendre en compte le mode **Update**
 
 <br><br>
 
 ## Etape 3
 
-Dans la méthode onSave, et particulièrement lorsque vous appelez votre event emitter remplacez le paramètre this.person par this.personForm.value
+Dans la méthode **onSave**, et particulièrement lorsque vous appelez votre **EventEmitter**, remplacez le paramètre **this.person** par **this.personForm.value**
 
 <br><br>
 

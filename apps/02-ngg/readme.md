@@ -2,21 +2,22 @@
 
 L'objectif de ce workshop est de vous entraîner à créer des composant à l'aide du CLI d'Angular
 
-En général pour être plus productif on utilise son IDE, ce workshop a également pour objectif de vous entraîner à utiliser les fonctionnalités que vous offre votre IDE
+En général, pour être plus productif, on utilise son IDE.
+Ce workshop a également pour but de vous entraîner à utiliser les fonctionnalités que vous offre votre IDE
 
-VOus aurez aussi l'occasion d'appliquer les connaissances précédentes acquises.
+Vous aurez aussi l'occasion d'appliquer les connaissances précédemment acquises.
 
 <br>
 
 ## Etape 1
 
-Dans le dossier src/app/feature, créez le composant HomeComponent grâce au CLI d'Angular.
+Dans le dossier **src/app/feature**, créez le composant **HomeComponent** grâce au CLI d'Angular.
 
 <br><br>
 
 ## Etape 2
 
-Analysez les fichiers que le cli vous a générés.
+Analysez les fichiers que le CLI a généré
 <br><br>
 
 ## Etape 3
@@ -26,17 +27,17 @@ Dans le fichier **home.component.ts** créez une propriété **name** avec comme
 
 ## Etape 4
 
-Dans le fichier **home.component.html** affichez la valeur de la variable **name** grâce à la syntaxe {{ name}}
+Dans le fichier **home.component.html** affichez la valeur de la variable **name** grâce à la syntaxe **{{ name }}**
 <br><br>
 
 ## Etape 5
 
-Dans le fichier **app.module.ts** dans le tableau de la propriété bootstrap remplacez AppComponent par HomeComponent
+Dans le fichier **app.module.ts**, dans la propriété **bootstrap**, remplacez **AppComponent** par **HomeComponent**
 <br><br>
 
 ## Etape 6
 
-Dans le fichier **index.html** remplacez la baise <sfeir-app> par la balise <sfeir-home>
+Dans le fichier **index.html** remplacez la balise **\<sfeir-app>** par la balise **\<sfeir-home>**
 <br><br>
 
 ## Etape 7

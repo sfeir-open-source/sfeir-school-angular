@@ -6,22 +6,22 @@ L'objectif de ce workshop est de créer un resolver permettant de récupérer le
 
 ## Etape 1
 
-Dans le dossier update-person/guards, générez à l'aide du CLI, le resolver person-details
+Dans le dossier **update-person/guards** générez à l'aide du CLI le resolver **person-details**
 
 <br><br>
 
 ## Etape 2
 
-Dans le fichier **person-details.resolver.ts**, injectez le service PeopleService
+Dans le fichier **person-details.resolver.ts** injectez le service **PeopleService**
 
 <br><br>
 
 ## Etape 3
 
-Dans le fichier **person-details.resolver.ts**, et particulièrement dans la méthode resolve,
+Dans le fichier **person-details.resolver.ts**, et particulièrement dans la méthode **resolve** :
 
--   récupérez le paramètre de la route, grâce au paramètre route de votre fonction resolve
--   retournez l'appel de la fonction getPersonDetails de peopleService
+-   récupérez le paramètre de la route grâce au paramètre route de votre fonction **resolve**
+-   retournez l'appel de la fonction **getPersonDetails** de **PeopleService**
 
 
 Astuce:
@@ -33,15 +33,15 @@ const idPerson = route.paramMap.get('id');
 
 ## Etape 4
 
-Dans le module UpdatePersonModule, dans la propriété providers, ajoutez le resolver PersonDetailsResolver
+Dans le module **UpdatePersonModule**, dans la propriété **providers**, ajoutez le resolver **PersonDetailsResolver**
 
 <br><br>
 
 ## Etape 5
 
-Dans le fichier **update-person-routing.module.ts**, enregistrez votre resolver
+Dans le fichier **update-person-routing.module.ts** enregistrez votre resolver
 
-Astuce: enregistrez votre resolver avec la syntax suivant
+Astuce: enregistrez votre resolver avec la syntaxe suivante
 
 ```json
 resolve: { personDetails: PersonDetailsResolver }
@@ -49,7 +49,7 @@ resolve: { personDetails: PersonDetailsResolver }
 
 ## Etape 6
 
-Dans le composant UpdateComponent, et particulièrement dans le Hook d'initialisation, récupérez l'utilisateur
+Dans le composant **UpdatePersonComponent**, et particulièrement dans le hook **OnInit**, récupérez l'utilisateur
 
 Astuce:
 
@@ -59,7 +59,7 @@ this.route.data.pipe(pluck('personDetails'))
 
 ## Etape 7
 
-Vérifiez votre travail en lançant la commande
+Vérifiez votre travail en lançant la commande :
 
 ```bash
 npm run client -- 23-resolver

@@ -1,44 +1,47 @@
 # Exercice 12-service (dossier apps/12-service)
 
 Ce workshop a plusieurs objectifs:
-- commencez à rendre votre architecture atomique en utilisant la notion précédemment acquises sur les modules
-- créez ses propres services et comprendre la notion de scope d'injection
+- commencer à rendre l'architecture atomique en utilisant les notions précédemment acquises sur les modules
+- créer ses propres services
+- comprendre la notion de scope d'injection
 
 <br>
 
 ## Etape 1
 
-Dans le dossier src, créez un dossier core
+Dans le dossier **src** créez un dossier **core**
 
-Dans le dossier core, créez un module CoreModule
+Dans le dossier **core** créez un module *CoreModule*
 
-Dans le module CoreModule, dans la propriété imports, ajoutez le module HttpClientModule
+Dans le module **CoreModule**, dans la propriété **imports**, ajoutez le module **HttpClientModule**
 
-Dans le module AppModule, dans la propriété imports, retirez le module HttpClientModule et ajoutez le module CoreModule que vous venez de créer
+Dans le module **AppModule**, dans la propriété **imports**, retirez le module **HttpClientModule** et ajoutez le module **CoreModule** que vous venez de créer
 
 <br><br>
 
 ## Etape 2
 
-Dans le dossier core créer un dossier providers
+Dans le dossier **core** créez un dossier **providers**
 
-Créez dans le dossier providers le service **people service**. Ce service permettra par la suite de regrouper tous les appels back-end
+Dans le dossier **providers** créez le service *PeopleService*
+
+Ce service permettra par la suite de regrouper tous les appels au back-end
 <br><br>
 
 # Etape 3
 
-Injectez le service httpCLient d'Angular dans votre service PeopleService
+Injectez le service **HttpClient** d'Angular dans votre service **PeopleService**
 <br><br>
 
 # Etape 4
 
-Regroupez dans votre service **PeopleService** tous les appels backend réalisés jusque maintenant
+Regroupez dans votre service **PeopleService** tous les appels backend réalisés jusqu'ici :
 
--   getPeople (HomeComponent et PeopleComponent)
--   getRandomPeople (HomeComponent)
--   deletePeople (PeopleComponent)
+-   getPeople (**HomeComponent** et **PeopleComponent**)
+-   getRandomPeople (**HomeComponent**)
+-   deletePeople (**PeopleComponent**)
 
-Astuces: toutes les méthodes que vous allez créer dans ce service doivent retourner un Observable afin de pouvoir subscribe dessus dans les composants
+Astuces: toutes les méthodes que vous allez créer dans ce service doivent retourner un **Observable** afin de pouvoir **subscribe** dessus dans les composants
 <br><br>
 
 ## Etape 5

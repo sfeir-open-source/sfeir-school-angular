@@ -4,27 +4,28 @@ L'objectif de ce workshop est d'afficher le détail d'un utilisateur à travers 
 
 Vous allez dont utiliser la syntaxe des bindings pour afficher nom prénom photo etc
 
-Dans le dossier src/assets/static, vous trouverez les mocks, template et style nécessaire à la réalisation de l'exercice
+Dans le dossier **src/assets/static** vous trouverez les mocks, templates et styles nécessaires à la réalisation de l'exercice
 
 <br>
 
 ## Etape 1
 
-Dans le ficher **home.component.html** copiez le contenue du fichier **home.component.html** du dossier static
-Dans le fichier **home.component.css** copiez le contenue du fichier **home.component.css** du dossier static
+Dans le ficher **home.component.html** copiez le contenu du fichier **home.component.html** du dossier **static**
+
+Dans le fichier **home.component.css** copiez le contenu du fichier **home.component.css** du dossier **static**
 <br><br>
 
 ## Etape 2
 
-Dans le fichier **home.component.ts** importer le le fichier de mock people grâce à l'import suivant:
+Dans le fichier **home.component.ts** importez le fichier de mock people grâce à l'import suivant:
 
 ```typescript
 import { PEOPLE } from '../../mocks/people.mock';
 ```
 
-Déclarez une variable person de type People
+Déclarez une variable **person** de type **People**
 
-Dans la fonction ngOnInit, récupérez la première personne du tableau de people que vous venez d'importer et settez la variable person à cette personne
+Dans la fonction **ngOnInit** récupérez la première personne du tableau de people que vous venez d'importer et settez la variable person à cette personne
 <br><br>
 
 ## Etape 3

@@ -115,7 +115,7 @@ export class AppComponent {}
 
 # __@ContentChild__ __@ContentChildren__ ?
 
-- permet de récupérer le contenue de la transclusion dans le composant <br><br>
+- permet de récupérer le contenu de la transclusion dans le composant <br><br>
 - Prend deux paramètres en entrée (nom de la référence, un object d'option: { static, read }) <br><br>
 - Valeur de retour
     - __@ContentChild__: T

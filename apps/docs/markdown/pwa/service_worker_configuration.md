@@ -5,7 +5,7 @@ Notes:
 - Tous les chemins de fichier doivent obligatoirement commencer par / qui correspond au répertoire de déploiment -> typiquement dist/<project-name>
 - App Data permet de passer des données supplémentaires, typiquement des données à faire passer lors des notifications push
 - AssetsGroup : des groupes d'assets à cacher
-- dataGroups : groupes de données à cacher (data api en général)
+- dataGroups : groupes de données à cacher (data API en général)
 - navigationUrls : stratégie de navigation
 
 ##==##

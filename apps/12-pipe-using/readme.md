@@ -1,24 +1,26 @@
 # Exercice 12-pipe-using (dossier apps/12-pipe-use)
 
-Nous venous de rajouter la date de naissance d'une personne sur la card.
+Nous venons de rajouter la date de naissance d'une personne sur la card.
 
-Ce workshop comporte plusieurs objectifs:
-- comprendre d'ou proviennent les "build-in" pipe d'Angular
-- comment utiliser les "build-in" pipe d'Angular
-- la syntax des pipes
+Ce workshop a plusieurs objectifs:
+- comprendre d'où viennent les "build-in" pipes d'Angular
+- comprendre comment utiliser les "build-in" pipes d'Angular
+- comprendre la syntax des pipes
 
 <br>
 
 
 ## Etape 1
 
-Dans le fichier **share.module.ts**, dans la propriété imports ajouter le module CommonModule du package @angular/common
+Dans le fichier **share.module.ts**, dans la propriété **imports**, ajoutez le module **CommonModule** du package **@angular/common**
 
-Compréhension: Le module CommonModule exporte tous les Build-in Pipes, comme le composant CardComponent appartient au module SharedModule, si le module CommonModule n'est pas importé dans ce module, alors le composant CardComponent n'aura pas accès aux différents pipe que propose le CommonModule
+**EXPLICATION** : 
+Le module **CommonModule** exporte tous les Build-in Pipes. 
+Comme le composant **CardComponent** appartient au module **SharedModule** si le module **CommonModule** n'est pas importé dans ce module, alors le composant **CardComponent** n'aura pas accès aux différents pipes que propose le **CommonModule**
 
 ## Etape 1
 
-Dans le fichier **card.component.html**, à l'aide du pipe date d'Angular, affichez la date de naissance sous le format suivant: 'dd/MM/yyyy'
+Dans le fichier **card.component.html**, à l'aide du pipe **date** d'Angular, affichez la date de naissance sous le format suivant: **'dd/MM/yyyy'**
 <br><br>
 
 ## Etape 2

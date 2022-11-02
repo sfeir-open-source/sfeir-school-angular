@@ -6,18 +6,16 @@ L'objectif de ce workshop est d'utiliser les annotations @Hostbinding and @Hostl
 
 ## Etape 1
 
-Dans le fichier **badge.directive.ts**
-
--   bindez la propriété style.color à la variable iconColor qui sera de type string grâce à l'annotation @Hostbinding
+Dans le fichier **badge.directive.ts** bindez la propriété **style.color** à la variable **iconColor** qui sera de type **string** grâce à l'annotation **@Hostbinding**
 
 <br><br>
 
 ## Etape 2
 
-Dans le fichier **badge.directive** créez
+Dans le fichier **badge.directive** créez :
 
--   un HostListener sur l'event mouseenter grâce à l'annotation @HostListener qui devra passer la couleur du badge en rouge
--   un HostListener sur l'event mouseLeave grâce à l'annotation @HostListener qui devra passer la couleur du badge en noir
+-   un **HostListener** sur l'event **mouseEnter** grâce à l'annotation **@HostListener** qui devra passer la couleur du badge en rouge
+-   un **HostListener** sur l'event **mouseLeave** grâce à l'annotation **@HostListener** qui devra passer la couleur du badge en noir
 
 Astuce: pour changer de couleur il suffit de settez la variable badgeColor à 'red' ou 'black'
 
