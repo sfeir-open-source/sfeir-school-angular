@@ -8,7 +8,7 @@ Il introduit également le concept d'input aliasé afin d'éviter du boilerplati
 
 ## Etape 1
 
-Dans le dossier **shared** créez un dossier *directives*
+Dans le dossier **shared** créez un dossier **directives**
 
 <br><br>
 

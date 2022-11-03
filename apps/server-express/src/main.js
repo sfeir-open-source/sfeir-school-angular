@@ -2,7 +2,7 @@
 
 var express = require('express'),
   bodyParser = require('body-parser'),
-  API = require('./routes/api'),
+  api = require('./routes/api'),
   cors = require('cors');
 
 var app = express();

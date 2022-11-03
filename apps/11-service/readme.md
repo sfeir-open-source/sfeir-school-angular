@@ -11,7 +11,7 @@ Ce workshop a plusieurs objectifs:
 
 Dans le dossier **src** créez un dossier **core**
 
-Dans le dossier **core** créez un module *CoreModule*
+Dans le dossier **core** créez un module **CoreModule**
 
 Dans le module **CoreModule**, dans la propriété **imports**, ajoutez le module **HttpClientModule**
 
@@ -23,7 +23,7 @@ Dans le module **AppModule**, dans la propriété **imports**, retirez le module
 
 Dans le dossier **core** créez un dossier **providers**
 
-Dans le dossier **providers** créez le service *PeopleService*
+Dans le dossier **providers** créez le service **PeopleService**
 
 Ce service permettra par la suite de regrouper tous les appels au back-end
 <br><br>

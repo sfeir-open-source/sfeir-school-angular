@@ -2,7 +2,7 @@
 
 L'objectif de ce workshop est de vous permettre d'écrire votre première directive structurelle.
 
-Cette directive permlettra d'afficher des éléments du template en fonction d'une certaine condition.
+Cette directive permettra d'afficher des éléments du template en fonction d'une certaine condition.
 
 Comme vous avez pu le comprendre c'est la directive *ngIf en simplifiée.
 
