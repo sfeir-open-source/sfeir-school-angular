@@ -1,4 +1,5 @@
 {
+  "name": "17-template-driven-form-validation-solution",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "sourceRoot": "apps/17-template-driven-form-validation-solution/src",
@@ -83,7 +84,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/17-template-driven-form-validation-solution"],
+      "outputs": ["{workspaceRoot}/coverage/apps/17-template-driven-form-validation-solution"],
       "options": {
         "jestConfig": "apps/17-template-driven-form-validation-solution/jest.config.ts",
         "passWithNoTests": true

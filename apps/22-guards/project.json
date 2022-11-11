@@ -1,4 +1,5 @@
 {
+  "name": "22-guards",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "sourceRoot": "apps/22-guards/src",
@@ -77,7 +78,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/22-guards"],
+      "outputs": ["{workspaceRoot}/coverage/apps/22-guards"],
       "options": {
         "jestConfig": "apps/22-guards/jest.config.ts",
         "passWithNoTests": true
