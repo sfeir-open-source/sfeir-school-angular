@@ -1,4 +1,4 @@
-<!-- .slide: class="transition-bg-grey-1 underline" -->
+<!-- .slide: class="transition-bg-sfeir-2 underline" -->
 # Bootstraping
 
 ##==##
@@ -6,13 +6,13 @@
 <!-- .slide: class="with-code inconsolata" -->
 # Bootstraping: main.ts
 Dans une application Angular, le fichier __main.ts__ est chargé en premier
-<br><br>
+<br/><br/>
 
 ```typescript
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { platformbr/owserDynamic } from '@angular/platform-br/owser-dynamic';
 import { AppModule } from './app.module';
 
-platformBrowserDynamic().bootstrapModule(AppModule);
+platformbr/owserDynamic().bootstrapModule(AppModule);
 ```
 <!-- .element: class="big-code" -->
 
@@ -23,18 +23,18 @@ platformBrowserDynamic().bootstrapModule(AppModule);
 
 ```typescript
 // main.ts
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { platformbr/owserDynamic } from '@angular/platform-br/owser-dynamic';
 import { AppModule } from './app.module';
-platformBrowserDynamic().bootstrapModule(AppModule);
+platformbr/owserDynamic().bootstrapModule(AppModule);
 ```
 <!-- .element: class="big-code" -->
 
-<br>
+<br/>
 
 ```typescript
 // app.module.ts
 @NgModule({
-  imports: [BrowserModule],
+  imports: [br/owserModule],
   declaration: [AppComponent],
   exports: [],
   bootstrap: [AppComponent],
@@ -43,7 +43,7 @@ export class AppModule { }
 ```
 <!-- .element: class="big-code" -->
 
-<br>
+<br/>
 
 ```html
 <!-- index.html -->

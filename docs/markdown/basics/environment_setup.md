@@ -1,4 +1,4 @@
-<!-- .slide: class="transition-bg-grey-1 underline" -->
+<!-- .slide: class=" transition-bg-sfeir-2" -->
 
 # IDE's
 

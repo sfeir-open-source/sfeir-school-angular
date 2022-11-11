@@ -1,14 +1,14 @@
-<!-- .slide: class="transition-bg-grey-1 underline" -->
+<!-- .slide: class="transition-bg-sfeir-2" -->
 # Le module
 
 ##==##
 
 <!-- .slide-->
-# Le module: généralités<br>
+# Le module: généralités
 
-- Permet de regrouper des fonctionnalités<br><br>
-- Au moins un module par application (obligatoire, car sans ce module, l'app ne démarre pas)<br><br>
-- Peut être chargé de façon différée (lazy loading)<br><br>
+- Permet de regrouper des fonctionnalités<br/><br/>
+- Au moins un module par application (obligatoire, car sans ce module, l'app ne démarre pas)<br/><br/>
+- Peut être chargé de façon différée (lazy loading)<br/><br/>
 - Bonne pratique : Architecture de modules selon rôles (Root Module, Navigation Module, Feature Module, Shared Module, Core Module ...)
 
 Notes:
@@ -23,12 +23,12 @@ Notes:
 <!-- .slide: class="with-code" -->
 # Le module: son écriture
 Comme le composant, la définition du module se fait à l'aide d'une classe et d'un décorateur
-<br><br>
+<br/><br/>
 
 ```typescript
 // app.module.ts
 @NgModule({
-  imports: [BrowserModule, ...],
+  imports: [br/owserModule, ...],
   declaration: [AppComponent, ...],
   exports: [],
   bootstrap: [AppComponent], // only in root module
