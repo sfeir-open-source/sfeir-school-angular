@@ -73,7 +73,7 @@ function navigationSlides() {
   ];
 }
 
-function basicsFunctionnalitiesSlides() {
+function basicsFunctionalitiesSlides() {
   return ['functionalities/transition_slide.md', 'functionalities/loop.md', 'functionalities/exercice.md'];
 }
 
@@ -100,7 +100,7 @@ export function dayOneSlides() {
     ...eventSlides(),
     ...serverCommunicationSLides(),
     ...navigationSlides(),
-    ...basicsFunctionnalitiesSlides(),
+    ...basicsFunctionalitiesSlides(),
     ...communicationSlides(),
   ];
 }

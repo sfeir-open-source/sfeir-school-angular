@@ -28,16 +28,16 @@ export class ChildComponent {
 
 # Communication parent - enfant: @Output
 
--   Dans le template HTML du composant parent (`parent.component.html`) <br><br>
+-   Dans le template HTML du composant parent (`parent.component.html`) <br/><br/>
 
 ```html
 <section><app-child (childEvent)="onChildEvent($event)"></app-child></section>
 ```
 
 <!-- .element: class="big-code" -->
-<br>
+<br/>
 
--   Dans le composant parent (`parent.component.ts`) <br><br>
+-   Dans le composant parent (`parent.component.ts`) <br/><br/>
 
 ```typescript
 onChildEvent(value: string): void {

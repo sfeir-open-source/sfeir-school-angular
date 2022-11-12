@@ -63,17 +63,16 @@
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-
 # Interpolation et expression
-
 ## Interpolation:
 
 ```html
 <div>Hello {{ name }}</div>
-<img src="{{ myUrl }}" />
+<img alt="a specific image" src="{{ myUrl }}" />
 ```
+<!-- .element: class="big-code" -->
 
-<!-- .element: class="medium-code" -->
+<br/><br/>
 
 ## Expression:
 - Dans le contexte du composant
@@ -85,11 +84,9 @@
 
 ##==##
 
-<!-- .slide: class="two-column-layout" -->
+<!-- .slide: class="two-column with-code inconsolata" -->
 
 # Properties binding
-
-##--##
 
 <table>
     <thead>
@@ -115,34 +112,12 @@
 <img [src]="url" />
 <sfeir-people [person]="person" ></sfeir-people>
 ```
-
-<!-- .element: class="medium-code" -->
-
-```typescript
-// app.component.ts
-import { Component } from '@angular/core';
-import { Person } from '../models/person';
-
-@Component({
-    selector: 'sfeir-app',
-    templateUrl: 'app.component.html',
-    styleUrls: ['app.component.css']
-})
-export class AppComponent {
-    url = 'assets/imgs/sfeir.png';
-    person: Person = { name: 'John Smith' };
-
-    constructor() {}
-}
-```
-
-<!-- .element: class="medium-code" -->
+<!-- .element: class="big-code" -->
 
 ##--##
-
 <!-- .slide: class="with-code inconsolata" -->
 
-<br><br>
+<br/><br/>
 
 -   Constant
 
@@ -150,16 +125,13 @@ export class AppComponent {
 <show-title [title]="'My title'"></show-title> 
 <show-title title="My title"></show-title>
 ```
-
-<!-- .element: class="medium-code" -->
+<!-- .element: class="big-code" -->
 
 ##==##
 
-<!-- .slide: class="two-column-layout" -->
+<!-- .slide: class="two-column with-code inconsolata" -->
 
 # Event Binding
-
-##--##
 
 <table>
     <thead>
@@ -186,42 +158,18 @@ export class AppComponent {
 <hero-detail (deleted)="onDeleted($event)"></hero-detail>
 <input (change)="firstName = $event"
 ```
-
-<!-- .element: class="medium-code" -->
-
-```typescript
-// app.component.ts
-import { Component } from '@angular/core';
-
-@Component({
-    selector: 'sfeir-app',
-    templateUrl: 'app.component.html',
-    styleUrls: ['app.component.css']
-})
-export class AppComponent {
-     onSave(): void { console.log('Saved'); }
-    
-     onDeleted(heroId: string): void {
-       console.log(`Hero with id: ${heroId} has been deleted`);
-     }
-}
-```
-
-<!-- .element: class="medium-code" -->
+<!-- .element: class="big-code" -->
 
 
 ##--##
-<br><br>
+<br/><br/>
 
--   Référence à l'event grâce à \$event
+-   Référence à l'event grâce à $event
 
 ##==##
 
-<!-- .slide: class="two-column-layout" -->
-
+<!-- .slide: class="two-column with-code inconsolata" -->
 # 2 way binding
-
-##--##
 
 <table>
     <thead>
@@ -245,37 +193,22 @@ export class AppComponent {
 <!-- app.component.html -->
 <input name="firstName" [(ngModel)]="firstName" />
 ```
+<!-- .element: class="big-code" -->
 
-<!-- .element: class="medium-code" -->
-
-```typescript
-// app.component.ts
-import { Component } from '@angular/core';
-
-@Component({
-    selector: 'sfeir-app',
-    templateUrl: 'app.component.html',
-    styleUrls: ['app.component.css']
-})
-export class AppComponent {
-  firstName = "John";
-}
-```
-
-<!-- .element: class="medium-code" -->
 ##--##
-
 <!-- .slide: class="with-code inconsolata" -->
 
-<br><br>
+<br/><br/>
 
 -   Equivalent à
 
 ```html
-<input [ngModel]="firstname" (ngModelChange)="firstname = $event" />
+<input
+    [ngModel]="firstname"
+    (ngModelChange)="firstname = $event" />
 ```
-
 <!-- .element: class="big-code" -->
-<br>
+
+<br/>
 
 -   <bg>ngModel</bg> provient de la librairie <strong>@angular/forms</strong>

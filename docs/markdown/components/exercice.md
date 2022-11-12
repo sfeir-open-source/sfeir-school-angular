@@ -1,6 +1,6 @@
 <!-- .slide: class="exercice" -->
-# Exercice 03 : 03-cpt-hierarchy
-## Exercice<br>
+# Lab 03 : 03-cpt-hierarchy
+## Lab<br>
 
 <b>Un readme est à votre disposition dans le dossier apps/03-cpt-hierarchy</b>
 <!-- .element: class="full-center" -->
@@ -13,6 +13,6 @@
  ##==##
 
  <!-- .slide: class="exercice full-center" -->
- # Exercice 03 : cpt-hierarchy
- ## Solution
+ # Lab 03 : 03-cpt-hierarchy
+ ## Lab
  <b>apps/03-cpt-hierarchy-solution</b>

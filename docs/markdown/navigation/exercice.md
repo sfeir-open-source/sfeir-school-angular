@@ -1,6 +1,6 @@
 <!-- .slide: class="exercice" -->
-# Exercice 07 : 07-router
-## Exercice
+# Lab 07 : 07-router
+## Lab
 
 <b>Un readme est à votre disposition dans le dossier apps/07-router</b>
 <!-- .element: class="full-center" -->
@@ -8,6 +8,6 @@
 ##==##
 
 <!-- .slide: class="exercice full-center" -->
-# Exercice 07 : 07-router
-## Solution
+# Lab 07 : 07-router
+## Lab
 <b>apps/07-router-solution</b>

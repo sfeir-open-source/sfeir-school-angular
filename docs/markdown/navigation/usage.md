@@ -10,13 +10,11 @@ import { ActivatedRoute, Router, Params } from '@angular/router';
 })
 export class FooComponent implements OnInit {
   constructor(private readonly route: ActivatedRoute, private readonly router: Router) {}
-
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
       let id = params['id'];
     });
   }
-
   async go(): Promise<void> {
     await this.router.navigate(['/people/']);
   }
@@ -30,7 +28,7 @@ Notes:
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Utilisation dans le template<br>
+# Utilisation dans le template
 
 ```html
 <a class="btn btn-info" routerLink="/people">Movies Liste</a>

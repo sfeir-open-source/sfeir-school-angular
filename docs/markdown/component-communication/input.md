@@ -1,6 +1,6 @@
 <!-- .slide: class="with-code inconsolata" -->
 # Communication parent - enfant: @Input
-- Enfant - Composant <br>
+- Enfant - Composant <br/>
 
 ```typescript
 import { Component, Input} from '@angular/core';
@@ -12,9 +12,9 @@ export class ChildComponent {
 }
 ```
 <!-- .element: class="big-code" -->
-<br>
+<br/>
 
-- Parent - template <br>
+- Parent - template <br/>
 
 ```html
 <section>

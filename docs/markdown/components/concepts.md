@@ -6,12 +6,12 @@
 ##==##
 <!-- .slide: class="with-code inconsolata" -->
 # Le décorateur @Component
-Carte d'identité d'un composant<br>
+Carte d'identité d'un composant<br/>
 
 - selector
 - template et templateUrl
 - styles et styleUrls
-- ...<br><br>
+- ...<br/><br/>
 
 ```typescript
 @Component({
@@ -27,10 +27,10 @@ Carte d'identité d'un composant<br>
 
 <!-- .slide: class="with-code inconsolata" -->
 # Imbrication des composants
-Lorsqu'un composant parent souhaite utiliser des composants enfants<br>
+Lorsqu'un composant parent souhaite utiliser des composants enfants<br/>
 
 - les composants enfants doivent tous être référencés en utilisant leurs selectors
-- les composants enfants doivent être déclarés dans les "déclarations" du <b>@NgModule()</b><br><br>
+- les composants enfants doivent être déclarés dans les "déclarations" du <b>@NgModule()</b><br/><br/>
 
 ```html
 <!-- app.component.html -->

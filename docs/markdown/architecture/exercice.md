@@ -6,7 +6,7 @@
 ##==##
 
 <!-- .slide: class="exercice full-center" -->
-# Lab 01 : hands-on
+# Lab 01 : 01-hands-on
 ## Lab
 folder: apps/01-hands-on-solution
 <!-- .element: class="bold"-->

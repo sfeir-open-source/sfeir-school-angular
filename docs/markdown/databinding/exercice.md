@@ -1,6 +1,6 @@
 <!-- .slide: class="exercice" -->
-# Exercice 04 : 04-binding
-## Exercice
+# Lab 04 : 04-binding
+## Lab
 
 <b>Un readme est à votre disposition dans le dossier apps/04-binding</b>
 <!-- .element: class="full-center" -->
@@ -13,6 +13,6 @@
 
 ##==##
 <!-- .slide: class="exercice full-center" -->
-# Exercice 04 : 04-binding
-## Solution
+# Lab 04 : 04-binding
+## Lab
 <b>apps/04-binding-solution</b>
