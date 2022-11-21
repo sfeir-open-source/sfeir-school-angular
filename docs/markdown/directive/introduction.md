@@ -1,8 +1,8 @@
 <!-- .slide: class="with-code inconsolata" -->
 # La directive *ngFor (rappel)
 
-- Itère dans une collection et génère un template par élément <br><br>
-- <b>index, odd, event, last</b> à utiliser en alias dans des variables <br><br>
+- Itère dans une collection et génère un template par élément <br/><br/>
+- <b>index, odd, event, last</b> à utiliser en alias dans des variables <br/><br/>
 
 ```html
 <ul>
@@ -17,7 +17,7 @@
 <!-- .slide: class="with-code inconsolata" -->
 # La directive *ngIf
 
-- Change la structure du DOM de manière conditionnelle (apparaît ou non dans le DOM)<br><br>
+- Change la structure du DOM de manière conditionnelle (apparaît ou non dans le DOM)<br/><br/>
 
 ```html
 <div *ngIf="errorCount > 0" class="error">
@@ -30,7 +30,7 @@
 <!-- .slide: class="with-code inconsolata" -->
 # La directive *ngSwitch
 
-- Change la structure du DOM de manière conditionnelle (à la manière d'un switch case)<br><br>
+- Change la structure du DOM de manière conditionnelle (à la manière d'un switch case)<br/><br/>
 
 ```html
 <div [ngSwitch]="display">
@@ -48,7 +48,7 @@
 - Elle matérialise les directives structurelles (comme NgIF NgFor et NgSwith)
 - Sucre syntaxique
 - Indique que l'on utilise la balise 'ng-tempate'
-- Attention à ne pas oublier les [] si vous utilisez les templates<br><br>
+- Attention à ne pas oublier les [] si vous utilisez les templates<br/><br/>
 
 ```html
 <div *ngIf="errorCount > 0">toto</div>
