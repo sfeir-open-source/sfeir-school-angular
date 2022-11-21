@@ -1,4 +1,4 @@
-<!-- .slide: class="transition-bg-grey-1 underline" -->
+<!-- .slide: class="transition-bg-sfeir-2" -->
 # Créer ses propres pipes
 
 ##==##
@@ -6,16 +6,14 @@
 <!-- .slide -->
 # Comment se compose un pipe
 
-- D'une classe décorée par le décorateur <b>@Pipe</b> ayant comme propriété obligatoire `name`, propriété qui servira à appeler le pipe dans un template HTML. <br><br>
-- Cette classe implémente la méthode <b>transform</b> qui prend en paramètre une valeur et éventuellement un tableau d'arguments <br><br>
-- Cette méthode <b>transform</b> effectue des transformations (ou pas) mais retourne toujours une nouvelle valeur<br><br>
+- D'une classe décorée par le décorateur <b>@Pipe</b> ayant comme propriété obligatoire `name`, propriété qui servira à appeler le pipe dans un template HTML. <br/><br/>
+- Cette classe implémente la méthode <b>transform</b> qui prend en paramètre une valeur et éventuellement un tableau d'arguments <br/><br/>
+- Cette méthode <b>transform</b> effectue des transformations (ou pas) mais retourne toujours une nouvelle valeur<br/><br/>
 - Pensez à enregistrer votre Pipe dans le tableau déclaration de votre module (comme un composant)
 
 ##==##
-<!-- .slide: class="two-column-layout" -->
-# Matérialisons cela par du code
-
-##--##
+<!-- .slide: class="two-column with-code inconsolata" -->
+## Matérialisons cela par du code
 
 ```typescript
 // multiply-by-two.pipe.ts
@@ -29,10 +27,10 @@ export class MultiplyByTwoPipe implements PipeTransform {
   }
 }
 ```
-
 <!-- .element: class="medium-code" -->
 
 ##--##
+<!-- .slide: class="with-code inconsolata"> -->
 
 ```typescript
 // app.module.ts
@@ -41,23 +39,19 @@ import { MultiplyByTwoPipe } from './shared/multiply-by-two.pipe';
 
 
 @NgModule({
-  ...
   declarations: [
-      MultiplyByTwoPipe
+    MultiplyByTwoPipe
   ],
-  ...
 })
 export class AppModule {}
 ```
-
 <!-- .element: class="medium-code" -->
 
-<br>
+<br/>
 
 ```html
 <!-- app.component.html -->
 <p>{{ value | multiplyByTwo }}</p>
 ```
-
 <!-- .element: class="medium-code" -->
 

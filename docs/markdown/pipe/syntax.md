@@ -7,7 +7,7 @@
 <span> {{ expression | filter1 }}</span>
 ```
 <!-- .element: class="big-code" -->
-<br>
+<br/>
 
 - On peut chaîner les pipes
 
@@ -15,7 +15,7 @@
 <span> {{ expression | filter1 | filter2 }}</span>
 ```
 <!-- .element: class="big-code" -->
-<br>
+<br/>
 
 - On peut passer des paramètres aux pipes
 
@@ -55,5 +55,5 @@ Notes:
 {{ myDate | date:format }}
 ```
 <!-- .element: class="big-code" -->
-<br><br>
+<br/><br/>
 - Ce filtre accepte un format (string) en argument

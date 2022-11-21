@@ -10,7 +10,9 @@
 ##==##
 
 <!-- .slide -->
-# Angular et ses pipes déjà existants<br>
+# Angular et ses pipes déjà existants
+
+<br/>
 
 - currency
 - date

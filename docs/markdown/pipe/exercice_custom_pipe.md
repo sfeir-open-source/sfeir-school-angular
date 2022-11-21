@@ -1,13 +1,13 @@
 <!-- .slide: class="exercice" -->
-# Exercice 13 : 13-pipe-custom
-## Exercice
+# Lab 13 : 13-pipe-custom
+## Lab
 
-<br><br>
+<br/><br/>
 
 <b>Un readme est à votre disposition dans le dossier apps/13-pipe-custom</b>
 
 ##==##
 <!-- .slide: class="exercice full-center" -->
-# Exercice 13 : 13-pipe-custom
-## Solution
+# Lab 13 : 13-pipe-custom
+## Lab
 <b>apps/13-pipe-custom-solution</b>
