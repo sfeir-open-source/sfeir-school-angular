@@ -28,7 +28,7 @@ Comme le composant, la définition du module se fait à l'aide d'une classe et d
 ```typescript
 // app.module.ts
 @NgModule({
-  imports: [br/owserModule, ...],
+  imports: [browserModule, ...],
   declaration: [AppComponent, ...],
   exports: [],
   bootstrap: [AppComponent], // only in root module

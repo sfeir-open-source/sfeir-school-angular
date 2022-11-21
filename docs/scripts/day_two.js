@@ -1,20 +1,15 @@
 function providersSlide() {
-  return [
-    'providers/school_200.md',
-    'providers/transition_slide.md',
-    'providers/introduction.md',
-    'providers/exercice.md',
-  ];
-};
+  return ['providers/school_200.md', 'providers/transition_slide.md', 'providers/introduction.md', 'providers/exercice.md'];
+}
 
-function dependancyInjectionSlides() {
+function dependencyInjectionSlides() {
   return [
     'dependency-injection/transition_slide.md',
     'dependency-injection/basics.md',
     'dependency-injection/di_working.md',
     'dependency-injection/di_resolution.md',
   ];
-};
+}
 
 function pipeSlides() {
   return [
@@ -25,7 +20,7 @@ function pipeSlides() {
     'pipe/custom_pipe.md',
     'pipe/exercice_custom_pipe.md',
   ];
-};
+}
 
 function directiveSlides() {
   return [
@@ -35,7 +30,7 @@ function directiveSlides() {
     'directive/custom_directive.md',
     'directive/exercice_create_directive.md',
   ];
-};
+}
 
 function templateDrivenForms() {
   return [
@@ -45,9 +40,8 @@ function templateDrivenForms() {
     'forms/template-driven-forms/validation.md',
     'forms/template-driven-forms/exercice_validation.md',
     'forms/template-driven-forms/exercice_update_form.md',
-
   ];
-};
+}
 
 function reactiveFormSlides() {
   return [
@@ -58,15 +52,15 @@ function reactiveFormSlides() {
     'forms/reactive-forms/exercice_custom_validation.md',
     'forms/summary.md',
   ];
-};
+}
 
 export function dayTwoSlides() {
   return [
     ...providersSlide(),
-    ...dependancyInjectionSlides(),
+    ...dependencyInjectionSlides(),
     ...pipeSlides(),
     ...directiveSlides(),
     ...templateDrivenForms(),
     ...reactiveFormSlides(),
   ];
-};
+}

@@ -83,10 +83,8 @@ const ROUTES: Routes = [
 
 @NgModule({
     imports: [
-        ...
         RouterModule.forRoot(ROUTES),
     ],
-    ...
 })
 export class AppModule {}
 ```

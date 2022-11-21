@@ -117,7 +117,7 @@
 ##--##
 <!-- .slide: class="with-code inconsolata" -->
 
-<br/><br/>
+<br/><br/><br/>
 
 -   Constant
 
@@ -162,7 +162,7 @@
 
 
 ##--##
-<br/><br/>
+<br/><br/><br/>
 
 -   Référence à l'event grâce à $event
 
@@ -198,7 +198,7 @@
 ##--##
 <!-- .slide: class="with-code inconsolata" -->
 
-<br/><br/>
+<br/><br/><br/>
 
 -   Equivalent à
 

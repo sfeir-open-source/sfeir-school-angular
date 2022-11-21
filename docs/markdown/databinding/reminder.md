@@ -33,7 +33,7 @@ Certains éléments n'ont pas obligatoirement la propriété souhaitée (svg, co
 ```html
 <td [attr.colspan]="1+1">a cell!!</td>
 ```
-<!-- .element: class="big-code" -->
+<!-- .element: class="medium-code" -->
 
 <br/>
 
@@ -42,14 +42,7 @@ Certains éléments n'ont pas obligatoirement la propriété souhaitée (svg, co
 ```html
 <div [class.green]="isSpecial">special class</div>
 ```
-<!-- .element: class="big-code" -->
-
-```css
-.green {
-    color: green;
-}
-```
-<!-- .element: class="big-code" -->
+<!-- .element: class="medium-code" -->
 
 <br/>
 
@@ -58,4 +51,4 @@ Certains éléments n'ont pas obligatoirement la propriété souhaitée (svg, co
 ```html
 <div [style.color]="isSpecial ? 'red' : 'green'">Special class</div>
 ```
-<!-- .element: class="big-code" -->
+<!-- .element: class="medium-code" -->
