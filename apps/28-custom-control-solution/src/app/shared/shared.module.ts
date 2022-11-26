@@ -12,7 +12,7 @@ import { NaPipe } from './pipes/na.pipe';
 
 @NgModule({
   imports: [MaterialDesignModule, CommonModule, ReactiveFormsModule, RouterModule],
-  exports: [CommonModule, MaterialDesignModule, CardComponent, BadgeDirective, FormComponent],
+  exports: [MaterialDesignModule, CardComponent, BadgeDirective, FormComponent, CommonModule, ReactiveFormsModule],
   declarations: [CardComponent, NaPipe, BadgeDirective, FormComponent, DisplayDirective, CustomInputComponent],
 })
 export class SharedModule {}

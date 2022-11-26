@@ -33,8 +33,8 @@ export interface People {
 export interface PeopleForm {
   id?: string;
   photo: string;
-  firstname: string;
-  lastname: string;
-  email: string;
-  phone: string;
+  firstname: string | null;
+  lastname: string | null;
+  email: string | null;
+  phone: string | null;
 }

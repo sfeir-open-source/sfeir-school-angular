@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { map, Observable } from 'rxjs';
+import { EMPTY, map, Observable } from 'rxjs';
 import { PeopleService } from '../../core/providers/people.service';
 import { People } from '../../shared/models/people.model';
 
@@ -9,7 +9,7 @@ import { People } from '../../shared/models/people.model';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  person$: Observable<People>;
+  person$: Observable<People> = EMPTY;
 
   constructor(private readonly peopleService: PeopleService) {}
 

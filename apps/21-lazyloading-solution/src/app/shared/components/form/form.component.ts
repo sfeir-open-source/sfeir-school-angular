@@ -1,21 +1,23 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 import { People, PeopleForm } from '../../models/people.model';
-import { PersonForm, PersonFormGroup } from './form';
+import { PersonForm } from './form';
 
 @Component({
   selector: 'sfeir-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss'],
 })
-export class FormComponent implements OnInit {
+export class FormComponent implements OnChanges {
   @Input() person: People;
   @Output() cancel: EventEmitter<void> = new EventEmitter();
   @Output() save: EventEmitter<PeopleForm> = new EventEmitter();
-  personForm: FormGroup<PersonFormGroup>;
+  personForm = new PersonForm();
 
-  ngOnInit(): void {
-    this.personForm = new PersonForm(this.person);
+  ngOnChanges(changes: SimpleChanges): void {
+    const { person } = changes;
+    if (person.currentValue !== person.previousValue) {
+      this.personForm.patchValue(this.person);
+    }
   }
 
   onSave(): void {

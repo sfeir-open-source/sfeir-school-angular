@@ -1,4 +1,4 @@
-<mat-card class="mat-whiteframe-2dp">
+<mat-card appearance="outlined" class="mat-whiteframe-2dp">
   <mat-card-title-group>
     <img mat-card-mat-image [src]="person.photo" />
     <mat-card-title>
@@ -24,7 +24,7 @@
         <mat-icon>map</mat-icon>
       </a>
       <ng-container *sfeirDisplay="!person.isManager">
-        <a mat-button title="Edit" [routerLink]="['/people', person.id]">
+        <a mat-button title="Edit" [routerLink]="['/people', person.id]" href="/people/1">
           <mat-icon>create</mat-icon>
         </a>
         <a mat-button title="Delete" (click)="deletePerson(person)">

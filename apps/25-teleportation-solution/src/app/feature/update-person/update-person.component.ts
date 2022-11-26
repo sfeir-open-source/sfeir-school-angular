@@ -1,7 +1,7 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Observable, pluck } from 'rxjs';
+import { EMPTY, map, Observable } from 'rxjs';
 import { PeopleService } from '../../core/providers/people.service';
 import { People, PeopleForm } from '../../shared/models/people.model';
 
@@ -11,11 +11,11 @@ import { People, PeopleForm } from '../../shared/models/people.model';
   styleUrls: ['./update-person.component.scss'],
 })
 export class UpdatePersonComponent implements OnInit {
-  person$: Observable<People>;
+  person$: Observable<People> = EMPTY;
   constructor(private readonly route: ActivatedRoute, private readonly location: Location, private readonly peopleService: PeopleService) {}
 
   ngOnInit(): void {
-    this.person$ = this.route.data.pipe(pluck('personDetails'));
+    this.person$ = this.route.data.pipe(map(({ personDetails }) => personDetails));
   }
 
   updatePerson(person: PeopleForm): void {

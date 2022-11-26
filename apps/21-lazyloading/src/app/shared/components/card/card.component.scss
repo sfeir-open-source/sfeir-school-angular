@@ -2,13 +2,6 @@ h1 {
   text-align: center;
 }
 
-section {
-  display: flex;
-  flex-flow: row wrap;
-  align-items: center;
-  justify-content: center;
-}
-
 @media (min-width: 768px) {
   :host(.wide) mat-card,
   :host(.wide) mat-list-item {
@@ -16,8 +9,16 @@ section {
   }
 }
 
-mat-card,
-mat-list-item {
+mat-card mat-card-title-group {
+  padding: 0.5rem;
+  box-sizing: border-box;
+}
+
+mat-card-title-group mat-icon {
+  margin-left: 0px;
+}
+
+mat-card {
   color: rgba(0, 0, 0, 0.87);
   background-color: white;
   margin: 10px;
@@ -25,15 +26,7 @@ mat-list-item {
 }
 
 mat-card:hover {
-  box-shadow: 0 11px 15px -7px rgba(0, 0, 0, 0.2), 0 24px 38px 3px rgba(0, 0, 0, 0.14),
-    0 9px 46px 8px rgba(0, 0, 0, 0.12);
-}
-
-mat-list-item {
-  height: 22px;
-  padding: 0;
-  margin-left: -12px;
-  font-size: 14px;
+  box-shadow: 0 11px 15px -7px rgba(0, 0, 0, 0.2), 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12);
 }
 
 mat-card-title {
@@ -48,7 +41,6 @@ mat-card-title span {
 
 mat-card-subtitle.contact-info {
   display: flex;
-  margin-top: -7px;
   height: 20px;
 }
 
@@ -125,10 +117,6 @@ a.truncate {
   a.truncate {
     width: 190px;
   }
-}
-
-.mat-whiteframe-2dp {
-  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12);
 }
 
 img {
