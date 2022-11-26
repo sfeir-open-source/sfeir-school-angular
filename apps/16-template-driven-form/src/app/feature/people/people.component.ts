@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { BehaviorSubject, Observable, shareReplay } from 'rxjs';
+import { BehaviorSubject, EMPTY, Observable, shareReplay } from 'rxjs';
 import { PeopleService } from '../../core/providers/people.service';
 import { People } from '../../shared/models/people.model';
 import { AddPersonDialogComponent } from './components/add-person-dialog/add-person-dialog.component';
@@ -11,7 +11,7 @@ import { AddPersonDialogComponent } from './components/add-person-dialog/add-per
   styleUrls: ['./people.component.scss'],
 })
 export class PeopleComponent implements OnInit {
-  people$: Observable<Array<People>>;
+  people$: Observable<Array<People>> = EMPTY;
   view$: BehaviorSubject<'card' | 'list'> = new BehaviorSubject('card');
 
   constructor(private readonly peopleService: PeopleService, private readonly matDialogService: MatDialog) {}

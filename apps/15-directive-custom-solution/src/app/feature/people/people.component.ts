@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BehaviorSubject, Observable, shareReplay } from 'rxjs';
+import { BehaviorSubject, EMPTY, Observable, shareReplay } from 'rxjs';
 import { PeopleService } from '../../core/providers/people.service';
 import { People } from '../../shared/models/people.model';
 
@@ -9,7 +9,7 @@ import { People } from '../../shared/models/people.model';
   styleUrls: ['./people.component.scss'],
 })
 export class PeopleComponent implements OnInit {
-  people$: Observable<Array<People>>;
+  people$: Observable<Array<People>> = EMPTY;
   view$: BehaviorSubject<'card' | 'list'> = new BehaviorSubject('card');
 
   constructor(private readonly peopleService: PeopleService) {}

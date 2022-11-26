@@ -1,4 +1,5 @@
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ControlsFromInterface } from '../../models/common.model';
 import { PeopleForm } from '../../models/people.model';
 
 export interface PersonFormGroup {
@@ -10,7 +11,7 @@ export interface PersonFormGroup {
   phone: FormControl<string | null>;
 }
 
-export class PersonForm extends FormGroup<PersonFormGroup> {
+export class PersonForm extends FormGroup<ControlsFromInterface<PeopleForm>> {
   constructor(data?: PeopleForm) {
     super({
       id: new FormControl(null),
