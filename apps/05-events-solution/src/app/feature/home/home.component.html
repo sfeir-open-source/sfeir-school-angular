@@ -1,5 +1,5 @@
 <section>
-  <mat-card class="mat-whiteframe-2dp">
+  <mat-card appearance="outlined" class="mat-whiteframe-2dp">
     <mat-card-title-group>
       <img mat-card-mat-image [src]="person.photo" />
       <mat-card-title>
@@ -32,4 +32,4 @@
     </mat-card-content>
   </mat-card>
 </section>
-<button mat-fab color="accent"><i class="material-icons" (click)="getRandomPerson()">autorenew</i></button>
+<button mat-fab color="accent" (click)="getRandomPerson()"><i class="material-icons">autorenew</i></button>
