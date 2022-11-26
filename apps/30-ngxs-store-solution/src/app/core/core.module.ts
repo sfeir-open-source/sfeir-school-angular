@@ -1,4 +1,4 @@
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { NgxsModule } from '@ngxs/store';
 import { SharedModule } from '../shared/shared.module';
@@ -7,7 +7,7 @@ import { AuthorizationInterceptor } from './interceptors/authorization.intercept
 import { AppStore } from './store/app.store';
 
 @NgModule({
-  imports: [NgxsModule.forRoot([AppStore], { selectorOptions: { suppressErrors: true } }), HttpClientModule, SharedModule],
+  imports: [NgxsModule.forRoot([AppStore], { selectorOptions: { suppressErrors: true } }), SharedModule],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthorizationInterceptor, multi: true }],
   declarations: [HeaderComponent],
   exports: [HeaderComponent],

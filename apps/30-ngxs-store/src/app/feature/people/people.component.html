@@ -6,14 +6,17 @@
   </section>
   <section *ngSwitchCase="'list'">
     <mat-list>
-      <mat-list-item *ngFor="let person of people$ | async" class="mat-whiteframe-2dp mat-card">
-        <img mat-list-avatar src="{{ person.photo }}" />
-        <h3 mat-line>{{ person.firstname }} {{ person.lastname }}</h3>
-        <span [sfeirBadge]="person.isManager"></span>
-        <p mat-line>
-          <span> {{ person.entity }} </span> — <span>{{ person.email }} </span>
-        </p>
-      </mat-list-item>
+      <div *ngFor="let person of people$ | async" class="mat-whiteframe-2dp mat-card">
+        <img src="{{ person.photo }}" alt="person-image" />
+        <div class="list-information">
+          <h3>{{ person.firstname }} {{ person.lastname }}
+            <span class="sfeir-badge" [sfeirBadge]="person.isManager"></span>
+          </h3>
+          <p>
+            <span> {{ person.entity }} </span> — <span>{{ person.email }} </span>
+          </p>
+        </div>
+      </div>
     </mat-list>
   </section>
   <section class="buttons-fab">

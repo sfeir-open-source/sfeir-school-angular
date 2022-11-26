@@ -9,7 +9,6 @@ export class UpdateGuard implements CanActivate {
 
   canActivate(route: ActivatedRouteSnapshot): boolean | Promise<boolean> {
     const idPerson = route.paramMap.get('id');
-
     return UpdateGuard.patternPeopleId.test(idPerson) ? true : this.router.navigate(['home']);
   }
 }
