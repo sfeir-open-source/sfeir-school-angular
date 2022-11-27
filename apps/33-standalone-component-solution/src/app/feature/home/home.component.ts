@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { map, Observable } from 'rxjs';
 import { PeopleService } from '../../core/providers/people.service';
 import { People } from '../../shared/models/people.model';
@@ -11,14 +11,10 @@ import { SharedModule } from '../../shared/shared.module';
   standalone: true,
   imports: [SharedModule],
 })
-export class HomeComponent implements OnInit {
+export default class HomeComponent {
   private readonly peopleService: PeopleService = inject(PeopleService);
 
-  person$: Observable<People>;
-
-  ngOnInit(): void {
-    this.person$ = this.peopleService.getPeople().pipe(map(([firstPerson]) => firstPerson));
-  }
+  person$: Observable<People> = this.peopleService.getPeople().pipe(map(([firstPerson]) => firstPerson));
 
   getRandomPerson(): void {
     this.person$ = this.peopleService.getRandomPeople();

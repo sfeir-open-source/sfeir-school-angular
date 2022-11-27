@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { NgTemplateOutlet } from '@angular/common';
 import { Component, Input, TemplateRef } from '@angular/core';
 import { MatToolbar } from '@angular/material/toolbar';
 
@@ -7,7 +7,7 @@ import { MatToolbar } from '@angular/material/toolbar';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
   standalone: true,
-  imports: [CommonModule],
+  imports: [NgTemplateOutlet],
 })
 export class HeaderComponent {
   @Input() headerTemplate: TemplateRef<MatToolbar>;
