@@ -1,4 +1,4 @@
-import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { NO_ERRORS_SCHEMA, SimpleChange } from '@angular/core';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { People } from '../../models/people.model';
 import { PersonForm } from './form';
@@ -33,6 +33,7 @@ describe('FormComponent', () => {
 
   it('should create an instance of personForm with an existing person', () => {
     component.person = { id: 'Sfeir' } as People;
+    component.ngOnChanges({ person: new SimpleChange(null, component.person, true) });
     fixture.detectChanges();
     expect(component.personForm).toBeInstanceOf(PersonForm);
     expect(component.personForm.value.id).toBe('Sfeir');
