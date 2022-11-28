@@ -1,19 +1,19 @@
 <!-- .slide: class="with-code inconsolata" -->
 # La validation avec Template driven form
 
-- La validation se fait à l'aide des attributs html classique de validation:<br><br>
+- La validation se fait à l'aide des attributs html classique de validation:<br/><br/>
     - required
     - minLength
     - maxLength
     - pattern
     - ...
-<br><br>
+<br/><br/>
 
 Ok mais si un champ est requis en fonction d'un autre?
 <!-- .element: class="important" -->
-<br>
+<br/>
 Et bien on utilise la propriété liée à l'attribut
-<br>
+<br/>
 
 ```html
 <input type="text" name="lastname" [(ngModel)]="person.lastname"
@@ -24,7 +24,9 @@ Et bien on utilise la propriété liée à l'attribut
 ##==##
 
 <!-- .slide -->
-# Les différents états d'un contrôle<br>
+# Les différents états d'un contrôle
+
+<br/>
 
 - <b>control.pristine</b> : l’utilisateur n’a pas interagi avec le contrôle
 - <b>control.dirty</b> : l’utilisateur a déjà interagi avec le contrôle
@@ -36,17 +38,19 @@ Et bien on utilise la propriété liée à l'attribut
 ##==##
 
 <!-- .slide-->
-# Les différentes classes disponibles pour le style<br>
+# Les différentes classes disponibles pour le style<br/>
 
-- .ng-valid / .ng-invalid <br><br>
-- .ng-pristine / .ng-dirty<br><br>
-- .ng-pristine / .ng-dirty<br><br>
+- .ng-valid / .ng-invalid <br/><br/>
+- .ng-pristine / .ng-dirty<br/><br/>
+- .ng-pristine / .ng-dirty<br/><br/>
 - .ng-touched / .ng-untouched
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Gérer les erreurs<br>
+# Gérer les erreurs
+
+<br/>
 
 ```html
 <input type="text" name="user" ngModel #userRef="ngModel" required>    

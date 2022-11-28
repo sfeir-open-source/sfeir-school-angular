@@ -32,6 +32,8 @@ export class MultiplyByTwoPipe implements PipeTransform {
 ##--##
 <!-- .slide: class="with-code inconsolata"> -->
 
+<br/><br/><br/>
+
 ```typescript
 // app.module.ts
 import { NgModule } from '@angular/core';
