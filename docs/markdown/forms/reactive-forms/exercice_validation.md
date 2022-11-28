@@ -1,6 +1,6 @@
 <!-- .slide: class="exercice" -->
-# Exercice 19 : 19-reactive-form
-## Exercice
+# Lab 19 : 19-reactive-form
+## Lab
 
 <br><br>
 
@@ -8,6 +8,6 @@
 
 ##==##
 <!-- .slide: class="exercice full-center" -->
-# Exercice 19 : 19-reactive-form
-## Solution
+# Lab 19 : 19-reactive-form
+## Lab
 <b>apps/19-reactive-form-solution</b>
