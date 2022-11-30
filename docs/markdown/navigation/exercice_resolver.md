@@ -1,6 +1,6 @@
 <!-- .slide: class="exercice" -->
-# Exercice 23 : 23-resolvers
-## Exercice
+# Lab 23 : 23-resolvers
+## Lab
 
 <br><br>
 
@@ -9,6 +9,6 @@
 ##==##
 
 <!-- .slide: class="full-center exercice" -->
-# Exercice 23 : 23-resolvers
-## Solution
+# Lab 23 : 23-resolvers
+## Lab
 __apps/23-resolvers-solution__
