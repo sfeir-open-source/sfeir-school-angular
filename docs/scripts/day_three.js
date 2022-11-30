@@ -6,7 +6,7 @@ function lazyLoadingSlides() {
     'navigation/lazy_loading_route_definition.md',
     'navigation/lazy_loading_route_definition_child.md',
   ];
-};
+}
 
 function guardsSlides() {
   return [
@@ -17,7 +17,7 @@ function guardsSlides() {
     'navigation/exercice_lazyload_guards.md',
     'navigation/exercice_resolver.md',
   ];
-};
+}
 
 function interceptorsSlides() {
   return [
@@ -28,7 +28,7 @@ function interceptorsSlides() {
     'interceptors/context.md',
     'interceptors/exercice.md',
   ];
-};
+}
 
 function templatingSlides() {
   return [
@@ -39,7 +39,7 @@ function templatingSlides() {
     'templating/reference.md',
     'templating/exercice.md',
   ];
-};
+}
 
 function hostDirectivesSlides() {
   return [
@@ -48,7 +48,7 @@ function hostDirectivesSlides() {
     'directive/host_listener.md',
     'directive/exercice_host_binding_listener.md',
   ];
-};
+}
 
 function structuralDirectiveSlides() {
   return [
@@ -57,7 +57,7 @@ function structuralDirectiveSlides() {
     'directive/structural_definition.md',
     'directive/exercice_structural.md',
   ];
-};
+}
 
 function customFormControlSlides() {
   return [
@@ -66,17 +66,11 @@ function customFormControlSlides() {
     'forms/custom-control/setup.md',
     'forms/custom-control/exercice.md',
   ];
-};
-
-
+}
 
 function changeDetectionSlides() {
-  return [
-    'change-detection/transition_slide.md',
-    'change-detection/introduction.md',
-    'change-detection/change_detection_service.md',
-  ];
-};
+  return ['change-detection/transition_slide.md', 'change-detection/introduction.md', 'change-detection/change_detection_service.md'];
+}
 
 export function dayThreeSLides() {
   return [
@@ -89,5 +83,4 @@ export function dayThreeSLides() {
     ...customFormControlSlides(),
     ...changeDetectionSlides(),
   ];
-};
-
+}
