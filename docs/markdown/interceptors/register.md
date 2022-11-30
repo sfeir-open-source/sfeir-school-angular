@@ -7,7 +7,6 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from './token.interceptor';
 @NgModule({
   bootstrap: [AppComponent],
-  imports: [...],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,

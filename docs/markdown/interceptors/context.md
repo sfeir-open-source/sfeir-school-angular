@@ -1,24 +1,24 @@
 # Contexte d'un interceptor
-<br><br>
+<br/><br/>
 
-- Notion introduite avec la version 12 d'Angular <br><br>
-- Passer des metadata à un interceptor<br><br>
-- Plus de hack<br><br>
+- Notion introduite avec la version 12 d'Angular <br/><br/>
+- Passer des metadata à un interceptor<br/><br/>
+- Plus de hack<br/><br/>
 - __Exemple__ dire qu'une requête est 'cachable'
 
 ##==##
 
 # Propriété du contexte
-<br><br>
+<br/><br/>
 
-- mutable<br><br>
+- mutable<br/><br/>
 - partagé entre les différentes requêtes clonées
  
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
 # Un contexte est un simple token
-<br><br>
+<br/><br/>
 
 ```typescript
 export const CACHABLE = new  HttpContextToken<boolean>(() => false);
@@ -31,17 +31,16 @@ export const CACHABLE = new  HttpContextToken<boolean>(() => false);
 # Modifier le contexte
 
 __La modification d'un contexte ou le setter se fait à l'aide de la classe HttpContext__
-
-<br><br>
+<br/><br/>
 
 ```typescript
 new HttpContext().set(CACHABLE, true)
 ``` 
-<!-- .element: class="big-code" -->
-<br><br>
+<!-- .element: class="medium-code" -->
+
 
 ```typescript
-@Injectable({ providedIn: CoreModule })
+@Injectable({ providedIn: 'root' })
 export class UserService {
   constructor(private readonly http: HttpClient) {}
 
@@ -50,18 +49,16 @@ export class UserService {
   }
 }
 ```
-<!-- .element: class="big-code" -->
+<!-- .element: class="medium-code" -->
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
 # Récupérer le contexte dans notre interceptor
 
-<br><br>
 
 ```typescript
 export class CacheInterceptor implements HttpInterceptor {
-
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any> | User> {
     if (req.context.get(CACHABLE) === true) {
       return of(new HttpResponse({ status: 200, body: MOCK_PERSON }));
@@ -75,10 +72,9 @@ export class CacheInterceptor implements HttpInterceptor {
 ##==##
 
 # La classe HttpContext
-<br><br>
 
-- __set__ : permet de setter un token du contexte<br><br>
-- __get__ : récupère la valeur du token du contexte<br><br>
-- __delete__ : supprime le token du contexte<br><br>
-- __keys__ : récupère tous les tokens du contexte<br><br>
+- __set__ : permet de setter un token du contexte<br/><br/>
+- __get__ : récupère la valeur du token du contexte<br/><br/>
+- __delete__ : supprime le token du contexte<br/><br/>
+- __keys__ : récupère tous les tokens du contexte<br/><br/>
 

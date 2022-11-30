@@ -2,9 +2,9 @@
 
 # Interceptors: Définition
 
--   Intercepte une requête<br><br>
--   Renvoie la requête retravaillée<br><br>
--   Service Angular implémentant HttpInterceptor<br><br>
+-   Intercepte une requête<br/><br/>
+-   Renvoie la requête retravaillée<br/><br/>
+-   Service Angular implémentant HttpInterceptor<br/><br/>
 -   S'exécute pour chaque requête
 
 ##==##
@@ -22,8 +22,9 @@ export class MyInterceptor implements HttpInterceptor {
     }
 }
 ```
-
 <!-- .element: class="big-code" -->
+
+<br/><br/>
 
 -   Si l'on souhaite modifier la requête partante, il faut cloner la requête à l'aide de la méthode clone (HttpRequest)
 -   Si l'on souhaite modifier la réponse, pensez à utiliser les Observables et `instanceOf`
