@@ -1,6 +1,6 @@
 <!-- .slide: class="exercice" -->
-# Exercice 25 : 25-teleportation
-## Exercice
+# Lab 25 : 25-teleportation
+## Lab
 
 <br><br>
 
@@ -9,6 +9,6 @@
 ##==##
 
 <!-- .slide: class="full-center exercice" -->
-# Exercice 25 : 25-teleportation
-## Solution
+# Lab 25 : 25-teleportation
+## Lab
 __apps/28-templating-solution__

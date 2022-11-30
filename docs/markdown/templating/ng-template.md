@@ -1,10 +1,9 @@
 <!-- .slide class="inconsolata with-code" -->
-
 # La directive ng-template
 
 - Permet de définir un template en Angular
 - Type du template : TemplateRef<T>
-  <br><br>
+<br/><br/>
 
 ```html
 
@@ -15,16 +14,12 @@
     <div>Loading ...</div>
 </ng-template>
 ```
-
 <!-- .element: class="big-code" -->
-<br>
+<br/>
 
 - Loading ici ne s'affichera jamais
-
-<br><br>
-
 - On vient de définir un template mais on ne l'utilise pas
-  <br><br>
+<br/><br/>
 
 Mais alors comment l'utilise t'on ?
 <!-- .element: class="bold important" -->
@@ -36,14 +31,12 @@ Notes:
 ##==##
 
 <!-- .slide: class="inconsolata with-code" -->
-
 # Utilisation de la directive ng-template
 
 - S'utilise principalement avec les directives structurelles (*ngIf, *ngFor, ...)
-  <br><br>
+<br/><br/>
 
 ```html
-
 <div *ngIf="lessons.length > 0; else loadingTemplate">
     ...
 </div>
@@ -51,18 +44,16 @@ Notes:
     <div>Loading ...</div>
 </ng-template>
 ```
-
 <!-- .element: class="big-code" -->
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-
 # Utilisation de la directive ng-template
 
 - En fait, les directives structurelles (*ngIf, *ngFor, ...) sont elles-mêmes des 'ng-template' !
-  <br><br>
-  Par exemple :
+<br/><br/>
+Par exemple :
 
 ```html
 
@@ -73,12 +64,10 @@ Notes:
 
 <!-- .element: class="big-code" -->
 est un raccourci pour :
-
 ```html
 
 <ng-template [ngIf]="condition">
     <div>...</div>
 </ng-template>
 ```
-
 <!-- .element: class="big-code" -->
