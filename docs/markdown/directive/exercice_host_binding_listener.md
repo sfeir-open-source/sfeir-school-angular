@@ -1,6 +1,6 @@
 <!-- .slide: class="exercice" -->
-# Exercice 26 : 26-hostbinding-hostlistener
-## Exercice
+# Lab 26 : 26-hostbinding-hostlistener
+## Lab
 
 <br><br>
 
@@ -9,6 +9,6 @@
 ##==##
 
 <!-- .slide: class="full-center exercice" -->
-# Exercice 26 : 26-hostbinding-hostlistener
-## Solution
+# Lab 26 : 26-hostbinding-hostlistener
+## Lab
 __apps/26-hostbinding-hostlistener-solution__

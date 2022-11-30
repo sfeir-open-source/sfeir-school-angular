@@ -1,4 +1,4 @@
-<!-- .slide: class="transition-bg-grey-1 underline" -->
+<!-- .slide: class="transition-bg-sfeir-2" -->
 # Host Binding
 
 ##==##
@@ -6,8 +6,8 @@
 <!-- .slide -->
 # Host binding: Définition
 
-- Permet de setter une propriété sur l'élément courant de la directive<br><br>
-- Décorateur @HostBinding()<br><br>
+- Permet de setter une propriété sur l'élément courant de la directive<br/><br/>
+- Décorateur @HostBinding()<br/><br/>
 - Watcher sur les propriétés du host et mise à jour automatique
 
 ##==##
