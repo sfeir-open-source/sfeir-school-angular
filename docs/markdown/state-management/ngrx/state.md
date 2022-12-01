@@ -2,7 +2,7 @@
 
 - Mapping clé-valeur
 - Récupérer grâce à nos selectors
-- Retourne toujours un Observable <br><br>
+- Retourne toujours un Observable <br/><br/>
 
 ##==##
 <!-- .slide: class="with-code inconsolata" -->
@@ -27,4 +27,4 @@ export const initialState = {
 Notes:
 - la première interface est l'interface de mon state
 - la seconde celle de mon enregistrement root de mon store => StoreModule.forRoot({ people: fromPeopleReducer.reducer }). Ici on enregistre un store global nommé people qui a pour valeur l'object { people, search }
-- la constante consiste en mon inital state
+- la constante consiste en mon initial state

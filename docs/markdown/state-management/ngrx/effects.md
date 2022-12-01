@@ -1,13 +1,14 @@
 <!-- .slide: class="with-code inconsolata" -->
 # NGRX : Effects (Installation)
 Les effects sont dans un package différent , il faut donc les installer également (si on souhaite les utiliser)
-<br><br>
+<br/><br/>
 
 ```sh
 npm install --save @ngrx/effects // ng add @ngrx/effects
 ```
 <!-- .element: class="big-code" -->
-<br><br>
+
+<br/><br/>
 
 ```typescript
 @NgModule({
@@ -26,7 +27,8 @@ npm install --save @ngrx/effects // ng add @ngrx/effects
 - Créer une action (mais ne pas l'enregistrer dans le reducer)
 - Créer un service classique Angular
 - Utiliser la méthode createEffect ou le décorateur __@Effect__
-<br>
+
+<br/>
 
 ```typescript
 @Injectable()
@@ -38,7 +40,7 @@ export class MovieEffects {
     ofType('[Movies Page] Load Movies'),
     mergeMap(() => this.moviesService.getAll()
       .pipe(
-        map(movies => movieLoadSucces({ movies })),
+        map(movies => movieLoadSuccess({ movies })),
         catchError(() => EMPTY)
       ))
     )

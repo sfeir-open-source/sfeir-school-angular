@@ -1,6 +1,6 @@
 <!-- .slide: class="exercice" -->
-# Exercice 31 : 31-ngrx-store
-## Exercice
+# Lab 31 : 31-ngrx-store
+## Lab
 
 <br><br>
 
@@ -9,6 +9,6 @@
 ##==##
 
 <!-- .slide: class="full-center exercice" -->
-# Exercice 31 : 31-ngrx-store
-## Solution
+# Lab 31 : 31-ngrx-store
+## Lab
 __apps/31-ngrx-store-solution__
