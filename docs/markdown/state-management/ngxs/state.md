@@ -3,28 +3,26 @@
 # State : définition
 
 Le **State** est une classe préfixée du décorateur **@State** qui définit notre state container.
-<br><br>
+<br/><br/>
 
 ```typescript
 import { State } from '@ngxs/store';
 import { AnimalService } from '@core/providers/animal.service';
 
 @State<string[]>({
-    name: 'animals',
-    defaults: []
+   name: 'animals',
+  defaults: []
 })
 @Injectable()
 export class AnimalsState {
     constructor(private readonly animalService: AnimalService) {}
 }
 ```
-
 <!-- .element: class="big-code" -->
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-
 # State : configuration
 
 ```typescript
@@ -33,10 +31,11 @@ export class AnimalsState {
   defaults: []
 })
 ```
-
 <!-- .element: class="big-code" -->
 
-Ici notre state indique: <br>
+<br/><br/>
+
+Ici notre state indique: <br/>
 
 - qu'il s'agit d'un tableau de strings: **<string[]>**
 - que le nom de notre state est 'animals' (name est une prop obligatoire)
@@ -53,68 +52,65 @@ Rappel: dans notre fichier **todos.actions.ts** nous avions ce contenu
 
 ```typescript
 export namespace Todo {
-    export class Add {
-        static readonly type = '[Todo] Add';
-        constructor(public payload: any) {}
-    }
-    export class Edit {
-        static readonly type = '[Todo] Edit';
-        constructor(public payload: any) {}
-    }
-    export class FetchAll {
-        static readonly type = '[Todo] Fetch All';
-    }
-    export class Delete {
-        static readonly type = '[Todo] Delete';
-        constructor(public id: number) {}
-    }
+  export class Add {
+    static readonly type = '[Todo] Add';
+      constructor(public payload: any) {}
+  }
+  export class Edit {
+    static readonly type = '[Todo] Edit';
+    constructor(public payload: any) {}
+  }
+  export class FetchAll {
+    static readonly type = '[Todo] Fetch All';
+  }
+  export class Delete {
+    static readonly type = '[Todo] Delete';
+    constructor(public id: number) {}
+  }
 }
 ```
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-
 # State : déclarer nos actions
 
 ```typescript
 import { State, Action, StateContext } from '@ngxs/store';
 import { Todo } from './todo.action';
 @State<string[]>({
-    name: 'todo',
-    default: []
+  name: 'todo',
+  default: []
 })
 @Injectable()
 export class TodoState {
-    constructor() {}
-    @Action(Todo.Add)
-    addTodo(ctx: StateContext<string[]>, action: Todo.Add): void {
-        const state: strings[] = ctx.getState();
-        ctx.setState([...state, action.payload]);
-    }
+  constructor() {}
+  @Action(Todo.Add)
+  addTodo(ctx: StateContext<string[]>, action: Todo.Add): void {
+    const state: strings[] = ctx.getState();
+    ctx.setState([...state, action.payload]);
+  }
 }
 ```
-
 <!-- .element: class="big-code" -->
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-
 # State : Déclarer nos actions
 
 - Pour résumer une action se caractérise par:
-    - une fonction prenant en paramètre le contexte de type **StateContext** et le payload
-    - le décorateur **@Action**
+  - une fonction prenant en paramètre le contexte de type **StateContext** et le payload
+  - le décorateur **@Action**
 
-<br><br>
+<br/><br/>
 
 - Le **StateContext** possède les méthodes suivantes:
-    - setState: pour setter un nouvel état du state dans son entièreté
-    - getState: récupère le state dans son entièreté
-    - patchState: modifier partiellement le state
-    - dispatch: lance une nouvelle action
+  - setState: pour setter un nouvel état du state dans son entièreté
+  - getState: récupère le state dans son entièreté
+  - patchState: modifier partiellement le state
+  - dispatch: lance une nouvelle action
 
 Notes:
--   coup de puce: penser au spread opérator pour récupérer directement la méthode qui vous interesse
+-   coup de puce: penser au spread operator pour récupérer directement la méthode qui vous intéresse
 -   il également possible d'utiliser des librairies tiers comme immer permettant de rendre chaque modification immutable (https://immerjs.github.io/immer/docs/introduction)
