@@ -140,6 +140,6 @@ bootstrapApplication(AppComponent, { providers: [
 
 Non à l'avenir l'équipe Angular est persuadée que tout peut se résoudre grâce à l'injection. <br /><br/>
 
-- __withHttpClient__ <br/> <br/>
-- __withRoutes__ <br/><br/>
-- __withAnimations__
+- __provideHttpClient__ <br/> <br/>
+- __provideRouter__ <br/><br/>
+- __provideAnimations__
