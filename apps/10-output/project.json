@@ -1,4 +1,5 @@
 {
+  "name": "10-output",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "sourceRoot": "apps/10-output/src",
@@ -77,7 +78,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/10-output"],
+      "outputs": ["{workspaceRoot}/coverage/apps/10-output"],
       "options": {
         "jestConfig": "apps/10-output/jest.config.ts",
         "passWithNoTests": true

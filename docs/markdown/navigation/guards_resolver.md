@@ -1,13 +1,13 @@
 <!-- .slide: class="sfeir-basic-slide" -->
-# Fonctionnement des guards de préfetching<br>
+# Fonctionnement des guards de préfetching
 
-- Optimiser le rendu de page<br><br>
-- Renvoie un Observable, une Promise ou des données brutes<br><br>
+- Optimiser le rendu de page<br/><br/>
+- Renvoie un Observable, une Promise ou des données br/utes<br/><br/>
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Un exemple plus parlant (le résolver définition)
+# Un exemple plus parlant (deprecated)
 
 ```typescript
 @Injectable({ providedIn: CoreModule })
@@ -23,11 +23,23 @@ export class UserResolver implements Resolve<User[]> {
 
 ##==##
 
+<!-- .slide: class="sfeir-basic-slide with-code inconsolata" -->
+# Un exemple est plus parlant
+
+```typescript
+export function UserResolver(): Observable<User> {
+  return inject(UserService).getUser();
+}
+```
+<!-- .element: class="big-code" -->
+
+##==##
+
 <!-- .slide: class="with-code inconsolata" -->
 # Un exemple plus parlant (enregistrement du resolver)
 
 ```typescript
-{ path: 'users', component: TopComponent, resolve: { users: UserResolver } }
+export const APP_ROUTES: Routes = { path: 'users', component: TopComponent, resolve: { users: UserResolver } }
 ```
 <!-- .element: class="big-code" -->
 
@@ -39,11 +51,11 @@ export class UserResolver implements Resolve<User[]> {
 ```typescript
 @Component({ ... })
 class UsersComponent implements ngOnInit {
-    constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute) {}
 
-    ngOnInit() {
-        this.route.data.subscribe((data: { users: User[] }) => this.users = data.users);
-    }
+  ngOnInit() {
+    this.route.data.subscribe((data: { users: User[] }) => this.users = data.users);
+  }
 }
 ```
 <!-- .element: class="big-code" -->

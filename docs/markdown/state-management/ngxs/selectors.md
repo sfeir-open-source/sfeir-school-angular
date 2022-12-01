@@ -1,11 +1,10 @@
 <!-- .slide-->
-
 # Selectors : Définition
 
-Les sélecteurs sont des fonctions qui récupèrent une partie ou totalement notre state<br><br>
-Dans **NGXS** il existe deux méthodes pour séléctionner notre state (ou partie de notre state):<br><br>
+Les sélecteurs sont des fonctions qui récupèrent une partie ou totalement notre state<br/><br/>
+Dans **NGXS** il existe deux méthodes pour sélectionner notre state (ou partie de notre state):<br/><br/>
 
--   méthode select du store<br><br>
+-   méthode select du store<br/><br/>
 -   le décorateur **@Select**
 
 ##==##
@@ -35,12 +34,11 @@ export class ZooComponent {
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-
 # Selectors : Select Function
 
-Le store possède une méthode **select** qui peut être utile lorsque l'on ne peut pas déclarer statiquement un sélecteur avec le décorateur **@Select**.<br>
+Le store possède une méthode **select** qui peut être utile lorsque l'on ne peut pas déclarer statiquement un sélecteur avec le décorateur **@Select**.<br/>
 Attention cette méthode renvoie un Observable
-<br><br>
+<br/><br/>
 
 ```typescript
 import { Store } from '@ngxs/store';
@@ -52,7 +50,6 @@ export class ZooComponent {
   }
 }
 ```
-
 <!-- .element: class="big-code" -->
 
 Notes:
@@ -63,33 +60,30 @@ Notes:
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-
 # Selectors : Memoized Selectors
 
-Lorsque l'on souhaite utiliser un sélecteur dans différents endroits de son application ou encore avoir une logique de sélectors plus compliquée qu'un simple renvoi de state courant, les **Memoized Selectors** sont vos alliés.
+Lorsque l'on souhaite utiliser un sélecteur dans différents endroits de son application ou encore avoir une logique de sélecteur plus compliquée qu'un simple renvoi de state courant, les **Memoized Selectors** sont vos alliés.
 
 ```typescript
 import { State, Selector } from '@ngxs/store';
 
 @State<string[]>({
-    name: 'animals',
-    defaults: []
+  name: 'animals',
+  defaults: []
 })
 @Injectable()
 export class ZooState {
-    @Selector()
-    static pandas(state: string[]) {
-        return state.filter(s => s.indexOf('panda') > -1);
-    }
+  @Selector()
+  static pandas(state: string[]) {
+    return state.filter(s => s.indexOf('panda') > -1);
+  }
 }
 ```
-
 <!-- .element: class="big-code" -->
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-
 # Selectors : Memoized Selectors
 
 ```typescript
@@ -102,5 +96,4 @@ export class AppComponent {
   this.pandas$ = this.store.select(ZooState.pandas);
 }
 ```
-
 <!-- .element: class="big-code" -->

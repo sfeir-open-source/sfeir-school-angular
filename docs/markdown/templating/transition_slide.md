@@ -1,3 +1,2 @@
-<!-- .slide: class="transition underline" -->
-
+<!-- .slide: class="transition" -->
 # Les directives de templating en Angular

@@ -1,5 +1,7 @@
 <!-- .slide: class="with-code inconsolata" -->
-# La résolution par valeur<br>
+# La résolution par valeur
+
+<br/>
 
 ```typescript
 providers: [ { provide: V8, useValue: 8 }]
@@ -40,7 +42,9 @@ providers: [ V8, { provide: V8Engine, useExisting: V8 } ]
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# La résolution par factory: useFactory<br>
+# La résolution par factory: useFactory
+
+<br/>
 
 ```typescript
 export const function createEngineFactory(dep: V8Engine) {

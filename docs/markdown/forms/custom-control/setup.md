@@ -1,9 +1,8 @@
 <!-- .slide: class="with-code inconsolata" -->
-
 # Enregistrer son composant dans le service NG_VALUE_ACCESSOR
 
 -   NG_VALUE_ACCESSOR est un service global donnée par @angular/forms
-    <br><br>
+  <br/><br/>
 
 ```typescript
 @Component({
@@ -16,11 +15,11 @@
 
 <!-- .element: class="big-code" -->
 
-<br><br>
+<br/><br/>
 Ouhlà!! D'où sort tout ça ?
 
 <!-- .element: class="center important" -->
-<br>
+<br/>
 Notes:
 - Ici on pousse le component SfeirDropDownComponent dans le provider NG_VALUE_ACCESSOR grâce à provide: NG_VALUE_ACCESSOR
 - multi: true permet de préciser qu'il peut y avoir plusieurs composants qui vont utiliser NG_VALUE_ACCESSOR
@@ -31,12 +30,12 @@ Notes:
 # Pourquoi utiliser forwardRef ?
 
 -   Fait référence à quelque chose qui n'est pas définie
-    <br><br><br>
+    <br/><br/><br/>
 
 Heu ça veut dire que la class SfeirDropDownComponent n'est pas définie ?
 
 <!-- .element: class="center important"-->
-<br>
+<br/>
 Et bien non ! Les classes ne sont pas au 'top' du runtime JS, ce qui insinue que dans les métadata du décorateur @Component, la classe n'est pas définie.
 
 Notes:
@@ -63,9 +62,9 @@ Notes:
 
 # WriteValue: modèle -> vue
 
--   Ecrit une valeur dans l'élément. Cette méthode est appelée :
-    -   lors de l'instanciation d'un nouveau FormControl
-    -   quand on appelle la méthode patchValue/setValue
+-  Ecrit une valeur dans l'élément. Cette méthode est appelée :
+  -   lors de l'instanciation d'un nouveau FormControl
+  -   quand on appelle la méthode patchValue/setValue
 
 ##==##
 
@@ -92,7 +91,7 @@ export class SfeirDropDownComponent implements ControlValueAccessor {
 }
 ```
 
-<!-- .element: class="big-code" -->
+<!-- .element: class="medium-code" -->
 
 ##==##
 
@@ -118,4 +117,4 @@ export class SfeirDropDownComponent implements ControlValueAccessor {
 }
 ```
 
-<!-- .element: class="big-code" -->
+<!-- .element: class="medium-code" -->

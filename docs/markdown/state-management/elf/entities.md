@@ -3,7 +3,7 @@
 
 Les entités sont un package à part dans Elf: **@ngneat/elf-entities**
 
-<br><br>
+<br/><br/>
 
 ```typescript
 npm install @ngneat/elf-entities
@@ -14,11 +14,11 @@ npm install @ngneat/elf-entities
 
 # Qu'est ce qu'une entité réellement ?
 
-<br><br>
+<br/><br/>
 
 - Pour les personnes qui viennent du monde NoSql, il s'agit d'un **document** dans une collection
 
-<br><br>
+<br/><br/>
 
 - Pour les personnes qui viennent du monde Sql, il s'agit d'une **ligne** dans une table
 
@@ -45,7 +45,7 @@ const appStore = createStore({ name: 'APP_STORE' }, withEntities<People>());
 
 # Sélecteurs et mutations sur les entités
 
-<br><br>
+<br/><br/>
 
 Il existe de nombreux sélecteurs sur les entités et il en est de même pour les mutations
 

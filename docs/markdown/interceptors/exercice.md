@@ -1,6 +1,6 @@
 <!-- .slide: class="exercice" -->
-# Exercice 24 : 24-interceptor
-## Exercice
+# Lab 24 : 24-interceptor
+## Lab
 
 <br><br>
 
@@ -9,8 +9,8 @@
 ##==##
 
 <!-- .slide: class="full-center exercice" -->
-# Exercice 24 : 24-interceptor
-## Solution
+# Lab 24 : 24-interceptor
+## Lab
 __apps/24-interceptor-solution__
 
 

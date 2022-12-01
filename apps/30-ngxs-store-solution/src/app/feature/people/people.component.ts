@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Store } from '@ngxs/store';
-import { BehaviorSubject, filter, Observable, shareReplay, switchMap } from 'rxjs';
+import { BehaviorSubject, EMPTY, filter, Observable, shareReplay, switchMap } from 'rxjs';
 import { PeopleService } from '../../core/providers/people.service';
 import { AppStore, SetSearch } from '../../core/store/app.store';
 import { People } from '../../shared/models/people.model';
@@ -13,8 +13,8 @@ import { AddPersonDialogComponent } from './components/add-person-dialog/add-per
   styleUrls: ['./people.component.scss'],
 })
 export class PeopleComponent implements OnInit {
-  people$: Observable<Array<People>>;
-  search$: Observable<string>;
+  people$: Observable<Array<People>> = EMPTY;
+  search$: Observable<string> = EMPTY;
   view$: BehaviorSubject<'card' | 'list'> = new BehaviorSubject('card');
 
   constructor(private readonly peopleService: PeopleService, private readonly matDialogService: MatDialog, private readonly store: Store) {}

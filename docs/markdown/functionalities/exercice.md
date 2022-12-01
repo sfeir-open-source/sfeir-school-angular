@@ -1,6 +1,6 @@
 <!-- .slide: class="exercice" -->
-# Exercice 08 : 08-ng-for
-## Exercice
+# Lab 08 : 08-ng-for
+## Lab
 
 <b>Un readme est à votre disposition dans le dossier apps/08-ng-for</b>
 <!-- .element: class="full-center" -->
@@ -16,8 +16,8 @@
 ##==##
 
 <!-- .slide: class="exercice full-center" -->
-# Exercice 08 : 08-ng-for
-## Solution
+# Lab 08 : 08-ng-for
+## Lab
 <b>steps/08-ng-for-solution</b>
 
 

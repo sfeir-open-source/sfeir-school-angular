@@ -5,17 +5,14 @@
 - Un décorateur <b>@Injectable</b>
 
 ```typescript
-@Injectable({
-    providedIn: 'root'
-})
+@Injectable()
 export class TodoService {
-    constructor() {
-        this.name = 'Hello';
-    }
-
-    getName() {
-        return this.name;
-    }
+  constructor() {
+    this.name = 'Hello';
+  }
+  getName() {
+    return this.name;
+  }
 }
 ```
 
@@ -40,15 +37,14 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class TodoService {
-    name: string;
+  name: string;
 
-    constructor() {
-        this.name = 'Hello';
-    }
-
-    getName() {
-        return this.name;
-    }
+  constructor() {
+      this.name = 'Hello';
+  }
+  getName() {
+      return this.name;
+  }
 }
 ```
 
@@ -63,9 +59,8 @@ import { TodoService, AppComponent } from './shared/';
 import { NgModule } from '@angular/core';
 
 @NgModule({
-    declarations: [AppComponent],
-    providers: [TodoService],
-    ...
+  declarations: [AppComponent],
+  providers: [TodoService],
 })
 export class AppModule {}
 ```
@@ -82,9 +77,9 @@ import { TodoService } from './shared/';
 
 @Component({ ... })
 export class AppComponent {
-    constructor(private readonly todoService: TodoService) {
-      this.name = this.todoService.getName();
-    }
+  constructor(private readonly todoService: TodoService) {
+    this.name = this.todoService.getName();
+  }
 }
 ```
 
@@ -105,11 +100,11 @@ export class AppComponent {
 // todo.service.ts
 @Injectable()
 export class TodoService {
-    constructor() {}
+  constructor() {}
 
-    get Name(): string {
-        return 'SFEIR';
-    }
+  get name(): string {
+    return 'SFEIR';
+  }
 }
 ```
 
@@ -122,14 +117,14 @@ export class TodoService {
 ```typescript
 // app.component.ts
 @Component({
-    ...
-    providers: [TodoService],
+  providers: [TodoService],
 })
 export class AppComponent {
-    constructor(private readonly todoService: TodoService) {
-        console.info(todoService.name); // SFEIR
-    }
+  constructor(private readonly todoService: TodoService) {
+    console.info(todoService.name); // SFEIR
+  }
 }
 ```
 
 <!-- .element: class="big-code" -->
+      

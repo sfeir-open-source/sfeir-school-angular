@@ -9,7 +9,7 @@
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Un exemple plus parlant
+# Un exemple plus parlant (deprecated)
 ```typescript
 @Injectable({
   providedIn: CoreModule,
@@ -35,6 +35,26 @@ export class LoginGuards implements CanLoad {
 
 ##==##
 
+<!-- .slide: class="sfeir-basic-slide with-code inconsolata" -->
+# Un exemple plus parlant
+
+```typescript
+export function loginGuard(next: Route, segments: UrlSegment) {
+  const authentificationService = inject(AuthentificationService);
+  return this.authentificationService.verifyToken()
+    .pipe(
+      map(() => true),
+      catchError(() => {
+        this.router.navigate(['/login']);
+        return of(false);
+      }),
+    );
+}
+```
+<!-- .element: class="big-code" -->
+
+##==##
+
 <!-- .slide: class="with-code inconsolata" -->
 # Un exemple plus parlant
 
@@ -42,7 +62,8 @@ Une fois créé, le guard s'enregistre de la manière suivante dans le tableau d
 <br><br>
 
 ```typescript
-{ path: 'dashboard', canLoad: [LoginGuards], loadChildren: () =>
+export const APP_ROUTES: Routes = {
+  path: 'dashboard', canLoad: [LoginGuards], loadChildren: () =>
     import('app/feature/dashboard/dashboard.module').then(m => m.DashboardModule)
 }
 ```

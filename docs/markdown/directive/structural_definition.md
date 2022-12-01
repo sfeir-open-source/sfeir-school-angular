@@ -19,13 +19,13 @@
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# *ngFor en profondeur<br>
+# *ngFor en profondeur
 
 ```html
 <div *ngFor="let hero of heroes; let odd = odd; index as i"></div>
 ```
 <!-- .element: class="big-code" -->
-<br><br>
+<br/><br/>
 
 ```html
 <ng-template let-hero [ngForOf]="heroes" let-odd="odd" let-i="index"></ng-template>
@@ -35,10 +35,9 @@
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide" -->
-
 # Récapitulatif de la grammaire
 <span class="bold important">*:prefix="( :let | :expression ) (';' | ',')? ( :let | :as | :keyExp )*"</span>
-<br><br><br>
+<br/><br/><br/>
 <table>
     <t-body>
         <tr>

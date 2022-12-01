@@ -1,23 +1,23 @@
 <!-- .slide -->
 # Les méthodes du service HttpClient
-HttpClient vous fournit notamment les méthodes suivantes:<br><br>
+HttpClient vous fournit notamment les méthodes suivantes:<br/><br/>
 
-- this.http.get(url, options)<br><br>
-- this.http.post(url, data, options)<br><br>
-- this.http.put(url, data, options)<br><br>
-- this.http.patch(url, data, options)<br><br>
-- this.http.delete(url, options)<br><br>
+- this.http.get(url, options)<br/><br/>
+- this.http.post(url, data, options)<br/><br/>
+- this.http.put(url, data, options)<br/><br/>
+- this.http.patch(url, data, options)<br/><br/>
+- this.http.delete(url, options)<br/><br/>
 - ...
 
 ##==##
 <!-- .slide: class="with-code inconsolata" -->
 # L'envoi de données avec POST/PUT/PATCH
 
-- Le format des données doit être obligatoirement au format JSON<br><br>
-- le troisième argument est réservé pour les options des requêtes (headers, paramètres...)<br><br>
+- Le format des données doit être obligatoirement au format JSON<br/><br/>
+- le troisième argument est réservé pour les options des requêtes (headers, paramètres...)<br/><br/>
 
 ```typescript
-http.post(
+http.post<T>(
    url,
    data,
    {headers: new HttpHeaders().set('Authorization', 'my-auth-token')}
@@ -30,11 +30,11 @@ http.post(
 <!-- .slide: class="with-code inconsolata" -->
 # Déclencheur et type de retour
 
-- Chaque méthode renvoie un observable<br><br>
-- La requête vers le serveur est envoyée seulement si l'on souscrit à cet Observable<br><br>
+- Chaque méthode renvoie un observable<br/><br/>
+- La requête vers le serveur est envoyée seulement si l'on souscrit à cet Observable<br/><br/>
 
 ```typescript
-this.http.get(url, options).subscribe(data => { 
+this.http.get<T>(url, options).subscribe(data => { 
   console.info(data);
 });
 ```
@@ -45,11 +45,11 @@ this.http.get(url, options).subscribe(data => {
 <!-- .slide: class="with-code inconsolata" -->
 # Gérer ses retours
 
-- Par défaut la réponse est au format JSON<br><br>
-- Pour l'avoir en type text, dans les options `{ responseType: 'text' }`<br><br>
+- Par défaut la réponse est au format JSON<br/><br/>
+- Pour l'avoir en type text, dans les options `{ responseType: 'text' }`<br/><br/>
 
 ```typescript
-this.http.get(url, { responseType: 'text' }).subscribe(data => {
+this.http.get<T>(url, { responseType: 'text' }).subscribe(data => {
   console.info(data);
 });
 ```
@@ -57,10 +57,10 @@ this.http.get(url, { responseType: 'text' }).subscribe(data => {
 
 ##==##
 <!-- .slide: class="with-code inconsolata" -->
-# Et si je souhaite accéder à ma réponse complète<br>
+# Et si je souhaite accéder à ma réponse complète
 
 ```typescript
-this.http.get(url, { observe: 'response' }).subscribe((response: HttpResponse)=> {
+this.http.get<T>(url, { observe: 'response' }).subscribe((response: HttpResponse)=> {
   const { headers, body }: HttpResponse = response;
   console.info(headers.get('X-Custom-Header'));
   console.info(body.subField);

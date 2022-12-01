@@ -1,4 +1,5 @@
 {
+  "name": "20-reactive-form-custom-validator-solution",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "sourceRoot": "apps/20-reactive-form-custom-validator-solution/src",
@@ -83,7 +84,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/20-reactive-form-custom-validator-solution"],
+      "outputs": ["{workspaceRoot}/coverage/apps/20-reactive-form-custom-validator-solution"],
       "options": {
         "jestConfig": "apps/20-reactive-form-custom-validator-solution/jest.config.ts",
         "passWithNoTests": true

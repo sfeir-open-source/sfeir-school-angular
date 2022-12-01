@@ -13,7 +13,7 @@ export class MyInterceptor implements HttpInterceptor {
 }
 ```
 
-<!-- .element: class="big-code" -->
+<!-- .element: class="medium-code" -->
 
 ##==##
 
@@ -36,5 +36,4 @@ export class MyInterceptor implements HttpInterceptor {
   }
 }
 ```
-
 <!-- .element: class="big-code" -->

@@ -1,4 +1,5 @@
-import { FormControl, FormGroup, UntypedFormControl, ValidationErrors, Validators } from '@angular/forms';
+import { AbstractControl, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import { ControlsFromInterface } from '../../models/common.model';
 import { PeopleForm } from '../../models/people.model';
 
 export interface PersonFormGroup {
@@ -10,11 +11,11 @@ export interface PersonFormGroup {
   phone: FormControl<string | null>;
 }
 
-export class PersonForm extends FormGroup<PersonFormGroup> {
+export class PersonForm extends FormGroup<ControlsFromInterface<PeopleForm>> {
   constructor(data?: PeopleForm) {
     super({
       id: new FormControl(null),
-      photo: new FormControl('https://randomuser.me/api/portraits/lego/6.jpg'),
+      photo: new FormControl('https://randomuser.me/api/portraits/lego/6.jpg', { nonNullable: true }),
       firstname: new FormControl(null, [Validators.required, Validators.minLength(2)]),
       lastname: new FormControl(null, [Validators.required, Validators.minLength(2)]),
       email: new FormControl(null, [Validators.required, PersonForm.sfeirEmailValidator]),
@@ -24,7 +25,10 @@ export class PersonForm extends FormGroup<PersonFormGroup> {
     !!data && this.patchValue(data);
   }
 
-  static sfeirEmailValidator(c: UntypedFormControl): ValidationErrors {
+  static sfeirEmailValidator(c: AbstractControl<string | null>): ValidationErrors {
+    if (!c.value) {
+      return null;
+    }
     const regex = /^\w+.\w@sfeir.com$/;
     return regex.test(c.value) ? null : { sfeirEmail: true };
   }

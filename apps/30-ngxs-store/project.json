@@ -1,4 +1,5 @@
 {
+  "name": "30-ngxs-store",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "sourceRoot": "apps/30-ngxs-store/src",
@@ -77,7 +78,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/30-ngxs-store"],
+      "outputs": ["{workspaceRoot}/coverage/apps/30-ngxs-store"],
       "options": {
         "jestConfig": "apps/30-ngxs-store/jest.config.ts",
         "passWithNoTests": true

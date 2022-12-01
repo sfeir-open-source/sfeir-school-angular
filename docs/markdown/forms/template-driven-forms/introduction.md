@@ -1,4 +1,4 @@
-<!-- .slide: class="transition-bg-grey-1 underline" -->
+<!-- .slide: class="transition-bg-sfeir-1" -->
 
 # Template Driven Form
 
@@ -8,7 +8,7 @@
 
 # La Fondation du Template driven Form
 
-Pour réaliser des formulaires avec le template driven forms, il est nécessaire d'importer le module <b>FormsModule</b> provenant du package <b>@angular/forms</b><br><br>
+Pour réaliser des formulaires avec le template driven forms, il est nécessaire d'importer le module <b>FormsModule</b> provenant du package <b>@angular/forms</b><br/><br/>
 
 ```typescript
 import { NgModule } from '@angular/core';
@@ -31,8 +31,8 @@ export class AppModule {}
 
 # La syntaxe dans le template driven forms
 
--   <b>#authenticationForm="ngForm"</b>: On déclare une référence sur un formulaire prenant comme valeur la directive ngForm<br><br>
--   <b>authentication.value</b> permet de récupérer en format JSON objet, toutes les valeurs des champs du formulaire <br><br>
+-   <b>#authenticationForm="ngForm"</b>: On déclare une référence sur un formulaire prenant comme valeur la directive ngForm<br/><br/>
+-   <b>authentication.value</b> permet de récupérer en format JSON objet, toutes les valeurs des champs du formulaire <br/><br/>
 
 ```html
 <form #authenticationForm="ngForm" (ngSubmit)="onSubmit(f.value)"></form>
@@ -50,7 +50,7 @@ export class AppModule {}
   - **ngModel**: le binding d'un contrôle
   - **name**: associer un nom au contrôle du champ
 
-<br><br>
+<br/><br/>
 
 - **Exemple 1**: binding View -> Model
 
@@ -58,21 +58,21 @@ export class AppModule {}
 <input type="text" name="title" ngModel />
 ```
 
-<!-- .element: class="big-code" -->
+<!-- .element: class="medium-code" -->
 - **Exemple 2**: binding Model -> View
 
 ```html
 <input type="text" name="title" [ngModel]="person.name" />
 ```
 
-<!-- .element: class="big-code" -->
+<!-- .element: class="medium-code" -->
 - **Exemple 3**: binding bidirectionnel
 
 ```html
 <input [(ngModel)]="postalCode" name="postalCode" type="text" />
 ```
 
-<!-- .element: class="big-code" -->
+<!-- .element: class="medium-code" -->
 
 ##==##
 
@@ -80,7 +80,7 @@ export class AppModule {}
 
 # Regrouper des champs dans un sous objet
 
-<b>ngModelGroup</b> regroupe des contrôles dans un sous objet<br><br>
+<b>ngModelGroup</b> regroupe des contrôles dans un sous objet<br/><br/>
 
 ```html
 <div ngModelGroup="address">

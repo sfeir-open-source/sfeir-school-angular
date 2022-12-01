@@ -1,5 +1,4 @@
-<!-- .slide: class="transition-bg-grey-1 underline" -->
-
+<!-- .slide: class="transition-bg-sfeir-2" -->
 # Concepts
 
 ##==##
@@ -8,10 +7,10 @@
 
 # Concepts généraux de TDD
 
--   **describe(string, function)** : un scénario de specs à exécuter<br><br>
--   **it(string, function)** : une spec contient une ou plusieurs vérifications<br><br>
--   **toXXXX(expected) ⇒ toBe(expected)** : un comparateur compare le résultat obtenu avec un résultat attendu<br><br>
--   **beforeAll/afterAll, beforeEach/afterEach** : permet d’exécuter du code avant/après chaque scénario/test<br><br>
+-   **describe(string, function)** : un scénario de specs à exécuter<br/><br/>
+-   **it(string, function)** : une spec contient une ou plusieurs vérifications<br/><br/>
+-   **toXXXX(expected) ⇒ toBe(expected)** : un comparateur compare le résultat obtenu avec un résultat attendu<br/><br/>
+-   **beforeAll/afterAll, beforeEach/afterEach** : permet d’exécuter du code avant/après chaque scénario/test<br/><br/>
 
 ##==##
 
@@ -21,7 +20,7 @@
 ```typescript
 describe('scenario description...', () => {
   // setup
-  beforeEach(() => ...));
+  beforeEach(() => {}));
 
   // test
   it('should return some value', () => {
@@ -29,13 +28,11 @@ describe('scenario description...', () => {
   });
 })
 ```
-
 <!-- .element: class="big-code" -->
 
 ##==##
 
 <!-- .slide -->
-
 # Un exemple complet
 
 ![full-center h-900](assets/images/school/unit-tests/exemple_concepts.png)
@@ -43,28 +40,25 @@ describe('scenario description...', () => {
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-
 # L'API d'Angular pour la TDD
 
 **TestBed** : module de configuration des tests(similaire à NgModule)
 
 ```typescript
 TestBed.configureTestingModule({
-    declarations: [UserComponent],
-    providers: [UserService]
+  declarations: [UserComponent],
+  providers: [UserService]
 });
 ```
-
 <!-- .element: class="big-code" -->
 
-<br><br>
+<br/><br/>
 
 **Inject** : injection des dépendances
 
 ```typescript
-inject([UserService], user => {
+inject([UserService], userService => {
     // sync test
 });
 ```
-
 <!-- .element: class="big-code" -->

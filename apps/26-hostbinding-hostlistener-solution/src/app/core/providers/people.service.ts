@@ -3,9 +3,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { People, PeopleForm } from '../../shared/models/people.model';
-import { CoreModule } from '../core.module';
 
-@Injectable({ providedIn: CoreModule })
+@Injectable({ providedIn: 'root' })
 export class PeopleService {
   constructor(private readonly httpClient: HttpClient) {}
 

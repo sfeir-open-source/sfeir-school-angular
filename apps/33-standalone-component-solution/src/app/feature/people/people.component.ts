@@ -1,7 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
-import { BehaviorSubject, filter, Observable, shareReplay, switchMap } from 'rxjs';
+import { BehaviorSubject, filter, shareReplay, switchMap } from 'rxjs';
 import { PeopleService } from '../../core/providers/people.service';
 import { setSearch } from '../../core/store/action';
 import { selectPeople, selectSearch } from '../../core/store/selector';
@@ -18,18 +18,16 @@ import { SearchComponent } from './components/search/search.component';
   standalone: true,
   imports: [AddPersonDialogComponent, SearchComponent, SharedModule],
 })
-export class PeopleComponent implements OnInit {
-  private readonly peopleService: PeopleService = inject(PeopleService);
-  private readonly matDialogService: MatDialog = inject(MatDialog);
+export default class PeopleComponent implements OnInit {
+  private readonly peopleService = inject(PeopleService);
+  private readonly matDialogService = inject(MatDialog);
   private readonly store: Store<AppStore> = inject(Store);
 
-  people$: Observable<Array<People>>;
-  search$: Observable<string>;
+  people$ = this.store.select(selectPeople).pipe(shareReplay(1));
+  search$ = this.store.select(selectSearch);
   view$: BehaviorSubject<'card' | 'list'> = new BehaviorSubject('card');
 
   ngOnInit(): void {
-    this.search$ = this.store.select(selectSearch);
-    this.people$ = this.store.select(selectPeople).pipe(shareReplay(1));
     this.peopleService.getPeople().subscribe();
   }
 

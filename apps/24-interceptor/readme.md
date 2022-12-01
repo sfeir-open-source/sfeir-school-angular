@@ -18,7 +18,11 @@ Dans la méthode intercept, réalisez un clone de la requête d'entrée afin de 
 
 ## Etape 3
 
+Créer un module CoreModule dans le dossier core
+
 Dans le fichier **core.module.ts**, enregistrez votre interceptor dans la propriété providers de votre module
+
+Pensez à importer votre CoreModule dans votre AppModule
 
 <br><br>
 

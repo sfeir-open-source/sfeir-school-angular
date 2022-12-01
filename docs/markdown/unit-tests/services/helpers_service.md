@@ -6,7 +6,7 @@
 export class UserService {
     constructor() {}
     getName() {
-        return 'Igor';
+      return 'Igor';
     }
 }
 ```
@@ -22,5 +22,4 @@ it('should return a valid name', inject([UserService], service => {
     expect(name.length).toEqual(4);
 }));
 ```
-
 <!-- .element: class="big-code" -->

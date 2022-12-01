@@ -1,14 +1,14 @@
 <!-- .slide: class="exercice" -->
-# Exercice 20 : 20-reactive-form-custom-validator
-## Exercice
+# Lab 20 : 20-reactive-form-custom-validator
+## Lab
 
-<br><br>
+<br/><br/>
 
 <b>Un readme est à votre disposition dans le dossier apps/20-reactive-form-custom-validator</b>
 
 ##==##
 
 <!-- .slide: class="full-center exercice" -->
-# Exercice 20 : 20-reactive-form-custom-validator
-## Solution
+# Lab 20 : 20-reactive-form-custom-validator
+## Lab
 <b>apps/20-reactive-form-custom-validator-solution</b>

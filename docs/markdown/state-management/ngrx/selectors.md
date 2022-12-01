@@ -4,7 +4,7 @@
 - Permettent de retourner partiellement ou entièrement le store
 - Renvoie toujours un Observable
 
-<br><br>
+<br/><br/>
 
 ```typescript
 export const getPeopleState = (state: PeopleFeature) => state.people;

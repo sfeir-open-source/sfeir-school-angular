@@ -1,5 +1,5 @@
 <!-- This component is an Angular Material Component, this is not important for the formation, to have more details on this component, please take take a look: https://material.angular.io/ -->
-<ng-template #headerTemplate>
+<ng-template #header>
   <mat-toolbar class="extend-toolbar">
     <span>
       <a [routerLink]="['home']"> <img src="assets/images/logo-sfeir.svg" aria-label="sfeir" alt="Sfeir" /> </a>
@@ -11,6 +11,7 @@
   </mat-toolbar>
 </ng-template>
 
-<sfeir-header [headerTemplate]="headerTemplate"></sfeir-header>
+<sfeir-header [headerTemplate]="header"></sfeir-header>
+
 
 <router-outlet></router-outlet>

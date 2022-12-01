@@ -1,4 +1,4 @@
-<!-- .slide: class="transition-bg-grey-1 underline" -->
+<!-- .slide: class="transition-bg-sfeir-2" -->
 # Tester ses services
 
 ##==##
@@ -7,9 +7,10 @@
 # Les différents types de services
 
 - 2 grandes familles de services:
-    - __service http__<br><br>
-    - __service "helpers"__<br><br>
-<br><br>
+  - __service http__<br/><br/>
+  - __service "helpers"__<br/><br/>
+
+<br/><br/>
 
 __Ces deux types de services ne se testent pas de la même façon__
 <!-- .element: class="important" -->

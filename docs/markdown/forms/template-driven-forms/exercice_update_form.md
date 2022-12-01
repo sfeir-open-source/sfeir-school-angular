@@ -1,14 +1,14 @@
 <!-- .slide: class="exercice" -->
-# Exercice 18 : 18-template-driven-form-update-mode
-## Exercice
+# Lab 18 : 18-template-driven-form-update-mode
+## Lab
 
-<br><br>
+<br/><br/>
 
 <b>Un readme est à votre disposition dans le dossier apps/18-template-driven-form-update-mode</b>
 
 ##==##
 
 <!-- .slide: class="exercice full-center" -->
-# Exercice 18 : 18-template-driven-form-update-mode
-## Solution
+# Lab 18 : 18-template-driven-form-update-mode
+## Lab
 <b>apps/18-template-driven-form-update-mode-solution</b>

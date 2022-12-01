@@ -3,7 +3,7 @@
 
 - Seul moyen de modifier l'état
 - Types (moyen unique de les identifier)
-- Déclenchée par un dispatch<br><br>
+- Déclenchée par un dispatch<br/><br/>
 
 ```typescript
 import { createAction } from '@ngrx/store';

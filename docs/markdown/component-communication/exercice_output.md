@@ -1,6 +1,6 @@
 <!-- .slide: class="exercice" -->
-# Exercice 10 : 10-output
-## Exercice
+# Lab 10 : 10-output
+## Lab
 
 <b>Un readme est à votre disposition dans le dossier apps/10-output</b>
 <!-- .element: class="full-center" -->
@@ -8,6 +8,6 @@
 ##==##
 
 <!-- .slide: class="exercice full-center" -->
-# Exercice 10 : 10-output
-## Solution
+# Lab 10 : 10-output
+## Lab
 <b>steps/10-output-solution</b>

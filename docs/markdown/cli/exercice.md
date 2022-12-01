@@ -1,6 +1,6 @@
 <!-- .slide: class="exercice" -->
-# Exercice 02 : 02-ngg
-## Exercice
+# Lab 02 : 02-ngg
+## Lab
 
 <b>Un readme est à votre disposition dans le dossier apps/02-ngg</b>
 <!-- .element: class="full-center" -->
@@ -8,7 +8,7 @@
 ##==##
 
 <!-- .slide: class="exercice full-center" -->
-# Exercice 02 : 02-ngg
-## Solution
+# Lab 02 : 02-ngg
+## Lab
 
 <b>folder: apps/02-ngg-solution</b>

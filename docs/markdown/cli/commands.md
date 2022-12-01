@@ -8,11 +8,11 @@ ng new my-awesome-app
 
 <!-- .element: class="big-code" -->
 
-<br><br>
+<br/><br/>
 
--   Initialise un projet entier, prêt à être mis en production <br><br>
--   Initialise un répo GIT, avec un premier commit (option que l'on peut désactiver)<br><br>
--   Installe les dépendances (on peut choisir entre npm et yarn comme package manager)<br><br>
+-   Initialise un projet entier, prêt à être mis en production <br/><br/>
+-   Initialise un répo GIT, avec un premier commit (option que l'on peut désactiver)<br/><br/>
+-   Installe les dépendances (on peut choisir entre npm et yarn comme package manager)<br/><br/>
 
 Notes:
 -   Cette commande possède beaucoup plus d'options comme le choix de l'extension style (scc, css, sass, ...). On peut également choisir si l'on souhaite ou non installer un routing
@@ -28,13 +28,13 @@ ng generate component user
 ```
 
 <!-- .element: class="big-code" -->
-<br>
+<br/>
 
--   Cette commande génère les fichiers suivants:<br><br>
-    - src/app/user/user.component.ts<br><br>
-    - src/app/user/user.component.html<br><br>
-    - src/app/user/user.component.css<br><br>
-    - src/app/user/user.component.spec.ts<br><br>
+-   Cette commande génère les fichiers suivants:<br/><br/>
+    - src/app/user/user.component.ts<br/><br/>
+    - src/app/user/user.component.html<br/><br/>
+    - src/app/user/user.component.css<br/><br/>
+    - src/app/user/user.component.spec.ts<br/><br/>
 
 Notes:
 -   l'extension du style dépend du choix que vous avez fait lors de l'initialisation de votre projet
@@ -54,11 +54,11 @@ ng generate service user
 
 <!-- .element: class="big-code" -->
 
-<br>
+<br/>
 
--   Cette commande génère les fichiers suivants:<br><br>
-    - src/app/user.service.ts<br><br>
-    - src/app/user.service.spec.ts<br><br>
+-   Cette commande génère les fichiers suivants:<br/><br/>
+    - src/app/user.service.ts<br/><br/>
+    - src/app/user.service.spec.ts<br/><br/>
 
 Notes:
 -   Imaginons que l'on tape la commande ng generate service shared/user, le cli créera les mêmes fichiers que précédemment mais dans le dossier shared

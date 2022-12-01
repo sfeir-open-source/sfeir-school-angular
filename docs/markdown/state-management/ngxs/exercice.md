@@ -1,6 +1,6 @@
 <!-- .slide: class="exercice"-->
-# Exercice 30 : 30-ngxs-store
-## Exercice
+# Lab 30 : 30-ngxs-store
+## Lab
 
 <br><br>
 
@@ -9,6 +9,6 @@
 ##==##
 
 <!-- .slide: class="full-center exercice" -->
-# Exercice 30 : 30-ngxs-store
-## Solution
+# Lab 30 : 30-ngxs-store
+## Lab
 __steps/30-ngxs-store__

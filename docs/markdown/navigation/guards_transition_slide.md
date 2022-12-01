@@ -1,2 +1,3 @@
-<!-- .slide: class="transition underline" -->
+<!-- .slide: class="transition" -->
+
 # Guards

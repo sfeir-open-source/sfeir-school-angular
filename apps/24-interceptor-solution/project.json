@@ -1,4 +1,5 @@
 {
+  "name": "24-interceptor-solution",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "sourceRoot": "apps/24-interceptor-solution/src",
@@ -77,7 +78,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/24-interceptor-solution"],
+      "outputs": ["{workspaceRoot}/coverage/apps/24-interceptor-solution"],
       "options": {
         "jestConfig": "apps/24-interceptor-solution/jest.config.ts",
         "passWithNoTests": true

@@ -2,10 +2,10 @@
 # Contexte
 
 Imaginons que je souhaite créer un composant dropdown, et souhaite avoir la puissance de la validation des formulaires Angular.
-<br>
+<br/>
 
 On pourrait imaginer quelque chose dans ce genre-là.
-<br><br>
+<br/><br/>
 
 ```html
 <form [formGroup]="sfeir-form">
@@ -13,11 +13,11 @@ On pourrait imaginer quelque chose dans ce genre-là.
 </form>
 ```
 <!-- .element: class="big-code" -->
-<br><br>
+<br/><br/>
 
 Est que les contrôles sur agency vont s'opérer? 
 <!-- .element: class="important center" -->
-<br>
+<br/>
 
 Notes:
 - La réponse est NON! Le contrôle de validité d'un champ d'un formulaire en Angular ne fonctionne que sur les composants et directives implémentant l'interface ControlValueAccessor. Angular fournit 'value accessor' pour tous les élements basiques de formulaire HTML .

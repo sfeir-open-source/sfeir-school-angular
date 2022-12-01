@@ -5,8 +5,8 @@ import { UpdatePersonRoutingModule } from './update-person-routing.module';
 import { UpdatePersonComponent } from './update-person.component';
 
 @NgModule({
+  imports: [UpdatePersonRoutingModule, SharedModule],
   declarations: [UpdatePersonComponent],
   providers: [UpdateGuard],
-  imports: [SharedModule, UpdatePersonRoutingModule],
 })
-export class UpdatePersonModule {}
+export default class UpdatePersonModule {}

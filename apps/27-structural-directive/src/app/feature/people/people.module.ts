@@ -5,7 +5,9 @@ import { PeopleRoutingModule } from './people-routing.module';
 import { PeopleComponent } from './people.component';
 
 @NgModule({
+  imports: [PeopleRoutingModule, SharedModule],
+  exports: [],
   declarations: [PeopleComponent, AddPersonDialogComponent],
-  imports: [SharedModule, PeopleRoutingModule],
+  providers: [],
 })
-export class PeopleModule {}
+export default class PeopleModule {}

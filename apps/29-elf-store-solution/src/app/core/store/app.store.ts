@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { createStore, select, setProp, withProps } from '@ngneat/elf';
-import { selectAllApply, setEntities, withEntities } from '@ngneat/elf-entities';
+import { selectAllEntitiesApply, setEntities, withEntities } from '@ngneat/elf-entities';
 import { Observable, switchMap } from 'rxjs';
 import { People } from '../../shared/models/people.model';
-import { CoreModule } from '../core.module';
 
 export interface IStoreProps {
   search: string;
@@ -12,7 +11,7 @@ export interface IStoreProps {
 const filteredPeople = (search: string) => (person: People) =>
   person.firstname.toLowerCase().includes(search.toLowerCase()) || person.lastname.toLowerCase().includes(search.toLowerCase());
 
-@Injectable({ providedIn: CoreModule })
+@Injectable({ providedIn: 'root' })
 export class AppStoreService {
   private APP_STORE = createStore(
     { name: 'APP_STORE' },
@@ -33,6 +32,6 @@ export class AppStoreService {
   }
 
   selectPeople(): Observable<Array<People>> {
-    return this.selectSearch().pipe(switchMap(search => this.APP_STORE.pipe(selectAllApply({ filterEntity: filteredPeople(search) }))));
+    return this.selectSearch().pipe(switchMap(search => this.APP_STORE.pipe(selectAllEntitiesApply({ filterEntity: filteredPeople(search) }))));
   }
 }

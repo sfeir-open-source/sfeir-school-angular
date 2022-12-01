@@ -1,4 +1,4 @@
-<!-- .slide: class="transition-bg-grey-1 underline" -->
+<!-- .slide: class="transition-bg-sfeir-1" -->
 # Reactive forms
 
 ##==##
@@ -6,7 +6,7 @@
 <!-- .slide: class="with-code inconsolata" -->
 # La Fondation du Reactive forms
 Pour réaliser des formulaires avec Reactive Forms, il est nécessaire d'importer le module <b>ReactiveFormsModule</b> provenant également du package <b>@angular/forms</b>
-<br><br>
+<br/><br/>
 
 ```typescript
 // app.module.ts
@@ -25,11 +25,9 @@ export class AppModule { }
 
 ##==##
 
-<!-- .slide: class="two-column-layout" -->
-# Syntaxe Global dans les formulaires Reactive forms
-##--##
-<!-- .slide: class="with-code inconsolata" -->
-<br>
+<!-- .slide: class="two-column with-code inconsolata" -->
+# Syntaxe Reactive forms
+
 
 ```typescript
 // form.component.ts
@@ -47,11 +45,12 @@ export class FormComponent {
     }
 }
 ```
-<!-- .element: class="big-code" -->
+<!-- .element: class="medium-code" -->
 
 ##--##
 <!-- .slide: class="with-code inconsolata" -->
-<br>
+
+<br/><br/><br/>
 
 ```html
 <!-- form.component.html -->
@@ -65,15 +64,14 @@ export class FormComponent {
     </button>
 </form>
 ```
-
-<!-- .element: class="big-code" -->
+<!-- .element: class="medium-code" -->
 
 ##==##
 <!-- .slide: class="with-code inconsolata" -->
 # La Syntaxe dans le template
 
 - Référence au modèle du formulaire via <b>formGroup</b>
-- Mapping de controls via <b>formControlName</b><br><br>
+- Mapping de controls via <b>formControlName</b><br/><br/>
 
 ```html
 <form [formGroup]="editForm">
@@ -92,7 +90,7 @@ Notes:
 <!-- .slide: class="with-code inconsolata" -->
 # Regrouper les champs dans le template
 
-- Regrouper les champs dans un sous objet grâce à <b>FormGroupName</b> <br><br>
+- Regrouper les champs dans un sous objet grâce à <b>FormGroupName</b> <br/><br/>
 
 ```html
 <form [formGroup]="editForm" (ngSumit)="submitEditForm(editForm.value)">

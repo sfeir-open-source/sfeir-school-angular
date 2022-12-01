@@ -1,14 +1,14 @@
 <!-- .slide: class="exercice" -->
-# Exercice 17 : 17-template-driven-form-solution
-## Exercice
+# Lab 17 : 17-template-driven-form-solution
+## Lab
 
-<br><br>
+<br/><br/>
 
 <b>Un readme est à votre disposition dans le dossier apps/17-template-driven-form-solution</b>
 
 ##==##
 
 <!-- .slide: class="exercice full-center" -->
-# Exercice 17 : 17-template-driven-form-solution
-## Solution
+# Lab 17 : 17-template-driven-form-solution
+## Lab
 <b>apps/17-template-driven-form-solution</b>

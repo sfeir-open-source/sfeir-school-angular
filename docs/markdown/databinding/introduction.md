@@ -1,32 +1,65 @@
-<!-- .slide: class="two-column-layout" -->
+<!-- .slide: class="two-column with-code insconsolata" -->
 
 # Le binding en Javascript
 
+```html
+<html>
+    Bonjour <span id="name"></span>
+    <input type="text" />
+</html>
+```
+<!-- .element: class="big-code" -->
+
 ##--##
-<br><br><br>
+<!-- .slide: class="with-code inconsolata" -->
 
-![h-600](assets/images/school/databinding/template_pure_js.png)
+<br/><br/><br/>
 
-##--##
-<br><br><br>
-
-![h-600](assets/images/school/databinding/pure_js.png)
+```javascript
+window.onload = function() {
+  var span= document.querySelector('name');
+  var input = document.getElementsByTagName('input')[0];
+  
+  input.onkeyup = function() {
+    if (span.textContent || span.textContent === "") {
+      span.textContent = input.value;
+    }else if (span.innerText || span.innerText === "") {
+      span.innerText = input.value;
+    }
+  }
+}
+```
+<!-- .element: class="big-code" --> 
 
 ##==##
 
-<!-- .slide: class="two-column-layout" -->
+<!-- .slide: class="two-column" -->
 
 # Le binding avec Jquery
 
+```html
+<html>
+    Bonjour <span id="name"></span>
+    <input type="text" />
+</html>
+```
+<!-- .element: class="big-code" -->
+
 ##--##
-<br><br><br>
+<!-- .slide: class="with-code inconsolata" -->
+<br/><br/><br/>
 
-![h-600](assets/images/school/databinding/template_pure_js.png)
-
-##--##
-<br><br><br>
-
-![h-600](assets/images/school/databinding/jquery.png)
+```javascript
+$(document).ready(function() {
+  var $input = $('input');
+  var $span = $('#name');
+  
+  $input.keyup(function(event) {
+    $span.text(event.target.value);
+  });
+})
+```
+<!-- .element: class="big-code" -->
 
 ##==##
 
@@ -47,6 +80,7 @@
 <!-- .slide: class="with-code inconsolata" -->
 
 # Syntax binding
+
 ## Events
 ```html
 <button type="button" (click)="changeName()">Refresh</button>
@@ -77,8 +111,9 @@
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide full-center" -->
+<!-- .slide: class="full-center" -->
 
 # Zoom sur un binding
 
 <b>Target = "expression"</b>
+<!-- .element: class="important" -->

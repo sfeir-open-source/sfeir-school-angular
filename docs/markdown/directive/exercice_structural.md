@@ -1,6 +1,6 @@
 <!-- .slide: class="exercice" -->
-# Exercice 27 : 27-structural-directive
-## Exercice
+# Lab 27 : 27-structural-directive
+## Lab
 
 <br><br>
 
@@ -9,6 +9,6 @@
 ##==##
 
 <!-- .slide: class="full-center exercice" -->
-# Exercice 27 : 27-structural-directive
-## Solution
+# Lab 27 : 27-structural-directive
+## Lab
 __apps/27-structural-directive-solution__

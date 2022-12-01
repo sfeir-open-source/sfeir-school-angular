@@ -1,15 +1,18 @@
 {
+  "name": "server-express",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/server-express/src",
   "projectType": "application",
   "targets": {
     "build": {
-      "executor": "@nrwl/node:webpack",
+      "executor": "@nrwl/webpack:webpack",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/server-express",
         "main": "apps/server-express/src/main.js",
-        "tsConfig": "apps/server-express/tsconfig.app.json"
+        "tsConfig": "apps/server-express/tsconfig.app.json",
+        "target": "node",
+        "compiler": "tsc"
       },
       "configurations": {
         "production": {

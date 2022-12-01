@@ -1,19 +1,19 @@
 # Déroulement de la formation
 
 <p class="full-center">
-A quand la pause ? <br>
+A quand la pause ? <br/>
 Tour de table ...
 </p>
-<br><br>
+<br/><br/>
 
 ##==##
 
 # Repositories
 
 - <b>Slides de la formation</b>
-    - https://sfeir-open-source.github.io/sfeir-school-angular<br><br>
+    - https://sfeir-open-source.github.io/sfeir-school-angular<br/><br/><br/>
 - <b>Sources des exercices</b>
-    - https://github.com/sfeir-open-source/sfeir-school-angular/TP
+    - https://github.com/sfeir-open-source/sfeir-school-angular.git
 
 ##==##
 
@@ -21,6 +21,7 @@ Tour de table ...
 
 ##==##
 
+<!-- .slide: class="sfeir-basic-slide" -->
 # Bootstrapping de l'application
 
 Clonez le projet:
@@ -29,7 +30,7 @@ Clonez le projet:
 git clone https://github.com/sfeir-open-source/sfeir-school-angular.git
 ```
 
-<br>
+<br/>
 
 A la racine du projet
 
@@ -37,14 +38,14 @@ A la racine du projet
 npm install || npm ci
 ```
 
-<br>
+<br/>
 
 
 ```bash
 npm run client -- "nom_du_workshop"
 ```
 
-<br>
+<br/>
 
 
 ```bash
@@ -57,7 +58,7 @@ npm run server:start
 
 - __Chaque concept clé d'Angular est accompagné d'un TP.__
 
-<br><br><br>
+<br/><br/><br/>
 
 - Déroulement du TP :
     - __une page d'excercice : apps/`workshop_name`__

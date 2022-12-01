@@ -4,10 +4,9 @@ import { Store } from '@ngxs/store';
 import { map, Observable, switchMap } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { People, PeopleForm } from '../../shared/models/people.model';
-import { CoreModule } from '../core.module';
 import { SetPeople } from '../store/app.store';
 
-@Injectable({ providedIn: CoreModule })
+@Injectable({ providedIn: 'root' })
 export class PeopleService {
   constructor(private readonly httpClient: HttpClient, private readonly store: Store) {}
 

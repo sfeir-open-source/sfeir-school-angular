@@ -2,11 +2,9 @@
 
 # La directive ng-container
 
-- Créer un template sans créer un élement supplémentaire<br><br>
-- Pratique lorsque l'on a besoin d'utiliser plusieurs directives structurelles sur le même élément <br><br>
-- Utile pour téléporter un contenu d'une balise ng-template <br><br>
-
-<br>
+- Créer un template sans créer un élement supplémentaire<br/><br/>
+- Pratique lorsque l'on a besoin d'utiliser plusieurs directives structurelles sur le même élément <br/><br/>
+- Utile pour téléporter un contenu d'une balise ng-template <br/><br/>
 
 ```html
 
@@ -25,8 +23,8 @@
 
 # La directive structurelle ngTemplateOutlet
 
-- Prend deux paramètres, un template et un context<br><br>
-- Le context doit être obligatoirement un object<br><br>
+- Prend deux paramètres, un template et un context
+- Le context doit être obligatoirement un object <br/><br/>
 
 ```typescript
 @Component({
@@ -43,7 +41,6 @@ export class AppComponent {
     ctx = { estimate: this.totalEstimate };
 }
 ```
-
 <!-- .element: class="medium-code" -->
 
 Notes:
@@ -59,8 +56,8 @@ Notes:
 
 # Notion de context implicit
 
-- Permet de définir une variable de template sans l'affecter <br><br>
-- Utilisé par la directive *ngFor :) <br><br>
+- Permet de définir une variable de template sans l'affecter
+- Utilisé par la directive *ngFor :) <br/><br/>
 
 ```typescript
 @Component({
