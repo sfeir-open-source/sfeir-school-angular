@@ -10,12 +10,6 @@ Ce workshop a plusieurs objectifs:
 
 Dans le dossier src, créez un dossier core
 
-Dans le dossier core, créez un module CoreModule
-
-Dans le module CoreModule, dans la propriété imports, ajoutez le module HttpClientModule
-
-Dans le module AppModule, dans la propriété imports, retirez le module HttpClientModule et ajoutez le module CoreModule que vous venez de créer
-
 <br><br>
 
 ## Etape 2
