@@ -1,8 +1,8 @@
 <!-- .slide: class="sfeir-basic-slide" -->
 # Les services http
 
-Il faut importer le client Http d'Angular pour exécuter nos requêtes<br><br>
-- __HttpClientModule__ : qui va réaliser de vrais calls<br><br>
+Il faut importer le client Http d'Angular pour exécuter nos requêtes<br/><br/>
+- __HttpClientModule__ : qui va réaliser de vrais calls<br/><br/>
 - __HttpClientTestingModule__ : qui ne vas pas réaliser de vrais calls, il faudra donc mocker la réponse
 
 ##==##
