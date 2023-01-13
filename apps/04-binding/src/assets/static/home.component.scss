@@ -16,6 +16,10 @@ section {
   }
 }
 
+mat-card img[mat-card-image] {
+  border-radius: 50%;
+}
+
 mat-card mat-card-title-group {
   padding: 0.5rem;
   box-sizing: border-box;

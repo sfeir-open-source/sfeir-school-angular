@@ -2,6 +2,13 @@ h1 {
   text-align: center;
 }
 
+section {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+}
+
 @media (min-width: 768px) {
   :host(.wide) mat-card,
   :host(.wide) mat-list-item {
@@ -12,6 +19,10 @@ h1 {
 mat-card mat-card-title-group {
   padding: 0.5rem;
   box-sizing: border-box;
+}
+
+mat-card img[mat-card-image] {
+  border-radius: 50%;
 }
 
 mat-card-title-group mat-icon {
@@ -134,8 +145,6 @@ a.truncate {
 img {
   border-radius: 50%;
   margin-right: 18px;
-  max-height: 128px;
-  max-width: 128px;
 }
 
 @media (max-width: 412px) {
