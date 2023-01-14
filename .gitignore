@@ -48,3 +48,4 @@ pick.sh
 .angular
 
 workshop/dist
+/migrations.json
