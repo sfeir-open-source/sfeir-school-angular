@@ -1,7 +1,6 @@
-import { DebugElement } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, DebugElement } from '@angular/core';
 import { HomeComponent } from './home.component';
 import { render } from '@testing-library/angular';
-import { MatCardModule } from '@angular/material/card';
 import { By } from '@angular/platform-browser';
 
 describe('HomeComponent', () => {
@@ -9,7 +8,7 @@ describe('HomeComponent', () => {
   let debugElement: DebugElement;
 
   beforeEach(async () => {
-    const { fixture } = await render(HomeComponent, { imports: [MatCardModule] });
+    const { fixture } = await render(HomeComponent, { schemas: [CUSTOM_ELEMENTS_SCHEMA] });
     component = fixture.componentInstance;
     debugElement = fixture.debugElement;
   });

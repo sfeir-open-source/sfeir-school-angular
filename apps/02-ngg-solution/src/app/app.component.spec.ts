@@ -1,6 +1,4 @@
-import { DebugElement } from '@angular/core';
-import { MatCardModule } from '@angular/material/card';
-import { MatToolbarModule } from '@angular/material/toolbar';
+import { CUSTOM_ELEMENTS_SCHEMA, DebugElement } from '@angular/core';
 import { render } from '@testing-library/angular';
 import { AppComponent } from './app.component';
 import { By } from '@angular/platform-browser';
@@ -10,7 +8,7 @@ describe('AppComponent', () => {
   let debugElement: DebugElement;
 
   beforeEach(async () => {
-    const { fixture } = await render(AppComponent, { imports: [MatToolbarModule, MatCardModule] });
+    const { fixture } = await render(AppComponent, { schemas: [CUSTOM_ELEMENTS_SCHEMA] });
     component = fixture.componentInstance;
     debugElement = fixture.debugElement;
   });
