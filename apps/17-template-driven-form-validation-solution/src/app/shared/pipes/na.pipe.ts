@@ -4,7 +4,7 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'na',
 })
 export class NaPipe implements PipeTransform {
-  transform(value: string, customNa: string = 'N/A'): unknown {
+  transform(value: string, customNa = 'N/A'): unknown {
     return value || customNa;
   }
 }

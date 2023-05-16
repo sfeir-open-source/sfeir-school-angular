@@ -5,7 +5,7 @@ import { PeopleService } from '../../../core/providers/people.service';
 import { People } from '../../../shared/models/people.model';
 
 @Injectable()
-export class PersonDetailsResolver  {
+export class PersonDetailsResolver {
   constructor(private readonly peopleService: PeopleService) {}
 
   resolve(route: ActivatedRouteSnapshot): Observable<People> {
