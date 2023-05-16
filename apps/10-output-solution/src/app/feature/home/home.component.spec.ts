@@ -59,6 +59,13 @@ describe('HomeComponent', () => {
     expect(spy).toHaveBeenCalled();
     expect(spy).toHaveBeenCalledTimes(1);
   });
+  test('should call the getRandomPerson', () => {
+    const spy = jest.spyOn(component, 'getRandomPerson');
+    const customEvent = new CustomEvent('personDelete');
+    const sfeirCard: HTMLElement = debugElement.query(By.css('sfeir-card')).nativeElement;
+    fireEvent(sfeirCard, customEvent);
+    expect(spy).toHaveBeenCalled();
+  });
   test('should change the person', fakeAsync(async () => {
     const RANDOM_PERSON = { id: '2' } as People;
     jest.spyOn(HTTP_CLIENT, 'get').mockReturnValue(of(RANDOM_PERSON));
