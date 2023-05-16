@@ -27,11 +27,9 @@ const cp = require('child_process');
 const isWindows = os.platform() === 'win32';
 let output;
 try {
-  output = require('@nrwl/workspace').output;
+  output = require('@nx/workspace').output;
 } catch (e) {
-  console.warn(
-    'Angular CLI could not be decorated to enable computation caching. Please ensure @nrwl/workspace is installed.'
-  );
+  console.warn('Angular CLI could not be decorated to enable computation caching. Please ensure @nx/workspace is installed.');
   process.exit(0);
 }
 
@@ -48,7 +46,7 @@ function symlinkNgCLItoNxCLI() {
        * This is the most reliable way to create symlink-like behavior on Windows.
        * Such that it works in all shells and works with npx.
        */
-      ['', '.cmd', '.ps1'].forEach((ext) => {
+      ['', '.cmd', '.ps1'].forEach(ext => {
         if (fs.existsSync(nxPath + ext)) fs.writeFileSync(ngPath + ext, fs.readFileSync(nxPath + ext));
       });
     } else {

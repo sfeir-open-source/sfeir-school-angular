@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, Resolve } from '@angular/router';
+import { ActivatedRouteSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
 import { PeopleService } from '../../../core/providers/people.service';
 import { People } from '../../../shared/models/people.model';
 
 @Injectable()
-export class PersonDetailsResolver implements Resolve<People> {
+export class PersonDetailsResolver  {
   constructor(private readonly peopleService: PeopleService) {}
 
   resolve(route: ActivatedRouteSnapshot): Observable<People> {

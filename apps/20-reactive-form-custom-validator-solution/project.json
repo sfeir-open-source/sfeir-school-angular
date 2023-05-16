@@ -74,7 +74,7 @@
       }
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/linter:eslint",
       "options": {
         "lintFilePatterns": [
           "apps/20-reactive-form-custom-validator-solution/src/**/*.ts",
@@ -83,7 +83,7 @@
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
+      "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/apps/20-reactive-form-custom-validator-solution"],
       "options": {
         "jestConfig": "apps/20-reactive-form-custom-validator-solution/jest.config.ts",

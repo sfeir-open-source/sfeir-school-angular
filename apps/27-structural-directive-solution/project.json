@@ -71,13 +71,13 @@
       }
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/linter:eslint",
       "options": {
         "lintFilePatterns": ["apps/27-structural-directive-solution/src/**/*.ts", "apps/27-structural-directive-solution/src/**/*.html"]
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
+      "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/apps/27-structural-directive-solution"],
       "options": {
         "jestConfig": "apps/27-structural-directive-solution/jest.config.ts",

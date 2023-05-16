@@ -77,7 +77,7 @@
       }
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/linter:eslint",
       "options": {
         "lintFilePatterns": [
           "apps/18-template-driven-form-update-mode-solution/src/**/*.ts",
@@ -86,7 +86,7 @@
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
+      "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/apps/18-template-driven-form-update-mode-solution"],
       "options": {
         "jestConfig": "apps/18-template-driven-form-update-mode-solution/jest.config.ts",
