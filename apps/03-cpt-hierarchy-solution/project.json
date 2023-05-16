@@ -71,13 +71,13 @@
       }
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/linter:eslint",
       "options": {
         "lintFilePatterns": ["apps/03-cpt-hierarchy-solution/src/**/*.ts", "apps/03-cpt-hierarchy-solution/src/**/*.html"]
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
+      "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/apps/03-cpt-hierarchy-solution"],
       "options": {
         "jestConfig": "apps/03-cpt-hierarchy-solution/jest.config.ts",

@@ -71,13 +71,13 @@
       }
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/linter:eslint",
       "options": {
         "lintFilePatterns": ["apps/33-standalone-component-solution/src/**/*.ts", "apps/33-standalone-component-solution/src/**/*.html"]
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
+      "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/apps/33-standalone-component-solution"],
       "options": {
         "jestConfig": "apps/33-standalone-component-solution/jest.config.ts",

@@ -71,13 +71,13 @@
       }
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/linter:eslint",
       "options": {
         "lintFilePatterns": ["apps/26-hostbinding-hostlistener-solution/src/**/*.ts", "apps/26-hostbinding-hostlistener-solution/src/**/*.html"]
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
+      "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/apps/26-hostbinding-hostlistener-solution"],
       "options": {
         "jestConfig": "apps/26-hostbinding-hostlistener-solution/jest.config.ts",

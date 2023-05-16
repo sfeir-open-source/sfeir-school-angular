@@ -71,13 +71,13 @@
       }
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/linter:eslint",
       "options": {
         "lintFilePatterns": ["apps/25-teleportation-solution/src/**/*.ts", "apps/25-teleportation-solution/src/**/*.html"]
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
+      "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/apps/25-teleportation-solution"],
       "options": {
         "jestConfig": "apps/25-teleportation-solution/jest.config.ts",

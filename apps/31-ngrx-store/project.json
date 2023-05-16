@@ -71,13 +71,13 @@
       }
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/linter:eslint",
       "options": {
         "lintFilePatterns": ["apps/31-ngrx-store/src/**/*.ts", "apps/31-ngrx-store/src/**/*.html"]
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
+      "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/apps/31-ngrx-store"],
       "options": {
         "jestConfig": "apps/31-ngrx-store/jest.config.ts",

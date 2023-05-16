@@ -71,13 +71,13 @@
       }
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/linter:eslint",
       "options": {
         "lintFilePatterns": ["apps/24-interceptor-solution/src/**/*.ts", "apps/24-interceptor-solution/src/**/*.html"]
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
+      "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/apps/24-interceptor-solution"],
       "options": {
         "jestConfig": "apps/24-interceptor-solution/jest.config.ts",

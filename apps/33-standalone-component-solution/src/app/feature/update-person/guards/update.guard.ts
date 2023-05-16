@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, Router } from '@angular/router';
+import { ActivatedRouteSnapshot, Router } from '@angular/router';
 
 @Injectable()
-export class UpdateGuard implements CanActivate {
+export class UpdateGuard {
   static patternPeopleId = /[a-z0-9]{24}/;
 
   constructor(private readonly router: Router) {}

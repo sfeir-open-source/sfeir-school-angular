@@ -71,13 +71,13 @@
       }
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/linter:eslint",
       "options": {
         "lintFilePatterns": ["apps/20-reactive-form-custom-validator/src/**/*.ts", "apps/20-reactive-form-custom-validator/src/**/*.html"]
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
+      "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/apps/20-reactive-form-custom-validator"],
       "options": {
         "jestConfig": "apps/20-reactive-form-custom-validator/jest.config.ts",

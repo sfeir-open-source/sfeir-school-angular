@@ -71,13 +71,13 @@
       }
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/linter:eslint",
       "options": {
         "lintFilePatterns": ["apps/32-unit-tests-solution/src/**/*.ts", "apps/32-unit-tests-solution/src/**/*.html"]
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
+      "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/apps/32-unit-tests-solution"],
       "options": {
         "jestConfig": "apps/32-unit-tests-solution/jest.config.ts",

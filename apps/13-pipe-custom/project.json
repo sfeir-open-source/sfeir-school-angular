@@ -71,13 +71,13 @@
       }
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/linter:eslint",
       "options": {
         "lintFilePatterns": ["apps/13-pipe-custom/src/**/*.ts", "apps/13-pipe-custom/src/**/*.html"]
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
+      "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/apps/13-pipe-custom"],
       "options": {
         "jestConfig": "apps/13-pipe-custom/jest.config.ts",
