@@ -1,17 +1,17 @@
 import { CommonModule } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
 import { DebugElement, NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, fakeAsync, tick } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { fireEvent, render } from '@testing-library/angular';
 import { of } from 'rxjs';
+import { PeopleService } from '../../core/providers/people.service';
 import { CardComponent } from '../../shared/components/card/card.component';
 import { People } from '../../shared/models/people.model';
 import { PeopleComponent } from './people.component';
 
-const HTTP_CLIENT = {
-  get: jest.fn(),
-  delete: jest.fn(),
+const PEOPLE_SERVICE = {
+  getPeople: jest.fn(),
+  deletePeople: jest.fn(),
 };
 
 const PEOPLE = [{ id: '1' }, { id: '2' }] as Array<People>;
@@ -23,13 +23,13 @@ describe('PeopleComponent', () => {
   let debugElement: DebugElement;
 
   beforeAll(() => {
-    jest.spyOn(HTTP_CLIENT, 'get').mockReturnValue(of(PEOPLE));
+    jest.spyOn(PEOPLE_SERVICE, 'getPeople').mockReturnValue(of(PEOPLE));
   });
   beforeEach(async () => {
     const { fixture, container: rendererResult } = await render(PeopleComponent, {
       imports: [CommonModule],
       declarations: [CardComponent],
-      providers: [{ provide: HttpClient, useValue: HTTP_CLIENT }],
+      providers: [{ provide: PeopleService, useValue: PEOPLE_SERVICE }],
       schemas: [NO_ERRORS_SCHEMA],
     });
     componentFixture = fixture;
@@ -58,7 +58,7 @@ describe('PeopleComponent', () => {
     expect(spy).toHaveBeenCalled();
   });
   test('should delete the person', fakeAsync(async () => {
-    jest.spyOn(HTTP_CLIENT, 'delete').mockReturnValue(of([PEOPLE.at(1)]));
+    jest.spyOn(PEOPLE_SERVICE, 'deletePeople').mockReturnValue(of([PEOPLE.at(1)]));
     component.deletePerson(PEOPLE.at(0));
     tick();
     await componentFixture.whenStable();
