@@ -1,24 +1,29 @@
 import { CommonModule } from '@angular/common';
 import { DebugElement, NO_ERRORS_SCHEMA } from '@angular/core';
-import { ComponentFixture, fakeAsync, inject, tick } from '@angular/core/testing';
+import { ComponentFixture, fakeAsync, flush, tick } from '@angular/core/testing';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { By } from '@angular/platform-browser';
 import { fireEvent, render, screen } from '@testing-library/angular';
-import { of } from 'rxjs';
+import { EMPTY, of } from 'rxjs';
 import { PeopleService } from '../../core/providers/people.service';
 import { CardComponent } from '../../shared/components/card/card.component';
 import { BadgeDirective } from '../../shared/directives/badge.directive';
 import { People } from '../../shared/models/people.model';
 import { NaPipe } from '../../shared/pipes/na.pipe';
-import { PeopleComponent } from './people.component';
 import { AddPersonDialogComponent } from './components/add-person-dialog/add-person-dialog.component';
+import { PeopleComponent } from './people.component';
 
 const PEOPLE_SERVICE = {
   getPeople: jest.fn(),
   deletePeople: jest.fn(),
+  addNewPerson: jest.fn(() => of(null)),
 };
 
 const PEOPLE = [{ id: '1' }, { id: '2' }] as Array<People>;
+
+const MAT_DIALOG = {
+  open: jest.fn(),
+};
 
 describe('PeopleComponent', () => {
   let componentFixture: ComponentFixture<PeopleComponent>;
@@ -32,8 +37,11 @@ describe('PeopleComponent', () => {
   beforeEach(async () => {
     const { fixture, container: rendererResult } = await render(PeopleComponent, {
       imports: [CommonModule, MatDialogModule],
-      declarations: [CardComponent, NaPipe, BadgeDirective],
-      providers: [{ provide: PeopleService, useValue: PEOPLE_SERVICE }],
+      declarations: [CardComponent, NaPipe, BadgeDirective, AddPersonDialogComponent],
+      providers: [
+        { provide: PeopleService, useValue: PEOPLE_SERVICE },
+        { provide: MatDialog, useValue: MAT_DIALOG },
+      ],
       schemas: [NO_ERRORS_SCHEMA],
     });
     componentFixture = fixture;
@@ -53,12 +61,19 @@ describe('PeopleComponent', () => {
       expect(spy).toHaveBeenCalled();
       expect(spy).toHaveBeenCalledWith('card');
     });
-    test('should change the view', fakeAsync(() => {
-      let view: 'card' | 'list' = 'card';
+    test('should change the view to list', fakeAsync(() => {
+      let view = null;
       component.view$.subscribe(v => (view = v));
       component.changeView(view);
       tick();
       expect(view).toEqual('list');
+    }));
+    test('should change the view to list', fakeAsync(() => {
+      let view = null;
+      component.view$.subscribe(v => (view = v));
+      component.changeView('list');
+      tick();
+      expect(view).toEqual('card');
     }));
   });
   describe('#card-view-mode', () => {
@@ -105,16 +120,31 @@ describe('PeopleComponent', () => {
     });
   });
   describe('#dialog', () => {
-    it('should open the dialog', () => {
+    test('should open the dialog', () => {
+      jest.spyOn(MAT_DIALOG, 'open').mockReturnValue({ afterClosed: () => EMPTY } as any);
       const spy = jest.spyOn(component, 'showDialog');
       const button = screen.getByTestId('button-modal');
       fireEvent.click(button);
       expect(spy).toHaveBeenCalled();
     });
-    it('should call the open method of the dialog service', inject([MatDialog], (dialog: MatDialog) => {
-      const spy = jest.spyOn(dialog, 'open');
+    test('should call the open method of the dialog service', () => {
+      jest.spyOn(MAT_DIALOG, 'open').mockReturnValue({ afterClosed: () => EMPTY } as any);
+      const spy = jest.spyOn(MAT_DIALOG, 'open');
       component.showDialog();
       expect(spy).toHaveBeenCalledWith(AddPersonDialogComponent, { width: '30%', height: 'fit-content' });
+    });
+    test('should call the addNewPerson method', fakeAsync(() => {
+      jest.spyOn(MAT_DIALOG, 'open').mockReturnValue({ afterClosed: () => of(PEOPLE[0]) } as any);
+      component.showDialog();
+      flush();
+      expect(PEOPLE_SERVICE.addNewPerson).toHaveBeenCalled();
+      expect(PEOPLE_SERVICE.addNewPerson).toHaveBeenCalledWith(PEOPLE[0]);
+    }));
+    test('should refresh the list', fakeAsync(() => {
+      jest.spyOn(MAT_DIALOG, 'open').mockReturnValue({ afterClosed: () => of(PEOPLE[0]) } as any);
+      component.showDialog();
+      flush();
+      expect(PEOPLE_SERVICE.getPeople).toHaveBeenCalled();
     }));
   });
 });

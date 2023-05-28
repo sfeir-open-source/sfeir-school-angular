@@ -1,7 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { Component } from '@angular/core';
-import { fakeAsync, TestBed } from '@angular/core/testing';
+import { TestBed, fakeAsync } from '@angular/core/testing';
 import { render } from '@testing-library/angular';
 import { environment } from '../../../environments/environment';
 import { People } from '../../shared/models/people.model';
@@ -99,6 +99,23 @@ describe('PeopleService', () => {
         error: err => (error = err),
       });
       controller.expectOne(`${environment.peopleEndpoint}/peoples/${PEOPLE[0].id}`).error(new ProgressEvent('ERROR'));
+      expect(error).toBeInstanceOf(HttpErrorResponse);
+    }));
+  });
+
+  describe('#addPeople', () => {
+    test('should format the url correctly', () => {
+      service.addNewPerson(PEOPLE[0]).subscribe();
+      const req = controller.expectOne(`${environment.peopleEndpoint}/peoples`);
+      req.flush(null);
+    });
+    test('should throw correctly the error', fakeAsync(() => {
+      let error: HttpErrorResponse;
+      service.addNewPerson(PEOPLE[0]).subscribe({
+        next: () => void 0,
+        error: err => (error = err),
+      });
+      controller.expectOne(`${environment.peopleEndpoint}/peoples`).error(new ProgressEvent('ERROR'));
       expect(error).toBeInstanceOf(HttpErrorResponse);
     }));
   });
