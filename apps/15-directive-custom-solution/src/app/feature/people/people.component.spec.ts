@@ -51,12 +51,19 @@ describe('PeopleComponent', () => {
       expect(spy).toHaveBeenCalled();
       expect(spy).toHaveBeenCalledWith('card');
     });
-    test('should change the view', fakeAsync(() => {
-      let view: 'card' | 'list' = 'card';
+    test('should change the view to list', fakeAsync(() => {
+      let view = null;
       component.view$.subscribe(v => (view = v));
-      component.changeView(view);
+      component.changeView('card');
       tick();
       expect(view).toEqual('list');
+    }));
+    test('should change the view to card', fakeAsync(() => {
+      let view = null;
+      component.view$.subscribe(v => (view = v));
+      component.changeView('list');
+      tick();
+      expect(view).toEqual('card');
     }));
   });
 
