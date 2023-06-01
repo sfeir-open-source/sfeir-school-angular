@@ -1,5 +1,4 @@
 import { Component, Input, TemplateRef } from '@angular/core';
-import { MatToolbar } from '@angular/material/toolbar';
 
 @Component({
   selector: 'sfeir-header',
@@ -7,5 +6,5 @@ import { MatToolbar } from '@angular/material/toolbar';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-  @Input() headerTemplate: TemplateRef<MatToolbar>;
+  @Input({ required: true }) headerTemplate: TemplateRef<void>;
 }
