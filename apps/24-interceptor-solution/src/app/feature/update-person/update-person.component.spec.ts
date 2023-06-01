@@ -1,13 +1,11 @@
-import { UpdatePersonComponent } from './update-person.component';
-import { of } from 'rxjs';
-import { People } from '../../shared/models/people.model';
-import { fireEvent, render } from '@testing-library/angular';
 import { CommonModule } from '@angular/common';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { fireEvent, render } from '@testing-library/angular';
+import { of } from 'rxjs';
 import { PeopleService } from '../../core/providers/people.service';
-
-const PARAM_MAP = new Map<string, string>([['id', '1']]);
+import { People } from '../../shared/models/people.model';
+import { UpdatePersonComponent } from './update-person.component';
 
 const LOCATION = {
   back: jest.fn(),

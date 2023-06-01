@@ -17,17 +17,15 @@ const ROUTES: Routes = [
 describe('AppComponent', () => {
   let component: AppComponent;
   let debugElement: DebugElement;
-  let navigate: any;
 
   beforeEach(async () => {
-    const { fixture, navigate: navigation } = await render(AppComponent, {
+    const { fixture } = await render(AppComponent, {
       declarations: [MockHomeComponent],
       routes: ROUTES,
       schemas: [NO_ERRORS_SCHEMA],
     });
     component = fixture.componentInstance;
     debugElement = fixture.debugElement;
-    navigate = navigation;
   });
 
   test('should create an instance of AppComponent', () => {
