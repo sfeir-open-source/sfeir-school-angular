@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PersonDetailsResolver } from './guards/person-details.resolver';
-import { UpdateGuard } from './guards/update.guard';
 import { UpdatePersonComponent } from './update-person.component';
+import { updateGuard } from './guards/update.guard';
+import { personDetailsResolver } from './guards/person-details.resolver';
 
 const UPDATE_PERSON_ROUTES: Routes = [
   {
     path: '',
     component: UpdatePersonComponent,
-    canActivate: [UpdateGuard],
+    canActivate: [updateGuard],
     resolve: {
-      personDetails: PersonDetailsResolver,
+      personDetails: personDetailsResolver,
     },
   },
 ];
