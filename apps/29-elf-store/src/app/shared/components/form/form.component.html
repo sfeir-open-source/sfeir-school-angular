@@ -1,24 +1,27 @@
 <form (ngSubmit)="onSave()" novalidate [formGroup]="personForm">
   <section class="form-container">
     <section class="form-container__image">
-      <img width="100" [src]="personForm.value.photo" />
+      <img width="100" height="100" [ngSrc]="personForm.value.photo" alt="person-photo" />
       <input type="hidden" name="photo" formControlName="photo" />
     </section>
     <section class="form-container__form">
       <sfeir-custom-input formControlName="firstname" placeholder="First Name">
         <mat-error *ngIf="personForm.controls.firstname.errors?.['required']">Ce champs est requis</mat-error>
         <mat-error *ngIf="personForm.controls.firstname.errors?.['minlength']">Ce champs doit posséder minimum 2
-          caractères</mat-error>
+          caractères
+        </mat-error>
       </sfeir-custom-input>
       <sfeir-custom-input formControlName="lastname" placeholder="Last Name">
         <mat-error *ngIf="personForm.controls.lastname.errors?.['required']">Ce champs est requis</mat-error>
         <mat-error *ngIf="personForm.controls.lastname.errors?.['minlength']">Ce champs doit posséder minimum 2
-          caractères</mat-error>
+          caractères
+        </mat-error>
       </sfeir-custom-input>
       <sfeir-custom-input formControlName="email" placeholder="Email">
         <mat-error *ngIf="personForm.controls.email.errors?.['required']">Ce champs est requis</mat-error>
         <mat-error *ngIf="personForm.controls.email.errors?.['sfeirEmail']">Format non valid, format attendu:
-          frizzarin.n@sfeir.com</mat-error>
+          frizzarin.n@sfeir.com
+        </mat-error>
       </sfeir-custom-input>
       <sfeir-custom-input formControlName="phone" placeholder="Phone">
         <mat-error *ngIf="personForm.controls.phone.errors?.['required']">Ce champs est requis</mat-error>

@@ -7,7 +7,7 @@
   <section *ngSwitchCase="'list'">
     <mat-list>
       <div *ngFor="let person of people$ | async" class="mat-whiteframe-2dp mat-card">
-        <img src="{{ person.photo }}" alt="person-image" />
+        <img ngSrc="{{ person.photo }}" alt="person-image" height="40" width="40" />
         <div class="list-information">
           <h3>{{ person.firstname }} {{ person.lastname }}
             <span class="sfeir-badge" [sfeirBadge]="person.isManager"></span>

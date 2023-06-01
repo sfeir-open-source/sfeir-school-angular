@@ -19,9 +19,9 @@ describe('CustomInputComponent', () => {
 
   beforeEach(async () => {
     const { fixture, container: hostContainer } = await render(HostComponent, {
-      schemas: [NO_ERRORS_SCHEMA],
       imports: [ReactiveFormsModule, CommonModule],
       declarations: [CustomInputComponent],
+      schemas: [NO_ERRORS_SCHEMA],
     });
     componentFixture = fixture;
     component = fixture.componentInstance;
