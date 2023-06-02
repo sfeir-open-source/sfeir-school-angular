@@ -3,10 +3,11 @@ import { DebugElement, NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, fakeAsync, flush, tick } from '@angular/core/testing';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { By } from '@angular/platform-browser';
+import { Store } from '@ngxs/store';
 import { fireEvent, render, screen } from '@testing-library/angular';
 import { EMPTY, of } from 'rxjs';
 import { PeopleService } from '../../core/providers/people.service';
-import { AppStoreService } from '../../core/store/app.store';
+import { SetSearch } from '../../core/store/app.store';
 import { CardComponent } from '../../shared/components/card/card.component';
 import { BadgeDirective } from '../../shared/directives/badge.directive';
 import { People } from '../../shared/models/people.model';
@@ -22,9 +23,8 @@ const PEOPLE_SERVICE = {
 };
 
 const STORE_SERVICE = {
-  selectPeople: jest.fn(() => of(PEOPLE)),
-  selectSearch: jest.fn(() => of('')),
-  setSearch: jest.fn(),
+  select: jest.fn(() => of(PEOPLE)),
+  dispatch: jest.fn(),
 };
 
 const PEOPLE = [{ id: '1' }, { id: '2' }] as Array<People>;
@@ -48,7 +48,7 @@ describe('PeopleComponent', () => {
       declarations: [CardComponent, NaPipe, BadgeDirective, AddPersonDialogComponent, SearchComponent],
       providers: [
         { provide: PeopleService, useValue: PEOPLE_SERVICE },
-        { provide: AppStoreService, useValue: STORE_SERVICE },
+        { provide: Store, useValue: STORE_SERVICE },
         { provide: MatDialog, useValue: MAT_DIALOG },
       ],
       schemas: [NO_ERRORS_SCHEMA],
@@ -159,10 +159,10 @@ describe('PeopleComponent', () => {
       expect(spy).toHaveBeenCalled();
     });
     test('should call the method setSearch', () => {
-      const spy = jest.spyOn(STORE_SERVICE, 'setSearch');
+      const spy = jest.spyOn(STORE_SERVICE, 'dispatch');
       component.setSearch('test');
       expect(spy).toHaveBeenCalled();
-      expect(spy).toHaveBeenCalledWith('test');
+      expect(spy).toHaveBeenCalledWith(new SetSearch('test'));
     });
   });
 });

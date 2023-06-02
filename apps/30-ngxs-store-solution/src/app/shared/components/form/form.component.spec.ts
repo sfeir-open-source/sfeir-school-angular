@@ -3,6 +3,7 @@ import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, fakeAsync } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
 import { fireEvent, render, screen } from '@testing-library/angular';
+import { People } from '../../models/people.model';
 import { CustomInputComponent } from '../custom-input/custom-input.component';
 import { FormComponent } from './form.component';
 
@@ -13,8 +14,13 @@ describe('FormComponent', () => {
   let componentFixture: ComponentFixture<FormComponent>;
   let component: FormComponent;
   let container: Element;
+  let reload: any;
   beforeEach(async () => {
-    const { fixture, container: hostContainer } = await render(FormComponent, {
+    const {
+      fixture,
+      container: hostContainer,
+      rerender,
+    } = await render(FormComponent, {
       imports: [CommonModule, ReactiveFormsModule],
       declarations: [FormComponent, CustomInputComponent],
       schemas: [NO_ERRORS_SCHEMA],
@@ -31,6 +37,7 @@ describe('FormComponent', () => {
     componentFixture = fixture;
     component = fixture.componentInstance;
     container = hostContainer;
+    reload = rerender;
   });
   describe('#UI', () => {
     test('should disable the submit button', fakeAsync(async () => {
@@ -48,6 +55,22 @@ describe('FormComponent', () => {
     });
   });
   describe('#Functions', () => {
+    test('should patch the value of form if person is provided', async () => {
+      const spy = jest.spyOn(component.personForm, 'patchValue');
+      const person = { lastname: 'Doe', firstname: 'John' } as People;
+      await reload({
+        componentProperties: {
+          person,
+          cancel: {
+            emit: CANCEL_SPY,
+          } as any,
+          save: {
+            emit: SAVE_SPY,
+          } as any,
+        },
+      });
+      expect(spy).toHaveBeenCalledWith(person);
+    });
     test('should call the onSave method', () => {
       const spy = jest.spyOn(component, 'onSave');
       const submitButton = screen.getByText('Save');
