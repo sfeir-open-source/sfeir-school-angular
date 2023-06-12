@@ -8,9 +8,14 @@ const SEARCH_SPY = jest.fn();
 describe('SearchComponent', () => {
   let container: Element;
   let component: SearchComponent;
+  let rerender: any;
 
   beforeEach(async () => {
-    const { fixture, container: hostContainer } = await render(SearchComponent, {
+    const {
+      fixture,
+      container: hostContainer,
+      rerender: reload,
+    } = await render(SearchComponent, {
       imports: [ReactiveFormsModule],
       schemas: [NO_ERRORS_SCHEMA],
       componentProperties: {
@@ -22,6 +27,7 @@ describe('SearchComponent', () => {
     });
     container = hostContainer;
     component = fixture.componentInstance;
+    rerender = reload;
   });
 
   test('should create an instance of search', () => {
@@ -30,6 +36,11 @@ describe('SearchComponent', () => {
   test('should bind correctly the input', async () => {
     const element = container.querySelector<HTMLInputElement>('input[placeholder="Person Searcher"]');
     expect(element.value).toBe('SFEIR');
+  });
+  test('should refresh the search control', async () => {
+    const spy = jest.spyOn(component.searchControl, 'patchValue');
+    await rerender({ componentProperties: { searchText: 'sfeir' } });
+    expect(spy).toHaveBeenCalledWith('sfeir', { emitEvent: false });
   });
   test('should emit the search event', () => {
     const element = container.querySelector<HTMLInputElement>('input[placeholder="Person Searcher"]');

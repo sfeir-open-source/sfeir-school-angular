@@ -2,6 +2,7 @@ import { NgIfContext } from '@angular/common';
 import { Directive, Input, TemplateRef, ViewContainerRef } from '@angular/core';
 
 @Directive({
+  standalone: true,
   selector: '[sfeirDisplay]',
 })
 export class DisplayDirective {

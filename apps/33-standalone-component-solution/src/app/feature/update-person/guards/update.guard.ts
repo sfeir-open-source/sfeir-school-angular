@@ -1,15 +1,8 @@
-import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, Router } from '@angular/router';
+import { inject } from '@angular/core';
+import { ActivatedRouteSnapshot, Router, UrlTree } from '@angular/router';
 
-@Injectable()
-export class UpdateGuard {
-  static patternPeopleId = /[a-z0-9]{24}/;
-
-  constructor(private readonly router: Router) {}
-
-  canActivate(route: ActivatedRouteSnapshot): boolean | Promise<boolean> {
-    const idPerson = route.paramMap.get('id');
-
-    return UpdateGuard.patternPeopleId.test(idPerson) ? true : this.router.navigate(['home']);
-  }
+export function updateGuard(route: ActivatedRouteSnapshot): boolean | UrlTree {
+  const patternPeopleId = /[a-z0-9]{24}/;
+  const idPerson = route.paramMap.get('id');
+  return patternPeopleId.test(idPerson) ? true : inject(Router).createUrlTree(['home']);
 }

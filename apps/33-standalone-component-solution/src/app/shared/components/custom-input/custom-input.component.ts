@@ -1,16 +1,21 @@
 import { Component, ElementRef, forwardRef, Input, OnDestroy, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { BehaviorSubject, fromEvent, merge, Subject, takeUntil, tap } from 'rxjs';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { AsyncPipe, NgIf } from '@angular/common';
 
 @Component({
+  standalone: true,
+  imports: [NgIf, AsyncPipe, MatFormFieldModule, MatInputModule],
   selector: 'sfeir-custom-input',
   templateUrl: './custom-input.component.html',
   styleUrls: ['./custom-input.component.scss'],
   providers: [{ provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() => CustomInputComponent), multi: true }],
 })
 export class CustomInputComponent implements OnInit, OnDestroy, ControlValueAccessor {
-  @Input() placeholder: string;
-  @Input() inputType: string;
+  @Input() placeholder = '';
+  @Input() inputType = 'text';
   @ViewChild('InputElement', { static: true }) inputElement: ElementRef<HTMLInputElement>;
   userLoseFocus$: BehaviorSubject<boolean> = new BehaviorSubject(false);
   private _onChange: (x: string | number) => void;
@@ -20,9 +25,6 @@ export class CustomInputComponent implements OnInit, OnDestroy, ControlValueAcce
   constructor(private readonly renderer: Renderer2) {}
 
   ngOnInit(): void {
-    this.placeholder ??= '';
-    this.inputType ||= 'text';
-
     const inputListener$ = fromEvent(this.inputElement.nativeElement, 'input').pipe(
       tap(() => {
         this._onChange(this.inputElement.nativeElement.value);

@@ -1,6 +1,7 @@
 import { Directive, ElementRef, HostBinding, HostListener, Input, OnInit, Renderer2 } from '@angular/core';
 
 @Directive({
+  standalone: true,
   selector: '[sfeirBadge]',
 })
 export class BadgeDirective implements OnInit {

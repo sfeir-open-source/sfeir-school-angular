@@ -1,59 +1,33 @@
-/* eslint-disable @angular-eslint/component-class-suffix */
 import { Component } from '@angular/core';
-import { TestBed, waitForAsync } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
+import { ComponentFixture } from '@angular/core/testing';
+import { render } from '@testing-library/angular';
 import { DisplayDirective } from './display.directive';
 
-@Component({
-  template: ``,
-})
-export class HostSfeirDisplayDirective {
-  condition = true;
+@Component({ template: `<span *sfeirDisplay="person.isManager">Hello Sfeir</span>` })
+class HostDirectiveComponent {
+  person = { isManager: true };
 }
 
-const overrideTemplateComponent = (template: string) =>
-  TestBed.overrideComponent(HostSfeirDisplayDirective, { set: { template } }).createComponent(HostSfeirDisplayDirective);
-
 describe('SfeirDisplayDirective', () => {
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      declarations: [HostSfeirDisplayDirective, DisplayDirective],
-    }).compileComponents();
-  }));
+  let componentFixture: ComponentFixture<HostDirectiveComponent>;
+  let component: HostDirectiveComponent;
+  let container: Element;
 
-  it('should create an instante of HostSfeirDisplayDirective', () => {
-    const fixture = overrideTemplateComponent(`<div>Hello</div>`);
-    const component = fixture.componentInstance;
-    fixture.detectChanges();
-    expect(component).toBeTruthy();
+  beforeEach(async () => {
+    const { fixture, container: hostContainer } = await render(HostDirectiveComponent, { declarations: [DisplayDirective] });
+    componentFixture = fixture;
+    component = fixture.componentInstance;
+    container = hostContainer;
   });
 
-  it('should not display the div if condition is false', () => {
-    const fixture = overrideTemplateComponent(`<div *sfeirDisplay="false">Hello</div>`);
-    const debugElement = fixture.debugElement;
-    fixture.detectChanges();
-    const divElement = debugElement.query(By.css('div'));
-    expect(divElement).toBeFalsy();
+  test('should display the Helle Sfeir text', () => {
+    const span = container.querySelector<HTMLElement>('span');
+    expect(span.textContent).toBe('Hello Sfeir');
   });
-
-  it('should display the div if condition is true', () => {
-    const fixture = overrideTemplateComponent(`<div *sfeirDisplay="true">Hello</div>`);
-    const debugElement = fixture.debugElement;
-    fixture.detectChanges();
-    const divElement = debugElement.query(By.css('div'));
-    expect(divElement).toBeTruthy();
-  });
-
-  it('should reevaluate the condition if change', () => {
-    const fixture = overrideTemplateComponent(`<div *sfeirDisplay="condition">Hello</div>`);
-    const debugElement = fixture.debugElement;
-    const component = fixture.componentInstance;
-    fixture.detectChanges();
-    let divElement = debugElement.query(By.css('div'));
-    expect(divElement).toBeTruthy();
-    component.condition = false;
-    fixture.detectChanges();
-    divElement = debugElement.query(By.css('div'));
-    expect(divElement).toBeFalsy();
+  test('should not display the Helle Sfeir text', () => {
+    component.person = { isManager: false };
+    componentFixture.detectChanges();
+    const span = container.querySelector<HTMLElement>('span');
+    expect(span).toBeFalsy();
   });
 });

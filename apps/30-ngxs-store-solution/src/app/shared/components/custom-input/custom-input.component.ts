@@ -9,8 +9,8 @@ import { BehaviorSubject, fromEvent, merge, Subject, takeUntil, tap } from 'rxjs
   providers: [{ provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() => CustomInputComponent), multi: true }],
 })
 export class CustomInputComponent implements OnInit, OnDestroy, ControlValueAccessor {
-  @Input() placeholder: string;
-  @Input() inputType: string;
+  @Input() placeholder = '';
+  @Input() inputType = 'text';
   @ViewChild('InputElement', { static: true }) inputElement: ElementRef<HTMLInputElement>;
   userLoseFocus$: BehaviorSubject<boolean> = new BehaviorSubject(false);
   private _onChange: (x: string | number) => void;
@@ -20,9 +20,6 @@ export class CustomInputComponent implements OnInit, OnDestroy, ControlValueAcce
   constructor(private readonly renderer: Renderer2) {}
 
   ngOnInit(): void {
-    this.placeholder ??= '';
-    this.inputType ||= 'text';
-
     const inputListener$ = fromEvent(this.inputElement.nativeElement, 'input').pipe(
       tap(() => {
         this._onChange(this.inputElement.nativeElement.value);

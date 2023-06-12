@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component, NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture } from '@angular/core/testing';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
@@ -6,6 +5,8 @@ import { fireEvent, render } from '@testing-library/angular';
 import { CustomInputComponent } from './custom-input.component';
 
 @Component({
+  standalone: true,
+  imports: [ReactiveFormsModule, CustomInputComponent],
   template: `<sfeir-custom-input [formControl]="control">Lose focus</sfeir-custom-input>`,
 })
 class HostComponent {
@@ -19,8 +20,6 @@ describe('CustomInputComponent', () => {
 
   beforeEach(async () => {
     const { fixture, container: hostContainer } = await render(HostComponent, {
-      imports: [ReactiveFormsModule, CommonModule],
-      declarations: [CustomInputComponent],
       schemas: [NO_ERRORS_SCHEMA],
     });
     componentFixture = fixture;

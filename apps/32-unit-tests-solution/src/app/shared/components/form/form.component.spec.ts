@@ -1,58 +1,95 @@
-import { NO_ERRORS_SCHEMA, SimpleChange } from '@angular/core';
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { CommonModule } from '@angular/common';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { ComponentFixture, fakeAsync } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';
+import { fireEvent, render, screen } from '@testing-library/angular';
 import { People } from '../../models/people.model';
-import { PersonForm } from './form';
+import { CustomInputComponent } from '../custom-input/custom-input.component';
 import { FormComponent } from './form.component';
 
+const CANCEL_SPY = jest.fn();
+const SAVE_SPY = jest.fn();
+
 describe('FormComponent', () => {
-  let fixture: ComponentFixture<FormComponent>;
+  let componentFixture: ComponentFixture<FormComponent>;
   let component: FormComponent;
-
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      declarations: [FormComponent],
+  let container: Element;
+  let reload: any;
+  beforeEach(async () => {
+    const {
+      fixture,
+      container: hostContainer,
+      rerender,
+    } = await render(FormComponent, {
+      imports: [CommonModule, ReactiveFormsModule],
+      declarations: [FormComponent, CustomInputComponent],
       schemas: [NO_ERRORS_SCHEMA],
-    }).compileComponents();
-  }));
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(FormComponent);
+      componentProperties: {
+        person: null,
+        cancel: {
+          emit: CANCEL_SPY,
+        } as any,
+        save: {
+          emit: SAVE_SPY,
+        } as any,
+      },
+    });
+    componentFixture = fixture;
     component = fixture.componentInstance;
+    container = hostContainer;
+    reload = rerender;
   });
-
-  it('should create an instance of FormComponent', () => {
-    fixture.detectChanges();
-    expect(component).toBeTruthy();
+  describe('#UI', () => {
+    test('should disable the submit button', fakeAsync(async () => {
+      await componentFixture.whenStable();
+      componentFixture.detectChanges();
+      const submitButton = screen.getByText<HTMLButtonElement>('Save');
+      expect(submitButton.disabled).toBeTruthy();
+    }));
+    test('should create an instance of FormComponent', () => {
+      expect(component).toBeInstanceOf(FormComponent);
+    });
+    test('should create 4 sfeir custom input', () => {
+      const inputs = container.querySelectorAll('sfeir-custom-input');
+      expect(inputs.length).toEqual(4);
+    });
   });
-
-  it('should create an instance of personForm without existing person', () => {
-    fixture.detectChanges();
-    expect(component.personForm).toBeInstanceOf(PersonForm);
-    expect(component.personForm.value.id).toBeNull();
-  });
-
-  it('should create an instance of personForm with an existing person', () => {
-    component.person = { id: 'Sfeir' } as People;
-    component.ngOnChanges({ person: new SimpleChange(null, component.person, true) });
-    fixture.detectChanges();
-    expect(component.personForm).toBeInstanceOf(PersonForm);
-    expect(component.personForm.value.id).toBe('Sfeir');
-  });
-
-  it('should emit the event save when the method onSave is called', () => {
-    component.person = { id: 'Sfeir' } as People;
-    fixture.detectChanges();
-    const spyOnSaveEmitter = jest.spyOn(component.save, 'emit');
-    component.onSave();
-    expect(spyOnSaveEmitter).toHaveBeenCalledTimes(1);
-    expect(spyOnSaveEmitter).toHaveBeenCalledWith(component.personForm.value);
-  });
-
-  it('should emit the event cancel when the method onCancel is called', () => {
-    component.person = { id: 'Sfeir' } as People;
-    fixture.detectChanges();
-    const spyOnCancelEmitter = jest.spyOn(component.cancel, 'emit');
-    component.onCancel();
-    expect(spyOnCancelEmitter).toHaveBeenCalledTimes(1);
+  describe('#Functions', () => {
+    test('should patch the value of form if person is provided', async () => {
+      const spy = jest.spyOn(component.personForm, 'patchValue');
+      const person = { lastname: 'Doe', firstname: 'John' } as People;
+      await reload({
+        componentProperties: {
+          person,
+          cancel: {
+            emit: CANCEL_SPY,
+          } as any,
+          save: {
+            emit: SAVE_SPY,
+          } as any,
+        },
+      });
+      expect(spy).toHaveBeenCalledWith(person);
+    });
+    test('should call the onSave method', () => {
+      const spy = jest.spyOn(component, 'onSave');
+      const submitButton = screen.getByText('Save');
+      fireEvent.submit(submitButton);
+      expect(spy).toHaveBeenCalled();
+    });
+    test('should call the save event emitter', () => {
+      component.onSave();
+      expect(SAVE_SPY).toHaveBeenCalled();
+    });
+    test('should call the onCancel method', () => {
+      const spy = jest.spyOn(component, 'onCancel');
+      const cancelButton: HTMLButtonElement = screen.getByText('Cancel');
+      fireEvent.click(cancelButton);
+      expect(spy).toHaveBeenCalled();
+    });
+    test('should call the cancel event emitter', () => {
+      component.onCancel();
+      expect(CANCEL_SPY).toHaveBeenCalled();
+    });
   });
 });

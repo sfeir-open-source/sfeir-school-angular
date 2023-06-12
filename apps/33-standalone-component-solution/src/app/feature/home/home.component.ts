@@ -1,17 +1,19 @@
+import { AsyncPipe, NgIf } from '@angular/common';
 import { Component, inject } from '@angular/core';
-import { map, Observable } from 'rxjs';
+import { MatButtonModule } from '@angular/material/button';
+import { Observable, map } from 'rxjs';
 import { PeopleService } from '../../core/providers/people.service';
+import { CardComponent } from '../../shared/components/card/card.component';
 import { People } from '../../shared/models/people.model';
-import { SharedModule } from '../../shared/shared.module';
 
 @Component({
   selector: 'sfeir-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
   standalone: true,
-  imports: [SharedModule],
+  imports: [NgIf, CardComponent, MatButtonModule, AsyncPipe],
 })
-export default class HomeComponent {
+export class HomeComponent {
   private readonly peopleService: PeopleService = inject(PeopleService);
 
   person$: Observable<People> = this.peopleService.getPeople().pipe(map(([firstPerson]) => firstPerson));

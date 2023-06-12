@@ -1,14 +1,14 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { Subject, takeUntil } from 'rxjs';
-import { SharedModule } from '../../../../shared/shared.module';
+import { MatInputModule } from '@angular/material/input';
 
 @Component({
   selector: 'sfeir-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss'],
   standalone: true,
-  imports: [SharedModule],
+  imports: [MatInputModule, ReactiveFormsModule],
 })
 export class SearchComponent implements OnChanges, OnInit {
   @Input() searchText: string;

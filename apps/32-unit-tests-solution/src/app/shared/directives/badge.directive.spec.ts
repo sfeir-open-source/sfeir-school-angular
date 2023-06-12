@@ -1,100 +1,84 @@
-/* eslint-disable @angular-eslint/component-class-suffix */
-import { Component, ViewChild } from '@angular/core';
-import { TestBed, waitForAsync } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
+import { Component, DebugElement, Input } from '@angular/core';
+import { fireEvent, render } from '@testing-library/angular';
+import { CommonModule } from '@angular/common';
 import { BadgeDirective } from './badge.directive';
-
-@Component({
-  template: '',
-})
-export class HostBadgeDirective {
-  @ViewChild(BadgeDirective) badgeDirective: BadgeDirective;
-}
-
-const overrideTemplate = (template: string) =>
-  TestBed.overrideComponent(HostBadgeDirective, { set: { template } }).createComponent(HostBadgeDirective);
+import { By } from '@angular/platform-browser';
 
 describe('BadgeDirective', () => {
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      declarations: [HostBadgeDirective, BadgeDirective],
+  let debugElement: DebugElement;
+  let component: HostDirectiveComponent;
+  let container: Element;
+
+  describe('person is not a manager', () => {
+    beforeEach(async () => {
+      const { fixture, container: hostElement } = await render(HostDirectiveComponent, {
+        imports: [CommonModule],
+        declarations: [HostDirectiveComponent, BadgeDirective],
+        componentInputs: { person: { isManager: false } },
+      });
+      component = fixture.componentInstance;
+      debugElement = fixture.debugElement;
+      container = hostElement;
     });
-  }));
 
-  it('should create an instance', () => {
-    const fixture = overrideTemplate('<span [sfeirBadge]="true"></span>');
-    const component = fixture.componentInstance;
-    expect(component).toBeTruthy();
+    it('should create an instance of HostDirectiveComponent', () => {
+      expect(component).toBeTruthy();
+    });
+    it('should create an instance of BadgeDirective', () => {
+      const directive = debugElement.query(By.directive(BadgeDirective));
+      expect(directive).toBeTruthy();
+    });
+    it('should not display the icon', () => {
+      const icon = container.querySelector('i.material-icons');
+      expect(icon).toBeFalsy();
+    });
   });
-
-  it('should not display the icon for a non manager person', () => {
-    const fixture = overrideTemplate('<span [sfeirBadge]="false"></span>');
-    const debugElement = fixture.debugElement;
-    fixture.detectChanges();
-    const iconElement = debugElement.query(By.css('i.material-icons'));
-    expect(iconElement).toBeFalsy();
-  });
-
-  it('should display the icon if person is manager', () => {
-    const fixture = overrideTemplate('<span [sfeirBadge]="true"></span>');
-    const debugElement = fixture.debugElement;
-    fixture.detectChanges();
-    const iconElement = debugElement.query(By.css('i.material-icons'));
-    expect(iconElement).toBeTruthy();
-    expect(iconElement.nativeElement.textContent).toBe('supervisor_account');
-  });
-
-  it('by default the icon color must be black', () => {
-    const fixture = overrideTemplate('<span [sfeirBadge]="true"></span>');
-    const debugElement = fixture.debugElement;
-    fixture.detectChanges();
-    const spanElement = debugElement.query(By.css('span'));
-    expect(spanElement.nativeElement.style.color).toBe('black');
-  });
-
-  it('should call the onMouseOver listener when mouseover event is dispatched', () => {
-    const fixture = overrideTemplate('<span [sfeirBadge]="true"></span>');
-    const component = fixture.componentInstance;
-    const debugElement = fixture.debugElement;
-    fixture.detectChanges();
-    const spyOnMouseOver = jest.spyOn(component.badgeDirective, 'onMouseOver');
-    const mouseOverEvent = new Event('mouseover');
-    let spanElement = debugElement.query(By.css('span'));
-    spanElement.triggerEventHandler('mouseover', mouseOverEvent);
-    fixture.detectChanges();
-    spanElement = debugElement.query(By.css('span'));
-    expect(spyOnMouseOver).toHaveBeenCalledTimes(1);
-    expect(spanElement.nativeElement.style.color).toBe('red');
-  });
-
-  it('should call the onMouseOut listener when mouseout event is dispatched', () => {
-    const fixture = overrideTemplate('<span [sfeirBadge]="true"></span>');
-    const component = fixture.componentInstance;
-    const debugElement = fixture.debugElement;
-    fixture.detectChanges();
-    const spyOnMouseLeave = jest.spyOn(component.badgeDirective, 'onMouseOut');
-    const mouseLeaveEvent = new Event('mouseout');
-    let spanElement = debugElement.query(By.css('span'));
-    spanElement.triggerEventHandler('mouseout', mouseLeaveEvent);
-    fixture.detectChanges();
-    spanElement = debugElement.query(By.css('span'));
-    expect(spyOnMouseLeave).toHaveBeenCalledTimes(1);
-    expect(spanElement.nativeElement.style.color).toBe('black');
-  });
-
-  it('should alterne color black red function if user dispatch mouseover or mouseout event', () => {
-    const fixture = overrideTemplate('<span [sfeirBadge]="true"></span>');
-    const debugElement = fixture.debugElement;
-    fixture.detectChanges();
-    let spanElement = debugElement.query(By.css('span'));
-    const mouseOverEvent = new Event('mouseover');
-    spanElement.triggerEventHandler('mouseover', mouseOverEvent);
-    fixture.detectChanges();
-    expect(spanElement.nativeElement.style.color).toBe('red');
-    const mouseLeaveEvent = new Event('mouseout');
-    spanElement.triggerEventHandler('mouseout', mouseLeaveEvent);
-    fixture.detectChanges();
-    spanElement = debugElement.query(By.css('span'));
-    expect(spanElement.nativeElement.style.color).toBe('black');
+  describe('person is a manager', () => {
+    let badgeDirective: BadgeDirective;
+    beforeEach(async () => {
+      const { fixture, container: hostElement } = await render(HostDirectiveComponent, {
+        imports: [CommonModule],
+        declarations: [HostDirectiveComponent, BadgeDirective],
+        componentInputs: { person: { isManager: true } },
+      });
+      component = fixture.componentInstance;
+      debugElement = fixture.debugElement;
+      container = hostElement;
+      badgeDirective = debugElement.query(By.directive(BadgeDirective)).injector.get(BadgeDirective);
+    });
+    it('should not display the icon', () => {
+      const icon = container.querySelector('i.material-icons');
+      expect(icon).toBeTruthy();
+    });
+    it('should display the icon in black', () => {
+      const span = container.querySelector<HTMLElement>('span');
+      expect(span.style.color).toBe('black');
+    });
+    it('should display the icon in red if event mouseover is triggered', () => {
+      const spy = jest.spyOn(badgeDirective, 'onMouseOver');
+      let span = container.querySelector<HTMLElement>('span');
+      fireEvent.mouseOver(span);
+      span = container.querySelector<HTMLElement>('span');
+      expect(spy).toHaveBeenCalled();
+      expect(span.style.color).toBe('red');
+    });
+    it('should change the color red into black', () => {
+      const spy = jest.spyOn(badgeDirective, 'onMouseOut');
+      let span = container.querySelector<HTMLElement>('span');
+      fireEvent.mouseOver(span);
+      span = container.querySelector<HTMLElement>('span');
+      expect(span.style.color).toBe('red');
+      fireEvent.mouseOut(span);
+      span = container.querySelector<HTMLElement>('span');
+      expect(spy).toHaveBeenCalled();
+      expect(span.style.color).toBe('black');
+    });
   });
 });
+
+@Component({
+  template: `<span [sfeirBadge]="person.isManager"></span>`,
+})
+export class HostDirectiveComponent {
+  @Input() person!: { isManager: boolean };
+}
