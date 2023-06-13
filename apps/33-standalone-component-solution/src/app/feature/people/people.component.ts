@@ -7,18 +7,22 @@ import { setSearch } from '../../core/store/action';
 import { selectPeople, selectSearch } from '../../core/store/selector';
 import { AppStore } from '../../core/store/state';
 import { People } from '../../shared/models/people.model';
-import { SharedModule } from '../../shared/shared.module';
 import { AddPersonDialogComponent } from './components/add-person-dialog/add-person-dialog.component';
 import { SearchComponent } from './components/search/search.component';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
+import { CardComponent } from '../../shared/components/card/card.component';
+import { MatListModule } from '@angular/material/list';
+import { MatButtonModule } from '@angular/material/button';
+import { BadgeDirective } from '../../shared/directives/badge.directive';
 
 @Component({
   selector: 'sfeir-people',
   templateUrl: './people.component.html',
   styleUrls: ['./people.component.scss'],
   standalone: true,
-  imports: [AddPersonDialogComponent, SearchComponent, SharedModule],
+  imports: [CommonModule, NgOptimizedImage, MatListModule, MatButtonModule, AddPersonDialogComponent, SearchComponent, CardComponent, BadgeDirective],
 })
-export default class PeopleComponent implements OnInit {
+export class PeopleComponent implements OnInit {
   private readonly peopleService = inject(PeopleService);
   private readonly matDialogService = inject(MatDialog);
   private readonly store: Store<AppStore> = inject(Store);

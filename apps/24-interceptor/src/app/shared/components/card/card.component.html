@@ -1,6 +1,6 @@
 <mat-card appearance="outlined" class="mat-whiteframe-2dp">
   <mat-card-title-group>
-    <img mat-card-image [src]="person.photo" alt="person-photo" />
+    <img mat-card-image [ngSrc]="person.photo" alt="person-photo" height="128" height="128" />
     <mat-card-title>
       <a href="/people/1"> <span>{{ person.firstname + ' ' + person.lastname}}</span> </a>
     </mat-card-title>
@@ -15,9 +15,9 @@
     </mat-card-subtitle>
   </mat-card-title-group>
   <mat-card-content>
-    <div class="contact-info">Manager&nbsp;:&nbsp; <a href="/people/1">{{ person.manager |na }}</a></div>
-    <div class="contact-info">Location&nbsp;:&nbsp;<a href="http://www.sfeir.com/contact/">SFEIR</a></div>
-    <div class="contact-info">birthDate&nbsp;:&nbsp;<a href="birthDate">{{ person.birthDate |date:'dd/MM/yyyy'}}</a>
+    <div class="contact-info">Manager <a href="/people/1">{{ person.manager |na }}</a></div>
+    <div class="contact-info">Location<a href="http://www.sfeir.com/contact/">SFEIR</a></div>
+    <div class="contact-info">birthDate<a href="birthDate">{{ person.birthDate |date:'dd/MM/yyyy'}}</a>
     </div>
     <div class="buttons-info">
       <a mat-button title="Locate" href="/people/1">

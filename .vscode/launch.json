@@ -9,7 +9,7 @@
       "request": "launch",
       "name": "DEBUG: Angular Application",
       "url": "http://localhost:4200",
-      "webRoot": "${workspaceFolder}/workshop"
+      "webRoot": "${workspaceFolder}"
     }
   ]
 }

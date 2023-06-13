@@ -20,15 +20,15 @@ export class PeopleService {
     return this.httpClient.delete<Array<People>>(`${environment.peopleEndpoint}/peoples/${personId}`);
   }
 
-  addNewPerson(person: PeopleForm): Observable<People> {
-    return this.httpClient.post<People>(`${environment.peopleEndpoint}/peoples`, person);
+  addNewPerson(person: PeopleForm): Observable<void> {
+    return this.httpClient.post<void>(`${environment.peopleEndpoint}/peoples`, person);
   }
 
   getPersonDetails(personId: string): Observable<People> {
     return this.httpClient.get<People>(`${environment.peopleEndpoint}/peoples/${personId}`);
   }
 
-  updatePerson(person: PeopleForm): Observable<People> {
-    return this.httpClient.put<People>(`${environment.peopleEndpoint}/peoples/${person.id}`, person);
+  updatePerson(person: PeopleForm): Observable<void> {
+    return this.httpClient.put<void>(`${environment.peopleEndpoint}/peoples/${person.id}`, person);
   }
 }

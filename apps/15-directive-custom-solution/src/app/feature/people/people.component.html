@@ -1,12 +1,12 @@
 <ng-container *ngIf="view$ |async as currentView" [ngSwitch]="currentView">
-  <section *ngSwitchCase="'card'">
+  <section *ngSwitchCase="'card'" data-testid="card-view">
     <sfeir-card *ngFor="let person of people$ | async" [person]="person" (personDelete)="deletePerson($event)">
     </sfeir-card>
   </section>
-  <section *ngSwitchCase="'list'">
+  <section *ngSwitchCase="'list'" data-testid="list-view">
     <mat-list>
       <mat-list-item *ngFor="let person of people$ | async" class="mat-whiteframe-2dp mat-card">
-        <img matListItemAvatar src="{{ person.photo }}" alt="person-image" />
+        <img matListItemAvatar ngSrc="{{ person.photo }}" alt="person-image" height="40" width="40"/>
         <h3 matListItemLine>{{ person.firstname }} {{ person.lastname }}
           <span class="sfeir-badge" [sfeirBadge]="person.isManager"></span>
         </h3>

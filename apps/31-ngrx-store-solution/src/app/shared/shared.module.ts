@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
@@ -11,8 +11,8 @@ import { MaterialDesignModule } from './material-design.module';
 import { NaPipe } from './pipes/na.pipe';
 
 @NgModule({
-  imports: [MaterialDesignModule, CommonModule, ReactiveFormsModule, RouterModule],
-  exports: [MaterialDesignModule, CardComponent, BadgeDirective, FormComponent, CommonModule, ReactiveFormsModule],
+  imports: [MaterialDesignModule, CommonModule, ReactiveFormsModule, RouterModule, NgOptimizedImage],
+  exports: [MaterialDesignModule, CardComponent, BadgeDirective, FormComponent, CommonModule, ReactiveFormsModule, NgOptimizedImage],
   declarations: [CardComponent, NaPipe, BadgeDirective, FormComponent, DisplayDirective, CustomInputComponent],
 })
 export class SharedModule {}

@@ -20,7 +20,7 @@ export class PeopleService {
     return this.httpClient.get<People>(`${environment.peopleEndpoint}/peoples/random`);
   }
 
-  deletePeople(personId: string): Observable<Array<People>> {
+  deletePeople(personId: string): Observable<unknown> {
     return this.httpClient
       .delete<Array<People>>(`${environment.peopleEndpoint}/peoples/${personId}`)
       .pipe(switchMap(people => this.store.dispatch(new SetPeople(people))));

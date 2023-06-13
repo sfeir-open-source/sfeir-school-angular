@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Subject, takeUntil } from 'rxjs';
 
@@ -7,19 +7,22 @@ import { Subject, takeUntil } from 'rxjs';
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss'],
 })
-export class SearchComponent implements OnChanges, OnInit {
+export class SearchComponent implements OnChanges, OnInit, OnDestroy {
   @Input() searchText: string;
   @Output() search: EventEmitter<string> = new EventEmitter();
-  searchControl: FormControl<string | null>;
+  searchControl: FormControl<string | null> = new FormControl('');
   private unsubscribe$: Subject<boolean> = new Subject();
 
   ngOnChanges() {
-    this.searchControl
-      ? this.searchControl.patchValue(this.searchText, { emitEvent: false })
-      : (this.searchControl = new FormControl(this.searchText));
+    this.searchControl.patchValue(this.searchText, { emitEvent: false });
   }
 
   ngOnInit(): void {
     this.searchControl.valueChanges.pipe(takeUntil(this.unsubscribe$)).subscribe(search => this.search.emit(search));
+  }
+
+  ngOnDestroy(): void {
+    this.unsubscribe$.next(true);
+    this.unsubscribe$.complete();
   }
 }

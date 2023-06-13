@@ -12,13 +12,13 @@ import { People } from '../../shared/models/people.model';
 export class HomeComponent implements OnInit {
   person$: Observable<People> = EMPTY;
 
-  constructor(private readonly httpCLient: HttpClient) {}
+  constructor(private readonly httpClient: HttpClient) {}
 
   ngOnInit(): void {
-    this.person$ = this.httpCLient.get<Array<People>>(`${environment.peopleEndpoint}/peoples`).pipe(map(([firstPerson]) => firstPerson));
+    this.person$ = this.httpClient.get<Array<People>>(`${environment.peopleEndpoint}/peoples`).pipe(map(([firstPerson]) => firstPerson));
   }
 
   getRandomPerson(): void {
-    this.person$ = this.httpCLient.get<People>(`${environment.peopleEndpoint}/peoples/random`);
+    this.person$ = this.httpClient.get<People>(`${environment.peopleEndpoint}/peoples/random`);
   }
 }

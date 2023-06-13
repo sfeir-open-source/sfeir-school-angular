@@ -1,3 +1,4 @@
+import { NgOptimizedImage } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -8,7 +9,7 @@ import { MaterialDesignModule } from './material-design.module';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent],
-  imports: [BrowserModule, BrowserAnimationsModule, MaterialDesignModule, HttpClientModule],
+  imports: [BrowserModule, BrowserAnimationsModule, MaterialDesignModule, HttpClientModule, NgOptimizedImage],
   providers: [],
   bootstrap: [AppComponent],
 })

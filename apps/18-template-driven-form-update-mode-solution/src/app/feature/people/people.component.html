@@ -1,12 +1,12 @@
 <ng-container *ngIf="view$ |async as currentView" [ngSwitch]="currentView">
-  <section *ngSwitchCase="'card'">
+  <section *ngSwitchCase="'card'" data-testid="card-view">
     <sfeir-card *ngFor="let person of people$ | async" [person]="person" (personDelete)="deletePerson($event)">
     </sfeir-card>
   </section>
-  <section *ngSwitchCase="'list'">
+  <section *ngSwitchCase="'list'" data-testid="list-view">
     <mat-list>
       <mat-list-item *ngFor="let person of people$ | async" class="mat-whiteframe-2dp mat-card">
-        <img matListItemAvatar src="{{ person.photo }}" alt="person-image" />
+        <img matListItemAvatar src="{{ person.photo }}" alt="person-image"/>
         <h3 matListItemLine>{{ person.firstname }} {{ person.lastname }}
           <span class="sfeir-badge" [sfeirBadge]="person.isManager"></span>
         </h3>
@@ -17,8 +17,8 @@
     </mat-list>
   </section>
   <section class="buttons-fab">
-    <button mat-fab color="accent" class="button-add" (click)="showDialog()"><i class="material-icons">add</i></button>
-    <button mat-fab color="warn" (click)="changeView(currentView)">
+    <button mat-fab color="accent" class="button-add" (click)="showDialog()" data-testid="button-modal"><i class="material-icons">add</i></button>
+    <button mat-fab color="warn" (click)="changeView(currentView)" data-testid="button-view">
       <i class="material-icons">{{ currentView === 'card' ? 'list' : 'view_stream'}}</i>
     </button>
   </section>
