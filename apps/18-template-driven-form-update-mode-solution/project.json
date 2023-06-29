@@ -6,8 +6,10 @@
   "prefix": "sfeir",
   "targets": {
     "build": {
-      "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "executor": "@angular-devkit/build-angular:browser-esbuild",
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/18-template-driven-form-update-mode-solution",
         "index": "apps/18-template-driven-form-update-mode-solution/src/index.html",
@@ -87,7 +89,9 @@
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/apps/18-template-driven-form-update-mode-solution"],
+      "outputs": [
+        "{workspaceRoot}/coverage/apps/18-template-driven-form-update-mode-solution"
+      ],
       "options": {
         "jestConfig": "apps/18-template-driven-form-update-mode-solution/jest.config.ts",
         "passWithNoTests": true

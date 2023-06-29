@@ -6,8 +6,10 @@
   "prefix": "sfeir",
   "targets": {
     "build": {
-      "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "executor": "@angular-devkit/build-angular:browser-esbuild",
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/01-hands-on",
         "index": "apps/01-hands-on/src/index.html",
@@ -15,8 +17,14 @@
         "polyfills": "apps/01-hands-on/src/polyfills.ts",
         "tsConfig": "apps/01-hands-on/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/01-hands-on/src/favicon.ico", "apps/01-hands-on/src/assets"],
-        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/01-hands-on/src/styles.scss"],
+        "assets": [
+          "apps/01-hands-on/src/favicon.ico",
+          "apps/01-hands-on/src/assets"
+        ],
+        "styles": [
+          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+          "apps/01-hands-on/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -73,12 +81,17 @@
     "lint": {
       "executor": "@nx/eslint:lint",
       "options": {
-        "lintFilePatterns": ["apps/01-hands-on/src/**/*.ts", "apps/01-hands-on/src/**/*.html"]
+        "lintFilePatterns": [
+          "apps/01-hands-on/src/**/*.ts",
+          "apps/01-hands-on/src/**/*.html"
+        ]
       }
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/apps/01-hands-on"],
+      "outputs": [
+        "{workspaceRoot}/coverage/apps/01-hands-on"
+      ],
       "options": {
         "jestConfig": "apps/01-hands-on/jest.config.ts",
         "passWithNoTests": true

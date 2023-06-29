@@ -6,8 +6,10 @@
   "prefix": "sfeir",
   "targets": {
     "build": {
-      "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "executor": "@angular-devkit/build-angular:browser-esbuild",
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/26-hostbinding-hostlistener-solution",
         "index": "apps/26-hostbinding-hostlistener-solution/src/index.html",
@@ -15,8 +17,14 @@
         "polyfills": "apps/26-hostbinding-hostlistener-solution/src/polyfills.ts",
         "tsConfig": "apps/26-hostbinding-hostlistener-solution/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/26-hostbinding-hostlistener-solution/src/favicon.ico", "apps/26-hostbinding-hostlistener-solution/src/assets"],
-        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/26-hostbinding-hostlistener-solution/src/styles.scss"],
+        "assets": [
+          "apps/26-hostbinding-hostlistener-solution/src/favicon.ico",
+          "apps/26-hostbinding-hostlistener-solution/src/assets"
+        ],
+        "styles": [
+          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+          "apps/26-hostbinding-hostlistener-solution/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -73,12 +81,17 @@
     "lint": {
       "executor": "@nx/eslint:lint",
       "options": {
-        "lintFilePatterns": ["apps/26-hostbinding-hostlistener-solution/src/**/*.ts", "apps/26-hostbinding-hostlistener-solution/src/**/*.html"]
+        "lintFilePatterns": [
+          "apps/26-hostbinding-hostlistener-solution/src/**/*.ts",
+          "apps/26-hostbinding-hostlistener-solution/src/**/*.html"
+        ]
       }
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/apps/26-hostbinding-hostlistener-solution"],
+      "outputs": [
+        "{workspaceRoot}/coverage/apps/26-hostbinding-hostlistener-solution"
+      ],
       "options": {
         "jestConfig": "apps/26-hostbinding-hostlistener-solution/jest.config.ts",
         "passWithNoTests": true

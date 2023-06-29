@@ -6,8 +6,10 @@
   "prefix": "sfeir",
   "targets": {
     "build": {
-      "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "executor": "@angular-devkit/build-angular:browser-esbuild",
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/31-ngrx-store-solution",
         "index": "apps/31-ngrx-store-solution/src/index.html",
@@ -15,8 +17,14 @@
         "polyfills": "apps/31-ngrx-store-solution/src/polyfills.ts",
         "tsConfig": "apps/31-ngrx-store-solution/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/31-ngrx-store-solution/src/favicon.ico", "apps/31-ngrx-store-solution/src/assets"],
-        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/31-ngrx-store-solution/src/styles.scss"],
+        "assets": [
+          "apps/31-ngrx-store-solution/src/favicon.ico",
+          "apps/31-ngrx-store-solution/src/assets"
+        ],
+        "styles": [
+          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+          "apps/31-ngrx-store-solution/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -73,12 +81,17 @@
     "lint": {
       "executor": "@nx/eslint:lint",
       "options": {
-        "lintFilePatterns": ["apps/31-ngrx-store-solution/src/**/*.ts", "apps/31-ngrx-store-solution/src/**/*.html"]
+        "lintFilePatterns": [
+          "apps/31-ngrx-store-solution/src/**/*.ts",
+          "apps/31-ngrx-store-solution/src/**/*.html"
+        ]
       }
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/apps/31-ngrx-store-solution"],
+      "outputs": [
+        "{workspaceRoot}/coverage/apps/31-ngrx-store-solution"
+      ],
       "options": {
         "jestConfig": "apps/31-ngrx-store-solution/jest.config.ts",
         "passWithNoTests": true

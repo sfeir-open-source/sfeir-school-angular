@@ -6,8 +6,10 @@
   "prefix": "sfeir",
   "targets": {
     "build": {
-      "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "executor": "@angular-devkit/build-angular:browser-esbuild",
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/17-template-driven-form-validation-solution",
         "index": "apps/17-template-driven-form-validation-solution/src/index.html",
@@ -15,7 +17,10 @@
         "polyfills": "apps/17-template-driven-form-validation-solution/src/polyfills.ts",
         "tsConfig": "apps/17-template-driven-form-validation-solution/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/17-template-driven-form-validation-solution/src/favicon.ico", "apps/17-template-driven-form-validation-solution/src/assets"],
+        "assets": [
+          "apps/17-template-driven-form-validation-solution/src/favicon.ico",
+          "apps/17-template-driven-form-validation-solution/src/assets"
+        ],
         "styles": [
           "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
           "apps/17-template-driven-form-validation-solution/src/styles.scss"
@@ -84,7 +89,9 @@
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/apps/17-template-driven-form-validation-solution"],
+      "outputs": [
+        "{workspaceRoot}/coverage/apps/17-template-driven-form-validation-solution"
+      ],
       "options": {
         "jestConfig": "apps/17-template-driven-form-validation-solution/jest.config.ts",
         "passWithNoTests": true
