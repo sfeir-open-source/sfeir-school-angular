@@ -38,6 +38,8 @@ export class LoginGuards implements CanLoad {
 <!-- .slide: class="sfeir-basic-slide with-code inconsolata" -->
 # Un exemple plus parlant
 
+<br/>
+
 ```typescript
 export function loginGuard(next: Route, segments: UrlSegment) {
   const authentificationService = inject(AuthentificationService);

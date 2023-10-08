@@ -26,6 +26,8 @@ export class UserResolver implements Resolve<User[]> {
 <!-- .slide: class="sfeir-basic-slide with-code inconsolata" -->
 # Un exemple est plus parlant
 
+<br/><br/><br/>
+
 ```typescript
 export function UserResolver(): Observable<User> {
   return inject(UserService).getUser();

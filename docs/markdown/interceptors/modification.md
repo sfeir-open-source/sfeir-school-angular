@@ -37,3 +37,20 @@ export class MyInterceptor implements HttpInterceptor {
 }
 ```
 <!-- .element: class="big-code" -->
+
+##==##
+
+# Ecriture d'un interceptor sous forme de fonction
+
+<br/><br/>
+
+```typescript
+export function AuthorizationInterceptor(
+  request: HttpRequest<People | Array<People>>,
+  next: HttpHandlerFn
+): Observable<HttpEvent<People | Array<People>>> {
+  const clonedRequest = request.clone({ setHeaders: { Authorization: 'Sfeir' } });
+  return next(clonedRequest) as Observable<HttpEvent<People | Array<People>>>;
+}
+```
+<!-- .element: class="big-code" -->

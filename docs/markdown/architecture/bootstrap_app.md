@@ -1,32 +1,39 @@
 <!-- .slide: class="transition-bg-sfeir-2 underline" -->
+
 # Bootstraping
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
+
 # Bootstraping: main.ts
+
 Dans une application Angular, le fichier __main.ts__ est chargé en premier
 <br/><br/>
 
 ```typescript
-import { platformbr/owserDynamic } from '@angular/platform-br/owser-dynamic';
-import { AppModule } from './app.module';
+import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
+import {AppModule} from './app.module';
 
-platformbr/owserDynamic().bootstrapModule(AppModule);
+platformBowserDynamic().bootstrapModule(AppModule);
 ```
+
 <!-- .element: class="big-code" -->
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
+
 # Bootstraping dans sa totalité
 
 ```typescript
 // main.ts
-import { platformbr/owserDynamic } from '@angular/platform-br/owser-dynamic';
-import { AppModule } from './app.module';
-platformbr/owserDynamic().bootstrapModule(AppModule);
+import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
+import {AppModule} from './app.module';
+
+platformBrowserDynamic().bootstrapModule(AppModule);
 ```
+
 <!-- .element: class="big-code" -->
 
 <br/>
@@ -34,14 +41,16 @@ platformbr/owserDynamic().bootstrapModule(AppModule);
 ```typescript
 // app.module.ts
 @NgModule({
-  imports: [br/owserModule],
+  imports: [browserModule],
   declaration: [AppComponent],
   exports: [],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {
+}
 ```
-<!-- .element: class="big-code" -->
+
+<!-- .element: class="medium-code" -->
 
 <br/>
 
@@ -49,4 +58,5 @@ export class AppModule { }
 <!-- index.html -->
 <sfeir-app></sfeir-app>
 ```
+
 <!-- .element: class="big-code" -->

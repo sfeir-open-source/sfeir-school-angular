@@ -1,4 +1,5 @@
 import { SfeirThemeInitializer } from '../web_modules/sfeir-school-theme/sfeir-school-theme.mjs';
+import { AngularModernApplication } from './angular-modern-application.js';
 import { dayFourSlides } from './day_four.js';
 import { dayOneSlides } from './day_one.js';
 import { dayThreeSLides } from './day_three.js';
@@ -15,6 +16,10 @@ function sfeirInstitute() {
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 function sfeirModuleDirective() {
   return moduleDirectiveSlides().map(slidePath => ({ path: slidePath }));
+}
+
+function angularModernApplication() {
+  return AngularModernApplication().map(slidePath => ({ path: slidePath }));
 }
 
 SfeirThemeInitializer.init(sfeirInstitute);
