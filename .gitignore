@@ -49,3 +49,5 @@ pick.sh
 
 workshop/dist
 /migrations.json
+
+.fleet

@@ -22,7 +22,7 @@ function architectureSlides() {
     'architecture/component.md',
     'architecture/module.md',
     'architecture/bootstrap_app.md',
-    'architecture/webpack.md',
+    'architecture/module-bundler.md',
     'architecture/exercice.md',
   ];
 }

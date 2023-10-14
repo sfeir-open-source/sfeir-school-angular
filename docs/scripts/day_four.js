@@ -60,6 +60,9 @@ function standaloneComponents() {
     'standalone-components/exercice.md',
   ];
 }
+function signals() {
+  return ['signals/transition_slide.md', 'signals/introduction.md', 'signals/signals.md', 'signals/exercice.md'];
+}
 
 function pwaSlides() {
   return ['pwa/transition_slide.md', 'pwa/introduction.md', 'pwa/service_worker_configuration.md', 'pwa/service_worker_communication.md'];
@@ -76,6 +79,7 @@ export function dayFourSlides() {
     ...stateManagementNgrx(),
     ...unitTestSlides(),
     ...standaloneComponents(),
+    ...signals(),
     ...pwaSlides(),
     ...serverSideSlides(),
   ];

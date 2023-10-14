@@ -1,10 +1,13 @@
 <!-- .slide: class="transition-bg-sfeir-2" -->
+
 # Le composant
 
 ##==##
 
 <!-- .slide -->
+
 # Le composant
+
 Le composant est composé de trois concepts de base.
 <br/><br/>
 
@@ -13,25 +16,31 @@ Le composant est composé de trois concepts de base.
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
+
 # Le composant: sa logique
+
 La logique du composant utilise la syntax de classe de ES2015
 <br/><br/>
 
 ```typescript
 export class AppComponent {
   name: string;
-  constructor(){
+
+  constructor() {
     this.name = 'Angular';
-   }
+  }
 }
 ```
+
 <!-- .element: class="big-code" -->
 <br/>
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
+
 # Le composant: son affichage
+
 L'affichage du composant dans la page se fait à l'aide d'un décorateur
 <br/><br/>
 
@@ -43,6 +52,7 @@ L'affichage du composant dans la page se fait à l'aide d'un décorateur
   styleUrls: ['app.component.scss']
 })
 ```
+
 <!-- .element: class="big-code" -->
 <br/>
 
@@ -50,6 +60,7 @@ L'affichage du composant dans la page se fait à l'aide d'un décorateur
 <!-- index.html -->
 <sfeir-app></sfeir-app>
 ```
+
 <!-- .element: class="big-code" -->
 <br/>
 Notes:
@@ -58,7 +69,9 @@ Notes:
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
+
 # Le composant: sa globalité
+
 L'écriture d'un composant dans sa totalité est donc la suivante
 <br/><br/>
 
@@ -71,9 +84,11 @@ L'écriture d'un composant dans sa totalité est donc la suivante
 })
 export class AppComponent {
   name: string;
-  constructor(){
+
+  constructor() {
     this.name = 'Angular';
-   }
+  }
 }
 ```
+
 <!-- .element: class="big-code" -->
