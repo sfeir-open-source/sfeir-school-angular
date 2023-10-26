@@ -71,7 +71,7 @@
       }
     },
     "lint": {
-      "executor": "@nx/linter:eslint",
+      "executor": "@nx/eslint:lint",
       "options": {
         "lintFilePatterns": ["apps/26-hostbinding-hostlistener/src/**/*.ts", "apps/26-hostbinding-hostlistener/src/**/*.html"]
       }

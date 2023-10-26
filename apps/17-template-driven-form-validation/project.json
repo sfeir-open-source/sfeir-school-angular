@@ -71,7 +71,7 @@
       }
     },
     "lint": {
-      "executor": "@nx/linter:eslint",
+      "executor": "@nx/eslint:lint",
       "options": {
         "lintFilePatterns": ["apps/17-template-driven-form-validation/src/**/*.ts", "apps/17-template-driven-form-validation/src/**/*.html"]
       }

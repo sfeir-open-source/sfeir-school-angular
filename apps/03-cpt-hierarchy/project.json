@@ -71,7 +71,7 @@
       }
     },
     "lint": {
-      "executor": "@nx/linter:eslint",
+      "executor": "@nx/eslint:lint",
       "options": {
         "lintFilePatterns": ["apps/03-cpt-hierarchy/src/**/*.ts", "apps/03-cpt-hierarchy/src/**/*.html"]
       }

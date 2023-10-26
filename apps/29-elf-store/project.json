@@ -71,7 +71,7 @@
       }
     },
     "lint": {
-      "executor": "@nx/linter:eslint",
+      "executor": "@nx/eslint:lint",
       "options": {
         "lintFilePatterns": ["apps/29-elf-store/src/**/*.ts", "apps/29-elf-store/src/**/*.html"]
       }
