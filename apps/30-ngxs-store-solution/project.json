@@ -71,7 +71,7 @@
       }
     },
     "lint": {
-      "executor": "@nx/linter:eslint",
+      "executor": "@nx/eslint:lint",
       "options": {
         "lintFilePatterns": ["apps/30-ngxs-store-solution/src/**/*.ts", "apps/30-ngxs-store-solution/src/**/*.html"]
       }

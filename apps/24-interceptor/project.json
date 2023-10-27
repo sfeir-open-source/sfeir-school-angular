@@ -71,7 +71,7 @@
       }
     },
     "lint": {
-      "executor": "@nx/linter:eslint",
+      "executor": "@nx/eslint:lint",
       "options": {
         "lintFilePatterns": ["apps/24-interceptor/src/**/*.ts", "apps/24-interceptor/src/**/*.html"]
       }

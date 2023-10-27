@@ -71,7 +71,7 @@
       }
     },
     "lint": {
-      "executor": "@nx/linter:eslint",
+      "executor": "@nx/eslint:lint",
       "options": {
         "lintFilePatterns": ["apps/21-lazyloading-solution/src/**/*.ts", "apps/21-lazyloading-solution/src/**/*.html"]
       }

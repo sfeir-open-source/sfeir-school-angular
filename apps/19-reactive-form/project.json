@@ -71,7 +71,7 @@
       }
     },
     "lint": {
-      "executor": "@nx/linter:eslint",
+      "executor": "@nx/eslint:lint",
       "options": {
         "lintFilePatterns": ["apps/19-reactive-form/src/**/*.ts", "apps/19-reactive-form/src/**/*.html"]
       }

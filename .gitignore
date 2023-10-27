@@ -51,3 +51,5 @@ workshop/dist
 /migrations.json
 
 .fleet
+
+.nx/cache

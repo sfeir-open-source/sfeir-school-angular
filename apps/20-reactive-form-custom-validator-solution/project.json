@@ -74,7 +74,7 @@
       }
     },
     "lint": {
-      "executor": "@nx/linter:eslint",
+      "executor": "@nx/eslint:lint",
       "options": {
         "lintFilePatterns": [
           "apps/20-reactive-form-custom-validator-solution/src/**/*.ts",
