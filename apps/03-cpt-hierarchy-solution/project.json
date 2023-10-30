@@ -6,8 +6,10 @@
   "prefix": "sfeir",
   "targets": {
     "build": {
-      "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "executor": "@angular-devkit/build-angular:browser-esbuild",
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/03-cpt-hierarchy-solution",
         "index": "apps/03-cpt-hierarchy-solution/src/index.html",
@@ -15,8 +17,14 @@
         "polyfills": "apps/03-cpt-hierarchy-solution/src/polyfills.ts",
         "tsConfig": "apps/03-cpt-hierarchy-solution/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/03-cpt-hierarchy-solution/src/favicon.ico", "apps/03-cpt-hierarchy-solution/src/assets"],
-        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/03-cpt-hierarchy-solution/src/styles.scss"],
+        "assets": [
+          "apps/03-cpt-hierarchy-solution/src/favicon.ico",
+          "apps/03-cpt-hierarchy-solution/src/assets"
+        ],
+        "styles": [
+          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+          "apps/03-cpt-hierarchy-solution/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -73,12 +81,17 @@
     "lint": {
       "executor": "@nx/eslint:lint",
       "options": {
-        "lintFilePatterns": ["apps/03-cpt-hierarchy-solution/src/**/*.ts", "apps/03-cpt-hierarchy-solution/src/**/*.html"]
+        "lintFilePatterns": [
+          "apps/03-cpt-hierarchy-solution/src/**/*.ts",
+          "apps/03-cpt-hierarchy-solution/src/**/*.html"
+        ]
       }
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/apps/03-cpt-hierarchy-solution"],
+      "outputs": [
+        "{workspaceRoot}/coverage/apps/03-cpt-hierarchy-solution"
+      ],
       "options": {
         "jestConfig": "apps/03-cpt-hierarchy-solution/jest.config.ts",
         "passWithNoTests": true

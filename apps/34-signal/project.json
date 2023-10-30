@@ -6,8 +6,10 @@
   "prefix": "sfeir",
   "targets": {
     "build": {
-      "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "executor": "@angular-devkit/build-angular:browser-esbuild",
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/34-signal",
         "index": "apps/34-signal/src/index.html",
@@ -15,8 +17,14 @@
         "polyfills": "apps/34-signal/src/polyfills.ts",
         "tsConfig": "apps/34-signal/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/34-signal/src/favicon.ico", "apps/34-signal/src/assets"],
-        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/34-signal/src/styles.scss"],
+        "assets": [
+          "apps/34-signal/src/favicon.ico",
+          "apps/34-signal/src/assets"
+        ],
+        "styles": [
+          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+          "apps/34-signal/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -73,12 +81,17 @@
     "lint": {
       "executor": "@nx/eslint:lint",
       "options": {
-        "lintFilePatterns": ["apps/34-signal/src/**/*.ts", "apps/34-signal/src/**/*.html"]
+        "lintFilePatterns": [
+          "apps/34-signal/src/**/*.ts",
+          "apps/34-signal/src/**/*.html"
+        ]
       }
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/apps/34-signal"],
+      "outputs": [
+        "{workspaceRoot}/coverage/apps/34-signal"
+      ],
       "options": {
         "jestConfig": "apps/34-signal/jest.config.ts",
         "passWithNoTests": true
