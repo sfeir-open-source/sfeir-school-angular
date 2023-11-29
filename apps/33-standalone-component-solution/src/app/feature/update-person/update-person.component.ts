@@ -1,5 +1,5 @@
-import { AsyncPipe, Location, NgIf } from '@angular/common';
-import { Component, Input as RouterInput, inject } from '@angular/core';
+import { AsyncPipe, Location } from '@angular/common';
+import { Component, inject, Input as RouterInput } from '@angular/core';
 import { PeopleService } from '../../core/providers/people.service';
 import { FormComponent } from '../../shared/components/form/form.component';
 import { People, PeopleForm } from '../../shared/models/people.model';
@@ -9,7 +9,7 @@ import { People, PeopleForm } from '../../shared/models/people.model';
   templateUrl: './update-person.component.html',
   styleUrls: ['./update-person.component.scss'],
   standalone: true,
-  imports: [NgIf, AsyncPipe, FormComponent],
+  imports: [AsyncPipe, FormComponent],
 })
 export class UpdatePersonComponent {
   @RouterInput({ required: true }) personDetails: People;

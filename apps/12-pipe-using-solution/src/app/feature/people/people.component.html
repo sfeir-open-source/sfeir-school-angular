@@ -1,4 +1,5 @@
 <section>
-  <sfeir-card *ngFor="let person of people$ | async" [person]="person" (personDelete)="deletePerson($event)">
-  </sfeir-card>
+  @for (person of people$ |async;track person.id) {
+    <sfeir-card [person]="person" (personDelete)="deletePerson($event)" />
+  }
 </section>

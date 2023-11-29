@@ -1,28 +1,35 @@
-<ng-container [ngSwitch]="view()">
-  <sfeir-search [searchText]="search()" (search)="setSearch($event)"></sfeir-search>
-  <section *ngSwitchCase="'card'" data-testid="card-view">
-    <sfeir-card *ngFor="let person of peopleFiltered()" [person]="person" (personDelete)="deletePerson($event)">
-    </sfeir-card>
-  </section>
-  <section *ngSwitchCase="'list'" data-testid="list-view">
-    <mat-list>
-      <div *ngFor="let person of peopleFiltered()" class="mat-whiteframe-2dp mat-card">
-        <img ngSrc="{{ person.photo }}" alt="person-image" height="40" width="40" />
-        <div class="list-information">
-          <h3>{{ person.firstname }} {{ person.lastname }}
-            <span class="sfeir-badge" [sfeirBadge]="person.isManager"></span>
-          </h3>
-          <p>
-            <span> {{ person.entity }} </span> — <span>{{ person.email }} </span>
-          </p>
-        </div>
-      </div>
-    </mat-list>
-  </section>
-  <section class="buttons-fab">
-    <button mat-fab color="accent" class="button-add" (click)="showDialog()" data-testid="button-modal"><i class="material-icons">add</i></button>
-    <button mat-fab color="warn" (click)="changeView()" data-testid="button-view">
-      <i class="material-icons">{{ view() === 'card' ? 'list' : 'view_stream'}}</i>
-    </button>
-  </section>
-</ng-container>
+<sfeir-search [searchText]="search()" (search)="setSearch($event)" />
+@switch (view()) {
+  @case ('card') {
+    <section data-testid="card-view">
+      @for (person of peopleFiltered();track person.id) {
+        <sfeir-card [person]="person" (personDelete)="deletePerson($event)" />
+      }
+    </section>
+  }
+  @case ('list') {
+    <section data-testid="list-view">
+      <mat-list>
+        @for (person of peopleFiltered();track person.id) {
+          <div class="mat-whiteframe-2dp mat-card">
+            <img ngSrc="{{ person.photo }}" alt="person-image" height="40" width="40" />
+            <div class="list-information">
+              <h3>{{ person.firstname }} {{ person.lastname }}
+                <span class="sfeir-badge" [sfeirBadge]="person.isManager"></span>
+              </h3>
+              <p>
+                <span> {{ person.entity }} </span> — <span>{{ person.email }} </span>
+              </p>
+            </div>
+          </div>
+        }
+      </mat-list>
+    </section>
+  }
+}
+<section class="buttons-fab">
+  <button mat-fab color="accent" class="button-add" (click)="showDialog()" data-testid="button-modal"><i class="material-icons">add</i></button>
+  <button mat-fab color="warn" (click)="changeView()" data-testid="button-view">
+    <i class="material-icons">{{ view() === 'card' ? 'list' : 'view_stream' }}</i>
+  </button>
+</section>

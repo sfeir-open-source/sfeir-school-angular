@@ -1,4 +1,3 @@
-import { AsyncPipe, NgIf } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { MatButtonModule } from '@angular/material/button';
@@ -11,7 +10,7 @@ import { CardComponent } from '../../shared/components/card/card.component';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
   standalone: true,
-  imports: [NgIf, CardComponent, MatButtonModule, AsyncPipe],
+  imports: [CardComponent, MatButtonModule],
 })
 export class HomeComponent {
   readonly #peopleService: PeopleService = inject(PeopleService);

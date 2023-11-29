@@ -19,7 +19,7 @@ export class PeopleComponent implements OnInit {
   constructor(
     private readonly peopleService: PeopleService,
     private readonly matDialogService: MatDialog,
-    private readonly appStoreService: AppStoreService
+    private readonly appStoreService: AppStoreService,
   ) {}
 
   ngOnInit(): void {
@@ -44,7 +44,7 @@ export class PeopleComponent implements OnInit {
       .pipe(
         filter(personForm => !!personForm),
         switchMap(personForm => this.peopleService.addNewPerson(personForm)),
-        switchMap(() => this.peopleService.getPeople())
+        switchMap(() => this.peopleService.getPeople()),
       )
       .subscribe();
   }

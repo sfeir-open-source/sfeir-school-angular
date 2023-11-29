@@ -29,14 +29,14 @@ export class CustomInputComponent implements OnInit, OnDestroy, ControlValueAcce
       tap(() => {
         this._onChange(this.inputElement.nativeElement.value);
         this._onTouched();
-      })
+      }),
     );
 
     const blurListener$ = fromEvent(this.inputElement.nativeElement, 'blur').pipe(
       tap(() => {
         this._onTouched();
         this.userLoseFocus$.next(true);
-      })
+      }),
     );
 
     merge(inputListener$, blurListener$).pipe(takeUntil(this.unsubscribe$)).subscribe();

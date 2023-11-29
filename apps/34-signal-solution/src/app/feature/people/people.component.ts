@@ -1,4 +1,4 @@
-import { CommonModule, NgOptimizedImage } from '@angular/common';
+import { NgOptimizedImage } from '@angular/common';
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialog } from '@angular/material/dialog';
@@ -16,7 +16,7 @@ import { PEOPLE_STORE } from '../../core/store/signal.store';
   templateUrl: './people.component.html',
   styleUrls: ['./people.component.scss'],
   standalone: true,
-  imports: [CommonModule, NgOptimizedImage, MatListModule, MatButtonModule, AddPersonDialogComponent, SearchComponent, CardComponent, BadgeDirective],
+  imports: [NgOptimizedImage, MatListModule, MatButtonModule, AddPersonDialogComponent, SearchComponent, CardComponent, BadgeDirective],
 })
 export class PeopleComponent implements OnInit {
   readonly #matDialogService = inject(MatDialog);
@@ -45,7 +45,7 @@ export class PeopleComponent implements OnInit {
       .pipe(
         filter(personForm => !!personForm),
         switchMap(personForm => this.#peopleStore.addNewPerson(personForm)),
-        switchMap(() => this.#peopleStore.getPeople())
+        switchMap(() => this.#peopleStore.getPeople()),
       )
       .subscribe();
   }

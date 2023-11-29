@@ -1,13 +1,12 @@
-import { Component, ElementRef, forwardRef, Input, OnDestroy, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { Component, ElementRef, forwardRef, Input, OnDestroy, OnInit, Renderer2, signal, ViewChild } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { BehaviorSubject, fromEvent, merge, Subject, takeUntil, tap } from 'rxjs';
+import { fromEvent, merge, Subject, takeUntil, tap } from 'rxjs';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { AsyncPipe, NgIf } from '@angular/common';
 
 @Component({
   standalone: true,
-  imports: [NgIf, AsyncPipe, MatFormFieldModule, MatInputModule],
+  imports: [MatFormFieldModule, MatInputModule],
   selector: 'sfeir-custom-input',
   templateUrl: './custom-input.component.html',
   styleUrls: ['./custom-input.component.scss'],
@@ -17,7 +16,7 @@ export class CustomInputComponent implements OnInit, OnDestroy, ControlValueAcce
   @Input() placeholder = '';
   @Input() inputType = 'text';
   @ViewChild('InputElement', { static: true }) inputElement: ElementRef<HTMLInputElement>;
-  userLoseFocus$: BehaviorSubject<boolean> = new BehaviorSubject(false);
+  userLoseFocus$ = signal<boolean>(false);
   private _onChange: (x: string | number) => void;
   private _onTouched: () => void;
   private unsubscribe$: Subject<boolean> = new Subject();
@@ -29,14 +28,14 @@ export class CustomInputComponent implements OnInit, OnDestroy, ControlValueAcce
       tap(() => {
         this._onChange(this.inputElement.nativeElement.value);
         this._onTouched();
-      })
+      }),
     );
 
     const blurListener$ = fromEvent(this.inputElement.nativeElement, 'blur').pipe(
       tap(() => {
         this._onTouched();
-        this.userLoseFocus$.next(true);
-      })
+        this.userLoseFocus$.set(true);
+      }),
     );
 
     merge(inputListener$, blurListener$).pipe(takeUntil(this.unsubscribe$)).subscribe();

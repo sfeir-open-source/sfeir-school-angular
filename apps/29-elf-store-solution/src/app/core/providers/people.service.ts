@@ -7,7 +7,10 @@ import { AppStoreService } from '../store/app.store';
 
 @Injectable({ providedIn: 'root' })
 export class PeopleService {
-  constructor(private readonly httpClient: HttpClient, private readonly appStoreService: AppStoreService) {}
+  constructor(
+    private readonly httpClient: HttpClient,
+    private readonly appStoreService: AppStoreService,
+  ) {}
 
   getPeople(): Observable<Array<People>> {
     return this.httpClient

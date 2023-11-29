@@ -1,7 +1,7 @@
-import { AsyncPipe, NgIf } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
-import { Observable, map } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { PeopleService } from '../../core/providers/people.service';
 import { CardComponent } from '../../shared/components/card/card.component';
 import { People } from '../../shared/models/people.model';
@@ -11,7 +11,7 @@ import { People } from '../../shared/models/people.model';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
   standalone: true,
-  imports: [NgIf, CardComponent, MatButtonModule, AsyncPipe],
+  imports: [CardComponent, MatButtonModule, AsyncPipe],
 })
 export class HomeComponent {
   readonly #peopleService: PeopleService = inject(PeopleService);

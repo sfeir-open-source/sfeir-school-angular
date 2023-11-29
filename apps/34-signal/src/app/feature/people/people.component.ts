@@ -1,4 +1,4 @@
-import { CommonModule, NgOptimizedImage } from '@angular/common';
+import { AsyncPipe, NgOptimizedImage } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialog } from '@angular/material/dialog';
@@ -9,18 +9,29 @@ import { PeopleService } from '../../core/providers/people.service';
 import { setSearch } from '../../core/store/action';
 import { selectPeople, selectSearch } from '../../core/store/selector';
 import { AppStore } from '../../core/store/state';
-import { CardComponent } from '../../shared/components/card/card.component';
 import { BadgeDirective } from '../../shared/directives/badge.directive';
 import { People } from '../../shared/models/people.model';
 import { AddPersonDialogComponent } from './components/add-person-dialog/add-person-dialog.component';
 import { SearchComponent } from './components/search/search.component';
+import { CardComponent } from '../../shared/components/card/card.component';
 
 @Component({
   selector: 'sfeir-people',
   templateUrl: './people.component.html',
   styleUrls: ['./people.component.scss'],
   standalone: true,
-  imports: [CommonModule, NgOptimizedImage, MatListModule, MatButtonModule, AddPersonDialogComponent, SearchComponent, CardComponent, BadgeDirective],
+  imports: [
+    AsyncPipe,
+    NgOptimizedImage,
+    MatListModule,
+    MatButtonModule,
+    AddPersonDialogComponent,
+    SearchComponent,
+    CardComponent,
+    BadgeDirective,
+    CardComponent,
+    SearchComponent,
+  ],
 })
 export class PeopleComponent implements OnInit {
   readonly #peopleService = inject(PeopleService);
@@ -50,7 +61,7 @@ export class PeopleComponent implements OnInit {
       .pipe(
         filter(personForm => !!personForm),
         switchMap(personForm => this.#peopleService.addNewPerson(personForm)),
-        switchMap(() => this.#peopleService.getPeople())
+        switchMap(() => this.#peopleService.getPeople()),
       )
       .subscribe();
   }

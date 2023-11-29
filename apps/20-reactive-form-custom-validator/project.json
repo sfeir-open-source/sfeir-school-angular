@@ -6,15 +6,17 @@
   "prefix": "sfeir",
   "targets": {
     "build": {
-      "executor": "@angular-devkit/build-angular:browser-esbuild",
+      "executor": "@angular-devkit/build-angular:application",
       "outputs": [
         "{options.outputPath}"
       ],
       "options": {
         "outputPath": "dist/apps/20-reactive-form-custom-validator",
         "index": "apps/20-reactive-form-custom-validator/src/index.html",
-        "main": "apps/20-reactive-form-custom-validator/src/main.ts",
-        "polyfills": "apps/20-reactive-form-custom-validator/src/polyfills.ts",
+        "browser": "apps/20-reactive-form-custom-validator/src/main.ts",
+        "polyfills": [
+          "apps/20-reactive-form-custom-validator/src/polyfills.ts"
+        ],
         "tsConfig": "apps/20-reactive-form-custom-validator/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
@@ -50,9 +52,7 @@
           "outputHashing": "all"
         },
         "development": {
-          "buildOptimizer": false,
           "optimization": false,
-          "vendorChunk": true,
           "extractLicenses": false,
           "sourceMap": true,
           "namedChunks": true
@@ -64,10 +64,10 @@
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "browserTarget": "20-reactive-form-custom-validator:build:production"
+          "buildTarget": "20-reactive-form-custom-validator:build:production"
         },
         "development": {
-          "browserTarget": "20-reactive-form-custom-validator:build:development"
+          "buildTarget": "20-reactive-form-custom-validator:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -75,7 +75,7 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "browserTarget": "20-reactive-form-custom-validator:build"
+        "buildTarget": "20-reactive-form-custom-validator:build"
       }
     },
     "lint": {
@@ -93,8 +93,7 @@
         "{workspaceRoot}/coverage/apps/20-reactive-form-custom-validator"
       ],
       "options": {
-        "jestConfig": "apps/20-reactive-form-custom-validator/jest.config.ts",
-        "passWithNoTests": true
+        "jestConfig": "apps/20-reactive-form-custom-validator/jest.config.ts"
       }
     }
   },

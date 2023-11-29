@@ -1,16 +1,19 @@
 <section>
-  <sfeir-card *ngFor="let person of people$ | async" [person]="person" (personDelete)="deletePerson($event)">
-  </sfeir-card>
+  @for (person of people$ |async;track person.id) {
+    <sfeir-card [person]="person" (personDelete)="deletePerson($event)" />
+  }
 </section>
 <section>
   <mat-list>
-    <mat-list-item *ngFor="let person of people$ | async" class="mat-whiteframe-2dp mat-card">
-      <img alt="person-image" [ngSrc]="person.photo" matListItemAvatar alt="people-photo" height="40" width="40"/>
-      <h3 matListItemLine>{{ person.firstname }} {{ person.lastname }}</h3>
-      <p matListItemLine>
-        <span> {{ person.entity }} </span> — <span>{{ person.email }} </span>
-      </p> -->
-    </mat-list-item>
+    @for (person of people$ | async;track person.id) {
+      <mat-list-item class="mat-whiteframe-2dp mat-card">
+        <img alt="person-image" [ngSrc]="person.photo" matListItemAvatar height="40" width="40" />
+        <h3 matListItemLine>{{ person.firstname }} {{ person.lastname }}</h3>
+        <p matListItemLine>
+          <span> {{ person.entity }} </span> — <span>{{ person.email }} </span>
+        </p>
+      </mat-list-item>
+    }
   </mat-list>
 </section>
 

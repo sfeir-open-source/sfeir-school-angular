@@ -12,7 +12,11 @@ import { People, PeopleForm } from '../../shared/models/people.model';
 })
 export class UpdatePersonComponent implements OnInit {
   person$: Observable<People> = EMPTY;
-  constructor(private readonly route: ActivatedRoute, private readonly location: Location, private readonly peopleService: PeopleService) {}
+  constructor(
+    private readonly route: ActivatedRoute,
+    private readonly location: Location,
+    private readonly peopleService: PeopleService,
+  ) {}
 
   ngOnInit(): void {
     this.person$ = this.route.data.pipe(map(({ personDetails }) => personDetails));

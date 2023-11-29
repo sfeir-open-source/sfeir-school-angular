@@ -33,7 +33,7 @@ describe('CardComponent', () => {
       imports: [MatButtonModule],
       componentImports: [NaPipe, MatCardModule, MatIconModule, MatButtonModule, CommonModule, DisplayDirective],
       schemas: [NO_ERRORS_SCHEMA],
-      componentProperties: { person: PEOPLE, personDelete: { emit: PERSON_DELETE } as any },
+      componentProperties: { _person: PEOPLE, personDelete: { emit: PERSON_DELETE } as any },
     });
     component = fixture.componentInstance;
     debugElement = fixture.debugElement;
@@ -45,7 +45,7 @@ describe('CardComponent', () => {
   });
 
   test('should the input person set to PEOPLE', () => {
-    expect(component.person).toEqual(PEOPLE);
+    expect(component.person()).toEqual(PEOPLE);
   });
 
   test('should create a card', () => {
@@ -96,7 +96,7 @@ describe('CardComponent', () => {
   });
   test('should display another person', async () => {
     const newPerson = { ...PEOPLE, firstname: 'Jane', lastname: 'Doe', photo: 'jane-doe.jpg' };
-    await rerender({ componentProperties: { person: newPerson } });
+    await rerender({ componentProperties: { _person: newPerson } });
     const image: HTMLImageElement = screen.getByAltText('person-photo');
     expect((image as any).ngSrc).toEqual(newPerson.photo);
   });
@@ -111,7 +111,7 @@ describe('CardComponent', () => {
     expect(PERSON_DELETE).toHaveBeenCalledWith(PEOPLE);
   });
   test('should not display the button edit and delete if the person is a manager', async () => {
-    await rerender({ componentProperties: { person: { ...PEOPLE, isManager: true } } });
+    await rerender({ componentProperties: { _person: { ...PEOPLE, isManager: true } } });
     const editButton = screen.queryByTitle<HTMLAnchorElement>('Edit');
     const deleteButton = screen.queryByTitle<HTMLAnchorElement>('Delete');
     expect(editButton).toBeFalsy();

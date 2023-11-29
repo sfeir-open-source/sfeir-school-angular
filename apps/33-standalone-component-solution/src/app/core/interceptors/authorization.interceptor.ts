@@ -4,7 +4,7 @@ import { People } from '../../shared/models/people.model';
 
 export function AuthorizationInterceptor(
   request: HttpRequest<People | Array<People>>,
-  next: HttpHandlerFn
+  next: HttpHandlerFn,
 ): Observable<HttpEvent<People | Array<People>>> {
   const clonedRequest = request.clone({ setHeaders: { Authorization: 'Sfeir' } });
   return next(clonedRequest) as Observable<HttpEvent<People | Array<People>>>;

@@ -1,4 +1,4 @@
-<form (ngSubmit)="onSave()" novalidate [formGroup]="personForm">
+<form (ngSubmit)="onSave()" novalidate [formGroup]="personForm" data-testid="person-form">
   <section class="form-container">
     <section class="form-container__image">
       <img width="100" height="120" [ngSrc]="personForm.value.photo" alt="person-photo" />
@@ -8,31 +8,42 @@
       <mat-form-field appearance="outline">
         <mat-label>First name</mat-label>
         <input type="text" matInput placeholder="First name" name="firstname" formControlName="firstname" />
-        <mat-error *ngIf="personForm.controls.firstname.errors?.['required']">Ce champs est requis</mat-error>
-        <mat-error *ngIf="personForm.controls.firstname.errors?.['minlength']">Ce champs doit posséder minimum 2
-          caractères</mat-error>
+        @if (personForm.controls.firstname.errors?.['required']) {
+          <mat-error>Ce champs est requis</mat-error>
+        }
+        @if (personForm.controls.firstname.errors?.['minlength']) {
+          <mat-error>Ce champs doit posséder minimum 2 caractères</mat-error>
+        }
       </mat-form-field>
       <mat-form-field appearance="outline">
         <mat-label>Last name</mat-label>
         <input type="text" matInput placeholder="Last name" name="lastname" formControlName="lastname" />
-        <mat-error *ngIf="personForm.controls.lastname.errors?.['required']">Ce champs est requis</mat-error>
-        <mat-error *ngIf="personForm.controls.lastname.errors?.['minlength']">Ce champs doit posséder minimum 2
-          caractères</mat-error>
+        @if (personForm.controls.lastname.errors?.['required']) {
+          <mat-error>Ce champs est requis</mat-error>
+        }
+        @if (personForm.controls.lastname.errors?.['minlength']) {
+          <mat-error>Ce champs doit posséder minimum 2 caractères</mat-error>
+        }
       </mat-form-field>
       <mat-form-field appearance="outline">
         <mat-label>Email</mat-label>
         <input type="email" matInput placeholder="email" name="email" formControlName="email" />
-        <mat-error *ngIf="personForm.controls.email.errors?.['required']">Ce champs est requis</mat-error>
-        <mat-error *ngIf="personForm.controls.email.errors?.['sfeirEmail']">Format non valid, format attendu:
-          frizzarin.n@sfeir.com</mat-error>
+        @if (personForm.controls.email.errors?.['required']) {
+          <mat-error>Ce champs est requis</mat-error>
+        }
+        @if (personForm.controls.email.errors?.['sfeirEmail']) {
+          <mat-error>Format non valid, format attendu: frizzarin.n&#64;sfeir.com</mat-error>
+        }
       </mat-form-field>
       <mat-form-field appearance="outline">
         <mat-label>phone</mat-label>
         <input type="phone" matInput placeholder="phone" name="phone" formControlName="phone" />
-        <mat-error *ngIf="personForm.controls.phone.errors?.['required']">Ce champs est requis</mat-error>
-        <mat-error *ngIf="personForm.controls.phone.errors?.['pattern']">Ce champs doit respecter le pattern suivant
-          (10 caractères)
-        </mat-error>
+        @if (personForm.controls.phone.errors?.['required']) {
+          <mat-error>Ce champs est requis</mat-error>
+        }
+        @if (personForm.controls.phone.errors?.['pattern']) {
+          <mat-error>Ce champs doit respecter le pattern suivant (10 caractères)</mat-error>
+        }
       </mat-form-field>
     </section>
   </section>

@@ -6,15 +6,17 @@
   "prefix": "sfeir",
   "targets": {
     "build": {
-      "executor": "@angular-devkit/build-angular:browser-esbuild",
+      "executor": "@angular-devkit/build-angular:application",
       "outputs": [
         "{options.outputPath}"
       ],
       "options": {
         "outputPath": "dist/apps/32-unit-tests-solution",
         "index": "apps/32-unit-tests-solution/src/index.html",
-        "main": "apps/32-unit-tests-solution/src/main.ts",
-        "polyfills": "apps/32-unit-tests-solution/src/polyfills.ts",
+        "browser": "apps/32-unit-tests-solution/src/main.ts",
+        "polyfills": [
+          "apps/32-unit-tests-solution/src/polyfills.ts"
+        ],
         "tsConfig": "apps/32-unit-tests-solution/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
@@ -50,9 +52,7 @@
           "outputHashing": "all"
         },
         "development": {
-          "buildOptimizer": false,
           "optimization": false,
-          "vendorChunk": true,
           "extractLicenses": false,
           "sourceMap": true,
           "namedChunks": true
@@ -64,10 +64,10 @@
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "browserTarget": "32-unit-tests-solution:build:production"
+          "buildTarget": "32-unit-tests-solution:build:production"
         },
         "development": {
-          "browserTarget": "32-unit-tests-solution:build:development"
+          "buildTarget": "32-unit-tests-solution:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -75,7 +75,7 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "browserTarget": "32-unit-tests-solution:build"
+        "buildTarget": "32-unit-tests-solution:build"
       }
     },
     "lint": {
@@ -93,8 +93,7 @@
         "{workspaceRoot}/coverage/apps/32-unit-tests-solution"
       ],
       "options": {
-        "jestConfig": "apps/32-unit-tests-solution/jest.config.ts",
-        "passWithNoTests": true
+        "jestConfig": "apps/32-unit-tests-solution/jest.config.ts"
       }
     }
   },

@@ -17,7 +17,11 @@ export class PeopleComponent implements OnInit {
   search$: Observable<string> = EMPTY;
   view$: BehaviorSubject<'card' | 'list'> = new BehaviorSubject('card');
 
-  constructor(private readonly peopleService: PeopleService, private readonly matDialogService: MatDialog, private readonly store: Store) {}
+  constructor(
+    private readonly peopleService: PeopleService,
+    private readonly matDialogService: MatDialog,
+    private readonly store: Store,
+  ) {}
 
   ngOnInit(): void {
     this.search$ = this.store.select(AppStore.search);
@@ -40,7 +44,7 @@ export class PeopleComponent implements OnInit {
       .pipe(
         filter(personForm => !!personForm),
         switchMap(personForm => this.peopleService.addNewPerson(personForm)),
-        switchMap(() => this.peopleService.getPeople())
+        switchMap(() => this.peopleService.getPeople()),
       )
       .subscribe();
   }
