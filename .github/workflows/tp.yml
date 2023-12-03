@@ -1,6 +1,6 @@
 name: TP CI Action
 
-on: [push]
+on: [ push ]
 
 jobs:
   build-and-run-tests:
@@ -12,10 +12,10 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Use Node.js 18.x
+      - name: Use Node.js 20.x
         uses: actions/setup-node@v3
         with:
-          node-version: 18.x
+          node-version: 20.x
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
 

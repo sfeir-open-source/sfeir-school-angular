@@ -5,7 +5,7 @@ import { INITIAL_STATE } from './state';
 const APP_REDUCER = createReducer(
   INITIAL_STATE,
   on(setSearch, (state, { search }) => ({ ...state, search })),
-  on(setPeople, (state, { people }) => ({ ...state, people }))
+  on(setPeople, (state, { people }) => ({ ...state, people })),
 );
 
 export function appReducer(state, action) {

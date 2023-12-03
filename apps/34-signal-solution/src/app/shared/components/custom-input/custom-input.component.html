@@ -2,6 +2,8 @@
   <mat-form-field appearance="outline">
     <mat-label>{{ placeholder }}</mat-label>
     <input #InputElement matInput [type]="inputType" [placeholder]="placeholder" />
-    <ng-content *ngIf="userLoseFocus$ | async"></ng-content>
+    @if (userLoseFocus$()) {
+      <ng-content />
+    }
   </mat-form-field>
 </div>

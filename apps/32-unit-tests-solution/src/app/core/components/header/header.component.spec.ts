@@ -5,7 +5,7 @@ import { HeaderComponent } from './header.component';
 @Component({
   template: `
     <ng-template #header>Hello Sfeir</ng-template>
-  <sfeir-header [headerTemplate]="header" />
+    <sfeir-header [headerTemplate]="header" />
   `,
 })
 export class ContainerHeaderComponent {}

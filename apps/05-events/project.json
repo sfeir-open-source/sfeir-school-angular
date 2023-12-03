@@ -6,15 +6,17 @@
   "prefix": "sfeir",
   "targets": {
     "build": {
-      "executor": "@angular-devkit/build-angular:browser-esbuild",
+      "executor": "@angular-devkit/build-angular:application",
       "outputs": [
         "{options.outputPath}"
       ],
       "options": {
         "outputPath": "dist/apps/05-events",
         "index": "apps/05-events/src/index.html",
-        "main": "apps/05-events/src/main.ts",
-        "polyfills": "apps/05-events/src/polyfills.ts",
+        "browser": "apps/05-events/src/main.ts",
+        "polyfills": [
+          "apps/05-events/src/polyfills.ts"
+        ],
         "tsConfig": "apps/05-events/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
@@ -50,9 +52,7 @@
           "outputHashing": "all"
         },
         "development": {
-          "buildOptimizer": false,
           "optimization": false,
-          "vendorChunk": true,
           "extractLicenses": false,
           "sourceMap": true,
           "namedChunks": true
@@ -64,10 +64,10 @@
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "browserTarget": "05-events:build:production"
+          "buildTarget": "05-events:build:production"
         },
         "development": {
-          "browserTarget": "05-events:build:development"
+          "buildTarget": "05-events:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -75,7 +75,7 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "browserTarget": "05-events:build"
+        "buildTarget": "05-events:build"
       }
     },
     "lint": {
@@ -93,8 +93,7 @@
         "{workspaceRoot}/coverage/apps/05-events"
       ],
       "options": {
-        "jestConfig": "apps/05-events/jest.config.ts",
-        "passWithNoTests": true
+        "jestConfig": "apps/05-events/jest.config.ts"
       }
     }
   },

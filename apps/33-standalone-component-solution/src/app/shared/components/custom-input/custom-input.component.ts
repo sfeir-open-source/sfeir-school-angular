@@ -3,11 +3,11 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { BehaviorSubject, fromEvent, merge, Subject, takeUntil, tap } from 'rxjs';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { AsyncPipe, NgIf } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   standalone: true,
-  imports: [NgIf, AsyncPipe, MatFormFieldModule, MatInputModule],
+  imports: [AsyncPipe, MatFormFieldModule, MatInputModule],
   selector: 'sfeir-custom-input',
   templateUrl: './custom-input.component.html',
   styleUrls: ['./custom-input.component.scss'],
@@ -29,14 +29,14 @@ export class CustomInputComponent implements OnInit, OnDestroy, ControlValueAcce
       tap(() => {
         this._onChange(this.inputElement.nativeElement.value);
         this._onTouched();
-      })
+      }),
     );
 
     const blurListener$ = fromEvent(this.inputElement.nativeElement, 'blur').pipe(
       tap(() => {
         this._onTouched();
         this.userLoseFocus$.next(true);
-      })
+      }),
     );
 
     merge(inputListener$, blurListener$).pipe(takeUntil(this.unsubscribe$)).subscribe();

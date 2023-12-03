@@ -6,7 +6,10 @@ import { Directive, ElementRef, Input, OnInit, Renderer2 } from '@angular/core';
 export class BadgeDirective implements OnInit {
   @Input('sfeirBadge') isManager: boolean;
 
-  constructor(private readonly element: ElementRef<HTMLElement>, private readonly renderer: Renderer2) {}
+  constructor(
+    private readonly element: ElementRef<HTMLElement>,
+    private readonly renderer: Renderer2,
+  ) {}
 
   ngOnInit(): void {
     if (this.isManager) {

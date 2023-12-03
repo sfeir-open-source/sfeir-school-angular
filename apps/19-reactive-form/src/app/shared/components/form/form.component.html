@@ -1,7 +1,7 @@
-<form #personForm="ngForm" (ngSubmit)="onSave()">
+<form #personForm="ngForm" (ngSubmit)="onSave()" data-testid="person-form">
   <section class="form-container">
     <section class="form-container__image">
-      <img width="100" height="120" [ngSrc]="person.photo" alt="person-photo" />
+      <img [ngSrc]="person.photo" width="100" height="100" alt="person-photo" />
       <input type="hidden" name="photo" [(ngModel)]="person.photo" />
     </section>
     <section>
@@ -9,29 +9,42 @@
         <mat-label>First name</mat-label>
         <input type="text" matInput placeholder="First name" name="firstname" #firstname="ngModel"
                [(ngModel)]="person.firstname" required minlength=" 2" />
-        <mat-error *ngIf="firstname.errors?.['required']">Ce champs est requis</mat-error>
-        <mat-error *ngIf="firstname.errors?.['minlength']">Ce champs doit posséder minimum 2 caractères</mat-error>
+        @if (firstname.errors?.['required']) {
+          <mat-error>Ce champs est requis</mat-error>
+        }
+        @if (firstname.errors?.['minlength']) {
+          <mat-error>Ce champs doit posséder minimum 2 caractères</mat-error>
+        }
       </mat-form-field>
       <mat-form-field appearance="outline">
         <mat-label>Last name</mat-label>
         <input type="text" matInput placeholder="Last name" name="lastname" #lastname="ngModel"
                [(ngModel)]="person.lastname" required minlength="2" />
-        <mat-error *ngIf="lastname.errors?.['required']">Ce champs est requis</mat-error>
-        <mat-error *ngIf="firstname.errors?.['minlength']">Ce champs doit posséder minimum 2 caractères</mat-error>
+        @if (lastname.errors?.['required']) {
+          <mat-error>Ce champs est requis</mat-error>
+        }
+        @if (lastname.errors?.['minlength']) {
+          <mat-error>Ce champs doit posséder minimum 2 caractères</mat-error>
+        }
       </mat-form-field>
       <mat-form-field appearance="outline">
         <mat-label>Email</mat-label>
         <input type="email" matInput placeholder="email" name="email" #email="ngModel" [(ngModel)]="person.email"
                required />
-        <mat-error *ngIf="email.errors?.['required']">Ce champs est requis</mat-error>
+        @if (email.errors?.['required']) {
+          <mat-error>Ce champs est requis</mat-error>
+        }
       </mat-form-field>
       <mat-form-field appearance="outline">
         <mat-label>phone</mat-label>
         <input type="phone" matInput placeholder="phone" name="phone" #phone="ngModel" [(ngModel)]="person.phone"
                required pattern="\d{10}" />
-        <mat-error *ngIf="phone.errors?.['required']">Ce champs est requis</mat-error>
-        <mat-error *ngIf="phone.errors?.['pattern']">Ce champs doit respecter le pattern suivant (10 caractères)
-        </mat-error>
+        @if (phone.errors?.['required']) {
+          <mat-error>Ce champs est requis</mat-error>
+        }
+        @if (phone.errors?.['pattern']) {
+          <mat-error>Ce champs doit respecter le pattern suivant (10 caractères)</mat-error>
+        }
       </mat-form-field>
     </section>
   </section>

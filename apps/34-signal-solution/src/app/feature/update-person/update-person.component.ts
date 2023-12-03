@@ -1,5 +1,5 @@
 import { AsyncPipe, Location, NgIf } from '@angular/common';
-import { Component, Input as RouterInput, inject } from '@angular/core';
+import { Component, inject, Input as RouterInput, signal } from '@angular/core';
 import { PeopleService } from '../../core/providers/people.service';
 import { FormComponent } from '../../shared/components/form/form.component';
 import { People, PeopleForm } from '../../shared/models/people.model';
@@ -12,10 +12,14 @@ import { People, PeopleForm } from '../../shared/models/people.model';
   imports: [NgIf, AsyncPipe, FormComponent],
 })
 export class UpdatePersonComponent {
-  @RouterInput({ required: true }) personDetails: People;
+  @RouterInput({ required: true, alias: 'personDetails' }) set _personDetails(person: People | undefined) {
+    person && this.personDetails.set(person);
+  }
 
   readonly #location = inject(Location);
   readonly #peopleService = inject(PeopleService);
+
+  personDetails = signal<People | null>(null);
 
   updatePerson(person: PeopleForm): void {
     this.#peopleService.updatePerson(person).subscribe(() => this.goBack());

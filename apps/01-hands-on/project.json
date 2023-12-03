@@ -6,15 +6,17 @@
   "prefix": "sfeir",
   "targets": {
     "build": {
-      "executor": "@angular-devkit/build-angular:browser-esbuild",
+      "executor": "@angular-devkit/build-angular:application",
       "outputs": [
         "{options.outputPath}"
       ],
       "options": {
         "outputPath": "dist/apps/01-hands-on",
         "index": "apps/01-hands-on/src/index.html",
-        "main": "apps/01-hands-on/src/main.ts",
-        "polyfills": "apps/01-hands-on/src/polyfills.ts",
+        "browser": "apps/01-hands-on/src/main.ts",
+        "polyfills": [
+          "apps/01-hands-on/src/polyfills.ts"
+        ],
         "tsConfig": "apps/01-hands-on/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
@@ -50,9 +52,7 @@
           "outputHashing": "all"
         },
         "development": {
-          "buildOptimizer": false,
           "optimization": false,
-          "vendorChunk": true,
           "extractLicenses": false,
           "sourceMap": true,
           "namedChunks": true
@@ -64,10 +64,10 @@
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "browserTarget": "01-hands-on:build:production"
+          "buildTarget": "01-hands-on:build:production"
         },
         "development": {
-          "browserTarget": "01-hands-on:build:development"
+          "buildTarget": "01-hands-on:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -75,7 +75,7 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "browserTarget": "01-hands-on:build"
+        "buildTarget": "01-hands-on:build"
       }
     },
     "lint": {
@@ -93,8 +93,7 @@
         "{workspaceRoot}/coverage/apps/01-hands-on"
       ],
       "options": {
-        "jestConfig": "apps/01-hands-on/jest.config.ts",
-        "passWithNoTests": true
+        "jestConfig": "apps/01-hands-on/jest.config.ts"
       }
     }
   },

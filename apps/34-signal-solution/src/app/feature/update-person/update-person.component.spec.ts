@@ -34,7 +34,7 @@ describe('UpdatePersonComponent', () => {
     const { fixture, container: hostContainer } = await render(UpdatePersonComponent, {
       componentImports: [CommonModule, MockFormComponent],
       componentProperties: {
-        personDetails: PERSON,
+        _personDetails: PERSON,
       },
       providers: [
         { provide: Location, useValue: LOCATION },

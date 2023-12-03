@@ -2,14 +2,14 @@ import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from
 import { People, PeopleForm } from '../../models/people.model';
 import { PersonForm } from './form';
 import { ReactiveFormsModule } from '@angular/forms';
-import { CustomInputComponent } from '../custom-input/custom-input.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { NgIf, NgOptimizedImage } from '@angular/common';
+import { NgOptimizedImage } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
+import { CustomInputComponent } from '../custom-input/custom-input.component';
 
 @Component({
   standalone: true,
-  imports: [ReactiveFormsModule, CustomInputComponent, MatFormFieldModule, NgIf, MatButtonModule, NgOptimizedImage],
+  imports: [ReactiveFormsModule, CustomInputComponent, MatFormFieldModule, MatButtonModule, NgOptimizedImage],
   selector: 'sfeir-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss'],

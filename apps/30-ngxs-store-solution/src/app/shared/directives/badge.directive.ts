@@ -7,7 +7,10 @@ export class BadgeDirective implements OnInit {
   @Input('sfeirBadge') isManager: boolean;
   @HostBinding('style.color') private iconColor = 'black';
 
-  constructor(private readonly element: ElementRef<HTMLElement>, private readonly renderer: Renderer2) {}
+  constructor(
+    private readonly element: ElementRef<HTMLElement>,
+    private readonly renderer: Renderer2,
+  ) {}
 
   ngOnInit(): void {
     if (this.isManager) {

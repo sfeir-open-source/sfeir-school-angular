@@ -14,7 +14,10 @@ export class PeopleComponent implements OnInit {
   people$: Observable<Array<People>> = EMPTY;
   view$: BehaviorSubject<'card' | 'list'> = new BehaviorSubject('card');
 
-  constructor(private readonly peopleService: PeopleService, private readonly matDialogService: MatDialog) {}
+  constructor(
+    private readonly peopleService: PeopleService,
+    private readonly matDialogService: MatDialog,
+  ) {}
 
   ngOnInit(): void {
     this.people$ = this.peopleService.getPeople().pipe(shareReplay(1));
@@ -38,7 +41,7 @@ export class PeopleComponent implements OnInit {
         switchMap(() => {
           this.people$ = this.peopleService.getPeople().pipe(shareReplay(1));
           return this.people$;
-        })
+        }),
       )
       .subscribe();
   }

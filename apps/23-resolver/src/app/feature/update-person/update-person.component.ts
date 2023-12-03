@@ -12,12 +12,16 @@ import { People, PeopleForm } from '../../shared/models/people.model';
 })
 export class UpdatePersonComponent implements OnInit {
   person$: Observable<People> = EMPTY;
-  constructor(private readonly route: ActivatedRoute, private readonly location: Location, private readonly peopleService: PeopleService) {}
+  constructor(
+    private readonly route: ActivatedRoute,
+    private readonly location: Location,
+    private readonly peopleService: PeopleService,
+  ) {}
 
   ngOnInit(): void {
     this.person$ = this.route.paramMap.pipe(
       map(params => params.get('id')),
-      switchMap(id => this.peopleService.getPersonDetails(id))
+      switchMap(id => this.peopleService.getPersonDetails(id)),
     );
   }
 

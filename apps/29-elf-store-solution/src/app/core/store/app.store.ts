@@ -16,7 +16,7 @@ export class AppStoreService {
   private APP_STORE = createStore(
     { name: 'APP_STORE' },
     withProps<IStoreProps>({ search: '' }),
-    withEntities<People>({ initialValue: [], idKey: 'id' })
+    withEntities<People>({ initialValue: [], idKey: 'id' }),
   );
 
   setSearch(search: string): void {
