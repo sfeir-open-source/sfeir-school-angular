@@ -4,29 +4,20 @@
   "projectType": "application",
   "sourceRoot": "apps/24-interceptor-solution/src",
   "prefix": "sfeir",
+  "tags": [],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/24-interceptor-solution",
         "index": "apps/24-interceptor-solution/src/index.html",
         "browser": "apps/24-interceptor-solution/src/main.ts",
-        "polyfills": [
-          "apps/24-interceptor-solution/src/polyfills.ts"
-        ],
+        "polyfills": ["apps/24-interceptor-solution/src/polyfills.ts"],
         "tsConfig": "apps/24-interceptor-solution/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": [
-          "apps/24-interceptor-solution/src/favicon.ico",
-          "apps/24-interceptor-solution/src/assets"
-        ],
-        "styles": [
-          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-          "apps/24-interceptor-solution/src/styles.scss"
-        ],
+        "assets": ["apps/24-interceptor-solution/src/favicon.ico", "apps/24-interceptor-solution/src/assets"],
+        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/24-interceptor-solution/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -79,23 +70,14 @@
       }
     },
     "lint": {
-      "executor": "@nx/eslint:lint",
-      "options": {
-        "lintFilePatterns": [
-          "apps/24-interceptor-solution/src/**/*.ts",
-          "apps/24-interceptor-solution/src/**/*.html"
-        ]
-      }
+      "executor": "@nx/eslint:lint"
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": [
-        "{workspaceRoot}/coverage/apps/24-interceptor-solution"
-      ],
+      "outputs": ["{workspaceRoot}/coverage/apps/24-interceptor-solution"],
       "options": {
         "jestConfig": "apps/24-interceptor-solution/jest.config.ts"
       }
     }
-  },
-  "tags": []
+  }
 }

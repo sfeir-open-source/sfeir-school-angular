@@ -4,29 +4,20 @@
   "projectType": "application",
   "sourceRoot": "apps/28-custom-control/src",
   "prefix": "sfeir",
+  "tags": [],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/28-custom-control",
         "index": "apps/28-custom-control/src/index.html",
         "browser": "apps/28-custom-control/src/main.ts",
-        "polyfills": [
-          "apps/28-custom-control/src/polyfills.ts"
-        ],
+        "polyfills": ["apps/28-custom-control/src/polyfills.ts"],
         "tsConfig": "apps/28-custom-control/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": [
-          "apps/28-custom-control/src/favicon.ico",
-          "apps/28-custom-control/src/assets"
-        ],
-        "styles": [
-          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-          "apps/28-custom-control/src/styles.scss"
-        ],
+        "assets": ["apps/28-custom-control/src/favicon.ico", "apps/28-custom-control/src/assets"],
+        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/28-custom-control/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -79,23 +70,14 @@
       }
     },
     "lint": {
-      "executor": "@nx/eslint:lint",
-      "options": {
-        "lintFilePatterns": [
-          "apps/28-custom-control/src/**/*.ts",
-          "apps/28-custom-control/src/**/*.html"
-        ]
-      }
+      "executor": "@nx/eslint:lint"
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": [
-        "{workspaceRoot}/coverage/apps/28-custom-control"
-      ],
+      "outputs": ["{workspaceRoot}/coverage/apps/28-custom-control"],
       "options": {
         "jestConfig": "apps/28-custom-control/jest.config.ts"
       }
     }
-  },
-  "tags": []
+  }
 }

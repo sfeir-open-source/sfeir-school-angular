@@ -4,29 +4,20 @@
   "projectType": "application",
   "sourceRoot": "apps/25-teleportation/src",
   "prefix": "sfeir",
+  "tags": [],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/25-teleportation",
         "index": "apps/25-teleportation/src/index.html",
         "browser": "apps/25-teleportation/src/main.ts",
-        "polyfills": [
-          "apps/25-teleportation/src/polyfills.ts"
-        ],
+        "polyfills": ["apps/25-teleportation/src/polyfills.ts"],
         "tsConfig": "apps/25-teleportation/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": [
-          "apps/25-teleportation/src/favicon.ico",
-          "apps/25-teleportation/src/assets"
-        ],
-        "styles": [
-          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-          "apps/25-teleportation/src/styles.scss"
-        ],
+        "assets": ["apps/25-teleportation/src/favicon.ico", "apps/25-teleportation/src/assets"],
+        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/25-teleportation/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -79,23 +70,14 @@
       }
     },
     "lint": {
-      "executor": "@nx/eslint:lint",
-      "options": {
-        "lintFilePatterns": [
-          "apps/25-teleportation/src/**/*.ts",
-          "apps/25-teleportation/src/**/*.html"
-        ]
-      }
+      "executor": "@nx/eslint:lint"
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": [
-        "{workspaceRoot}/coverage/apps/25-teleportation"
-      ],
+      "outputs": ["{workspaceRoot}/coverage/apps/25-teleportation"],
       "options": {
         "jestConfig": "apps/25-teleportation/jest.config.ts"
       }
     }
-  },
-  "tags": []
+  }
 }

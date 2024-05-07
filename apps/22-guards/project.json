@@ -4,29 +4,20 @@
   "projectType": "application",
   "sourceRoot": "apps/22-guards/src",
   "prefix": "sfeir",
+  "tags": [],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/22-guards",
         "index": "apps/22-guards/src/index.html",
         "browser": "apps/22-guards/src/main.ts",
-        "polyfills": [
-          "apps/22-guards/src/polyfills.ts"
-        ],
+        "polyfills": ["apps/22-guards/src/polyfills.ts"],
         "tsConfig": "apps/22-guards/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": [
-          "apps/22-guards/src/favicon.ico",
-          "apps/22-guards/src/assets"
-        ],
-        "styles": [
-          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-          "apps/22-guards/src/styles.scss"
-        ],
+        "assets": ["apps/22-guards/src/favicon.ico", "apps/22-guards/src/assets"],
+        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/22-guards/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -79,23 +70,14 @@
       }
     },
     "lint": {
-      "executor": "@nx/eslint:lint",
-      "options": {
-        "lintFilePatterns": [
-          "apps/22-guards/src/**/*.ts",
-          "apps/22-guards/src/**/*.html"
-        ]
-      }
+      "executor": "@nx/eslint:lint"
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": [
-        "{workspaceRoot}/coverage/apps/22-guards"
-      ],
+      "outputs": ["{workspaceRoot}/coverage/apps/22-guards"],
       "options": {
         "jestConfig": "apps/22-guards/jest.config.ts"
       }
     }
-  },
-  "tags": []
+  }
 }

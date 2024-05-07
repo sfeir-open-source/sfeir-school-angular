@@ -4,29 +4,20 @@
   "projectType": "application",
   "sourceRoot": "apps/17-template-driven-form-validation/src",
   "prefix": "sfeir",
+  "tags": [],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/17-template-driven-form-validation",
         "index": "apps/17-template-driven-form-validation/src/index.html",
         "browser": "apps/17-template-driven-form-validation/src/main.ts",
-        "polyfills": [
-          "apps/17-template-driven-form-validation/src/polyfills.ts"
-        ],
+        "polyfills": ["apps/17-template-driven-form-validation/src/polyfills.ts"],
         "tsConfig": "apps/17-template-driven-form-validation/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": [
-          "apps/17-template-driven-form-validation/src/favicon.ico",
-          "apps/17-template-driven-form-validation/src/assets"
-        ],
-        "styles": [
-          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-          "apps/17-template-driven-form-validation/src/styles.scss"
-        ],
+        "assets": ["apps/17-template-driven-form-validation/src/favicon.ico", "apps/17-template-driven-form-validation/src/assets"],
+        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/17-template-driven-form-validation/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -79,23 +70,14 @@
       }
     },
     "lint": {
-      "executor": "@nx/eslint:lint",
-      "options": {
-        "lintFilePatterns": [
-          "apps/17-template-driven-form-validation/src/**/*.ts",
-          "apps/17-template-driven-form-validation/src/**/*.html"
-        ]
-      }
+      "executor": "@nx/eslint:lint"
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": [
-        "{workspaceRoot}/coverage/apps/17-template-driven-form-validation"
-      ],
+      "outputs": ["{workspaceRoot}/coverage/apps/17-template-driven-form-validation"],
       "options": {
         "jestConfig": "apps/17-template-driven-form-validation/jest.config.ts"
       }
     }
-  },
-  "tags": []
+  }
 }

@@ -4,29 +4,20 @@
   "projectType": "application",
   "sourceRoot": "apps/15-directive-custom/src",
   "prefix": "sfeir",
+  "tags": [],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/15-directive-custom",
         "index": "apps/15-directive-custom/src/index.html",
         "browser": "apps/15-directive-custom/src/main.ts",
-        "polyfills": [
-          "apps/15-directive-custom/src/polyfills.ts"
-        ],
+        "polyfills": ["apps/15-directive-custom/src/polyfills.ts"],
         "tsConfig": "apps/15-directive-custom/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": [
-          "apps/15-directive-custom/src/favicon.ico",
-          "apps/15-directive-custom/src/assets"
-        ],
-        "styles": [
-          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-          "apps/15-directive-custom/src/styles.scss"
-        ],
+        "assets": ["apps/15-directive-custom/src/favicon.ico", "apps/15-directive-custom/src/assets"],
+        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/15-directive-custom/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -79,23 +70,14 @@
       }
     },
     "lint": {
-      "executor": "@nx/eslint:lint",
-      "options": {
-        "lintFilePatterns": [
-          "apps/15-directive-custom/src/**/*.ts",
-          "apps/15-directive-custom/src/**/*.html"
-        ]
-      }
+      "executor": "@nx/eslint:lint"
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": [
-        "{workspaceRoot}/coverage/apps/15-directive-custom"
-      ],
+      "outputs": ["{workspaceRoot}/coverage/apps/15-directive-custom"],
       "options": {
         "jestConfig": "apps/15-directive-custom/jest.config.ts"
       }
     }
-  },
-  "tags": []
+  }
 }
