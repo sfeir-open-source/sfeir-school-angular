@@ -1,7 +1,7 @@
 <div class="sfeir-input">
   <mat-form-field appearance="outline">
-    <mat-label>{{ placeholder }}</mat-label>
-    <input #InputElement matInput [type]="inputType" [placeholder]="placeholder" />
+    <mat-label>{{ placeholder() }}</mat-label>
+    <input #InputElement matInput [type]="inputType()" [placeholder]="placeholder()" />
     @if (userLoseFocus$()) {
       <ng-content />
     }

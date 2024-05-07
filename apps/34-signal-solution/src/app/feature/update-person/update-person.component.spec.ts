@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { fireEvent, render } from '@testing-library/angular';
 import { of } from 'rxjs';
 import { PeopleService } from '../../core/providers/people.service';
@@ -12,7 +12,7 @@ import { UpdatePersonComponent } from './update-person.component';
   template: '',
 })
 class MockFormComponent {
-  @Input() person: People;
+  person = input<People>();
 }
 
 const LOCATION = {

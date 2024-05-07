@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, DebugElement, Input } from '@angular/core';
+import { Component, DebugElement, input } from '@angular/core';
 import { ComponentFixture, fakeAsync } from '@angular/core/testing';
 import { MatButtonModule } from '@angular/material/button';
 import { By } from '@angular/platform-browser';
@@ -16,7 +16,7 @@ import { HomeComponent } from './home.component';
   standalone: true,
 })
 class MockCardComponent {
-  @Input() person: People;
+  person = input<People>();
 }
 
 const PEOPLE_SERVICE = {
@@ -57,7 +57,7 @@ describe('HomeComponent', () => {
   });
   test('should pass the input person', () => {
     const sfeirCard: CardComponent = debugElement.query(By.css('sfeir-card')).componentInstance;
-    expect(sfeirCard.person).toEqual(PERSON);
+    expect(sfeirCard.person()).toEqual(PERSON);
   });
   test('should call the getRandomPerson', () => {
     const spy = jest.spyOn(component, 'getRandomPerson');
@@ -80,6 +80,6 @@ describe('HomeComponent', () => {
     await componentFixture.whenStable();
     componentFixture.detectChanges();
     const sfeirCard: CardComponent = debugElement.query(By.css('sfeir-card')).componentInstance;
-    expect(sfeirCard.person).toEqual(RANDOM_PERSON);
+    expect(sfeirCard.person()).toEqual(RANDOM_PERSON);
   }));
 });

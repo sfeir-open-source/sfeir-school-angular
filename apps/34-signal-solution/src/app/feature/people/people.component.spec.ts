@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, DebugElement, Input, NO_ERRORS_SCHEMA, signal } from '@angular/core';
+import { Component, DebugElement, input, NO_ERRORS_SCHEMA, signal } from '@angular/core';
 import { ComponentFixture, fakeAsync, flush } from '@angular/core/testing';
 import { MatDialog } from '@angular/material/dialog';
 import { MatListModule } from '@angular/material/list';
@@ -20,7 +20,7 @@ import { PeopleComponent } from './people.component';
   template: '',
 })
 class MockCardComponent {
-  @Input() person: People;
+  person = input<People | undefined>();
 }
 
 const PEOPLE = [{ id: '1' }, { id: '2' }] as Array<People>;
@@ -100,8 +100,8 @@ describe('PeopleComponent', () => {
     });
     test('should pass the correct person', () => {
       const [sfeirCard1, sfeirCard2] = debugElement.queryAll(By.css('sfeir-card'));
-      expect(sfeirCard1.componentInstance.person).toEqual(PEOPLE[0]);
-      expect(sfeirCard2.componentInstance.person).toEqual(PEOPLE[1]);
+      expect(sfeirCard1.componentInstance.person()).toEqual(PEOPLE[0]);
+      expect(sfeirCard2.componentInstance.person()).toEqual(PEOPLE[1]);
     });
     test('should call the delete method', () => {
       jest.spyOn(PEOPLE_STORE_SERVICE, 'deletePerson');

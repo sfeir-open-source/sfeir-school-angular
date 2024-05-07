@@ -1,4 +1,4 @@
-import { Component, DebugElement, Input } from '@angular/core';
+import { Component, DebugElement, input } from '@angular/core';
 import { fireEvent, render } from '@testing-library/angular';
 import { BadgeDirective } from './badge.directive';
 import { By } from '@angular/platform-browser';
@@ -74,8 +74,8 @@ describe('BadgeDirective', () => {
 @Component({
   standalone: true,
   imports: [BadgeDirective],
-  template: `<span [sfeirBadge]="person.isManager"></span>`,
+  template: `<span [sfeirBadge]="person().isManager"></span>`,
 })
 export class HostDirectiveComponent {
-  @Input() person!: { isManager: boolean };
+  person = input.required<{ isManager: boolean }>();
 }

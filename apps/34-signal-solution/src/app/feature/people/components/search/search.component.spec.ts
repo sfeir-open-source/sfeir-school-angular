@@ -1,8 +1,7 @@
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { fireEvent, render } from '@testing-library/angular';
 import { SearchComponent } from './search.component';
-
-const SEARCH_SPY = jest.fn();
+import { fakeAsync, flush } from '@angular/core/testing';
 
 describe('SearchComponent', () => {
   let container: Element;
@@ -16,11 +15,8 @@ describe('SearchComponent', () => {
       rerender: reload,
     } = await render(SearchComponent, {
       schemas: [NO_ERRORS_SCHEMA],
-      componentProperties: {
+      componentInputs: {
         searchText: 'SFEIR',
-        search: {
-          emit: SEARCH_SPY,
-        } as any,
       },
     });
     container = hostContainer;
@@ -37,12 +33,15 @@ describe('SearchComponent', () => {
   });
   test('should refresh the search control', async () => {
     const spy = jest.spyOn(component.searchControl, 'patchValue');
-    await rerender({ componentProperties: { searchText: 'sfeir' } });
+    await rerender({ componentInputs: { searchText: 'sfeir' } });
     expect(spy).toHaveBeenCalledWith('sfeir', { emitEvent: false });
   });
-  test('should emit the search event', () => {
+  test('should emit the search event', fakeAsync(() => {
     const element = container.querySelector<HTMLInputElement>('input[placeholder="Person Searcher"]');
     fireEvent.input(element, { target: { value: 'test' } });
-    expect(SEARCH_SPY).toHaveBeenCalledWith('test');
-  });
+    flush();
+    component.search.subscribe(input => {
+      expect(input).toBe('test');
+    });
+  }));
 });

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output, signal } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { People } from '../../models/people.model';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
@@ -16,13 +16,8 @@ import { DatePipe, NgOptimizedImage } from '@angular/common';
   imports: [MatCardModule, MatIconModule, MatButtonModule, DisplayDirective, NaPipe, RouterLink, NgOptimizedImage, DatePipe],
 })
 export class CardComponent {
-  @Input({ alias: 'person' }) set _person(person: People | undefined) {
-    person && this.person.set(person);
-  }
-
-  @Output() personDelete: EventEmitter<People> = new EventEmitter();
-
-  person = signal<People>({} as People);
+  person = input.required<People>();
+  personDelete = output<People>();
 
   deletePerson(person: People): void {
     this.personDelete.emit(person);
