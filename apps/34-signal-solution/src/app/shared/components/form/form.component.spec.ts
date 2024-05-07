@@ -24,8 +24,10 @@ describe('FormComponent', () => {
     } = await render(FormComponent, {
       componentImports: [MatInputModule, ReactiveFormsModule, CustomInputComponent, CommonModule, NgOptimizedImage],
       schemas: [NO_ERRORS_SCHEMA],
-      componentProperties: {
+      componentInputs: {
         person: null,
+      },
+      componentOutputs: {
         cancel: {
           emit: CANCEL_SPY,
         } as any,
@@ -59,8 +61,10 @@ describe('FormComponent', () => {
       const spy = jest.spyOn(component.personForm, 'patchValue');
       const person = { lastname: 'Doe', firstname: 'John' } as People;
       await reload({
-        componentProperties: {
+        componentInputs: {
           person,
+        },
+        componentProperties: {
           cancel: {
             emit: CANCEL_SPY,
           } as any,

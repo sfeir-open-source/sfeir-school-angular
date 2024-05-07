@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
+import { Component, effect, input, output } from '@angular/core';
 import { People, PeopleForm } from '../../models/people.model';
 import { PersonForm } from './form';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -14,18 +14,18 @@ import { MatButtonModule } from '@angular/material/button';
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss'],
 })
-export class FormComponent implements OnChanges {
-  @Input() person: People;
-  @Output() cancel: EventEmitter<void> = new EventEmitter();
-  @Output() save: EventEmitter<PeopleForm> = new EventEmitter();
+export class FormComponent {
+  person = input<People | undefined>();
+  cancel = output<void>();
+  save = output<PeopleForm>();
   personForm = new PersonForm();
 
-  ngOnChanges(changes: SimpleChanges): void {
-    const { person } = changes;
-    if (person.currentValue !== person.previousValue) {
-      this.personForm.patchValue(this.person);
+  #updatePersonFormEffect = effect(() => {
+    const person = this.person();
+    if (person) {
+      this.personForm.patchValue(person);
     }
-  }
+  });
 
   onSave(): void {
     this.save.emit(this.personForm.getRawValue());

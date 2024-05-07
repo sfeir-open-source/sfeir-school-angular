@@ -1,7 +1,7 @@
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
+import { Component, effect, input } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
-import { Subject, takeUntil } from 'rxjs';
 import { MatInputModule } from '@angular/material/input';
+import { outputFromObservable } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'sfeir-search',
@@ -10,19 +10,13 @@ import { MatInputModule } from '@angular/material/input';
   standalone: true,
   imports: [MatInputModule, ReactiveFormsModule],
 })
-export class SearchComponent implements OnChanges, OnInit {
-  @Input() searchText: string;
-  @Output() search: EventEmitter<string> = new EventEmitter();
-  searchControl: FormControl<string | null>;
-  private unsubscribe$: Subject<boolean> = new Subject();
+export class SearchComponent {
+  searchControl: FormControl<string | null> = new FormControl(null);
 
-  ngOnChanges() {
-    this.searchControl
-      ? this.searchControl.patchValue(this.searchText, { emitEvent: false })
-      : (this.searchControl = new FormControl(this.searchText));
-  }
+  searchText = input<string>('');
+  search = outputFromObservable(this.searchControl.valueChanges);
 
-  ngOnInit(): void {
-    this.searchControl.valueChanges.pipe(takeUntil(this.unsubscribe$)).subscribe(search => this.search.emit(search));
-  }
+  #updateSearchControlEffect = effect(() => {
+    this.searchControl.patchValue(this.searchText(), { emitEvent: false });
+  });
 }

@@ -1,5 +1,5 @@
 import { NgTemplateOutlet } from '@angular/common';
-import { Component, Input, TemplateRef } from '@angular/core';
+import { Component, input, TemplateRef } from '@angular/core';
 import { MatToolbar } from '@angular/material/toolbar';
 
 @Component({
@@ -10,5 +10,5 @@ import { MatToolbar } from '@angular/material/toolbar';
   imports: [NgTemplateOutlet],
 })
 export class HeaderComponent {
-  @Input() headerTemplate: TemplateRef<MatToolbar>;
+  headerTemplate = input.required<TemplateRef<MatToolbar>>();
 }
