@@ -4,29 +4,20 @@
   "projectType": "application",
   "sourceRoot": "apps/13-pipe-custom-solution/src",
   "prefix": "sfeir",
+  "tags": [],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/13-pipe-custom-solution",
         "index": "apps/13-pipe-custom-solution/src/index.html",
         "browser": "apps/13-pipe-custom-solution/src/main.ts",
-        "polyfills": [
-          "apps/13-pipe-custom-solution/src/polyfills.ts"
-        ],
+        "polyfills": ["apps/13-pipe-custom-solution/src/polyfills.ts"],
         "tsConfig": "apps/13-pipe-custom-solution/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": [
-          "apps/13-pipe-custom-solution/src/favicon.ico",
-          "apps/13-pipe-custom-solution/src/assets"
-        ],
-        "styles": [
-          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-          "apps/13-pipe-custom-solution/src/styles.scss"
-        ],
+        "assets": ["apps/13-pipe-custom-solution/src/favicon.ico", "apps/13-pipe-custom-solution/src/assets"],
+        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/13-pipe-custom-solution/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -79,23 +70,14 @@
       }
     },
     "lint": {
-      "executor": "@nx/eslint:lint",
-      "options": {
-        "lintFilePatterns": [
-          "apps/13-pipe-custom-solution/src/**/*.ts",
-          "apps/13-pipe-custom-solution/src/**/*.html"
-        ]
-      }
+      "executor": "@nx/eslint:lint"
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": [
-        "{workspaceRoot}/coverage/apps/13-pipe-custom-solution"
-      ],
+      "outputs": ["{workspaceRoot}/coverage/apps/13-pipe-custom-solution"],
       "options": {
         "jestConfig": "apps/13-pipe-custom-solution/jest.config.ts"
       }
     }
-  },
-  "tags": []
+  }
 }

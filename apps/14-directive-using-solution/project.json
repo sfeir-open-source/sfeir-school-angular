@@ -4,29 +4,20 @@
   "projectType": "application",
   "sourceRoot": "apps/14-directive-using-solution/src",
   "prefix": "sfeir",
+  "tags": [],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/14-directive-using-solution",
         "index": "apps/14-directive-using-solution/src/index.html",
         "browser": "apps/14-directive-using-solution/src/main.ts",
-        "polyfills": [
-          "apps/14-directive-using-solution/src/polyfills.ts"
-        ],
+        "polyfills": ["apps/14-directive-using-solution/src/polyfills.ts"],
         "tsConfig": "apps/14-directive-using-solution/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": [
-          "apps/14-directive-using-solution/src/favicon.ico",
-          "apps/14-directive-using-solution/src/assets"
-        ],
-        "styles": [
-          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-          "apps/14-directive-using-solution/src/styles.scss"
-        ],
+        "assets": ["apps/14-directive-using-solution/src/favicon.ico", "apps/14-directive-using-solution/src/assets"],
+        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/14-directive-using-solution/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -79,23 +70,14 @@
       }
     },
     "lint": {
-      "executor": "@nx/eslint:lint",
-      "options": {
-        "lintFilePatterns": [
-          "apps/14-directive-using-solution/src/**/*.ts",
-          "apps/14-directive-using-solution/src/**/*.html"
-        ]
-      }
+      "executor": "@nx/eslint:lint"
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": [
-        "{workspaceRoot}/coverage/apps/14-directive-using-solution"
-      ],
+      "outputs": ["{workspaceRoot}/coverage/apps/14-directive-using-solution"],
       "options": {
         "jestConfig": "apps/14-directive-using-solution/jest.config.ts"
       }
     }
-  },
-  "tags": []
+  }
 }

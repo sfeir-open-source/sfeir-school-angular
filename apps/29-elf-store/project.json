@@ -4,29 +4,20 @@
   "projectType": "application",
   "sourceRoot": "apps/29-elf-store/src",
   "prefix": "sfeir",
+  "tags": [],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/29-elf-store",
         "index": "apps/29-elf-store/src/index.html",
         "browser": "apps/29-elf-store/src/main.ts",
-        "polyfills": [
-          "apps/29-elf-store/src/polyfills.ts"
-        ],
+        "polyfills": ["apps/29-elf-store/src/polyfills.ts"],
         "tsConfig": "apps/29-elf-store/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": [
-          "apps/29-elf-store/src/favicon.ico",
-          "apps/29-elf-store/src/assets"
-        ],
-        "styles": [
-          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-          "apps/29-elf-store/src/styles.scss"
-        ],
+        "assets": ["apps/29-elf-store/src/favicon.ico", "apps/29-elf-store/src/assets"],
+        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/29-elf-store/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -79,23 +70,14 @@
       }
     },
     "lint": {
-      "executor": "@nx/eslint:lint",
-      "options": {
-        "lintFilePatterns": [
-          "apps/29-elf-store/src/**/*.ts",
-          "apps/29-elf-store/src/**/*.html"
-        ]
-      }
+      "executor": "@nx/eslint:lint"
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": [
-        "{workspaceRoot}/coverage/apps/29-elf-store"
-      ],
+      "outputs": ["{workspaceRoot}/coverage/apps/29-elf-store"],
       "options": {
         "jestConfig": "apps/29-elf-store/jest.config.ts"
       }
     }
-  },
-  "tags": []
+  }
 }

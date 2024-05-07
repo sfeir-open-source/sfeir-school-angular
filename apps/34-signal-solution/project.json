@@ -4,29 +4,20 @@
   "projectType": "application",
   "sourceRoot": "apps/34-signal-solution/src",
   "prefix": "sfeir",
+  "tags": [],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/34-signal-solution",
         "index": "apps/34-signal-solution/src/index.html",
         "browser": "apps/34-signal-solution/src/main.ts",
-        "polyfills": [
-          "apps/34-signal-solution/src/polyfills.ts"
-        ],
+        "polyfills": ["apps/34-signal-solution/src/polyfills.ts"],
         "tsConfig": "apps/34-signal-solution/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": [
-          "apps/34-signal-solution/src/favicon.ico",
-          "apps/34-signal-solution/src/assets"
-        ],
-        "styles": [
-          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-          "apps/34-signal-solution/src/styles.scss"
-        ],
+        "assets": ["apps/34-signal-solution/src/favicon.ico", "apps/34-signal-solution/src/assets"],
+        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/34-signal-solution/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -79,23 +70,14 @@
       }
     },
     "lint": {
-      "executor": "@nx/eslint:lint",
-      "options": {
-        "lintFilePatterns": [
-          "apps/34-signal-solution/src/**/*.ts",
-          "apps/34-signal-solution/src/**/*.html"
-        ]
-      }
+      "executor": "@nx/eslint:lint"
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": [
-        "{workspaceRoot}/coverage/apps/34-signal-solution"
-      ],
+      "outputs": ["{workspaceRoot}/coverage/apps/34-signal-solution"],
       "options": {
         "jestConfig": "apps/34-signal-solution/jest.config.ts"
       }
     }
-  },
-  "tags": []
+  }
 }

@@ -4,29 +4,20 @@
   "projectType": "application",
   "sourceRoot": "apps/33-standalone-component-solution/src",
   "prefix": "sfeir",
+  "tags": [],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/33-standalone-component-solution",
         "index": "apps/33-standalone-component-solution/src/index.html",
         "browser": "apps/33-standalone-component-solution/src/main.ts",
-        "polyfills": [
-          "apps/33-standalone-component-solution/src/polyfills.ts"
-        ],
+        "polyfills": ["apps/33-standalone-component-solution/src/polyfills.ts"],
         "tsConfig": "apps/33-standalone-component-solution/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": [
-          "apps/33-standalone-component-solution/src/favicon.ico",
-          "apps/33-standalone-component-solution/src/assets"
-        ],
-        "styles": [
-          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-          "apps/33-standalone-component-solution/src/styles.scss"
-        ],
+        "assets": ["apps/33-standalone-component-solution/src/favicon.ico", "apps/33-standalone-component-solution/src/assets"],
+        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/33-standalone-component-solution/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -79,23 +70,14 @@
       }
     },
     "lint": {
-      "executor": "@nx/eslint:lint",
-      "options": {
-        "lintFilePatterns": [
-          "apps/33-standalone-component-solution/src/**/*.ts",
-          "apps/33-standalone-component-solution/src/**/*.html"
-        ]
-      }
+      "executor": "@nx/eslint:lint"
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": [
-        "{workspaceRoot}/coverage/apps/33-standalone-component-solution"
-      ],
+      "outputs": ["{workspaceRoot}/coverage/apps/33-standalone-component-solution"],
       "options": {
         "jestConfig": "apps/33-standalone-component-solution/jest.config.ts"
       }
     }
-  },
-  "tags": []
+  }
 }

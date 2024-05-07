@@ -4,29 +4,20 @@
   "projectType": "application",
   "sourceRoot": "apps/33-standalone-component/src",
   "prefix": "sfeir",
+  "tags": [],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/33-standalone-component",
         "index": "apps/33-standalone-component/src/index.html",
         "browser": "apps/33-standalone-component/src/main.ts",
-        "polyfills": [
-          "apps/33-standalone-component/src/polyfills.ts"
-        ],
+        "polyfills": ["apps/33-standalone-component/src/polyfills.ts"],
         "tsConfig": "apps/33-standalone-component/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": [
-          "apps/33-standalone-component/src/favicon.ico",
-          "apps/33-standalone-component/src/assets"
-        ],
-        "styles": [
-          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-          "apps/33-standalone-component/src/styles.scss"
-        ],
+        "assets": ["apps/33-standalone-component/src/favicon.ico", "apps/33-standalone-component/src/assets"],
+        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/33-standalone-component/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -79,23 +70,14 @@
       }
     },
     "lint": {
-      "executor": "@nx/eslint:lint",
-      "options": {
-        "lintFilePatterns": [
-          "apps/33-standalone-component/src/**/*.ts",
-          "apps/33-standalone-component/src/**/*.html"
-        ]
-      }
+      "executor": "@nx/eslint:lint"
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": [
-        "{workspaceRoot}/coverage/apps/33-standalone-component"
-      ],
+      "outputs": ["{workspaceRoot}/coverage/apps/33-standalone-component"],
       "options": {
         "jestConfig": "apps/33-standalone-component/jest.config.ts"
       }
     }
-  },
-  "tags": []
+  }
 }

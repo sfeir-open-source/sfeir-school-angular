@@ -4,25 +4,19 @@
   "projectType": "application",
   "sourceRoot": "apps/20-reactive-form-custom-validator-solution/src",
   "prefix": "sfeir",
+  "tags": [],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/20-reactive-form-custom-validator-solution",
         "index": "apps/20-reactive-form-custom-validator-solution/src/index.html",
         "browser": "apps/20-reactive-form-custom-validator-solution/src/main.ts",
-        "polyfills": [
-          "apps/20-reactive-form-custom-validator-solution/src/polyfills.ts"
-        ],
+        "polyfills": ["apps/20-reactive-form-custom-validator-solution/src/polyfills.ts"],
         "tsConfig": "apps/20-reactive-form-custom-validator-solution/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": [
-          "apps/20-reactive-form-custom-validator-solution/src/favicon.ico",
-          "apps/20-reactive-form-custom-validator-solution/src/assets"
-        ],
+        "assets": ["apps/20-reactive-form-custom-validator-solution/src/favicon.ico", "apps/20-reactive-form-custom-validator-solution/src/assets"],
         "styles": [
           "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
           "apps/20-reactive-form-custom-validator-solution/src/styles.scss"
@@ -79,23 +73,14 @@
       }
     },
     "lint": {
-      "executor": "@nx/eslint:lint",
-      "options": {
-        "lintFilePatterns": [
-          "apps/20-reactive-form-custom-validator-solution/src/**/*.ts",
-          "apps/20-reactive-form-custom-validator-solution/src/**/*.html"
-        ]
-      }
+      "executor": "@nx/eslint:lint"
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": [
-        "{workspaceRoot}/coverage/apps/20-reactive-form-custom-validator-solution"
-      ],
+      "outputs": ["{workspaceRoot}/coverage/apps/20-reactive-form-custom-validator-solution"],
       "options": {
         "jestConfig": "apps/20-reactive-form-custom-validator-solution/jest.config.ts"
       }
     }
-  },
-  "tags": []
+  }
 }

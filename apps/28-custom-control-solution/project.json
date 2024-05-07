@@ -4,29 +4,20 @@
   "projectType": "application",
   "sourceRoot": "apps/28-custom-control-solution/src",
   "prefix": "sfeir",
+  "tags": [],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/28-custom-control-solution",
         "index": "apps/28-custom-control-solution/src/index.html",
         "browser": "apps/28-custom-control-solution/src/main.ts",
-        "polyfills": [
-          "apps/28-custom-control-solution/src/polyfills.ts"
-        ],
+        "polyfills": ["apps/28-custom-control-solution/src/polyfills.ts"],
         "tsConfig": "apps/28-custom-control-solution/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": [
-          "apps/28-custom-control-solution/src/favicon.ico",
-          "apps/28-custom-control-solution/src/assets"
-        ],
-        "styles": [
-          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-          "apps/28-custom-control-solution/src/styles.scss"
-        ],
+        "assets": ["apps/28-custom-control-solution/src/favicon.ico", "apps/28-custom-control-solution/src/assets"],
+        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/28-custom-control-solution/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -79,23 +70,14 @@
       }
     },
     "lint": {
-      "executor": "@nx/eslint:lint",
-      "options": {
-        "lintFilePatterns": [
-          "apps/28-custom-control-solution/src/**/*.ts",
-          "apps/28-custom-control-solution/src/**/*.html"
-        ]
-      }
+      "executor": "@nx/eslint:lint"
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": [
-        "{workspaceRoot}/coverage/apps/28-custom-control-solution"
-      ],
+      "outputs": ["{workspaceRoot}/coverage/apps/28-custom-control-solution"],
       "options": {
         "jestConfig": "apps/28-custom-control-solution/jest.config.ts"
       }
     }
-  },
-  "tags": []
+  }
 }

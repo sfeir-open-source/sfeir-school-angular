@@ -4,29 +4,20 @@
   "projectType": "application",
   "sourceRoot": "apps/14-directive-using/src",
   "prefix": "sfeir",
+  "tags": [],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/14-directive-using",
         "index": "apps/14-directive-using/src/index.html",
         "browser": "apps/14-directive-using/src/main.ts",
-        "polyfills": [
-          "apps/14-directive-using/src/polyfills.ts"
-        ],
+        "polyfills": ["apps/14-directive-using/src/polyfills.ts"],
         "tsConfig": "apps/14-directive-using/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": [
-          "apps/14-directive-using/src/favicon.ico",
-          "apps/14-directive-using/src/assets"
-        ],
-        "styles": [
-          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-          "apps/14-directive-using/src/styles.scss"
-        ],
+        "assets": ["apps/14-directive-using/src/favicon.ico", "apps/14-directive-using/src/assets"],
+        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/14-directive-using/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -79,23 +70,14 @@
       }
     },
     "lint": {
-      "executor": "@nx/eslint:lint",
-      "options": {
-        "lintFilePatterns": [
-          "apps/14-directive-using/src/**/*.ts",
-          "apps/14-directive-using/src/**/*.html"
-        ]
-      }
+      "executor": "@nx/eslint:lint"
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": [
-        "{workspaceRoot}/coverage/apps/14-directive-using"
-      ],
+      "outputs": ["{workspaceRoot}/coverage/apps/14-directive-using"],
       "options": {
         "jestConfig": "apps/14-directive-using/jest.config.ts"
       }
     }
-  },
-  "tags": []
+  }
 }

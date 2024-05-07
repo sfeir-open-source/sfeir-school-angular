@@ -4,29 +4,20 @@
   "projectType": "application",
   "sourceRoot": "apps/27-structural-directive-solution/src",
   "prefix": "sfeir",
+  "tags": [],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/27-structural-directive-solution",
         "index": "apps/27-structural-directive-solution/src/index.html",
         "browser": "apps/27-structural-directive-solution/src/main.ts",
-        "polyfills": [
-          "apps/27-structural-directive-solution/src/polyfills.ts"
-        ],
+        "polyfills": ["apps/27-structural-directive-solution/src/polyfills.ts"],
         "tsConfig": "apps/27-structural-directive-solution/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": [
-          "apps/27-structural-directive-solution/src/favicon.ico",
-          "apps/27-structural-directive-solution/src/assets"
-        ],
-        "styles": [
-          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-          "apps/27-structural-directive-solution/src/styles.scss"
-        ],
+        "assets": ["apps/27-structural-directive-solution/src/favicon.ico", "apps/27-structural-directive-solution/src/assets"],
+        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/27-structural-directive-solution/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -79,23 +70,14 @@
       }
     },
     "lint": {
-      "executor": "@nx/eslint:lint",
-      "options": {
-        "lintFilePatterns": [
-          "apps/27-structural-directive-solution/src/**/*.ts",
-          "apps/27-structural-directive-solution/src/**/*.html"
-        ]
-      }
+      "executor": "@nx/eslint:lint"
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": [
-        "{workspaceRoot}/coverage/apps/27-structural-directive-solution"
-      ],
+      "outputs": ["{workspaceRoot}/coverage/apps/27-structural-directive-solution"],
       "options": {
         "jestConfig": "apps/27-structural-directive-solution/jest.config.ts"
       }
     }
-  },
-  "tags": []
+  }
 }
