@@ -5,9 +5,10 @@ import { dayOneSlides } from './day_one.js';
 import { dayThreeSLides } from './day_three.js';
 import { dayTwoSlides } from './day_two.js';
 import { moduleDirectiveSlides } from './directive-module.js';
+import { dayFiveSlide } from './day_five.js';
 
 function sfeirInstitute() {
-  const formationSLides = [...dayOneSlides(), ...dayTwoSlides(), ...dayThreeSLides(), ...dayFourSlides()];
+  const formationSLides = [...dayOneSlides(), ...dayTwoSlides(), ...dayThreeSLides(), ...dayFourSlides(), ...dayFiveSlide()];
   return formationSLides.map(slidePath => {
     return { path: slidePath };
   });
