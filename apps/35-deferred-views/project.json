@@ -1,0 +1,95 @@
+{
+  "name": "35-deferred-views",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/35-deferred-views/src",
+  "prefix": "sfeir",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:application",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/apps/35-deferred-views",
+        "index": "apps/35-deferred-views/src/index.html",
+        "browser": "apps/35-deferred-views/src/main.ts",
+        "polyfills": [
+          "apps/35-deferred-views/src/polyfills.ts"
+        ],
+        "tsConfig": "apps/35-deferred-views/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "apps/35-deferred-views/src/favicon.ico",
+          "apps/35-deferred-views/src/assets"
+        ],
+        "styles": [
+          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+          "apps/35-deferred-views/src/styles.scss"
+        ],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/35-deferred-views/src/environments/environment.ts",
+              "with": "apps/35-deferred-views/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "optimization": false,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "buildTarget": "35-deferred-views:build:production"
+        },
+        "development": {
+          "buildTarget": "35-deferred-views:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "35-deferred-views:build"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": [
+        "{workspaceRoot}/coverage/apps/35-deferred-views"
+      ],
+      "options": {
+        "jestConfig": "apps/35-deferred-views/jest.config.ts"
+      }
+    }
+  }
+}

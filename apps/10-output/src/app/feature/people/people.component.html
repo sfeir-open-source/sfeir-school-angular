@@ -1,5 +1,5 @@
 <section>
   @for (person of people$|async;track person.id) {
-    <sfeir-card *ngFor="let person of people$ | async" [person]="person" />
+    <sfeir-card [person]="person" />
   }
 </section>

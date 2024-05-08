@@ -14,9 +14,9 @@ La composant de la modale est également créé, dans le fichier **add-person-di
 
 Dans le dossier shared/components, et à l'aide du CLI, créez un composant FormComponent en pensant bien à l'exporter dans la propriété exports de votre module SharedModule
 
-Dans le ficher **form.component.html**, copiez le contenue du fichier \_static/form.component.html
+Dans le ficher **form.component.html**, copiez le contenue du fichier assets/static/form.component.html
 
-Dans le fichier **form.component.scss**, copiez le contenue du fichier \_static/form.component.css
+Dans le fichier **form.component.scss**, copiez le contenue du fichier assets/static/form.component.css
 <br><br>
 
 ## Etape 2
