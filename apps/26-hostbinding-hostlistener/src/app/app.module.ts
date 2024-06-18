@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserModule } from '@angular/platform-browser';
@@ -9,8 +9,8 @@ import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [CoreModule, BrowserModule, BrowserAnimationsModule, CoreModule, HttpClientModule, AppRoutingModule, MatToolbarModule, CoreModule],
-  providers: [],
   bootstrap: [AppComponent],
+  imports: [CoreModule, BrowserModule, BrowserAnimationsModule, CoreModule, AppRoutingModule, MatToolbarModule, CoreModule],
+  providers: [provideHttpClient(withInterceptorsFromDi())],
 })
 export class AppModule {}
