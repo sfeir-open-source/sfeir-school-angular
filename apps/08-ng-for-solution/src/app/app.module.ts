@@ -1,5 +1,5 @@
 import { NgOptimizedImage } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -11,8 +11,8 @@ import { MaterialDesignModule } from './material-design.module';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, PeopleComponent],
-  imports: [BrowserModule, BrowserAnimationsModule, MaterialDesignModule, HttpClientModule, AppRoutingModule, NgOptimizedImage],
-  providers: [],
   bootstrap: [AppComponent],
+  imports: [BrowserModule, BrowserAnimationsModule, MaterialDesignModule, AppRoutingModule, NgOptimizedImage],
+  providers: [provideHttpClient(withInterceptorsFromDi())],
 })
 export class AppModule {}

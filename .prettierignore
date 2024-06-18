@@ -27,6 +27,7 @@
 
 *.md
 
-./workshop/dist
+/workshop/dist
 
 /.nx/cache
+/.nx/workspace-data

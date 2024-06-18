@@ -53,3 +53,4 @@ workshop/dist
 .fleet
 
 .nx/cache
+.nx/workspace-data
