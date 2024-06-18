@@ -9,7 +9,11 @@ function standaloneComponents() {
 }
 
 function signals() {
-  return ['signals/transition_slide.md', 'signals/introduction.md', 'signals/signals.md', 'signals/exercice.md'];
+  return ['signals/transition_slide.md', 'signals/introduction.md', 'signals/signals.md', 'signals/binding_queries.md', 'signals/exercice.md'];
+}
+
+function deferredViews() {
+  return ['deferred-views/transition_slide.md', 'deffered-views/deffered-views.md'];
 }
 
 function controlFlow() {
@@ -17,5 +21,5 @@ function controlFlow() {
 }
 
 export function dayFiveSlide() {
-  return [...standaloneComponents(), ...controlFlow(), ...signals()];
+  return [...standaloneComponents(), ...controlFlow(), ...signals(), deferredViews()];
 }

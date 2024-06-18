@@ -1,0 +1,36 @@
+<mat-card appearance="outlined" class="mat-whiteframe-2dp">
+  <mat-card-title-group>
+    <img mat-card-image [ngSrc]="person().photo" alt="person-photo" height="128" width="128" />
+    <mat-card-title>
+      <a href="/people/1"> <span>{{ person().firstname + ' ' + person().lastname }}</span> </a>
+    </mat-card-title>
+    <mat-card-subtitle>{{ person().entity }}</mat-card-subtitle>
+    <mat-card-subtitle class="contact-info">
+      <mat-icon>email</mat-icon>
+      <a [href]="'mailto:'+ person().email" title="Send an email to Powers Blacks" class="truncate">{{ person().email }}</a>
+    </mat-card-subtitle>
+    <mat-card-subtitle class="contact-info">
+      <mat-icon>phone</mat-icon>
+      <a [href]="'tel:' + person().phone" title="Call Powers">{{ person().phone }}</a>
+    </mat-card-subtitle>
+  </mat-card-title-group>
+  <mat-card-content>
+    <div class="contact-info">Manager <a href="/people/1">{{ person().manager |na }}</a></div>
+    <div class="contact-info">Location<a href="http://www.sfeir.com/contact/">SFEIR</a></div>
+    <div class="contact-info">birthDate<a>{{ person().birthDate |date:'dd/MM/yyyy' }}</a>
+    </div>
+    <div class="buttons-info">
+      <a mat-button title="Locate" href="/people/1">
+        <mat-icon>map</mat-icon>
+      </a>
+      <ng-container *sfeirDisplay="!person().isManager">
+        <a mat-button title="Edit" [routerLink]="['/people', person().id]" href="/people/1">
+          <mat-icon>create</mat-icon>
+        </a>
+        <a mat-button title="Delete" (click)="deletePerson(person())">
+          <mat-icon>delete</mat-icon>
+        </a>
+      </ng-container>
+    </div>
+  </mat-card-content>
+</mat-card>

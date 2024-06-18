@@ -248,3 +248,52 @@ counter.set(4);
 # Assemblons et voyons comment ça fonctionne
 
 ![h-900 full-width ](assets/images/school/signals/signals-working.png)
+
+##==##
+
+# Interporabilité avec RxJs
+
+RxJs n'est pas déprécated, aujourd'hui il est utilisé pour autre chose: <br/><br/><br/>
+
+- Signal est utilisé pour gérer l'état de votre application, comme par exemple l'état d'un loader <br/><br/>
+- Rxjs est utilisé pour gérer les évènements, autrement dit gérer le flux utilisateurs<br/><br/>
+
+##==##
+
+<!-- .slide: class="with-code inconsolata"-->
+# Interporabilité avec RxJs: toObservable
+
+La fonction toObservable permet de transformer un signal en observable RxJs <br/><br/>
+
+```typescript
+const counter = signal(0);
+const counter$ = toObservable(counter);
+
+counter$.subscribe(value => console.log(value)); // console.log(0), then console.log(1)
+
+counter.set(1);
+```
+<!-- .element: class="big-code"-->
+
+##==##
+
+<!-- .slide: class="with-code inconsolata"-->
+# Interporabilité avec RxJs: toSignal
+
+La fonction toSignal permet de transformer un observable en signal <br/><br/>
+
+```typescript
+import {toSignal} from "@angular/core/rxjs-interop";
+import {of} from "rxjs";
+const counter = toSignal(of(0), { requireSync: true });
+console.log(counter()); // 0
+```
+<!-- .element: class="big-code"-->
+
+**toSignal** prend en paramètre un observable et un objet de configuration <br/><br/>
+
+- requireSync: permet de s'assurer que la valeur est synchronisée (uniquement si l'observable a une valeur initial) <br/><br/>
+- initialValue: permet de définir une valeur initiale <br/><br/>
+
+
+

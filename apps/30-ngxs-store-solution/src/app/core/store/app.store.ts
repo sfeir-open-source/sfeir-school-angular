@@ -9,12 +9,14 @@ export interface AppState {
 
 export class SetPeople {
   static readonly type = '[App] SetPeople';
-  constructor(public payload) {}
+
+  constructor(public payload: People[]) {}
 }
 
 export class SetSearch {
   static readonly type = '[App] SetSearch';
-  constructor(public payload) {}
+
+  constructor(public payload: string) {}
 }
 
 @State<AppState>({
