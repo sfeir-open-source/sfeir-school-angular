@@ -1,4 +1,4 @@
-import { afterNextRender, AfterRenderPhase, Component, ElementRef, forwardRef, input, OnDestroy, Renderer2, signal, viewChild } from '@angular/core';
+import { afterNextRender, Component, ElementRef, forwardRef, input, OnDestroy, Renderer2, signal, viewChild } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { fromEvent, merge, Subject, takeUntil, tap } from 'rxjs';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -22,26 +22,23 @@ export class CustomInputComponent implements OnDestroy, ControlValueAccessor {
   private _onTouched: () => void;
   private unsubscribe$: Subject<boolean> = new Subject();
 
-  #listener = afterNextRender(
-    () => {
+  #listener = afterNextRender({
+    read: () => {
       const inputListener$ = fromEvent(this.inputElement().nativeElement, 'input').pipe(
         tap(() => {
           this._onChange(this.inputElement().nativeElement.value);
           this._onTouched();
         }),
       );
-
       const blurListener$ = fromEvent(this.inputElement().nativeElement, 'blur').pipe(
         tap(() => {
           this._onTouched();
           this.userLoseFocus$.set(true);
         }),
       );
-
       merge(inputListener$, blurListener$).pipe(takeUntil(this.unsubscribe$)).subscribe();
     },
-    { phase: AfterRenderPhase.Read },
-  );
+  });
 
   constructor(private readonly renderer: Renderer2) {}
 
