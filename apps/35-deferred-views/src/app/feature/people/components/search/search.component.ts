@@ -7,7 +7,6 @@ import { outputFromObservable } from '@angular/core/rxjs-interop';
   selector: 'sfeir-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss'],
-  standalone: true,
   imports: [MatInputModule, ReactiveFormsModule],
 })
 export class SearchComponent {

@@ -5,6 +5,7 @@ import { MatToolbar } from '@angular/material/toolbar';
   selector: 'sfeir-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
+  standalone: false,
 })
 export class HeaderComponent {
   @Input() headerTemplate: TemplateRef<MatToolbar>;

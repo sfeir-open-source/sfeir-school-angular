@@ -10,7 +10,6 @@ import { People } from '../../shared/models/people.model';
   selector: 'sfeir-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
-  standalone: true,
   imports: [CardComponent, MatButtonModule, AsyncPipe],
 })
 export class HomeComponent {

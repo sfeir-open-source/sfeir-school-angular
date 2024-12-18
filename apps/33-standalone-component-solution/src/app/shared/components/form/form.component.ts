@@ -8,7 +8,6 @@ import { NgOptimizedImage } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 
 @Component({
-  standalone: true,
   imports: [ReactiveFormsModule, CustomInputComponent, MatFormFieldModule, MatButtonModule, NgOptimizedImage],
   selector: 'sfeir-form',
   templateUrl: './form.component.html',

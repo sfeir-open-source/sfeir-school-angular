@@ -6,6 +6,7 @@ import { People } from '../../shared/models/people.model';
   selector: 'sfeir-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
+  standalone: false,
 })
 export class HomeComponent implements OnInit {
   person: People;

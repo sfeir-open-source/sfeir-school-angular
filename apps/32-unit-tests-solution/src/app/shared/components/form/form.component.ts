@@ -6,6 +6,7 @@ import { PersonForm } from './form';
   selector: 'sfeir-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss'],
+  standalone: false,
 })
 export class FormComponent implements OnChanges {
   @Input() person: People;

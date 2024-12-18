@@ -8,7 +8,6 @@ import { People, PeopleForm } from '../../shared/models/people.model';
   selector: 'sfeir-update-person',
   templateUrl: './update-person.component.html',
   styleUrls: ['./update-person.component.scss'],
-  standalone: true,
   imports: [AsyncPipe, FormComponent],
 })
 export class UpdatePersonComponent {

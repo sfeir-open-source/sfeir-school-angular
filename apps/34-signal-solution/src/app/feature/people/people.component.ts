@@ -15,7 +15,6 @@ import { PEOPLE_STORE } from '../../core/store/signal.store';
   selector: 'sfeir-people',
   templateUrl: './people.component.html',
   styleUrls: ['./people.component.scss'],
-  standalone: true,
   imports: [NgOptimizedImage, MatListModule, MatButtonModule, AddPersonDialogComponent, SearchComponent, CardComponent, BadgeDirective],
 })
 export class PeopleComponent implements OnInit {

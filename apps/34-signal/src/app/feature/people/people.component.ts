@@ -19,7 +19,6 @@ import { CardComponent } from '../../shared/components/card/card.component';
   selector: 'sfeir-people',
   templateUrl: './people.component.html',
   styleUrls: ['./people.component.scss'],
-  standalone: true,
   imports: [
     AsyncPipe,
     NgOptimizedImage,

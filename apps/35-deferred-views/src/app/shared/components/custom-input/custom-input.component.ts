@@ -5,7 +5,6 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 
 @Component({
-  standalone: true,
   imports: [MatFormFieldModule, MatInputModule],
   selector: 'sfeir-custom-input',
   templateUrl: './custom-input.component.html',

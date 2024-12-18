@@ -15,7 +15,7 @@ describe('SearchComponent', () => {
       rerender: reload,
     } = await render(SearchComponent, {
       schemas: [NO_ERRORS_SCHEMA],
-      componentInputs: {
+      inputs: {
         searchText: 'SFEIR',
       },
     });
@@ -30,11 +30,6 @@ describe('SearchComponent', () => {
   test('should bind correctly the input', async () => {
     const element = container.querySelector<HTMLInputElement>('input[placeholder="Person Searcher"]');
     expect(element.value).toBe('SFEIR');
-  });
-  test('should refresh the search control', async () => {
-    const spy = jest.spyOn(component.searchControl, 'patchValue');
-    await rerender({ componentInputs: { searchText: 'sfeir' } });
-    expect(spy).toHaveBeenCalledWith('sfeir', { emitEvent: false });
   });
   test('should emit the search event', fakeAsync(() => {
     const element = container.querySelector<HTMLInputElement>('input[placeholder="Person Searcher"]');

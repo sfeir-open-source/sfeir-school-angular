@@ -7,7 +7,6 @@ import { PeopleForm } from '../../../../shared/models/people.model';
   selector: 'sfeir-add-person-dialog',
   templateUrl: './add-person-dialog.component.html',
   styleUrls: ['./add-person-dialog.component.scss'],
-  standalone: true,
   imports: [FormComponent],
 })
 export class AddPersonDialogComponent {

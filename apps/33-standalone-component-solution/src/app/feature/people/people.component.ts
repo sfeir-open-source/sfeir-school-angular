@@ -19,7 +19,6 @@ import { SearchComponent } from './components/search/search.component';
   selector: 'sfeir-people',
   templateUrl: './people.component.html',
   styleUrls: ['./people.component.scss'],
-  standalone: true,
   imports: [AsyncPipe, NgOptimizedImage, MatListModule, MatButtonModule, AddPersonDialogComponent, SearchComponent, CardComponent, BadgeDirective],
 })
 export class PeopleComponent implements OnInit {

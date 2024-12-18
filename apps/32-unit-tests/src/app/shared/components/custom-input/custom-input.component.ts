@@ -7,6 +7,7 @@ import { BehaviorSubject, fromEvent, merge, Subject, takeUntil, tap } from 'rxjs
   templateUrl: './custom-input.component.html',
   styleUrls: ['./custom-input.component.scss'],
   providers: [{ provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() => CustomInputComponent), multi: true }],
+  standalone: false,
 })
 export class CustomInputComponent implements OnInit, OnDestroy, ControlValueAccessor {
   @Input() placeholder: string;

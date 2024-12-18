@@ -11,7 +11,7 @@ describe('BadgeDirective', () => {
   describe('person is not a manager', () => {
     beforeEach(async () => {
       const { fixture, container: hostElement } = await render(HostDirectiveComponent, {
-        componentInputs: { person: { isManager: false } },
+        inputs: { person: { isManager: false } },
       });
       component = fixture.componentInstance;
       debugElement = fixture.debugElement;
@@ -34,7 +34,7 @@ describe('BadgeDirective', () => {
     let badgeDirective: BadgeDirective;
     beforeEach(async () => {
       const { fixture, container: hostElement } = await render(HostDirectiveComponent, {
-        componentInputs: { person: { isManager: true } },
+        inputs: { person: { isManager: true } },
       });
       component = fixture.componentInstance;
       debugElement = fixture.debugElement;

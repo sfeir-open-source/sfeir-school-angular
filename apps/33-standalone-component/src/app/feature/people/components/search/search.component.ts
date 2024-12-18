@@ -6,6 +6,7 @@ import { Subject, takeUntil } from 'rxjs';
   selector: 'sfeir-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss'],
+  standalone: false,
 })
 export class SearchComponent implements OnChanges, OnInit {
   @Input() searchText: string;

@@ -7,7 +7,6 @@ import { MatInputModule } from '@angular/material/input';
   selector: 'sfeir-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss'],
-  standalone: true,
   imports: [MatInputModule, ReactiveFormsModule],
 })
 export class SearchComponent implements OnChanges, OnInit {
