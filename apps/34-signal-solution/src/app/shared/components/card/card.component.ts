@@ -9,7 +9,6 @@ import { RouterLink } from '@angular/router';
 import { DatePipe, NgOptimizedImage } from '@angular/common';
 
 @Component({
-  standalone: true,
   selector: 'sfeir-card',
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss'],

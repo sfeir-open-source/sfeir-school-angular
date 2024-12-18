@@ -2,6 +2,7 @@ import { Directive, ElementRef, HostBinding, HostListener, Input, OnInit, Render
 
 @Directive({
   selector: '[sfeirBadge]',
+  standalone: false,
 })
 export class BadgeDirective implements OnInit {
   @Input('sfeirBadge') isManager: boolean;

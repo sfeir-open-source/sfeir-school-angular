@@ -6,6 +6,7 @@ import { PeopleForm } from '../../../../shared/models/people.model';
   selector: 'sfeir-add-person-dialog',
   templateUrl: './add-person-dialog.component.html',
   styleUrls: ['./add-person-dialog.component.scss'],
+  standalone: false,
 })
 export class AddPersonDialogComponent {
   constructor(private readonly dialogRef: MatDialogRef<AddPersonDialogComponent>) {}

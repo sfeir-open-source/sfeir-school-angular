@@ -5,6 +5,7 @@ import { People } from '../../models/people.model';
   selector: 'sfeir-card',
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss'],
+  standalone: false,
 })
 export class CardComponent {
   @Input() person!: People;

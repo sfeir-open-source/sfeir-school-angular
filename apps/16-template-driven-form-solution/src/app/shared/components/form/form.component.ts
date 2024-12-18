@@ -5,6 +5,7 @@ import { PeopleForm } from '../../models/people.model';
   selector: 'sfeir-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss'],
+  standalone: false,
 })
 export class FormComponent {
   @Output() cancel: EventEmitter<void> = new EventEmitter();

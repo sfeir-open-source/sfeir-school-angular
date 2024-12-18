@@ -3,6 +3,7 @@ import { render } from '@testing-library/angular';
 import { HeaderComponent } from './header.component';
 
 @Component({
+  standalone: false,
   template: `
     <ng-template #header>Hello Sfeir</ng-template>
     <sfeir-header [headerTemplate]="header" />

@@ -7,6 +7,7 @@ import { People } from '../../shared/models/people.model';
   selector: 'sfeir-people',
   templateUrl: './people.component.html',
   styleUrls: ['./people.component.scss'],
+  standalone: false,
 })
 export class PeopleComponent implements OnInit {
   people$: Observable<Array<People>> = EMPTY;

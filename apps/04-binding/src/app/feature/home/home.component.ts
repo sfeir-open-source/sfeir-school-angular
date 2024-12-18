@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'sfeir-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
+  standalone: false,
 })
 export class HomeComponent implements OnInit {
   name = 'Sfeir Luxembourg';

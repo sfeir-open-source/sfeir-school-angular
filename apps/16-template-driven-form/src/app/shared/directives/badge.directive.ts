@@ -2,6 +2,7 @@ import { Directive, ElementRef, Input, OnInit, Renderer2 } from '@angular/core';
 
 @Directive({
   selector: '[sfeirBadge]',
+  standalone: false,
 })
 export class BadgeDirective implements OnInit {
   @Input('sfeirBadge') isManager: boolean;

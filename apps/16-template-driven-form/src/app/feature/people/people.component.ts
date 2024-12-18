@@ -9,6 +9,7 @@ import { AddPersonDialogComponent } from './components/add-person-dialog/add-per
   selector: 'sfeir-people',
   templateUrl: './people.component.html',
   styleUrls: ['./people.component.scss'],
+  standalone: false,
 })
 export class PeopleComponent implements OnInit {
   people$: Observable<Array<People>> = EMPTY;

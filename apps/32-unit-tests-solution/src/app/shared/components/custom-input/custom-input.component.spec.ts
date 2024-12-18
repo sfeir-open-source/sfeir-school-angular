@@ -6,7 +6,8 @@ import { fireEvent, render } from '@testing-library/angular';
 import { CustomInputComponent } from './custom-input.component';
 
 @Component({
-  template: `<sfeir-custom-input [formControl]="control">Lose focus</sfeir-custom-input>`,
+  standalone: false,
+  template: ` <sfeir-custom-input [formControl]="control">Lose focus</sfeir-custom-input>`,
 })
 class HostComponent {
   control = new FormControl();

@@ -9,7 +9,6 @@ import { CardComponent } from '../../shared/components/card/card.component';
   selector: 'sfeir-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
-  standalone: true,
   imports: [CardComponent, MatButtonModule],
 })
 export class HomeComponent {

@@ -7,7 +7,6 @@ import { HeaderComponent } from './core/components/header/header.component';
   selector: 'sfeir-app',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  standalone: true,
   imports: [HeaderComponent, RouterLink, RouterOutlet, MatToolbarModule],
 })
 export class AppComponent {

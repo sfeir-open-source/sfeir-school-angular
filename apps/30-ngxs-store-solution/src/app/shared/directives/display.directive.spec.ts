@@ -3,7 +3,7 @@ import { ComponentFixture } from '@angular/core/testing';
 import { render } from '@testing-library/angular';
 import { DisplayDirective } from './display.directive';
 
-@Component({ template: `<span *sfeirDisplay="person.isManager">Hello Sfeir</span>` })
+@Component({ standalone: false, template: `<span *sfeirDisplay="person.isManager">Hello Sfeir</span>` })
 class HostDirectiveComponent {
   person = { isManager: true };
 }

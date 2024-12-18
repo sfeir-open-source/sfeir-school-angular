@@ -14,7 +14,7 @@ describe('BadgeDirective', () => {
       const { fixture, container: hostElement } = await render(HostDirectiveComponent, {
         imports: [CommonModule],
         declarations: [HostDirectiveComponent, BadgeDirective],
-        componentInputs: { person: { isManager: false } },
+        inputs: { person: { isManager: false } },
       });
       component = fixture.componentInstance;
       debugElement = fixture.debugElement;
@@ -38,7 +38,7 @@ describe('BadgeDirective', () => {
       const { fixture, container: hostElement } = await render(HostDirectiveComponent, {
         imports: [CommonModule],
         declarations: [HostDirectiveComponent, BadgeDirective],
-        componentInputs: { person: { isManager: true } },
+        inputs: { person: { isManager: true } },
       });
       component = fixture.componentInstance;
       debugElement = fixture.debugElement;
@@ -53,6 +53,7 @@ describe('BadgeDirective', () => {
 
 @Component({
   template: `<span [sfeirBadge]="person.isManager"></span>`,
+  standalone: false,
 })
 export class HostDirectiveComponent {
   @Input() person!: { isManager: boolean };
