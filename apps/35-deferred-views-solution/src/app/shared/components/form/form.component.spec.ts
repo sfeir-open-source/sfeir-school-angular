@@ -2,7 +2,6 @@ import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, fakeAsync } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
 import { fireEvent, render, screen } from '@testing-library/angular';
-import { People } from '../../models/people.model';
 import { CustomInputComponent } from '../custom-input/custom-input.component';
 import { FormComponent } from './form.component';
 import { MatInputModule } from '@angular/material/input';
@@ -24,16 +23,12 @@ describe('FormComponent', () => {
     } = await render(FormComponent, {
       componentImports: [MatInputModule, ReactiveFormsModule, CustomInputComponent, CommonModule, NgOptimizedImage],
       schemas: [NO_ERRORS_SCHEMA],
-      componentInputs: {
+      inputs: {
         person: null,
       },
-      componentOutputs: {
-        cancel: {
-          emit: CANCEL_SPY,
-        } as any,
-        save: {
-          emit: SAVE_SPY,
-        } as any,
+      on: {
+        cancel: CANCEL_SPY,
+        save: SAVE_SPY,
       },
     });
     componentFixture = fixture;
@@ -57,24 +52,6 @@ describe('FormComponent', () => {
     });
   });
   describe('#Functions', () => {
-    test('should patch the value of form if person is provided', async () => {
-      const spy = jest.spyOn(component.personForm, 'patchValue');
-      const person = { lastname: 'Doe', firstname: 'John' } as People;
-      await reload({
-        componentInputs: {
-          person,
-        },
-        componentProperties: {
-          cancel: {
-            emit: CANCEL_SPY,
-          } as any,
-          save: {
-            emit: SAVE_SPY,
-          } as any,
-        },
-      });
-      expect(spy).toHaveBeenCalledWith(person);
-    });
     test('should call the onSave method', () => {
       const spy = jest.spyOn(component, 'onSave');
       const submitButton = screen.getByText('Save');

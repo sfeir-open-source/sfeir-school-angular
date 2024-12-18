@@ -33,8 +33,8 @@ describe('UpdatePersonComponent', () => {
   beforeEach(async () => {
     const { fixture, container: hostContainer } = await render(UpdatePersonComponent, {
       componentImports: [CommonModule, MockFormComponent],
-      componentProperties: {
-        _personDetails: PERSON,
+      inputs: {
+        personDetails: PERSON,
       },
       providers: [
         { provide: Location, useValue: LOCATION },
