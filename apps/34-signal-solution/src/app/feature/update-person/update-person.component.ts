@@ -14,7 +14,7 @@ export class UpdatePersonComponent {
   readonly #location = inject(Location);
   readonly #peopleService = inject(PeopleService);
 
-  personDetails = routerInput.required<People | null>(null);
+  personDetails = routerInput.required<People | null>();
 
   updatePerson(person: PeopleForm): void {
     this.#peopleService.updatePerson(person).subscribe(() => this.goBack());
