@@ -6,13 +6,12 @@
 <!-- .slide: class="sfeir-basic-slide no-title-margin" -->
 # Configuration
 
-![h-250](assets/images/school/unit-tests/karma.png)
-![h-250](assets/images/school/unit-tests/jasmine.png)
-![h-250](assets/images/school/unit-tests/sinon.png)
-![h-250](assets/images/school/unit-tests/protactor.png)
-![h-250](assets/images/school/unit-tests/mocha.png)
-![h-250](assets/images/school/unit-tests/webpack.png)
-![h-250](assets/images/school/unit-tests/typescript.png)
+<br/><br/>
+
+![h-400](assets/images/school/unit-tests/jest-logo.png)
+![h-400](assets/images/school/unit-tests/vitest.png)
+![h-400](assets/images/school/unit-tests/angular-testing-library.png)
+![h-400](assets/images/school/unit-tests/typescript.png)
 
 ##==##
 
