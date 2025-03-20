@@ -1,14 +1,16 @@
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { ComponentFixture, fakeAsync } from '@angular/core/testing';
+import { ComponentFixture, fakeAsync, TestBed } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
 import { fireEvent, render, screen } from '@testing-library/angular';
 import { CustomInputComponent } from '../custom-input/custom-input.component';
 import { FormComponent } from './form.component';
 import { MatInputModule } from '@angular/material/input';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
+import { People } from '../../models/people.model';
 
 const CANCEL_SPY = jest.fn();
 const SAVE_SPY = jest.fn();
+const PERSON: People = { id: '123', firstname: 'SFEIR' } as People;
 
 describe('FormComponent', () => {
   let componentFixture: ComponentFixture<FormComponent>;
@@ -71,6 +73,14 @@ describe('FormComponent', () => {
     test('should call the cancel event emitter', () => {
       component.onCancel();
       expect(CANCEL_SPY).toHaveBeenCalled();
+    });
+    test('should path the form correctly if person is defined', async () => {
+      const spy = jest.spyOn(component.personForm, 'patchValue');
+      await reload({ inputs: { person: PERSON }, partialUpdate: true });
+      TestBed.flushEffects();
+      componentFixture.detectChanges();
+      expect(spy).toHaveBeenCalledWith(PERSON);
+      expect(component.personForm.value.firstname).toEqual('SFEIR');
     });
   });
 });

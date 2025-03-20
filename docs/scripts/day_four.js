@@ -47,6 +47,11 @@ function unitTestSlides() {
     'unit-tests/services/http_service.md',
     'unit-tests/pipes/introduction.md',
     'unit-tests/pipes/exemple.md',
+    'unit-tests/jest/introduction.md',
+    'unit-tests/jest/mock.md',
+    'unit-tests/angular-testing-library/introduction.md',
+    'unit-tests/angular-testing-library/core-concepts.md',
+    'unit-tests/angular-testing-library/exemple.md',
     'unit-tests/exercice.md',
   ];
 }
