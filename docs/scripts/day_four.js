@@ -64,6 +64,18 @@ function serverSideSlides() {
   return ['server-side/transition_slide.md', 'server-side/introduction.md'];
 }
 
+function librarySlides() {
+  return ['library/transition_slide.md', 'library/introduction.md', 'library/library.md', 'library/ng-packager.md', 'library/dependencies.md'];
+}
+
 export function dayFourSlides() {
-  return [...stateManagementElf(), ...stateManagementNgxs(), ...stateManagementNgrx(), ...unitTestSlides(), ...pwaSlides(), ...serverSideSlides()];
+  return [
+    ...stateManagementElf(),
+    ...stateManagementNgxs(),
+    ...stateManagementNgrx(),
+    ...unitTestSlides(),
+    ...pwaSlides(),
+    ...serverSideSlides(),
+    ...librarySlides(),
+  ];
 }
