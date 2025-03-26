@@ -103,7 +103,7 @@ Chaque variable peut être aliasé avec le mot clé 'let'
 **After**
 
 ```angular17html
-@switch(user$ | async; as user) {
+@switch(user) {
   @case(user.role === 'admin') {
     <div>Admin</div>
   }
