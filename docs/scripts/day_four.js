@@ -68,6 +68,10 @@ function librarySlides() {
   return ['library/transition_slide.md', 'library/introduction.md', 'library/library.md', 'library/ng-packager.md', 'library/dependencies.md'];
 }
 
+function nativeFederationSlides() {
+  return ['native-federation/transition_slide.md', 'native-federation/introduction.md', 'native-federation/setup-native-federation.md'];
+}
+
 export function dayFourSlides() {
   return [
     ...stateManagementElf(),
@@ -77,5 +81,6 @@ export function dayFourSlides() {
     ...pwaSlides(),
     ...serverSideSlides(),
     ...librarySlides(),
+    ...nativeFederationSlides(),
   ];
 }
