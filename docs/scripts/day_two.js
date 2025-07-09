@@ -1,10 +1,10 @@
 function providersSlide() {
-  return ['providers/school_200.md', 'providers/transition_slide.md', 'providers/introduction.md', 'providers/exercice.md'];
+  return ['providers/school_200.md', 'providers/00-TRANSITION-SLIDE.md', 'providers/introduction.md', 'providers/exercice.md'];
 }
 
 function dependencyInjectionSlides() {
   return [
-    'dependency-injection/transition_slide.md',
+    'dependency-injection/00-TRANSITION-SLIDE.md',
     'dependency-injection/basics.md',
     'dependency-injection/di_working.md',
     'dependency-injection/di_resolution.md',
@@ -13,7 +13,7 @@ function dependencyInjectionSlides() {
 
 function pipeSlides() {
   return [
-    'pipe/transition_slide.md',
+    'pipe/00-TRANSITION-SLIDE.md',
     'pipe/introduction.md',
     'pipe/syntax.md',
     'pipe/exercice_use_pipe.md',
@@ -24,7 +24,7 @@ function pipeSlides() {
 
 function directiveSlides() {
   return [
-    'directive/transition_slide.md',
+    'directive/00-TRANSITION-SLIDE.md',
     'directive/introduction.md',
     'directive/exercice_directive_use.md',
     'directive/custom_directive.md',
@@ -34,7 +34,7 @@ function directiveSlides() {
 
 function templateDrivenForms() {
   return [
-    'forms/transition_slide.md',
+    'forms/00-TRANSITION-SLIDE.md',
     'forms/template-driven-forms/introduction.md',
     'forms/template-driven-forms/exercice_create_form.md',
     'forms/template-driven-forms/validation.md',

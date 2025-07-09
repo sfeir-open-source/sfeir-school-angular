@@ -4,7 +4,7 @@ Le but de cet exercice est de comprendre comment fonctionne le bootstrapping d'u
 
 Actuellement si vous lancez, l'application une erreur va s'afficher dans l'inspecteur de votre navigateur.
 
-Cet exercice a pour but de corriger cette erreur :) 
+Cet exercice a pour but de corriger cette erreur :)
 
 <br>
 
@@ -27,6 +27,6 @@ Dans le fichier, **app.component.html** affichez la valeur de la variable **name
 
 Vérifiez votre travail en vous plaçant à la racine du dossier workshop et en lançant la commande:
 
-```bash
+```shell
 npm run client -- 01-hands-on
 ```

@@ -25,6 +25,6 @@ Dans le fichier **index.hml** remplacez la balise <sfeir-home> par la balise <sf
 
 Vérifiez votre travail en vous plaçant à la racine du dossier TP et en lançant la commande:
 
-```bash
+```shell
 npm run client -- 03-cpt-hierarchy
 ```

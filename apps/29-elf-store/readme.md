@@ -23,6 +23,7 @@ Pensez à enregistrer ce service dans le module CoreModule
 ## Etape 3
 
 Dans votre service, créez
+
 - un store, qui prend en propriété un objet avec une props search et une entité people
 - une méthode setSearch qui va setter la recherche de l'utilisateur
 - une méthode setPeopleEntities qui permet de setter votre entité people dans son intégralité
@@ -34,6 +35,7 @@ Dans votre service, créez
 ## Etape 4
 
 Dans le service PeopleService, injectez votre service store et réalisez les sides effects suivant à l'aide de l'opérateur tap
+
 - lorsque vous récupérez la liste des personnes, settez votre entité people (dans son intégralité) de votre store (setPeopleEntities)
 - lorsque vous supprimez une personne, settez votre entité people (dans son intégralité ) de votre store (setPeopleEntities)
 
@@ -45,8 +47,9 @@ Dans le composant PeopleComponent, réalisez les transformations nécessaires po
 <br><br>
 
 ## Etape 6
+
 Vérifiez votre travail en lançant la commande
 
-```bash
+```shell
 npm run client -- 29-elf-store
 ```

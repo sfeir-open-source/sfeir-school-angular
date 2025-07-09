@@ -1,9 +1,9 @@
 # Exercice 08-ng-for (dossier apps/08-ng-for)
 
 L'objectif de ce workshop est:
+
 - d'utiliser la directive ngFor
 - appliquer les connaissances précédemment acquises avec le routing
-
 
 <br/><br/>
 
@@ -34,7 +34,7 @@ Dans le fichier **people.component.ts**, récupérer la liste des personnes à l
 
 ## Etape 5
 
-Dans le fichier **people.component.html**, à l'aide de la directive *ngFor, dupliquez la card de la personne
+Dans le fichier **people.component.html**, à l'aide de la directive \*ngFor, dupliquez la card de la personne
 
 Astuce:
 
@@ -46,9 +46,6 @@ Astuce:
 
 Vérifiez votre travail en vous plaçant à la racine du dossier TP et en lançant la commande:
 
-```bash
+```shell
 npm run client -- 08-ng-for
 ```
-
-
-

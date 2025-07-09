@@ -1,13 +1,15 @@
 <!-- .slide: class="with-code inconsolata" -->
+
 # Entities in Elf
 
 Entities are a separate package in Elf: **@ngneat/elf-entities**
 
 <br/><br/>
 
-```bash
+```shell
 npm install @ngneat/elf-entities
 ```
+
 <!-- .element: class="big-code" -->
 
 ##==##
@@ -25,6 +27,7 @@ npm install @ngneat/elf-entities
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
+
 # How do we use entities?
 
 ```typescript
@@ -39,6 +42,7 @@ interface People {
 
 const peopleStore = createStore({ name: 'people' }, withEntities<People>());
 ```
+
 <!-- .element: class="big-code" -->
 
 ##==##

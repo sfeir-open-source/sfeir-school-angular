@@ -17,10 +17,9 @@ import { HttpCLientModule } from '@angular/common/http';
 Dans le fichier **app.module.ts** dans le tableau de la propriété imports imports, ajoutez le module HttpClientModule
 <br><br>
 
-## Etape 2 
+## Etape 2
 
-Dans le fichier  **environment/environment.ts**, ajoutez une propriété peopleEndpoint avec pour valeur: http://localhost:9000/api
-
+Dans le fichier **environment/environment.ts**, ajoutez une propriété peopleEndpoint avec pour valeur: http://localhost:9000/api
 
 ## Etape 3
 
@@ -54,6 +53,6 @@ Astuce: Pensez à utiliser votre fichier d'environnement pour éviter d'écrire 
 
 Vérifiez votre travail en vous plaçant à la racine du dossier TP et en lançant la commande:
 
-```bash
+```shell
 npm run client -- 06-http
 ```

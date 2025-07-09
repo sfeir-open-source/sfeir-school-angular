@@ -21,7 +21,7 @@ function guardsSlides() {
 
 function interceptorsSlides() {
   return [
-    'interceptors/transition_slide.md',
+    'interceptors/00-TRANSITION-SLIDE.md',
     'interceptors/concepts.md',
     'interceptors/modification.md',
     'interceptors/register.md',
@@ -32,7 +32,7 @@ function interceptorsSlides() {
 
 function templatingSlides() {
   return [
-    'templating/transition_slide.md',
+    'templating/00-TRANSITION-SLIDE.md',
     'templating/introduction.md',
     'templating/ng-template.md',
     'templating/ng-container.md',
@@ -61,7 +61,7 @@ function structuralDirectiveSlides() {
 
 function customFormControlSlides() {
   return [
-    'forms/custom-control/transition_slide.md',
+    'forms/custom-control/00-TRANSITION-SLIDE.md',
     'forms/custom-control/introduction.md',
     'forms/custom-control/setup.md',
     'forms/custom-control/exercice.md',
@@ -69,7 +69,7 @@ function customFormControlSlides() {
 }
 
 function changeDetectionSlides() {
-  return ['change-detection/transition_slide.md', 'change-detection/introduction.md', 'change-detection/change_detection_service.md'];
+  return ['change-detection/00-TRANSITION-SLIDE.md', 'change-detection/introduction.md', 'change-detection/change_detection_service.md'];
 }
 
 export function dayThreeSLides() {

@@ -31,6 +31,6 @@ Math.floor(Math.random() * PEOPLE.length);
 
 Vérifiez votre travail en vous plaçant à la racine du dossier TP et en lançant la commande:
 
-```bash
+```shell
 npm run client -- 05-events
 ```

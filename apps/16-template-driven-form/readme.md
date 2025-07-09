@@ -40,13 +40,13 @@ Dans le fichier **form.component.html**, rendre le formulaire 'template driven f
 
 Dans le fichier **form.component.ts**, créez deux Event Emitter:
 
--   cancel qui émet aucune valeur
--   save qui émet la valeur de formulaire
+- cancel qui émet aucune valeur
+- save qui émet la valeur de formulaire
 
 Dans le fichier **form.component.ts** créez deux méthodes:
 
--   onCancel: qui répond a l'évent click du bouton cancel présent dans le template
--   onSave: qui répond à l'évent click du bouton save présent dans le template
+- onCancel: qui répond a l'évent click du bouton cancel présent dans le template
+- onSave: qui répond à l'évent click du bouton save présent dans le template
 
 Ces deux méthodes doivent émettre respectivement les event emitter cancel et save
 
@@ -56,8 +56,8 @@ Ces deux méthodes doivent émettre respectivement les event emitter cancel et s
 
 Dans le composant AddPersonDialogComponent, catcher les event emitter save et cancel de votre composant FormComponent
 
--   personAdd doit appeler la méthode closeDialog avec la personne en paramètre
--   cancel doit appeler la méthode onCancel sans paramètre
+- personAdd doit appeler la méthode closeDialog avec la personne en paramètre
+- cancel doit appeler la méthode onCancel sans paramètre
 
 <br><br>
 
@@ -74,24 +74,24 @@ Endpoint: POST http://localhost:9000/api/people
 Dans le fichier PeopleComponent, si le formulaire n'est pas null, alors créez la personne en faisant appel à votre nouvelle méthode addNewPerson
 
 ```javascript
- this.matDialogService
-      .open(AddPersonDialogComponent, { width: '30%', height: 'fit-content' })
-      .afterClosed()
-      .pipe(
-        filter(personForm => !!personForm),
-        switchMap(personForm => this.peopleService.addNewPerson(personForm)),
-        switchMap(() => {
-          this.people$ = this.peopleService.getPeople().pipe(shareReplay(1));
-          return this.people$;
-        })
-      )
-      .subscribe();
+this.matDialogService
+  .open(AddPersonDialogComponent, { width: '30%', height: 'fit-content' })
+  .afterClosed()
+  .pipe(
+    filter(personForm => !!personForm),
+    switchMap(personForm => this.peopleService.addNewPerson(personForm)),
+    switchMap(() => {
+      this.people$ = this.peopleService.getPeople().pipe(shareReplay(1));
+      return this.people$;
+    }),
+  )
+  .subscribe();
 ```
 
 <br><br>
 
 ## Etape 9
 
-```bash
+```shell
 npm run client -- 16-template-driven-form
 ```

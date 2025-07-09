@@ -20,6 +20,7 @@ Since Angular 17, Angular's control flow is an integral part of the framework an
   <!-- content to display if user exist -->
 </div>
 ```
+
 <!-- .element: class="big-code" -->
 
 <br/><br/>
@@ -33,12 +34,13 @@ Since Angular 17, Angular's control flow is an integral part of the framework an
   </div>
 }
 ```
-<!-- .element: class="big-code" -->
 
+<!-- .element: class="big-code" -->
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
+
 # Migrating from ngFor to @for block
 
 **Before**
@@ -48,6 +50,7 @@ Since Angular 17, Angular's control flow is an integral part of the framework an
   <li>{{ user.name }}</li>
 </ul>
 ```
+
 <!-- .element: class="big-code" -->
 
 <br/>
@@ -61,33 +64,35 @@ Since Angular 17, Angular's control flow is an integral part of the framework an
 }
 </ul>
 ```
+
 <!-- .element: class="big-code" -->
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
+
 # Implicit variables of the for loop
 
-
-|Variable| Meaning of the variable                                                 |
-|-------|------------------------------------------------------------------------------|
-|$count| Number of items in the list                                                |
-|$index| Index of the item in the list                                              |
-|$first| First item in the list                                                   |
-|$last| Last item in the list                                                   |
-|$even| Even index                                                                   |
-|$odd| Odd index                                                                 |
-|$track| Tracking function or tracking value (mandatory with @for syntax) |
+| Variable | Meaning of the variable                                          |
+| -------- | ---------------------------------------------------------------- |
+| $count   | Number of items in the list                                      |
+| $index   | Index of the item in the list                                    |
+| $first   | First item in the list                                           |
+| $last    | Last item in the list                                            |
+| $even    | Even index                                                       |
+| $odd     | Odd index                                                        |
+| $track   | Tracking function or tracking value (mandatory with @for syntax) |
 
 <br/>
 
 Each variable can be aliased with the 'let' keyword
-<!-- .element: class="important" -->
 
+<!-- .element: class="important" -->
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
+
 # Migrating from ngSwitch to @switch block
 
 **Before**
@@ -121,11 +126,13 @@ Each variable can be aliased with the 'let' keyword
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
+
 # Automatic migration using a simple command
 
 <br/><br/><br/>
 
-  ```bash
+```shell
 ng generate @angular/core:control-flow
 ```
+
 <!-- .element: class="big-code center" -->

@@ -4,7 +4,7 @@ Nous venons d'ajouter un nouvelle affichage pour la liste des personnes dans la 
 
 L'objectif de ce workshop est d'alterner entre la vue card et la vue liste
 
-Pour ce faire, la solution technique retenue est d'utiliser la directive ngSwitch :) 
+Pour ce faire, la solution technique retenue est d'utiliser la directive ngSwitch :)
 
 <br>
 
@@ -38,6 +38,6 @@ Astuce: utiliser la directive structurel \*ngIf
 
 Vérifier votre travail en vous plaçant à la racine du dossier TP et en lançant la commande:
 
-```bash
+```shell
 npm run client -- 14-directive-using
 ```

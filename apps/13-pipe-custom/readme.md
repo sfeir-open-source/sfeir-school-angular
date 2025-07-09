@@ -32,6 +32,6 @@ Appelez votre pipe na sur la propriété "person.manager", si cette personne n'a
 
 Vérifier votre travail en vous plaçant à la racine du dossier TP et en lançant la commande:
 
-```bash
+```shell
 npm run client -- 13-pipe-custom
 ```

@@ -1,10 +1,10 @@
 function introduction() {
-  return ['standalone-components/angular-modern-application.md', 'speaker/nicolas_frizzarin.md', 'presentation/01-flow-school.md'];
+  return ['standalone-components/angular-modern-application.md', 'speaker/00-nicolas-frizzarin.md', 'presentation/01-fLOW-SCHOOL.md'];
 }
 
 function summary() {
   return [
-    'architecture/transition_slide.md',
+    'architecture/00-TRANSITION-SLIDE.md',
     'architecture/introduction_schema.md',
     'architecture/component.md',
     'architecture/module.md',
@@ -15,7 +15,7 @@ function summary() {
 
 function standaloneComponents() {
   return [
-    'standalone-components/transition_slide.md',
+    'standalone-components/00-TRANSITION-SLIDE.md',
     'standalone-components/introduction.md',
     'standalone-components/injector.md',
     'standalone-components/routing.md',
@@ -37,7 +37,7 @@ function interceptorsSlides() {
 }
 
 function signals() {
-  return ['signals/transition_slide.md', 'signals/introduction.md', 'signals/signals.md', 'signals/exercice.md'];
+  return ['signals/00-TRANSITION-SLIDE.md', 'signals/introduction.md', 'signals/signals.md', 'signals/exercice.md'];
 }
 
 export function AngularModernApplication() {

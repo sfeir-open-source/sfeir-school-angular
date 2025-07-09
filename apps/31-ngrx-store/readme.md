@@ -14,8 +14,8 @@ Dans le dossier core, créez un dossier store
 
 Dans le dossier store, créez un fichiez action, et créez deux actions
 
--   setPeople --> cette actions prend comme props un objet avec une propriété people de type array de People
--   setSearch --> cette action prend comme props un objet avec une propriété search de type string
+- setPeople --> cette actions prend comme props un objet avec une propriété people de type array de People
+- setSearch --> cette action prend comme props un objet avec une propriété search de type string
 
 <br><br>
 
@@ -37,12 +37,12 @@ createReducer(initialState, on(action, logicOfYourAction), on(anotherAction, log
 
 Dans le fichier store/selector et créez deux sélecteurs
 
--   selectPeople --> permet de récupérer la liste de personne filtré ou non
--   selectSearch --> permet de récupérer la recherche de l'utilisateur
+- selectPeople --> permet de récupérer la liste de personne filtré ou non
+- selectSearch --> permet de récupérer la recherche de l'utilisateur
 
 Astuce: utiliser la fonction createSelector de la manière suivante
 
-```bash
+```shell
 createSelector(selectRootStore, () => ...)
 ```
 
@@ -59,15 +59,15 @@ const selectRootStore = (rootStore: AppStore) => rootStore.store;
 Dans le fichier **core.module.ts**, enregistrez votre Store grâce au module StoreModule
 
 ```typescript
-StoreModule.forRoot({ store: reducer})
+StoreModule.forRoot({ store: reducer });
 ```
 
 <br><br>
 
 ## Etape 6
 
-
 Dans le service PeopleService, injectez votre service store et réalisez les sides effects suivant à l'aide de l'opérateur tap
+
 - lorsque vous récupérez la liste des personnes, settez votre entité people (dans son intégralité) de votre store
 - lorsque vous supprimez une personne, settez votre entité people (dans son intégralité ) de votre store
 
@@ -79,11 +79,10 @@ Dans le composant PeopleComponent, réalisez les transformations nécessaires po
 
 <br><br>
 
-
 ## Etape 8
 
 Vérifiez votre travail en lançant la commande
 
-```bash
+```shell
 npm run client -- 31-ngrx-store
 ```

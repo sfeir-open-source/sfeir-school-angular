@@ -1,6 +1,7 @@
 # Exercice 21-lazyloading (dossier apps/21-lazyloading)
 
 L'objectif de ce workshop est de lazyloader nos trois grande fonctionnalité
+
 - Home
 - Liste de personne
 - L'édition d'une personne
@@ -12,6 +13,7 @@ L'objectif de ce workshop est de lazyloader nos trois grande fonctionnalité
 Dans le dossier home, générez un module **HomeModule** à l'aide du CLI
 
 Pensez à passer les options suivante:
+
 - --flat
 - --routing
 - --routing-scope Child
@@ -25,6 +27,7 @@ Cette commande va vous créez dans le dossier Home, un fichier **home.module.ts*
 Analyser le fichier **home.module.ts**
 
 Dans ce fichier
+
 - supprimez dans la propriété imports le module CommonModule
 - ajoutez dans la propriété imports le module SharedModule
 - ajoutez dans la propriété declarations le composant HomeComponent
@@ -34,6 +37,7 @@ Dans ce fichier
 ## Etape 3
 
 Dans le fichier **home-routing.module.ts** , ajoutez dans le tableau des routes la route suivante
+
 ```javascript
 { path: '', component: HomeComponent}
 ```
@@ -54,7 +58,7 @@ Dans le module AppModule dans la propriété declarations, supprimez le composan
 
 ## Etape 6
 
-Réitérez les précédentes étapes avec les features People et Update-Person 
+Réitérez les précédentes étapes avec les features People et Update-Person
 
 <br><br>
 
@@ -62,7 +66,6 @@ Réitérez les précédentes étapes avec les features People et Update-Person
 
 Vérifiez votre travail en lançant la commande suivante:
 
-```bash
+```shell
 npm run client -- 21-lazyloading
 ```
-

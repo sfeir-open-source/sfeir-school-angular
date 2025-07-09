@@ -46,7 +46,6 @@ Dans le module UpdatePersonRoutingModule, protégez votre route avec votre guard
 
 Vérifiez votre travail en lançant la commande suivante:
 
-```bash
+```shell
 npm run client -- 22-guards
 ```
-

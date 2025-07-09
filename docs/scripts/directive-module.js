@@ -1,10 +1,10 @@
 function introductionSLides() {
-  return ['state-management/angular_300.md', 'speaker/nicolas_frizzarin.md', 'presentation/01-flow-school.md'];
+  return ['state-management/angular_300.md', 'speaker/00-nicolas-frizzarin.md', 'presentation/01-fLOW-SCHOOL.md'];
 }
 
 function recapSlides() {
   return [
-    'directive/transition_slide.md',
+    'directive/00-TRANSITION-SLIDE.md',
     'directive/introduction.md',
     'directive/exercice_directive_use.md',
     'directive/custom_directive.md',
@@ -14,7 +14,7 @@ function recapSlides() {
 
 function directiveTemplatingSlide() {
   return [
-    'templating/transition_slide.md',
+    'templating/00-TRANSITION-SLIDE.md',
     'templating/introduction.md',
     'templating/ng-template.md',
     'templating/ng-container.md',

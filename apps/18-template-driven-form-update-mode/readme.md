@@ -64,13 +64,13 @@ Astuce: pensez à utiliser le provider ActivatedRoute
 
 Dans le composant UpdateComponent créer deux méthodes
 
--   updatePerson qui update la person et qui retourne sur la page précédente une fois l'update terminé
--   goBack qui renvoie sur la page précédente
+- updatePerson qui update la person et qui retourne sur la page précédente une fois l'update terminé
+- goBack qui renvoie sur la page précédente
 
 Pour la fonction goBack, pensez à injecter le provider Location, pour pouvoir utilisez la méthode back de cette classe
 
 ```javascript
-this.location.back()
+this.location.back();
 ```
 
 <br><br>
@@ -79,8 +79,8 @@ this.location.back()
 
 Dans le composant UpdateComponent réagissez aux évènement submit et cancel de votre composant FormComponent en appelant respectivement les méthodes suivantes:
 
--   updatePerson
--   goBack
+- updatePerson
+- goBack
 
 <br><br>
 
@@ -88,6 +88,6 @@ Dans le composant UpdateComponent réagissez aux évènement submit et cancel de
 
 Vérifiez votre travail en lançant la commande suivante:
 
-```bash
+```shell
 npm run client -- 18-template-driven-form-update
 ```

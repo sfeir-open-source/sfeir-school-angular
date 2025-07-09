@@ -23,6 +23,7 @@ Pensez à enregistrer ce service dans le module CoreModule
 ## Etape 3
 
 Dans le fichier app.store.ts, créez deux classes qui seront les déclencheur de vos actions
+
 - SetPeople (cette classe prend un payload dans son constructor qui sera la recherche de l'utilisateur)
 - SetSearch (cette classe prend un payload dans son constructor qui sera la liste des personnes)
 
@@ -31,6 +32,7 @@ Dans le fichier app.store.ts, créez deux classes qui seront les déclencheur de
 ## Etape 4
 
 Dans votre service, créez
+
 - un state avec l'annotation @State
 - une action setSearch qui va setter la recherche de l'utilisateur
 - une action setPeople qui permet de setter votre entité people dans son intégralité
@@ -42,6 +44,7 @@ Dans votre service, créez
 ## Etape 5
 
 Dans le service PeopleService, injectez votre service store et réalisez les sides effects suivant à l'aide de l'opérateur tap
+
 - lorsque vous récupérez la liste des personnes, settez votre entité people (dans son intégralité) de votre store
 - lorsque vous supprimez une personne, settez votre entité people (dans son intégralité ) de votre store
 
@@ -53,8 +56,9 @@ Dans le composant PeopleComponent, réalisez les transformations nécessaires po
 <br><br>
 
 ## Etape 7
+
 Vérifiez votre travail en lançant la commande
 
-```bash
+```shell
 npm run client -- 30-ngxs-store
 ```

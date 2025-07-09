@@ -30,19 +30,15 @@ Indices: @Input('sfeirBadge') isManager: boolean
 
 Dans le constructor de la directive SfeirBadge, injectez les services suivants:
 
--   elementRef: ElementRef
--   renderer: Renderer2
+- elementRef: ElementRef
+- renderer: Renderer2
 
 ## Etape 5
 
 A l'aide du lifecycle OnInit, affichez une icon si la personne est un manager
 
 ```javascript
-this.renderer.setProperty(
-    this.elementRef.nativeElement,
-    'innerHTML',
-    '<i class="material-icons">supervisor_account</material-icons>'
-);
+this.renderer.setProperty(this.elementRef.nativeElement, 'innerHTML', '<i class="material-icons">supervisor_account</material-icons>');
 ```
 
 ## Etape 6
@@ -59,6 +55,6 @@ Astuce: ce morceau de code doit être placé juste après la balise h3
 
 Vérifiez votre travail en vous plaçant à la racine du dossier TP et en lançant la commande:
 
-```bash
+```shell
 npm run client -- 15-directive-custom
 ```

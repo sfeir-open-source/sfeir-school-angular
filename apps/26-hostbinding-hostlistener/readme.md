@@ -8,7 +8,7 @@ L'objectif de ce workshop est d'utiliser les annotations @Hostbinding and @Hostl
 
 Dans le fichier **badge.directive.ts**
 
--   bindez la propriété style.color à la variable iconColor qui sera de type string grâce à l'annotation @Hostbinding
+- bindez la propriété style.color à la variable iconColor qui sera de type string grâce à l'annotation @Hostbinding
 
 <br><br>
 
@@ -16,8 +16,8 @@ Dans le fichier **badge.directive.ts**
 
 Dans le fichier **badge.directive** créez
 
--   un HostListener sur l'event mouseenter grâce à l'annotation @HostListener qui devra passer la couleur du badge en rouge
--   un HostListener sur l'event mouseLeave grâce à l'annotation @HostListener qui devra passer la couleur du badge en noir
+- un HostListener sur l'event mouseenter grâce à l'annotation @HostListener qui devra passer la couleur du badge en rouge
+- un HostListener sur l'event mouseLeave grâce à l'annotation @HostListener qui devra passer la couleur du badge en noir
 
 Astuce: pour changer de couleur il suffit de settez la variable badgeColor à 'red' ou 'black'
 
@@ -27,6 +27,6 @@ Astuce: pour changer de couleur il suffit de settez la variable badgeColor à 'r
 
 Vérifiez votre travail en lançant la commande
 
-```bash
+```shell
 npm run client -- 26-hostbinding-hostlistener
 ```

@@ -3,12 +3,12 @@
 Nous venous de rajouter la date de naissance d'une personne sur la card.
 
 Ce workshop comporte plusieurs objectifs:
+
 - comprendre d'ou proviennent les "build-in" pipe d'Angular
 - comment utiliser les "build-in" pipe d'Angular
 - la syntax des pipes
 
 <br>
-
 
 ## Etape 1
 
@@ -25,6 +25,6 @@ Dans le fichier **card.component.html**, à l'aide du pipe date d'Angular, affic
 
 Vérifiez votre travail en vous plaçant à la racine du dossier TP et en lançant la commande:
 
-```bash
+```shell
 npm run client -- 12-pipe-using
 ```

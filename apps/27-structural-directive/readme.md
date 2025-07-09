@@ -4,9 +4,9 @@ L'objectif de ce workshop est de vous permettre d'écrire votre première direct
 
 Cette directive consiste à afficher des éléments du template en fonction d'une certaine condition.
 
-Comme vous avez pu le comprendre c'est la directive *ngIf en simplifié
+Comme vous avez pu le comprendre c'est la directive \*ngIf en simplifié
 
-On ne peut éditer et supprimer uniquement les personnes qui ne sont pas manager. 
+On ne peut éditer et supprimer uniquement les personnes qui ne sont pas manager.
 
 <br>
 
@@ -22,30 +22,30 @@ Pensez à l'ajouter dans la propriété imports de votre ShareModule
 
 Dans le fichier **display.directive.ts**, créez
 
--   un input aliasé (sfeirDisplay) condition qui sera utilisé pour évaluer votre condition
+- un input aliasé (sfeirDisplay) condition qui sera utilisé pour évaluer votre condition
 
+Astuce:
 
-Astuce: 
 ```javascript
 @Input('sfeirDisplay') set condition(condition: boolean) {
     // Your logic od display
 }
 ```
+
 <br><br>
 
 ## Etape 3
 
 Dans le ficher **display.directive.ts**, injectez dans le constructor de la directive les service suivant
 
--   templateRef de type TemplateRef<any>
--   viewContainerRef de type ViewContainerRef
+- templateRef de type TemplateRef<any>
+- viewContainerRef de type ViewContainerRef
 
 <br><br>
 
 ## Etape 4
 
 Dans le fichier **display.directive.ts**, et dans votre setter de l'input condition, implémentez votre logic
-
 
 ```typescript
 this.viewContainer.createEmbeddedView(this.templateRef);
@@ -62,6 +62,7 @@ this.viewContainer.clear();
 ## Etape 5
 
 Dans le composant CardComponent:
+
 - wrappez à l'aide d'une balise ng-container les liens d'edition et de suppression
 - appliquez votre directive ngDisplay sur cette balise
 
@@ -71,6 +72,6 @@ Dans le composant CardComponent:
 
 Vérifiez votre travail en lançant la commande
 
-```bash
+```shell
 npm run client -- 27-structural-directive
 ```

@@ -43,6 +43,6 @@ Dans le fichier **index.html** remplacez la baise <sfeir-app> par la balise <sfe
 
 Vérifiez votre travail en vous plaçant à la racine du dossier TP et en lançant la commande:
 
-```bash
+```shell
 npm run client -- 02-ngg
 ```

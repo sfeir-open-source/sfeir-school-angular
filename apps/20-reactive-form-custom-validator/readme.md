@@ -4,10 +4,9 @@ L'objectif de ce workshop est de vous faire créer un validateur de formulaire c
 
 <br>
 
-
 ## Etape 1
 
-Dans le fichier **shared/components/form/form.ts**,  créez une fonction static nommé 'sfeirEmailValidator'
+Dans le fichier **shared/components/form/form.ts**, créez une fonction static nommé 'sfeirEmailValidator'
 
 Ce validator doit valider le pattern de votre adresse mail en matchant la regex suivante: /^\w+\.\w@sfeir\.com\$/
 
@@ -33,6 +32,6 @@ Dans le fichier **form.component.html**, affichez un message d'erreur en cas de 
 
 Vérifiez votre travail en lançant la commande suivante:
 
-```bash
+```shell
 npm run client -- 20-reactive-form-custom-validator
 ```

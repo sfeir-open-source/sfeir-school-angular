@@ -4,20 +4,20 @@
  */
 
 function introductionSlides() {
-  return ['presentation/00-WELCOME.md', 'presentation/01-flow-school.md'];
+  return ['presentation/00-WELCOME.md', 'presentation/01-fLOW-SCHOOL.md'];
 }
 
 function speakerSlides() {
-  return ['speaker/nicolas_frizzarin.md'];
+  return ['speaker/00-nicolas-frizzarin.md'];
 }
 
 function basicsSlides() {
-  return ['basics/transition_slide.md', 'basics/environment_setup.md', 'basics/angular.md', 'basics/material.md'];
+  return ['basics/00-TRANSITION-SLIDE.md', 'basics/01-ENVIRONMENT-SETUP.md', 'basics/02-ANGULAR.md', 'basics/03-MATERIAL.md'];
 }
 
 function architectureSlides() {
   return [
-    'architecture/transition_slide.md',
+    'architecture/00-TRANSITION-SLIDE.md',
     'architecture/introduction_schema.md',
     'architecture/component.md',
     'architecture/module.md',
@@ -28,16 +28,16 @@ function architectureSlides() {
 }
 
 function cliSlides() {
-  return ['cli/transition_slide.md', 'cli/commands.md', 'cli/exercice.md'];
+  return ['cli/00-TRANSITION-SLIDE.md', 'cli/commands.md', 'cli/exercice.md'];
 }
 
 function componentsSlides() {
-  return ['components/transition_slide.md', 'components/concepts.md', 'components/exercice.md'];
+  return ['components/00-TRANSITION-SLIDE.md', 'components/concepts.md', 'components/exercice.md'];
 }
 
 function dataBindingSLides() {
   return [
-    'databinding/transition_slide.md',
+    'databinding/00-TRANSITION-SLIDE.md',
     'databinding/introduction.md',
     'databinding/binding.md',
     'databinding/reminder.md',
@@ -47,16 +47,16 @@ function dataBindingSLides() {
 }
 
 function lifecycleSlides() {
-  return ['lifecycle/transition_slide.md', 'lifecycle/hook_implementation.md'];
+  return ['lifecycle/00-TRANSITION-SLIDE.md', 'lifecycle/hook_implementation.md'];
 }
 
 function eventSlides() {
-  return ['event/transition_slide.md', 'event/events.md', 'event/exercice.md'];
+  return ['event/00-TRANSITION-SLIDE.md', 'event/events.md', 'event/exercice.md'];
 }
 
 function serverCommunicationSLides() {
   return [
-    'server-communication/transition_slide.md',
+    'server-communication/00-TRANSITION-SLIDE.md',
     'server-communication/setup.md',
     'server-communication/usage.md',
     'server-communication/exercice.md',
@@ -65,7 +65,7 @@ function serverCommunicationSLides() {
 
 function navigationSlides() {
   return [
-    'navigation/transition_slide.md',
+    'navigation/00-TRANSITION-SLIDE.md',
     'navigation/introduction.md',
     'navigation/configuration.md',
     'navigation/usage.md',
@@ -74,12 +74,12 @@ function navigationSlides() {
 }
 
 function basicsFunctionalitiesSlides() {
-  return ['functionalities/transition_slide.md', 'functionalities/loop.md', 'functionalities/exercice.md'];
+  return ['functionalities/00-TRANSITION-SLIDE.md', 'functionalities/loop.md', 'functionalities/exercice.md'];
 }
 
 function communicationSlides() {
   return [
-    'component-communication/transition_slide.md',
+    'component-communication/00-TRANSITION-SLIDE.md',
     'component-communication/input.md',
     'component-communication/exercice_input.md',
     'component-communication/output.md',

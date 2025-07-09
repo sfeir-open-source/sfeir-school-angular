@@ -2,7 +2,6 @@
 
 L'objectif de workshop est d'introduire la notion de routeur et de single page application au sein de votre application web.
 
-
 <br>
 
 ## Etape 1
@@ -15,8 +14,8 @@ A la racine du dossier app, créez un module **app-routing.module.ts** à l'aide
 
 Dans le fichier **app-routing.module.ts**, créez les routes nécessaires afin que les conditions suivantes soient respectées
 
--  sur l'url /l'utilisateur doit être redirigé vers l'url /home
--  sur l'url /home. le composant HomeComponent doit être affiché
+- sur l'url /l'utilisateur doit être redirigé vers l'url /home
+- sur l'url /home. le composant HomeComponent doit être affiché
 
 <br><br>
 
@@ -36,7 +35,7 @@ la variable APP_ROUTES est la déclaration de vos routes
 
 Nous importons le RouterModule.forRoot() pour enregistrer nos routes
 
-Nous exportons le RouterModule pour exporter nos routes enregistrés et les rendre disponibles dans toute notre application 
+Nous exportons le RouterModule pour exporter nos routes enregistrés et les rendre disponibles dans toute notre application
 
 ## Etape 4
 
@@ -67,6 +66,6 @@ Dans le fichier **app.component.html**, remplacez href="/home" par la directive 
 
 Vérifiez votre travail en vous plaçant à la racine du dossier TP et en lançant la commande:
 
-```bash
+```shell
 npm run client -- 07-router
 ```

@@ -16,9 +16,9 @@ Créer une propriété personForm: FormGroup<PersonForm>
 
 Astuce: Utiliser les validators suivants pour réaliser vos validations
 
--   required --> Validator.require
--   minLength --> Validator.minLength(2)
--   pattern --> Validator.pattern(/\d{10}/)
+- required --> Validator.require
+- minLength --> Validator.minLength(2)
+- pattern --> Validator.pattern(/\d{10}/)
 
 Pensez à bien prendre en compte le mode Update
 
@@ -34,6 +34,6 @@ Dans la méthode onSave, et particulièrement lorsque vous appelez votre event e
 
 Vérifiez votre travail en lançant la commande suivante:
 
-```bash
+```shell
 npm run client -- 18-form-b
 ```

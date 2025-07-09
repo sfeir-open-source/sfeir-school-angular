@@ -20,11 +20,11 @@ Dans le fichier **person-details.resolver.ts**, injectez le service PeopleServic
 
 Dans le fichier **person-details.resolver.ts**, et particulièrement dans la méthode resolve,
 
--   récupérez le paramètre de la route, grâce au paramètre route de votre fonction resolve
--   retournez l'appel de la fonction getPersonDetails de peopleService
-
+- récupérez le paramètre de la route, grâce au paramètre route de votre fonction resolve
+- retournez l'appel de la fonction getPersonDetails de peopleService
 
 Astuce:
+
 ```javascript
 const idPerson = route.paramMap.get('id');
 ```
@@ -54,13 +54,13 @@ Dans le composant UpdateComponent, et particulièrement dans le Hook d'initialis
 Astuce:
 
 ```typescript
-this.route.data.pipe(pluck('personDetails'))
+this.route.data.pipe(pluck('personDetails'));
 ```
 
 ## Etape 7
 
 Vérifiez votre travail en lançant la commande
 
-```bash
+```shell
 npm run client -- 23-resolver
 ```

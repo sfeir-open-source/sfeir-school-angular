@@ -2,7 +2,7 @@
 
 L'objectif de ce workshop est de téléporter le template du header dans le composant sfeir-header
 
-Ce Workshop vous permettra aussi de vous familiariser avec la directive structurelle *ngTemplateOutlet
+Ce Workshop vous permettra aussi de vous familiariser avec la directive structurelle \*ngTemplateOutlet
 
 <br>
 
@@ -28,11 +28,11 @@ Dans le moule CoraModule, ajoutez la Module SharedModule dans la propriété imp
 
 Dans le fichier **header.component.ts**,
 
--   créez un Input, grâce à l'annotation @Input, headerTemplate de type TemplateRef<MatToolbar>
+- créez un Input, grâce à l'annotation @Input, headerTemplate de type TemplateRef<MatToolbar>
 
 Dans le fichier **header.component.html**,
 
--   afficher le templateRef de la variable headerTemplate grâce à la directive structurel \*ngTemplateOutlet
+- afficher le templateRef de la variable headerTemplate grâce à la directive structurel \*ngTemplateOutlet
 
 <br><br>
 
@@ -40,9 +40,8 @@ Dans le fichier **header.component.html**,
 
 Dans le ficher **app.component.html**,
 
--   wrappez, la balise <mat-toolbar> dans une balise <ng-template> ayant pour reference header
--   appeler le composant HeaderComponent en prenant soin d'affectez l'input de ce composant à la référence de votre ngTemplate
-
+- wrappez, la balise <mat-toolbar> dans une balise <ng-template> ayant pour reference header
+- appeler le composant HeaderComponent en prenant soin d'affectez l'input de ce composant à la référence de votre ngTemplate
 
 Astuce:
 
@@ -56,6 +55,6 @@ Astuce:
 
 Vérifiez votre travail en lançant la commande
 
-```bash
+```shell
 npm run client -- 25-teleportation
 ```

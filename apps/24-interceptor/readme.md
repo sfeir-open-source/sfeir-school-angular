@@ -1,6 +1,6 @@
 # Exercice 24-interceptor (dossier app/24-interceptor)
 
-L'objectif de ce tp est de vous permettre d'écrire un interceptor. L'objectif est d'envoyer pour au serveur pour chaque requête le header Authorization: Sfeir 
+L'objectif de ce tp est de vous permettre d'écrire un interceptor. L'objectif est d'envoyer pour au serveur pour chaque requête le header Authorization: Sfeir
 
 <br>
 
@@ -30,7 +30,6 @@ Pensez à importer votre CoreModule dans votre AppModule
 
 Vérifiez votre travail en lançant la commande
 
-```bash
+```shell
 npm run client -- 23-resolver
 ```
-

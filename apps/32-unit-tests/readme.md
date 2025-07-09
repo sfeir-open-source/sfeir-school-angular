@@ -34,6 +34,6 @@ Dans le fichier **people.service.spec.ts** réalisez les tests du Service People
 
 Vérifiez votre travail en lançant la commande
 
-```bash
+```shell
 npm run test -- 32-unit-tests
 ```

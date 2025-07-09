@@ -1,6 +1,6 @@
 function standaloneComponents() {
   return [
-    'standalone-components/transition_slide.md',
+    'standalone-components/00-TRANSITION-SLIDE.md',
     'standalone-components/introduction.md',
     'standalone-components/routing.md',
     'standalone-components/injector.md',
@@ -9,15 +9,15 @@ function standaloneComponents() {
 }
 
 function signals() {
-  return ['signals/transition_slide.md', 'signals/introduction.md', 'signals/signals.md', 'signals/binding_queries.md', 'signals/exercice.md'];
+  return ['signals/00-TRANSITION-SLIDE.md', 'signals/introduction.md', 'signals/signals.md', 'signals/binding_queries.md', 'signals/exercice.md'];
 }
 
 function deferredViews() {
-  return ['deferred-views/transition_slide.md', 'deferred-views/deferred-views.md'];
+  return ['deferred-views/00-TRANSITION-SLIDE.md', 'deferred-views/deferred-views.md'];
 }
 
 function controlFlow() {
-  return ['control-flow/transition_slide.md', 'control-flow/conditional_flow.md'];
+  return ['control-flow/00-TRANSITION-SLIDE.md', 'control-flow/conditional_flow.md'];
 }
 
 export function dayFiveSlide() {

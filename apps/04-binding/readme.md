@@ -36,6 +36,6 @@ Dans le fichier **home.component.html** réalisez le binding
 
 Vérifiez votre travail en vous plaçant à la racine du dossier TP et en lançant la commande:
 
-```bash
+```shell
 npm run client -- 04-binding
 ```

@@ -1,6 +1,7 @@
 # Exercice 12-service (dossier apps/12-service)
 
 Ce workshop a plusieurs objectifs:
+
 - commencez à rendre votre architecture atomique en utilisant la notion précédemment acquises sur les modules
 - créez ses propres services et comprendre la notion de scope d'injection
 
@@ -28,9 +29,9 @@ Injectez le service httpCLient d'Angular dans votre service PeopleService
 
 Regroupez dans votre service **PeopleService** tous les appels backend réalisés jusque maintenant
 
--   getPeople (HomeComponent et PeopleComponent)
--   getRandomPeople (HomeComponent)
--   deletePeople (PeopleComponent)
+- getPeople (HomeComponent et PeopleComponent)
+- getRandomPeople (HomeComponent)
+- deletePeople (PeopleComponent)
 
 Astuces: toutes les méthodes que vous allez créer dans ce service doivent retourner un Observable afin de pouvoir subscribe dessus dans les composants
 <br><br>
@@ -46,6 +47,6 @@ Remplacez le nécessaire afin d'utiliser votre nouveau service
 
 Vérifiez votre travail en vous plaçant à la racine du dossier TP et en lançant la commande:
 
-```bash
+```shell
 npm run client -- 11-service
 ```

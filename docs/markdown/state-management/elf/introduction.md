@@ -1,17 +1,20 @@
 <!-- .slide: class="transition-bg-sfeir-1" -->
+
 # ELF
 
 ##==##
 
 <!--.slide: class="with-code inconsolata" -->
+
 # A Newcomer, Easy to Install
 
 **Elf** is a framework-agnostic library, external to Angular. It is therefore an external dependency.
 <br/><br/>
 
-```bash
+```shell
 npm install --save @ngneat/elf
 ```
+
 <!-- .element: class="big-code" -->
 
 <br/><br/>
@@ -21,7 +24,9 @@ npm install --save @ngneat/elf
 ##==##
 
 <!-- .slide -->
+
 # A Store Based on 4 Concepts
+
 <br/><br/>
 
 - BehaviorSubject <br/><br/>

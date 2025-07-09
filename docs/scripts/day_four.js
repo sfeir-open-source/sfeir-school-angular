@@ -1,7 +1,7 @@
 function stateManagementElf() {
   return [
     'state-management/angular_500.md',
-    'state-management/transition_slide.md',
+    'state-management/00-TRANSITION-SLIDE.md',
     'state-management/introduction.md',
     'state-management/elf/introduction.md',
     'state-management/elf/store.md',
@@ -35,7 +35,7 @@ function stateManagementNgrx() {
 
 function unitTestSlides() {
   return [
-    'unit-tests/transition_slide.md',
+    'unit-tests/00-TRANSITION-SLIDE.md',
     'unit-tests/tools.md',
     'unit-tests/concepts.md',
     'unit-tests/components/introduction.md',
@@ -57,19 +57,19 @@ function unitTestSlides() {
 }
 
 function pwaSlides() {
-  return ['pwa/transition_slide.md', 'pwa/introduction.md', 'pwa/service_worker_configuration.md', 'pwa/service_worker_communication.md'];
+  return ['pwa/00-TRANSITION-SLIDE.md', 'pwa/introduction.md', 'pwa/service_worker_configuration.md', 'pwa/service_worker_communication.md'];
 }
 
 function serverSideSlides() {
-  return ['server-side/transition_slide.md', 'server-side/introduction.md'];
+  return ['server-side/00-TRANSITION-SLIDE.md', 'server-side/introduction.md'];
 }
 
 function librarySlides() {
-  return ['library/transition_slide.md', 'library/introduction.md', 'library/library.md', 'library/ng-packager.md', 'library/dependencies.md'];
+  return ['library/00-TRANSITION-SLIDE.md', 'library/introduction.md', 'library/library.md', 'library/ng-packager.md', 'library/dependencies.md'];
 }
 
 function nativeFederationSlides() {
-  return ['native-federation/transition_slide.md', 'native-federation/introduction.md', 'native-federation/setup-native-federation.md'];
+  return ['native-federation/00-TRANSITION-SLIDE.md', 'native-federation/introduction.md', 'native-federation/setup-native-federation.md'];
 }
 
 export function dayFourSlides() {
