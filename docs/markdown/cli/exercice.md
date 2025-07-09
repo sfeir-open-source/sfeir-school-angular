@@ -2,7 +2,7 @@
 # Lab 02 : 02-ngg
 ## Lab
 
-<b>Un readme est à votre disposition dans le dossier apps/02-ngg</b>
+<b>A readme is available in the apps/02-ngg folder</b>
 <!-- .element: class="full-center" -->
 
 ##==##

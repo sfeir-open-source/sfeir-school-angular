@@ -1,8 +1,8 @@
-# Déroulement de la formation
+# Course Outline
 
 <p class="full-center">
-A quand la pause ? <br/>
-Tour de table ...
+When is the break? <br/>
+Round table ...
 </p>
 <br/><br/>
 
@@ -10,9 +10,9 @@ Tour de table ...
 
 # Repositories
 
-- <b>Slides de la formation</b>
+- <b>Training Slides</b>
     - https://sfeir-open-source.github.io/sfeir-school-angular<br/><br/><br/>
-- <b>Sources des exercices</b>
+- <b>Exercise Sources</b>
     - https://github.com/sfeir-open-source/sfeir-school-angular.git
 
 ##==##
@@ -22,9 +22,9 @@ Tour de table ...
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide" -->
-# Bootstrapping de l'application
+# Application Bootstrapping
 
-Clonez le projet:
+Clone the project:
 
 ```bash
 git clone https://github.com/sfeir-open-source/sfeir-school-angular.git
@@ -32,7 +32,7 @@ git clone https://github.com/sfeir-open-source/sfeir-school-angular.git
 
 <br/>
 
-A la racine du projet
+At the project root:
 
 ```bash
 npm install || npm ci
@@ -42,7 +42,7 @@ npm install || npm ci
 
 
 ```bash
-npm run client -- "nom_du_workshop"
+npm run client -- "workshop_name"
 ```
 
 <br/>
@@ -54,12 +54,12 @@ npm run server:start
 
 ##==##
 
-# Déroulement des exercices
+# Exercise Flow
 
-- __Chaque concept clé d'Angular est accompagné d'un TP.__
+- __Each key Angular concept is accompanied by a lab.__
 
 <br/><br/><br/>
 
-- Déroulement du TP :
-    - __une page d'excercice : apps/`workshop_name`__
-    - __une page de solution : apps/`workshop_name-solution`__
+- Lab flow:
+    - __an exercise page: apps/`workshop_name`__
+    - __a solution page: apps/`workshop_name-solution`__

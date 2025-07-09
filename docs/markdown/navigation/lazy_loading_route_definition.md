@@ -1,5 +1,5 @@
 <!-- .slide: class="with-code inconsolata" -->
-# Définition dans les routes du module principal
+# Definition in the main module's routes
 
 ```typescript
 const ROUTES: Routes = [
@@ -7,12 +7,12 @@ const ROUTES: Routes = [
     { path: 'home', component: HomeComponent},
     { path: 'login', loadChildren: () => import('./login/login.module').then(m => m.LoginModule) },
     { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
-    { path: 'order', loadChildren: () => import('./order/order.module').then(m => m.AdminModule) }
+    { path: 'order', loadChildren: () => import('./order/order.module').then(m => m.OrderModule) }
 ];
 
 ```
 <!-- .element: class="big-code" -->
 Notes:
-- Attention il s'agit de la syntax Angular version 8
-- Il est inutile d'essayer la destructuration, cela ne fonctionne pas (PeopleModule ne sera pas définit)
-- Vous pouvez également utiliser la syntax async / await de la manière suivante: async() => (await import('./people/people.module')).PeopleModule
+- Note: this is the syntax for Angular version 8.
+- It is useless to try destructuring; it does not work (PeopleModule will not be defined).
+- You can also use the async/await syntax as follows: async() => (await import('./people/people.module')).PeopleModule

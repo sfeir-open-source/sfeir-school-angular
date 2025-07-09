@@ -1,5 +1,5 @@
 <!-- .slide: class="with-code inconsolata" -->
-# Un exemple est plus parlant
+# An example is more telling
 
 ```typescript
 @Component({
@@ -17,7 +17,7 @@ export class UserComponent {
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Un exemple est plus parlant
+# An example is more telling
 
 ```typescript
 // setup
@@ -36,31 +36,31 @@ it('should render `Hi Igor!`', () => {
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# DebugElement: outil bien pratique pour chercher des éléments
+# DebugElement: a handy tool for finding elements
 
 ```typescript
-debugElement.query(By.css('button')); // renvoit un DebugElement du button
-debugElement.queryAll(By.css('dnl-line')); // renvoit un tableau de DebugElement
-debugElement.query(By.css('#id-component')); // renvoit le debugElement du composant portant l’id 'id-component'
-debugElement.query(By.css('[test-id=button-1]')); // renvoit le debugElement du premier composant ayant un attribut css test-id avec la valeur 'button-1'
-debugElement.query(By.css('button[type=submit]')); // renvoit le debugElement du premier button ayant l’attribut 'type' avec la valeur 'submit'
-debugElement.query(By.css('.class-name')); // renvoit le debugElement du premier element ayant la classe css 'class-name'
+debugElement.query(By.css('button')); // returns a DebugElement of the button
+debugElement.queryAll(By.css('dnl-line')); // returns an array of DebugElement
+debugElement.query(By.css('#id-component')); // returns the debugElement of the component with the id 'id-component'
+debugElement.query(By.css('[test-id=button-1]')); // returns the debugElement of the first component with a css attribute test-id with the value 'button-1'
+debugElement.query(By.css('button[type=submit]')); // returns the debugElement of the first button with the attribute 'type' with the value 'submit'
+debugElement.query(By.css('.class-name')); // returns the debugElement of the first element with the css class 'class-name'
 
 const nameDiv = debugElement.query(By.css('.name-container'));
 expect(nameDiv).toBeTruthy();
-expect(nameDiv).nativeElement.textContent.toEqual('Durand');
+expect(nameDiv.nativeElement.textContent).toEqual('Durand');
 ```
 <!-- .element: class="big-code" -->
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# DebugElement: aussi pour déclencher des événements !
+# DebugElement: also for triggering events!
 
 ```typescript
 debugElement.query(By.css('button')).triggerEventHandler('click', null);
 debugElement.query(By.css('my-form')).triggerEventHandler('cancel', null);
-const mockSubmitData = {name: 'titi' , … , … }
+const mockSubmitData = {name: 'titi'};
 debugElement.query(By.css('my-form')).triggerEventHandler('submit', mockSubmitData);
 ```
 <!-- .element: class="big-code" -->
@@ -68,21 +68,21 @@ debugElement.query(By.css('my-form')).triggerEventHandler('submit', mockSubmitDa
 ##==##
 
 <!-- .slide -->
-# Mocker via l’Injector dans les providers
+# Mocking via the Injector in providers
 
--   Permet de changer une classe injectée (par exemple un service) par une autre (mock class)<br/><br/>
--   Pratique si tous les tests doivent utiliser les mêmes mocks
+-   Allows changing an injected class (e.g., a service) with another (mock class)<br/><br/>
+-   Convenient if all tests should use the same mocks
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
 
-# Mocker (exemple)
+# Mocking (example)
 
 ```typescript
 beforeEach(() => {
   TestBed.configureTestingModule({
-    declarations: [ UserProfileComponent ]
+    declarations: [ UserProfileComponent ],
     providers: [ UserService ]
   });
 
@@ -90,7 +90,7 @@ beforeEach(() => {
   const instance = fixture.componentInstance;
   const debug   = fixture.debugElement;
   const userService = TestBed.inject(UserService);
-  // déclenche le changement, execute ngOnInit au premier appel
+  // triggers change detection, executes ngOnInit on first call
   fixture.detectChanges();
 });
 ```
@@ -99,7 +99,7 @@ beforeEach(() => {
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Mocker (exemple)
+# Mocking (example)
 
 ```typescript
 export class MockUserService {
@@ -122,13 +122,13 @@ export class MockUserService {
 
 <!-- .slide: class="with-code inconsolata" -->
 
-# Mocker (exemple)
+# Mocking (example)
 
 ```typescript
 beforeEach(() => {
   TestBed.configureTestingModule({
-    declarations: [ UserProfileComponent ]
-    providers: [ { provide: UserService, useClass: MockUserService}]
+    declarations: [ UserProfileComponent ],
+    providers: [ { provide: UserService, useClass: MockUserService } ]
   });
   const userService = TestBed.inject(UserService);
 });
@@ -138,20 +138,20 @@ beforeEach(() => {
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Mocker (exemple)
+# Mocking (example)
 
 ```typescript
 let userServiceStub: Partial<UserService>;
 
 beforeEach(() => {
   userServiceStub = {
-    isLoggedIn = true,
-    user = { name: 'Test User'},
-	disconnect() => { userServiceStub.isLoggedIn = false}
+    isLoggedIn: true,
+    user: { name: 'Test User'},
+	disconnect: () => { userServiceStub.isLoggedIn = false }
   };
   TestBed.configureTestingModule({
-    declarations: [ UserProfileComponent ]
-    providers: [ {provide: UserService, useValue: userServiceStub}]
+    declarations: [ UserProfileComponent ],
+    providers: [ { provide: UserService, useValue: userServiceStub } ]
   });
   const userService = TestBed.inject(UserService);
 });

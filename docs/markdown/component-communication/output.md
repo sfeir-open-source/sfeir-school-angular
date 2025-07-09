@@ -1,8 +1,8 @@
 <!-- .slide: class="with-code inconsolata" -->
 
-# Communication parent - enfant: @Output
+# Parent-child communication: @Output
 
-- Dans le composant enfant (`child.component.ts`)
+- In the child component (`child.component.ts`)
 
 ```typescript
 import { Component, Output, EventEmitter } from '@angular/core';
@@ -26,9 +26,9 @@ export class ChildComponent {
 
 <!-- .slide: class="with-code inconsolata" -->
 
-# Communication parent - enfant: @Output
+# Parent-child communication: @Output
 
--   Dans le template HTML du composant parent (`parent.component.html`) <br/><br/>
+-   In the parent component's HTML template (`parent.component.html`) <br/><br/>
 
 ```html
 <section><app-child (childEvent)="onChildEvent($event)"></app-child></section>
@@ -37,7 +37,7 @@ export class ChildComponent {
 <!-- .element: class="big-code" -->
 <br/>
 
--   Dans le composant parent (`parent.component.ts`) <br/><br/>
+-   In the parent component (`parent.component.ts`) <br/><br/>
 
 ```typescript
 onChildEvent(value: string): void {

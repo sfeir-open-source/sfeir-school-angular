@@ -1,41 +1,41 @@
 <!-- .slide: class="with-code inconsolata" -->
 
-# Action : Définition
+# Action: Definition
 
-Les **actions** sont des commandes qui doivent déclencher une mutation de l'état (state).<br/><br/>
-C'est uniquement à travers des actions que l'on modifie l'état de notre state.
+**Actions** are commands that trigger a state mutation.<br/><br/>
+The state can only be modified through actions.
 <br/><br/>
 
-Chaque action doit obligatoirement contenir un champ comme identifiant unique de l'action.<br/><br/><br/>
+Each action must contain a static `type` property that serves as a unique identifier.<br/><br/><br/>
 
 ```typescript
-export class FeedZebr/a {
-  static readonly type = '[Zoo] Feed Zebr/a';
+export class FeedZebra {
+  static readonly type = '[Zoo] Feed Zebra';
   constructor(public name: string, public hayAmount: number) {}
 }
 ```
 <!-- .element: class="big-code" -->
 
-Notes:
-
--   dans cette exemple on peut voir que je passe des arguments lorsque je dispatch mon action
-Ici name et hayAmount
+**Note:**
+- In this example, we are passing arguments (`name` and `hayAmount`) when we dispatch the action.
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Action : Comment la déclencher
+# Action: How to Dispatch It
 
--   Dans le composant, l'action est déclenchée grâce au mot clé **dispatch**
--   Une action renvoie toujours un Observable<br/><br/>
+- In a component, an action is dispatched using the `store.dispatch()` method.
+- Dispatching an action returns an Observable.<br/><br/>
 
 ```typescript
+import { Store } from '@ngxs/store';
+
 @Component({ ... })
 export class ZooComponent {
   constructor(private readonly store: Store) {}
 
-  addFee({ name: string, hayAmount: number }): void {
-    this.store.dispatch(new FeedZebr/a(name, hayAmount));
+  feedZebra(name: string, hayAmount: number): void {
+    this.store.dispatch(new FeedZebra(name, hayAmount));
   }
 }
 ```
@@ -44,21 +44,21 @@ export class ZooComponent {
 ##==##
 
 <!-- .slide -->
-# Actions : Convention de nommage
+# Actions: Naming Convention
 
-Une **bonne** action doit contenir trois parties:<br/><br/>
+A **good** action type should have three parts:<br/><br/>
 
--   d'ou vient l'action [PAGE, API, ...]
--   un verbe décrivant l'action [GETUSER]
--   l'entité sur laquelle agit l'action<br/><br/>
-    **Exemple**: au clic j'ajoute un utilisateur dans un tableau <br/><br/>
-    **[USER PAGE] addUser**
+-   The context where the action originates (e.g., `[User Page]`, `[API]`).
+-   A verb describing what the action does (e.g., `Add User`).
+-   The entity it acts upon is often implied by the context.<br/><br/>
+    **Example**: On a click, I add a user to a table.<br/><br/>
+    **`[User Page] Add User`**
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
 
-# Actions : regrouper des actions
+# Actions: Grouping Actions
 
 ```typescript
 export namespace Todo {
@@ -66,13 +66,16 @@ export namespace Todo {
     static readonly type = '[Todo] Add';
     constructor(public payload: any) {}
   }
+
   export class Edit {
     static readonly type = '[Todo] Edit';
     constructor(public payload: any) {}
   }
+
   export class FetchAll {
     static readonly type = '[Todo] Fetch All';
   }
+
   export class Delete {
     static readonly type = '[Todo] Delete';
     constructor(public id: number) {}

@@ -4,12 +4,12 @@
 
 <br/><br/>
 
-<b>Un readme est à votre disposition dans le dossier apps/21-lazyloading-solution</b>
+<b>A readme is available in the apps/21-lazyloading-solution directory.</b>
 
 ##==##
 
 <!-- .slide: class="full-center exercice" -->
-# Lab 21 : 21-lazyloading-solution
+# Lab 21: 21-lazyloading-solution
 ## Lab
 __apps/21-router-lazyloading-solution__
 
@@ -21,7 +21,7 @@ __apps/21-router-lazyloading-solution__
 
 <br/><br/>
 
-<b>Un readme est à votre disposition dans le dossier apps/22-guards-solution</b>
+<b>A readme is available in the apps/22-guards-solution directory.</b>
 
 ##==##
 
@@ -30,4 +30,3 @@ __apps/21-router-lazyloading-solution__
 # Lab 22: 22-guards
 ## Lab
 __apps/22-guards-solution__
-

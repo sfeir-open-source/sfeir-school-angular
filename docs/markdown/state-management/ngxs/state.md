@@ -1,17 +1,18 @@
 <!-- .slide: class="with-code inconsolata" -->
 
-# State : définition
+# State: Definition
 
-Le **State** est une classe préfixée du décorateur **@State** qui définit notre state container.
+A **State** is a class decorated with `@State` that defines a state container.
 <br/><br/>
 
 ```typescript
+import { Injectable } from '@angular/core';
 import { State } from '@ngxs/store';
 import { AnimalService } from '@core/providers/animal.service';
 
 @State<string[]>({
    name: 'animals',
-  defaults: []
+   defaults: []
 })
 @Injectable()
 export class AnimalsState {
@@ -23,7 +24,7 @@ export class AnimalsState {
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# State : configuration
+# State: Configuration
 
 ```typescript
 @State<string[]>({
@@ -35,20 +36,20 @@ export class AnimalsState {
 
 <br/><br/>
 
-Ici notre state indique: <br/>
+This state configuration indicates:
 
-- qu'il s'agit d'un tableau de strings: **<string[]>**
-- que le nom de notre state est 'animals' (name est une prop obligatoire)
-- notre state initial est un tableau vide: (la prop `default` sert d'initialisation)
-- Notes: il existe encore une props: children qui sont les states associés
+-   The state model is an array of strings: **`<string[]>`**
+-   The name of the state slice is 'animals' (the `name` property is required).
+-   The initial state is an empty array (the `defaults` property defines the initial value).
+-   **Note**: There is also a `children` property for registering nested state classes.
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
 
-# State : Réduire nos actions (rappel)
+# State: Handling Actions (Reminder)
 
-Rappel: dans notre fichier **todos.actions.ts** nous avions ce contenu
+Recall the actions we defined in our **`todos.actions.ts`** file:
 
 ```typescript
 export namespace Todo {
@@ -73,21 +74,22 @@ export namespace Todo {
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# State : déclarer nos actions
+# State: Declaring Action Handlers
 
 ```typescript
+import { Injectable } from '@angular/core';
 import { State, Action, StateContext } from '@ngxs/store';
-import { Todo } from './todo.action';
+import { Todo } from './todo.actions';
+
 @State<string[]>({
   name: 'todo',
-  default: []
+  defaults: []
 })
 @Injectable()
 export class TodoState {
-  constructor() {}
   @Action(Todo.Add)
   addTodo(ctx: StateContext<string[]>, action: Todo.Add): void {
-    const state: strings[] = ctx.getState();
+    const state = ctx.getState();
     ctx.setState([...state, action.payload]);
   }
 }
@@ -97,20 +99,18 @@ export class TodoState {
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# State : Déclarer nos actions
+# State: Action Handler Summary
 
-- Pour résumer une action se caractérise par:
-  - une fonction prenant en paramètre le contexte de type **StateContext** et le payload
-  - le décorateur **@Action**
+- An action handler is a method within a state class that is decorated with **`@Action`** and takes the state context and the action as parameters.
 
 <br/><br/>
 
-- Le **StateContext** possède les méthodes suivantes:
-  - setState: pour setter un nouvel état du state dans son entièreté
-  - getState: récupère le state dans son entièreté
-  - patchState: modifier partiellement le state
-  - dispatch: lance une nouvelle action
+- The **`StateContext`** provides the following methods:
+  - `getState()`: Returns the current value of the state slice.
+  - `setState()`: Sets the state slice to a new value.
+  - `patchState()`: Modifies a part of the state slice.
+  - `dispatch()`: Dispatches a new action.
 
-Notes:
--   coup de puce: penser au spread operator pour récupérer directement la méthode qui vous intéresse
--   il également possible d'utiliser des librairies tiers comme immer permettant de rendre chaque modification immutable (https://immerjs.github.io/immer/docs/introduction)
+**Notes:**
+- You can use destructuring to access context methods directly: `addTodo({ setState, getState }, action) { ... }`
+- It's also possible to use third-party libraries like Immer to simplify immutable updates (https://immerjs.github.io/immer/docs/introduction).

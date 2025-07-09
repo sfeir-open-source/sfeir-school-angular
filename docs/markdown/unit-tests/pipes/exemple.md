@@ -1,5 +1,5 @@
 <!-- .slide: class="with-code inconsolata" -->
-# Un exemple plus parlant
+# A more telling example
 
 ```typescript
 @Pipe({
@@ -19,7 +19,7 @@ export class UpPipe implements PipeTransform {
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Un exemple plus parlant
+# A more telling example
 
 ```typescript
 it('should capitalise', () => {
@@ -32,7 +32,7 @@ it('should capitalise', () => {
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Un exemple plus parlant
+# A more telling example
 
 ```typescript
 it('should capitalise', () => {

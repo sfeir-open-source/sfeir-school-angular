@@ -1,29 +1,30 @@
-# Communication avec le service worker
+# Communicating with the Service Worker
 
  - 2 hooks
-    - available : nouvelle version de l'application à loader si la page est rafraîchie
-    - activated : le service worker commence à déployer une nouvelle version de l'application  
-
+    - `available`: a new version of the application is ready to be loaded if the page is refreshed.
+    - `activated`: the service worker has started deploying a new version of the application.
 
 <br><br>
 
-- 2 méthodes
- - checkForUpdate : demande au service worker de vérifier si une nouvelle version est disponible
- - activateUpdate : force la mise à jour de l'application
+- 2 methods
+ - `checkForUpdate()`: asks the service worker to check if a new version is available.
+ - `activateUpdate()`: forces the application update.
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Exemple
+# Example
 
 ```typescript
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class PromptUpdateService {
   constructor(updates: SwUpdate) {
-    updates.available.subscribe(event => {
-      if (promptUser(event)) {
-        updates.activateUpdate().then(() => document.location.reload());
-      }
+    updates.versionUpdates.subscribe(event => {
+        if (event.type === 'VERSION_READY') {
+            if (confirm('A new version is available. Load it?')) {
+                updates.activateUpdate().then(() => document.location.reload());
+            }
+        }
     });
   }
 }

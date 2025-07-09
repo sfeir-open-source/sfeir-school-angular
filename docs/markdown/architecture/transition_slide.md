@@ -1,2 +1,2 @@
 <!-- .slide: class="transition" -->
-# Architecture Globale
+# Global Architecture

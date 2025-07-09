@@ -1,8 +1,8 @@
 <!-- .slide: class="transition-bg-sfeir-2" -->
-# Tester vos pipes
+# Testing your pipes
 
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide" -->
-# Test de fonctions
-Les pipes sont assez simples à tester, il suffit de tester la fonction transform
+# Function testing
+Pipes are quite simple to test, you just need to test the transform function

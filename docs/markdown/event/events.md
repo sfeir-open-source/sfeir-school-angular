@@ -1,17 +1,17 @@
 <!-- .slide: class="with-code inconsolata"-->
-# Les évènements
+# Events
 
--   Nom de l'évènement entre ()<br/>
--   Fait référence à une méthode de la classe<br/>
--   Pour récupérer les détails de l'event <b>$event</b><br/><br/>
+-   Event name in parentheses ()<br/>
+-   Refers to a method of the class<br/>
+-   To get the event details <b>$event</b><br/><br/>
 
 ```typescript
 // my-component.component.ts
 export class MyComponent {
-  values = '';
+  value = '';
     
-  updateValue(clickEvent: MouseEvent): void {
-    this.values += event.target.value + ' | ';
+  updateValue(event: Event): void {
+    this.value = (event.target as HTMLInputElement).value;
   }
 }
 ```
@@ -21,6 +21,7 @@ export class MyComponent {
 
 ```html
 <!-- my-component.component.html -->
-<input type="text" (click)="updateValue($event)" />
+<input type="text" (keyup)="updateValue($event)" />
+<p>Value: {{ value }}</p>
 ```
 <!-- .element: class="medium-code" -->

@@ -1,2 +1,2 @@
 <!-- .slide: class="transition" -->
-# L'injection de dépendance (DI)
+# Dependency Injection (DI)

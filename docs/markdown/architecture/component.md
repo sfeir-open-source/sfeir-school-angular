@@ -1,14 +1,14 @@
 <!-- .slide: class="transition-bg-sfeir-2" -->
 
-# Le composant
+# The component
 
 ##==##
 
 <!-- .slide -->
 
-# Le composant
+# The component
 
-Le composant est composé de trois concepts de base.
+The component is made up of three basic concepts.
 <br/><br/>
 
 ![center h-600](assets/images/school/architecture/components.png)
@@ -17,9 +17,9 @@ Le composant est composé de trois concepts de base.
 
 <!-- .slide: class="with-code inconsolata" -->
 
-# Le composant: sa logique
+# The component: its logic
 
-La logique du composant utilise la syntax de classe de ES2015
+The component's logic uses the ES2015 class syntax
 <br/><br/>
 
 ```typescript
@@ -39,9 +39,9 @@ export class AppComponent {
 
 <!-- .slide: class="with-code inconsolata" -->
 
-# Le composant: son affichage
+# The component: its template
 
-L'affichage du composant dans la page se fait à l'aide d'un décorateur
+The component is displayed on the page using a decorator
 <br/><br/>
 
 ```typescript
@@ -64,15 +64,15 @@ L'affichage du composant dans la page se fait à l'aide d'un décorateur
 <!-- .element: class="big-code" -->
 <br/>
 Notes:
-- Un décorateur de type @Component se fait toujours au dessus d'une classe. Sans cette classe, le build et le linter affiche une erreur
+- A @Component decorator is always placed above a class. Without this class, the build and the linter will show an error
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
 
-# Le composant: sa globalité
+# The component: as a whole
 
-L'écriture d'un composant dans sa totalité est donc la suivante
+Writing a component in its entirety is therefore as follows
 <br/><br/>
 
 ```typescript

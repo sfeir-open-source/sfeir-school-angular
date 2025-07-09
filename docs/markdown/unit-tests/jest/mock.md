@@ -1,7 +1,7 @@
 <!-- .slide: class="with-code inconsolata" -->
-# Mock avec Jest
+# Mocking with Jest
 
-Jest permet de facilement mocker:
+Jest makes it easy to mock:
 
 - jest.fn
 - jest.spyOn
@@ -19,7 +19,7 @@ const spy = jest.spyOn(component, 'getPeople');
 
 <br/><br/>
 
-Ces deux méthodes renvoit le type Jest.Mock
+Both of these methods return the `Jest.Mock` type.
 
 ##==##
 
@@ -33,7 +33,7 @@ Ces deux méthodes renvoit le type Jest.Mock
 it('What to expect with a spy', () => {
   expect(spy).toHaveBeenCalled();
   expect(spy).toHaveBeenCalledTimes(1);
-  expect(PEOPLE_SERVICE_STUB).toHaveBeenCalledWith({ name: 'SFEIR'})
+  expect(PEOPLE_SERVICE_STUB).toHaveBeenCalledWith({ name: 'SFEIR' });
 })
 ```
 <!-- .element: class="big-code" -->

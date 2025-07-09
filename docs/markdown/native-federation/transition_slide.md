@@ -1,3 +1,2 @@
 <!-- .slide: class="transition" -->
-# Micro-front end avec Angular
-
+# Micro-frontend with Angular

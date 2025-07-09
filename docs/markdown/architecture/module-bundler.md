@@ -2,14 +2,14 @@
 
 ## Webpack
 
-Sous le capot, Angular utilise Webpack pour builder notre application
+Under the hood, Angular uses Webpack to build our application
 
 <br/><br/>
 
-- Qu'est ce que Webpack ?
-  - Bundle en Javascript
+- What is Webpack?
+  - Javascript bundler
   - Hot Reload / webpack-dev-server
-  - Actuellement le choix par défaut d'Angular
+  - Currently the default choice for Angular
 
 ![h-300](assets/images/school/architecture/webpack_logo.png)
 
@@ -21,8 +21,8 @@ Sous le capot, Angular utilise Webpack pour builder notre application
 
 Notes:
 
-- Angular version 9 apporte son lot de nouveautés avec Ivy nouveau renderer et Bazel pour un build plus léger
-- Attention Bazel ne remplacera pas webpack, mais webpack utilisera bazel
+- Angular version 9 brings its share of new features with Ivy, the new renderer, and Bazel for a lighter build
+- Be aware that Bazel will not replace webpack, but webpack will use bazel
 
 ##==##
 
@@ -30,15 +30,14 @@ Notes:
 
 ## Vite
 
-Suite à la version 16, Angular a introduit la possibilité d'utiliser Vite au lieu de Webpack
+Following version 16, Angular introduced the ability to use Vite instead of Webpack
 <br/><br/>
 
-- Pourquoi Vite ?
-  - plus performant que Webpack
+- Why Vite?
+  - more performant than Webpack
   - Server ready
-  - Se base sur les EsModules
+  - Based on EsModules
 
 ##--##
 
 ![h-700](assets/images/school/architecture/vite-logo.png)
-

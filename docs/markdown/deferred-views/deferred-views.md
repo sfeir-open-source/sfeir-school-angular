@@ -1,11 +1,11 @@
 <!-- .slide: class="with-code inconsolata" -->
-# Overview sur les vue différées :)
+# Overview of Deferred Views :)
 
-- nouvelle foncionnalité du compileur <br/><br/>
-- solution pour lazyloader des composants et leur dépendances <br/><br/>
-- amélioration des performances <br/><br/>
-- plusieux blocs pour gérer l'état du lazyload <br/><br/>
-- declencheur, et prefetching
+- new compiler feature <br/><br/>
+- solution for lazy-loading components and their dependencies <br/><br/>
+- performance improvement <br/><br/>
+- several blocks to manage the lazy-load state <br/><br/>
+- triggers, and prefetching
 
 <br/>
 
@@ -18,25 +18,25 @@
 
 ##==##
 
-# Pourquoi les vues différées?
+# Why Deferred Views?
 
-- alléger le bundle initial <br/><br/>
-- charger à la demande des composants lourd qui ne seront pas utilisés immédiatement; voir pas du tout <br/><br/>
-- améliorer les métriques LCP et TTFB <br/><br/>
+- lighten the initial bundle <br/><br/>
+- on-demand loading of heavy components that will not be used immediately, or not at all <br/><br/>
+- improve LCP and TTFB metrics <br/><br/>
 
 ##==##
 
-# Quelles dépendances peuvent être différées?
+# Which Dependencies Can Be Deferred?
 
-Il existe deux conditions pour qu'un composant puisse être différé:
+There are two conditions for a component to be deferred:
 
-- doit être obligatoire standalone <br/><br/>
-- ne doit pas être directement reférencé comme par exemple avec l'utilisation @ViewChild
+- must be standalone <br/><br/>
+- must not be directly referenced, for example using @ViewChild
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# @defer et le sous block @placeholder
+# @defer and the @placeholder Sub-block
 
 ```angular17html
 @defer {
@@ -49,13 +49,13 @@ Il existe deux conditions pour qu'un composant puisse être différé:
 
 <br/><br/>
 
-Par défaut, le block defer n'affiche aucun contenu tant qu'il n'est pas trigger. Le block placeholder est utilisé pour afficher un contenu de remplacement. <br/><br/>
-Le block @placeholder prend un argument supplémentaire (minimum) qui est le temps d'affichage minimum du placeholder.
+By default, the defer block displays no content until it is triggered. The placeholder block is used to display replacement content. <br/><br/>
+The @placeholder block takes an additional argument (minimum) which is the minimum display time of the placeholder.
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# @defer et le sous block @error
+# @defer and the @error Sub-block
 
 ```angular17html
 @defer {
@@ -68,12 +68,12 @@ Le block @placeholder prend un argument supplémentaire (minimum) qui est le tem
 
 <br/><br/>
 
-Le block error est utilisé pour afficher un contenu alternatif en cas d'erreur lors du chargement du composant différé.
+The error block is used to display alternative content in case of an error while loading the deferred component.
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# @defer et le sous block @loading
+# @defer and the @loading Sub-block
 
 ```angular17html
 @defer {
@@ -82,45 +82,45 @@ Le block error est utilisé pour afficher un contenu alternatif en cas d'erreur 
   <div>Loading in progress</div>
 }
 ```
-<!-- .slide: class="big-code" -->
+<!-- .element: class="big-code" -->
 
 <br/><br/>
 
-Le block loading est utilisé pour afficher un contenu alternatif pendant le chargement du composant différé. <br/><br/>
-Il prends deux arguments supplémentaires: after et minimum:
-- after: le temps d'attente avant d'afficher le contenu loading <br/><br/>
-- minimum: le temps d'affichage minimum du contenu loading
+The loading block is used to display alternative content while the deferred component is loading. <br/><br/>
+It takes two additional arguments: after and minimum:
+- after: the waiting time before displaying the loading content <br/><br/>
+- minimum: the minimum display time of the loading content
 
 ##==## 
 
-# Les differents type de trigger pour les vue différées
+# The Different Types of Triggers for Deferred Views
 
-- __on idle__ : déclenche le chargement lorsque le navigateur est inactif <br/><br/>
-- __on viewport__ : déclenche le chargement lorsque le composant/élément est visible dans le viewport <br/><br/>
-- __on interaction__ : déclenche le chargement lorsque l'utilisateur interagit avec un élément <br/><br/>
-- __on hover__ : déclenche le chargement lorsque l'utilisateur survole un élément <br/><br/>
-- __on immediate__: déclenche le chargement immédiatement <br/><br/>
-- __on time__ : déclenche le chargement après un certain temps
-- __when__ : déclenche le chargement lorsque la condition est vraie
+- __on idle__ : triggers loading when the browser is idle <br/><br/>
+- __on viewport__ : triggers loading when the component/element is visible in the viewport <br/><br/>
+- __on interaction__ : triggers loading when the user interacts with an element <br/><br/>
+- __on hover__ : triggers loading when the user hovers over an element <br/><br/>
+- __on immediate__: triggers loading immediately <br/><br/>
+- __on time__ : triggers loading after a certain time
+- __when__ : triggers loading when the condition is true
 
 ##==##
 
 
-# Chargement différé avec prefetching
+# Deferred Loading with Prefetching
 
-- Fonctionne exactement comme le chargement différé, mais le composant est chargé en arrière-plan avant d'être affiché <br/><br/>
-- prefetch possède les mêmes trigger que le chargement différé. <br/><br/>
-- prefetch permet de gérer le fetching de la ressource et defer l'affichage quand ils sont utilisés ensemble
+- Works exactly like deferred loading, but the component is loaded in the background before being displayed <br/><br/>
+- prefetch has the same triggers as deferred loading. <br/><br/>
+- prefetch allows managing resource fetching and deferring the display when used together
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Un exemple complet
+# A Complete Example
 
 
 ```angular17html
 <button #trigger>Display</button>
-@defer(on interaction(trigger); on timer(1000s); prefetch on viewport(trigger)) {
+@defer(on interaction(trigger); on timer(10s); prefetch on viewport(trigger)) {
   <todo-list />
 }@placeholder(minimum 500ms) {
   <div>Placeholder content</div>
@@ -131,7 +131,3 @@ Il prends deux arguments supplémentaires: after et minimum:
 }
 ```
 <!-- .element: class="big-code" -->
-
-
-
-

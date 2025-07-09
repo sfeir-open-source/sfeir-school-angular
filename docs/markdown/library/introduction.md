@@ -1,28 +1,28 @@
-# Pourquoi créer une librairie ?
+# Why create a library?
 
 <br/><br/>
 
-- partager de la logique entre plusieurs projets <br/><br/>
-- s'abstraire d'une complexité au sein d'un même projet <br/><br/>
+- share logic between multiple projects <br/><br/>
+- abstract away complexity within the same project <br/><br/>
 
 ##==##
 
-# Définition officielle d'une librairie ?
+# Official definition of a library?
 
-Une librairie Angular est un ensemble de composants, de services et d'autres éléments qui peuvent être partagés entre plusieurs applications Angular. <br/><br/> 
-Il existe plusieurs types de librairies Angular, chacune ayant ses propres caractéristiques et cas d'utilisation:
+An Angular library is a collection of components, services, and other elements that can be shared between multiple Angular applications. <br/><br/> 
+There are several types of Angular libraries, each with its own characteristics and use cases:
 <br/><br/>
 
-- librairie de composants <br/><br/>
-- librairie helpers <br/><br/>
-- librairie de logique métier <br/><br/>
+- component library <br/><br/>
+- helper library <br/><br/>
+- business logic library <br/><br/>
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Comment créer une librairie avec Angular ?
+# How to create a library with Angular?
 
-Le CLI d'Angular sera votre meilleur allié pour créer une librairie Angular. <br/><br/>
+The Angular CLI will be your best ally for creating an Angular library. <br/><br/>
 
 ```shell
 ng new sfeir-library-workspace  --no-create-application
@@ -31,7 +31,7 @@ ng new sfeir-library-workspace  --no-create-application
 
 <br/><br/>
 
-Puis dans le dossier sfeir-library-workspace, exécutez la commande suivante pour créer une librairie:
+Then, in the sfeir-library-workspace folder, run the following command to create a library:
 
 <br/><br/>
 
@@ -42,18 +42,18 @@ ng generate library sfeir-components
 
 ##==##
 
-# Pourquoi créer un workspace ?
+# Why create a workspace?
 
 <br/><br/>
 
-Un wokspace fait plus de sens lors de la création d'une librairie Angular dans le sens ou elle peut contenir plusieurs librairies. <br/><br/>
-Ce workspace pourra également contenir des applications Angular pour tester vos librairies. <br/><br/>
+A workspace makes more sense when creating an Angular library as it can contain multiple libraries. <br/><br/>
+This workspace can also contain Angular applications to test your libraries. <br/><br/>
 
 
 ##==##
 
 <!-- slide: class="with-code inconsolata" -->
-# Un Angular.json qui a bien changé
+# An Angular.json that has changed a lot
 
 <br/><br/>
 
@@ -78,6 +78,4 @@ Ce workspace pourra également contenir des applications Angular pour tester vos
 
 <br/><br/>
 
-Le code de votre libraire se trouve dans le dossier projects/sfeir-components/src. <br/><br/>
-
-
+The code for your library is located in the projects/sfeir-components/src folder. <br/><br/>

@@ -1,34 +1,34 @@
 <!-- .slide-->
 
-# Configuration simple
+# Simple Configuration
 
--   <b>path: </b>l’URL de route (ex: /people/:id)<br/><br/>
--   <b>component: </b>le composant associé à cette route (ex: PeopleComponent)<br/><br/>
--   <b>redirectTo: </b>le fragment d’URL vers lequel rediriger la route courante (ex: '/home')<br/><br/>
--   <b>pathMatch: </b>stratégie de redirection (full / prefix)
-    -   full: tente une reconnaissance depuis la racine de la route
-    -   prefix: tente une reconnaissance partielle de la route
+-   <b>path: </b>the route URL (e.g., /people/:id)<br/><br/>
+-   <b>component: </b>the component associated with this route (e.g., PeopleComponent)<br/><br/>
+-   <b>redirectTo: </b>the URL fragment to redirect the current route to (e.g., '/home')<br/><br/>
+-   <b>pathMatch: </b>redirection strategy (full / prefix)
+    -   full: attempts to match from the root of the route
+    -   prefix: attempts a partial match of the route
 
 ##==##
 
 <!-- .slide -->
 
-# Configuration avancée (complète)
+# Advanced Configuration (complete)
 
-Il existe d'autres options de configuration, permettant de réaliser du routing plus avancé.
+Other configuration options exist, allowing for more advanced routing.
 <br/><br/>
 
--   <b>outlet: </b>le nom de l'emplacement dans lequel le composant doit s'afficher<br/><br/>
--   <b>data: </b>données passées à la route via ActivatedRoute<br/><br/>
--   <b>canActivate / canDeactivate: </b>permet d’activer ou non la route<br/><br/>
--   <b>resolver: </b>récupère des données avant de naviguer vers la route<br/><br/>
--   <b>children: </b>un tableau de définition des sous-routes
+-   <b>outlet: </b>the name of the location where the component should be displayed<br/><br/>
+-   <b>data: </b>data passed to the route via ActivatedRoute<br/><br/>
+-   <b>canActivate / canDeactivate: </b>allows activating or deactivating the route<br/><br/>
+-   <b>resolver: </b>retrieves data before navigating to the route<br/><br/>
+-   <b>children: </b>an array of sub-route definitions
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
 
-# Un exemple de configuration de routes
+# An example of route configuration
 
 ```typescript
 const ROUTES: Routes = [
@@ -43,20 +43,20 @@ const ROUTES: Routes = [
 
 Notes:
 
--   Attention l'ordre de déclaration des routes est important
+-   Be careful, the order of route declaration is important.
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
 
-# La stratégie de navigation
+# Navigation Strategy
 
-2 types de stratégie<br/><br/>
+2 types of strategy<br/><br/>
 
-- Par 'Path', aussi nommée **PathLocationStrategy** (Mode HTML5 et pushState => Par défaut)
-  - Exemple: `localhost:4200/people/1` => `{ useHash: false }`<br/><br/>
-- Par 'Hash', aussi nommée **HashLocationStrategy**
-  - Exemple: `localhost/#/people/1` => `{ useHash: true }` <br/><br/>
+- By 'Path', also named **PathLocationStrategy** (HTML5 mode and pushState => Default)
+  - Example: `localhost:4200/people/1` => `{ useHash: false }`<br/><br/>
+- By 'Hash', also named **HashLocationStrategy**
+  - Example: `localhost/#/people/1` => `{ useHash: true }` <br/><br/>
 
 ```typescript
 // app.module.ts
@@ -68,7 +68,7 @@ RouterModule.forRoot(routes, { useHash: true });
 ##==##
 
 <!-- .slide: class="two-column with-code inconsolata" -->
-# Utiliser la navigation en Angular
+# Using navigation in Angular
 
 ```typescript
 // app.module.ts

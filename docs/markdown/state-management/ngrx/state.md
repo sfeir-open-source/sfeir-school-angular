@@ -1,30 +1,33 @@
-# NGRX : State
+# NGRX: State
 
-- Mapping clé-valeur
-- Récupérer grâce à nos selectors
-- Retourne toujours un Observable <br/><br/>
+- A key-value map representing the data structure.
+- Accessed reactively using selectors.
+- The store provides state as an Observable.<br/><br/>
 
 ##==##
 <!-- .slide: class="with-code inconsolata" -->
 
-# NGRX : State
+# NGRX: State
 
 ```typescript
+// Defines the shape of the state for this feature
 export interface State {
-  people: Object[];
-  search: string;
+  people: Person[];
+  searchQuery: string;
+  loading: boolean;
+  error: any;
 }
-export interface PeopleFeature {
-  people: State;
-}
-export const initialState = {
+
+// Defines the initial state for this feature
+export const initialState: State = {
   people: [],
-  search: ''
+  searchQuery: '',
+  loading: false,
+  error: null
 };
 ```
 <!-- .element: class="medium-code" -->
 
-Notes:
-- la première interface est l'interface de mon state
-- la seconde celle de mon enregistrement root de mon store => StoreModule.forRoot({ people: fromPeopleReducer.reducer }). Ici on enregistre un store global nommé people qui a pour valeur l'object { people, search }
-- la constante consiste en mon initial state
+**Note:**
+- The `State` interface defines the structure of your feature's state.
+- The `initialState` provides the default values for the state when the application loads.

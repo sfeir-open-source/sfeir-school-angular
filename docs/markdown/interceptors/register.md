@@ -1,54 +1,61 @@
 <!-- .slide: class="with-code inconsolata" -->
 
-# Enregistrer son interceptor
+# Registering Functional Interceptors
+
+In standalone applications, you register functional interceptors in your application config using `provideHttpClient` and `withInterceptors`.
 
 ```typescript
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { TokenInterceptor } from './token.interceptor';
-@NgModule({
-  bootstrap: [AppComponent],
-  providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: TokenInterceptor,
-      multi: true
-    }
-  ]
-})
-export class AppModule { }
-```
+// app.config.ts
+import { ApplicationConfig } from '@angular/core';
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
+import { authInterceptor } from './auth.interceptor';
+import { loggingInterceptor } from './logging.interceptor';
 
-<!-- .element: class="big-code" -->
+export const appConfig: ApplicationConfig = {
+  providers: [
+    // Interceptors are executed in the order they are provided.
+    provideHttpClient(withInterceptors([authInterceptor, loggingInterceptor])),
+  ],
+};
+```
+<!-- .element: class="medium-code" -->
 
 Notes:
-
--   le multi permet d'enregistrer plusieurs interceptors
--   les interceptors s'executent dans l'ordre de register
+- Interceptors are executed in the order they appear in the array.
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
+# Registering Class-Based Interceptors
 
-# Enregistrer son interceptor sans module
+While functional interceptors are preferred, you can still use class-based interceptors in both standalone and module-based apps.
 
-- Pour des interceptors sous forme de fonctions <br/>
-
-```typescript
-bootstrapApplication(AppComponent, {
-  providers: [provideHttpClient(withInterceptors[AuthorizationInterceptor])]
-});
-```
-<!-- .element: class="big-code" -->
-
-##==##
-
-# Enregistrer son interceptor sans module
-
-- Pour des interceptors sous forme de classes <br/>
+**1. Standalone Apps:**
+Use `withInterceptorsFromDi()` and provide the class.
 
 ```typescript
-bootstrapApplication(AppComponent, {
-  providers: [provideHttpClient(withInterceptorsFromDi())]
-});
+// app.config.ts
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { MyLegacyInterceptor } from './my-legacy.interceptor';
+
+export const appConfig: ApplicationConfig = {
+  providers: [
+    provideHttpClient(withInterceptorsFromDi()),
+    { provide: HTTP_INTERCEPTORS, useClass: MyLegacyInterceptor, multi: true },
+  ],
+};
 ```
-<!-- .element: class="big-code" -->
+
+**2. Module-Based Apps (Legacy):**
+
+```typescript
+// app.module.ts
+@NgModule({
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: MyLegacyInterceptor, multi: true },
+  ],
+})
+export class AppModule { }
+```
+<!-- .element: class="medium-code" -->

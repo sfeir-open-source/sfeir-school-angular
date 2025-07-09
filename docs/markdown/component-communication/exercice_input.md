@@ -2,11 +2,11 @@
 # Lab 09 : 09-input
 ## Lab
 
-<b>Un readme est à votre disposition dans le dossier apps/09-input</b>
+<b>A readme is available in the apps/09-input folder</b>
 <!-- .element: class="full-center" -->
 
 Notes:
-- Faire en sorte d'utiliser le CardComponent dans le template de HomeComponent de la manière suivante: <sfeir-card [person]="person"></sfeir-card>
+- Make sure to use the CardComponent in the HomeComponent template as follows: <sfeir-card [person]="person"></sfeir-card>
 
 ##==##
 <!-- .slide: class="exercice full-center" -->

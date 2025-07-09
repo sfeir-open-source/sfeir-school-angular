@@ -1,2 +1,2 @@
 <!-- .slide: class="transition" -->
-# Host Binding et Host Listener
+# Host Binding and Host Listener

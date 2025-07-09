@@ -1,38 +1,38 @@
-# Préparation signal component
+# Preparing for Signal Components
 
-En vue de préparer les signals component, certaine annotations doivent être réécrite en fonction <br/>
-- @Input --> input()
-- @Output --> output()
-- @ViewChild --> viewChild()
-- @ViewChildren --> viewChildren()
-- @ContentChild --> contentChild()
-- @ContentChildren --> contentChildren()
-- [(binding)] --> model()
+To prepare for signal-based components, certain decorators are replaced by functions:<br/>
+- `@Input` -> `input()`
+- `@Output` -> `output()`
+- `@ViewChild` -> `viewChild()`
+- `@ViewChildren` -> `viewChildren()`
+- `@ContentChild` -> `contentChild()`
+- `@ContentChildren` -> `contentChildren()`
+- `[(binding)]` -> `model()`
 
 ##==##
 
-## Pourquoi aller vers les composants signals ?
+## Why move to Signal Components?
 
-Le changement de détection sur Angular se fait à l'aide de Zone Js, chaque modification engendre une réévaluation de tout l'arbre
+In Angular, change detection is managed by Zone.js. Any change can trigger a check of the entire component tree.
 
-- composant onPush non modifié ne se voit lever un changement de détection
-- composant en change detection par défaut se voit lever un changement de détection
+- An `OnPush` component is not checked if its inputs haven't changed.
+- A component with default change detection is always checked.
 
 <br/><br/>
 
-et si on lever un changement de détection uniquement sur les composants qui ont été modifiés ?
+What if we only checked the components that were actually modified?
 <!-- .element: class="important" -->
 
 <br/><br/>
 
-**C'est possible avec les signals**
+**This is possible with Signals!**
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata"-->
-# La fonction input
+# The `input()` function
 
-La fonction input permet de déclarer une propriété d'entrée dans un composant
+The `input()` function declares an input property in a component.
 <br/><br/>
 
 ```typescript
@@ -46,32 +46,36 @@ export class MyComponent {
 
 <br/>
 
-```angular17html
-<my-component [name]="name" [age]="age" />
+```html
+<my-component [name]="'Alice'" [age]="30" />
 ```
 <!-- .element: class="medium-code" -->
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata"-->
-# La fonction output
+# The `output()` function
 
-La fonction output permet de déclarer une propriété d'entrée dans un composant
+The `output()` function declares an output property in a component.
 <br/><br/>
 
 ```typescript
-import {output} from "@angular/core";
+import { output, OutputEmitterRef } from "@angular/core";
 
 @Component({...})
 export class MyComponent {
-  nameChange = output<string>()
+  nameChange: OutputEmitterRef<string> = output<string>();
+
+  sendName() {
+    this.nameChange.emit('New Name');
+  }
 }
 ```
 <!-- .element: class="medium-code" -->
 
 <br/>
 
-```angular17html
+```html
 <my-component (nameChange)="updateName($event)" />
 ```
 <!-- .element: class="medium-code" -->
@@ -79,17 +83,19 @@ export class MyComponent {
 ##==##
 
 <!-- .slide: class="with-code inconsolata"-->
-# Interporabilité avec RxJs: output
+# RxJS Interoperability: `output`
 
-- outputToObservable: permet de convertir un output() en observable
-- outputFromObservable: permet de convertir un observable en output()
+- `outputToObservable`: converts an `output()` to an observable.
+- `outputFromObservable`: converts an observable to an `output()`.
 
 <br/><br/>
 
 ```typescript
+import { outputFromObservable } from '@angular/core/rxjs-interop';
+
 @Component({...})
 export class MyComponent {
-  name =  new FormControl<string>('');
+  name = new FormControl<string>('');
   nameChange = outputFromObservable(this.name.valueChanges);
 }
 ```
@@ -98,9 +104,9 @@ export class MyComponent {
 ##==##
 
 <!-- .slide: class="with-code inconsolata"-->
-# La fonction model 
+# The `model()` function 
 
-La fonction model permet de déclarer un two data binding sur une propriété
+The `model()` function declares a two-way data binding property.
 
 
 ```typescript
@@ -112,33 +118,40 @@ export class MyComponent {
 <!-- .element: class="medium-code" -->
 
 
-```angular17html
+```html
 <my-component [(name)]="firstname" />
 ```
 <!-- .element: class="medium-code"-->
 
 <br/><br/>
 
-Dans l'exemple: firstname peut etre
-- une valeur simple Javascript
-- un signal
+In this example, `firstname` can be:
+- A simple JavaScript value
+- A signal
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata"-->
-# Les fonctions viewChild et contentChild
+# The `viewChild` and `contentChild` functions
 
 <br/>
 
-- Ces fonctions permettent de récupérer des élements du DOM dans un composant <br/><br/>
-- elles renvoient un signal
+- These functions retrieve elements from the DOM within a component.<br/><br/>
+- They return a signal.
 
 <br/> <br/>
 
 ```typescript
-import {ElementRef} from "@angular/core";
+import { Component, ElementRef, viewChild } from "@angular/core";
 
-const input = viewChild<ElementRef<HTMLInputElement>>('input');
-console.log(input().nativeElement);
+@Component({...})
+export class MyComponent {
+  input = viewChild.required<ElementRef<HTMLInputElement>>('input');
+
+  logInputValue() {
+    // The signal's value might be undefined until after the view is initialized.
+    console.log(this.input()?.nativeElement.value);
+  }
+}
 ```
 <!-- .element: class="big-code"-->

@@ -1,93 +1,105 @@
 <!-- .slide: class="transition-bg-sfeir-1" -->
-
-# Template Driven Form
-
-##==##
-
-<!-- .slide: class="with-code inconsolata" -->
-
-# La Fondation du Template driven Form
-
-Pour réaliser des formulaires avec le template driven forms, il est nécessaire d'importer le module <b>FormsModule</b> provenant du package <b>@angular/forms</b><br/><br/>
-
-```typescript
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-
-@NgModule({
-    imports: [BrowserModule, FormsModule],
-    declarations: [],
-    providers: [],
-    bootstrap: []
-})
-export class AppModule {}
-```
-
-<!-- .element: class="big-code" -->
+# Template-Driven Forms
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
+# Getting Started with Template-Driven Forms
 
-# La syntaxe dans le template driven forms
-
--   <b>#authenticationForm="ngForm"</b>: On déclare une référence sur un formulaire prenant comme valeur la directive ngForm<br/><br/>
--   <b>authentication.value</b> permet de récupérer en format JSON objet, toutes les valeurs des champs du formulaire <br/><br/>
-
-```html
-<form #authenticationForm="ngForm" (ngSubmit)="onSubmit(f.value)"></form>
-```
-
-<!-- .element: class="big-code" -->
-
-##==##
-
-<!-- .slide: class="with-code inconsolata" -->
-
-# Le binding dans le template driven form
-
-- Deux composantes obligatoires:
-  - **ngModel**: le binding d'un contrôle
-  - **name**: associer un nom au contrôle du champ
-
+For standalone components, import `FormsModule` directly into the component's `imports` array.
 <br/><br/>
 
-- **Exemple 1**: binding View -> Model
+```typescript
+// user-profile.component.ts
+import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
-```html
-<input type="text" name="title" ngModel />
+@Component({
+  selector: 'app-user-profile',
+  standalone: true,
+  imports: [FormsModule], // Import here
+  templateUrl: './user-profile.component.html',
+})
+export class UserProfileComponent {
+  // ...
+}
 ```
-
 <!-- .element: class="medium-code" -->
-- **Exemple 2**: binding Model -> View
 
-```html
-<input type="text" name="title" [ngModel]="person.name" />
+For module-based apps, you would add `FormsModule` to the `imports` array of your `NgModule`.
+
+##==##
+
+<!-- .slide: class="two-column with-code inconsolata" -->
+# Building a Template-Driven Form
+
+The form's logic is managed primarily in the template.
+
+```typescript
+// user-profile.component.ts
+@Component({ ... })
+export class UserProfileComponent {
+  person = {
+    firstname: 'John',
+    address: {
+      city: 'Paris',
+      postalCode: '75001',
+    },
+  };
+
+  save(formValue: any) {
+    console.log('Form data:', formValue);
+  }
+}
 ```
 
-<!-- .element: class="medium-code" -->
-- **Exemple 3**: binding bidirectionnel
+##--##
+
+<br/>
 
 ```html
-<input [(ngModel)]="postalCode" name="postalCode" type="text" />
-```
+<!-- user-profile.component.html -->
+<form #profileForm="ngForm" (ngSubmit)="save(profileForm.value)">
 
+  <!-- 1. Two-way data binding with ngModel -->
+  <input name="firstname" [(ngModel)]="person.firstname" required />
+
+  <!-- 2. Group nested fields with ngModelGroup -->
+  <div ngModelGroup="address">
+    <input name="city" [(ngModel)]="person.address.city" />
+    <input name="postalCode" [(ngModel)]="person.address.postalCode" />
+  </div>
+
+  <button type="submit" [disabled]="profileForm.invalid">
+    Save
+  </button>
+</form>
+```
 <!-- .element: class="medium-code" -->
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
+# Key Directives
 
-# Regrouper des champs dans un sous objet
+- **`#profileForm="ngForm"`**: Creates a template reference variable for the `NgForm` directive, giving you access to the form's state (e.g., `profileForm.value`, `profileForm.invalid`).
 
-<b>ngModelGroup</b> regroupe des contrôles dans un sous objet<br/><br/>
+- **`[(ngModel)]`**: Creates a two-way data binding between the input and a component property. It also registers the control with the parent form.
 
-```html
-<div ngModelGroup="address">
-    <p><input ngModel name="city" /></p>
-    <p><input ngModel name="postalCode" /></p>
-</div>
+- **`name`**: A required attribute for any input using `ngModel` within a form. It serves as the key in the form's value object.
 
+- **`ngModelGroup`**: Groups related controls into a nested object within the form's value.
+
+<br/>
+
+```json
+// Example profileForm.value
+{
+  "firstname": "John",
+  "address": {
+    "city": "Paris",
+    "postalCode": "75001"
+  }
+}
 ```
-
 <!-- .element: class="big-code" -->

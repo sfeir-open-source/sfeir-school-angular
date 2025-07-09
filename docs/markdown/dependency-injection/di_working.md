@@ -1,78 +1,71 @@
-<!-- .slide-->
-# Principe de la DI en Angular
+<!-- .slide -->
+# Principle of DI in Angular
 
--   Les <b>3 notions principales </b> <br/><br/>
-    -   L'Injector <br/><br/>
-    -   Le DI Token (DI: Dependency Injection) <br/><br/>
-    -   Le Provider <br/><br/>
-    
-
-##==##
-
-<!-- .slide-->
-
-# L'Injector
-
--   Responsabilités :<br/><br/> 
-    -   <b>Créer les instances</b> des dépendances. (avec l'aide des <b>Providers</b>)<br/><br/>
-    -   Garder les instances de dépendances dans son <b>"cache"</b> <br/><br/>
-    -   <b>Mettre à disposition</b> les dépendances aux classes qui les demandent.
+- The <b>3 main concepts</b>
+    - The Injector
+    - The DI Token (DI: Dependency Injection)
+    - The Provider
 
 ##==##
 
-<!-- .slide-->
+<!-- .slide -->
+# The Injector
 
-# L'Injector
-
--   Vous n'avez pas à créer d'injector par vous même<br/><br/>
--   Il existe <b>2 hiérarchies d'injector</b> dans votre application:<br/><br/>
-    -  les <b>ModuleInjector</b>: créés implicitement pour chaque module + 1 injector appelé "root"<br/><br/>
-    -  les <b>ElementInjector</b>: créés implicitement pour chaque élément du DOM (composant)<br/><br/>
-- Chaque Injector contient (ou non) un singleton d'une dépendance, et peut injecter cette instance dans plusieurs composants ou services. 
+- Responsibilities:
+    - <b>Create instances</b> of dependencies. (with the help of <b>Providers</b>)
+    - Keep instances of dependencies in its <b>"cache"</b>
+    - <b>Make available</b> the dependencies to the classes that request them.
 
 ##==##
 
-<!-- .slide-->
+<!-- .slide -->
+# The Injector
 
-# Le DI Token
+- You don't have to create an injector by yourself
+- There are <b>2 injector hierarchies</b> in your application:
+    - the <b>ModuleInjector</b>: implicitly created for each module + 1 injector called "root"
+    - the <b>ElementInjector</b>: implicitly created for each DOM element (component)
+- Each Injector contains (or not) a singleton of a dependency, and can inject this instance into several components or services.
 
--   Responsabilités :<br/><br/>
-    -   Permet <b>d’identifier</b> une dépendance. (KEY)<br/><br/>
-    -   Lors d’une demande d’injection de dépendance, l’injector va chercher à l’aide du token si une dépendance est disponible et s'il peut la créer. (<KEY/VALUE>)
+##==##
+
+<!-- .slide -->
+# The DI Token
+
+- Responsibilities:
+    - Allows to <b>identify</b> a dependency. (KEY)
+    - When a dependency injection is requested, the injector will use the token to check if a dependency is available and if it can create it. (<KEY/VALUE>)
 
 ##==##
 
-# Le Provider
+# The Provider
 
--   Responsabilités :<br/><br/>
-    -   Permet de définir <b>comment</b> obtenir une dépendance associée à un DI Token.<br/><br/>
-    -   Un provider est défini pour <b>un</b> injector et il sera utilisé par ce dernier pour créer les dépendances.
-
+- Responsibilities:
+    - Allows to define <b>how</b> to obtain a dependency associated with a DI Token.
+    - A provider is defined for <b>one</b> injector and it will be used by the latter to create the dependencies.
 
 ##==##
-<!-- .slide-->
-# Principe de la DI en Angular
-
+<!-- .slide -->
+# Principle of DI in Angular
 
 ![center h-600](../../assets/images/school/dependency-injection/di_working.png)
 
 ##==##
 
 <!-- .slide -->
+# How to configure these 3 concepts
 
-# Comment paramétrer ces 3 notions
+- Injector & Provider:
+  - <b>providedIn</b> property of the <b>@Injectable</b> decorator
+  - <b>providers: []</b> property of the <b>@NgModule, @Component, @Directive, @Pipe</b> decorators
+- Token:
+  - implicit (most of the time)
+  - or via the <b>@Inject</b> decorator
 
-- Injector & Provider:<br/><br/>
-  - propriété <b>providedIn</b> du décorateur <b>@Injectable</b><br/><br/>
-  - propriété <b>providers: []</b> des décorateurs <b>@NgModule, @Component, @Directive, @Pipe</b><br/><br/>
-- Token:<br/><br/>
-  - implicite (la plupart du temps)<br/><br/>
-  - ou via le décorateur <b>@Inject</b><br/><br/>
 ##==##
 
-<!-- slide: class="two-column-layout"-->
-## Types d'Injector: ModuleInjector
-
+<!-- .slide: class="two-column-layout" -->
+## Injector Types: ModuleInjector
 
 <!-- .slide: class="with-code inconsolata" -->
 
@@ -88,7 +81,7 @@
 export class ItemModule {}
 ```
 
-<!-- .element: class="medium-code"-->
+<!-- .element: class="medium-code" -->
 
 ```typescript
 import { Injectable } from '@angular/core';
@@ -98,7 +91,7 @@ export class ItemService {
 }
 ```
 
-<!-- .element: class="medium-code"-->
+<!-- .element: class="medium-code" -->
 
 ##--##
 
@@ -115,7 +108,7 @@ export class ItemService {
 export class ItemModule {}
 ```
 
-<!-- .element: class="medium-code"-->
+<!-- .element: class="medium-code" -->
 
 ```typescript
 import { Injectable } from '@angular/core';
@@ -127,16 +120,14 @@ export class ItemService {
 }
 ```
 
-<!-- .element: class="medium-code"-->
+<!-- .element: class="medium-code" -->
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
+# Injector Types: ModuleInjector
 
-# Types d'Injector: ModuleInjector
-
--   Il existe pour chaque application un ModuleInjector appelé <b>'root'</b> au sommet de la hierarchie
-    <br/><br/>
+- For each application, there is a ModuleInjector called <b>'root'</b> at the top of the hierarchy
 
 ```typescript
 import { Injectable } from '@angular/core';
@@ -151,17 +142,13 @@ export class ItemService {
 <!-- .element: class="big-code" -->
 
 ##==##
-<!-- .slide: class="two-column"-->
+<!-- .slide: class="two-column" -->
 ## Hierarchy Injection
-
-<br/>
 
 ![center h-500](../../assets/images/school/dependency-injection/DI-module.png)
 
 ##--##
 <!-- .slide: class="with-code inconsolata" -->
-
-<br/><br/><br/><br/><br/><br/>
 
 ```typescript
 import { NgModule } from '@angular/core';
@@ -177,23 +164,19 @@ export class ItemsModule {
 
 ##==##
 
-<!-- .slide: class="two-column"-->
+<!-- .slide: class="two-column" -->
 ## Hierarchy Injection
-
-<br/>
 
 ![center h-450](../../assets/images/school/dependency-injection/DI-parent.png)
 
 ##--##
 <!-- .slide: class="with-code inconsolata" -->
 
-<br/><br/><br/><br/><br/><br/>
-
 ```typescript
 @Component({
   selector: 'parent',
   templateUrl: 'parent.component.html',
-  styleUrls: ['parent.component.css']
+  styleUrls: ['parent.component.css'],
   providers: [SimpleService]
 })
 export class ParentComponent { ... }
@@ -203,17 +186,13 @@ export class ParentComponent { ... }
 
 ##==##
 
-<!-- .slide: class="two-column"-->
+<!-- .slide: class="two-column" -->
 ## Hierarchy Injection
-
-<br/>
 
 ![center h-500](../../assets/images/school/dependency-injection/DI-root.png)
 
 ##--##
 <!-- .slide: class="with-code inconsolata" -->
-
-<br/><br/><br/><br/><br/><br/>
 
 ```typescript
 import { Injectable } from '@angular/core';
@@ -229,30 +208,26 @@ export class SimpleService {
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide -->
+<!-- .slide: class="sfeir-basic-slide" -->
+# Zoom on `providers = []`
 
-# Zoom sur `providers = []`
-
-<br/>
-
--   Fait le lien entre <b>InjectionToken</b> (token) et une <b>Factory</b><br/><br/>
--   Permet de découpler la dépendance et son implémentation<br/><br/>
+- Links <b>InjectionToken</b> (token) and a <b>Factory</b>
+- Allows decoupling the dependency and its implementation
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Zoom sur `providers = []`
+# Zoom on `providers = []`
 
-- Cette expression est un raccourci :
+- This expression is a shortcut:
 
 ```typescript
 providers: [MyService]
 ```
+
 <!-- .element: class="big-code" -->
 
-<br/><br/>
-
-- Elle revient à écrire :
+- It is equivalent to writing:
 
 ```typescript
 providers: [ { provide: MyService, useClass: MyService }]
@@ -263,13 +238,9 @@ providers: [ { provide: MyService, useClass: MyService }]
 ##==##
 
 <!-- .slide -->
+# The different types of resolution
 
-# Les différents types de résolution
-
-<br/><br/>
-<!-- .element: class="big-code" -->
-
--   Valeur<br/><br/>
--   Classe alternative<br/><br/>
--   Classes aliasée<br/><br/>
--   Factory
+- Value
+- Alternative class
+- Aliased classes
+- Factory

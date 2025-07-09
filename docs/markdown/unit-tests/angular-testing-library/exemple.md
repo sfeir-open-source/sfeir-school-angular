@@ -1,5 +1,5 @@
 <!-- .slide: class="with-code inconsolata" -->
-# Un Exemple concret
+# A Concrete Example
 
 ```typescript
 describe('HomeComponent', () => {

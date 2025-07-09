@@ -1,10 +1,10 @@
 <!-- .slide: class="with-code inconsolata" -->
 
-# La directive ng-container
+# The ng-container directive
 
-- Créer un template sans créer un élement supplémentaire<br/><br/>
-- Pratique lorsque l'on a besoin d'utiliser plusieurs directives structurelles sur le même élément <br/><br/>
-- Utile pour téléporter un contenu d'une balise ng-template <br/><br/>
+- Creates a template without creating an additional element<br/><br/>
+- Useful when you need to use multiple structural directives on the same element <br/><br/>
+- Useful for teleporting content from an ng-template tag <br/><br/>
 
 ```html
 
@@ -21,10 +21,10 @@
 
 <!-- .slide: class="with-code inconsolata" -->
 
-# La directive structurelle ngTemplateOutlet
+# The ngTemplateOutlet structural directive
 
-- Prend deux paramètres, un template et un context
-- Le context doit être obligatoirement un object <br/><br/>
+- Takes two parameters, a template and a context
+- The context must be an object <br/><br/>
 
 ```typescript
 @Component({
@@ -45,19 +45,17 @@ export class AppComponent {
 
 Notes:
 
-- Ici let-lessonsCounter doit absolement être égal à estimate, puisque dans le context c'est ainsi que l'on nomme la
-  variable
-- Si l'on souhaite utiliser une autre variable qu'estimate, donner un nom aléatoire, il est obligatoire de passer par
-  $implicit => ctx = { $implicit: this.totalEstimate }
+- Here, `let-lessonsCounter` must be equal to `estimate`, since that is how the variable is named in the context.
+- If you want to use a variable other than `estimate` with a random name, you must use `$implicit` => `ctx = { $implicit: this.totalEstimate }`
 
 ##==##
 
 <!-- .slide: class="inconsolata with-code"-->
 
-# Notion de context implicit
+# The concept of implicit context
 
-- Permet de définir une variable de template sans l'affecter
-- Utilisé par la directive *ngFor :) <br/><br/>
+- Allows defining a template variable without assigning it
+- Used by the *ngFor directive :) <br/><br/>
 
 ```typescript
 @Component({

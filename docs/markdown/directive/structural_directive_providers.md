@@ -1,36 +1,37 @@
-# Introduction à de nouveaux services :) !
+# Dynamic Component Loading
 
-- ComponentFactoryResolver<br><br>
-- TemplateRef<br><br>
-- ViewContainerRef<br><br>
-
-##==##
-
-# Le service componentFactoryResolver
-
-- Permet de créer une factory de component <br><br>
-- Possède la méthode : __resolveComponentFactory__ prenant en paramètre un composant <br><br>
-- Le composant se place obligatoire dans la props entryComponents du Module <br><br>
+- TemplateRef
+- ViewContainerRef
 
 ##==##
 
-# Le service ViewContainerRef
+# Modern Dynamic Components
 
-- Permet la création de vue dynamique <br><br>
-- Possède plusieurs méthodes <br><br>
-    - __get__: récupère une vue par rapport à son container
-    - __clear__: détruit toutes les vue du container
-    - __createEmbeddedView__: instancie une vue et l'insert dans son container
-    - __createComponent__: instancie un composant et l'insert dans son container
-    - __insert__: insert une vue dans son container
-    - __move__: déplace une vue dans son container
-    - __remove__: supprime une vue dans son container
-    - __detach__: enlève une vue de son container sans la supprimer
-    - __indexOf__: récupère l'index de la vue
+- In modern Angular, creating components dynamically is much simpler.
+- `ComponentFactoryResolver` and the `entryComponents` array are **deprecated**.
+- You can now create components directly using the `ViewContainerRef` service without a factory.
 
 ##==##
 
-# Le service TemplateRef
+# The ViewContainerRef service
 
-- Permet de récupérer un template imbriqué <br><br>
-- Permet de créer par la suite une vue grâce au service ViewContainerRef
+- Represents a container where one or more views can be attached.
+- It's the key to creating dynamic components and embedded views.
+- Has several methods:
+    - __clear__: destroys all views in the container
+    - __createComponent__: instantiates a component and inserts it into the container.
+    - __createEmbeddedView__: instantiates an embedded view from a `TemplateRef`.
+    - __get__: retrieves a view from its container
+    - __insert__: inserts a view into its container
+    - __move__: moves a view within its container
+    - __remove__: removes a view from its container
+    - __detach__: detaches a view from its container without destroying it
+    - __indexOf__: gets the index of the view
+
+##==##
+
+# The TemplateRef service
+
+- Represents an embedded template that can be used to instantiate embedded views.
+- You get a `TemplateRef` instance by placing an `<ng-template>` element in your template.
+- It is used with `ViewContainerRef.createEmbeddedView()` to create and render the view.

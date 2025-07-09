@@ -1,31 +1,36 @@
 <!-- .slide-->
-# Selectors : Définition
+# Selectors: Definition
 
-Les sélecteurs sont des fonctions qui récupèrent une partie ou totalement notre state<br/><br/>
-Dans **NGXS** il existe deux méthodes pour sélectionner notre state (ou partie de notre state):<br/><br/>
+Selectors are functions that retrieve a slice of your state.<br/><br/>
+In **NGXS**, there are two primary ways to select state:<br/><br/>
 
--   méthode select du store<br/><br/>
--   le décorateur **@Select**
+-   The `store.select()` method.<br/><br/>
+-   The **`@Select`** decorator.
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
 
-# Selectors : Décorateur @Select
+# Selectors: @Select Decorator
+
+The `@Select` decorator is a convenient way to select state directly within your components.
 
 ```typescript
+import { Component } from '@angular/core';
 import { Select } from '@ngxs/store';
 import { ZooState, ZooStateModel } from './zoo.state';
+import { Observable } from 'rxjs';
+
 @Component({ ... })
 export class ZooComponent {
-  // Reads the name of the state from the state class
-  @Select(ZooState) animals$: Observable<string[]>;
-  // Uses the pandas memoized selector to only return pandas
+  // 1. Selects the entire ZooState slice
+  @Select(ZooState) zoo$: Observable<ZooStateModel>;
+
+  // 2. Uses a memoized selector from the state class
   @Select(ZooState.pandas) pandas$: Observable<string[]>;
-  // Also accepts a function like our select method
+
+  // 3. Accepts a function to select a nested property
   @Select(state => state.zoo.animals) animals$: Observable<string[]>;
-  // Reads the name of the state from the parameter
-  @Select() zoo$: Observable<ZooStateModel>;
 }
 ```
 
@@ -34,14 +39,16 @@ export class ZooComponent {
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Selectors : Select Function
+# Selectors: `select` Function
 
-Le store possède une méthode **select** qui peut être utile lorsque l'on ne peut pas déclarer statiquement un sélecteur avec le décorateur **@Select**.<br/>
-Attention cette méthode renvoie un Observable
+The store also has a `select` method, which is useful when you cannot use the `@Select` decorator (e.g., in a service or dynamically).
+
 <br/><br/>
 
 ```typescript
 import { Store } from '@ngxs/store';
+import { Observable } from 'rxjs';
+
 @Component({ ... })
 export class ZooComponent {
   animals$: Observable<string[]>;
@@ -52,19 +59,19 @@ export class ZooComponent {
 ```
 <!-- .element: class="big-code" -->
 
-Notes:
-
--   Il existe la méthode selectOnce qui permet de prendre l'état courant et ne plus regarder le stream
--   Il existe également une méthode snapchot qui permet de récupérer l'état courant sans observable très utile dans les Interceptors
+**Note:**
+- `store.selectOnce()`: Selects the current state and then completes the observable stream.
+- `store.snapshot()`: Returns the raw value of the state at that instant, without an Observable. This is very useful in contexts like route guards or HTTP interceptors.
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Selectors : Memoized Selectors
+# Selectors: Memoized Selectors
 
-Lorsque l'on souhaite utiliser un sélecteur dans différents endroits de son application ou encore avoir une logique de sélecteur plus compliquée qu'un simple renvoi de state courant, les **Memoized Selectors** sont vos alliés.
+When you need to reuse a selector in multiple places or have complex logic, **Memoized Selectors** are the perfect tool. They are defined within the state class using the `@Selector` decorator.
 
 ```typescript
+import { Injectable } from '@angular/core';
 import { State, Selector } from '@ngxs/store';
 
 @State<string[]>({
@@ -75,7 +82,7 @@ import { State, Selector } from '@ngxs/store';
 export class ZooState {
   @Selector()
   static pandas(state: string[]) {
-    return state.filter(s => s.indexOf('panda') > -1);
+    return state.filter(s => s.includes('panda'));
   }
 }
 ```
@@ -84,16 +91,22 @@ export class ZooState {
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Selectors : Memoized Selectors
+# Using Memoized Selectors
+
+Once defined, you can use a memoized selector with either `@Select` or `store.select()`.
 
 ```typescript
 @Component({...})
 export class AppComponent {
-  constructor(private readonly store: Store) { }
-  // with the method decorator
+  // With the @Select decorator
   @Select(ZooState.pandas) pandas$: Observable<string[]>;
-  // with the select method
-  this.pandas$ = this.store.select(ZooState.pandas);
+
+  // With the store.select() method
+  pandasFromSelect$: Observable<string[]>;
+
+  constructor(private readonly store: Store) {
+    this.pandasFromSelect$ = this.store.select(ZooState.pandas);
+  }
 }
 ```
 <!-- .element: class="big-code" -->

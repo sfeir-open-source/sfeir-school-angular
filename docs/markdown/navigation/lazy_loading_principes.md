@@ -1,24 +1,23 @@
 <!-- .slide-->
-# Le principe du Lazyloading
+# The Principle of Lazy Loading
 
-- Lazy Loading des modules<br/><br/>
-- Evite de charger tout le code des modules dans un unique bundle<br/><br/>
-- Permet de différer le chargement d'une partie de l'application<br/><br/>
-- Angular a fait le choix de s’appuyer sur la notion de Modules (NgModules) et des routes afin de gérer cette problématique.
+- Lazy Loading of modules<br/><br/>
+- Avoids loading all module code into a single bundle<br/><br/>
+- Allows deferring the loading of a part of the application<br/><br/>
+- Angular has chosen to rely on the concept of Modules (NgModules) and routes to handle this issue.
 
 ##==##
 
 <!-- .slide-->
-# Le principe du Lazyloading
+# The Principle of Lazy Loading
 
-- Vouloir implémenter le lazy loading des modules dans votre application implique de bien organiser son projet au préalable<br/><br/>
-- <b>Root Module</b> : module de chargement de votre application (app.module.ts)
-- <b>Feature Module</b> : regroupement dans un module d’une fonctionnalité spécifique d’une application (composants pages)<br/><br/>
+- Implementing lazy loading of modules in your application implies organizing your project well beforehand<br/><br/>
+- <b>Root Module</b>: your application's loading module (app.module.ts)
+- <b>Feature Module</b>: grouping a specific application feature into a module (page components)<br/><br/>
   ![full-center](assets/images/school/lazy-loading/module-architecture-level-1.png)
 
 ##==##
 
 <!-- .slide-->
-# Le principe du Lazyloading
+# The Principle of Lazy Loading
 ![full-center](assets/images/school/lazy-loading/module-architecture-level-2.png)
-

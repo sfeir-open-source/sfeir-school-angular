@@ -1,10 +1,10 @@
 <!-- .slide: class="with-code inconsolata" -->
 
-# Les variables de template
+# Template variables
 
--   Références:
-    -   Élement (# our ref-XXX)
-    -   Disponible dans tout le template<br/><br/>
+-   References:
+    -   Element (# or ref-XXX)
+    -   Available throughout the template<br/><br/>
 
 ```html
 <input #phone type="text" /> <button type="button" (click)="call(phone.value)">Click</button>
@@ -14,11 +14,11 @@
 
 <br/><br/>
 
--   Variables: une valeur (let) <br/><br/>
+-   Input variables in a loop<br/><br/>
 
 ```html
-<movie-details *ngFor="let movie of movies"></movie-details>
+@for (movie of movies; track movie.id) {
+  <movie-details [movie]="movie"></movie-details>
+}
 ```
 <!-- .element: class="big-code" -->
-
-

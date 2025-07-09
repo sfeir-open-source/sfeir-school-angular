@@ -1,27 +1,27 @@
 <!-- .slide -->
 
-# Les différents types de binding
+# The different types of binding
 
 <table>
     <thead>
         <tr>
             <td>Direction</td>
-            <td>Syntaxe</td>
+            <td>Syntax</td>
             <td>Type</td>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td>Unidirectionnel: modèle vers vue</td>
+            <td>Unidirectional: model to view</td>
             <td>
                 <p>{{ expression }}</p>
                 <p>[targetFooBar] = expression</p>
             </td>
             <td>
                 <p>Interpolation</p>
-                <p>Propriétés</p>
-                <p>Classe</p>
-                <p>Attribut</p>
+                <p>Properties</p>
+                <p>Class</p>
+                <p>Attribute</p>
                 <p>Style</p>
             </td>
         </tr>       
@@ -32,30 +32,30 @@
 
 <!-- .slide -->
 
-# Les différents types de binding
+# The different types of binding
 
 <table>
     <thead>
         <tr>
             <td>Direction</td>
-            <td>Syntaxe</td>
+            <td>Syntax</td>
             <td>Type</td>
         </tr>
     </thead>
     <tbody>        
         <tr>
-            <td>Unidirectionnel: vue vers modèle</td>
+            <td>Unidirectional: view to model</td>
             <td>
                 <p>(targetFooBar) = expression</p>
             </td>
-            <td>Evènements</td>
+            <td>Events</td>
         </tr>
         <tr>
-            <td>Bidirectionnel (2-way data binding)</td>
+            <td>Bidirectional (2-way data binding)</td>
             <td>
                 <p>[(targetFooBar)] = expression</p>
             </td>
-            <td>Bidirectionnel</td>
+            <td>Bidirectional</td>
         </tr>
     </tbody>
 </table>
@@ -63,7 +63,7 @@
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Interpolation et expression
+# Interpolation and expression
 ## Interpolation:
 
 ```html
@@ -75,12 +75,12 @@
 <br/><br/>
 
 ## Expression:
-- Dans le contexte du composant
-- Du TypeScript, **mais**
-    - pas d'affectation (sauf pour les events comme le clic sur un bouton)
-    - pas d'accès aux variables globales (window, document, ...)
-    - Pour les opérateurs logiques, tout est évalué
-    - Pas de new, ++, --
+- In the component's context
+- TypeScript, **but**
+    - no assignment (except for events like a button click)
+    - no access to global variables (window, document, ...)
+    - For logical operators, everything is evaluated
+    - No new, ++, --
 
 ##==##
 
@@ -92,16 +92,16 @@
     <thead>
         <tr>
             <td>Type</td>
-            <td>Cible</td>
+            <td>Target</td>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td>Propriété</td>
+            <td>Property</td>
             <td>
-                <p>Attribut de l'élément</p>
-                <p>Attribut de composant</p>
-                <p>Attribut de directive</p>
+                <p>Element attribute</p>
+                <p>Component attribute</p>
+                <p>Directive attribute</p>
             </td>
         </tr>
     </tbody>
@@ -137,16 +137,16 @@
     <thead>
         <tr>
             <td>Type</td>
-            <td>Cible</td>
+            <td>Target</td>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td>Évènement</td>
+            <td>Event</td>
             <td>
-                <p>Évènement d'éléments</p>
-                <p>Évènement de composants</p>
-                <p>Évènement de directives</p>
+                <p>Element event</p>
+                <p>Component event</p>
+                <p>Directive event</p>
             </td>
         </tr>
     </tbody>
@@ -156,7 +156,7 @@
 <!-- app.component.html -->
 <button (click)="onSave()"></button>
 <hero-detail (deleted)="onDeleted($event)"></hero-detail>
-<input (change)="firstName = $event"
+<input (change)="firstName = $event"/>
 ```
 <!-- .element: class="big-code" -->
 
@@ -164,7 +164,7 @@
 ##--##
 <br/><br/><br/>
 
--   Référence à l'event grâce à $event
+-   Reference to the event with $event
 
 ##==##
 
@@ -175,15 +175,15 @@
     <thead>
         <tr>
             <td>Type</td>
-            <td>Cible</td>
+            <td>Target</td>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td>bidirectionnel</td>
+            <td>bidirectional</td>
             <td>
-                <p>Propriétés</p>
-                <p>Évènement de directives</p>
+                <p>Properties</p>
+                <p>Directive event</p>
             </td>
         </tr>
     </tbody>
@@ -200,15 +200,15 @@
 
 <br/><br/><br/>
 
--   Equivalent à
+-   Equivalent to
 
 ```html
 <input
-    [ngModel]="firstname"
-    (ngModelChange)="firstname = $event" />
+    [ngModel]="firstName"
+    (ngModelChange)="firstName = $event" />
 ```
 <!-- .element: class="big-code" -->
 
 <br/>
 
--   <bg>ngModel</bg> provient de la librairie <strong>@angular/forms</strong>
+-   <bg>ngModel</bg> comes from the <strong>@angular/forms</strong> library

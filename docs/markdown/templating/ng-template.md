@@ -1,8 +1,8 @@
 <!-- .slide class="inconsolata with-code" -->
-# La directive ng-template
+# The ng-template directive
 
-- Permet de définir un template en Angular
-- Type du template : TemplateRef<T>
+- Allows defining a template in Angular
+- Template type: TemplateRef<T>
 <br/><br/>
 
 ```html
@@ -17,23 +17,23 @@
 <!-- .element: class="big-code" -->
 <br/>
 
-- Loading ici ne s'affichera jamais
-- On vient de définir un template mais on ne l'utilise pas
+- `Loading` will never be displayed here
+- We have just defined a template, but we are not using it
 <br/><br/>
 
-Mais alors comment l'utilise t'on ?
+So how do we use it?
 <!-- .element: class="bold important" -->
 
 Notes:
 
-- ng-template revient à déclarer une simple variable, dans ce cas si la variable est un template
+- `ng-template` is like declaring a simple variable; in this case, the variable is a template.
 
 ##==##
 
 <!-- .slide: class="inconsolata with-code" -->
-# Utilisation de la directive ng-template
+# Using the ng-template directive
 
-- S'utilise principalement avec les directives structurelles (*ngIf, *ngFor, ...)
+- It is mainly used with structural directives (*ngIf, *ngFor, ...)
 <br/><br/>
 
 ```html
@@ -49,11 +49,11 @@ Notes:
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Utilisation de la directive ng-template
+# Using the ng-template directive
 
-- En fait, les directives structurelles (*ngIf, *ngFor, ...) sont elles-mêmes des 'ng-template' !
+- In fact, structural directives (*ngIf, *ngFor, ...) are themselves 'ng-templates'!
 <br/><br/>
-Par exemple :
+For example:
 
 ```html
 
@@ -63,7 +63,7 @@ Par exemple :
 ```
 
 <!-- .element: class="big-code" -->
-est un raccourci pour :
+is a shortcut for:
 ```html
 
 <ng-template [ngIf]="condition">

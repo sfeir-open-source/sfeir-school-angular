@@ -1,5 +1,5 @@
 <!-- .slide: class="with-code inconsolata no-title-margin" -->
-# Les helpers services
+# Helper services
 
 ```typescript
 @Injectable()

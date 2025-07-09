@@ -4,16 +4,16 @@
 ##==##
 
 <!-- .slide -->
-# Host binding: Définition
+# Host binding: Definition
 
-- Permet de setter une propriété sur l'élément courant de la directive<br/><br/>
-- Décorateur @HostBinding()<br/><br/>
-- Watcher sur les propriétés du host et mise à jour automatique
+- Allows setting a property on the directive's host element<br/><br/>
+- @HostBinding() decorator<br/><br/>
+- Watches host properties and updates automatically
 
 ##==##
 
 <!-- .slide: class="inconsolata with-code" -->
-# Host binding: Exemple
+# Host binding: Example
 
 ```typescript
 @Directive({selector: '[ngModel]'})
@@ -25,4 +25,4 @@ class NgModelStatus {
 ```
 <!-- .element: class="big-code" -->
 Notes:
-- ici set la propriété class à valid si le control est valide ou invalid si le control est invalide
+- here, it sets the class property to valid if the control is valid, or invalid if the control is invalid

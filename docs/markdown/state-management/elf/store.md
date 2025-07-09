@@ -1,7 +1,7 @@
 <!-- .slide: class="with-code inconsolata" -->
-# Créer un store: Une simplicité déconcertante
+# Creating a Store: Deceptively Simple
 
-**Important** Il est judicieux de créer son store dans un service Angular
+**Important**: It is wise to create your store within an Angular service.
 
 <br>
 
@@ -22,9 +22,9 @@ const appStore = createStore(
 ##==##
 
 <!--.slide: class="with-code inconsolata" -->
-# C'est vrai que c'est simple mais je fais comment pour update ?
+# It's simple, but how do I update it?
 
-La méthode **update** est ton ami
+The **update** method is your friend.
 
 <br>
 
@@ -35,23 +35,25 @@ appStore.update((state) => ({ ...state, search: 'Nicolas'}))
 
 <br>
 
-Ohhhh on a pas de helper ?? :(
+Ohhh, don't we have any helpers? :(
 
-**setProps** à la rescousse
+**setProps** to the rescue!
 
 <br>
 
 ```typescript
-appStore.update(setProps('search', 'Nicolas'))
+import { setProps } from '@ngneat/elf';
+
+appStore.update(setProps({ search: 'Nicolas' }))
 ```
 <!-- .element: class="medium-code" -->
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Et si je veux récupérer mon state à un instant T ?
+# How do I get the state at a given time?
 
-Un store est en réalité un simple BehaviorSubject, ce qui signifie qu'une simple subscription à notre store nous garantie un state toujours à jour
+A store is actually just a `BehaviorSubject`, which means a simple subscription guarantees an always up-to-date state.
 
 <br>
 
@@ -64,11 +66,13 @@ appStore.subscribe(state => {
 
 <br>
 
-L'opérateur **select**, vous permet de récupérer une partie de votre state si celui-ci change (ie: changement de référence)
+The **select** operator allows you to retrieve a part of your state only when it changes (i.e., reference change).
 
 <br>
 
 ```typescript
-const search$ = appStore.pipe(select(state => state.search))
+import { select } from '@ngneat/elf';
+
+const search$ = appStore.pipe(select(state => state.search));
 ```
 <!-- .element: class="medium-code" -->

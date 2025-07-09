@@ -1,17 +1,17 @@
-# Un control flow directement au framework
+# A control flow directly in the framework
 
-Depuis Angular 17, le control flow d'Angular fait part intégrante du framework et du compilo de templating:
+Since Angular 17, Angular's control flow is an integral part of the framework and the templating compiler:
 <br/><br/>
 
-- performance accrue <br/><br/>
-- suppression des imports NgIf NgFor NgSwitch<br/><br/>
-- bundle plus léger
+- increased performance <br/><br/>
+- removal of NgIf, NgFor, NgSwitch imports<br/><br/>
+- lighter bundle
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
 
-# Migration ngIf vers @if block
+# Migrating from ngIf to @if block
 
 **Before**
 
@@ -39,7 +39,7 @@ Depuis Angular 17, le control flow d'Angular fait part intégrante du framework 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Migration ngFor vers @for block
+# Migrating from ngFor to @for block
 
 **Before**
 
@@ -55,47 +55,47 @@ Depuis Angular 17, le control flow d'Angular fait part intégrante du framework 
 **After**
 
 ```angular17html
-@for( user of user$ |async; track user.id) {
-  <ul>
-    <li>{{ user.name }}</li>
-  </ul>
+<ul>
+@for( user of users$ | async; track user.id) {
+  <li>{{ user.name }}</li>
 }
+</ul>
 ```
 <!-- .element: class="big-code" -->
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Variable implicite de la boucle for
+# Implicit variables of the for loop
 
 
-|Variable| Signification de la variable                                                 | 
+|Variable| Meaning of the variable                                                 |
 |-------|------------------------------------------------------------------------------|
-|$count| Nombre d'élement dans la list                                                |
-|$index| Index de l'élement dans la list                                              |
-|$first| Premier élement de la list                                                   |
-|$last| Dernier élement de la list                                                   |
-|$even| Index pair                                                                   |
-|$odd| Index impair                                                                 |
-|$track| Function de tracking ou valeur de tracking (obligatoire avec la syntax @for) |
+|$count| Number of items in the list                                                |
+|$index| Index of the item in the list                                              |
+|$first| First item in the list                                                   |
+|$last| Last item in the list                                                   |
+|$even| Even index                                                                   |
+|$odd| Odd index                                                                 |
+|$track| Tracking function or tracking value (mandatory with @for syntax) |
 
 <br/>
 
-Chaque variable peut être aliasé avec le mot clé 'let'
+Each variable can be aliased with the 'let' keyword
 <!-- .element: class="important" -->
 
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Migration ngSwitch vers @switch block
+# Migrating from ngSwitch to @switch block
 
 **Before**
 
 ```angular2html
-<div [ngSwitch]="user$ | async as user">
-  <div *ngSwitchCase="user.role === 'admin'">Admin</div>
-  <div *ngSwitchCase="user.role === 'user'">User</div>
+<div [ngSwitch]="(user$ | async)?.role">
+  <div *ngSwitchCase="'admin'">Admin</div>
+  <div *ngSwitchCase="'user'">User</div>
   <div *ngSwitchDefault>Guest</div>
 </div>
 ```
@@ -103,15 +103,17 @@ Chaque variable peut être aliasé avec le mot clé 'let'
 **After**
 
 ```angular17html
-@switch(user) {
-  @case(user.role === 'admin') {
-    <div>Admin</div>
-  }
-  @case(user.role === 'user') {
-    <div>User</div>
-  }
-  @default {
-    <div>Guest</div>
+@if (user$ | async; as user) {
+  @switch(user.role) {
+    @case('admin') {
+      <div>Admin</div>
+    }
+    @case('user') {
+      <div>User</div>
+    }
+    @default {
+      <div>Guest</div>
+    }
   }
 }
 ```
@@ -119,7 +121,7 @@ Chaque variable peut être aliasé avec le mot clé 'let'
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Migration automatique à l'aide d'une simple commande
+# Automatic migration using a simple command
 
 <br/><br/><br/>
 
@@ -127,5 +129,3 @@ Chaque variable peut être aliasé avec le mot clé 'let'
 ng generate @angular/core:control-flow
 ```
 <!-- .element: class="big-code center" -->
-
-

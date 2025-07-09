@@ -1,18 +1,18 @@
 <!-- .slide -->
-# Store : Définition
+# Store: Definition
 
-Le **store** est un gestionnaire d'état global/par feature qui permet:
+The **store** is a global or feature-level state manager that allows you to:
 <br/><br/>
 
--   de dispatcher des actions<br/><br/>
--   sélectionner le state dans son entièreté ou partiellement
+-   Dispatch actions<br/><br/>
+-   Select the state, either in its entirety or partially
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Store : Actions
+# Store: Actions
 
-Créer l'action:
+Create the action:
 
 ```typescript
 export class AddAnimal {
@@ -25,9 +25,9 @@ export class AddAnimal {
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Store : Actions
+# Store: Actions
 
-Utiliser l'action:
+Use the action:
 
 ```typescript
 import { Store } from '@ngxs/store';

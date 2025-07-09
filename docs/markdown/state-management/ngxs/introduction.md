@@ -5,24 +5,26 @@
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Premier pas
+# First Steps
 
-**NGXS** est une librairie externe à Angular, il faut donc l'installer en dépendance de notre projet
+**NGXS** is an external library for Angular, so it must be installed as a project dependency.
 
 ```sh
-npm install --save @ngxs/store // ng add @ngxs/store
+npm install @ngxs/store --save
+# or use the Angular CLI
+ng add @ngxs/store
 ```
 
 <!-- .element: class="big-code" -->
 <br/>
 
-Et l'importer dans notre projet
+And import it into our project:
 <br/>
 
 ```typescript
 import { NgModule } from '@angular/core';
 import { NgxsModule } from '@ngxs/store';
-import { ZooState } from './store';
+import { ZooState } from './store/zoo.state';
 
 @NgModule({
   imports: [NgxsModule.forRoot([ZooState])]
@@ -31,15 +33,14 @@ export class AppModule {}
 ```
 <!-- .element: class="big-code" -->
 
-Notes:
-
--   ZooState correspond au state de notre application
+**Note:**
+- `ZooState` corresponds to a state class in our application.
 
 ##==##
 
 <!-- .slide: class="two-column" -->
 
-# Concepts clé de NGXS
+# Key Concepts of NGXS
 
 -   Store <br/><br/>
 -   Actions <br/><br/>
@@ -51,9 +52,9 @@ Notes:
 <br/><br/><br/>
 
 ![h-550](assets/images/school/state-management/ngxs/ngxs_concepts.png)
-Notes:
 
--   store contient le state, les actions et les sélecteurs, on peut associer cela à un magasin
--   state: état de la vue
--   actions: ce sont des classes qui décrivent les évolutions de notre état
--   sélecteur: sélectionne le state dans son entièreté ou partiellement
+**Note:**
+-   **Store**: A global container for state, actions, and selectors.
+-   **State**: A class defining a slice of the application state.
+-   **Actions**: Classes that describe the state changes to be performed.
+-   **Selects**: Functions that retrieve slices of the state.

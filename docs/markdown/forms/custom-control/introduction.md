@@ -1,27 +1,25 @@
 <!-- .slide: class="with-code inconsolata" -->
-# Contexte
+# Context
 
-Imaginons que je souhaite créer un composant dropdown, et souhaite avoir la puissance de la validation des formulaires Angular.
+Let's imagine I want to create a dropdown component and want to have the power of Angular forms validation.
 <br/>
 
-On pourrait imaginer quelque chose dans ce genre-là.
+We could imagine something like this.
 <br/><br/>
 
 ```html
-<form [formGroup]="sfeir-form">
+<form [formGroup]="sfeirForm">
     <sfeir-dropdown formControlName="agency"></sfeir-dropdown>
 </form>
 ```
 <!-- .element: class="big-code" -->
 <br/><br/>
 
-Est que les contrôles sur agency vont s'opérer? 
+Will the controls on agency work?
 <!-- .element: class="important center" -->
 <br/>
 
 Notes:
-- La réponse est NON! Le contrôle de validité d'un champ d'un formulaire en Angular ne fonctionne que sur les composants et directives implémentant l'interface ControlValueAccessor. Angular fournit 'value accessor' pour tous les élements basiques de formulaire HTML .
-- Alors on pourrait se dire que pour réaliser cette dropdown, nous allons réaliser un simple select que l'on customisera à chaque fois mais cela signifie que
- - il faut dupliquer le css à moins de le sortir dans un fichier bien à part avec le risque que certaines classe s'override avec d'autre (possible même avec la méthode BEM)
- - On duplique du code html
-- La solution reste quand même de créer un composant qui va implémenter ControlValueAccessor
+- The answer is NO. For a custom component to integrate with Angular's forms (e.g., `formControlName`, `ngModel`), it must implement the `ControlValueAccessor` interface.
+- This interface acts as a bridge between the Angular forms API and the native element within your component's view.
+- Angular provides built-in value accessors for standard HTML form elements, but for custom components, you must provide your own.

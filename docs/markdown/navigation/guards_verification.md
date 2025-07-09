@@ -1,22 +1,22 @@
 <!-- .slide -->
-# Fonctionnement des guards de "vérification"
+# How "verification" guards work
 
-- Peut renvoyer un Observable, une Promise ou encore un booléen<br><br>
-- Un guard est un service classique<br><br>
-- Si true alors on navigue vers l'url demandée<br><br>
-- Si false on ne navigue pas vers l'url demandée
+- Can return an Observable, a Promise, or a boolean<br><br>
+- A guard is a standard service<br><br>
+- If true, navigation to the requested URL proceeds<br><br>
+- If false, navigation to the requested URL is blocked
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Un exemple plus parlant (deprecated)
+# A more telling example (deprecated)
 ```typescript
 @Injectable({
-  providedIn: CoreModule,
+  providedIn: 'root',
 })
-export class LoginGuards implements CanLoad {
+export class LoginGuard implements CanMatch {
   constructor(private readonly authentificationService: AuthentificationService, private readonly router: Router) {}
-  canLoad(next: Route, segments: UrlSegment[]): Observable<boolean> | boolean {
+  canMatch(next: Route, segments: UrlSegment[]): Observable<boolean> | boolean {
     return this.verifyToken();
   }
   verifyToken(): Observable<boolean> {
@@ -36,21 +36,24 @@ export class LoginGuards implements CanLoad {
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide with-code inconsolata" -->
-# Un exemple plus parlant
+# A more telling example
 
 <br/>
 
 ```typescript
-export function loginGuard(next: Route, segments: UrlSegment) {
-  const authentificationService = inject(AuthentificationService);
-  return this.authentificationService.verifyToken()
-    .pipe(
-      map(() => true),
-      catchError(() => {
-        this.router.navigate(['/login']);
-        return of(false);
-      }),
-    );
+export function loginGuard(): CanMatchFn {
+  return (route: Route, segments: UrlSegment[]) => {
+    const authentificationService = inject(AuthentificationService);
+    const router = inject(Router);
+    return authentificationService.verifyToken()
+      .pipe(
+        map(() => true),
+        catchError(() => {
+          router.navigate(['/login']);
+          return of(false);
+        }),
+      );
+  };
 }
 ```
 <!-- .element: class="big-code" -->
@@ -58,15 +61,18 @@ export function loginGuard(next: Route, segments: UrlSegment) {
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Un exemple plus parlant
+# A more telling example
 
-Une fois créé, le guard s'enregistre de la manière suivante dans le tableau de route
+Once created, the guard is registered in the route array as follows:
 <br><br>
 
 ```typescript
-export const APP_ROUTES: Routes = {
-  path: 'dashboard', canLoad: [LoginGuards], loadChildren: () =>
-    import('app/feature/dashboard/dashboard.module').then(m => m.DashboardModule)
-}
+export const APP_ROUTES: Routes = [
+    {
+        path: 'dashboard',
+        canMatch: [loginGuard()],
+        loadChildren: () => import('app/feature/dashboard/dashboard.module').then(m => m.DashboardModule)
+    }
+];
 ```
 <!-- .element: class="big-code" -->

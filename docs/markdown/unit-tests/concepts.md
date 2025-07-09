@@ -5,17 +5,17 @@
 
 <!-- .slide-->
 
-# Concepts généraux de TDD
+# General TDD Concepts
 
--   **describe(string, function)** : un scénario de specs à exécuter<br/><br/>
--   **it(string, function)** : une spec contient une ou plusieurs vérifications<br/><br/>
--   **toXXXX(expected) ⇒ toBe(expected)** : un comparateur compare le résultat obtenu avec un résultat attendu<br/><br/>
--   **beforeAll/afterAll, beforeEach/afterEach** : permet d’exécuter du code avant/après chaque scénario/test<br/><br/>
+-   **describe(string, function)**: a scenario of specs to execute<br/><br/>
+-   **it(string, function)**: a spec contains one or more checks<br/><br/>
+-   **toXXXX(expected) ⇒ toBe(expected)**: a matcher compares the obtained result with an expected result<br/><br/>
+-   **beforeAll/afterAll, beforeEach/afterEach**: allows executing code before/after each scenario/test<br/><br/>
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Concepts TDD (exemple)
+# TDD Concepts (example)
 
 ```typescript
 describe('scenario description...', () => {
@@ -33,16 +33,16 @@ describe('scenario description...', () => {
 ##==##
 
 <!-- .slide -->
-# Un exemple complet
+# A complete example
 
 ![full-center h-900](assets/images/school/unit-tests/exemple_concepts.png)
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# L'API d'Angular pour la TDD
+# The Angular API for TDD
 
-**TestBed** : module de configuration des tests(similaire à NgModule)
+**TestBed**: test configuration module (similar to NgModule)
 
 ```typescript
 TestBed.configureTestingModule({
@@ -54,7 +54,7 @@ TestBed.configureTestingModule({
 
 <br/><br/>
 
-**Inject** : injection des dépendances
+**Inject**: dependency injection
 
 ```typescript
 inject([UserService], userService => {

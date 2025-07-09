@@ -1,20 +1,20 @@
 <!-- .slide: class="sfeir-basic-slide" -->
-# Fonctionnement des guards de préfetching
+# How prefetching guards work
 
-- Optimiser le rendu de page<br/><br/>
-- Renvoie un Observable, une Promise ou des données br/utes<br/><br/>
+- Optimize page rendering<br/><br/>
+- Returns an Observable, a Promise, or raw data<br/><br/>
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Un exemple plus parlant (deprecated)
+# A more telling example (deprecated)
 
 ```typescript
-@Injectable({ providedIn: CoreModule })
+@Injectable({ providedIn: 'root' })
 export class UserResolver implements Resolve<User[]> {
   constructor(private readonly userService: UserService) {}
 
-  resolve() {
+  resolve(): Observable<User[]> {
     return this.userService.getUsers();
   }
 }
@@ -24,35 +24,45 @@ export class UserResolver implements Resolve<User[]> {
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide with-code inconsolata" -->
-# Un exemple est plus parlant
+# A more telling example
 
 <br/><br/><br/>
 
 ```typescript
-export function UserResolver(): Observable<User> {
-  return inject(UserService).getUser();
-}
+export const userResolver: ResolveFn<User[]> = (route, state) => {
+  return inject(UserService).getUsers();
+};
 ```
 <!-- .element: class="big-code" -->
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Un exemple plus parlant (enregistrement du resolver)
+# A more telling example (registering the resolver)
 
 ```typescript
-export const APP_ROUTES: Routes = { path: 'users', component: TopComponent, resolve: { users: UserResolver } }
+export const APP_ROUTES: Routes = [
+    { 
+        path: 'users', 
+        component: TopComponent, 
+        resolve: { 
+            users: userResolver 
+        } 
+    }
+];
 ```
 <!-- .element: class="big-code" -->
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Un exemple plus parlant (utilisation dans le composant)
+# A more telling example (using it in the component)
 
 ```typescript
 @Component({ ... })
-class UsersComponent implements ngOnInit {
+class UsersComponent implements OnInit {
+  users: User[];
+
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {

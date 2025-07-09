@@ -2,7 +2,7 @@
 # Lab 10 : 10-output
 ## Lab
 
-<b>Un readme est à votre disposition dans le dossier apps/10-output</b>
+<b>A readme is available in the apps/10-output folder</b>
 <!-- .element: class="full-center" -->
 
 ##==##

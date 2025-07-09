@@ -1,13 +1,13 @@
 <!-- .slide: class="transition-bg-sfeir-2" -->
-# Tester vos directives
+# Testing your directives
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Le Setup
+# The Setup
 
-- __Même API que pour les composants__: TestBed, ComponentFixture..<br><br>
-- Nécessite la création d'un composant de test pour accueillir la directive<br><br>
+- __Same API as for components__: TestBed, ComponentFixture..<br><br>
+- Requires creating a test component to host the directive<br><br>
 
 ```typescript
 @Component({
@@ -18,13 +18,13 @@ export class HostComponentForDirective {}
 ```
 <!-- .element: class="big-code" -->
 Notes:
-- Un composant étant une directive mais avec une vue il est normal qu'il utilise la même api que les composants
-- Une directive se place toujours sur un élément html présent dans la vue du composant. Il est donc nécessaire de créer un composant "tampon" qui va hoster notre directive à tester
+- Since a component is a directive with a view, it's normal that it uses the same API as components.
+- A directive is always placed on an HTML element present in the component's view. It is therefore necessary to create a "buffer" component that will host our directive for testing.
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Initialisation du HostComponent
+# Initializing the HostComponent
 
 ```typescript
 TestBed
@@ -37,4 +37,4 @@ TestBed
 ```
 <!-- .element: class="big-code" -->
 Notes:
-- Une fois l'initialisation, il ne reste plus qu'a tester notre directive
+- Once initialized, all that's left is to test our directive.

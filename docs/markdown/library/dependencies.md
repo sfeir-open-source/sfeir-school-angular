@@ -1,7 +1,7 @@
 <!-- .slide: class="with-code inconsolata" -->
 # Managing dependencies as a pro
 
-Depedencies of your library, need to be explicitly declared in your package.json file of the library in the section peerDependencies. <br/><br/>
+Dependencies of your library, need to be explicitly declared in your package.json file of the library in the section peerDependencies. <br/><br/>
 
 ```json
 {
@@ -17,9 +17,9 @@ Depedencies of your library, need to be explicitly declared in your package.json
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Dépendance propre à votre librairie
+# Dependencies specific to your library
 
-Pour les dépendances propres à votre librairie, vous pouvez les déclarer dans la section dependencies de votre package.json.
+For dependencies specific to your library, you can declare them in the dependencies section of your package.json.
 
 ```json
 {
@@ -29,7 +29,7 @@ Pour les dépendances propres à votre librairie, vous pouvez les déclarer dans
 }
 ```
 
-Ceci peux engendrer des conflits de versions si votre librairie est utilisée dans un projet qui utilise déjà lodash, et conduira à une erreur de build si cette dépendance n'est pas explicitement autorisé dans ng-packagr
+This can lead to version conflicts if your library is used in a project that already uses lodash, and will lead to a build error if this dependency is not explicitly allowed in ng-packagr
 
 ```json
 {

@@ -1,16 +1,18 @@
 <!-- .slide: class="with-code inconsolata" -->
-# HttpClientModule
+# HttpClient
 
--   Angular apporte son propre client HTTP nécessaire pour les communications serveur
--   Le module se nomme <b>HttpClientModule</b>
--   HttpClientModule provient du package <b>@angular/common/http</b>
+-   Angular provides its own HTTP client for server communication.
+-   For module-based apps, you import <b>HttpClientModule</b>. For standalone apps, you use <b>provideHttpClient()</b>.
+-   Both come from the <b>@angular/common/http</b> package.
 <br/><br/>
 
 ```typescript
+// For module-based applications
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
-  imports: [..., HttpClientModule]
+  imports: [/*...,*/ HttpClientModule]
 })
 export class AppModule { }
 ```
@@ -19,19 +21,17 @@ export class AppModule { }
 ##==##
 
 <!-- .slide: class="two-column with-code inconsolata"-->
-# Injection dans un Composant
+# Injecting into a Component
 
--   Pour utiliser un service dans un composant, il est nécessaire de l'injecter.<br/>
--   Injectons le service HttpClient fourni par le module HttpClientModule <br/><br/>
+-   To use a service in a component, you need to inject it.<br/>
+-   Let's inject the HttpClient service provided by `HttpClientModule` or `provideHttpClient()`.<br/><br/>
 
 ```typescript
+import { HttpClient } from '@angular/common/http';
+
 @Component({...})
 export class AppComponent {
-  httpClient: HttpClient!;
-  
-  constructor(httpClient: HttpClient) {
-    this.httpClient = httpClient;
-  }
+  constructor(private readonly httpClient: HttpClient) { }
 }
 ```
 <!-- .element: class="medium-code"-->
@@ -42,6 +42,8 @@ export class AppComponent {
 <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 
 ```typescript
+import { HttpClient } from '@angular/common/http';
+
 @Component({...})
 export class AppComponent {
   constructor(private readonly httpClient: HttpClient) { }

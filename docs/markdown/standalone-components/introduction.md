@@ -1,33 +1,34 @@
 <!-- .slide: class="sfeir-basic-slide"-->
-# Vers un monde sans module
+# Toward a world without modules
 
-Avec la version 14 d'Angular, la core team souhaite: <br/><br/>
+With Angular v14, the core team aims to: <br/><br/>
 
-- rendre les composants au centre du modèle de réflexion <br/> <br/>
-- simplifier le modèle mental d'Angular <br/> <br/>
-- rendre la framework plus simple d'apprentissage <br/> <br/>
+- make components the center of the development model <br/> <br/>
+- simplify Angular's mental model <br/> <br/>
+- make the framework easier to learn <br/> <br/>
 
-En quelque sorte il s'agit de rendre les modules optionnels
+In short, the goal is to make NgModules optional.
 <!-- .element: class="center important"-->
 
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide"-->
-# Mais qu'est qu'un standalone components ?
+# But what is a standalone component?
 
-Un composant standalone est un composant qui se suffit à lui mÊme: <br/><br/>
+A standalone component is a component that is self-contained: <br/><br/>
 
-- plus la peine de le déclarer dans un module <br/><br/>
-- possibilité de bootstrapper une application directement sur celui ci <br/><br/>
-- possibilité de le lazyloader <br/><br/>
+- it no longer needs to be declared in a module <br/><br/>
+- an application can be bootstrapped directly with it <br/><br/>
+- it can be lazy-loaded <br/><br/>
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata"-->
-# Une écriture très simple
+# A very simple syntax
 
 ```typescript
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-standalone-component',
@@ -43,27 +44,28 @@ export class AppComponent { }
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide"-->
-## Deux nouvelles propriétés
+## Two new properties
 
-La description d'un composant se voit ajouter deux nouvelles propriétés: <br/> <br/>
+Two new properties are added to the component decorator: <br/> <br/>
 
-- __standalone__: permet de définir si le composant est standalone ou non <br/> <br/>
-- __imports__: permet de définir ce qu'importe notre composant pour fonctionner correctement
+- `standalone`: defines whether the component is standalone or not <br/> <br/>
+- `imports`: allows you to define the dependencies the component needs to function correctly
 
 
 ##==## 
 
 <!--- .slide: class="with-code inconsolata"-->
-# Mais qu'est ce qui se cache sous le capot ?
+# But what's happening under the hood?
 
-En réalité un composant standalone est un module dit "virtuel" <br/><br/>
+In reality, a standalone component is like a "virtual" module. <br/><br/>
 
 ```typescript
 @NgModule({
   declarations: [AppComponent],
+  imports: [CommonModule], // imports are moved here
   exports: [AppComponent]
 })
-export class AppComponent {}
+export class AppComponentModule {} // A virtual module is created
 ```
 <!-- .element: class="big-code"-->
 
@@ -71,20 +73,20 @@ export class AppComponent {}
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide"-->
-# Les impacts des standalone components
+# The impacts of standalone components
 
-L'introduction de standalone components a plusieurs impacts: <br/><br/>
+The introduction of standalone components has several impacts: <br/><br/>
 
-- Le bootstrapping d'une application <br/><br/>
-- Le routing d'une application <br/><br/>
-- Le scope de l'injection <br/><br/>
-- L'enregistrement des ModuleWithProviders <br/>
+- Application bootstrapping <br/><br/>
+- Application routing <br/><br/>
+- The injection scope <br/><br/>
+- The registration of `ModuleWithProviders` <br/>
 
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata"-->
-# Un Bootstrapping beaucoup plus léger
+# A much lighter bootstrapping
 
 <br/> <br/>
 
@@ -98,12 +100,12 @@ bootstrapApplication(AppComponent).then(console.info).catch(console.error);
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Heu on ne perd pas des informations là ?
+# Wait, are we losing information here?
 
-Ou enregistre t'on nos modules de dépendances, providers ?
+Where do we register our dependency modules and providers?
 <!-- .element: class="important"-->
 
-__bootstrapApplication__ prend en deuxième paramètres des providers. <br/><br/><br/>
+`bootstrapApplication` takes a second parameter for providers. <br/><br/><br/>
 
 ```typescript
 import { bootstrapApplication } from '@angular/platform-browser';
@@ -115,11 +117,11 @@ bootstrapApplication(AppComponent, { providers: [] });
 ##==##
 
 <!-- .slide: class="with-code inconsolata"-->
-# Comment faire pour importer les services d'un module ?
+# How to import services from a module?
 
-Une nouvelle fonction fais son apparition: __importProvidersFrom__ <br/><br/>
+A new function has appeared: `importProvidersFrom` <br/><br/>
 
-- Permet de charger tous les providers qu'expose un module <br/><br/>
+- It allows you to load all providers exposed by a module. <br/><br/>
 
 
 ```typescript
@@ -136,10 +138,10 @@ bootstrapApplication(AppComponent, { providers: [
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide"-->
-# Ça sera toujours comme ça ?
+# Will it always be like this?
 
-Non à l'avenir l'équipe Angular est persuadée que tout peut se résoudre grâce à l'injection. <br /><br/>
+No, in the future, the Angular team believes that everything can be resolved through dependency injection. <br /><br/>
 
-- __provideHttpClient__ <br/> <br/>
-- __provideRouter__ <br/><br/>
-- __provideAnimations__
+- `provideHttpClient()` <br/> <br/>
+- `provideRouter()` <br/><br/>
+- `provideAnimations()`

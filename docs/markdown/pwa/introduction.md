@@ -1,30 +1,30 @@
 <!-- .slide -->
-# Qu'est ce qu'une progressive web app (PWA)
-__Application web dotée de super pouvoirs__
+# What is a Progressive Web App (PWA)?
+__A web application with superpowers__
 <!-- .element: class="important center" -->
 <br><br>
 
-- Cache pour Asset
-- Application offline
-- Application responsive
-- Application installable sur mobile
+- Asset Caching
+- Offline Application
+- Responsive Application
+- Installable on mobile
 
 Notes:
-- Pour plus d'information sur le sujet, il existe une school dédiée à ce sujet
+- For more information on the subject, there is a dedicated school for it.
 
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide" -->
-# De quoi est composée une PWA<br>
-- Service worker qui détient la logique de votre PWA (stratégie de caching, vos différents caches, lifecycle)<br><br>
-- Manifest : décrit comment doit être installer votre application<br><br>
+# What makes up a PWA<br>
+- Service worker that holds the logic of your PWA (caching strategy, your different caches, lifecycle)<br><br>
+- Manifest: describes how your application should be installed<br><br>
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Comment rendre mon app Angular PWA
+# How to make my Angular app a PWA
 
-Une simple ligne de commande
+A single command line
 <br><br>
 
 ```sh
@@ -35,15 +35,14 @@ ng add @angular/pwa
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide" -->
-# Les conséquences de cette ligne de commande<br>
+# The consequences of this command line<br>
 
-- ajoute le package @angular/service-worker à votre projet
-- autorise le support du service worker in CLI (modifie le fichier angular.json)
-- Importe et enregistre le service worker dans le AppModule
-- Modifie le fichier index.html (importe le manifest et meta tag pour le theme couleur)
-- Installe les icônes (icône d'installation pwa)
-- Créé le fichier de configuration de votre service worker (ngsw-config.json)
+- adds the @angular/service-worker package to your project
+- enables service worker support in the CLI (modifies the angular.json file)
+- Imports and registers the service worker in the AppModule
+- Modifies the index.html file (imports the manifest and meta tag for the theme color)
+- Installs the icons (PWA installation icon)
+- Creates the service worker configuration file (ngsw-config.json)
 
 Notes:
-- Angular pwa utilise workbox en arrière plan
-
+- Angular PWA uses Workbox in the background.

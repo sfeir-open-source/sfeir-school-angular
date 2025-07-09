@@ -1,23 +1,23 @@
 <!-- .slide: class="transition-bg-sfeir-2" -->
 
-# Créer vos propres directives
+# Create your own directives
 
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide" -->
 
-# Quelques rappels sur les directives
+# A few reminders about directives
 
 ![h-300 center](assets/images/school/directive/directive_schema.png) <br/>
 
--   les directives structurelles : modifient le DOM<br/>
--   les directives d'attributs : modifient l'apparence ou le comportement d'un élement<br/>
--   composant : directive avec une vue<br/>
+-   structural directives: modify the DOM<br/>
+-   attribute directives: modify the appearance or behavior of an element<br/>
+-   component: directive with a view<br/>
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Définition d'une directive
+# Directive definition
 
 ```typescript
 import { Directive } from '@angular/core';
@@ -34,22 +34,22 @@ export class MyDirective {}
 
 <!-- .slide -->
 
-# Comment invoquer une directive ?
+# How to invoke a directive?
 
--   <b>element-name</b> : pour restreindre à un élément<br/><br/>
--   <b>[attribute]</b> : pour restreindre à un attribut<br/><br/>
--   <b>.class</b> : pour restreindre à une classe<br/><br/>
--   <b>[attribute=value]</b> : pour restreindre à un attribut avec une certaine valeur<br/><br/>
--   <b>:not(sub_selector)</b> : si l'élément ne match pas le sous sélecteur
+-   <b>element-name</b>: to restrict to an element<br/><br/>
+-   <b>[attribute]</b>: to restrict to an attribute<br/><br/>
+-   <b>.class</b>: to restrict to a class<br/><br/>
+-   <b>[attribute=value]</b>: to restrict to an attribute with a certain value<br/><br/>
+-   <b>:not(sub_selector)</b>: if the element does not match the sub-selector
 
 ##==##
 
 <!-- .slide: class="two-column with-code inconsolata" -->
-## Quelques exemples
+## Some examples
 
 ```typescript
 @Directive({
-  selector: ['sfeirButton']
+  selector: '[sfeirButton]'
 })
 export class SfeirButtonDirective {}
 ```
@@ -74,18 +74,18 @@ export class ErrorDirective {}
 @Directive({
   selector: 'input[onlyNumber]'
 })
-export class OnlyNumberDirective
+export class OnlyNumberDirective {}
 ```
 <!-- .element: class="big-code" -->
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Comment passer des props à ma directive
+# How to pass props to my directive
 
--   Lister des inputs grâce au décorateur <b>@Input()</b>
--   Ces inputs peuvent être aliasés
--   <b>Exactement comme pour les composants</b> <br/><br/>
+-   List inputs using the <b>@Input()</b> decorator
+-   These inputs can be aliased
+-   <b>Exactly like for components</b> <br/><br/>
 
 ```typescript
 import { Directive, Input } from '@angular/core';
@@ -103,10 +103,10 @@ export class MyDirective {
 
 <!-- .slide: class="with-code inconsolata" -->
 
-# Comment intéragir avec les éléments du DOM
+# How to interact with DOM elements
 
--   ElementRef (injectable) permet de récupérer directement l'élément sur lequel agit la directive
--   Renderer2 (injectable) permet d'intéragir avec le DOM<br/><br/>
+-   ElementRef (injectable) allows you to directly get the element on which the directive acts
+-   Renderer2 (injectable) allows you to interact with the DOM<br/><br/>
 
 ```typescript
 import { Directive, ElementRef, Renderer2 } from '@angular/core';
@@ -124,17 +124,17 @@ export class MyDirective {
 
 <!-- .slide -->
 
-# L'intéraction avec le DOM
+# Interaction with the DOM
 
--   Préférez l'utilisation du Renderer au lieu de ElementRef<br/><br/>
--   Aucune dépendance directe avec le DOM<br/><br/>
--   Permet d'éxécuter l'application dans d'autres environnements (EDGE, Firefox)
+-   Prefer using Renderer instead of ElementRef<br/><br/>
+-   No direct dependency on the DOM<br/><br/>
+-   Allows the application to run in other environments (EDGE, Firefox)
 
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide" -->
 
-# L'interaction avec le DOM: Practices
+# Interaction with the DOM: Practices
 
 <div class="container-practice border-red">
   <div class="icon-satisfaction">X</div>
@@ -155,21 +155,23 @@ export class MyDirective {
 
 <!-- .slide: class="with-code inconsolata" -->
 
-# Les évènements
+# Events
 
--   <b>@Output()</b> pour propager des évènements
--   <b>@Hostlistener()</b> pour écouter des évènements sur l'élément host
--   <b>Exactement comme pour les composants</b> <br/><br/>
+-   <b>@Output()</b> to propagate events
+-   <b>@HostListener()</b> to listen for events on the host element
+-   <b>Exactly like for components</b> <br/><br/>
 
 ```typescript
+import { Directive, Output, EventEmitter, HostListener } from '@angular/core';
+
 @Directive({ selector: '[myDirective]' })
 export class MyDirective {
   @Output() somethingChange: EventEmitter<{ event: MouseEvent, data: any }> = new EventEmitter();
 
   constructor() {}
 
-  @HostListener('click', '$event') handleClick(event: MouseEvent) {
-    this.somethingChange.emit({ event, data });
+  @HostListener('click', ['$event']) handleClick(event: MouseEvent) {
+    this.somethingChange.emit({ event, data: 'some data' });
   }
 }
 ```

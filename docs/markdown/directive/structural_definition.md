@@ -1,64 +1,43 @@
 <!-- .slide -->
-# Définition et cas d'utilisation
+# Definition and use cases
 
-- Responsable du layout
-- Manipule les éléments du DOM (ajout, suppression, etc)
-- S'applique sur un 'host' élément
-- Facilement reconnaissable grâce à l'asterix (ex: *ngIf)
-- Une seule directive structurelle par élément 'host'
+- Responsible for the layout
+- Manipulates DOM elements (add, remove, etc.)
+- Applies to a 'host' element
+- Easily recognizable by the `@` symbol (e.g., @if)
+- Control flow blocks can be nested and combined logically
 
 ##==##
 
 <!-- .slide-->
-# * une microsyntaxe
+# The new @-block syntax
 
-- Permet une lecture plus simple, et réduit la verbosité
-- Le mot clé __let__ permet de déclarer une variable utilisée dans le template
-- Lorsque la variable n'est pas définie, il utilise le context implicite : $implicit
+- Replaces the old `*` microsyntax for structural directives.
+- Provides a cleaner, more intuitive, and powerful way to manage control flow.
+- The `let` keyword and implicit context variables (`$implicit`) are no longer needed in the same way.
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# *ngFor en profondeur
+# @for in depth
 
 ```html
-<div *ngFor="let hero of heroes; let odd = odd; index as i"></div>
+@for (hero of heroes; track hero.id; let i = $index, o = $odd) {
+  <div>{{ i }}: {{ hero.name }} (Odd: {{ o }})</div>
+}
 ```
 <!-- .element: class="big-code" -->
 <br/><br/>
 
-```html
-<ng-template let-hero [ngForOf]="heroes" let-odd="odd" let-i="index"></ng-template>
-```
-<!-- .element: class="big-code" -->
+- The `track` expression is mandatory for performance.
+- Provides several built-in variables like `$index`, `$odd`, `$even`, `$first`, `$last`, and `$count`.
 
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide" -->
-# Récapitulatif de la grammaire
-<span class="bold important">*:prefix="( :let | :expression ) (';' | ',')? ( :let | :as | :keyExp )*"</span>
-<br/><br/><br/>
-<table>
-    <t-body>
-        <tr>
-            <th>prefix</th>
-            <th>clé d'attribut html</th>
-        </tr>
-         <tr>
-            <th>key</th>
-            <th>clé d'attribut html</th>
-        </tr>
-         <tr>
-            <th>local</th>
-            <th>variable locale utilisée dans le template</th>
-        </tr>
-         <tr>
-            <th>export</th>
-            <th>variable exportée par la directive sous un certain nom</th>
-        </tr>
-         <tr>
-            <th>expression</th>
-            <th>expression standard angular</th>
-        </tr>
-    </t-body>
-</table>
+# Benefits of the new syntax
+
+- **Clearer and more intuitive**: The syntax is closer to native JavaScript control flow.
+- **No more microsyntax**: Eliminates the complex grammar of `let`, `as`, and `of`.
+- **Improved type checking**: The compiler can better infer types within the blocks.
+- **Built-in**: Control flow is part of the core framework, no need to import `CommonModule` for `@if`, `@for`, etc.

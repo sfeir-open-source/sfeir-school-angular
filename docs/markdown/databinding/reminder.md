@@ -1,12 +1,12 @@
 <!-- .slide: class="with-code" -->
 
-# Attribut vs Propriétés
+# Attribute vs Properties
 
-- Les attributs c'est du <b>HTML</b>, les propriétés c'est du <b>DOM</b>.
-- La valeur d'une propriété peut changer, les attributs ne peuvent pas être changés.
-- Le rôle des attributs est d'initialiser les propriétés du DOM, une fois effectué, le travail de l'attribut est terminé.
-- Le binding Angular ne fonctionne qu'avec les propriétés et les événements et non pas avec les attributs.
-- Une propriété peut avoir comme valeur une chaîne de caractères, un objet, une fonction... Un attribut est toujours une chaîne de caractères.<br/><br/>
+- Attributes are <b>HTML</b>, properties are <b>DOM</b>.
+- The value of a property can change, attributes cannot be changed.
+- The role of attributes is to initialize the DOM properties, once done, the attribute's job is finished.
+- Angular binding only works with properties and events, not with attributes.
+- A property can have a string, an object, a function as its value... An attribute is always a string.<br/><br/>
 
 ```html
 <!-- Attribute -->
@@ -24,11 +24,11 @@
 
 <!-- .slide: class="with-code inconsolata" -->
 
-# Et si je veux agir sur un attribut ?
-Certains éléments n'ont pas obligatoirement la propriété souhaitée (svg, colspan)
+# What if I want to act on an attribute?
+Some elements do not necessarily have the desired property (svg, colspan)
 <br/><br/>
 
--   On peut cibler un attribut en précédent son nom par <b>attr</b>
+-   You can target an attribute by prefixing its name with <b>attr</b>
 
 ```html
 <td [attr.colspan]="1+1">a cell!!</td>
@@ -37,7 +37,7 @@ Certains éléments n'ont pas obligatoirement la propriété souhaitée (svg, co
 
 <br/>
 
--   Pour les classes CSS, on précède le nom de la classe par: <b>class</b>
+-   For CSS classes, we prefix the class name with: <b>class</b>
 
 ```html
 <div [class.green]="isSpecial">special class</div>
@@ -46,7 +46,7 @@ Certains éléments n'ont pas obligatoirement la propriété souhaitée (svg, co
 
 <br/>
 
--   Pour le style, on précède le nom de la propriété par style
+-   For style, we prefix the property name with style
 
 ```html
 <div [style.color]="isSpecial ? 'red' : 'green'">Special class</div>

@@ -1,2 +1,2 @@
 <!-- .slide: class="transition" -->
-# Les directives structurelles
+# Structural directives

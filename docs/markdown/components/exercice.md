@@ -2,12 +2,12 @@
 # Lab 03 : 03-cpt-hierarchy
 ## Lab<br>
 
-<b>Un readme est à votre disposition dans le dossier apps/03-cpt-hierarchy</b>
+<b>A readme is available in the apps/03-cpt-hierarchy folder</b>
 <!-- .element: class="full-center" -->
 
  ##==##
  <!-- .slide: class="full-center" -->
- # Schema d'explication
+ # Explanation schema
  ![full-width](assets/images/school/components/component_schema.png)
 
  ##==##

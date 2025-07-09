@@ -1,15 +1,17 @@
 <!-- .slide: class="with-code inconsolata" -->
 
-# Qu'est ce qu'un Service
-- Une classe exportée
-- Un décorateur <b>@Injectable</b>
+# What is a Service?
+- An exported class
+- An <b>@Injectable</b> decorator
 
 ```typescript
-@Injectable()
+// The modern way to create a singleton service
+@Injectable({
+  providedIn: 'root' // Registers the service at the application root
+})
 export class TodoService {
-  constructor() {
-    this.name = 'Hello';
-  }
+  private name = 'Hello';
+
   getName() {
     return this.name;
   }
@@ -20,14 +22,14 @@ export class TodoService {
 
 Notes:
 
--   Ici on enregistre directement dans notre module AppModule (penser à l'import sinon il y aura une erreur)
--   Angular 9 propose le providedIn: any qui enregistre un service par module lazy loader (attention dans ce cas plusieurs instances)
+- Using `providedIn: 'root'` makes the service available throughout the application and allows it to be tree-shakable, meaning it will be removed from the final bundle if not used.
+- This is the recommended way to provide singleton services since Angular 6.
 
 ##==##
 
 <!-- .slide: class="two-column-layout" -->
 
-# Utiliser son service (en global)
+# Using Your Service Globally
 
 ##--##
 
@@ -35,15 +37,12 @@ Notes:
 // todo.service.ts
 import { Injectable } from '@angular/core';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class TodoService {
-  name: string;
+  private name = 'Hello';
 
-  constructor() {
-      this.name = 'Hello';
-  }
   getName() {
-      return this.name;
+    return this.name;
   }
 }
 ```
@@ -60,7 +59,7 @@ import { NgModule } from '@angular/core';
 
 @NgModule({
   declarations: [AppComponent],
-  providers: [TodoService],
+  providers: [], // No need to provide the service here, it's already provided in the root
 })
 export class AppModule {}
 ```
@@ -77,6 +76,7 @@ import { TodoService } from './shared/';
 
 @Component({ ... })
 export class AppComponent {
+  name: string;
   constructor(private readonly todoService: TodoService) {
     this.name = this.todoService.getName();
   }
@@ -90,7 +90,7 @@ export class AppComponent {
 
 <!-- .slide: class="two-column-layout" -->
 
-# Utiliser son service en local
+# Using a Service Locally
 
 ##--##
 
@@ -100,8 +100,6 @@ export class AppComponent {
 // todo.service.ts
 @Injectable()
 export class TodoService {
-  constructor() {}
-
   get name(): string {
     return 'SFEIR';
   }
@@ -117,7 +115,7 @@ export class TodoService {
 ```typescript
 // app.component.ts
 @Component({
-  providers: [TodoService],
+  providers: [TodoService], // Provides a new instance for this component and its children
 })
 export class AppComponent {
   constructor(private readonly todoService: TodoService) {
@@ -127,4 +125,3 @@ export class AppComponent {
 ```
 
 <!-- .element: class="big-code" -->
-      

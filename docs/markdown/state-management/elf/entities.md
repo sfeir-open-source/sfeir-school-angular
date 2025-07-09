@@ -1,31 +1,31 @@
 <!-- .slide: class="with-code inconsolata" -->
-# Les entités dans elf
+# Entities in Elf
 
-Les entités sont un package à part dans Elf: **@ngneat/elf-entities**
+Entities are a separate package in Elf: **@ngneat/elf-entities**
 
 <br/><br/>
 
-```typescript
+```bash
 npm install @ngneat/elf-entities
 ```
 <!-- .element: class="big-code" -->
 
 ##==##
 
-# Qu'est ce qu'une entité réellement ?
+# What is an entity, really?
 
 <br/><br/>
 
-- Pour les personnes qui viennent du monde NoSql, il s'agit d'un **document** dans une collection
+- For those coming from the NoSQL world, it's a **document** in a collection.
 
 <br/><br/>
 
-- Pour les personnes qui viennent du monde Sql, il s'agit d'une **ligne** dans une table
+- For those coming from the SQL world, it's a **row** in a table.
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Comment utilise t-on les entités ?
+# How do we use entities?
 
 ```typescript
 import { createStore } from '@ngneat/elf';
@@ -37,16 +37,16 @@ interface People {
   lastname: string;
 }
 
-const appStore = createStore({ name: 'APP_STORE' }, withEntities<People>());
+const peopleStore = createStore({ name: 'people' }, withEntities<People>());
 ```
 <!-- .element: class="big-code" -->
 
 ##==##
 
-# Sélecteurs et mutations sur les entités
+# Selectors and Mutations on Entities
 
 <br/><br/>
 
-Il existe de nombreux sélecteurs sur les entités et il en est de même pour les mutations
+There are many selectors for entities, and the same goes for mutations.
 
-Le lien suivant vous donnera la documentation complète: [lien](https://ngneat.github.io/elf/docs/features/entities/entities)
+The following link provides the complete documentation: [link](https://ngneat.github.io/elf/docs/features/entities/entities)

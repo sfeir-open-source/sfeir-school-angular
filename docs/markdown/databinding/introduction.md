@@ -1,10 +1,10 @@
 <!-- .slide: class="two-column with-code insconsolata" -->
 
-# Le binding en Javascript
+# Binding in Javascript
 
 ```html
 <html>
-    Bonjour <span id="name"></span>
+    Hello <span id="name"></span>
     <input type="text" />
 </html>
 ```
@@ -17,16 +17,12 @@
 
 ```javascript
 window.onload = function() {
-  var span= document.querySelector('name');
-  var input = document.getElementsByTagName('input')[0];
+  const span = document.querySelector('#name');
+  const input = document.querySelector('input');
   
-  input.onkeyup = function() {
-    if (span.textContent || span.textContent === "") {
-      span.textContent = input.value;
-    }else if (span.innerText || span.innerText === "") {
-      span.innerText = input.value;
-    }
-  }
+  input.addEventListener('keyup', () => {
+    span.textContent = input.value;
+  });
 }
 ```
 <!-- .element: class="big-code" --> 
@@ -35,11 +31,11 @@ window.onload = function() {
 
 <!-- .slide: class="two-column" -->
 
-# Le binding avec Jquery
+# Binding with Jquery
 
 ```html
 <html>
-    Bonjour <span id="name"></span>
+    Hello <span id="name"></span>
     <input type="text" />
 </html>
 ```
@@ -64,12 +60,12 @@ $(document).ready(function() {
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Le binding en Angular
+# Binding in Angular
 
 ```html
 <div>
     <input type="text" name="myName" [(ngModel)]="myName" /> 
-    <span>Bonjour {{ myName }}</span>
+    <span>Hello {{ myName }}</span>
 </div>
 ```
 
@@ -79,7 +75,7 @@ $(document).ready(function() {
 
 <!-- .slide: class="with-code inconsolata" -->
 
-# Syntax binding
+# Binding Syntax
 
 ## Events
 ```html
@@ -113,7 +109,7 @@ $(document).ready(function() {
 
 <!-- .slide: class="full-center" -->
 
-# Zoom sur un binding
+# Zoom on a binding
 
 <b>Target = "expression"</b>
 <!-- .element: class="important" -->

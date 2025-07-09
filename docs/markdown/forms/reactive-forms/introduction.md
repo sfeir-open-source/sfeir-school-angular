@@ -1,132 +1,141 @@
 <!-- .slide: class="transition-bg-sfeir-1" -->
-# Reactive forms
+# Reactive Forms
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# La Fondation du Reactive forms
-Pour réaliser des formulaires avec Reactive Forms, il est nécessaire d'importer le module <b>ReactiveFormsModule</b> provenant également du package <b>@angular/forms</b>
+# Getting Started with Reactive Forms
+
+For standalone components, import `ReactiveFormsModule` directly into the component's `imports` array.
 <br/><br/>
 
 ```typescript
-// app.module.ts
-import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+// user-profile.component.ts
+import { Component } from '@angular/core';
+import { ReactiveFormsModule, FormGroup, FormControl } from '@angular/forms';
 
-@NgModule({
-    imports: [BrowserModule, ReactiveFormsModule],
-    declarations: [ ],
-    providers: [],
-    bootstrap: []
+@Component({
+  selector: 'app-user-profile',
+  standalone: true,
+  imports: [ReactiveFormsModule], // Import here
+  templateUrl: './user-profile.component.html',
 })
-export class AppModule { }
+export class UserProfileComponent {
+  // ...
+}
 ```
-<!-- .element: class="big-code" -->
+<!-- .element: class="medium-code" -->
+
+For module-based apps, you would add `ReactiveFormsModule` to the `imports` array of your `NgModule`.
 
 ##==##
 
 <!-- .slide: class="two-column with-code inconsolata" -->
-# Syntaxe Reactive forms
+# Building a Reactive Form
 
+Let's build a form to edit a user profile.
 
 ```typescript
-// form.component.ts
+// user-profile.component.ts
 import { Validators, FormControl, FormGroup } from '@angular/forms';
-import { EditForm } from './edit-form.model';
-@Component({...})
-export class FormComponent {
-    editForm: FormGroup<EditForm>;
-    constructor() {
-        this.editForm = new FormGroup({
-            firstname: new FormControl('',
-                [Validators.required, Validators.minLength(2)]
-            )
-        });
-    }
+
+// 1. Define the form's data structure
+interface UserProfile {
+  firstname: FormControl<string>;
+  address: FormGroup<{ // 2. Nest a FormGroup
+    zipCode: FormControl<string>;
+    country: FormControl<string>;
+  }>;
+}
+
+@Component({ ... })
+export class UserProfileComponent implements OnInit {
+  // 3. Declare the form property
+  profileForm: FormGroup<UserProfile>;
+
+  ngOnInit() {
+    // 4. Initialize the form
+    this.profileForm = new FormGroup({
+      firstname: new FormControl('', {
+        validators: [Validators.required, Validators.minLength(2)],
+        nonNullable: true,
+      }),
+      address: new FormGroup({
+        zipCode: new FormControl('', { validators: [Validators.required], nonNullable: true }),
+        country: new FormControl('', { validators: [Validators.required], nonNullable: true }),
+      })
+    });
+  }
+
+  // 5. Add a getter for easy template access
+  get firstname() {
+    return this.profileForm.get('firstname');
+  }
 }
 ```
-<!-- .element: class="medium-code" -->
+<!-- .element: class="small-code" -->
 
 ##--##
-<!-- .slide: class="with-code inconsolata" -->
 
-<br/><br/><br/>
+<br/>
 
 ```html
-<!-- form.component.html -->
-<form [formGroup]="editForm">
-    <input type="text" formControlName="firstname">
-    <div *ngIf="!editForm.controls.firstname.valid">
-        Firstname est d'un format invalid
-    </div>
-    <button type="submit" [disabled]="!editForm.valid">
-        Modifier
-    </button>
+<!-- user-profile.component.html -->
+<form [formGroup]="profileForm" (ngSubmit)="save()">
+
+  <!-- Bind a simple control -->
+  <input type="text" formControlName="firstname">
+
+  @if (firstname?.invalid && firstname?.touched) {
+    <div>Firstname is invalid</div>
+  }
+
+  <!-- Bind a nested group -->
+  <div formGroupName="address">
+    <input formControlName="zipCode" type="text" />
+    <input formControlName="country" type="text" />
+  </div>
+
+  <button type="submit" [disabled]="profileForm.invalid">
+    Update
+  </button>
 </form>
 ```
 <!-- .element: class="medium-code" -->
 
 ##==##
-<!-- .slide: class="with-code inconsolata" -->
-# La Syntaxe dans le template
-
-- Référence au modèle du formulaire via <b>formGroup</b>
-- Mapping de controls via <b>formControlName</b><br/><br/>
-
-```html
-<form [formGroup]="editForm">
-    <input type="text" formControlName="firstname">
-    <div *ngIf="!editForm.controls.firstname.valid">Firstname est d'un format invalid</div>
-    <button type="submit" [disabled]="!editForm.valid">Modifier</button>
-</form>
-```
-<!-- .element: class="big-code" -->
-Notes:
-- formGroup déclare comme pour le template driven form une référence sur le modèle editForm
-- formControlName: effectue le binding d'un contrôle présent dans le modèle
-
-##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Regrouper les champs dans le template
+# Key Concepts
 
-- Regrouper les champs dans un sous objet grâce à <b>FormGroupName</b> <br/><br/>
+- **`[formGroup]`**: Binds the top-level `FormGroup` instance in your component to the `<form>` element.
 
-```html
-<form [formGroup]="editForm" (ngSumit)="submitEditForm(editForm.value)">
-    <div formGroupName="address">
-        <input formControlName="zipCode" type="text" />
-        <input formControlName="country" type="text" />
-    </div>
-</form>
-```
-<!-- .element: class="big-code" -->
-Notes:
-- ngSubmit permet de soumettre le formulaire lors de la touche entrer
-- `editForm.value` renvoie un objet de ce format: { address: { zipCode: 57000, country: FRANCE } }
+- **`formControlName`**: Binds an individual `FormControl` within the `FormGroup` to a form input.
 
-##==##
+- **`formGroupName`**: Binds a nested `FormGroup` to a container element (like a `div`).
 
-<!-- .slide: class="with-code inconsolata" -->
-# La syntaxe dans la classe
+- **`ngSubmit`**: A directive that lets you handle the form's submit event.
+
+<br/>
 
 ```typescript
-import { Validators, FormControl, FormGroup } from '@angular/forms';
-import { EditForm } from './edit-form.model';
-@Component({...})
-export class FormComponent {
-    editForm: FormGroup<EditForm>;
-    constructor() {
-        this.editForm = new FormGroup({
-            address: new FormGroup({
-                zipCode: new FormControl('', Validators.required),
-                country: new FormControl('', Validators.required),
-            })
-        })
-    }
+// Accessing form data
+class UserProfileComponent {
+  // ...
+  profileForm: FormGroup<UserProfile>;
+
+  save() {
+    // The `value` property contains the current data
+    console.log(this.profileForm.value);
+    // { firstname: '...', address: { zipCode: '...', country: '...' } }
+
+    // Use `getRawValue()` to include disabled controls
+    console.log(this.profileForm.getRawValue());
+  }
 }
 ```
-<!-- .element: class="big-code" -->
+<!-- .element: class="medium-code" -->
+
 Notes:
-- firstname est de type AbstractControl, si l'on souhaite update sa valeur lors d'un certain évènement comme le click d'un bouton, il existe la méthode patchValue
-- coup de pouce: Réaliser des getters qui renvoie l'AbstractControl. Ca allégerera votre template => this.editForm.get('firstname')
+- Creating a getter for a form control (`get firstname()`) simplifies your template logic.
+- Using `nonNullable: true` ensures that the control's value will never be `null`.

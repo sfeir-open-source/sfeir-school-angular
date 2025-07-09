@@ -1,51 +1,45 @@
-# Contexte d'un interceptor
-<br/><br/>
+# Using HttpContext with Interceptors
 
-- Notion introduite avec la version 12 d'Angular <br/><br/>
-- Passer des metadata à un interceptor<br/><br/>
-- Plus de hack<br/><br/>
-- __Exemple__ dire qu'une requête est 'cachable'
+- Introduced in Angular v12, `HttpContext` allows you to pass metadata to and from interceptors.
+- This avoids fragile workarounds for conditional logic within interceptors.
+- **Example Use Case**: Marking a specific HTTP request as "cacheable."
 
-##==##
-
-# Propriété du contexte
-<br/><br/>
-
-- mutable<br/><br/>
-- partagé entre les différentes requêtes clonées
- 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Un contexte est un simple token
-<br/><br/>
+# 1. Create a Context Token
+
+A token is created using `HttpContextToken`. The factory function provides its default value.
 
 ```typescript
-export const CACHABLE = new  HttpContextToken<boolean>(() => false);
+// context.tokens.ts
+import { HttpContextToken } from '@angular/common/http';
+
+// The factory `() => false` sets the default value if none is provided.
+export const CACHEABLE = new HttpContextToken<boolean>(() => false);
 ```
 <!-- .element: class="big-code" -->
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Modifier le contexte
+# 2. Provide Context in a Service
 
-__La modification d'un contexte ou le setter se fait à l'aide de la classe HttpContext__
-<br/><br/>
-
-```typescript
-new HttpContext().set(CACHABLE, true)
-``` 
-<!-- .element: class="medium-code" -->
-
+In your service, use the `context` option in an HTTP call to provide the token.
 
 ```typescript
+// user.service.ts
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { CACHEABLE } from './context.tokens';
+
 @Injectable({ providedIn: 'root' })
 export class UserService {
   constructor(private readonly http: HttpClient) {}
 
-   getUser(): Observable<User> {
-    return this.http.get<User>(url, { context: new HttpContext().set(CACHABLE, true) })
+  getUser(): any {
+    const context = new HttpContext().set(CACHEABLE, true);
+    return this.http.get('url', { context });
   }
 }
 ```
@@ -54,27 +48,35 @@ export class UserService {
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Récupérer le contexte dans notre interceptor
+# 3. Use the Context in an Interceptor
 
+The interceptor can now read the metadata from the context to perform conditional logic.
 
 ```typescript
-export class CacheInterceptor implements HttpInterceptor {
-  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any> | User> {
-    if (req.context.get(CACHABLE) === true) {
-      return of(new HttpResponse({ status: 200, body: MOCK_PERSON }));
-    }
-    return next.handle(req);
+// caching.interceptor.ts
+import { HttpInterceptorFn, HttpResponse } from '@angular/common/http';
+import { of } from 'rxjs';
+import { CACHEABLE } from './context.tokens';
+
+export const cachingInterceptor: HttpInterceptorFn = (req, next) => {
+  // Check if the request is marked as cacheable
+  if (req.context.get(CACHEABLE)) {
+    // For this example, return a mock response from cache
+    const cachedResponse = new HttpResponse({ status: 200, body: { name: 'Cached User' } });
+    return of(cachedResponse);
   }
-}
+
+  // If not cacheable, proceed with the actual network request
+  return next(req);
+};
 ```
-<!-- .element: class="big-code" -->
+<!-- .element: class="medium-code" -->
 
 ##==##
 
-# La classe HttpContext
+# The HttpContext API
 
-- __set__ : permet de setter un token du contexte<br/><br/>
-- __get__ : récupère la valeur du token du contexte<br/><br/>
-- __delete__ : supprime le token du contexte<br/><br/>
-- __keys__ : récupère tous les tokens du contexte<br/><br/>
-
+- `set(token, value)`: Sets the value for a token.
+- `get(token)`: Retrieves the value of a token.
+- `delete(token)`: Deletes a token and its value.
+- `keys()`: Returns an iterator of all tokens in the context.

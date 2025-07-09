@@ -1,5 +1,5 @@
 <!-- .slide: class="with-code inconsolata" -->
-# Les commandes à connaître absolument
+# Essential Commands
 
 ```shell
 ng build sfeir-components
@@ -24,20 +24,20 @@ ng test sfeir-components
 
 
 <!-- .slide: class="with-code inconsolata" -->
-# Le fichier public_api.ts
+# The public_api.ts file
 
-Ce fichier est le point d'entrée de votre librairie, il permet d'expliter ce que votre librairie va exposer.
+This file is the entry point of your library; it allows you to define what your library will expose.
 
 <br/><br/>
 
 ```typescript
-export * from 'user.servcice';
-export * from 'user.component'
+export * from './user.service';
+export * from './user.component';
 ```
 <!-- .element: class="big-code" -->
 
 <br/><br/>
-N'exporter uniquement ce qui doit être accéssible depuis l'extérieur de la librairie.
+Only export what should be accessible from outside the library.
 
 ##==##
 
@@ -45,9 +45,9 @@ N'exporter uniquement ce qui doit être accéssible depuis l'extérieur de la li
 <!-- .slide: class="with-code inconsolata" -->
 ## Best Practice
 
-Pour respecter les bonnes pratiques de développement et les conventions, il est judicieux de créer un fichier index.ts <br/><br/>
+To follow development best practices and conventions, it is wise to create an index.ts file.<br/><br/>
 
-Celui exportera le fichier public_api.ts et les autres fichiers de votre librairie.
+It will export the public_api.ts file and other files from your library.
 
 <br/><br/>
 
@@ -55,5 +55,3 @@ Celui exportera le fichier public_api.ts et les autres fichiers de votre librair
 export * from './public_api';
 ```
 <!-- .element: class="big-code" -->
-
-

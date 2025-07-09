@@ -1,19 +1,19 @@
-# Native Federation: Qu'est ce que c'est
+# Native Federation: What is it?
 
-Native Federation est un concept émergent qui utilise des fonctionnalités natives du navigateur pour pouvoir gérer des micro interfaces. Cela implique <br/><br/>
+Native Federation is an emerging concept that uses native browser features to manage micro-interfaces. This implies:<br/><br/>
 
-- nul besoin de webpack ou tout autre module bundler <br/><br/>
-- un mirco frontend est en réalité un module ESM <br/><br/>
-- utilise ESM pour importer les modules <br/><br/>
-- framework agnostique
+- no need for webpack or any other module bundler <br/><br/>
+- a micro-frontend is actually an ESM module <br/><br/>
+- uses ESM to import modules <br/><br/>
+- framework-agnostic
 
 ##==##
 
-# Module Federation: Qu'est ce que c'est
- 
-La Module Federation est une fonctionnalité de Webpack 5 qui permet le chargement dynamique de modules. Les caractéristiques clés de la module federation sont les suivantes: <br/><br/>
+# Module Federation: What is it?
 
-- __Dynamisme__ permet d'importer des modules d'autres applications sans recompilation au runtime <br/><br/>
-- __Partage de dépendances__ permet de partager des dépendances entre plusieurs modules <br/><br/>
-- __Isolation__ chaque module peut être développé indépendamment les uns des autres <br/><br/>
-- __Performance__ réduit la taille du main bundle
+Module Federation is a Webpack 5 feature that allows for dynamic loading of modules. The key characteristics of Module Federation are as follows:<br/><br/>
+
+- __Dynamism__: allows importing modules from other applications without recompilation at runtime <br/><br/>
+- __Dependency Sharing__: allows sharing dependencies between multiple modules <br/><br/>
+- __Isolation__: each module can be developed independently of the others <br/><br/>
+- __Performance__: reduces the size of the main bundle

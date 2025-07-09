@@ -1,5 +1,5 @@
 <!-- .slide: class="transition-bg-sfeir-2" -->
-# Outillage
+# Tooling
 
 ##==##
 
@@ -16,19 +16,19 @@
 ##==##
 
 <!-- .slide-->
-# Un petit mot sur la TDD
+# A quick word on TDD
 
--   **TDD** : test driven development<br><br>
--   Tester d'abord<br><br>
--   Rendre fonctionnel<br><br>
--   Améliorer<br><br>
--   Méthode coûteuse<br><br>
+-   **TDD**: test-driven development<br><br>
+-   Test first<br><br>
+-   Make it work<br><br>
+-   Improve<br><br>
+-   Costly method<br><br>
 
 ##==##
 
 <!-- .slide -->
-# Angular CLI et les tests
+# Angular CLI and tests
 
--   Angular vient avec tout ce dont on a besoin pour réaliser des tests unitaires (aucune configuration requise)<br>
+-   Angular comes with everything you need to perform unit tests (no configuration required)<br>
 
 ![center h-700](assets/images/school/unit-tests/ng_test_helper.png)

@@ -1,8 +1,8 @@
-# Ng Packagr la solution pour le build
+# Ng Packagr: The Build Solution
 
-Ng Packagr est un outil de construction pour les bibliothèques Angular.
+Ng Packagr is a build tool for Angular libraries.
 
-Il permet de créer des packages Angular qui peuvent être publiés sur npm et utilisés dans d'autres projets Angular. Ng Packagr gère la compilation, le bundling et la création de fichiers de déclaration pour les bibliothèques Angular. <br/><br/>
+It allows you to create Angular packages that can be published to npm and used in other Angular projects. Ng Packagr handles the compilation, bundling, and creation of declaration files for Angular libraries. <br/><br/>
 
 - Building Angular libraries based on esbuild, webpack in FESM2022 format <br/><br/>
 - Scoped and non-scoped packages<br/><br/>
@@ -13,7 +13,7 @@ Il permet de créer des packages Angular qui peuvent être publiés sur npm et u
 
 
 <!-- .slide: class="with-code inconsolata" -->
-# ng-package.json: le fichier de configuration de votre lib
+# ng-package.json: The Configuration File for Your Lib
 
 <br/><br/>
 
@@ -33,7 +33,7 @@ Il permet de créer des packages Angular qui peuvent être publiés sur npm et u
 <!-- .slide: class="with-code inconsolata" -->
 # Managing assets with ng-packagr
 
-L'avantage d'utiliser Ng-Packagr c'est qu'il fait un peu tout pour vous, il permet à l'aide d'une simple configuration de copier vos assets dans votre répertoire de build
+The advantage of using Ng-Packagr is that it does almost everything for you; it allows you to copy your assets to your build directory with a simple configuration.
 
 <br/>
 

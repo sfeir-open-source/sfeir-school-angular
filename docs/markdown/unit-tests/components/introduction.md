@@ -1,21 +1,21 @@
 <!-- .slide: class="transition-bg-sfeir-2" -->
 
-# Tester ses composants
+# Testing your components
 
 ##==##
 
 <!-- .slide-->
-# Qu'implique réellement les tests?
+# What do tests really involve?
 
--   "la magie" d'instance d'Angular ne se fait plus totalement<br/><br/>
--   Il faut mocker ses services et les données qu'utilisent nos composants<br/><br/>
--   J'ai 100% de code coverage ne signifie pas que vos tests sont corrects<br/><br/>
--   Garder à l'esprit que tester ce n'est pas douter, mais rendre un projet/une application de qualité<br/><br/>
+-   The "magic" of Angular's instance creation is not fully automatic anymore<br/><br/>
+-   You have to mock the services and data that your components use<br/><br/>
+-   Having 100% code coverage doesn't mean your tests are correct<br/><br/>
+-   Keep in mind that testing is not about doubting, but about delivering a quality project/application<br/><br/>
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Le Setup des tests du composant
+# Setting up component tests
 
 ```typescript
 beforeEach(() => {
@@ -35,25 +35,25 @@ beforeEach(() => {
 
 <!-- .slide: class="with-code inconsolata" -->
 
-# Détails sur les fonctions utilisées
+# Details on the functions used
 
 - **TestBed**
-  - **TestBed.createComponent** : crée une instance du composant (fixture)
-  - **TestBed.overrideComponent** : surcharge une instance d'un composant<br/><br/>
+  - **TestBed.createComponent**: creates an instance of the component (fixture)
+  - **TestBed.overrideComponent**: overrides a component instance<br/><br/>
 - **ComponentFixture**
-  - **fixture.componentInstance** : accès à l’instance du composant
-  - **fixture.nativeElement** : accès au DOM du composant
-  - **fixture.debugElement** : fonction helper
-  - **fixture.detectChanges** : déclenche la détection du changement
+  - **fixture.componentInstance**: access to the component instance
+  - **fixture.nativeElement**: access to the component's DOM
+  - **fixture.debugElement**: helper function
+  - **fixture.detectChanges**: triggers change detection
 
 ##==##
 
 <!-- .slide: class="with-code" -->
-# Et si mon composant utilise d'autres composants ?
+# What if my component uses other components?
 
-Mais si je dois tout mocker **ça risque d'être long** si mon composant utilise une dizaine de composant enfant !!<br/><br/>
+But if I have to mock everything, **it could take a long time** if my component uses a dozen child components!!<br/><br/>
 
-<span class="important">Et bien non il existe une astuce : masquer les erreurs liées aux composants imbriqués! :) grâce à **NO_ERRORS_SCHEMA**</span>
+<span class="important">Well no, there's a trick: hide errors related to nested components! :) thanks to **NO_ERRORS_SCHEMA**</span>
 
 ```typescript
 import { NO_ERRORS_SCHEMA } from '@angular/core';

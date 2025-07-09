@@ -1,9 +1,9 @@
 <!-- .slide: class="with-code inconsolata" -->
-# NGRX : Actions
+# NGRX: Actions
 
-- Seul moyen de modifier l'état
-- Types (moyen unique de les identifier)
-- Déclenchée par un dispatch<br/><br/>
+- The only way to modify the state.
+- Actions have types (a unique way to identify them).
+- Triggered by a `dispatch` call.<br/><br/>
 
 ```typescript
 import { createAction } from '@ngrx/store';
@@ -14,4 +14,4 @@ export const reset = createAction('[Counter Component] Reset');
 ```
 <!-- .element: class="big-code" -->
 Notes:
-- penser au namespace pour regrouper des actions agissant sur une meme entité ;)
+- Remember to use a namespace (e.g., `[Counter Component]`) to group actions that operate on the same entity.

@@ -1,14 +1,14 @@
 <!-- .slide: class="exercice" -->
-# Lab 28 : 28-custom-control
+# Lab 28: 28-custom-control
 ## Lab
 
 <br/><br/>
 
-<b>Un readme est à votre disposition dans le dossier apps/28-custom-control</b>
+<b>A readme is available in the apps/28-custom-control folder</b>
 
 ##==##
 
 <!-- .slide: class="full-center exercice" -->
-# Lab 28 : 28-custom-control
+# Lab 28: 28-custom-control
 ## Lab
 __apps/28-custom-control-solution__

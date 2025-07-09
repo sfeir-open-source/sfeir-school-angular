@@ -1,21 +1,21 @@
 <!-- .slide: class="transition" -->
-# Les Formulaires
+# Forms
 
 ##==##
 
 <!-- .slide-->
-# Problématique des formulaires
+# The problem with forms
 
-- Permettre de collecter des données saisies par l'utilisateur<br/><br/>
-- Valider les données saisies<br/>
+- Allow collecting data entered by the user<br/><br/>
+- Validate the entered data<br/>
 Notes:
-- Attention même s'il y a une validation front des données saisies, il est nécessaire de réaliser une validation côté serveur
+- Be careful, even if there is front-end validation of the entered data, it is necessary to perform server-side validation
 
 ##==##
 
 <!-- .slide -->
-# Les Formulaires en Angular
+# Forms in Angular
 
-- Il existe deux types de formulaire en Angular:<br/><br/>
-    - <b>Template driven form</b>: formulaire piloté par le template<br/><br/>
-    - <b>Reactive forms</b>: formulaire piloté par la logique composant
+- There are two types of forms in Angular:<br/><br/>
+    - <b>Template-driven form</b>: form driven by the template<br/><br/>
+    - <b>Reactive forms</b>: form driven by component logic

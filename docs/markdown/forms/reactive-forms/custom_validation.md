@@ -1,40 +1,47 @@
 <!-- .slide: class="transition-bg-sfeir-1 underline"" -->
-# Validation Custom avec les Reactive Forms
+# Custom Validation with Reactive Forms
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Créer ses propres validateurs
+# Creating a Custom Validator
 
-- Un validateur custom est une simple <b>fonction</b>
-- Si la valeur du contrôle pass la validation : renvoie <b>null</b>
-- Sinon : renvoie un objet de cette forme <b>{ nomErreur: true }</b>
+- A custom validator is a simple **function** that takes a control as an argument.
+- If the control's value is valid, the function returns **`null`**.
+- If the value is invalid, it returns a validation error object, like **`{ errorName: true }`**.
 <br/><br/>
 
 ```typescript
-import { FormControl, ValidationErrors } from '@angular/forms';
-export abstract class CustomValidators {
-  protected constructor() {}
+// custom-validators.ts
+import { AbstractControl, ValidationErrors } from '@angular/forms';
 
-  static CustomEmailValidator(c: FormControl): ValidationErrors | null {   
-    return (c.value.indexOf('@') !== -1) ? null : { email: true };
-  }  
+export function sfeirEmailValidator(control: AbstractControl): ValidationErrors | null {
+  if (!control.value) {
+    return null; // Don't validate empty values, let `required` handle it
+  }
+  const isValid = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(control.value);
+  return isValid ? null : { invalidEmail: true };
 }
 ```
-<!-- .element: class="big-code" -->
+<!-- .element: class="medium-code" -->
 
 ##==##
 <!-- .slide: class="with-code inconsolata" -->
-# Utiliser son validateur
+# Using a Custom Validator
 
-- Se fait lors de la création du contrôle <br/><br/>
+- Add the validator function directly to the `FormControl`.
+- You can apply a single validator or an array of multiple validators.
+<br/><br/>
 
 ```typescript
-import { CustomValidators } from './validators';
-this.formModel = new FormGroup({
-  email: new FormControl('', CustomValidators.CustomEmailValidator),
-    // or
-  email: new FormControl('', [Validators.required, CustomValidators.CustomEmailValidator])
+import { sfeirEmailValidator } from './custom-validators';
+
+const userForm = new FormGroup({
+  // Single validator
+  email: new FormControl('', sfeirEmailValidator),
+  
+  // Multiple validators
+  emailWithRequired: new FormControl('', [Validators.required, sfeirEmailValidator]),
 });
 ```
-<!-- .element: class="big-code" -->
+<!-- .element: class="medium-code" -->

@@ -1,43 +1,17 @@
 <!-- .slide -->
-# Le service ChangeDetectorRef
+# The ChangeDetectorRef service
 
-- Permet d'avoir un contrôle complet sur la statégie de détection<br><br>
-- 4 méthodes
-    - detectChanges (détecte un changement)
-    - markForCheck (détecte une mutation d'état pratique pour les observables)
-    - detach (permet de ne plus observer une variable)
-    - reattach (permet d'écouter à nouveau les changements)
+- Allows complete control over the detection strategy<br><br>
+- 4 methods
+    - detectChanges (detects a change)
+    - markForCheck (detects a state mutation, useful for observables)
+    - detach (stops observing a variable)
+    - reattach (resumes listening for changes)
 
 ##==##
 
 <!-- .slide: class="two-column-layout" -->
-# Exemple: detectChanges
-##--##
-<!-- .slide: class="with-code inconsolata" -->
-```typescript
-import { Component } from '@angular/core';
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html'
-})
-export class AppComponent {
-  foods = ['Bacon', 'Lettuce', 'Tomatoes'];
-  addFood(food) {
-    this.foods.push(food);
-  }
-}
-```
-<!-- .element: class="medium-code" -->
-
-<br><br>
-
-```html
-<input #newFood type="text" placeholder="Enter a new food">
-<button (click)="addFood(newFood.value)">Add food</button>
-<app-child [data]="foods"></app-child>
-```
-<!-- .element: class="medium-code" -->
-
+# Example: detectChanges
 ##--##
 <!-- .slide: class="with-code inconsolata" -->
 ```typescript
@@ -59,19 +33,22 @@ export class ChildComponent {
 
 ##==##
 <!-- .slide: class="two-column-layout" -->
-# Exemple: markForCheck
+# Example: markForCheck
 ##--##
 <!-- .slide: class="with-code inconsolata" -->
 ```typescript
 import { Component } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html'
 })
 export class AppComponent {
-  foods = new BehaviorSubject(['Bacon', 'Letuce', 'Tomatoes']);
-  addFood(food) {
-    this.foods.next(food);
+  foods$ = new BehaviorSubject(['Bacon', 'Lettuce', 'Tomatoes']);
+  addFood(food: string) {
+    const newFoods = [...this.foods$.value, food];
+    this.foods$.next(newFoods);
   }
 }
 ```
@@ -82,7 +59,7 @@ export class AppComponent {
 ```html
 <input #newFood type="text" placeholder="Enter a new food">
 <button (click)="addFood(newFood.value)">Add food</button>
-<app-child [data]="foods"></app-child>
+<app-child [data]="foods$"></app-child>
 ```
 <!-- .element: class="medium-code" -->
 
@@ -90,20 +67,22 @@ export class AppComponent {
 <!-- .slide: class="with-code inconsolata" -->
 ```typescript
 import { Component, Input, ChangeDetectionStrategy, ChangeDetectorRef, OnInit } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+
 @Component({
   selector: 'app-child',
   template: './food-details.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ChildComponent implements OnInit {
-  @Input() data: BehaviourSubject<string>;
+  @Input() data: BehaviorSubject<string[]>;
   foods: string[] = [];
   constructor(private readonly changeDetectorRef: ChangeDetectorRef) { }
 
   ngOnInit(): void {
-    this.data.subscribe((food: string[]) => {
-      this.foods = [...this.foods, ...food];
-      this.cd.markForCheck();
+    this.data.subscribe((foods: string[]) => {
+      this.foods = foods;
+      this.changeDetectorRef.markForCheck();
     })
   }
 }

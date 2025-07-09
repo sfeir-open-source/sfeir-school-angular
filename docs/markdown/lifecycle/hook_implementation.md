@@ -1,5 +1,5 @@
 <!-- .slide: class="with-code inconsolata" -->
-# Implémentation d'un lifecycle
+# Implementing a lifecycle hook
 
 ```typescript
 import { Component, OnInit } from '@angular/core';
@@ -18,13 +18,13 @@ export class UserComponent implements OnInit {
 
 ##==##
 <!-- .slide -->
-# Les différents lifecycle hooks
+# The different lifecycle hooks
 
-- <b>ngOnChanges(): </b>répond à chaque fois qu'une des propriétés en entrée changent
-- <b>ngOnInit(): </b>initialise le composant/la directive après sa création (1 fois)
-- <b>ngDoCheck(): </b>permet d’agir sur la détection des modifications
-- <b>ngAfterContentInit(): </b>répond après l’initialisation du contenu du composant (1 fois)
-- <b>ngAfterContentChecked(): </b>répond après qu'Angular ait vérifié le contenu du composant
-- <b>ngAfterViewInit(): </b>répond après l’initialisation de la vue du composant (1 fois)
-- <b>ngAfterViewChecked(): </b>répond après qu'Angular ait vérifié le contenu de la vue
-- <b>ngOnDestroy(): </b>permet de faire du nettoyage avant la destruction du composant (1 fois)
+- <b>ngOnChanges(): </b>responds every time one of the input properties changes
+- <b>ngOnInit(): </b>initializes the component/directive after its creation (once)
+- <b>ngDoCheck(): </b>allows acting on change detection
+- <b>ngAfterContentInit(): </b>responds after the component's content has been initialized (once)
+- <b>ngAfterContentChecked(): </b>responds after Angular has checked the component's content
+- <b>ngAfterViewInit(): </b>responds after the component's view has been initialized (once)
+- <b>ngAfterViewChecked(): </b>responds after Angular has checked the view's content
+- <b>ngOnDestroy(): </b>allows for cleanup before the component is destroyed (once)

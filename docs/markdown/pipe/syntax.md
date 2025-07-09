@@ -1,7 +1,7 @@
 <!-- .slide: class="with-code inconsolata" -->
-# Syntaxe
+# Syntax
 
-- A la suite d'une expression d'interpolation
+- Following an interpolation expression
 
 ```html
 <span> {{ expression | filter1 }}</span>
@@ -9,7 +9,7 @@
 <!-- .element: class="big-code" -->
 <br/>
 
-- On peut chaîner les pipes
+- Pipes can be chained
 
 ```html
 <span> {{ expression | filter1 | filter2 }}</span>
@@ -17,7 +17,7 @@
 <!-- .element: class="big-code" -->
 <br/>
 
-- On peut passer des paramètres aux pipes
+- Parameters can be passed to pipes
 
 ```html
 <span>{{ expression | filter1:param1:param2 }}</span>
@@ -26,7 +26,7 @@
 
 ##==##
 <!-- .slide: class="with-code inconsolata" -->
-# Syntaxe du pipe currency
+# Currency pipe syntax
 
 ```typescript
 this.amount = 1234.56
@@ -36,9 +36,9 @@ this.amount = 1234.56
 <span>{{ amount }}</span>
 <!-- 1234.56 -->
 <span> {{ amount | currency }}</span>
-<!-- USD1,234.56 -->
-<span>{{ amount | currency:"USD$" }}</span>
-<!-- USD$1,234.56 -->
+<!-- $1,234.56 -->
+<span>{{ amount | currency:"EUR":"symbol":"4.2-2":"fr" }}</span>
+<!-- 1 234,56 € -->
 ```
 <!-- .element: class="big-code" -->
 Notes:
@@ -47,13 +47,13 @@ Notes:
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Syntaxe du pipe date
+# Date pipe syntax
 
-- Formate une date selon un certain format et selon une locale
+- Formats a date according to a certain format and locale
 
 ```html
 {{ myDate | date:format }}
 ```
 <!-- .element: class="big-code" -->
 <br/><br/>
-- Ce filtre accepte un format (string) en argument
+- This filter accepts a format (string) as an argument

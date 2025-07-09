@@ -4,13 +4,13 @@
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# NGRX : Installation
-De même que la librairie NGXS, NGRX est une librairie externe à Angular.
+# NGRX: Installation
+Like NGXS, NGRX is an external library for Angular.
 <br/><br/>
 
 __Installation__:
 ```sh
-npm install --save-dev ngrx
+npm install @ngrx/store --save
 ```
 <!-- .element: class="big-code" -->
 
@@ -18,27 +18,29 @@ npm install --save-dev ngrx
 
 __Import__:
 ```typescript
+import { StoreModule } from '@ngrx/store';
+import { reducers } from './reducers';
+
 @NgModule({
-  import: [ storeModule.forRoot({people: reducer}) ]
+  imports: [ StoreModule.forRoot(reducers) ]
 })
-export class AppModule() { }
+export class AppModule { }
 ```
 <!-- .element: class="big-code" -->
 
 ##==##
 
 <!-- .slide -->
-# NGRX : Concepts
-4 concepts clés: <br/><br/>
-- __actions__ : décrivent des évènements uniques qui sont distribués à partir du composant ou du service
-- __state changes__ : gérés par de simples fonctions nommées `reducers`
-- __selectors__ : simple fonction permettant d'avoir tout ou une partie du state
-- __state__ : accessible avec le store (Observables d'action et d'état)
+# NGRX: Concepts
+4 key concepts: <br/><br/>
+- __Actions__: Describe unique events that are dispatched from components or services.
+- __Reducers__: Handle state changes by taking the current state and the latest action to produce a new state.
+- __Selectors__: Pure functions used to select, derive, and compose pieces of state.
+- __Store__: A global, observable state container, accessible to all components.
 
 ##==##
 
 <!-- .slide -->
-# NGRX : Architecture Global
+# NGRX: Global Architecture
 
 ![full-center h-800](assets/images/school/state-management/ngrx/state_management_lifecycle.png)
-

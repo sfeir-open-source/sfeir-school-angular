@@ -1,42 +1,42 @@
 <!-- .slide -->
-# Configuration d'un service worker : ngsw-config.json
+# Service Worker Configuration: ngsw-config.json
 ![h-900 center](assets/images/school/pwa/service-worker-configuration.png)
 Notes:
-- Tous les chemins de fichier doivent obligatoirement commencer par / qui correspond au répertoire de déploiment -> typiquement dist/<project-name>
-- App Data permet de passer des données supplémentaires, typiquement des données à faire passer lors des notifications push
-- AssetsGroup : des groupes d'assets à cacher
-- dataGroups : groupes de données à cacher (data api en général)
-- navigationUrls : stratégie de navigation
+- All file paths must start with `/`, which corresponds to the deployment directory -> typically `dist/<project-name>`.
+- `appData` allows passing additional data, typically for push notifications.
+- `assetGroups`: groups of assets to be cached.
+- `dataGroups`: groups of data to be cached (usually API data).
+- `navigationUrls`: navigation strategy.
 
 ##==##
 
 <!-- .slide-->
-# Interface AssetGroup
+# AssetGroup Interface
 
-- name : requis, il permet d'identifier un groupe d'assets entre deux versions de configuration<br><br>
-- installMode : prefetch | lazy -> détermine comment les ressources sont initialement cachées<br><br>
-- updateMode : prefetch | lazy -> détermine comment modifier les ressources déjà en cache<br><br>
-- ressources :
-    - files : liste de fichiers qui match un certain pattern à cacher
-    - urls : url / url pattern qui match au runtime
+- `name`: required, it identifies a group of assets between two configuration versions.<br><br>
+- `installMode`: `prefetch` | `lazy` -> determines how resources are initially cached.<br><br>
+- `updateMode`: `prefetch` | `lazy` -> determines how to update resources already in the cache.<br><br>
+- `resources`:
+    - `files`: list of files matching a certain pattern to be cached.
+    - `urls`: URL or URL pattern that matches at runtime.
 
 Notes:
-- prefetch : installe toutes les ressources à l'initialisation
-- lazy : attend d'avoir la requête avant de mettre en cache
+- `prefetch`: installs all resources on initialization.
+- `lazy`: waits for the request before caching.
 
 ##==##
 
 <!-- .slide -->
-# Interface DataGroup
+# DataGroup Interface
 
-- name : requis, il permet de d'identifier un groupe de data entre deux versions de configuration<br><br>
-- version : un entier qui permet de suivre la version des apis que l'on cache<br><br>
-- cacheConfig
-    - maxSize : taille maximum du groupe
-    - maxAge : temps maximum pendant lequel le cache est valide
-    - timeout : temps avant que la réponse vienne du cache
-    - strategy : performance | freshness
+- `name`: required, it identifies a data group between two configuration versions.<br><br>
+- `version`: an integer used to track the version of the APIs being cached.<br><br>
+- `cacheConfig`:
+    - `maxSize`: maximum size of the group.
+    - `maxAge`: maximum time the cache is valid.
+    - `timeout`: time before the response comes from the cache.
+    - `strategy`: `performance` | `freshness`.
 
 Notes:
-- performance : réponse toujours du cache (si la version du cache match à celle qui existe déjà), dépend également du maxAge
-- freshness : récupère déjà la réponse du network sauf si le timeout a expiré
+- `performance`: always responds from the cache (if the cache version matches the existing one), also depends on `maxAge`.
+- `freshness`: retrieves the response from the network first, unless the timeout has expired.

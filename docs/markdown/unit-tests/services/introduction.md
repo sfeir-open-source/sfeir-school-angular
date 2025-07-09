@@ -1,17 +1,16 @@
 <!-- .slide: class="transition-bg-sfeir-2" -->
-# Tester ses services
+# Testing your services
 
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide" -->
-# Les différents types de services
+# The different types of services
 
-- 2 grandes familles de services:
-  - __service http__<br/><br/>
-  - __service "helpers"__<br/><br/>
+- 2 main families of services:
+  - __http service__<br/><br/>
+  - __"helper" service__<br/><br/>
 
 <br/><br/>
 
-__Ces deux types de services ne se testent pas de la même façon__
+__These two types of services are not tested in the same way__
 <!-- .element: class="important" -->
-

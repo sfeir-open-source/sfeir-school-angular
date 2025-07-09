@@ -1,7 +1,7 @@
 <!-- .slide: class="with-code inconsolata" -->
-# Principe: Injection de dépendances
+# Principle: Dependency Injection
 
-- Pattern de développement pour qu’une classe <b>se fasse fournir</b> d’autres classes ou objets (appelés dépendances) de manière <b>externe</b> plutôt que de les instancier par elle-même.
+- Development pattern where a class is <b>provided</b> with other classes or objects (called dependencies) from an <b>external</b> source rather than instantiating them itself.
 <br></br>
 ```typescript
 class Car {
@@ -16,9 +16,9 @@ class Car {
 
 ##==##
 <!-- .slide: class="with-code inconsolata" -->
-# L'injection en Angular (TypeScript)
+# Injection in Angular (TypeScript)
 
-- Dans Angular, les dépendances déclarées dans une classe spécifique sont mises à disposition lors de <b>l'instanciation</b> de cette classe. <br></br>
+- In Angular, dependencies declared in a specific class are made available upon <b>instantiation</b> of that class. <br></br>
 ```typescript
 import { EngineService, TiresService, DoorsService } from './shared';
  @Component({...})

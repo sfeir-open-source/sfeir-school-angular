@@ -1,50 +1,47 @@
 <!-- .slide: class="with-code inconsolata" -->
-# Les références
+# Template References
 
-- Se matérialise par un # / ref- dans le template
-- Disponible dans tout le template
-- On peut récupérer cet élément dans le composant grâce aux décorateurs __@ViewChild__, __@ViewChildren__ <br/><br/>
+- Created in the template using a hash symbol (`#`).
+- Provides a direct reference to a DOM element, component, or directive.
+- Can be accessed within the component class using the `@ViewChild` and `@ViewChildren` decorators.
+<br/><br/>
+
 ```html
 <input #searchInput type="text" />
 ```
-
 <!-- .element: class="big-code" -->
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
+# @ViewChild and @ViewChildren Decorators
 
-# Les décorateurs __@ViewChild__ et __@ViewChildren__
-
-- Permet de récupérer une référence dans le composant
-- Prend deux paramètres en entrée (nom de la référence, un object d'option: { static, read })
-- valeur de retour
-    - __@ViewChild__ : T
-    - __@ViewChildren__ : QueryList<T>
+- `@ViewChild`: Gets a reference to a single element from the template.
+- `@ViewChildren`: Gets a `QueryList` of all elements matching the selector.
+- The reference is only available after the view has been initialized, in the `ngAfterViewInit` lifecycle hook.
 
 ```html
-<myComponent #component></myComponent>
+<my-component #myComp></my-component>
 ```
-
 <!-- .element: class="small-code" -->
 
 ```typescript
-export class AppComponent implements OnInit, AfterViewInit {
-  @ViewChild('component', { static: false }) private component: ElementRef;
+export class AppComponent implements AfterViewInit {
+  // The { static: ... } option is no longer needed in modern Angular
+  @ViewChild('myComp') private myComponentRef: ElementRef;
 
   ngOnInit(): void {
-    console.log(this.component); // undefined    
+    // Returns undefined because the view is not yet initialized
+    console.log(this.myComponentRef);
   }
 
   ngAfterViewInit(): void {
-    console.log(this.component); // not undefined
+    // The reference is available here
+    console.log(this.myComponentRef);
   }
 }
 ```
 <!-- .element: class="small-code" -->
-Notes:
 
-- Dans la version 9 il n'est plus obligatoire de préciser static, false est sa valeur par défaut
-- Si static est true, on peut accéder à la référence dans le OnInit (perte de performance)
-- read est très utile lorsque l'on associe une directive à une référence (ex: #myForm = 'ngForm') si on ne précise pas
-  la lecture par défaut on aura accès au méthode du ngForm et non à l'elementRef
+Notes:
+- The `read` option is useful for getting a specific token from an element. For example, if an element has a directive applied (e.g., `#myForm="ngForm"`), you can use `read: NgForm` to get an instance of the directive instead of the default `ElementRef`.

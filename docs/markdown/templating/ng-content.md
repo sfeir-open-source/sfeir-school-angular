@@ -1,27 +1,27 @@
-# La directive ng-content
+# The ng-content directive
 
-- Permet la transclusion (possibilité d'ajouter du contenu dynamiquement) <br><br>
-- S'utilise obligatoirement dans les composants <br><br>
-- Prend un attribut select permettant la transclusion sur un élément particulier
+- Allows for transclusion (the ability to add content dynamically) <br><br>
+- Must be used within components <br><br>
+- Takes a `select` attribute to allow transclusion on a specific element
 
 ##==##
 
-# La puissance de l'attribut select
+# The power of the select attribute
 
-- l'attribut n'est pas __obligatoire__<br><br>
-- Possibilité d'en faire une propriété :  __[select]__="'.'+selectedClass"<br><br>
-- Permet la transclusion sur n'importe quel selecteur css
-    - une classe __select__=".my_class"
-    - un attribut __select__="[name='submit-button']"
-    - un élement html __select__="button" <br><br>
-- Pour plus de fun vous pouvez les mixer ;)
+- The attribute is not __mandatory__<br><br>
+- Can be made a property:  __[select]__="'.'+selectedClass"<br><br>
+- Allows transclusion on any CSS selector
+    - a class __select__=".my_class"
+    - an attribute __select__="[name='submit-button']"
+    - an HTML element __select__="button" <br><br>
+- For more fun, you can mix them ;)
     - __select__="button[type='submit']"
 
 ##==##
 
 <!-- .slide: class="two-column-layout"-->
 
-# Un exemple c'est mieux pour comprendre
+# An example is better for understanding
 
 ##--##
 
@@ -54,7 +54,7 @@ export class LoadingComponent {}
     selector: 'app-root',
     template: `
         <app-loader>
-          <div>Hello tout le monde</div>
+          <div>Hello everyone</div>
         </app-loader>
 `
 })
@@ -67,7 +67,7 @@ export class AppComponent {}
 
 <!-- .slide: class="two-column-layout"-->
 
-# Un exemple c'est mieux pour comprendre
+# An example is better for understanding
 
 ##--##
 
@@ -101,8 +101,8 @@ export class LoadingComponent {}
     selector: 'app-root',
     template: `
         <app-loader>
-          <div>Hello tout le monde</div>
-          <button type="submit">Click Me<button>
+          <div>Hello everyone</div>
+          <button type="submit">Click Me</button>
         </app-loader>
 `
 })
@@ -115,9 +115,9 @@ export class AppComponent {}
 
 # __@ContentChild__ __@ContentChildren__ ?
 
-- permet de récupérer le contenue de la transclusion dans le composant <br><br>
-- Prend deux paramètres en entrée (nom de la référence, un object d'option: { static, read }) <br><br>
-- Valeur de retour
+- Allows retrieving the content of the transclusion within the component <br><br>
+- Takes two input parameters (the reference name, an options object: { static, read }) <br><br>
+- Return value
     - __@ContentChild__: T
     - __@ContentChildren__: QueryList<T><br><br>
 
@@ -125,7 +125,7 @@ export class AppComponent {}
 
 <!-- .slide: class="two-column-layout"-->
 
-# Un exemple c'est mieux pour comprendre
+# An example is better for understanding
 
 ##--##
 
@@ -162,7 +162,7 @@ export class LoadingComponent {
     selector: 'app-root',
     template: `
         <app-loader>
-          <div #div>Hello tout le monde</div>
+          <div #div>Hello everyone</div>
         </app-loader>
 `
 })
@@ -170,5 +170,3 @@ export class AppComponent {}
 ````
 
 <!-- .element: class="big-code"-->
-
-

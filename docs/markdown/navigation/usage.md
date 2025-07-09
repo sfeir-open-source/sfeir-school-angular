@@ -1,5 +1,5 @@
 <!-- .slide: class="with-code inconsolata" -->
-# Utilisation dans le composant
+# Usage in the component
 
 ```typescript
 import { Component, OnInit } from '@angular/core';
@@ -22,17 +22,17 @@ export class FooComponent implements OnInit {
 ```
 <!-- .element: class="medium-code" -->
 Notes:
-- La méthode navigate renvoie une promesse
-- Nous ne sommes pas obligés d'utiliser la propriété params du router, il existe également le props paramsMap
+- The navigate method returns a promise.
+- We are not required to use the `params` property of the router; the `paramsMap` property also exists.
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Utilisation dans le template
+# Usage in the template
 
 ```html
-<a class="btn btn-info" routerLink="/people">Movies Liste</a>
-<a class="btn btn-info" [routerLink]="['/people']">Movies Liste</a>
+<a class="btn btn-info" routerLink="/people">Movies List</a>
+<a class="btn btn-info" [routerLink]="['/people']">Movies List</a>
 <a class="btn btn-info" [routerLink]="['/people/edit/', person.id]">Edit</a>
 ```
 <!-- .element: class="big-code" -->

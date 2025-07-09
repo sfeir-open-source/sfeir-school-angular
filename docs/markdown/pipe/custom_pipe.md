@@ -1,28 +1,29 @@
 <!-- .slide: class="transition-bg-sfeir-2" -->
-# Créer ses propres pipes
+# Creating your own pipes
 
 ##==##
 
 <!-- .slide -->
-# Comment se compose un pipe
+# How a pipe is composed
 
-- D'une classe décorée par le décorateur <b>@Pipe</b> ayant comme propriété obligatoire `name`, propriété qui servira à appeler le pipe dans un template HTML. <br/><br/>
-- Cette classe implémente la méthode <b>transform</b> qui prend en paramètre une valeur et éventuellement un tableau d'arguments <br/><br/>
-- Cette méthode <b>transform</b> effectue des transformations (ou pas) mais retourne toujours une nouvelle valeur<br/><br/>
-- Pensez à enregistrer votre Pipe dans le tableau déclaration de votre module (comme un composant)
+- From a class decorated with the <b>@Pipe</b> decorator, which has a mandatory `name` property that will be used to call the pipe in an HTML template. <br/><br/>
+- This class implements the <b>transform</b> method, which takes a value as a parameter and optionally an array of arguments. <br/><br/>
+- This <b>transform</b> method performs transformations (or not) but always returns a new value.<br/><br/>
+- Remember to register your Pipe in your module's declarations array (like a component).
 
 ##==##
 <!-- .slide: class="two-column with-code inconsolata" -->
-## Matérialisons cela par du code
+## Let's materialize this with code
 
 ```typescript
 // multiply-by-two.pipe.ts
-import {Pipe} from '@angular/core';
+import { Pipe, PipeTransform } from '@angular/core';
+
 @Pipe({
    name: 'multiplyByTwo'
 })
 export class MultiplyByTwoPipe implements PipeTransform {
-  transform(value: number, args: any[]) {
+  transform(value: number): number {
     return value * 2;
   }
 }
@@ -53,7 +54,7 @@ export class AppModule {}
 
 ```html
 <!-- app.component.html -->
-<p>{{ value | multiplyByTwo }}</p>
+<p>{{ 2 | multiplyByTwo }}</p>
+<!-- displays 4 -->
 ```
 <!-- .element: class="medium-code" -->
-

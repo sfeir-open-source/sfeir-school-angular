@@ -1,21 +1,21 @@
-# Une definition simple de Signals
+# A Simple Definition of Signals
 
-Signals est une nouvelle façon de signaler à notre template que nos données on changé
+Signals is a new way to notify our template that our data has changed.
 <!-- .element: class="important full-center"-->
 
 ##==##
 
-# L'apport de Signals
+# The Contribution of Signals
 <br /><br/>
 
-- Améliorer la détection de changement <br/><br/>
-- Rendre notre code plus réactive <br/><br/>
-- Nouvelle fonctionnalité qui est apparut dans la version 16 d'Angular
+- Improve change detection<br/><br/>
+- Make our code more reactive<br/><br/>
+- A new feature that appeared in Angular version 16
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata"-->
-# Pourquoi Signals ?
+# Why Signals?
 <br/><br/>
 
 ```typescript
@@ -33,10 +33,10 @@ console.log(z); // ?
 ##==##
 
 <!-- .slide: class="with-code inconsolata"-->
-# Pourquoi Signals ?
+# Why Signals?
 
-- Getter <br/><br/>
-- Event function <br/><br/>
+- Getter<br/><br/>
+- Event function<br/><br/>
 
 ```typescript
 let x = 'Sfeir';
@@ -54,18 +54,18 @@ console.log(z); // Sfeir Paris
 
 ##==##
 
-# Pourquoi Signals ?
+# Why Signals?
 <br /><br/>
 
-- Procurer plus de réactivité <br/><br/>
-- Améliorer la granularité de notre réactivité <br/><br/>
-- Améliorer la performance de notre application <br/><br/>
+- Provide more reactivity<br/><br/>
+- Improve the granularity of our reactivity<br/><br/>
+- Improve the performance of our application<br/><br/>
 
 ##==##
 
-# Qu'est ce que Signals ?
+# What are Signals?
 
-- Object.create(factory)
-- Nouveau système réactif primitif
+- `Object.create(factory)`
+- New primitive reactive system
 
 ![center](assets/images/school/signals/signals.png)

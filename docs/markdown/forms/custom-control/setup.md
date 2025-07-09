@@ -1,120 +1,102 @@
 <!-- .slide: class="with-code inconsolata" -->
-# Enregistrer son composant dans le service NG_VALUE_ACCESSOR
+# Implementing ControlValueAccessor
 
--   NG_VALUE_ACCESSOR est un service global donnée par @angular/forms
-  <br/><br/>
+## Step 1: Provide the ControlValueAccessor
+
+- Register your component with the `NG_VALUE_ACCESSOR` injection token.
+- This tells Angular that this component can function as a form control.
+
+```typescript
+import { Component, forwardRef } from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+
+@Component({
+  selector: 'sfeir-dropdown',
+  template: `...`,
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => SfeirDropdownComponent),
+      multi: true,
+    },
+  ],
+})
+export class SfeirDropdownComponent implements ControlValueAccessor {
+  // ... implementation follows
+}
+```
+<!-- .element: class="medium-code" -->
+
+Notes:
+- `forwardRef` is needed because the class `SfeirDropdownComponent` is referenced within its own decorator metadata before it has been fully defined.
+- `multi: true` allows multiple components to register with the `NG_VALUE_ACCESSOR` token.
+
+##==##
+
+<!-- .slide -->
+# Step 2: Implement the ControlValueAccessor Interface
+
+- This interface acts as a bridge between the Angular forms API and your component.
+- You must implement these methods:
+  - `writeValue`: Updates the view when the model changes.
+  - `registerOnChange`: Registers a callback to update the model when the view changes.
+  - `registerOnTouched`: Registers a callback for when the control is 'touched'.
+  - `setDisabledState` (optional): Handles the control's disabled state.
+
+##==##
+
+<!-- .slide: class="with-code inconsolata" -->
+# Step 3: Complete Implementation Example
+
+This example shows how the methods work together.
 
 ```typescript
 @Component({
   selector: 'sfeir-dropdown',
   templateUrl: 'sfeir-dropdown.component.html',
-  stylesUrl: [ 'sfeir-dropdown.component.css' ]
-  providers: [{ provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() => SfeirDropDownComponent), multi: true }]
+  styleUrls: [ 'sfeir-dropdown.component.css' ],
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => SfeirDropdownComponent),
+      multi: true,
+    },
+  ],
 })
-```
+export class SfeirDropdownComponent implements ControlValueAccessor {
+  value: any;
+  disabled = false;
 
-<!-- .element: class="big-code" -->
+  // Functions to call when the value or touched state changes
+  onChange: (value: any) => void = () => {};
+  onTouched: () => void = () => {};
 
-<br/><br/>
-Ouhlà!! D'où sort tout ça ?
+  // Called by Angular to update the view
+  writeValue(value: any): void {
+    this.value = value;
+  }
 
-<!-- .element: class="center important" -->
-<br/>
-Notes:
-- Ici on pousse le component SfeirDropDownComponent dans le provider NG_VALUE_ACCESSOR grâce à provide: NG_VALUE_ACCESSOR
-- multi: true permet de préciser qu'il peut y avoir plusieurs composants qui vont utiliser NG_VALUE_ACCESSOR
-##==##
-
-<!-- .slide: class="inconsolata with-code" -->
-
-# Pourquoi utiliser forwardRef ?
-
--   Fait référence à quelque chose qui n'est pas définie
-    <br/><br/><br/>
-
-Heu ça veut dire que la class SfeirDropDownComponent n'est pas définie ?
-
-<!-- .element: class="center important"-->
-<br/>
-Et bien non ! Les classes ne sont pas au 'top' du runtime JS, ce qui insinue que dans les métadata du décorateur @Component, la classe n'est pas définie.
-
-Notes:
-
--   https://www.ecma-international.org/ecma-262/10.0/index.html#sec-ecmascript-language-functions-and-classes
-
-##==##
-
-<!-- .slide -->
-
-# Implémenter l'interface ControlValueAccessor
-
--   Permet de préciser à Angular comment accéder à la valeur du contrôle
--   'Pont' entre le contrôle et l'élement natif (ici l'élement sfeir-dropdown)
--   Doit obligatoirement implémenter les méthodes suivantes:
--   writeValue
--   registerOnChange
--   registerOnTouched
--   setDisableState (optionnel)
-
-##==##
-
-<!-- .slide: class="sfeir-basic-slide" -->
-
-# WriteValue: modèle -> vue
-
--  Ecrit une valeur dans l'élément. Cette méthode est appelée :
-  -   lors de l'instanciation d'un nouveau FormControl
-  -   quand on appelle la méthode patchValue/setValue
-
-##==##
-
-<!-- .slide: class="with-code inconsolata" -->
-
-# registerOnChange: vue -> modèle
-
-Définit une fonction ou callback à appeler quand il y a un changement dans votre composant
-
-```typescript
-@Component({
-  selector: 'msfeir-dropdown',
-  templateUrl: 'sfeir-dropdown.component.html',
-  stylesUrl: [ 'sfeir-dropdown.component.css' ]
-  providers: [{ provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() => SfeirDropDownComponent), multi: true }]
-})
-export class SfeirDropDownComponent implements ControlValueAccessor {
-  private onChange: () => void;
-  writeValue() { }
-  registerOnChange(fn: () => void ) {
+  // Called by Angular to register a callback for model updates
+  registerOnChange(fn: (value: any) => void): void {
     this.onChange = fn;
   }
-  registerOnTouched(fn: any) { }
+
+  // Called by Angular to register a callback for the touched state
+  registerOnTouched(fn: () => void): void {
+    this.onTouched = fn;
+  }
+
+  // Called by Angular when the control's disabled state changes
+  setDisabledState?(isDisabled: boolean): void {
+    this.disabled = isDisabled;
+  }
+
+  // Example of how to update the model from the view
+  handleInput(newValue: any) {
+    this.value = newValue;
+    this.onChange(this.value);
+    this.onTouched();
+  }
 }
 ```
-
-<!-- .element: class="medium-code" -->
-
-##==##
-
-<!-- .slide: class="with-code inconsolata" -->
-
-# registerOnTouched: vue -> modèle
-
-Définit une fonction ou callback à appeler quand votre composant a été 'touched''
-
-```typescript
-@Component({
-  selector: 'msfeir-dropdown',
-  templateUrl: 'sfeir-dropdown.component.html',
-  stylesUrl: [ 'sfeir-dropdown.component.css' ]
-  providers: [{ provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() => SfeirDropDownComponent), multi: true }]
-})
-export class SfeirDropDownComponent implements ControlValueAccessor {
-  private onChange: () => void;
-  private onTouched: () => void;
-  writeValue() { }
-  registerOnChange(fn: () => void ) { this.onChange = fn; }
-  registerOnTouched(fn: () => void) { this.onTouched = fn; }
-}
-```
-
-<!-- .element: class="medium-code" -->
+<!-- .element: class="small-code" -->

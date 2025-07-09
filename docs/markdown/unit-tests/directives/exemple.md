@@ -1,5 +1,5 @@
 <!-- .slide: class="with-code inconsolata" -->
-# Un exemple plus parlant
+# A more telling example
 
 ```typescript
 describe('myBadgeDirective', () => {
@@ -8,14 +8,14 @@ describe('myBadgeDirective', () => {
       declarations: [HostComponentForBadgeDirective, myBadgeDirective]
     });
   });
-}
+});
 ```
 <!-- .element: class="big-code" -->
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Un exemple plus parlant
+# A more telling example
 
 ```typescript
 it('should ...', () => {

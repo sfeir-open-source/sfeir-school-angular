@@ -1,16 +1,16 @@
 <!-- .slide -->
-# Angular: un arbre de composant
+# Angular: a component tree
 
 ![h-600 center](assets/images/school/components/component_tree.png)
 
 ##==##
 <!-- .slide: class="with-code inconsolata" -->
-# Le décorateur @Component
-Carte d'identité d'un composant<br/>
+# The @Component decorator
+A component's identity card<br/>
 
 - selector
-- template et templateUrl
-- styles et styleUrls
+- template and templateUrl
+- styles and styleUrls
 - ...<br/><br/>
 
 ```typescript
@@ -26,11 +26,11 @@ Carte d'identité d'un composant<br/>
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Imbrication des composants
-Lorsqu'un composant parent souhaite utiliser des composants enfants<br/>
+# Nesting components
+When a parent component wants to use child components<br/>
 
-- les composants enfants doivent tous être référencés en utilisant leurs selectors
-- les composants enfants doivent être déclarés dans les "déclarations" du <b>@NgModule()</b><br/><br/>
+- child components must all be referenced using their selectors
+- child components must be declared in the "declarations" of the <b>@NgModule()</b><br/><br/>
 
 ```html
 <!-- app.component.html -->

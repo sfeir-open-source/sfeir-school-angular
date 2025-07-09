@@ -2,12 +2,12 @@
 # Lab 04 : 04-binding
 ## Lab
 
-<b>Un readme est à votre disposition dans le dossier apps/04-binding</b>
+<b>A readme is available in the apps/04-binding folder</b>
 <!-- .element: class="full-center" -->
 
 ##==##
 <!-- .slide: class="full-center" -->
-# Résultat attendu
+# Expected result
 
 ![ h-800](assets/images/school/components/people_card.png)
 

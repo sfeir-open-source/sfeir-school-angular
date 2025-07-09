@@ -1,16 +1,22 @@
 <!-- .slide: class="with-code inconsolata" -->
 
-# Modification de la requête
+# Modifying the Request
+
+To modify an outgoing request, you must clone it, as `HttpRequest` objects are immutable.
 
 ```typescript
-@Injectable()
-export class MyInterceptor implements HttpInterceptor {
-    constructor() {}
-    intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        const clonedRequest: HttpRequest<any> = this.req.clone({ setHeaders: { Authorization: 'Bearer Nicolas' } });
-        return next.handle(clonedRequest);
-    }
-}
+// auth.interceptor.ts
+import { HttpInterceptorFn } from '@angular/common/http';
+
+export const authInterceptor: HttpInterceptorFn = (req, next) => {
+  // Clone the request and add the authorization header.
+  const authReq = req.clone({
+    setHeaders: { Authorization: 'Bearer YOUR_TOKEN_HERE' },
+  });
+
+  // Pass the modified request to the next handler.
+  return next(authReq);
+};
 ```
 
 <!-- .element: class="medium-code" -->
@@ -19,38 +25,27 @@ export class MyInterceptor implements HttpInterceptor {
 
 <!-- .slide: class="with-code inconsolata" -->
 
-# Modification de la réponse
+# Modifying the Response
+
+To modify a response, use the `pipe` operator on the observable returned by `next()` with RxJS operators like `map`.
 
 ```typescript
-@Injectable()
-export class MyInterceptor implements HttpInterceptor {
-  constructor() { }
-  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    return next.handle(red).pipe(
-      map((event: HttpEvent<any>) => {
-        if (event instanceOf HttpResponse) {
-          return event.clone({ body: { ...event.body, name: 'Sfeir' } });
-        }
-      }),
-    );
-  }
-}
+// response.interceptor.ts
+import { HttpInterceptorFn, HttpResponse } from '@angular/common/http';
+import { map } from 'rxjs/operators';
+
+export const responseInterceptor: HttpInterceptorFn = (req, next) => {
+  return next(req).pipe(
+    map(event => {
+      if (event instanceof HttpResponse) {
+        // Clone the event and modify the response body.
+        return event.clone({ body: { ...event.body, modified: true } });
+      }
+      // Return the event without modification if it's not an HttpResponse.
+      return event;
+    })
+  );
+};
 ```
-<!-- .element: class="big-code" -->
 
-##==##
-
-# Ecriture d'un interceptor sous forme de fonction
-
-<br/><br/>
-
-```typescript
-export function AuthorizationInterceptor(
-  request: HttpRequest<People | Array<People>>,
-  next: HttpHandlerFn
-): Observable<HttpEvent<People | Array<People>>> {
-  const clonedRequest = request.clone({ setHeaders: { Authorization: 'Sfeir' } });
-  return next(clonedRequest) as Observable<HttpEvent<People | Array<People>>>;
-}
-```
-<!-- .element: class="big-code" -->
+<!-- .element: class="medium-code" -->

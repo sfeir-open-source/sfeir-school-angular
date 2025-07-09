@@ -5,7 +5,7 @@
 
 <h2>Anthony <span>Pena</span></h2>
 
-### Developer Web FullStack
+### Full-Stack Web Developer
 
 <!-- .element: class="icon-rule icon-first" -->
 

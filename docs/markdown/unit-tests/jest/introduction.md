@@ -3,29 +3,29 @@
 
 ##==##
 
-# Qu'est ce que Jest ?
+# What is Jest?
 
 ![h-250 center](assets/images/school/unit-tests/jest-logo.png)
 
 
 <br/><br/>
 
-Jest est un framework de test JavaScript agréable qui met l'accent sur la simplicité.
+Jest is a delightful JavaScript testing framework with a focus on simplicity.
 
 <br/><br/>
 
-Contrairement à Karma, Jest est un node test runner, c'est à dire qu'il n'aura pas besoin de lancer un chrome standalone pour lancer les tests
+Unlike Karma, Jest is a Node test runner, which means it doesn't need to launch a standalone Chrome to run tests.
 
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Comment configurer Angular pour utiliser Jest
+# How to configure Angular to use Jest
 
-3 packages à installer: 
-- jest -> framework de test
-- jest-preset-angular -> configuration out of the box pour utiliser jest dans Angular
-- types/jest -> la définition de type de Jest
+3 packages to install:
+- jest -> test framework
+- jest-preset-angular -> out-of-the-box configuration to use Jest in Angular
+- @types/jest -> Jest type definitions
 
 <br/><br/><br/>
 
@@ -37,17 +37,17 @@ npm install --save-dev jest-preset-angular jest @types/jest
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Comment configurer Angular pour utiliser Jest
+# How to configure Angular to use Jest
 
-Deux fichiers à créer: 
+Two files to create:
 
-- jest.config.js -> fichier à créer  à la racine du projet
-- setup-jest.ts -> fichier à créer à la racine du dossier src
+- jest.config.js -> file to create at the project root
+- setup-jest.ts -> file to create at the root of the src folder
 
 <br/><br/>
 
-Un fichier à modifier
-- tsconfig.spec.json -> importer la definition de types de jest
+One file to modify:
+- tsconfig.spec.json -> import Jest type definitions
 
 ##==##
 
@@ -87,9 +87,3 @@ setupZoneTestEnv({
 });
 ```
 <!-- .element: class="big-code" -->
-
-
-
-
-
-

@@ -1,62 +1,63 @@
-# Le routing avec les standalone components
+# Routing with Standalone Components
 
-Le standalone components offre de nouvelles possibilités <br/><br/>
+Standalone components offer new possibilities:<br/><br/>
 
-- lazyloader un standalone components <br/><br/>
-- lazyloader un ensemble de standalone components <br/><br/>
+- lazy-load a standalone component<br/><br/>
+- lazy-load a set of standalone components<br/><br/>
 
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide with-code inconsolata"-->
-# Lazyloader un standalone component
+# Lazy-loading a Standalone Component
 
-Une nouvelle méthode qui ressemble étrangement à celle que l'on connaît déjà: __loadChildren__ <br/><br/>
+A new property that is very similar to what we already know: `loadComponent`<br/><br/>
 
 ```typescript
-const APP_ROUTES = [
-  {path: 'home', loadComponent: () => import('@feature/home/home.component').then(cmp => cmp.HomeComponent)}
-]
+const APP_ROUTES: Routes = [
+  {path: 'home', loadComponent: () => import('@feature/home/home.component').then(m => m.HomeComponent)}
+];
 ```
 <!-- .element: class="big-code"-->
 
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide with-code inconsolata"-->
-# Lazyloader un ensemble de composant standalone
+# Lazy-loading a set of Standalone Components
 
-__loadChildren__ peut désormais charger un fichier de route composé de standalone component <br/><br/>
+`loadChildren` can now load a route file composed of standalone components.<br/><br/>
 
 ```typescript
-export const CHILD_ROUTES = [
+// user.routes.ts
+export const CHILD_ROUTES: Routes = [
   {
     path: '', component: UserComponent, children: [
       {path: 'admin', component: AdminComponent},
       {path: 'details', component: DetailsComponent}
     ]
   }
-]
+];
 ```
 <!-- .element: class="medium-code"-->
 
 
 ```typescript
-const APP_ROUTES = [
-  {path: 'user', loadChildren: () => import('@feature/user/user.routes').then(rts => rts.CHILD_ROUTES)}
-]
+// app.routes.ts
+const APP_ROUTES: Routes = [
+  {path: 'user', loadChildren: () => import('@feature/user/user.routes').then(m => m.CHILD_ROUTES)}
+];
 ```
 <!-- .element: class="medium-code"-->
 
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide with-code inconsolata"-->
-# Comment enregistrer notre routing sans module
+# How to register routing without modules
 
-Sans module, une nouvelle façon d'enregistrer son routing. <br/><br/>
+Without modules, there's a new way to register your routes.<br/><br/>
 
 ```typescript
-import {bootstrapApplication} from '@angular/platform-browser';
-import {importProvidersFrom} from '@angular/core';
-import {provideRouter} from '@angular/router';
+import { bootstrapApplication } from '@angular/platform-browser';
+import { provideRouter } from '@angular/router';
 
 bootstrapApplication(AppComponent, {
   providers: [
@@ -69,36 +70,37 @@ bootstrapApplication(AppComponent, {
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide with-code inconsolata"-->
-# Configurer le routing sans module
+# Configuring routing without modules
 <br/><br/>
 
-**provideRouter** prend deux paramètres: 
-- les routes <br/><br/>
-- la configuration du router
+`provideRouter` takes two parameters: 
+- the routes<br/><br/>
+- the router features (configuration)
 
 
 ##==##
 
 <!-- .slide-->
-# Configurer le routing sans module
+# Configuring routing without modules
 
-Il existe différent RouterFeature:
-- **withRouterConfig**: permet de configurer la navigation <br/><br/>
-- **withDebugTracing**: permet d'activer les logs interne à la navigation d'Angular <br/><br/>
-- **withHashLocation**: permet de changer la stratégie de navigation par défaut (HTML5) par une stratégie basé sur le hash (#) <br/><br/>
-- **withComponentInputBinding**: permet de binder les paramètres de la route à un composant <br/><br/>
-- **withNavigationErrorHandler**: permet de gérer les erreurs de navigation <br/><br/>
-- ... et bien d'autres
+Several `RouterFeatures` are available:
+- `withRouterConfig`: allows you to configure navigation options.<br/><br/>
+- `withDebugTracing`: enables logging of internal Angular navigation events.<br/><br/>
+- `withHashLocation`: changes the default location strategy (HTML5) to a hash-based strategy (`#`).<br/><br/>
+- `withComponentInputBinding`: enables binding of route parameters to component inputs.<br/><br/>
+- `withNavigationErrorHandler`: allows you to handle navigation errors.<br/><br/>
+- ... and many others.
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata"-->
-# Configurer le routing sans module
+# Configuring routing without modules
 
 <br/><br/><br/>
 
 ```typescript
-import {bootstrapApplication} from '@angular/platform-browser';
+import { bootstrapApplication } from '@angular/platform-browser';
+import { provideRouter, withDebugTracing, withHashLocation, withComponentInputBinding } from '@angular/router';
 
 bootstrapApplication(AppComponent, {
   providers: [
@@ -110,26 +112,26 @@ bootstrapApplication(AppComponent, {
 
 ##==##
 
-# Binder les paramètres de la route à un composant
+# Binding route parameters to component inputs
 
-Depuis peu, Angular nous permet de binder les paramètres de la route à un composant <br/><br/>, un peu comme le fait déjà Vue js.
+Angular now allows us to bind route parameters to component inputs, similar to Vue.js.<br/><br/>
 
-Pour en bénéficier il suffit d'ajouter une configuration dans notre router <br/><br/>
+To enable this, you just need to add a feature to your router configuration:<br/><br/>
 
-- **withComponentInputBinding**: permet de binder les paramètres de la route à un composant dans le cas d'une application sans module <br/><br/>
-- **RouterModule.forRoot(routes, { bindToComponentInputs: true })**: permet de binder les paramètres de la route à un composant dans le cas d'une application avec module <br/><br/>
+- `withComponentInputBinding()`: enables input binding for a module-less application.<br/><br/>
+- `RouterModule.forRoot(routes, { bindToComponentInputs: true })`: enables input binding for a module-based application.<br/><br/>
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Comment ça fonctionne ?
+# How does it work?
 
 ```typescript
-// Fichier main.ts
+// main.ts file
 
 bootstrapApplication(AppComponent, {
   providers: [
-    provideRouter([{ path: '/search', component: SearchComponent }], withComponentInputBinding()),
+    provideRouter([{ path: 'search/:id', component: SearchComponent }], withComponentInputBinding()),
   ]
 });
 ```
@@ -138,27 +140,21 @@ bootstrapApplication(AppComponent, {
 ```typescript
 @Component({
   selector: 'search',
-  template: `<p>Search query: {{ query }}</p>`
+  template: `<p>Search query: {{ query }} and id: {{ id }}</p>`
 })
 export class SearchComponent {
   @Input() query?: string;
+  @Input() id?: string;
 }
 ```
 <!-- .element: class="medium-code"-->
 
 ##==##
 
-# Une résolution par ordre bien spécifique
+# A specific resolution order
 
-Le problème avec cette notion de binding et le naming. Angular résout les paramètres de la route dans l'ordre suivant: <br/><br/>
+The challenge with this binding concept is naming conflicts. Angular resolves route parameters in the following order:<br/><br/>
 
-- data <br/><br/>
-- path params <br/><br/>
-- query params <br/><br/>
-
-
-
-
-
-
-
+- Route `data` object<br/><br/>
+- Path parameters (`/user/:id`)<br/><br/>
+- Query parameters (`?q=hello`)<br/><br/>

@@ -5,19 +5,23 @@
 ##==##
 
 <!-- .slide-->
-# Host Listener: Définition
+# Host Listener: Definition
 
-- Permet d'écouter un événement du DOM et d'appeler un callback <br/><br/>
-- Décorateur @HostListener()
+- Allows listening to a DOM event and calling a callback <br/><br/>
+- @HostListener() decorator
 
 ##==##
 
 <!-- .slide: class="inconsolata with-code" -->
-# Host Listener: Exemple
+# Host Listener: Example
 
 ```typescript
+import { Directive, HostListener, Output, EventEmitter } from '@angular/core';
+
 @Directive({ selector: '[blDragAndDrop]' })
 export class DragAndDropDirective {
+  @Output() onFileUpload$: EventEmitter<File | null> = new EventEmitter();
+
   constructor() { }
 
   @HostListener('drop', [ '$event' ])
@@ -35,18 +39,18 @@ export class DragAndDropDirective {
 
 ##==##
 
-# Host Listener / Host Binding: une seconde écriture
+# Host Listener / Host Binding: a second syntax
 
 <br/>
 
-- Une deuxième écriture est possible <br/><br/>
-- Utilisée principalement par des librairies de composants <br/><br/>
-- Ne pas mixer les deux écritures
+- A second syntax is possible <br/><br/>
+- Mainly used by component libraries <br/><br/>
+- Do not mix the two syntaxes
 
 ##==##
 
 <!-- .slide: class="inconsolata with-code" -->
-# Un exemple plus compréhensible
+# A more understandable example
 
 ```typescript
 @Directive({

@@ -1,23 +1,23 @@
 <!-- .slide -->
-# Les Fondements
+# The Basics
 
 <br/><br/>
 
--   Angular lance un changement de détection sur tous les composants (du parent à tous les enfants)<br/><br/>
--   Lancement d'un changement de détection à chaque fois que quelque chose change dans l'app (user event)<br/><br/>
--   Performant mais pour des applications plus complexes, risque de ralentissements.
+-   Angular triggers a change detection on all components (from parent to all children)<br/><br/>
+-   A change detection is triggered every time something changes in the app (user event)<br/><br/>
+-   Efficient but for more complex applications, there is a risk of slowdowns.
 
 ##==##
 
 <!-- .slide: class="full-center" -->
 # Change Detection Strategy: OnPush
-Lance uniquement un changement lorsque la référence d'une variable change
+Only triggers a change when the reference of a variable changes
 <!-- .element: class="important" -->
 
 ##==##
 
 <!-- .slide: class="two-column with-code inconsolata" -->
-# Des exemples
+# Examples
 
 ```typescript
 import { Component } from '@angular/core';
@@ -61,7 +61,7 @@ export class ChildComponent {
 ##==##
 
 <!-- .slide: class="two-column with-code inconsolata" -->
-# Des exemples
+# Examples
 
 ```typescript
 import { Component } from '@angular/core';
@@ -108,5 +108,6 @@ export class ChildComponent {
 
 Notes:
 
--   Dans cette exemple, on ne verra aucun changement, puisque la référence ne change pas !
--   Si l'on souhaite changer de reférence, penser à la destructuration => this.foods = [...this.foods, food];
+-   In this example, the child component uses `ChangeDetectionStrategy.OnPush`.
+-   If we used `this.foods.push(food)`, the view would not update because the array reference does not change.
+-   By creating a new array with `this.foods = [...this.foods, food]`, we change the input reference, which triggers change detection.

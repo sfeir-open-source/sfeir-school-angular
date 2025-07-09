@@ -1,7 +1,7 @@
 <!-- .slide: class="exercice" -->
 # Lab 01 : 01-hands-on
 ## lab
-<b>Un readme est à votre disposition dans le dossier apps/01-hands-on</b>
+<b>A readme is available in the apps/01-hands-on folder</b>
 <!-- .element: class="full-center" -->
 ##==##
 

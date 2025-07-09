@@ -1,5 +1,5 @@
 <!-- .slide: class="with-code inconsolata"-->
-# Comment créer un Signal
+# How to create a Signal
 <br/><br/>
 
 ```typescript
@@ -9,14 +9,15 @@ const name = signal<string>('SFEIR');
 
 <br /><br/>
 
-La signature d'un signal est la suivante:
+The signature of a signal is as follows:
 <!-- .element: class="important"-->
 
 <br/><br/>
 
-
 ```typescript
-signal<T>(initialValue: T, { equality: EqualityFn<T> }): WritableSignal<T>
+import { EqualityFn, WritableSignal } from '@angular/core';
+
+signal<T>(initialValue: T, options?: { equality?: EqualityFn<T> }): WritableSignal<T>;
 ```
 <!-- .element: class="big-code"-->
 
@@ -24,11 +25,11 @@ signal<T>(initialValue: T, { equality: EqualityFn<T> }): WritableSignal<T>
 
 <!-- .slide: class="with-code inconsolata"-->
 
-## Lecture de la valeur d'un signal
+## Reading a signal's value
 
 <br/><br/>
 
-- Dans le composant
+- In the component's class:
 ```typescript
 const name = signal<string>('SFEIR');
 console.log(name()); // SFEIR
@@ -37,33 +38,33 @@ console.log(name()); // SFEIR
 
 <br/><br/>
 
-- Dans le template
+- In the template:
 ```html
-<span>{{ name }}</span>
+<span>{{ name() }}</span>
 ```
 <!-- .element: class="big-code"-->
 
 ##==##
 
-# L'objet WritableSignal
+# The WritableSignal Object
 <br /><br />
 
-- la méthode **set**: permet de modifier la valeur du signal en changeant sa référence <br /><br />
-- la méthode **update**: permet de modifier la valeur du signal en utilisant la valeur précédente <br /><br />
-- la méthode **asReadonly**: permet de transformer un signal en un signal en lecture seule <br /><br />
+- The **`set()`** method: allows you to change the signal's value by replacing it.<br /><br />
+- The **`update()`** method: allows you to change the signal's value based on its previous value.<br /><br />
+- The **`asReadonly()`** method: allows you to expose a signal as a read-only version.<br /><br />
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata"-->
-# La méthode set
+# The `set()` method
 
 <br/><br/>
 
-- Permet de setter une nouvelle valeur du signal en changeant sa référence <br /><br />
+- Allows you to set a new value for the signal, replacing the old one.<br /><br />
 
 ```typescript
 const name = signal<string>('SFEIR');
-console.log(name()) // SFEIR
+console.log(name()); // SFEIR
 
 name.set('Google');
 console.log(name()); // Google
@@ -73,17 +74,17 @@ console.log(name()); // Google
 ##==##
 
 <!-- .slide: class="with-code inconsolata"-->
-# La méthode update
+# The `update()` method
 
 <br/><br/>
 
-- permet de modifier la valeur du signal en utilisant la valeur précédente <br /><br />
+- Allows you to modify the signal's value using its previous value.<br /><br />
 
 ```typescript
 const name = signal<string>('SFEIR');
 console.log(name()); // SFEIR
 
-name.update(name  => `${name} Luxembourg`);
+name.update(currentName => `${currentName} Luxembourg`);
 console.log(name()); // SFEIR Luxembourg
 ```
 <!-- .element: class="big-code"-->
@@ -91,34 +92,36 @@ console.log(name()); // SFEIR Luxembourg
 ##==##
 
 <!-- .slide: class="with-code inconsolata"-->
-# La méthode asReadonly
+# The `asReadonly()` method
 
 <br/><br/>
 
-- permet de transformer un signal en un signal en lecture seule <br /><br />
+- Allows you to expose a signal as a read-only `Signal`.<br /><br />
 
 ```typescript
 const name = signal<string>('SFEIR');
 const nameReadonly = name.asReadonly();
-console.log(name()); // SFEIR
+console.log(nameReadonly()); // SFEIR
 
-nameReadonly.set('Google'); // Error can set signal that is readonly
+// The following line would cause a compilation error:
+// nameReadonly.set('Google'); // Error: Property 'set' does not exist on type 'Signal<string>'.
 ```
 <!-- .element: class="big-code"-->
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata"-->
-# Changer la résolution d'égalité
+# Changing the Equality Function
 
-- Vous pouvez changer la façon dont Angular détecte un changement <br/><br/>
-- Attention il faut être sûre de son coup, risque de bug. <br/><br/>
+- You can change how Angular detects if the value has changed.<br/><br/>
+- Be careful, as this can lead to bugs if not used correctly.<br/><br/>
 
 ```typescript
-content_copy
 import { isEqual } from 'lodash-es';
 
-const data = signal(['test'], {equal: isEqual});
+const data = signal(['test'], { equal: isEqual });
+
+// This will not trigger updates because isEqual returns true
 data.set(['test']);
 ```
 <!-- .element: class="big-code"-->
@@ -127,11 +130,11 @@ data.set(['test']);
 
 <!-- .slide: class="with-code inconsolata"-->
 
-# Dériver un signal avec computed
+# Deriving a signal with `computed`
 
-- **computed** est définie par une fonction de dérivation <br/><br/>
-- évalué de manière lazy et memoized par défaut <br/><br/>
-- dépendance d'une computed sont dynamique  <br/><br/>
+- A **`computed`** signal is defined by a derivation function.<br/><br/>
+- It is lazily evaluated and memoized by default.<br/><br/>
+- Its dependencies are tracked dynamically.<br/><br/>
 
 ```typescript
 const showCount = signal(false);
@@ -142,25 +145,25 @@ const conditionalCount = computed(() => {
   } else {
     return 'Nothing to see here!';
   }
-}
+});
 ```
 <!-- .element: class="big-code"-->
 
 ##==##
 
-# Performer des effets de bord avec effect
+# Performing side effects with `effect`
 
 <br/><br/>
 
-- **effect** est définie par une fonction de sideEffect <br/><br/>
-- exécution de la fonction de sideEffect au moins une fois <br/><br/>
-- exécuté à chaque fois que les dépendances tracker changent <br/><br/>
-- un effet se réalise toujours dans un context d'injection <br/><br/>
+- An **`effect`** is defined by a side-effect function.<br/><br/>
+- The function runs at least once.<br/><br/>
+- It re-runs whenever its tracked signal dependencies change.<br/><br/>
+- An effect must be created within an injection context.<br/><br/>
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata"-->
-# Performer des effets de bord avec effect
+# Performing side effects with `effect`
 
 ```typescript
 @Component({ selector: 'app-root', template: ''})
@@ -171,10 +174,12 @@ export class AppComponent {
   constructor() {
     effect((onCleanup) => {
       const controller = new AbortController();
-      const response = await fetch(`/todos/${id()}`, { signal: controller.signal })
-      todo.set(await response.json());
-      onCleanup(() => controller.abort())
-    }, { allowSignalWrites: true })
+      onCleanup(() => controller.abort());
+
+      fetch(`/todos/${this.id()}`, { signal: controller.signal })
+        .then(response => response.json())
+        .then(data => this.todo.set(data));
+    });
   }
 }
 ```
@@ -183,7 +188,7 @@ export class AppComponent {
 ##==##
 
 <!-- .slide: class="with-code inconsolata"-->
-# Performer des effets de bord avec effect
+# Performing side effects with `effect` outside constructor
 
 ```typescript
 @Component({ selector: 'app-root', template: ''})
@@ -195,10 +200,12 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     effect((onCleanup) => {
       const controller = new AbortController();
-      const response = await fetch(`/todos/${id()}`, { signal: controller.signal })
-      todo.set(await response.json());
-      onCleanup(() => controller.abort())
-    }, { allowSignalWrites: true, injector: this.#injector })
+      onCleanup(() => controller.abort());
+
+      fetch(`/todos/${this.id()}`, { signal: controller.signal })
+        .then(res => res.json())
+        .then(data => this.todo.set(data));
+    }, { injector: this.#injector });
   }
 }
 ```
@@ -207,11 +214,11 @@ export class AppComponent implements OnInit {
 ##==##
 
 <!-- .slide: class="with-code inconsolata"-->
-# Ne pas lever une réévaluation avec untracked
+# Preventing re-evaluation with `untracked`
 
-- **untracked** permet de ne pas lever une réévaluation <br/><br/>
-- **untracked** permet de ne pas ajouter de dépendance dans une fonction réactive <br/><br/>
-- **untracked** prend en paramètre une fonction <br/><br/>
+- **`untracked`** prevents a signal read from being tracked as a dependency.<br/><br/>
+- It is used inside a reactive function (`computed` or `effect`).<br/><br/>
+- **`untracked`** takes a function as its parameter.<br/><br/>
 
 ```typescript
 const company = signal('SFEIR');
@@ -219,81 +226,87 @@ const employeeNumber = signal(100);
 
 effect(() => {
   console.log(`The company ${untracked(company)} has ${employeeNumber()} employees.`);
-  });
-})
+});
 ```
 <!-- .element: class="big-code"-->
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata"-->
-# Assemblons et voyons comment ça fonctionne
+# Putting it all together
 <br/><br/>
 
 ```typescript
 const counter = signal(0);
 const isEven = computed(() => counter() % 2 === 0);
+
 effect(() => {
   console.log(`The counter is ${counter()} and is ${isEven() ? 'even' : 'odd'}.`);
-})
+});
+
+// The effect runs. Logs: "The counter is 0 and is even."
+
+counter.set(1);
+// The effect runs again. Logs: "The counter is 1 and is odd."
 
 counter.set(2);
-
-counter.set(4);
+// The effect runs again. Logs: "The counter is 2 and is even."
 ```
 <!-- .element: class="big-code"-->
 
 ##==##
 
-# Assemblons et voyons comment ça fonctionne
+# Putting it all together
 
-![h-900 full-width ](assets/images/school/signals/signals-working.png)
+![h-900 full-width](assets/images/school/signals/signals-working.png)
 
 ##==##
 
-# Interporabilité avec RxJs
+# Interoperability with RxJS
 
-RxJs n'est pas déprécated, aujourd'hui il est utilisé pour autre chose: <br/><br/><br/>
+RxJS is not deprecated; it is now used for different purposes:<br/><br/><br/>
 
-- Signal est utilisé pour gérer l'état de votre application, comme par exemple l'état d'un loader <br/><br/>
-- Rxjs est utilisé pour gérer les évènements, autrement dit gérer le flux utilisateurs<br/><br/>
+- **Signals** are used to manage the state of your application (e.g., the state of a loader).<br/><br/>
+- **RxJS** is used to manage events and asynchronous streams (e.g., user input, WebSocket messages).<br/><br/>
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata"-->
-# Interporabilité avec RxJs: toObservable
+# Interoperability with RxJS: `toObservable`
 
-La fonction toObservable permet de transformer un signal en observable RxJs <br/><br/>
+The `toObservable` function converts a signal into an RxJS observable.<br/><br/>
 
 ```typescript
+import { toObservable } from '@angular/core/rxjs-interop';
+
 const counter = signal(0);
 const counter$ = toObservable(counter);
 
-counter$.subscribe(value => console.log(value)); // console.log(0), then console.log(1)
+counter$.subscribe(value => console.log(value)); // Logs 0
 
-counter.set(1);
+counter.set(1); // Logs 1
 ```
 <!-- .element: class="big-code"-->
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata"-->
-# Interporabilité avec RxJs: toSignal
+# Interoperability with RxJS: `toSignal`
 
-La fonction toSignal permet de transformer un observable en signal <br/><br/>
+The `toSignal` function converts an observable into a signal.<br/><br/>
 
 ```typescript
-import {toSignal} from "@angular/core/rxjs-interop";
-import {of} from "rxjs";
-const counter = toSignal(of(0), { requireSync: true });
+import { toSignal } from "@angular/core/rxjs-interop";
+import { of } from "rxjs";
+
+const counter$ = of(0);
+const counter = toSignal(counter$, { requireSync: true });
+
 console.log(counter()); // 0
 ```
 <!-- .element: class="big-code"-->
 
-**toSignal** prend en paramètre un observable et un objet de configuration <br/><br/>
+**`toSignal`** takes an observable and a configuration object as parameters:<br/><br/>
 
-- requireSync: permet de s'assurer que la valeur est synchronisée (uniquement si l'observable a une valeur initial) <br/><br/>
-- initialValue: permet de définir une valeur initiale <br/><br/>
-
-
-
+- `initialValue`: (required for async sources) defines an initial value before the observable emits.<br/><br/>
+- `requireSync`: ensures the observable emits synchronously on subscription. Throws an error if it doesn't.<br/><br/>

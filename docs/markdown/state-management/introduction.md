@@ -1,44 +1,44 @@
 <!-- .slide: class="transition-bg-sfeir-2" -->
-# Problématique
+# The Problem
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide" -->
-# Cas concret
-Soit une application web classique avec trois composants A, B, C et une variable ‘toto’.<br/><br/>
+# A Concrete Example
+Consider a classic web application with three components (A, B, C) and a variable named 'toto'.<br/><br/>
 
-- Composant A peut créer et modifier la variable toto
-- Composant B peut modifier la variable toto
-- Composant C peut modifier uniquement une propriété de la variable toto
+- Component A can create and modify the 'toto' variable.
+- Component B can modify the 'toto' variable.
+- Component C can only modify a property of the 'toto' variable.
 <br/><br/>
 
-__Problème__ : schématisation d’accès et de modification à la donnée semblable à une toile d'araignée dont chaque cas est dépendant du contexte! <br/><br/>
-__Répercussion__ : Complication à suivre de la logique, difficile à débugger<br/><br/>
+__Problem__: The data access and modification flow resembles a spiderweb, where each case depends on the context!<br/><br/>
+__Consequence__: The logic becomes complicated to follow and difficult to debug.<br/><br/>
 
-Trouver un moyen de communication commun
+We need to find a common communication method.
 <!-- .element: class="important" -->
 
 ##==##
 
 <!-- .slide -->
-# 3 façon de communiquer
+# 3 Ways to Communicate
 
-Il existe deux grandes familles de communication<br/><br/>
-- __Parent - Enfant__ :
-    - Input / Output [ exemple => @Input() , @Output dans un application Angular ]
+There are two main families of communication:<br/><br/>
+- __Parent-Child__:
+    - Input / Output (e.g., `@Input()`, `@Output()` in an Angular application)
 <br/><br/>
-- __Éléments indépendants les uns des autres__
-    - Bus de communication [ système de notification, event emitter … ]
-    - Architecture flux
+- __Independent Elements__
+    - Communication Bus (e.g., notification system, event emitter...)
+    - Flux Architecture
 
 ##==##
 
 <!-- .slide -->
-# Notification dans un bus de communication
+# Notifications via a Communication Bus
 
-- Notification via un EventEmitter
-- Global ou dans des services
-- Utiliser ces méthodes
-  - subscribe et emit
+- Notification via an `EventEmitter`
+- Can be global or within services
+- Uses these methods:
+  - `subscribe` and `emit`
 <br/><br/>
 
 ![h-500](assets/images/school/state-management/bus_methods.png)
@@ -48,8 +48,8 @@ Il existe deux grandes familles de communication<br/><br/>
 
 <!-- .slide: class="two-column" -->
 # State Management
-- Architecture dataflow : like Redux :) <br/><br/>
-- Librairie tiers à installer
+- Dataflow architecture: like Redux :)<br/><br/>
+- Requires installing a third-party library
 
 ##--##
 <br/><br/><br/>

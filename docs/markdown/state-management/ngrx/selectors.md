@@ -1,17 +1,28 @@
 <!-- .slide: class="with-code inconsolata" -->
-# NGRX : Selectors
+# NGRX: Selectors
 
-- Permettent de retourner partiellement ou entièrement le store
-- Renvoie toujours un Observable
+- Selectors are pure functions used to obtain slices of store state.
+- They provide a memoized, observable-based way to access data.
 
 <br/><br/>
 
 ```typescript
-export const getPeopleState = (state: PeopleFeature) => state.people;
+import { createSelector, createFeatureSelector } from '@ngrx/store';
+import { PeopleState } from './people.reducer';
 
-export const getFilteredPeople = createSelector(getPeopleState, (state: State) =>
-  filterPeople(state.search, state.people)
+// 1. Create a feature selector for the 'people' state slice
+export const selectPeopleState = createFeatureSelector<PeopleState>('people');
+
+// 2. Create a selector to get the list of people
+export const selectAllPeople = createSelector(
+  selectPeopleState,
+  (state: PeopleState) => state.people
 );
-export const getSearch = createSelector(getPeopleState, (state: State) => state.search);
+
+// 3. Create a selector that composes other selectors
+export const selectFilteredPeople = createSelector(
+    selectAllPeople,
+    (people) => people.filter(p => p.attending)
+);
 ```
 <!-- .element: class="big-code" -->

@@ -1,7 +1,7 @@
 <!-- .slide: class="exercice"-->
 
-# TP 1: Création d'un composant card générique :)
+# Lab 1: Creating a generic card component :)
 
 <br><br>
 
-- Ce tp 
+- This lab 

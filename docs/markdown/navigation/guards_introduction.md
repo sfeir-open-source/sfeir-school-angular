@@ -1,21 +1,20 @@
 <!-- .slide-->
-# Généralités sur les Guards
+# General Information about Guards
 
-- Hook de vérification / ou de prefetching avant la navigation vers une route <br/><br/>
-- Il existe plusieurs guards en fonction de sa navigation (2 types vérification, fetching)<br/><br/>
-- Un guard consiste en un service Angular
+- Verification / or prefetching hook before navigating to a route <br/><br/>
+- There are several guards depending on the navigation (2 types: verification, fetching)<br/><br/>
+- A guard consists of an Angular service
 
 ##==##
 
 <!-- .slide -->
-# Les différents guards
+# The different guards
 
-- __CanActivate__: hook avant de naviguer vers une route<br/><br/>
-- __CanActivateChild__: hook avant de naviguer vers une route enfant<br/><br/>
-- __CanDeactivate__: hook lorsque l'on quitte la route courante<br/><br/>
-- __CanMatch__: hook avant même de charger la route<br/><br/>
-- __Resolve__:  hook permettant de fetcher des data avant de naviguer vers une route<br/><br/>
+- __CanActivate__: hook before navigating to a route<br/><br/>
+- __CanActivateChild__: hook before navigating to a child route<br/><br/>
+- __CanDeactivate__: hook when leaving the current route<br/><br/>
+- __CanMatch__: hook even before loading the route<br/><br/>
+- __Resolve__:  hook for fetching data before navigating to a route<br/><br/>
 Notes:
-- les 4 premiers guards sont des guards de "vérification authorisation"
-- le 5ième consiste vraiment à optimier l'affichage de votre application
-
+- The first 4 guards are "authorization verification" guards.
+- The 5th is really about optimizing your application's display.

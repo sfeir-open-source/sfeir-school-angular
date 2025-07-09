@@ -1,21 +1,21 @@
 <!-- .slide: class="transition-bg-sfeir-2 underline" -->
 
-# Bootstraping
+# Bootstrapping
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
 
-# Bootstraping: main.ts
+# Bootstrapping: main.ts
 
-Dans une application Angular, le fichier __main.ts__ est chargé en premier
+In an Angular application, the __main.ts__ file is loaded first
 <br/><br/>
 
 ```typescript
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {AppModule} from './app.module';
 
-platformBowserDynamic().bootstrapModule(AppModule);
+platformBrowserDynamic().bootstrapModule(AppModule);
 ```
 
 <!-- .element: class="big-code" -->
@@ -24,7 +24,7 @@ platformBowserDynamic().bootstrapModule(AppModule);
 
 <!-- .slide: class="with-code inconsolata" -->
 
-# Bootstraping dans sa totalité
+# Bootstrapping in its entirety
 
 ```typescript
 // main.ts
@@ -42,7 +42,7 @@ platformBrowserDynamic().bootstrapModule(AppModule);
 // app.module.ts
 @NgModule({
   imports: [browserModule],
-  declaration: [AppComponent],
+  declarations: [AppComponent],
   exports: [],
   bootstrap: [AppComponent],
 })

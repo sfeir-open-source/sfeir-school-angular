@@ -5,7 +5,7 @@
 
 <h2>Bruno <span>BELLENOUE</span></h2>
 
-### Team Leader & Developer FullStack JS
+### Team Leader & Full-Stack JS Developer
 
 <!-- .element: class="icon-rule icon-first" -->
 

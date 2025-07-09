@@ -1,58 +1,62 @@
-# L'injection en Angular 14
+# Injection in Angular 14+
 
-Sans module la notion de moduleInjector n'existe plus <br/><br/>
+Without modules, the concept of a `ModuleInjector` no longer exists.<br/><br/>
 
-- __Element Injector__ <br/><br/>
-- __Environment Injector__
+- **Element Injector**<br/><br/>
+- **Environment Injector**
 
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide with-code inconsolata"-->
-# Environment Injector pour un ensemble de routes
+# Environment Injector for a set of routes
 
-Sans module, enregistrer un service uniquement pour une feature ne se fait plus de la même façon.<br/><br/>
-C'est ici que la notion d'__environment injector__ prend tout son sens. <br/><br/>
+Without modules, registering a service for a specific feature is done differently.<br/><br/>
+This is where the concept of an **Environment Injector** becomes essential.<br/><br/>
 
 ```typescript
-export const CHILD_ROUTES = [
+export const CHILD_ROUTES: Routes = [
   {
-    path: '', component: UserComponent, providers: [UserService], children: [
+    path: '',
+    component: UserComponent,
+    providers: [UserService], // Provided for this route and its children
+    children: [
       {path: 'admin', component: AdminComponent},
       {path: 'details', component: DetailsComponent}
     ]
   }
-]
+];
 ```
 <!-- .element: class="big-code"-->
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata"-->
-# S'assurer qu'un provider soit injecté uniquement dans un environmentProvider
+# Ensuring a provider is only injected in an Environment Injector
 
-Cette fonctionnalité pratique permet de s'assurer qu'un provider soit injecté uniquement dans un environmentProvider <br/><br/>
+This feature ensures that a provider is only registered in an environment injector, not on a component.<br/><br/>
 
 ```typescript
-import {makeEnvironmentProviders} from '@angular/core'
+import { makeEnvironmentProviders } from '@angular/core';
 
-export const loggerService = makeEnvironmentProviders(LoggerService);
+export const loggerServiceProvider = makeEnvironmentProviders([LoggerService]);
 ```
 <!-- .element: class="big-code"-->
 
 <br/><br/>
 
-Ainsi, Angular lèvera une erreur si loggerService est enregistré dans un composant par exemple
+This way, Angular will throw an error if `loggerServiceProvider` is registered in a component's `providers` array, for example.
 
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide with-code inconsolata"-->
 
-# L'injection hors de son context
+# Injection outside of its context
 
-Angular fournit une fonction __inject__ que l'on ne pouvait utiliser que dans un context d'injection <br/><br/>
+Angular provides an `inject()` function that could previously only be used within an injection context.<br/><br/>
 
 ```typescript
-import {NgModule} from '@angular/core';
+import { inject, NgModule, APP_INITIALIZER } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @NgModule({
   providers: [
@@ -60,51 +64,53 @@ import {NgModule} from '@angular/core';
       provide: APP_INITIALIZER,
       useFactory: () => {
         const httpClient = inject(HttpClient);
-        return () => httpClient.get()
-      }
+        return () => httpClient.get('/api/init');
+      },
+      multi: true
     }
   ]
 })
+export class AppModule {}
 ```
 <!-- .element: class="big-code"-->
 
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide with-code inconsolata"-->
-# L'injection hors de son context
+# Injection outside of its context
 
-Avec Angular 14 on peut utiliser cette fonction également dans la __construction__ d'un composant <br/><br/>
+With Angular 14+, you can also use this function during the **construction** of a component.<br/><br/>
 
 ```typescript
+import { inject, Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
 @Component({
   selector: 'app-todo-details',
   templateUrl: './todo-details.component.html',
-  styleUrls: ['./todo-details.component.less']
 })
 export class TodoDetailsComponent {
-  private readonly router: ActivatedRoute = inject(ActivatedRoute);
+  private readonly route: ActivatedRoute = inject(ActivatedRoute);
 }
 ```
 
 <!-- .element: class="big-code"-->
-Notes:
-Dans cette exemple il n'y a pas d'avantage à utiliser cette syntax mais il s'agit de faire poser une fondation pour expliquer comment va fonctionner la composition à l'aide de l'injection
+**Note:** In this example, there's no major advantage to using this syntax, but it lays the foundation for understanding composition with injection.
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# Question, est-il possible d'injecter au runtime ?
+# Question: Is it possible to inject at runtime?
 
-- Nécessite d'injecter l'Injector parent
-- Ne peut pas être asynchrone
+- Requires injecting the parent `Injector`.
+- Cannot be asynchronous.
 
 ```typescript
-import {Injector, runInInjectionContext} from '@angular/core';
+import { Component, inject, Injector, runInInjectionContext } from '@angular/core';
 
 @Component({
   selector: 'app-todo-details',
   templateUrl: './todo-details.component.html',
-  styleUrls: ['./todo-details.component.less']
 })
 export class TodoDetailsComponent {
   readonly #injector = inject(Injector);
@@ -122,17 +128,17 @@ export class TodoDetailsComponent {
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide with-code inconsolata"-->
-# Composons avec l'injection
+# Composing with injection
 
-Le fait de pouvoir utiliser la fonction inject hors de son context a quelques impact dans le design de nos application <br/><br/>
+The ability to use the `inject` function outside of its traditional context impacts our application design.<br/><br/>
 
-- la composition <br/><br/>
-- l'injection n'est pas disponible au runtime <br/><br/>
+- **Composition**: We can create reusable, injectable functions.<br/><br/>
+- **Runtime Injection**: Direct injection is not available at runtime, but can be achieved with `runInInjectionContext`.
 
 ##==##
 
 <!-- .slide: class="two-column-layout" -->
-# Un exemple de composition
+# An example of composition
 
 ##--##
 
@@ -140,7 +146,12 @@ Le fait de pouvoir utiliser la fonction inject hors de son context a quelques im
 <br/><br/>
 
 ```typescript
-export function getParams$<T>(paramName: string): Observable<T> {
+import { inject } from '@angular/core';
+import { ActivatedRoute, ParamMap } from '@angular/router';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+
+export function getParam$<T>(paramName: string): Observable<T> {
   return inject(ActivatedRoute)
     .paramMap
     .pipe(
@@ -157,13 +168,16 @@ export function getParams$<T>(paramName: string): Observable<T> {
 <br/><br/>
 
 ```typescript
+import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
+import { getParam$ } from './route-params';
+
 @Component({
   selector: 'app-todo-details',
   templateUrl: './todo-details.component.html',
-  styleUrls: ['./todo-details.component.less']
 })
 export class TodoDetailsComponent {
-  todoId$: Observable<string> = getParams$<string>('id');
+  todoId$: Observable<string> = getParam$<string>('id');
 }
 ```
 

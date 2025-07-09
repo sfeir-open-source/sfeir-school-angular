@@ -4,9 +4,9 @@
 ##==##
 
 <!--.slide: class="with-code inconsolata" -->
-# Un petit nouveau facile d'installation
+# A Newcomer, Easy to Install
 
-**Elf** est une librairie externe à Angular et framework agnostic. C'est donc une dépendance externe à Angular.
+**Elf** is a framework-agnostic library, external to Angular. It is therefore an external dependency.
 <br/><br/>
 
 ```bash
@@ -16,18 +16,15 @@ npm install --save @ngneat/elf
 
 <br/><br/>
 
-**Important**: Elf n'est pas une librairie spécifique à Angular. Il s'agit d'une librairie Helper => pas de pattern d'architecture folder prédéfini
+**Important**: Elf is not a library specific to Angular. It is a helper library, meaning there is no predefined folder architecture pattern.
 
 ##==##
 
 <!-- .slide -->
-# Un store qui repose sur 4 concepts
+# A Store Based on 4 Concepts
 <br/><br/>
 
 - BehaviorSubject <br/><br/>
 - State <br/><br/>
 - Entity <br/><br/>
 - UiEntity <br/><br/>
-
-
-

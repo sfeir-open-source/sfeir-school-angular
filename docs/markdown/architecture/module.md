@@ -1,40 +1,40 @@
 <!-- .slide: class="transition-bg-sfeir-2" -->
 
-# Le module
+# The module
 
 ##==##
 
 <!-- .slide-->
 
-# Le module: généralités
+# The module: generalities
 
-- Permet de regrouper des fonctionnalités<br/><br/>
-- Depuis la version 14, le module est optionnel grâce au standalone component <br/><br/>
-- Peut être chargé de façon différée (lazy loading)<br/><br/>
-- Bonne pratique : Architecture de modules selon rôles (Root Module, Navigation Module, Feature Module, Shared Module, Core Module ...)
+- Allows grouping of functionalities<br/><br/>
+- Since version 14, the module is optional thanks to standalone components <br/><br/>
+- Can be loaded lazily (lazy loading)<br/><br/>
+- Good practice: Module architecture according to roles (Root Module, Navigation Module, Feature Module, Shared Module, Core Module ...)
 
 Notes:
 
-- Root Module, contient en général les autres modules de l'application
-- Feature Module, il en existe un par fonctionnalité (ex: fonctionnalité user => update, creation ...)
-- Shared Module, il en existe également plusieurs, un pour toute l'application et parfois un dans les features modules
-- Core Module, il en existe un qui contient le core de votre application (footer, header, loader)
-- Attention les services ne se mettent pas dans les shareds modules !!!!
+- Root Module, generally contains the other modules of the application
+- Feature Module, there is one per feature (e.g., user feature => update, creation ...)
+- Shared Module, there are also several, one for the whole application and sometimes one in the feature modules
+- Core Module, there is one that contains the core of your application (footer, header, loader)
+- Warning: services are not put in shared modules !!!!
 
 ##==##
 
 <!-- .slide: class="with-code" -->
 
-# Le module: son écriture
+# The module: its syntax
 
-Comme le composant, la définition du module se fait à l'aide d'une classe et d'un décorateur
+Like the component, the module definition is done using a class and a decorator
 <br/><br/>
 
 ```typescript
 // app.module.ts
 @NgModule({
   imports: [browserModule, ...],
-  declaration: [AppComponent, ...],
+  declarations: [AppComponent, ...],
   exports: [],
   bootstrap: [AppComponent], // only in root module
 })
@@ -43,4 +43,3 @@ export class AppModule {
 ```
 
 <!-- .element: class="big-code" -->
-
