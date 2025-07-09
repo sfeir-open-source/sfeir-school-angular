@@ -1,5 +1,5 @@
 function introductionSLides() {
-  return ['state-management/angular_300.md', 'speaker/nicolas_frizzarin.md', 'presentation/flow_school.md'];
+  return ['state-management/angular_300.md', 'speaker/nicolas_frizzarin.md', 'presentation/01-flow-school.md'];
 }
 
 function recapSlides() {

@@ -4,7 +4,7 @@
  */
 
 function introductionSlides() {
-  return ['presentation/welcome_school.md', 'presentation/flow_school.md'];
+  return ['presentation/00-WELCOME.md', 'presentation/01-flow-school.md'];
 }
 
 function speakerSlides() {

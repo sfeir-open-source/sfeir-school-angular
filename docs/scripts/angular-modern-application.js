@@ -1,5 +1,5 @@
 function introduction() {
-  return ['standalone-components/angular-modern-application.md', 'speaker/nicolas_frizzarin.md', 'presentation/flow_school.md'];
+  return ['standalone-components/angular-modern-application.md', 'speaker/nicolas_frizzarin.md', 'presentation/01-flow-school.md'];
 }
 
 function summary() {

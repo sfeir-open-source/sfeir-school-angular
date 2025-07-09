@@ -25,7 +25,6 @@
 /package-lock.json
 /yarn.lock
 
-*.md
 
 /workshop/dist
 

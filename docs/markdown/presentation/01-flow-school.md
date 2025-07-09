@@ -1,6 +1,6 @@
 # Course Outline
 
-<p class="full-center">
+<p class="full-center"> 
 When is the break? <br/>
 Round table ...
 </p>
@@ -11,9 +11,9 @@ Round table ...
 # Repositories
 
 - <b>Training Slides</b>
-    - https://sfeir-open-source.github.io/sfeir-school-angular<br/><br/><br/>
+  - https://sfeir-open-source.github.io/sfeir-school-angular<br/><br/><br/>
 - <b>Exercise Sources</b>
-    - https://github.com/sfeir-open-source/sfeir-school-angular.git
+  - https://github.com/sfeir-open-source/sfeir-school-angular.git
 
 ##==##
 
@@ -22,6 +22,7 @@ Round table ...
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide" -->
+
 # Application Bootstrapping
 
 Clone the project:
@@ -40,13 +41,11 @@ npm install || npm ci
 
 <br/>
 
-
 ```bash
 npm run client -- "workshop_name"
 ```
 
 <br/>
-
 
 ```bash
 npm run server:start
@@ -56,10 +55,10 @@ npm run server:start
 
 # Exercise Flow
 
-- __Each key Angular concept is accompanied by a lab.__
+- **Each key Angular concept is accompanied by a lab.**
 
 <br/><br/><br/>
 
 - Lab flow:
-    - __an exercise page: apps/`workshop_name`__
-    - __a solution page: apps/`workshop_name-solution`__
+  - **an exercise page: apps/`workshop_name`**
+  - **a solution page: apps/`workshop_name-solution`**
