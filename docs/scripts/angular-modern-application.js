@@ -5,11 +5,11 @@ function introduction() {
 function summary() {
   return [
     'architecture/00-TRANSITION-SLIDE.md',
-    'architecture/introduction_schema.md',
-    'architecture/component.md',
-    'architecture/module.md',
-    'architecture/bootstrap_app.md',
-    'architecture/module-bundler.md',
+    'architecture/01-INTRODUCTION-SCHEMA.md',
+    'architecture/02-COMPONENT.md',
+    'architecture/04-MODULE.md',
+    'architecture/05-BOOTSTRAPPING.md',
+    'architecture/06-MODULE-BUNDLER.md',
   ];
 }
 
@@ -32,12 +32,12 @@ function interceptorsSlides() {
     'interceptors/modification.md',
     'interceptors/register.md',
     'interceptors/context.md',
-    'standalone-components/exercice.md',
+    'standalone-components/100-LAB.md',
   ];
 }
 
 function signals() {
-  return ['signals/00-TRANSITION-SLIDE.md', 'signals/introduction.md', 'signals/signals.md', 'signals/exercice.md'];
+  return ['signals/00-TRANSITION-SLIDE.md', 'signals/introduction.md', 'signals/signals.md', 'signals/100-LAB.md'];
 }
 
 export function AngularModernApplication() {

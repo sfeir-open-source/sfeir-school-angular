@@ -26,7 +26,7 @@ function interceptorsSlides() {
     'interceptors/modification.md',
     'interceptors/register.md',
     'interceptors/context.md',
-    'interceptors/exercice.md',
+    'interceptors/100-LAB.md',
   ];
 }
 
@@ -37,7 +37,7 @@ function templatingSlides() {
     'templating/ng-template.md',
     'templating/ng-container.md',
     'templating/reference.md',
-    'templating/exercice.md',
+    'templating/100-LAB.md',
   ];
 }
 
@@ -64,7 +64,7 @@ function customFormControlSlides() {
     'forms/custom-control/00-TRANSITION-SLIDE.md',
     'forms/custom-control/introduction.md',
     'forms/custom-control/setup.md',
-    'forms/custom-control/exercice.md',
+    'forms/custom-control/100-LAB.md',
   ];
 }
 

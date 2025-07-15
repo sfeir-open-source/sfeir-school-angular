@@ -9,7 +9,7 @@
 # The module: generalities
 
 - Allows grouping of functionalities<br/><br/>
-- Since version 14, the module is optional thanks to standalone components <br/><br/>
+- Since version 14, the module could be optional thanks to standalone components <br/><br/>
 - Can be loaded lazily (lazy loading)<br/><br/>
 - Good practice: Module architecture according to roles (Root Module, Navigation Module, Feature Module, Shared Module, Core Module ...)
 
@@ -33,13 +33,13 @@ Like the component, the module definition is done using a class and a decorator
 ```typescript
 // app.module.ts
 @NgModule({
-  imports: [browserModule, ...],
-  declarations: [AppComponent, ...],
-  exports: [],
+  imports: [browserModule], // imports all modules here and also standalone components, pipe and directive
+  declarations: [AppComponent], // declare components, directives and pipes that are not standalone
+  exports: [], // export components, directives, pipes and modules that need to be exposes outside this module
   bootstrap: [AppComponent], // only in root module
+  providers: [], // register all your providers
 })
-export class AppModule {
-}
+export class AppModule {}
 ```
 
 <!-- .element: class="big-code" -->

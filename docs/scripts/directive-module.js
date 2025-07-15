@@ -20,7 +20,7 @@ function directiveTemplatingSlide() {
     'templating/ng-container.md',
     'templating/ng-content.md',
     'templating/reference.md',
-    'templating/exercice.md',
+    'templating/100-LAB.md',
   ];
 }
 

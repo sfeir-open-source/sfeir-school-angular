@@ -1,5 +1,5 @@
 function providersSlide() {
-  return ['providers/school_200.md', 'providers/00-TRANSITION-SLIDE.md', 'providers/introduction.md', 'providers/exercice.md'];
+  return ['providers/school_200.md', 'providers/00-TRANSITION-SLIDE.md', 'providers/introduction.md', 'providers/100-LAB.md'];
 }
 
 function dependencyInjectionSlides() {

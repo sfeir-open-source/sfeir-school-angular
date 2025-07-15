@@ -16,7 +16,7 @@ function stateManagementNgxs() {
     'state-management/ngxs/actions.md',
     'state-management/ngxs/state.md',
     'state-management/ngxs/selectors.md',
-    'state-management/ngxs/exercice.md',
+    'state-management/ngxs/100-LAB.md',
   ];
 }
 
@@ -29,7 +29,7 @@ function stateManagementNgrx() {
     'state-management/ngrx/reducers.md',
     'state-management/ngrx/store.md',
     'state-management/ngrx/effects.md',
-    'state-management/ngrx/exercice.md',
+    'state-management/ngrx/100-LAB.md',
   ];
 }
 
@@ -52,7 +52,7 @@ function unitTestSlides() {
     'unit-tests/angular-testing-library/introduction.md',
     'unit-tests/angular-testing-library/core-concepts.md',
     'unit-tests/angular-testing-library/exemple.md',
-    'unit-tests/exercice.md',
+    'unit-tests/100-LAB.md',
   ];
 }
 

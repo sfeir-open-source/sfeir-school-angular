@@ -18,21 +18,21 @@ function basicsSlides() {
 function architectureSlides() {
   return [
     'architecture/00-TRANSITION-SLIDE.md',
-    'architecture/introduction_schema.md',
-    'architecture/component.md',
-    'architecture/module.md',
-    'architecture/bootstrap_app.md',
-    'architecture/module-bundler.md',
-    'architecture/exercice.md',
+    'architecture/01-INTRODUCTION-SCHEMA.md',
+    'architecture/02-COMPONENT.md',
+    'architecture/04-MODULE.md',
+    'architecture/05-BOOTSTRAPPING.md',
+    'architecture/06-MODULE-BUNDLER.md',
+    'architecture/100-LAB.md',
   ];
 }
 
 function cliSlides() {
-  return ['cli/00-TRANSITION-SLIDE.md', 'cli/commands.md', 'cli/exercice.md'];
+  return ['cli/00-TRANSITION-SLIDE.md', 'cli/commands.md', 'cli/100-LAB.md'];
 }
 
 function componentsSlides() {
-  return ['components/00-TRANSITION-SLIDE.md', 'components/concepts.md', 'components/exercice.md'];
+  return ['components/00-TRANSITION-SLIDE.md', 'components/concepts.md', 'components/100-LAB.md'];
 }
 
 function dataBindingSLides() {
@@ -42,7 +42,7 @@ function dataBindingSLides() {
     'databinding/binding.md',
     'databinding/reminder.md',
     'databinding/template_variable.md',
-    'databinding/exercice.md',
+    'databinding/100-LAB.md',
   ];
 }
 
@@ -51,7 +51,7 @@ function lifecycleSlides() {
 }
 
 function eventSlides() {
-  return ['event/00-TRANSITION-SLIDE.md', 'event/events.md', 'event/exercice.md'];
+  return ['event/00-TRANSITION-SLIDE.md', 'event/events.md', 'event/100-LAB.md'];
 }
 
 function serverCommunicationSLides() {
@@ -59,7 +59,7 @@ function serverCommunicationSLides() {
     'server-communication/00-TRANSITION-SLIDE.md',
     'server-communication/setup.md',
     'server-communication/usage.md',
-    'server-communication/exercice.md',
+    'server-communication/100-LAB.md',
   ];
 }
 
@@ -69,12 +69,12 @@ function navigationSlides() {
     'navigation/introduction.md',
     'navigation/configuration.md',
     'navigation/usage.md',
-    'navigation/exercice.md',
+    'navigation/100-LAB.md',
   ];
 }
 
 function basicsFunctionalitiesSlides() {
-  return ['functionalities/00-TRANSITION-SLIDE.md', 'functionalities/loop.md', 'functionalities/exercice.md'];
+  return ['functionalities/00-TRANSITION-SLIDE.md', 'functionalities/loop.md', 'functionalities/100-LAB.md'];
 }
 
 function communicationSlides() {

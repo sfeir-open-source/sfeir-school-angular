@@ -4,12 +4,12 @@ function standaloneComponents() {
     'standalone-components/introduction.md',
     'standalone-components/routing.md',
     'standalone-components/injector.md',
-    'standalone-components/exercice.md',
+    'standalone-components/100-LAB.md',
   ];
 }
 
 function signals() {
-  return ['signals/00-TRANSITION-SLIDE.md', 'signals/introduction.md', 'signals/signals.md', 'signals/binding_queries.md', 'signals/exercice.md'];
+  return ['signals/00-TRANSITION-SLIDE.md', 'signals/introduction.md', 'signals/signals.md', 'signals/binding_queries.md', 'signals/100-LAB.md'];
 }
 
 function deferredViews() {
