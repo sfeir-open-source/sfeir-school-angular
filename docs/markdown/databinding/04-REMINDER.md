@@ -10,14 +10,16 @@
 
 ```html
 <!-- Attribute -->
-<input id='inputId' type='text' value='My value'> 
+<input id="inputId" type="text" value="My value" />
 ```
+
 <!-- .element: class="medium-code" -->
 
 ```html
 <!-- Property -->
-<input id='inputId' type='text' [value]="value"> 
+<input id="inputId" type="text" [value]="value()" />
 ```
+
 <!-- .element: class="medium-code" -->
 
 ##==##
@@ -25,30 +27,34 @@
 <!-- .slide: class="with-code inconsolata" -->
 
 # What if I want to act on an attribute?
+
 Some elements do not necessarily have the desired property (svg, colspan)
 <br/><br/>
 
--   You can target an attribute by prefixing its name with <b>attr</b>
+- You can target an attribute by prefixing its name with <b>attr</b>
 
 ```html
 <td [attr.colspan]="1+1">a cell!!</td>
 ```
+
 <!-- .element: class="medium-code" -->
 
 <br/>
 
--   For CSS classes, we prefix the class name with: <b>class</b>
+- For CSS classes, we prefix the class name with: <b>class</b>
 
 ```html
-<div [class.green]="isSpecial">special class</div>
+<div [class.green]="isSpecial()">special class</div>
 ```
+
 <!-- .element: class="medium-code" -->
 
 <br/>
 
--   For style, we prefix the property name with style
+- For style, we prefix the property name with style
 
 ```html
-<div [style.color]="isSpecial ? 'red' : 'green'">Special class</div>
+<div [style.color]="isSpecial() ? 'red' : 'green'">Special class</div>
 ```
+
 <!-- .element: class="medium-code" -->

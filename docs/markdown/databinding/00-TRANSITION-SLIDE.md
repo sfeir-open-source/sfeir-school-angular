@@ -1,2 +1,3 @@
 <!-- .slide: class="transition" -->
-# Databinding & template
+
+# Data binding & template

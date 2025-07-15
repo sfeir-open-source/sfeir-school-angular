@@ -4,45 +4,53 @@
  */
 
 function introductionSlides() {
-  return ['presentation/00-WELCOME.md', 'presentation/01-fLOW-SCHOOL.md'];
+  const PRESENTATION = 'presentation';
+  return [`${PRESENTATION}/00-WELCOME.md`, `${PRESENTATION}/01-fLOW-SCHOOL.md`];
 }
 
 function speakerSlides() {
-  return ['speaker/00-nicolas-frizzarin.md'];
+  const SPEAKER = 'speaker';
+  return [`${SPEAKER}/00-nicolas-frizzarin.md`];
 }
 
 function basicsSlides() {
-  return ['basics/00-TRANSITION-SLIDE.md', 'basics/01-ENVIRONMENT-SETUP.md', 'basics/02-ANGULAR.md', 'basics/03-MATERIAL.md'];
+  const BASICS = 'basics';
+  return [`${BASICS}/00-TRANSITION-SLIDE.md`, `${BASICS}/01-ENVIRONMENT-SETUP.md`, `${BASICS}/02-ANGULAR.md`, `${BASICS}/03-MATERIAL.md`];
 }
 
 function architectureSlides() {
+  const ARCHITECTURE = 'architecture';
   return [
-    'architecture/00-TRANSITION-SLIDE.md',
-    'architecture/01-INTRODUCTION-SCHEMA.md',
-    'architecture/02-COMPONENT.md',
-    'architecture/04-MODULE.md',
-    'architecture/05-BOOTSTRAPPING.md',
-    'architecture/06-MODULE-BUNDLER.md',
-    'architecture/100-LAB.md',
+    `${ARCHITECTURE}/00-TRANSITION-SLIDE.md`,
+    `${ARCHITECTURE}/01-INTRODUCTION-SCHEMA.md`,
+    `${ARCHITECTURE}/02-COMPONENT.md`,
+    `${ARCHITECTURE}/04-MODULE.md`,
+    `${ARCHITECTURE}/05-BOOTSTRAPPING.md`,
+    `${ARCHITECTURE}/06-MODULE-BUNDLER.md`,
+    `${ARCHITECTURE}/100-LAB.md`,
   ];
 }
 
 function cliSlides() {
-  return ['cli/00-TRANSITION-SLIDE.md', 'cli/commands.md', 'cli/100-LAB.md'];
+  const CLI = 'cli';
+  return [`${CLI}/00-TRANSITION-SLIDE.md`, `${CLI}/01-COMMANDS.md`, `${CLI}/100-LAB.md`];
 }
 
 function componentsSlides() {
-  return ['components/00-TRANSITION-SLIDE.md', 'components/concepts.md', 'components/100-LAB.md'];
+  const COMPONENTS = 'components';
+  return [`${COMPONENTS}/00-TRANSITION-SLIDE.md`, `${COMPONENTS}/01-CONCEPTS.md`, `${COMPONENTS}/100-LAB.md`];
 }
 
-function dataBindingSLides() {
+function dataBindingSlides() {
+  const DATA_BINDING = 'databinding';
   return [
-    'databinding/00-TRANSITION-SLIDE.md',
-    'databinding/introduction.md',
-    'databinding/binding.md',
-    'databinding/reminder.md',
-    'databinding/template_variable.md',
-    'databinding/100-LAB.md',
+    `${DATA_BINDING}/00-TRANSITION-SLIDE.md`,
+    `${DATA_BINDING}/01-INTRODUCTION.md`,
+    `${DATA_BINDING}/02-REACTIVITY-CONCEPT.md`,
+    `${DATA_BINDING}/03-BINDING.md`,
+    `${DATA_BINDING}/04-REMINDER.md`,
+    `${DATA_BINDING}/05-TEMPLATE-VARIABLE.md`,
+    `${DATA_BINDING}/100-LAB.md`,
   ];
 }
 
@@ -66,7 +74,7 @@ function serverCommunicationSLides() {
 function navigationSlides() {
   return [
     'navigation/00-TRANSITION-SLIDE.md',
-    'navigation/introduction.md',
+    'navigation/01-INTRODUCTION.md',
     'navigation/configuration.md',
     'navigation/usage.md',
     'navigation/100-LAB.md',
@@ -95,7 +103,7 @@ export function dayOneSlides() {
     ...architectureSlides(),
     ...cliSlides(),
     ...componentsSlides(),
-    ...dataBindingSLides(),
+    ...dataBindingSlides(),
     ...lifecycleSlides(),
     ...eventSlides(),
     ...serverCommunicationSLides(),
