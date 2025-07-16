@@ -1,14 +1,24 @@
-import { CUSTOM_ELEMENTS_SCHEMA, DebugElement } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { render } from '@testing-library/angular';
 import { AppComponent } from './app.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+
+@Component({
+  selector: 'sfeir-home',
+  template: '',
+})
+class Home {}
 
 describe('AppComponent', () => {
   let component: AppComponent;
   let debugElement: DebugElement;
 
   beforeEach(async () => {
-    const { fixture } = await render(AppComponent, { schemas: [CUSTOM_ELEMENTS_SCHEMA] });
+    const { fixture } = await render(AppComponent, {
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
+      componentImports: [Home, MatToolbarModule],
+    });
     component = fixture.componentInstance;
     debugElement = fixture.debugElement;
   });

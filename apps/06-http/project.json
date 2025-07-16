@@ -8,16 +8,26 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/06-http",
         "index": "apps/06-http/src/index.html",
         "browser": "apps/06-http/src/main.ts",
-        "polyfills": ["apps/06-http/src/polyfills.ts"],
+        "polyfills": [
+          "apps/06-http/src/polyfills.ts"
+        ],
         "tsConfig": "apps/06-http/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/06-http/src/favicon.ico", "apps/06-http/src/assets"],
-        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/06-http/src/styles.scss"],
+        "assets": [
+          "apps/06-http/src/favicon.ico",
+          "apps/06-http/src/assets"
+        ],
+        "styles": [
+          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+          "apps/06-http/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -53,6 +63,12 @@
     },
     "serve": {
       "executor": "@angular-devkit/build-angular:dev-server",
+      "dependsOn": [
+        {
+          "projects": "server-express",
+          "target": "serve"
+        }
+      ],
       "configurations": {
         "production": {
           "buildTarget": "06-http:build:production"
@@ -75,7 +91,9 @@
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/apps/06-http"],
+      "outputs": [
+        "{workspaceRoot}/coverage/apps/06-http"
+      ],
       "options": {
         "jestConfig": "apps/06-http/jest.config.ts"
       }

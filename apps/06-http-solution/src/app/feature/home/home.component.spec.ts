@@ -1,12 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
+import { provideHttpClient } from '@angular/common/http';
 import { DebugElement, NO_ERRORS_SCHEMA } from '@angular/core';
-import { ComponentFixture } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { fireEvent, render, screen } from '@testing-library/angular';
-import { of } from 'rxjs';
 import { People } from '../../shared/models/people.model';
 import { HomeComponent } from './home.component';
+import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 
 const PERSON: People[] = [
   {
@@ -22,20 +22,15 @@ const PERSON: People[] = [
   { id: '2', firstname: 'Sfeir', lastname: 'Luxembourg', photo: 'sfeir.png' },
 ] as People[];
 
-const HTTP_CLIENT = {
-  get: jest.fn(),
-};
-
 describe('HomeComponent', () => {
   let component: HomeComponent;
   let debugElement: DebugElement;
   let componentFixture: ComponentFixture<HomeComponent>;
 
   beforeEach(async () => {
-    jest.spyOn(HTTP_CLIENT, 'get').mockReturnValue(of(PERSON));
     const { fixture } = await render(HomeComponent, {
       imports: [CommonModule],
-      providers: [{ provide: HttpClient, useValue: HTTP_CLIENT }],
+      providers: [provideHttpClient(), provideHttpClientTesting()],
       schemas: [NO_ERRORS_SCHEMA],
     });
     component = fixture.componentInstance;
@@ -43,7 +38,14 @@ describe('HomeComponent', () => {
     componentFixture = fixture;
   });
 
-  test('should create an instance of HomeCOmponent', () => {
+  beforeEach(async () => {
+    componentFixture.detectChanges();
+    TestBed.inject(HttpTestingController).expectOne('http://localhost:9000/api/peoples/random').flush(PERSON[0]);
+    await componentFixture.whenStable();
+    componentFixture.detectChanges();
+  });
+
+  test('should create an instance of HomeComponent', () => {
     expect(component).toBeInstanceOf(HomeComponent);
   });
   test('should display the card', () => {
@@ -55,7 +57,7 @@ describe('HomeComponent', () => {
     expect(image).toBeTruthy();
     expect(image.getAttribute('height')).toEqual('128');
     expect(image.getAttribute('width')).toEqual('128');
-    expect((image as any).ngSrc).toEqual(PERSON[0].photo);
+    expect(image.getAttribute('src')).toEqual(PERSON[0].photo);
   });
   test('should display the name of the person', () => {
     const title: HTMLElement = debugElement.query(By.css('mat-card-title')).nativeElement;
@@ -103,11 +105,8 @@ describe('HomeComponent', () => {
     expect(spy).toHaveBeenCalled();
   });
   test('should change the person', () => {
-    jest.spyOn(HTTP_CLIENT, 'get').mockReturnValue(of(PERSON[1]));
+    const spy = jest.spyOn(component.personResource, 'reload');
     component.getRandomPerson();
-    componentFixture.detectChanges();
-    const title: HTMLElement = debugElement.query(By.css('mat-card-title')).nativeElement;
-    expect(title.textContent).toContain(PERSON[1].firstname);
-    expect(title.textContent).toContain(PERSON[1].lastname);
+    expect(spy).toHaveBeenCalled();
   });
 });

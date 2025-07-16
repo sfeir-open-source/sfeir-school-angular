@@ -34,6 +34,7 @@
     },
     "serve": {
       "executor": "@nx/js:node",
+      "continuous": true,
       "options": {
         "buildTarget": "server-express:build",
         "watch": true
