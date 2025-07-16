@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
+import { HomeComponent } from './feature/home/home.component';
+import { MatToolbar } from '@angular/material/toolbar';
 
 @Component({
   selector: 'sfeir-app',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  standalone: false,
+  imports: [MatToolbar, HomeComponent],
 })
-export class AppComponent {
-  name = 'SFEIR - LUXEMBOURG';
-}
+export class AppComponent {}

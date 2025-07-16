@@ -1,22 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { PEOPLE } from '../../mocks/people.mock';
-import { People } from '../../shared/models/people.model';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'sfeir-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
-  standalone: false,
+  imports: [MatCardModule, MatIconModule, MatButtonModule, NgOptimizedImage],
 })
-export class HomeComponent implements OnInit {
-  person: People;
-
-  ngOnInit(): void {
-    const [firstPerson] = PEOPLE;
-    this.person = firstPerson;
-  }
+export class HomeComponent {
+  person = signal(PEOPLE[0]);
 
   getRandomPerson(): void {
-    this.person = PEOPLE[Math.floor(Math.random() * PEOPLE.length)];
+    this.person.set(PEOPLE[Math.floor(Math.random() * PEOPLE.length)]);
   }
 }
