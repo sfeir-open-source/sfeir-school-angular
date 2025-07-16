@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, provideHttpClient } from '@angular/common/http';
 import { DebugElement, NO_ERRORS_SCHEMA } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { render } from '@testing-library/angular';
 import { of } from 'rxjs';
 import { People } from '../../shared/models/people.model';
 import { PeopleComponent } from './people.component';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 
 const PERSON: People[] = [
   {
@@ -34,7 +35,7 @@ describe('PeopleComponent', () => {
   });
   beforeEach(async () => {
     const { fixture } = await render(PeopleComponent, {
-      providers: [{ provide: HttpClient, useValue: HTTP_CLIENT }],
+      providers: [provideHttpClient(), provideHttpClientTesting(), { provide: HttpClient, useValue: HTTP_CLIENT }],
       imports: [CommonModule],
       schemas: [NO_ERRORS_SCHEMA],
     });
@@ -55,7 +56,7 @@ describe('PeopleComponent', () => {
     expect(johnImage).toBeTruthy();
     expect(johnImage.getAttribute('height')).toEqual('128');
     expect(johnImage.getAttribute('width')).toEqual('128');
-    expect((johnImage as any).ngSrc).toEqual(PERSON[0].photo);
+    expect(johnImage.getAttribute('src')).toEqual(PERSON[0].photo);
     const johnName = johnCard.query(By.css('mat-card-title')).nativeElement;
     expect(johnName).toBeTruthy();
     expect(johnName.textContent).toEqual(`${PERSON[0].firstname} ${PERSON[0].lastname}`);
@@ -66,7 +67,7 @@ describe('PeopleComponent', () => {
     expect(sfeirImage).toBeTruthy();
     expect(sfeirImage.getAttribute('height')).toEqual('128');
     expect(sfeirImage.getAttribute('width')).toEqual('128');
-    expect((sfeirImage as any).ngSrc).toEqual(PERSON[1].photo);
+    expect(sfeirImage.getAttribute('src')).toEqual(PERSON[1].photo);
     const sfeirName = sfeirCard.query(By.css('mat-card-title')).nativeElement;
     expect(sfeirName).toBeTruthy();
     expect(sfeirName.textContent).toEqual(`${PERSON[1].firstname} ${PERSON[1].lastname}`);

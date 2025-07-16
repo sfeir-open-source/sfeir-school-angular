@@ -83,13 +83,14 @@ function navigationSlides() {
     `${NAVIGATION}/00-TRANSITION-SLIDE.md`,
     `${NAVIGATION}/01-INTRODUCTION.md`,
     `${NAVIGATION}/02-CONFIGURATION.md`,
-    `${NAVIGATION}/02-USAGE.md`,
+    `${NAVIGATION}/03-USAGE.md`,
     `${NAVIGATION}/100-LAB.md`,
   ];
 }
 
 function basicsFunctionalitiesSlides() {
-  return ['functionalities/00-TRANSITION-SLIDE.md', 'functionalities/loop.md', 'functionalities/100-LAB.md'];
+  const FUNCTIONALITIES = 'functionalities';
+  return [`${FUNCTIONALITIES}/00-TRANSITION-SLIDE.md`, `${FUNCTIONALITIES}/01-lOOP.md`, `${FUNCTIONALITIES}/100-LAB.md`];
 }
 
 function communicationSlides() {
