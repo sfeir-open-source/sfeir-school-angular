@@ -55,19 +55,25 @@ function dataBindingSlides() {
 }
 
 function lifecycleSlides() {
-  return ['lifecycle/00-TRANSITION-SLIDE.md', 'lifecycle/hook_implementation.md'];
+  const LIFECYCLE = 'lifecycle';
+  return [`${LIFECYCLE}/00-TRANSITION-SLIDE.md`, `${LIFECYCLE}/02-HOOK-IMPLEMENTATION.md`, `${LIFECYCLE}/03-HOOK.md`];
 }
 
 function eventSlides() {
-  return ['event/00-TRANSITION-SLIDE.md', 'event/events.md', 'event/100-LAB.md'];
+  const EVENT = 'event';
+  return [`${EVENT}/00-TRANSITION-SLIDE.md`, `${EVENT}/02-EVENTS.md`, `${EVENT}/100-LAB.md`];
 }
 
-function serverCommunicationSLides() {
+function serverCommunicationSlides() {
+  const SERVER_COMMUNICATION = 'server-communication';
+
   return [
-    'server-communication/00-TRANSITION-SLIDE.md',
-    'server-communication/setup.md',
-    'server-communication/usage.md',
-    'server-communication/100-LAB.md',
+    `${SERVER_COMMUNICATION}/00-TRANSITION-SLIDE.md`,
+    `${SERVER_COMMUNICATION}/01-SETUP.md`,
+    `${SERVER_COMMUNICATION}/02-USAGE.md`,
+    `${SERVER_COMMUNICATION}/03-BRIDGE-OBSERVABLE-SIGNALS.md`,
+    `${SERVER_COMMUNICATION}/04-SIGNAL-SERVER-COMMUNICATION.md`,
+    `${SERVER_COMMUNICATION}/100-LAB.md`,
   ];
 }
 
@@ -76,7 +82,7 @@ function navigationSlides() {
     'navigation/00-TRANSITION-SLIDE.md',
     'navigation/01-INTRODUCTION.md',
     'navigation/configuration.md',
-    'navigation/usage.md',
+    'navigation/02-USAGE.md',
     'navigation/100-LAB.md',
   ];
 }
@@ -106,7 +112,7 @@ export function dayOneSlides() {
     ...dataBindingSlides(),
     ...lifecycleSlides(),
     ...eventSlides(),
-    ...serverCommunicationSLides(),
+    ...serverCommunicationSlides(),
     ...navigationSlides(),
     ...basicsFunctionalitiesSlides(),
     ...communicationSlides(),

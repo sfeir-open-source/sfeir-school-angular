@@ -50,7 +50,9 @@
 ```typescript
 // main.ts file
 bootstrapApplication(AppComponent, {
-  providers: [],
+  providers: [
+    // Here register your global providers like httpClient
+  ],
 });
 ```
 
