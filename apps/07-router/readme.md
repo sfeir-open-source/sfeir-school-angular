@@ -1,71 +1,87 @@
-# Exercice 07-router (dossier apps/07-router)
+# Angular Router Exercise (folder: apps/07-router)
 
-L'objectif de workshop est d'introduire la notion de routeur et de single page application au sein de votre application web.
+## Objective
 
-<br>
+In this exercise, you'll learn how to implement client-side navigation in an Angular application using the Angular Router. You'll set up routes, configure navigation, and create a basic single-page application (SPA) with multiple views.
 
-## Etape 1
+By the end of this exercise, you'll be able to:
 
-A la racine du dossier app, créez un module **app-routing.module.ts** à l'aide du CLI ou à la main comme vous le souhaitez
+- Set up basic routing in an Angular application
+- Configure route definitions
+- Use router directives in templates
+- Navigate between different views
+- Use route parameters
 
-<br><br>
+## Prerequisites
 
-## Etape 2
+- Basic understanding of Angular components
+- Familiarity with TypeScript
+- Completion of previous exercises on components and services
+- Basic understanding of Angular standalone components
 
-Dans le fichier **app-routing.module.ts**, créez les routes nécessaires afin que les conditions suivantes soient respectées
+## Step 1: Set Up the Router
 
-- sur l'url /l'utilisateur doit être redirigé vers l'url /home
-- sur l'url /home. le composant HomeComponent doit être affiché
+1. Open **main.ts**
+2. Import the necessary router functions and components:
+3. Define your routes array:
+4. Update the `bootstrapApplication` call to include the router and HTTP client:
 
-<br><br>
+## Step 2: Configure the App Component
 
-## Etape 3
+1. Open **app.component.ts**
+2. Import the necessary router directives and modules:
+3. Update the component decorator to include the necessary imports:
 
-Dans le fichier **app-routing,module.ts**, créez votre module de la manière suivante:
+## Step 3: Update the App Template
 
-```typescript
-@NgModule({
-  imports: [RouterModule.forRoot(APP_ROUTES)],
-  exports: [RouterModule],
-})
-export class AppRoutingModule {}
-```
-
-la variable APP_ROUTES est la déclaration de vos routes
-
-Nous importons le RouterModule.forRoot() pour enregistrer nos routes
-
-Nous exportons le RouterModule pour exporter nos routes enregistrés et les rendre disponibles dans toute notre application
-
-## Etape 4
-
-Dans le fichier **app.module.ts**, importez le module AppRoutingModule grâce à l'import suivant:
-
-```javascript
-import { AppRoutingModule } from './app-routing.module';
-```
-
-<br><br>
-
-## Etape 5
-
-Dans le fichier **app.component.html**, indiquez où doit s'afficher vos vue grâce à la balise <router-outlet>
-
-Astuces: pensez à supprimer la balise <sfeir-home>, c'est à votre router maintenant d'afficher cette vue
-<br><br>
-
-## Etape 6
-
-Dans le fichier **app.component.html**, remplacez href="/home" par la directive routerLink
+1. Open **app.component.html**
+2. Replace the content with the following to add navigation and router outlet:
 
 ```html
-<a [routerLink]="['home']">...</a>
+<mat-toolbar class="extend-toolbar">
+  <span>
+    <a [routerLink]="['home']">
+      <img src="assets/images/logo-sfeir.svg" aria-label="sfeir" alt="Sfeir" />
+    </a>
+  </span>
+
+  <span class="flex"></span>
+
+  <span>
+    <a href="/locator">Maps</a>
+    <a href="/people">List</a>
+  </span>
+</mat-toolbar>
+
+<router-outlet />
 ```
 
-## Etape 7
+## Step 4: Test Your Implementation
 
-Vérifiez votre travail en vous plaçant à la racine du dossier TP et en lançant la commande:
+1. From the project root, run the application:
 
-```shell
+```bash
 npm run client -- 07-router
 ```
+
+2.Open your browser and verify that:
+
+- The application loads with the home component displayed
+- The navigation links are visible in the toolbar
+- Clicking the home link refreshes the home view
+- The "Get Random Person" button fetches and displays a new person
+
+## Expected Outcome
+
+- The application should display a toolbar with navigation links
+- The home component should be displayed by default
+- The home component should show a person's details with a refresh button
+- Navigation between different views should work without full page reloads
+- The URL should update to reflect the current route
+
+## Troubleshooting
+
+- If you see errors about missing modules, make sure you've imported all required Angular Material modules
+- If routing doesn't work, check the browser console for any error messages
+- Ensure your route paths are correctly defined and match the navigation links
+- If the person data doesn't load, verify that the API server is running and accessible at the correct URL

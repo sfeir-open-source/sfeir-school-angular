@@ -78,12 +78,13 @@ function serverCommunicationSlides() {
 }
 
 function navigationSlides() {
+  const NAVIGATION = 'navigation';
   return [
-    'navigation/00-TRANSITION-SLIDE.md',
-    'navigation/01-INTRODUCTION.md',
-    'navigation/configuration.md',
-    'navigation/02-USAGE.md',
-    'navigation/100-LAB.md',
+    `${NAVIGATION}/00-TRANSITION-SLIDE.md`,
+    `${NAVIGATION}/01-INTRODUCTION.md`,
+    `${NAVIGATION}/02-CONFIGURATION.md`,
+    `${NAVIGATION}/02-USAGE.md`,
+    `${NAVIGATION}/100-LAB.md`,
   ];
 }
 
