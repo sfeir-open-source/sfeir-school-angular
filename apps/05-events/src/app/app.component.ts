@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { HomeComponent } from './feature/home/home.component';
 
@@ -7,5 +7,6 @@ import { HomeComponent } from './feature/home/home.component';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   imports: [MatToolbarModule, HomeComponent],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {}

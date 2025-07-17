@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { HomeComponent } from './feature/home/home.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
@@ -7,6 +7,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   imports: [HomeComponent, MatToolbarModule],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
   name = 'SFEIR - LUXEMBOURG';
