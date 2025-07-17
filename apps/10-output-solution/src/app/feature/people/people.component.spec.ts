@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { DebugElement, NO_ERRORS_SCHEMA } from '@angular/core';
-import { ComponentFixture, fakeAsync, tick } from '@angular/core/testing';
+import { ComponentFixture } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { fireEvent, render } from '@testing-library/angular';
 import { of } from 'rxjs';
@@ -59,13 +59,12 @@ describe('PeopleComponent', () => {
     expect(spy).toHaveBeenCalled();
   });
 
-  test('should delete the person', fakeAsync(async () => {
+  test('should delete the person', async () => {
     jest.spyOn(HTTP_CLIENT, 'delete').mockReturnValue(of([PEOPLE[1]]));
     component.deletePerson(PEOPLE[0]);
-    tick();
     await componentFixture.whenStable();
     componentFixture.detectChanges();
     const sfeirCards = container.querySelectorAll('sfeir-card');
     expect(sfeirCards.length).toEqual(1);
-  }));
+  });
 });

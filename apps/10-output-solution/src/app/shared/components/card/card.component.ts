@@ -1,4 +1,4 @@
-import { Component, input, output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input, output } from '@angular/core';
 import { People } from '../../models/people.model';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
@@ -10,6 +10,7 @@ import { NgOptimizedImage } from '@angular/common';
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss'],
   imports: [MatCardModule, MatButtonModule, MatIconModule, NgOptimizedImage],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CardComponent {
   person = input.required<People>();
