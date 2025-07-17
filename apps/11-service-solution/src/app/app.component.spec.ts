@@ -1,18 +1,14 @@
-import { Component, DebugElement, NO_ERRORS_SCHEMA } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
-import { Routes } from '@angular/router';
-import { render, screen } from '@testing-library/angular';
+import { render } from '@testing-library/angular';
 import { AppComponent } from './app.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 @Component({
-  template: 'Home Component',
+  selector: 'sfeir-home',
+  template: '',
 })
-class MockHomeComponent {}
-
-const ROUTES: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: MockHomeComponent },
-];
+class Home {}
 
 describe('AppComponent', () => {
   let component: AppComponent;
@@ -20,9 +16,8 @@ describe('AppComponent', () => {
 
   beforeEach(async () => {
     const { fixture } = await render(AppComponent, {
-      declarations: [MockHomeComponent],
-      routes: ROUTES,
-      schemas: [NO_ERRORS_SCHEMA],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
+      componentImports: [Home, MatToolbarModule],
     });
     component = fixture.componentInstance;
     debugElement = fixture.debugElement;
@@ -48,8 +43,8 @@ describe('AppComponent', () => {
     expect(mapLink.nativeElement.textContent).toBe('Maps');
     expect(listLink.nativeElement.textContent).toBe('List');
   });
-  test('should display the homeComponent', () => {
-    const homeComponent = screen.getByText('Home Component');
-    expect(homeComponent).toBeTruthy();
+  test('should call the router-outlet component', () => {
+    const routerOutlet = debugElement.query(By.css('router-outlet'));
+    expect(routerOutlet).toBeTruthy();
   });
 });

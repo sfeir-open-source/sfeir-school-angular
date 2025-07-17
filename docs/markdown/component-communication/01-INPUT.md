@@ -11,7 +11,7 @@ import { Component, Input } from '@angular/core';
 })
 export class ChildComponent {
   name = input('');
-  age = input.required('');
+  age = input.required();
 }
 ```
 

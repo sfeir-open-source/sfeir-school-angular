@@ -3,15 +3,11 @@
 # Usage in the component
 
 ```typescript
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router, Params } from '@angular/router';
-import { toSignal } from '@angular/core/rxjs-interop';
-
 @Component({
   selector: 'sfeir-foo',
   templateUrl: './foo.component.html',
 })
-export class FooComponent implements OnInit {
+export class FooComponent {
   private readonly route = inject(ActivatedRoute);
   private readonly router = inject(Router);
 

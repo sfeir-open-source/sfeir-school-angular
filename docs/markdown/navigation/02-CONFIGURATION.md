@@ -88,8 +88,10 @@ bootstrapApplication(AppComponent, { providers: [provideRouter(ROUTES, withHashL
 
 # Zoom in on the provideRouter function
 
-- **create**: the routing for the entire application
-- **expose**: the router service, activatedRoute and location service to the entire application
+<br/><br/>
+
+- **create**: the routing for the entire application <br/><br/>
+- **expose**: the router service, activatedRoute service and location service to the entire application <br/><br/>
 - **take**: a list of feature router function after the routing configuration
 
 ##==##

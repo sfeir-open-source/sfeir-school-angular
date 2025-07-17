@@ -1,13 +1,14 @@
 <!-- .slide: class="with-code inconsolata" -->
 
 # What is a Service?
+
 - An exported class
 - An <b>@Injectable</b> decorator
 
 ```typescript
 // The modern way to create a singleton service
 @Injectable({
-  providedIn: 'root' // Registers the service at the application root
+  providedIn: 'root', // Registers the service at the application root
 })
 export class TodoService {
   private name = 'Hello';
@@ -27,11 +28,9 @@ Notes:
 
 ##==##
 
-<!-- .slide: class="two-column-layout" -->
+<!-- .slide: class="two-column with-code inconsolata" -->
 
 # Using Your Service Globally
-
-##--##
 
 ```typescript
 // todo.service.ts
@@ -49,8 +48,11 @@ export class TodoService {
 
 <!-- .element: class="medium-code" -->
 
-
 ##--##
+
+<!-- .slide: class="with-code inconsolata" -->
+
+<br/><br/>
 
 ```typescript
 // app.module.ts
@@ -66,35 +68,21 @@ export class AppModule {}
 
 <!-- .element: class="medium-code" -->
 
-
 <br>
 
 ```typescript
-// app.component.ts
-import { Component } from '@angular/core';
-import { TodoService } from './shared/';
-
-@Component({ ... })
-export class AppComponent {
-  name: string;
-  constructor(private readonly todoService: TodoService) {
-    this.name = this.todoService.getName();
-  }
-}
+// main.ts
+// No need to provide the service here, it's already provided in the root;
+bootstrapApplication(AppComponent, { providers: [] });
 ```
 
 <!-- .element: class="medium-code" -->
 
-
 ##==##
 
-<!-- .slide: class="two-column-layout" -->
+<!-- .slide: class="two-column with-code inconsolata" -->
 
 # Using a Service Locally
-
-##--##
-
-<!-- .slide: class="with-code inconsolata" -->
 
 ```typescript
 // todo.service.ts
@@ -112,14 +100,18 @@ export class TodoService {
 
 <!-- .slide: class="with-code inconsolata" -->
 
+<br/><br/>
+
 ```typescript
 // app.component.ts
 @Component({
   providers: [TodoService], // Provides a new instance for this component and its children
 })
 export class AppComponent {
-  constructor(private readonly todoService: TodoService) {
-    console.info(todoService.name); // SFEIR
+  private readonly todoService = inject(TodoService);
+
+  constructor() {
+    console.log(this.todoService.name); // SFEIR;
   }
 }
 ```

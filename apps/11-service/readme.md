@@ -1,52 +1,86 @@
-# Exercice 12-service (dossier apps/12-service)
+# Angular Services and HTTP Communication Exercise
 
-Ce workshop a plusieurs objectifs:
+## Objective
 
-- commencez à rendre votre architecture atomique en utilisant la notion précédemment acquises sur les modules
-- créez ses propres services et comprendre la notion de scope d'injection
+In this exercise, you'll learn how to create and use Angular services to encapsulate HTTP communication. You'll refactor the existing code to move all HTTP calls into a dedicated service, making your components more maintainable and following the single responsibility principle.
 
-<br>
+## Learning Outcomes
 
-## Etape 1
+By the end of this exercise, you'll be able to:
 
-Dans le dossier src, créez un dossier core
+- Create and use Angular services
+- Encapsulate HTTP communication in services
+- Use dependency injection to provide services
+- Understand the benefits of the service layer pattern
+- Work with Observables for asynchronous operations
 
-<br><br>
+## Prerequisites
 
-## Etape 2
+- Understanding of Angular components
+- Basic knowledge of HTTP and REST APIs
+- Familiarity with RxJS Observables
+- Completion of previous exercises on components and routing
 
-Dans le dossier core créer un dossier providers
+## Exercise Steps
 
-Créez dans le dossier providers le service **people service**. Ce service permettra par la suite de regrouper tous les appels back-end
-<br><br>
+### Step 1: Create a PeopleService
 
-# Etape 3
+1. Generate a new service called `PeopleService` in the `core/providers` folder:
+2. Implement the service with the following methods:
+   - `getPeople()` - Fetches the list of all people
+   - `getRandomPeople()` - Fetches a random person
+   - `deletePeople(id: string)` - Deletes a person by ID
 
-Injectez le service httpCLient d'Angular dans votre service PeopleService
-<br><br>
+### Step 2: Update the HomeComponent
 
-# Etape 4
+1. Inject the `PeopleService` into the `HomeComponent`
+2. Replace direct httpResource with the resource returned by the people service
 
-Regroupez dans votre service **PeopleService** tous les appels backend réalisés jusque maintenant
+### Step 3: Update the PeopleComponent
 
-- getPeople (HomeComponent et PeopleComponent)
-- getRandomPeople (HomeComponent)
-- deletePeople (PeopleComponent)
+1. Inject the `PeopleService` into the `PeopleComponent`
+2. Replace direct HTTP calls with calls to the service methods
 
-Astuces: toutes les méthodes que vous allez créer dans ce service doivent retourner un Observable afin de pouvoir subscribe dessus dans les composants
-<br><br>
+## Testing Your Implementation
 
-## Etape 5
+1. Start the application:
 
-Injectez votre service dans les composants **HomeComponent** et **PeopleComponent** afin de remplacer l'injection du service **HttpClient**
+   ```bash
+   npm run client -- 11-service
+   ```
 
-Remplacez le nécessaire afin d'utiliser votre nouveau service
-<br><br>
+2. Verify that:
+   - The home page still shows a random person
+   - The people page still shows the list of people
+   - Deleting a person from the people page works as expected
+   - The random person refreshes when clicking the button on the home page
 
-## Etape 6
+## Key Concepts
 
-Vérifiez votre travail en vous plaçant à la racine du dossier TP et en lançant la commande:
+### Angular Services
 
-```shell
-npm run client -- 11-service
-```
+Services are a fundamental part of Angular applications. They are:
+
+- Singleton by default (when provided in root)
+- Used to share data and functionality across components
+- Ideal for encapsulating business logic and data access
+
+### Dependency Injection
+
+Angular's dependency injection system:
+
+- Manages the creation and lifetime of service instances
+- Makes services available to components and other services
+- Promotes loose coupling and testability
+
+### HTTP Communication
+
+- The `HttpClient` service is used to make HTTP requests
+- Services encapsulate HTTP calls to keep components focused on the UI
+- Observables are used to handle asynchronous operations
+
+## Troubleshooting
+
+- **Service Not Found**: Ensure the service is provided in the root injector with `@Injectable({ providedIn: 'root' })`
+- **HTTP Errors**: Check the browser's developer tools network tab for failed requests
+- **No Data**: Verify that the API endpoint in the environment file is correct

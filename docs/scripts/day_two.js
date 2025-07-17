@@ -1,5 +1,6 @@
 function providersSlide() {
-  return ['providers/school_200.md', 'providers/00-TRANSITION-SLIDE.md', 'providers/introduction.md', 'providers/100-LAB.md'];
+  const PROVIDERS = 'providers';
+  return [`${PROVIDERS}/SCHOOL-200.md`, `${PROVIDERS}/00-TRANSITION-SLIDE.md`, `${PROVIDERS}/01-INTRODUCTION.md`, `${PROVIDERS}/100-LAB.md`];
 }
 
 function dependencyInjectionSlides() {
@@ -14,7 +15,7 @@ function dependencyInjectionSlides() {
 function pipeSlides() {
   return [
     'pipe/00-TRANSITION-SLIDE.md',
-    'pipe/introduction.md',
+    'pipe/01-INTRODUCTION.md',
     'pipe/syntax.md',
     'pipe/exercice_use_pipe.md',
     'pipe/custom_pipe.md',
@@ -25,7 +26,7 @@ function pipeSlides() {
 function directiveSlides() {
   return [
     'directive/00-TRANSITION-SLIDE.md',
-    'directive/introduction.md',
+    'directive/01-INTRODUCTION.md',
     'directive/exercice_directive_use.md',
     'directive/custom_directive.md',
     'directive/exercice_create_directive.md',
@@ -35,7 +36,7 @@ function directiveSlides() {
 function templateDrivenForms() {
   return [
     'forms/00-TRANSITION-SLIDE.md',
-    'forms/template-driven-forms/introduction.md',
+    'forms/template-driven-forms/01-INTRODUCTION.md',
     'forms/template-driven-forms/exercice_create_form.md',
     'forms/template-driven-forms/validation.md',
     'forms/template-driven-forms/exercice_validation.md',
@@ -45,7 +46,7 @@ function templateDrivenForms() {
 
 function reactiveFormSlides() {
   return [
-    'forms/reactive-forms/introduction.md',
+    'forms/reactive-forms/01-INTRODUCTION.md',
     'forms/reactive-forms/validation.md',
     'forms/reactive-forms/exercice_validation.md',
     'forms/reactive-forms/custom_validation.md',
