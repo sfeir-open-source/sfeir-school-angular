@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { environment } from '../../../environments/environment';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -11,6 +11,7 @@ import { CardComponent } from '../../shared/components/card/card.component';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
   imports: [MatButtonModule, MatIconModule, CardComponent],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeComponent {
   personResource = httpResource<People>(() => `${environment.peopleEndpoint}/peoples/random`);

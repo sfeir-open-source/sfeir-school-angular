@@ -1,4 +1,4 @@
-import { enableProdMode } from '@angular/core';
+import { enableProdMode, provideZonelessChangeDetection } from '@angular/core';
 import { environment } from './environments/environment';
 import { HomeComponent } from './app/feature/home/home.component';
 import { provideRouter, Routes } from '@angular/router';
@@ -18,5 +18,5 @@ const ROUTES: Routes = [
 ];
 
 bootstrapApplication(AppComponent, {
-  providers: [provideRouter(ROUTES), provideHttpClient(withFetch())],
+  providers: [provideZonelessChangeDetection(), provideRouter(ROUTES), provideHttpClient(withFetch())],
 }).catch(console.error);
