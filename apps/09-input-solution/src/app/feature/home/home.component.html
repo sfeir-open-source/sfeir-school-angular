@@ -1,5 +1,6 @@
 <section>
-  @if (person$ |async;as person) {
+  @if (personResource.hasValue()) {
+    @let person = personResource.value();
     <sfeir-card [person]="person" />
   }
 </section>

@@ -1,5 +1,7 @@
 <section>
-  @for (person of people$ | async;track person.id) {
+  @for (person of people();track person.id) {
     <sfeir-card [person]="person" />
+  } @empty {
+    No Data Yet
   }
 </section>

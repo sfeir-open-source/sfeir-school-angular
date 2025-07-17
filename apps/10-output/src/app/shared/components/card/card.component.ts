@@ -1,12 +1,16 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { People } from '../../models/people.model';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'sfeir-card',
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss'],
-  standalone: false,
+  imports: [MatCardModule, MatIconModule, MatButtonModule, NgOptimizedImage],
 })
 export class CardComponent {
-  @Input() person!: People;
+  person = input.required<People>();
 }

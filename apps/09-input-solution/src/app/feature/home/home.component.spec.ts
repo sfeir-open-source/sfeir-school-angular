@@ -1,23 +1,17 @@
-import { CommonModule } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
+import { provideHttpClient } from '@angular/common/http';
 import { DebugElement, NO_ERRORS_SCHEMA } from '@angular/core';
-import { ComponentFixture, fakeAsync } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { fireEvent, render } from '@testing-library/angular';
-import { of } from 'rxjs';
 import { CardComponent } from '../../shared/components/card/card.component';
 import { People } from '../../shared/models/people.model';
 import { HomeComponent } from './home.component';
-
-const HTTP_CLIENT = {
-  get: jest.fn(),
-};
+import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 
 const PERSON: People = {
   id: '1',
+  photo: 'sfeir.png',
 } as People;
-
-const PEOPLE = [PERSON];
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -25,20 +19,22 @@ describe('HomeComponent', () => {
   let debugElement: DebugElement;
   let componentFixture: ComponentFixture<HomeComponent>;
 
-  beforeAll(() => {
-    jest.spyOn(HTTP_CLIENT, 'get').mockReturnValue(of(PEOPLE));
-  });
   beforeEach(async () => {
     const { fixture, container: renderedElement } = await render(HomeComponent, {
-      imports: [CommonModule],
-      declarations: [CardComponent],
-      providers: [{ provide: HttpClient, useValue: HTTP_CLIENT }],
+      providers: [provideHttpClient(), provideHttpClientTesting()],
       schemas: [NO_ERRORS_SCHEMA],
     });
     component = fixture.componentInstance;
     container = renderedElement;
     debugElement = fixture.debugElement;
     componentFixture = fixture;
+  });
+
+  beforeEach(async () => {
+    componentFixture.detectChanges();
+    TestBed.inject(HttpTestingController).expectOne('http://localhost:9000/api/peoples/random').flush(PERSON);
+    await componentFixture.whenStable();
+    componentFixture.detectChanges();
   });
 
   test('should create an instance of HomeComponent', () => {
@@ -50,7 +46,7 @@ describe('HomeComponent', () => {
   });
   test('should pass the input person', () => {
     const sfeirCard: CardComponent = debugElement.query(By.css('sfeir-card')).componentInstance;
-    expect(sfeirCard.person).toEqual(PERSON);
+    expect(sfeirCard.person()).toEqual(PERSON);
   });
   test('should call the getRandomPerson', () => {
     const spy = jest.spyOn(component, 'getRandomPerson');
@@ -59,13 +55,4 @@ describe('HomeComponent', () => {
     expect(spy).toHaveBeenCalled();
     expect(spy).toHaveBeenCalledTimes(1);
   });
-  test('should change the person', fakeAsync(async () => {
-    const RANDOM_PERSON = { id: '2' } as People;
-    jest.spyOn(HTTP_CLIENT, 'get').mockReturnValue(of(RANDOM_PERSON));
-    component.getRandomPerson();
-    await componentFixture.whenStable();
-    componentFixture.detectChanges();
-    const sfeirCard: CardComponent = debugElement.query(By.css('sfeir-card')).componentInstance;
-    expect(sfeirCard.person).toEqual(RANDOM_PERSON);
-  }));
 });

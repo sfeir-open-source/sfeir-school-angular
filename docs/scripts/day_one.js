@@ -94,12 +94,14 @@ function basicsFunctionalitiesSlides() {
 }
 
 function communicationSlides() {
+  const COMPONENT_COMMUNICATION = 'component-communication';
+
   return [
-    'component-communication/00-TRANSITION-SLIDE.md',
-    'component-communication/input.md',
-    'component-communication/exercice_input.md',
-    'component-communication/output.md',
-    'component-communication/exercice_output.md',
+    `${COMPONENT_COMMUNICATION}/00-TRANSITION-SLIDE.md`,
+    `${COMPONENT_COMMUNICATION}/01-INPUT.md`,
+    `${COMPONENT_COMMUNICATION}/100-LAB.md`,
+    `${COMPONENT_COMMUNICATION}/02-OUTPUT.md`,
+    `${COMPONENT_COMMUNICATION}/101-LAB.md`,
   ];
 }
 

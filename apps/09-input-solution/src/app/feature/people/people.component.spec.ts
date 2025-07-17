@@ -12,7 +12,10 @@ const HTTP_CLIENT = {
   get: jest.fn(),
 };
 
-const PEOPLE = [{ id: '1' }, { id: '2' }] as Array<People>;
+const PEOPLE = [
+  { id: '1', photo: 'sfeir.png' },
+  { id: '2', photo: 'sfeir.png' },
+] as Array<People>;
 
 describe('PeopleComponent', () => {
   let component: PeopleComponent;
@@ -43,7 +46,7 @@ describe('PeopleComponent', () => {
   });
   test('should pass the correct person', () => {
     const [sfeirCard1, sfeirCard2] = debugElement.queryAll(By.directive(CardComponent));
-    expect(sfeirCard1.componentInstance.person).toEqual(PEOPLE[0]);
-    expect(sfeirCard2.componentInstance.person).toEqual(PEOPLE[1]);
+    expect(sfeirCard1.componentInstance.person()).toEqual(PEOPLE[0]);
+    expect(sfeirCard2.componentInstance.person()).toEqual(PEOPLE[1]);
   });
 });

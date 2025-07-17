@@ -1,5 +1,6 @@
 <section>
-  @if (person$ | async;as person) {
+  @if (personResource.hasValue()) {
+    @let person = personResource.value();
     <mat-card appearance="outlined" class="mat-whiteframe-2dp">
       <mat-card-title-group>
         <img mat-card-image [ngSrc]="person.photo" alt="person-photo" height="128" width="128" />

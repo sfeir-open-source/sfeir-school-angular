@@ -8,16 +8,26 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/10-output",
         "index": "apps/10-output/src/index.html",
         "browser": "apps/10-output/src/main.ts",
-        "polyfills": ["apps/10-output/src/polyfills.ts"],
+        "polyfills": [
+          "apps/10-output/src/polyfills.ts"
+        ],
         "tsConfig": "apps/10-output/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/10-output/src/favicon.ico", "apps/10-output/src/assets"],
-        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/10-output/src/styles.scss"],
+        "assets": [
+          "apps/10-output/src/favicon.ico",
+          "apps/10-output/src/assets"
+        ],
+        "styles": [
+          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+          "apps/10-output/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -53,6 +63,12 @@
     },
     "serve": {
       "executor": "@angular-devkit/build-angular:dev-server",
+      "dependsOn": [
+        {
+          "projects": "server-express",
+          "target": "serve"
+        }
+      ],
       "configurations": {
         "production": {
           "buildTarget": "10-output:build:production"
@@ -75,7 +91,9 @@
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/apps/10-output"],
+      "outputs": [
+        "{workspaceRoot}/coverage/apps/10-output"
+      ],
       "options": {
         "jestConfig": "apps/10-output/jest.config.ts"
       }

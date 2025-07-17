@@ -20,7 +20,12 @@ describe('CardComponent', () => {
   let rerender: any;
 
   beforeEach(async () => {
-    const { fixture, rerender: reload } = await render(CardComponent, { componentProperties: { person: PEOPLE }, schemas: [NO_ERRORS_SCHEMA] });
+    const { fixture, rerender: reload } = await render(CardComponent, {
+      inputs: {
+        person: PEOPLE,
+      },
+      schemas: [NO_ERRORS_SCHEMA],
+    });
     component = fixture.componentInstance;
     debugElement = fixture.debugElement;
     rerender = reload;
@@ -31,7 +36,7 @@ describe('CardComponent', () => {
   });
 
   test('should the input person set to PEOPLE', () => {
-    expect(component.person).toEqual(PEOPLE);
+    expect(component.person()).toEqual(PEOPLE);
   });
 
   test('should create a card', () => {
@@ -43,7 +48,7 @@ describe('CardComponent', () => {
     expect(image).toBeTruthy();
     expect(image.getAttribute('height')).toEqual('128');
     expect(image.getAttribute('width')).toEqual('128');
-    expect((image as any).ngSrc).toEqual(PEOPLE.photo);
+    expect(image.getAttribute('src')).toEqual(PEOPLE.photo);
   });
   test('should display the name of the person', () => {
     const title: HTMLElement = debugElement.query(By.css('mat-card-title')).nativeElement;
@@ -82,8 +87,8 @@ describe('CardComponent', () => {
   });
   test('should display another person', async () => {
     const newPerson = { ...PEOPLE, firstname: 'Jane', lastname: 'Doe', photo: 'jane-doe.jpg' };
-    await rerender({ componentProperties: { person: newPerson } });
+    await rerender({ inputs: { person: newPerson }, partial: true });
     const image: HTMLImageElement = screen.getByAltText('person-photo');
-    expect((image as any).ngSrc).toEqual(newPerson.photo);
+    expect(image.getAttribute('src')).toEqual(newPerson.photo);
   });
 });
