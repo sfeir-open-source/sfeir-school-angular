@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
 @Component({
@@ -6,6 +6,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   imports: [MatToolbarModule],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
   name = 'SFEIR - LUXEMBOURG';
