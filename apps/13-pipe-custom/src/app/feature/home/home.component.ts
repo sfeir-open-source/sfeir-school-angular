@@ -1,24 +1,21 @@
-import { Component, OnInit } from '@angular/core';
-import { EMPTY, map, Observable } from 'rxjs';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 import { PeopleService } from '../../core/providers/people.service';
-import { People } from '../../shared/models/people.model';
+import { CardComponent } from '../../shared/components/card/card.component';
 
 @Component({
   selector: 'sfeir-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
-  standalone: false,
+  imports: [MatButtonModule, MatIconModule, CardComponent],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HomeComponent implements OnInit {
-  person$: Observable<People> = EMPTY;
-
-  constructor(private readonly peopleService: PeopleService) {}
-
-  ngOnInit(): void {
-    this.person$ = this.peopleService.getPeople().pipe(map(([firstPerson]) => firstPerson));
-  }
+export class HomeComponent {
+  private readonly peopleService = inject(PeopleService);
+  personResource = this.peopleService.getRandomPeople();
 
   getRandomPerson(): void {
-    this.person$ = this.peopleService.getRandomPeople();
+    this.personResource.reload();
   }
 }

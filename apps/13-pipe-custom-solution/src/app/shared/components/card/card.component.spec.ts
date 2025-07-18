@@ -2,7 +2,6 @@ import { DebugElement, NO_ERRORS_SCHEMA } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { fireEvent, render, screen } from '@testing-library/angular';
 import { People } from '../../models/people.model';
-import { NaPipe } from '../../pipes/na.pipe';
 import { CardComponent } from './card.component';
 
 const PEOPLE: People = {
@@ -24,8 +23,10 @@ describe('CardComponent', () => {
 
   beforeEach(async () => {
     const { fixture, rerender: reload } = await render(CardComponent, {
-      componentProperties: { person: PEOPLE, personDelete: { emit: PERSON_DELETE } as any },
-      declarations: [NaPipe],
+      inputs: { person: PEOPLE, personDelete: { emit: PERSON_DELETE } as any },
+      on: {
+        personDelete: PERSON_DELETE,
+      },
       schemas: [NO_ERRORS_SCHEMA],
     });
     component = fixture.componentInstance;
@@ -38,7 +39,7 @@ describe('CardComponent', () => {
   });
 
   test('should the input person set to PEOPLE', () => {
-    expect(component.person).toEqual(PEOPLE);
+    expect(component.person()).toEqual(PEOPLE);
   });
 
   test('should create a card', () => {
@@ -50,7 +51,7 @@ describe('CardComponent', () => {
     expect(image).toBeTruthy();
     expect(image.getAttribute('height')).toEqual('128');
     expect(image.getAttribute('width')).toEqual('128');
-    expect((image as any).ngSrc).toEqual(PEOPLE.photo);
+    expect(image.getAttribute('src')).toEqual(PEOPLE.photo);
   });
   test('should display the name of the person', () => {
     const title: HTMLElement = debugElement.query(By.css('mat-card-title')).nativeElement;
@@ -89,9 +90,9 @@ describe('CardComponent', () => {
   });
   test('should display another person', async () => {
     const newPerson = { ...PEOPLE, firstname: 'Jane', lastname: 'Doe', photo: 'jane-doe.jpg' };
-    await rerender({ componentProperties: { person: newPerson } });
+    await rerender({ inputs: { person: newPerson }, partial: true });
     const image: HTMLImageElement = screen.getByAltText('person-photo');
-    expect((image as any).ngSrc).toEqual(newPerson.photo);
+    expect(image.getAttribute('src')).toEqual(newPerson.photo);
   });
   test('should call the method deletePerson', () => {
     const spy = jest.spyOn(component, 'deletePerson');

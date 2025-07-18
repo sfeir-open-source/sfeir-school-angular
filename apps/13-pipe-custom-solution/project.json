@@ -53,6 +53,9 @@
     },
     "serve": {
       "executor": "@angular-devkit/build-angular:dev-server",
+      "dependsOn": [{
+        "projects": "server-express", "target": "serve"
+      }],
       "configurations": {
         "production": {
           "buildTarget": "13-pipe-custom-solution:build:production"
