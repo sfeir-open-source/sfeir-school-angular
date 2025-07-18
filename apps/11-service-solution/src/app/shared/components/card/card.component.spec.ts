@@ -23,7 +23,7 @@ describe('CardComponent', () => {
 
   beforeEach(async () => {
     const { fixture, rerender: reload } = await render(CardComponent, {
-      inputs: { person: PEOPLE, personDelete: { emit: PERSON_DELETE } as any },
+      inputs: { person: PEOPLE },
       on: {
         personDelete: PERSON_DELETE,
       },

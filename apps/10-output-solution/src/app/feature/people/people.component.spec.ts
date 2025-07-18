@@ -58,7 +58,6 @@ describe('PeopleComponent', () => {
     fireEvent(sfeirCard, customEvent);
     expect(spy).toHaveBeenCalled();
   });
-
   test('should delete the person', async () => {
     jest.spyOn(HTTP_CLIENT, 'delete').mockReturnValue(of([PEOPLE[1]]));
     component.deletePerson(PEOPLE[0]);

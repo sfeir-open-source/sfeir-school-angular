@@ -26,12 +26,13 @@ function pipeSlides() {
 }
 
 function directiveSlides() {
+  const DIRECTIVE = 'directive';
   return [
-    'directive/00-TRANSITION-SLIDE.md',
-    'directive/01-INTRODUCTION.md',
-    'directive/exercice_directive_use.md',
-    'directive/custom_directive.md',
-    'directive/exercice_create_directive.md',
+    `${DIRECTIVE}/00-TRANSITION-SLIDE.md`,
+    `${DIRECTIVE}/01-CONTROL-FLOW.md`,
+    `${DIRECTIVE}/100-LAB.md`,
+    `${DIRECTIVE}/02-CUSTOM-DIRECTIVE.md`,
+    `${DIRECTIVE}/101-LAB.md`,
   ];
 }
 
