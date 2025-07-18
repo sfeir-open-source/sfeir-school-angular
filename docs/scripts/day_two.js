@@ -14,13 +14,14 @@ function dependencyInjectionSlides() {
 }
 
 function pipeSlides() {
+  const PIPE = 'pipe';
   return [
-    'pipe/00-TRANSITION-SLIDE.md',
-    'pipe/01-INTRODUCTION.md',
-    'pipe/syntax.md',
-    'pipe/exercice_use_pipe.md',
-    'pipe/custom_pipe.md',
-    'pipe/exercice_custom_pipe.md',
+    `${PIPE}/00-TRANSITION-SLIDE.md`,
+    `${PIPE}/01-INTRODUCTION.md`,
+    `${PIPE}/02-SYNTAX.md`,
+    `${PIPE}/100-LAB.md`,
+    `${PIPE}/03-CUSTOM-PiPE.md`,
+    `${PIPE}/101-LAB.md`,
   ];
 }
 
