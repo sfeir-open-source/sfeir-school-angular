@@ -4,11 +4,12 @@ function providersSlide() {
 }
 
 function dependencyInjectionSlides() {
+  const DEPENDENCY_INJECTION = 'dependency-injection';
   return [
-    'dependency-injection/00-TRANSITION-SLIDE.md',
-    'dependency-injection/basics.md',
-    'dependency-injection/di_working.md',
-    'dependency-injection/di_resolution.md',
+    `${DEPENDENCY_INJECTION}/00-TRANSITION-SLIDE.md`,
+    `${DEPENDENCY_INJECTION}/01-BASICS.md`,
+    `${DEPENDENCY_INJECTION}/02-DI-WORKING.md`,
+    `${DEPENDENCY_INJECTION}/03-DI-RESOLUTION.md`,
   ];
 }
 
