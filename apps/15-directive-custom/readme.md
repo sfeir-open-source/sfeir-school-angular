@@ -1,60 +1,54 @@
-# Exercice 15-directive-custom (dossier apps/15-directive-custom)
+# Exercise 15-directive-custom (folder apps/15-directive-custom)
 
-L'objectif de ce workshop est de créer votre propre directive
+In this workshop, you'll learn how to create your own custom directive in Angular. We'll create a badge directive that shows a manager icon when a person is marked as a manager.
 
-Nous introduirons également le concepts d'input aliasé afin d'éviter du boilerplating dans le template au moment de l'utilisation de cette directive
+We'll also introduce the concept of input aliasing to reduce boilerplate in your templates when using this directive.
 
-<br>
+## Step 1: Create Directives Directory
 
-## Etape 1
+In the `shared` folder, create a new directory called `directives`. This is where we'll place our custom directives.
 
-Dans le dossier shared, créez un dossier directives
+## Step 2: Generate Badge Directive
 
-<br><br>
+Create a new directive called `Badge` in the `directives` folder.
 
-## Etape 2
+## Step 3: Add Input with Alias
 
-A l'aide du CLI dans le dossier directives, créez une directive Badge, pensez bien à exporter cette directive dans la propriété exports de votre module SharedModule
-<br><br>
+In your `BadgeDirective`, add an input property called `isManager` and alias it as `sfeirBadge`.
 
-## Etape 3
+## Step 4: Inject Required Services
 
-A l'aide de la notation **@Input**, passez en input de cette directive une propriété isManager
+In the `BadgeDirective` inject the following services:
 
-Pensez à aliasé cet Input avec l'alias **sfeirBadge**
+- `ElementRef<HTMLElement>` as `elementRef`
+- `Renderer2` as `renderer2`
 
-Indices: @Input('sfeirBadge') isManager: boolean
-<br><br>
+## Step 5: Implement the Badge Logic
 
-## Etape 4
+Use the `effect` function to react to changes in the `isManager` input. When `isManager` is true, display a manager icon using Material Icons.
 
-Dans le constructor de la directive SfeirBadge, injectez les services suivants:
+## Step 6: Use the Directive in Template
 
-- elementRef: ElementRef
-- renderer: Renderer2
-
-## Etape 5
-
-A l'aide du lifecycle OnInit, affichez une icon si la personne est un manager
-
-```javascript
-this.renderer.setProperty(this.elementRef.nativeElement, 'innerHTML', '<i class="material-icons">supervisor_account</material-icons>');
-```
-
-## Etape 6
-
-Dans le ficher, **people.component.html** et en mode d'affichage list, appelez la directive SfeirBadge
+In the `people.component.html` file, add the `sfeirBadge` directive to the person's name in list view mode:
 
 ```html
 <span [sfeirBadge]="person.isManager"></span>
 ```
 
-Astuce: ce morceau de code doit être placé juste après la balise h3
+Place this span right after the `h3` tag that displays the person's name.
 
-## Etape 7
+## Step 7: Test Your Work
 
-Vérifiez votre travail en vous plaçant à la racine du dossier TP et en lançant la commande:
+To see your custom directive in action, run the application with:
 
-```shell
+```bash
 npm run client -- 15-directive-custom
 ```
+
+## Troubleshooting
+
+- If you don't see the icon, make sure Material Icons is properly imported in your `index.html`
+- Check the browser console for any errors
+- Verify that the `isManager` property is correctly set in your person objects
+
+Happy coding! 🚀

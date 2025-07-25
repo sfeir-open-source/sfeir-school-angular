@@ -10,20 +10,21 @@
 
 ![h-300 center](assets/images/school/directive/directive_schema.png) <br/>
 
--   structural directives: modify the DOM<br/>
--   attribute directives: modify the appearance or behavior of an element<br/>
--   component: directive with a view<br/>
+- structural directives: modify the DOM<br/>
+- attribute directives: modify the appearance or behavior of an element<br/>
+- component: directive with a view<br/>
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
+
 # Directive definition
 
 ```typescript
 import { Directive } from '@angular/core';
 
-@Directive({ 
-  selector: '[myDirective]'
+@Directive({
+  selector: '[myDirective]',
 })
 export class MyDirective {}
 ```
@@ -36,67 +37,74 @@ export class MyDirective {}
 
 # How to invoke a directive?
 
--   <b>element-name</b>: to restrict to an element<br/><br/>
--   <b>[attribute]</b>: to restrict to an attribute<br/><br/>
--   <b>.class</b>: to restrict to a class<br/><br/>
--   <b>[attribute=value]</b>: to restrict to an attribute with a certain value<br/><br/>
--   <b>:not(sub_selector)</b>: if the element does not match the sub-selector
+- <b>element-name</b>: to restrict to an element<br/><br/>
+- <b>[attribute]</b>: to restrict to an attribute<br/><br/>
+- <b>.class</b>: to restrict to a class<br/><br/>
+- <b>[attribute=value]</b>: to restrict to an attribute with a certain value<br/><br/>
+- <b>:not(sub_selector)</b>: if the element does not match the sub-selector
 
 ##==##
 
 <!-- .slide: class="two-column with-code inconsolata" -->
+
 ## Some examples
 
 ```typescript
 @Directive({
-  selector: '[sfeirButton]'
+  selector: '[sfeirButton]',
 })
 export class SfeirButtonDirective {}
 ```
+
 <!-- .element: class="big-code" -->
 
 <br/><br/>
 
 ```typescript
 @Directive({
-  selector: '.error'
+  selector: '.error',
 })
 export class ErrorDirective {}
 ```
+
 <!-- .element: class="big-code" -->
 
 ##--##
+
 <!-- .slide: class="with-code inconsolata"-->
 
 <br/><br/><br/>
 
 ```typescript
 @Directive({
-  selector: 'input[onlyNumber]'
+  selector: 'input[onlyNumber]',
 })
 export class OnlyNumberDirective {}
 ```
+
 <!-- .element: class="big-code" -->
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
+
 # How to pass props to my directive
 
--   List inputs using the <b>@Input()</b> decorator
--   These inputs can be aliased
--   <b>Exactly like for components</b> <br/><br/>
+- List inputs using the **input()** signal function
+- These inputs can be aliased
+- **Exactly like for components**
+- keep it in mind if you use Angular < v16, you have to use **@Input** decorator
 
 ```typescript
-import { Directive, Input } from '@angular/core';
 @Directive({
-  selector: '[foobar]'
+  selector: '[foobar]',
 })
 export class MyDirective {
-  @Input() myProp: string;
-  @Input('alias') myProp2: string;
+  myProp = input('');
+  myProp2 = input('', { alias: 'name' });
 }
 ```
+
 <!-- .element: class="big-code" -->
 
 ##==##
@@ -105,16 +113,16 @@ export class MyDirective {
 
 # How to interact with DOM elements
 
--   ElementRef (injectable) allows you to directly get the element on which the directive acts
--   Renderer2 (injectable) allows you to interact with the DOM<br/><br/>
+- ElementRef (injectable) allows you to directly get the element on which the directive acts
+- Renderer2 (injectable) allows you to interact with the DOM<br/><br/>
 
 ```typescript
-import { Directive, ElementRef, Renderer2 } from '@angular/core';
 @Directive({
-    selector: '[foobar]'
+  selector: '[foobar]',
 })
 export class MyDirective {
-    constructor(private readonly element: ElementRef, private readonly renderer: Renderer2) {}
+  private readonly elementRef = inject(ElementRef<HTMLElement>);
+  private readonly renderer = inject(Renderer2);
 }
 ```
 
@@ -126,9 +134,9 @@ export class MyDirective {
 
 # Interaction with the DOM
 
--   Prefer using Renderer instead of ElementRef<br/><br/>
--   No direct dependency on the DOM<br/><br/>
--   Allows the application to run in other environments (EDGE, Firefox)
+- Prefer using Renderer instead of ElementRef<br/><br/>
+- No direct dependency on the DOM<br/><br/>
+- Allows the application to run in other environments (EDGE, Firefox)
 
 ##==##
 
@@ -157,20 +165,39 @@ export class MyDirective {
 
 # Events
 
--   <b>@Output()</b> to propagate events
--   <b>@HostListener()</b> to listen for events on the host element
--   <b>Exactly like for components</b> <br/><br/>
+- **output()** to propagate events <br/><br/>
+- **host property with event binding** to listen for events on the host element <br/><br/>
 
 ```typescript
-import { Directive, Output, EventEmitter, HostListener } from '@angular/core';
+@Directive({ selector: '[myDirective]', host: { '(click)': 'handleClick($event)' } })
+export class MyDirective {
+  somethingChange = output<{ event: MouseEvent; data: any }>();
+  handleClick(event: MouseEvent) {
+    this.somethingChange.emit({ event, data: 'some data' });
+  }
+}
+```
+
+<!-- .element: class="big-code" -->
+
+##==##
+
+<!-- .slide: class="with-code inconsolata" -->
+
+# Events Before Signal
+
+- **@Output decorator()** to propagate events
+- **host property with event binding** to listen for events on the host element
+- **HostListener Decorator** to listen for events on the host element <br/><br/>
+
+```typescript
+import { EventEmitter, HostListener } from '@angular/core';
 
 @Directive({ selector: '[myDirective]' })
 export class MyDirective {
-  @Output() somethingChange: EventEmitter<{ event: MouseEvent, data: any }> = new EventEmitter();
+  @Output() somethingChange = new EventEmitter<{ event: MouseEvent; data: any }>();
 
-  constructor() {}
-
-  @HostListener('click', ['$event']) handleClick(event: MouseEvent) {
+  @HostListener('click', [$event]) handleClick(event: MouseEvent) {
     this.somethingChange.emit({ event, data: 'some data' });
   }
 }

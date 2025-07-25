@@ -53,6 +53,7 @@
     },
     "serve": {
       "executor": "@angular-devkit/build-angular:dev-server",
+      "dependsOn": [{ "projects":  "server-express", "target": "serve"}],
       "configurations": {
         "production": {
           "buildTarget": "15-directive-custom:build:production"
