@@ -1,93 +1,64 @@
-# Exercice 18-template-driven-form-update (dossier steps/18-template-driven-form-update)
+# Exercise 18: Template-driven Form Update Mode
 
-<br>
+In this exercise, you'll implement an update form for people using Angular's template-driven forms.
 
-## Etape 1
+## Step 1: Create UpdatePerson Component
 
-A l'aide du CLI, créez un composant UpdatePersonComponent dans le dossier feature et associez ce composant à la route /people/:id
+1. Create `UpdatePerson` in the `feature` directory:
+2. Add route in `app.routes.ts` to navigate to the update person page
 
-Astuce: ajoutez cette nouvelle route dans le fichier **app.routing.module.ts**
+## Step 2: Add Edit Navigation
 
-<br><br>
+In `card.component.html`, update the edit button:
 
-## Etape 2
+## Step 3: Update the People service
 
-Dans le composant CardComponent, et particulièrement dans le fichier **card.component.html**, sur l'icon edit réalisez la navigation vers votre nouvelle page
+In the `people.service.ts`, add
 
-Astuce: utilisez la directive [routerLink]="['/people', person.id]"
+- `updatePerson` method to update the person details (/peoples/{id}) on PUT method
+- `getPersonDetails` method to get the person details (/peoples/{id}) on GET method
 
-## Etape 3
+## Step 4: Implement UpdatePerson Component
 
-Dans le composant FormComponent, ajouter une propriété person avec l'annotation @Input
+In `update-person.ts`, implement the component to load person details:
 
-<br><br>
+- `id` input to receive the person id (use with the withInputBinding feature router)
+- `peopleResource` to load the person details
+- `updatePerson` method to update the person details
+- `goBack` method to navigate back to the people list
 
-## Etape 4
+## Step 5: Update Form Component
 
-Dans le composant FormComponent, a l'aide du Hook OnInit, initialisez la propriété person à un object contenant juste la clé photo et comme valeur le lien de la photo par défaut si la propriété person n'est pas définie
+1. In `form.component.ts`, add an input for the person data with a default value set to { photo: 'https://randomuser.me/api/portraits/lego/6.jpg' }
+2. Update the form to use the person
 
-<br><br>
+## Step 6: Create Update Template
 
-## Etape 5
+In `update-person.component.html` display the form
 
-Dans le fichier **form.component.html** et plus particulièrement sur la méthode onSave, supprimer le paramètre passé.
+## Step 7: Implement Save Logic
 
-Dans le fichier **form.component.ts** et plus particulièrement dans la méthode onSave, remplacer le paramètre passé à l'event emitter, par 'this.person'
+In `update-person.component.ts`, add updatePerson and goBack methods
 
-Dans le fichier **form.component.html** réalisez le two binding avec la directive ngModel
+- updatePerson is the callback of save event of the form
+- goBack is the callback of cancel event of the form
 
-<br<br>
+## Testing Your Work
 
-## Etape 5
+1. Run the application:
 
-Dans le composant UpdatePersonComponent, appelez le composant FormComponent
+   ```bash
+   npm run client -- 18-template-driven-form-update
+   ```
 
-<br<br>
+2. Click the edit icon on any person card
+3. Verify the form is pre-filled with the person's data
+4. Make changes and save
+5. Verify the changes are reflected in the people list
 
-## Etape 6
+## Troubleshooting
 
-Dans le service PeopleService, créez une méthode updatePerson qui prend en paramètre une personne
-
-Endpoint: PUT http://localhost:9000/api/peoples/:id
-
-et un endpoint qui permet de récupérer le détail de la personne
-
-Endpoint: GET http://localhost:9000/api/peoples/:id
-
-<br<br>
-
-## Etape 7
-
-Dans le composant UpdatePersonComponent, et particulièrement dans le lifecycle OnInit, récupérer le détail d'une personnes
-
-Astuce: pensez à utiliser le provider ActivatedRoute
-
-Dans le composant UpdateComponent créer deux méthodes
-
-- updatePerson qui update la person et qui retourne sur la page précédente une fois l'update terminé
-- goBack qui renvoie sur la page précédente
-
-Pour la fonction goBack, pensez à injecter le provider Location, pour pouvoir utilisez la méthode back de cette classe
-
-```javascript
-this.location.back();
-```
-
-<br><br>
-
-## Etape 8
-
-Dans le composant UpdateComponent réagissez aux évènement submit et cancel de votre composant FormComponent en appelant respectivement les méthodes suivantes:
-
-- updatePerson
-- goBack
-
-<br><br>
-
-## Etape 9
-
-Vérifiez votre travail en lançant la commande suivante:
-
-```shell
-npm run client -- 18-template-driven-form-update
-```
+- If the form doesn't load, check the browser console for errors
+- Ensure all routes are properly configured
+- Verify the person ID is being correctly passed to the update endpoint
+- Check that the form's submit handler is being called with the correct data personne

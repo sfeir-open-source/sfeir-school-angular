@@ -1,36 +1,34 @@
-@if (view$ | async;as currentView) {
-  @switch (currentView) {
+<section>
+  @switch (view()) {
     @case ('card') {
-      <section data-testid="card-view">
-        @for (person of people$ | async;track person.id) {
-          <sfeir-card [person]="person" (personDelete)="deletePerson($event)" />
-        }
-      </section>
+      @for (person of people(); track person.id) {
+        <sfeir-card data-testid="card-view" [person]="person" (personDelete)="deletePerson($event)" />
+      } @empty {
+        No Data Yet
+      }
     }
     @case ('list') {
-      <section data-testid="list-view">
-        <mat-list>
-          @for (person of people$ | async;track person.id) {
-            <mat-list-item class="mat-whiteframe-2dp mat-card">
-              <img matListItemAvatar ngSrc="{{ person.photo }}" alt="photo-people" height="40" width="40" />
-              <h3 matListItemLine>{{ person.firstname }} {{ person.lastname }}
-                <span class="sfeir-badge" [sfeirBadge]="person.isManager"></span>
-              </h3>
-              <p matListItemLine>
-                <span> {{ person.entity }} </span> — <span>{{ person.email }} </span>
-              </p>
-            </mat-list-item>
-          }
-        </mat-list>
-      </section>
+      <mat-list data-testid="list-view">
+        @for (person of people(); track person.id) {
+          <mat-list-item class="mat-whiteframe-2dp mat-card">
+            <img alt="person-image" [ngSrc]="person.photo" matListItemAvatar height="40" width="40" />
+            <h3 matListItemLine>
+              {{ person.firstname }} {{ person.lastname }}
+              <span class="sfeir-badge" [sfeirBadge]="person.isManager"></span>
+            </h3>
+            <p matListItemLine>
+              <span> {{ person.entity }} </span> — <span>{{ person.email }} </span>
+            </p>
+          </mat-list-item>
+        }
+      </mat-list>
     }
   }
-  <section class="buttons-fab">
-    <button mat-fab color="accent" class="button-add" (click)="showDialog()"><i class="material-icons">add</i></button>
-    <button mat-fab color="warn" (click)="changeView(currentView)" name="change-view">
-      <i class="material-icons">{{ currentView === 'card' ? 'list' : 'view_stream' }}</i>
-    </button>
-  </section>
-}
+</section>
 
-
+<section class="buttons-fab">
+  <button mat-fab color="accent" class="button-add" (click)="showDialog()"><i class="material-icons">add</i></button>
+  <button mat-fab color="warn" (click)="changeView()">
+    <i class="material-icons">{{ view() === 'card' ? 'list' : 'view_stream' }}</i>
+  </button>
+</section>

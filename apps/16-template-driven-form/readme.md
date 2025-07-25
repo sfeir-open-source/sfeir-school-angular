@@ -1,97 +1,57 @@
-# Exercice 16-template-driven-form (dossier apps/16-template-driven-form)
+# Exercise 16-template-driven-form (folder apps/16-template-driven-form)
 
-Le composant PeopleComponent vient d'être complété par un bouton permettant d'ouvrir une modale.
+In this workshop, you'll learn how to create a template-driven form in Angular. The PeopleComponent already has a button to open a modal dialog, and the modal component is already set up. Your task is to create a form component and implement the form logic.
 
-La méthode permettant d'ouvrir cette modal est déjà réalisée dans le composant, vous n'avez donc pas a vous soucier de créer cette méthode
+## Step 1: Create Form Component
 
-La composant de la modale est également créé, dans le fichier **add-person-dialog.component.ts**, vous pourrez y trouver une méthode
+1. In the `shared/components` directory, create a new component called `Form`:
+2. In the generated `form.html`, copy the content from `assets/static/form.component.html`
+3. In the generated `form.scss`, copy the content from `assets/static/form.scss`
 
-- closeDialog
+## Step 2: Add Form to Dialog
 
-<br>
+1. In `add-person-dialog.component.ts`, import and add the `Form` to the `imports` array
+2. In `add-person-dialog.component.html`, add the form component:
 
-## Etape 1
+## Step 3: Import FormsModule
 
-Dans le dossier shared/components, et à l'aide du CLI, créez un composant FormComponent en pensant bien à l'exporter dans la propriété exports de votre module SharedModule
+1. In `form.ts`, import `FormsModule` from `@angular/forms`
+2. Add it to the `imports` array of the `@NgModule` decorator
 
-Dans le ficher **form.component.html**, copiez le contenue du fichier assets/static/form.component.html
+## Step 4: Make the Form Template-Driven
 
-Dans le fichier **form.component.scss**, copiez le contenue du fichier assets/static/form.component.css
-<br><br>
+1. In `form.html`, add `#personForm="ngForm"` to the form element
+2. Add `ngModel` directive to each form control (input fields)
+3. Add `name` attribute to each form control that matches your model properties
 
-## Etape 2
+## Step 5: Implement Form Logic
 
-Dans le composant AddPersonDialogComponent, appelez le composant FormComponent
-<br><br>
+1. In `form.ts`, create two output properties:
 
-## Etape 3
+2. Implement the form submission
 
-Dans le fichier **shared.module.ts**, importez le module FormsModule
+3. Implement the cancel action
 
-<br><br>
+## Step 6: Make the business Logic for adding people
 
-## Etape 4
+1. In the file `people.service.ts`, add a new function to add a people. Endpoint to use /peoples with the Post method
+2. In the file `people.component.ts`, complete the Rxjs flux with the correct operator
+   - first use the filer operator to avoid sending request if user close the dialog without submitting
+   - then use the switchMap operator to send the request
+   - finally use again a switchMap operator to retrieve the list of person updated
+3. Register the new flow in the merge operator
 
-Dans le fichier **form.component.html**, rendre le formulaire 'template driven form'
+## Testing Your Work
 
-<br><br>
+1. Run the application:
+   ```bash
+   npm run client -- 16-template-driven-form
+   ```
+2. Click the "+" button to open the form
+3. Submit the form and verify the data is passed correctly
 
-## Etape 5
+## Troubleshooting
 
-Dans le fichier **form.component.ts**, créez deux Event Emitter:
-
-- cancel qui émet aucune valeur
-- save qui émet la valeur de formulaire
-
-Dans le fichier **form.component.ts** créez deux méthodes:
-
-- onCancel: qui répond a l'évent click du bouton cancel présent dans le template
-- onSave: qui répond à l'évent click du bouton save présent dans le template
-
-Ces deux méthodes doivent émettre respectivement les event emitter cancel et save
-
-<br><br>
-
-## Etape 6
-
-Dans le composant AddPersonDialogComponent, catcher les event emitter save et cancel de votre composant FormComponent
-
-- personAdd doit appeler la méthode closeDialog avec la personne en paramètre
-- cancel doit appeler la méthode onCancel sans paramètre
-
-<br><br>
-
-## Etape 7
-
-Dans le fichier peopleService créez une méthode addNewPerson qui créera une personne
-
-Endpoint: POST http://localhost:9000/api/people
-
-<br><br>
-
-## Etape 8
-
-Dans le fichier PeopleComponent, si le formulaire n'est pas null, alors créez la personne en faisant appel à votre nouvelle méthode addNewPerson
-
-```javascript
-this.matDialogService
-  .open(AddPersonDialogComponent, { width: '30%', height: 'fit-content' })
-  .afterClosed()
-  .pipe(
-    filter(personForm => !!personForm),
-    switchMap(personForm => this.peopleService.addNewPerson(personForm)),
-    switchMap(() => {
-      this.people$ = this.peopleService.getPeople().pipe(shareReplay(1));
-      return this.people$;
-    }),
-  )
-  .subscribe();
-```
-
-<br><br>
-
-## Etape 9
-
-```shell
-npm run client -- 16-template-driven-form
-```
+- If the form doesn't submit, check the browser console for errors
+- Make sure all form controls have both `name` and `ngModel` directives
+- Verify that the `FormsModule` is properly imported in the `SharedModule`

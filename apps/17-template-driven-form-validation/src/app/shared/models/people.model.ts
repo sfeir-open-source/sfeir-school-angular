@@ -31,6 +31,8 @@ export interface People {
 }
 
 export interface PeopleForm {
+  id?: string;
+  photo: string;
   firstname: string;
   lastname: string;
   email: string;

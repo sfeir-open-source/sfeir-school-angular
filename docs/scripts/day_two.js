@@ -37,13 +37,14 @@ function directiveSlides() {
 }
 
 function templateDrivenForms() {
+  const FORMS = 'forms';
   return [
-    'forms/00-TRANSITION-SLIDE.md',
-    'forms/template-driven-forms/01-INTRODUCTION.md',
-    'forms/template-driven-forms/exercice_create_form.md',
-    'forms/template-driven-forms/validation.md',
-    'forms/template-driven-forms/exercice_validation.md',
-    'forms/template-driven-forms/exercice_update_form.md',
+    `${FORMS}/00-TRANSITION-SLIDE.md`,
+    `${FORMS}/template-driven-forms/01-INTRODUCTION.md`,
+    `${FORMS}/template-driven-forms/100-LAB.md`,
+    `${FORMS}/template-driven-forms/02-VALIDATION.md`,
+    `${FORMS}/template-driven-forms/101-LAB.md`,
+    `${FORMS}/template-driven-forms/102-LAB.md`,
   ];
 }
 
