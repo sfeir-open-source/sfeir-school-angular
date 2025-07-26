@@ -1,0 +1,14 @@
+h1 {
+  text-align: center;
+}
+
+section {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+
+  sfeir-form {
+    width: 60%;
+  }
+}

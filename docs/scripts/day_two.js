@@ -49,13 +49,14 @@ function templateDrivenForms() {
 }
 
 function reactiveFormSlides() {
+  const FORMS = 'forms';
   return [
-    'forms/reactive-forms/01-INTRODUCTION.md',
-    'forms/reactive-forms/validation.md',
-    'forms/reactive-forms/exercice_validation.md',
-    'forms/reactive-forms/custom_validation.md',
-    'forms/reactive-forms/exercice_custom_validation.md',
-    'forms/summary.md',
+    `${FORMS}/reactive-forms/01-INTRODUCTION.md`,
+    `${FORMS}/reactive-forms/02-VALIDATION.md`,
+    `${FORMS}/reactive-forms/100-LAB.md`,
+    `${FORMS}/reactive-forms/03-CUSTOM-VALIDATION.md`,
+    `${FORMS}/reactive-forms/101-LAB.md`,
+    `${FORMS}/01-SUMMARY.md`,
   ];
 }
 

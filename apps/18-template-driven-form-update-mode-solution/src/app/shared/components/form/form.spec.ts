@@ -1,19 +1,30 @@
-import { fireEvent, render, screen } from '@testing-library/angular';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { Form } from './form';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
+import { fireEvent, render, screen } from '@testing-library/angular';
+import type { People } from '../../models/people.model';
+import { Form } from './form';
 
 const CANCEL_SPY = jest.fn();
 const SAVE_SPY = jest.fn();
+const PERSON = {
+  firstname: 'John',
+  lastname: 'Doe',
+  entity: 'Company',
+  email: 'john.doe@gmail.com',
+  phone: '0123456789',
+  manager: 'Jane Doe',
+  photo: 'john-doe.jpg',
+} as People;
 
 describe('FormComponent', () => {
   let fixture: ComponentFixture<Form>;
   let component: Form;
+  let reload: any;
 
   beforeEach(async () => {
-    const { fixture: componentFixture } = await render(Form, {
+    const { fixture: componentFixture, rerender } = await render(Form, {
       imports: [CommonModule, FormsModule],
       declarations: [Form],
       schemas: [NO_ERRORS_SCHEMA],
@@ -24,6 +35,7 @@ describe('FormComponent', () => {
     });
     fixture = componentFixture;
     component = fixture.componentInstance;
+    reload = rerender;
   });
   describe('#UI', () => {
     it('should create an instance of FormComponent', () => {
@@ -50,6 +62,17 @@ describe('FormComponent', () => {
       TestBed.tick();
       const submitButton = screen.getByText<HTMLButtonElement>('Save');
       expect(submitButton).toBeTruthy();
+    });
+    test('should correctly bind the input', async () => {
+      await reload({ inputs: { person: PERSON }, partialUpdate: true });
+      const firstnameInput = screen.getByPlaceholderText<HTMLInputElement>('First name');
+      const lastnameInput = screen.getByPlaceholderText<HTMLInputElement>('Last name');
+      const emailInput = screen.getByPlaceholderText<HTMLInputElement>('email');
+      const phoneInput = screen.getByPlaceholderText<HTMLInputElement>('phone');
+      expect(firstnameInput.value).toEqual('John');
+      expect(lastnameInput.value).toEqual('Doe');
+      expect(emailInput.value).toEqual('john.doe@gmail.com');
+      expect(phoneInput.value).toEqual('0123456789');
     });
   });
   describe('#Functions', () => {
