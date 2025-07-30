@@ -1,71 +1,66 @@
-# Exercice 21-lazyloading (dossier apps/21-lazyloading)
+# Exercise 21: Lazy Loading in Angular (folder apps/21-lazyloading)
 
-L'objectif de ce workshop est de lazyloader nos trois grande fonctionnalité
+In this workshop, you'll implement lazy loading for the main features of your application. Lazy loading is a design pattern that improves application performance by loading modules only when they're needed, reducing the initial bundle size and improving startup time.
 
-- Home
-- Liste de personne
-- L'édition d'une personne
+## Step 1: Understand the Current Routing Configuration
 
-<br>
+Currently, all components are eagerly loaded in the `main.ts` file:
 
-## Etape 1
+```typescript
+import { HomeComponent } from './app/feature/home/home.component';
+import { PeopleComponent } from './app/feature/people/people.component';
+import { UpdatePerson } from './app/feature/update-person/update-person';
 
-Dans le dossier home, générez un module **HomeModule** à l'aide du CLI
-
-Pensez à passer les options suivante:
-
-- --flat
-- --routing
-- --routing-scope Child
-
-Cette commande va vous créez dans le dossier Home, un fichier **home.module.ts** et un fichier **home-routing.module.ts**
-
-<br><br>
-
-## Etape 2
-
-Analyser le fichier **home.module.ts**
-
-Dans ce fichier
-
-- supprimez dans la propriété imports le module CommonModule
-- ajoutez dans la propriété imports le module SharedModule
-- ajoutez dans la propriété declarations le composant HomeComponent
-
-<br><br>
-
-## Etape 3
-
-Dans le fichier **home-routing.module.ts** , ajoutez dans le tableau des routes la route suivante
-
-```javascript
-{ path: '', component: HomeComponent}
+const ROUTES: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  { path: 'people', component: PeopleComponent },
+  { path: 'people/:id', component: UpdatePerson },
+];
 ```
 
-<br><br>
+This means all components are loaded when the application starts, even if the user doesn't visit all routes.
 
-## Etape 4
+## Step 2: Implement Lazy Loading for the People Component
 
-Dans le fichier **app-routing.module**m lazyloadez la route home
+1. In `main.ts`, remove the import for `PeopleComponent`:
 
-<br><br>
+2. Update the route configuration for the 'people' path to use lazy loading:
 
-## Etape 5
+## Step 3: Implement Lazy Loading for the UpdatePerson Component
 
-Dans le module AppModule dans la propriété declarations, supprimez le composant HomeComponent
+1. In `main.ts`, remove the import for `UpdatePerson`:
+2. Update the route configuration for the 'people/:id' path to use lazy loading:
 
-<br><br>
+## Step 4: Test Your Implementation
 
-## Etape 6
+1. Run the application:
 
-Réitérez les précédentes étapes avec les features People et Update-Person
+   ```bash
+   npm run client -- 21-lazyloading
+   ```
 
-<br><br>
+2. Open your browser's developer tools and navigate to the Network tab
 
-## Etape 7
+3. Observe the network requests as you navigate through the application:
+   - When you first load the app, only the main bundle and HomeComponent should be loaded
+   - When you navigate to the People list, a new JavaScript bundle for the PeopleComponent should be loaded
+   - When you navigate to edit a person, a new JavaScript bundle for the UpdatePerson component should be loaded
 
-Vérifiez votre travail en lançant la commande suivante:
+## Benefits of Lazy Loading
 
-```shell
-npm run client -- 21-lazyloading
-```
+- **Faster initial loading**: Only the necessary code for the current route is loaded
+- **Better resource utilization**: Memory consumption is reduced as unused modules aren't loaded
+- **Improved user experience**: Users get to interact with the application sooner
+
+## Troubleshooting
+
+- If you encounter errors about missing modules, ensure your import paths are correct
+- Check the browser console for any errors related to loading modules
+- Verify that your component exports are properly named in their respective files
+
+## Additional Notes
+
+- Lazy loading works best for larger features that aren't needed immediately
+- Consider preloading strategies for frequently accessed routes to improve user experience
+- The Angular Router provides additional options for controlling how and when modules are loaded

@@ -1,21 +1,23 @@
 function lazyLoadingSlides() {
+  const NAVIGATION = 'navigation';
   return [
-    'navigation/angular_300.md',
-    'navigation/lazy_loading_transition_slide.md',
-    'navigation/lazy_loading_principes.md',
-    'navigation/lazy_loading_route_definition.md',
-    'navigation/lazy_loading_route_definition_child.md',
+    `${NAVIGATION}/ANGULAR_300.md`,
+    `${NAVIGATION}/04-LAZY-LOADING-TRANSITION-SLIDE.md`,
+    `${NAVIGATION}/05-LAZY-LOADING-PRINCIPES.md`,
+    `${NAVIGATION}/06-LAZY-LOADING-ROUTE-DEFINITION.md`,
+    `${NAVIGATION}/07-LAZY-LOADING-ROUTE-DEFINITION-CHILD.md`,
   ];
 }
 
 function guardsSlides() {
+  const NAVIGATION = 'navigation';
   return [
-    'navigation/guards_transition_slide.md',
-    'navigation/guards_introduction.md',
-    'navigation/guards_verification.md',
-    'navigation/guards_resolver.md',
-    'navigation/exercice_lazyload_guards.md',
-    'navigation/exercice_resolver.md',
+    `${NAVIGATION}/08-GUARDS-TRANSITION-SLIDE.md`,
+    `${NAVIGATION}/09-GUARDS-INTRODUCTION.md`,
+    `${NAVIGATION}/10-GUARDS-VERIFICATION.md`,
+    `${NAVIGATION}/11-GUARDS-RESOLVER.md`,
+    `${NAVIGATION}/101-LAB.md`,
+    `${NAVIGATION}/102-LAB.md`,
   ];
 }
 
