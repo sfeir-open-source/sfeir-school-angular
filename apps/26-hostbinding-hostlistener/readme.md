@@ -1,32 +1,126 @@
-# Exercice 26-hostbinding-hostlistener (dossier apps/26-hostbinding-hostlistener)
+# Exercise 26: HostBinding and HostListener in Angular (folder apps/26-hostbinding-hostlistener)
 
-L'objectif de ce workshop est d'utiliser les annotations @Hostbinding and @Hostlistener
+In this workshop, you'll learn how to use Angular's host binding and host listener features to create interactive directives. You'll enhance the existing badge directive to respond to mouse events and dynamically change styles.
 
-<br>
+## What are HostBinding and HostListener?
 
-## Etape 1
+**HostBinding** allows you to bind properties of the host element (the element the directive is applied to) to properties in your directive class. This is useful for:
 
-Dans le fichier **badge.directive.ts**
+- Setting CSS styles dynamically
+- Adding or removing CSS classes
+- Setting element attributes
 
-- bindez la propriété style.color à la variable iconColor qui sera de type string grâce à l'annotation @Hostbinding
+**HostListener** allows you to listen to events on the host element and respond to them in your directive. This enables:
 
-<br><br>
+- Handling user interactions
+- Responding to DOM events
+- Creating interactive behaviors
 
-## Etape 2
+## Modern Approach: Host Metadata
 
-Dans le fichier **badge.directive** créez
+While `@HostBinding` and `@HostListener` decorators are still supported, Angular now recommends using the `host` metadata property in the `@Directive` decorator for better performance and tree-shaking.
 
-- un HostListener sur l'event mouseenter grâce à l'annotation @HostListener qui devra passer la couleur du badge en rouge
-- un HostListener sur l'event mouseLeave grâce à l'annotation @HostListener qui devra passer la couleur du badge en noir
+## Step 1: Add Color Management
 
-Astuce: pour changer de couleur il suffit de settez la variable badgeColor à 'red' ou 'black'
+1. First, import the `signal` function from Angular core in your `badge.ts` file:
+2. Add a signal to manage the badge color in the `Badge` color style initially set to black
 
-<br><br>
+## Step 2: Add Host Bindings and Listeners
 
-## Etape 3
+1. Update the `@Directive` decorator to include host metadata:
 
-Vérifiez votre travail en lançant la commande
+   - Binds the `style.color` property to the `badgeColor()` signal
+   - Listens to `mouseover` events and calls `onMouseOver()`
+   - Listens to `mouseout` events and calls `onMouseOut()`
 
-```shell
-npm run client -- 26-hostbinding-hostlistener
+## Step 3: Implement Event Handlers
+
+1. Add the event handler methods to your `Badge` class
+
+- on mouseover the badge need to be red
+- on mouseout the badge need to be black
+
+## Step 4: Test Your Implementation
+
+1. Run the application:
+
+   ```bash
+   npm run client -- 26-hostbinding-hostlistener
+   ```
+
+2. Navigate to the people list and verify that:
+   - Manager badges appear as black icons initially
+   - When you hover over a manager badge, it turns red
+   - When you move the mouse away, it returns to black
+
+## Understanding the Implementation
+
+### Host Metadata vs Decorators
+
+The modern approach using `host` metadata:
+
+```typescript
+@Directive({
+  host: {
+    '[style.color]': 'badgeColor()',
+    '(mouseover)': 'onMouseOver()',
+  }
+})
 ```
+
+Is equivalent to the decorator approach:
+
+```typescript
+@Directive({})
+export class Badge {
+  @HostBinding('style.color') get color() {
+    return this.badgeColor();
+  }
+  @HostListener('mouseover') onMouseOver() {
+    /* ... */
+  }
+}
+```
+
+### Benefits of the Modern Approach
+
+1. **Better tree-shaking**: Unused host bindings can be removed during build
+2. **Improved performance**: No decorator metadata to process at runtime
+3. **Cleaner syntax**: All host interactions defined in one place
+4. **Signal integration**: Works seamlessly with Angular signals
+
+### Signal Reactivity
+
+Using `signal('black')` creates a reactive value that automatically updates the DOM when changed. The `badgeColor()` call in the host binding creates a reactive dependency.
+
+## Advanced Usage
+
+You can extend this pattern for more complex interactions:
+
+1. **Multiple style bindings**:
+
+   ```typescript
+   host: {
+     '[style.color]': 'badgeColor()',
+     '[style.font-weight]': 'fontWeight()',
+     '[class.active]': 'isActive()'
+   }
+   ```
+
+2. **Event parameters**:
+
+   ```typescript
+   host: {
+     '(click)': 'onClick($event)',
+     '(keydown)': 'onKeyDown($event)'
+   }
+   ```
+
+3. **Conditional bindings**:
+   ```typescript
+   host: {
+     '[attr.aria-label]': 'isManager() ? "Manager" : null'
+   }
+   ```
+
+By completing this workshop, you've learned how to create interactive directives using Angular's modern host binding and listening capabilities, making your components more dynamic and user-friendly.

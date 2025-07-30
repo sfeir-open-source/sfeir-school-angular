@@ -47,20 +47,22 @@ function templatingSlides() {
 }
 
 function hostDirectivesSlides() {
+  const DIRECTIVE = 'directive';
   return [
-    'directive/host_binding_listener.md',
-    'directive/host_binding.md',
-    'directive/host_listener.md',
-    'directive/exercice_host_binding_listener.md',
+    `${DIRECTIVE}/03-HOST-BINDING-LISTENER.md`,
+    `${DIRECTIVE}/04-HOST-BINDING.md`,
+    `${DIRECTIVE}/05-HOST-LISTENER.md`,
+    `${DIRECTIVE}/103-LAB.md`,
   ];
 }
 
 function structuralDirectiveSlides() {
+  const DIRECTIVE = 'directive';
   return [
-    'directive/angular_400.md',
-    'directive/structural_transition_slide.md',
-    'directive/structural_definition.md',
-    'directive/exercice_structural.md',
+    `${DIRECTIVE}/angular_400.md`,
+    `${DIRECTIVE}/structural_transition_slide.md`,
+    `${DIRECTIVE}/structural_definition.md`,
+    `${DIRECTIVE}/exercice_structural.md`,
   ];
 }
 

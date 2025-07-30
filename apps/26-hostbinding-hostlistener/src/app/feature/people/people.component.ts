@@ -1,49 +1,63 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { BehaviorSubject, EMPTY, filter, Observable, shareReplay, switchMap } from 'rxjs';
+import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { filter, merge, Subject, switchMap } from 'rxjs';
 import { PeopleService } from '../../core/providers/people.service';
+import { CardComponent } from '../../shared/components/card/card.component';
 import { People } from '../../shared/models/people.model';
+import { MatListModule } from '@angular/material/list';
+import { NgOptimizedImage } from '@angular/common';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { Badge } from '../../shared/directives/badge';
+import { MatDialog } from '@angular/material/dialog';
 import { AddPersonDialogComponent } from './components/add-person-dialog/add-person-dialog.component';
 
 @Component({
   selector: 'sfeir-people',
   templateUrl: './people.component.html',
   styleUrls: ['./people.component.scss'],
-  standalone: false,
+  imports: [CardComponent, MatListModule, NgOptimizedImage, MatButtonModule, MatIconModule, Badge],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class PeopleComponent implements OnInit {
-  people$: Observable<Array<People>> = EMPTY;
-  view$: BehaviorSubject<'card' | 'list'> = new BehaviorSubject('card');
+export class PeopleComponent {
+  private readonly peopleService = inject(PeopleService);
+  private readonly matDialog = inject(MatDialog);
 
-  constructor(
-    private readonly peopleService: PeopleService,
-    private readonly matDialogService: MatDialog,
-  ) {}
+  private readonly triggerDeletePeople$ = new Subject<string>();
+  private readonly triggerAddPeople$ = new Subject<void>();
 
-  ngOnInit(): void {
-    this.people$ = this.peopleService.getPeople().pipe(shareReplay(1));
+  private readonly retrievePeople$ = this.peopleService.getPeople();
+  private readonly deletePeople$ = this.triggerDeletePeople$.pipe(switchMap(id => this.peopleService.deletePeople(id)));
+  private readonly addPeople$ = this.triggerAddPeople$.pipe(
+    switchMap(() =>
+      this.matDialog
+        .open(AddPersonDialogComponent, {
+          width: '50%',
+          height: 'fit-content',
+        })
+        .afterClosed()
+        .pipe(
+          filter(Boolean),
+          switchMap(personForm => this.peopleService.addNewPerson(personForm)),
+          switchMap(() => this.retrievePeople$),
+        ),
+    ),
+  );
+
+  private peopleFlow$ = merge(this.retrievePeople$, this.deletePeople$, this.addPeople$);
+
+  people = toSignal(this.peopleFlow$, { initialValue: [] });
+  view = signal('card');
+
+  deletePerson({ id }: People): void {
+    this.triggerDeletePeople$.next(id);
   }
 
-  deletePerson(person: People): void {
-    this.people$ = this.peopleService.deletePeople(person.id).pipe(shareReplay(1));
+  changeView(): void {
+    this.view.update(view => (view === 'card' ? 'list' : 'card'));
   }
 
-  changeView(currentView: string): void {
-    this.view$.next(currentView === 'card' ? 'list' : 'card');
-  }
-
-  showDialog(): void {
-    this.matDialogService
-      .open(AddPersonDialogComponent, { width: '30%', height: 'fit-content' })
-      .afterClosed()
-      .pipe(
-        filter(personForm => !!personForm),
-        switchMap(personForm => this.peopleService.addNewPerson(personForm)),
-        switchMap(() => {
-          this.people$ = this.peopleService.getPeople().pipe(shareReplay(1));
-          return this.people$;
-        }),
-      )
-      .subscribe();
+  showDialog() {
+    this.triggerAddPeople$.next();
   }
 }

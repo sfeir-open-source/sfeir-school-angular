@@ -1,60 +1,100 @@
-# Exercice 25-teleportation (dossier apps/25-teleportation)
+# Exercise 25: Template Teleportation in Angular (folder apps/25-teleportation)
 
-L'objectif de ce workshop est de téléporter le template du header dans le composant sfeir-header
+In this workshop, you'll implement template teleportation by moving the header template from the app component into a dedicated header component using Angular's template reference and outlet features. This technique allows for more flexible and reusable component architectures.
 
-Ce Workshop vous permettra aussi de vous familiariser avec la directive structurelle \*ngTemplateOutlet
+## What is Template Teleportation?
 
-<br>
+Template teleportation is a pattern where a template defined in one component can be rendered in another component. This is particularly useful for:
 
-## Etape 1
+- Creating reusable layout components
+- Implementing content projection with specific templates
+- Building flexible component architectures
 
-Dans le dossier core, créez un dossier components
+Angular provides powerful tools for this with `ng-template`, `TemplateRef`, and `ngTemplateOutlet`.
 
-<br><br>
+## Step 1: Create the Header Component Structure
 
-## Etape 2
+1. Create a new `components` directory inside the `core` folder:
 
-Dans le dossier core/components, à l'aide du CLI, générez un composant header
+   ```bash
+   mkdir -p src/app/core/components
+   ```
 
-Pensez à enregistrer ce composant dans la propriété declarations et exports de votre CoreModule
+2. Create a new `header` directory inside the components folder:
+   ```bash
+   mkdir -p src/app/core/components/header
+   ```
 
-## Etape 3
+## Step 2: Create the Header Component
 
-Dans le moule CoraModule, ajoutez la Module SharedModule dans la propriété imports
+1. Create a new file `header.ts` in the header directory with the following content:
 
-<br><br>
+   This component:
 
-## Etape 4
+   - Uses the modern `input()` API to define a required template input
+   - Uses `NgTemplateOutlet` to render the provided template
+   - Has an inline template for simplicity
 
-Dans le fichier **header.component.ts**,
+## Step 3: Update the App Component
 
-- créez un Input, grâce à l'annotation @Input, headerTemplate de type TemplateRef<MatToolbar>
+1. Modify the `app.component.ts` file to import and use the Header component:
+2. Update the `app.component.html` file to use the template teleportation pattern:
 
-Dans le fichier **header.component.html**,
+   The changes include:
 
-- afficher le templateRef de la variable headerTemplate grâce à la directive structurel \*ngTemplateOutlet
+   - Wrapping the toolbar in an `ng-template` with a reference name
+   - Using the `sfeir-header` component with the template reference as input
 
-<br><br>
+## Step 4: Test Your Implementation
 
-## Etape 5
+1. Run the application:
 
-Dans le ficher **app.component.html**,
+   ```bash
+   npm run client -- 25-teleportation
+   ```
 
-- wrappez, la balise <mat-toolbar> dans une balise <ng-template> ayant pour reference header
-- appeler le composant HeaderComponent en prenant soin d'affectez l'input de ce composant à la référence de votre ngTemplate
+2. Verify that:
+   - The header appears correctly at the top of the page
+   - The navigation links work as expected
+   - The layout is identical to the original implementation
 
-Astuce:
+## Understanding the Pattern
 
-```html
-<sfeir-header [headerTemplate]="votre_reference_ng_template"></sfeir-header>
-```
+### Template References
 
-<br><br>
+The `#headerTemplate` syntax creates a reference to the template that can be used elsewhere in the component.
 
-## Etape 6
+### Template Outlets
 
-Vérifiez votre travail en lançant la commande
+The `ngTemplateOutlet` directive renders a template dynamically. It takes a `TemplateRef` and an optional context object.
 
-```shell
-npm run client -- 25-teleportation
-```
+### Benefits of This Approach
+
+1. **Separation of concerns**: The header component is only responsible for rendering the template, not defining it
+2. **Flexibility**: The app component can define different header templates for different scenarios
+3. **Reusability**: The header component can be reused with different templates
+
+## Advanced Usage
+
+You can extend this pattern by:
+
+1. Adding a context to the template:
+
+   ```typescript
+   headerTemplate = input.required<TemplateRef<{ $implicit: string }>>();
+   ```
+
+2. Providing context data when using the outlet:
+
+   ```html
+   <ng-template [ngTemplateOutlet]="headerTemplate()" [ngTemplateOutletContext]="{ $implicit: 'Hello World' }" />
+   ```
+
+3. Using the context in the template:
+   ```html
+   <ng-template #headerTemplate let-message>
+     <mat-toolbar>{{ message }}</mat-toolbar>
+   </ng-template>
+   ```
+
+By completing this workshop, you've learned how to implement template teleportation in Angular, a powerful pattern for building flexible and reusable component architectures.
