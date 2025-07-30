@@ -1,7 +1,7 @@
 function lazyLoadingSlides() {
   const NAVIGATION = 'navigation';
   return [
-    `${NAVIGATION}/ANGULAR_300.md`,
+    `${NAVIGATION}/ANGULAR-300.md`,
     `${NAVIGATION}/04-LAZY-LOADING-TRANSITION-SLIDE.md`,
     `${NAVIGATION}/05-LAZY-LOADING-PRINCIPES.md`,
     `${NAVIGATION}/06-LAZY-LOADING-ROUTE-DEFINITION.md`,
@@ -22,13 +22,14 @@ function guardsSlides() {
 }
 
 function interceptorsSlides() {
+  const INTERCEPTORS = 'interceptors';
   return [
-    'interceptors/00-TRANSITION-SLIDE.md',
-    'interceptors/concepts.md',
-    'interceptors/modification.md',
-    'interceptors/register.md',
-    'interceptors/context.md',
-    'interceptors/100-LAB.md',
+    `${INTERCEPTORS}/00-TRANSITION-SLIDE.md`,
+    `${INTERCEPTORS}/01-CONCEPTS.md`,
+    `${INTERCEPTORS}/02-MODIFICATION.md`,
+    `${INTERCEPTORS}/03-REGISTER.md`,
+    `${INTERCEPTORS}/04-CONTEXT.md`,
+    `${INTERCEPTORS}/100-LAB.md`,
   ];
 }
 
