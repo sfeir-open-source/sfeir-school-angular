@@ -34,13 +34,15 @@ function interceptorsSlides() {
 }
 
 function templatingSlides() {
+  const TEMPLATING = 'templating';
   return [
-    'templating/00-TRANSITION-SLIDE.md',
-    'templating/introduction.md',
-    'templating/ng-template.md',
-    'templating/ng-container.md',
-    'templating/reference.md',
-    'templating/100-LAB.md',
+    `${TEMPLATING}/00-TRANSITION-SLIDE.md`,
+    `${TEMPLATING}/01-INTRODUCTION.md`,
+    `${TEMPLATING}/02-NG-TEMPLATE.md`,
+    `${TEMPLATING}/03-NG-CONTAINER.md`,
+    `${TEMPLATING}/04-NG-CONTENT.md`,
+    `${TEMPLATING}/05-REFERENCE.md`,
+    `${TEMPLATING}/100-LAB.md`,
   ];
 }
 
