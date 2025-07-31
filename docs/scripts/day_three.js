@@ -68,11 +68,12 @@ function structuralDirectiveSlides() {
 }
 
 function customFormControlSlides() {
+  const FORMS = 'forms';
   return [
-    'forms/custom-control/00-TRANSITION-SLIDE.md',
-    'forms/custom-control/introduction.md',
-    'forms/custom-control/setup.md',
-    'forms/custom-control/100-LAB.md',
+    `${FORMS}/custom-control/00-TRANSITION-SLIDE.md`,
+    `${FORMS}/custom-control/01-INTRODUCTION.md`,
+    `${FORMS}/custom-control/02-SETUP.md`,
+    `${FORMS}/custom-control/100-LAB.md`,
   ];
 }
 
