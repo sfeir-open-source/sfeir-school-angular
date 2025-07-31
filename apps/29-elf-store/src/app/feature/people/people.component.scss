@@ -16,34 +16,18 @@ section {
   color: rgba(0, 0, 0, 0.87);
   background-color: white;
   margin: 10px;
-  width: 380px;
+  width: 360px;
   padding: 0;
   margin-left: -12px;
   font-size: 14px;
   display: flex;
-  height: 72px;
-  padding: 0.2rem;
-  box-sizing: border-box;
 
-  img {
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    margin-right: 0.5rem;
-    align-self: center;
-  }
-
-  .list-information {
+  h3 {
     display: flex;
-    flex-direction: column;
-    flex: 1;
+    align-items: flex-start;
 
-    h3 {
-      display: flex;
-      align-items: flex-start;
-      .sfeir-badge {
-        margin-left: 0.5rem;
-      }
+    .sfeir-badge {
+      margin-left: 0.5rem;
     }
   }
 }

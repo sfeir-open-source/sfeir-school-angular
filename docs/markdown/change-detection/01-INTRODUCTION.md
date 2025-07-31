@@ -1,6 +1,6 @@
 # Warning !!!!!
 
-> All the next content if for application based on Zone Js
+> All the next content is for application based on Zone Js
 
 <!-- .element: class="important full-center" -->
 

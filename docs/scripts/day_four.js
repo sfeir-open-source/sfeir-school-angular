@@ -1,11 +1,13 @@
 function stateManagementElf() {
+  const STATE_MANAGEMENT = 'state-management';
   return [
-    'state-management/angular_500.md',
-    'state-management/00-TRANSITION-SLIDE.md',
-    'state-management/introduction.md',
-    'state-management/elf/introduction.md',
-    'state-management/elf/store.md',
-    'state-management/elf/entities.md',
+    `${STATE_MANAGEMENT}/ANGULAR-500.md`,
+    `${STATE_MANAGEMENT}/00-TRANSITION-SLIDE.md`,
+    `${STATE_MANAGEMENT}/01-INTRODUCTION.md`,
+    `${STATE_MANAGEMENT}/elf/01-INTRODUCTION.md`,
+    `${STATE_MANAGEMENT}/elf/02-STORE.md`,
+    `${STATE_MANAGEMENT}/elf/03-ENTITIES.md`,
+    `${STATE_MANAGEMENT}/elf/100-LAB.md`,
   ];
 }
 
