@@ -9,6 +9,14 @@ Since Angular 17, Angular's control flow is an integral part of the framework an
 
 ##==##
 
+# The new @-block syntax for control flow
+
+- Replaces the old `*` microsyntax for structural directives. <br/><br/>
+- Provides a cleaner, more intuitive, and powerful way to manage control flow. <br/><br/>
+- The `let` keyword and implicit context variables (`$implicit`) are no longer needed in the same way.
+
+##==##
+
 <!-- .slide: class="with-code inconsolata" -->
 
 # Migrating from ngIf to @if block
@@ -136,3 +144,12 @@ ng generate @angular/core:control-flow
 ```
 
 <!-- .element: class="big-code center" -->
+
+##==##
+
+# Benefits of the new syntax
+
+- **Clearer and more intuitive**: The syntax is closer to native JavaScript control flow.
+- **No more microsyntax**: Eliminates the complex grammar of `let`, `as`, and `of`.
+- **Improved type checking**: The compiler can better infer types within the blocks.
+- **Built-in**: Control flow is part of the core framework, no need to import `CommonModule` for `@if`, `@for`, etc.

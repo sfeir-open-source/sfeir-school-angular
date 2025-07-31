@@ -59,10 +59,11 @@ function hostDirectivesSlides() {
 function structuralDirectiveSlides() {
   const DIRECTIVE = 'directive';
   return [
-    `${DIRECTIVE}/angular_400.md`,
-    `${DIRECTIVE}/structural_transition_slide.md`,
-    `${DIRECTIVE}/structural_definition.md`,
-    `${DIRECTIVE}/exercice_structural.md`,
+    `${DIRECTIVE}/ANGULAR-400.md`,
+    `${DIRECTIVE}/06-STRUCTURAL-TRANSITION-SLIDE.md`,
+    `${DIRECTIVE}/07-STRUCTURAL-DEFINITION.md`,
+    `${DIRECTIVE}/08-STRUCTURAL-PROVIDERS.md`,
+    `${DIRECTIVE}/104-LAB.md`,
   ];
 }
 
