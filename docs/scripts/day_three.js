@@ -78,7 +78,13 @@ function customFormControlSlides() {
 }
 
 function changeDetectionSlides() {
-  return ['change-detection/00-TRANSITION-SLIDE.md', 'change-detection/introduction.md', 'change-detection/change_detection_service.md'];
+  const CHANGE_DETECTION = 'change-detection';
+  return [
+    `${CHANGE_DETECTION}/00-TRANSITION-SLIDE.md`,
+    `${CHANGE_DETECTION}/01-INTRODUCTION.md`,
+    `${CHANGE_DETECTION}/02-CHANGE-DETECTION-SERVICE.md`,
+    `${CHANGE_DETECTION}/03-ZONELESS.md`,
+  ];
 }
 
 export function dayThreeSLides() {
