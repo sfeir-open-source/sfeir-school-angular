@@ -8,38 +8,35 @@
     <section class="form-container__form">
       <mat-form-field appearance="outline">
         <mat-label>First name</mat-label>
-        <input type="text" matInput placeholder="First name" name="firstname" required minlength="2" formControlName="firstname" />
+        <input type="text" matInput placeholder="First name" name="firstname" formControlName="firstname" />
         @if (peopleForm.controls.firstname.errors?.['required']) {
         <mat-error>Ce champs est requis</mat-error>
-        }
-        @if (peopleForm.controls.firstname.errors?.['minlength']) {
+        } @if (peopleForm.controls.firstname.errors?.['minlength']) {
         <mat-error>Ce champs doit posséder minimum 2 caractères</mat-error>
         }
       </mat-form-field>
       <mat-form-field appearance="outline">
         <mat-label>Last name</mat-label>
-        <input type="text" matInput placeholder="Last name" name="lastname" formControlName="lastname" required minlength="2" />
+        <input type="text" matInput placeholder="Last name" name="lastname" formControlName="lastname" />
         @if (peopleForm.controls.lastname.errors?.['required']) {
         <mat-error>Ce champs est requis</mat-error>
-        }
-        @if (peopleForm.controls.lastname.errors?.['minlength']) {
+        } @if (peopleForm.controls.lastname.errors?.['minlength']) {
         <mat-error>Ce champs doit posséder minimum 2 caractères</mat-error>
         }
       </mat-form-field>
       <mat-form-field appearance="outline">
         <mat-label>Email</mat-label>
-        <input type="email" matInput placeholder="email" name="email" formControlName="email" required />
+        <input type="text" matInput placeholder="email" name="email" formControlName="email" />
         @if (peopleForm.controls.email.errors?.['required']) {
         <mat-error>Ce champs est requis</mat-error>
         }
       </mat-form-field>
       <mat-form-field appearance="outline">
         <mat-label>phone</mat-label>
-        <input type="phone" matInput placeholder="phone" name="phone" formControlName="phone" required pattern="\d{10}" />
+        <input type="text" matInput placeholder="phone" name="phone" formControlName="phone" />
         @if (peopleForm.controls.phone.errors?.['required']) {
         <mat-error>Ce champs est requis</mat-error>
-        }
-        @if (peopleForm.controls.phone.errors?.['pattern']) {
+        } @if (peopleForm.controls.phone.errors?.['pattern']) {
         <mat-error>Ce champs doit respecter le pattern suivant (10 chiffres)</mat-error>
         }
       </mat-form-field>
