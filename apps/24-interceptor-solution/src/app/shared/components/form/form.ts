@@ -4,7 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { PersonForm, type Person } from './people-form';
+import { type Person, PersonForm } from './people-form';
 
 @Component({
   selector: 'sfeir-form',
@@ -29,7 +29,7 @@ export class Form {
   }
 
   submit(): void {
-    this.save.emit(this.person());
+    this.save.emit(this.peopleForm.getRawValue());
   }
 
   onCancel(): void {

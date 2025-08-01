@@ -30,7 +30,7 @@ export class Form {
   }
 
   submit(): void {
-    this.save.emit(this.person());
+    this.save.emit(this.peopleForm.getRawValue());
   }
 
   onCancel(): void {

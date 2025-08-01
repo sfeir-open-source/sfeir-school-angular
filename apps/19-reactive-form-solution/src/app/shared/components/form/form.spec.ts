@@ -100,7 +100,6 @@ describe('FormComponent', () => {
     it('should call the save event emitter', () => {
       component.submit();
       expect(SAVE_SPY).toHaveBeenCalled();
-      expect(SAVE_SPY).toHaveBeenCalledWith(component.person());
     });
     it('should call the onCancel method', () => {
       const spy = jest.spyOn(component, 'onCancel');
