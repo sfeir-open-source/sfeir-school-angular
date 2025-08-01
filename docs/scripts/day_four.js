@@ -12,13 +12,16 @@ function stateManagementElf() {
 }
 
 function stateManagementNgxs() {
+  const STATE_MANAGEMENT_NGXS = 'state-management/ngxs';
+
   return [
-    'state-management/ngxs/introduction.md',
-    'state-management/ngxs/store.md',
-    'state-management/ngxs/actions.md',
-    'state-management/ngxs/state.md',
-    'state-management/ngxs/selectors.md',
-    'state-management/ngxs/100-LAB.md',
+    `${STATE_MANAGEMENT_NGXS}/01-INTRODUCTION.md`,
+    `${STATE_MANAGEMENT_NGXS}/02-STORE.md`,
+    `${STATE_MANAGEMENT_NGXS}/03-ACTIONS.md`,
+    `${STATE_MANAGEMENT_NGXS}/04-STATE.md`,
+    `${STATE_MANAGEMENT_NGXS}/05-SELECTORS.md`,
+    `${STATE_MANAGEMENT_NGXS}/06-NGRX-SIGNALS.md`,
+    `${STATE_MANAGEMENT_NGXS}/100-LAB.md`,
   ];
 }
 

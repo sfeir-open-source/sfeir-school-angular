@@ -1,56 +1,75 @@
-import { Component, OnInit } from '@angular/core';
+import { NgOptimizedImage } from '@angular/common';
+import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { MatButtonModule } from '@angular/material/button';
 import { MatDialog } from '@angular/material/dialog';
-import { Store } from '@ngxs/store';
-import { BehaviorSubject, EMPTY, filter, Observable, shareReplay, switchMap } from 'rxjs';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { dispatch, select } from '@ngxs/store';
+import { filter, merge, Subject, switchMap } from 'rxjs';
 import { PeopleService } from '../../core/providers/people.service';
-import { AppStore, SetSearch } from '../../core/store/app.store';
+import { AppStore, SetSearch } from '../../core/store/app-store';
+import { CardComponent } from '../../shared/components/card/card.component';
+import { Badge } from '../../shared/directives/badge';
 import { People } from '../../shared/models/people.model';
 import { AddPersonDialogComponent } from './components/add-person-dialog/add-person-dialog.component';
+import { SearchBar } from './components/search/search-bar';
 
 @Component({
   selector: 'sfeir-people',
   templateUrl: './people.component.html',
   styleUrls: ['./people.component.scss'],
-  standalone: false,
+  imports: [CardComponent, MatListModule, NgOptimizedImage, MatButtonModule, MatIconModule, Badge, SearchBar],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class PeopleComponent implements OnInit {
-  people$: Observable<Array<People>> = EMPTY;
-  search$: Observable<string> = EMPTY;
-  view$: BehaviorSubject<'card' | 'list'> = new BehaviorSubject('card');
+export class PeopleComponent {
+  private readonly peopleService = inject(PeopleService);
+  private readonly matDialog = inject(MatDialog);
 
-  constructor(
-    private readonly peopleService: PeopleService,
-    private readonly matDialogService: MatDialog,
-    private readonly store: Store,
-  ) {}
+  private readonly setSearch = dispatch(SetSearch);
 
-  ngOnInit(): void {
-    this.search$ = this.store.select(AppStore.search);
-    this.people$ = this.store.select(AppStore.people).pipe(shareReplay(1));
-    this.peopleService.getPeople().subscribe();
+  private readonly triggerDeletePeople$ = new Subject<string>();
+  private readonly triggerAddPeople$ = new Subject<void>();
+
+  private readonly retrievePeople$ = this.peopleService.getPeople();
+  private readonly deletePeople$ = this.triggerDeletePeople$.pipe(switchMap(id => this.peopleService.deletePeople(id)));
+  private readonly addPeople$ = this.triggerAddPeople$.pipe(
+    switchMap(() =>
+      this.matDialog
+        .open(AddPersonDialogComponent, {
+          width: '50%',
+          height: 'fit-content',
+        })
+        .afterClosed()
+        .pipe(
+          filter(Boolean),
+          switchMap(personForm => this.peopleService.addNewPerson(personForm)),
+          switchMap(() => this.retrievePeople$),
+        ),
+    ),
+  );
+
+  people = select(AppStore.people);
+  search = select(AppStore.search);
+  view = signal('card');
+
+  constructor() {
+    merge(this.retrievePeople$, this.deletePeople$, this.addPeople$).pipe(takeUntilDestroyed()).subscribe();
   }
 
-  deletePerson(person: People): void {
-    this.peopleService.deletePeople(person.id).subscribe();
+  deletePerson({ id }: People): void {
+    this.triggerDeletePeople$.next(id);
   }
 
-  changeView(currentView: string): void {
-    this.view$.next(currentView === 'card' ? 'list' : 'card');
+  changeView(): void {
+    this.view.update(view => (view === 'card' ? 'list' : 'card'));
   }
 
-  showDialog(): void {
-    this.matDialogService
-      .open(AddPersonDialogComponent, { width: '30%', height: 'fit-content' })
-      .afterClosed()
-      .pipe(
-        filter(personForm => !!personForm),
-        switchMap(personForm => this.peopleService.addNewPerson(personForm)),
-        switchMap(() => this.peopleService.getPeople()),
-      )
-      .subscribe();
+  showDialog() {
+    this.triggerAddPeople$.next();
   }
 
-  setSearch(search: string): void {
-    this.store.dispatch(new SetSearch(search));
+  filterPeopleBySearch(search: string): void {
+    this.setSearch(search);
   }
 }
