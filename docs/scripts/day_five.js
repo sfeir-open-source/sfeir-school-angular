@@ -1,7 +1,7 @@
 function standaloneComponents() {
   return [
     'standalone-components/00-TRANSITION-SLIDE.md',
-    'standalone-components/introduction.md',
+    'standalone-components/01-INTRODUCTION.md',
     'standalone-components/routing.md',
     'standalone-components/injector.md',
     'standalone-components/100-LAB.md',
@@ -9,7 +9,7 @@ function standaloneComponents() {
 }
 
 function signals() {
-  return ['signals/00-TRANSITION-SLIDE.md', 'signals/introduction.md', 'signals/signals.md', 'signals/binding_queries.md', 'signals/100-LAB.md'];
+  return ['signals/00-TRANSITION-SLIDE.md', 'signals/01-INTRODUCTION.md', 'signals/signals.md', 'signals/binding_queries.md', 'signals/100-LAB.md'];
 }
 
 function deferredViews() {

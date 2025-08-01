@@ -33,6 +33,26 @@
 
 ##==##
 
+# Implicit variables of the for loop
+
+| Variable | Meaning of the variable                                          |
+| -------- | ---------------------------------------------------------------- |
+| $count   | Number of items in the list                                      |
+| $index   | Index of the item in the list                                    |
+| $first   | First item in the list                                           |
+| $last    | Last item in the list                                            |
+| $even    | Even index                                                       |
+| $odd     | Odd index                                                        |
+| $track   | Tracking function or tracking value (mandatory with @for syntax) |
+
+<br/>
+
+Each variable can be aliased with the 'let' keyword
+
+<!-- .element: class="important" -->
+
+##==##
+
 <!-- .slide: class="with-code inconsolata" -->
 
 # The @if feature template
@@ -85,3 +105,24 @@
 ```
 
 <!-- .element: class="medium-code" -->
+
+##==##
+
+# Automatic migration using a simple command
+
+<br/><br/><br/>
+
+```shell
+ng generate @angular/core:control-flow
+```
+
+<!-- .element: class="big-code center" -->
+
+##==##
+
+# Benefits of the new syntax
+
+- **Clearer and more intuitive**: The syntax is closer to native JavaScript control flow.
+- **No more microsyntax**: Eliminates the complex grammar of `let`, `as`, and `of`.
+- **Improved type checking**: The compiler can better infer types within the blocks.
+- **Built-in**: Control flow is part of the core framework, no need to import `CommonModule` for `@if`, `@for`, etc.

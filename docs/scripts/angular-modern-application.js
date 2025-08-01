@@ -16,7 +16,7 @@ function summary() {
 function standaloneComponents() {
   return [
     'standalone-components/00-TRANSITION-SLIDE.md',
-    'standalone-components/introduction.md',
+    'standalone-components/01-INTRODUCTION.md',
     'standalone-components/injector.md',
     'standalone-components/routing.md',
   ];
@@ -37,7 +37,7 @@ function interceptorsSlides() {
 }
 
 function signals() {
-  return ['signals/00-TRANSITION-SLIDE.md', 'signals/introduction.md', 'signals/signals.md', 'signals/100-LAB.md'];
+  return ['signals/00-TRANSITION-SLIDE.md', 'signals/01-INTRODUCTION.md', 'signals/signals.md', 'signals/100-LAB.md'];
 }
 
 export function AngularModernApplication() {

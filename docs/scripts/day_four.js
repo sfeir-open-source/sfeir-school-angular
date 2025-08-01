@@ -40,42 +40,43 @@ function stateManagementNgrx() {
 }
 
 function unitTestSlides() {
+  const UNIT_TESTS = 'unit-tests';
   return [
-    'unit-tests/00-TRANSITION-SLIDE.md',
-    'unit-tests/tools.md',
-    'unit-tests/concepts.md',
-    'unit-tests/components/introduction.md',
-    'unit-tests/components/exemple.md',
-    'unit-tests/directives/introduction.md',
-    'unit-tests/directives/exemple.md',
-    'unit-tests/services/introduction.md',
-    'unit-tests/services/helpers_service.md',
-    'unit-tests/services/http_service.md',
-    'unit-tests/pipes/introduction.md',
-    'unit-tests/pipes/exemple.md',
-    'unit-tests/jest/introduction.md',
-    'unit-tests/jest/mock.md',
-    'unit-tests/angular-testing-library/introduction.md',
-    'unit-tests/angular-testing-library/core-concepts.md',
-    'unit-tests/angular-testing-library/exemple.md',
-    'unit-tests/100-LAB.md',
+    `${UNIT_TESTS}/00-TRANSITION-SLIDE.md`,
+    `${UNIT_TESTS}/01-TOOLS.md`,
+    `${UNIT_TESTS}/02-CONCEPTS.md`,
+    `${UNIT_TESTS}/components/01-INTRODUCTION.md`,
+    `${UNIT_TESTS}/components/02-EXAMPLE.md`,
+    `${UNIT_TESTS}/directives/01-INTRODUCTION.md`,
+    `${UNIT_TESTS}/directives/02-EXAMPLE.md`,
+    `${UNIT_TESTS}/services/01-INTRODUCTION.md`,
+    `${UNIT_TESTS}/services/02-HELPERS-SERVICE.md`,
+    `${UNIT_TESTS}/services/03-HTTP-SERVICE.md`,
+    `${UNIT_TESTS}/pipes/01-INTRODUCTION.md`,
+    `${UNIT_TESTS}/pipes/02-EXAMPLE.md`,
+    `${UNIT_TESTS}/jest/01-INTRODUCTION.md`,
+    `${UNIT_TESTS}/jest/02-MOCK.md`,
+    `${UNIT_TESTS}/angular-testing-library/01-INTRODUCTION.md`,
+    `${UNIT_TESTS}/angular-testing-library/02-CORE-CONCEPTS.md`,
+    `${UNIT_TESTS}/angular-testing-library/03-EXAMPLE.md`,
+    `${UNIT_TESTS}/100-LAB.md`,
   ];
 }
 
 function pwaSlides() {
-  return ['pwa/00-TRANSITION-SLIDE.md', 'pwa/introduction.md', 'pwa/service_worker_configuration.md', 'pwa/service_worker_communication.md'];
+  return ['pwa/00-TRANSITION-SLIDE.md', 'pwa/01-INTRODUCTION.md', 'pwa/service_worker_configuration.md', 'pwa/service_worker_communication.md'];
 }
 
 function serverSideSlides() {
-  return ['server-side/00-TRANSITION-SLIDE.md', 'server-side/introduction.md'];
+  return ['server-side/00-TRANSITION-SLIDE.md', 'server-side/01-INTRODUCTION.md'];
 }
 
 function librarySlides() {
-  return ['library/00-TRANSITION-SLIDE.md', 'library/introduction.md', 'library/library.md', 'library/ng-packager.md', 'library/dependencies.md'];
+  return ['library/00-TRANSITION-SLIDE.md', 'library/01-INTRODUCTION.md', 'library/library.md', 'library/ng-packager.md', 'library/dependencies.md'];
 }
 
 function nativeFederationSlides() {
-  return ['native-federation/00-TRANSITION-SLIDE.md', 'native-federation/introduction.md', 'native-federation/setup-native-federation.md'];
+  return ['native-federation/00-TRANSITION-SLIDE.md', 'native-federation/01-INTRODUCTION.md', 'native-federation/setup-native-federation.md'];
 }
 
 export function dayFourSlides() {

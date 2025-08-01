@@ -5,7 +5,7 @@ function introductionSLides() {
 function recapSlides() {
   return [
     'directive/00-TRANSITION-SLIDE.md',
-    'directive/introduction.md',
+    'directive/01-INTRODUCTION.md',
     'directive/exercice_directive_use.md',
     'directive/custom_directive.md',
     'directive/exercice_create_directive.md',
@@ -15,7 +15,7 @@ function recapSlides() {
 function directiveTemplatingSlide() {
   return [
     'templating/00-TRANSITION-SLIDE.md',
-    'templating/introduction.md',
+    'templating/01-INTRODUCTION.md',
     'templating/ng-template.md',
     'templating/ng-container.md',
     'templating/ng-content.md',
