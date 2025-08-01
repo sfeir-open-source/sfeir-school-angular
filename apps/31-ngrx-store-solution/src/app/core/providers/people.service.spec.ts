@@ -1,44 +1,39 @@
-import { HttpErrorResponse } from '@angular/common/http';
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import { Component } from '@angular/core';
-import { fakeAsync, TestBed } from '@angular/core/testing';
-import { render } from '@testing-library/angular';
+import { HttpErrorResponse, provideHttpClient } from '@angular/common/http';
+import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
+import { ApplicationRef } from '@angular/core';
+import { TestBed } from '@angular/core/testing';
+import { provideStore, Store } from '@ngrx/store';
 import { environment } from '../../../environments/environment';
 import { People, PeopleForm } from '../../shared/models/people.model';
-import { PeopleService } from './people.service';
-import { Store } from '@ngrx/store';
-import { AppStore } from '../store/state';
 import { setPeople } from '../store/action';
+import { appReducer } from '../store/reducer';
+import type { AppState } from '../store/state';
+import { PeopleService } from './people.service';
 
 const PEOPLE: Array<People> = [
   { id: '1', firstname: 'Sfeirien 1' },
   { id: '2', firstname: 'Sfeirien2' },
 ] as Array<People>;
 
-const STORE_SERVICE = {
-  dispatch: jest.fn(),
-};
-
 describe('PeopleService', () => {
   let service: PeopleService;
-  let storeService: Store<AppStore>;
   let controller: HttpTestingController;
+  let store: Store<AppState>;
 
   beforeEach(async () => {
-    await render(MockContainerProviderComponent, {
-      imports: [HttpClientTestingModule],
-      providers: [PeopleService, { provide: Store, useValue: STORE_SERVICE }],
+    TestBed.configureTestingModule({
+      providers: [provideHttpClient(), provideHttpClientTesting(), PeopleService, provideStore({ store: appReducer })],
     });
     service = TestBed.inject(PeopleService);
-    storeService = TestBed.inject(Store);
     controller = TestBed.inject(HttpTestingController);
+    store = TestBed.inject(Store<AppState>);
   });
 
   describe('#basics', () => {
     test('should create an instance of PeopleService', () => {
       expect(service).toBeInstanceOf(PeopleService);
     });
-    test('should define the httpCOntroller', () => {
+    test('should define the httpController', () => {
       expect(controller).toBeDefined();
     });
   });
@@ -49,54 +44,59 @@ describe('PeopleService', () => {
       const req = controller.expectOne(`${environment.peopleEndpoint}/peoples`);
       req.flush(PEOPLE);
     });
-    test('should return a list of people ', fakeAsync(() => {
-      let peoples: Array<People>;
-      service.getPeople().subscribe(data => (peoples = data));
+    test('should return the correct data', done => {
+      service.getPeople().subscribe(data => {
+        expect(data).toEqual(PEOPLE);
+        done();
+      });
       const req = controller.expectOne(`${environment.peopleEndpoint}/peoples`);
       req.flush(PEOPLE);
-      expect(peoples).toEqual(PEOPLE);
-    }));
-    test('should dispatch the list of people to the store', fakeAsync(() => {
-      const spy = jest.spyOn(storeService, 'dispatch');
-      service.getPeople().subscribe();
+    });
+    test('should set the people to the store', done => {
+      const spy = jest.spyOn(store, 'dispatch');
+      service.getPeople().subscribe(() => {
+        expect(spy).toHaveBeenCalled();
+        expect(spy).toHaveBeenCalledWith(setPeople({ people: PEOPLE }));
+        done();
+      });
       const req = controller.expectOne(`${environment.peopleEndpoint}/peoples`);
       req.flush(PEOPLE);
-      expect(spy).toHaveBeenCalled();
-      expect(spy).toHaveBeenCalledWith(setPeople({ people: PEOPLE }));
-    }));
-    test('should throw correctly the error', fakeAsync(() => {
-      let error: HttpErrorResponse;
+    });
+    test('should throw correctly the error', done => {
       service.getPeople().subscribe({
         next: () => void 0,
-        error: err => (error = err),
+        error: err => {
+          expect(err).toBeInstanceOf(HttpErrorResponse);
+          done();
+        },
       });
       controller.expectOne(`${environment.peopleEndpoint}/peoples`).error(new ProgressEvent('ERROR'));
-      expect(error).toBeInstanceOf(HttpErrorResponse);
-    }));
+    });
   });
 
   describe('#getRandomPeople', () => {
-    test('should format the url correctly', () => {
-      service.getRandomPeople().subscribe();
+    test('should format the url correctly', async () => {
+      TestBed.runInInjectionContext(() => service.getRandomPeople());
+      TestBed.tick(); // Triggers the effect
       const req = controller.expectOne(`${environment.peopleEndpoint}/peoples/random`);
       req.flush(PEOPLE[0]);
     });
-    test('should return the correct data', fakeAsync(() => {
-      let people: People;
-      service.getRandomPeople().subscribe(data => (people = data));
+    test('should return the correct data', async () => {
+      const personResource = TestBed.runInInjectionContext(() => service.getRandomPeople());
+      TestBed.tick();
       const req = controller.expectOne(`${environment.peopleEndpoint}/peoples/random`);
       req.flush(PEOPLE[0]);
-      expect(people).toEqual(PEOPLE[0]);
-    }));
-    test('should throw correctly the error', fakeAsync(() => {
-      let error: HttpErrorResponse;
-      service.getRandomPeople().subscribe({
-        next: () => void 0,
-        error: err => (error = err),
-      });
+      await TestBed.inject(ApplicationRef).whenStable();
+      expect(personResource.value()).toEqual(PEOPLE[0]);
+    });
+    test('should throw correctly the error', async () => {
+      const personResource = TestBed.runInInjectionContext(() => service.getRandomPeople());
+      TestBed.tick(); // Triggers the effect
       controller.expectOne(`${environment.peopleEndpoint}/peoples/random`).error(new ProgressEvent('ERROR'));
-      expect(error).toBeInstanceOf(HttpErrorResponse);
-    }));
+      await TestBed.inject(ApplicationRef).whenStable();
+      expect(() => personResource.value()).toThrow();
+      expect(personResource.error()).toBeInstanceOf(HttpErrorResponse);
+    });
   });
 
   describe('#deletePeople', () => {
@@ -105,33 +105,51 @@ describe('PeopleService', () => {
       const req = controller.expectOne(`${environment.peopleEndpoint}/peoples/${PEOPLE[0].id}`);
       req.flush(PEOPLE);
     });
-
-    test('should throw correctly the error', fakeAsync(() => {
-      let error: HttpErrorResponse;
+    test('should return the correct data', done => {
+      service.deletePeople(PEOPLE[0].id).subscribe(data => {
+        expect(data).toEqual([PEOPLE.at(1)]);
+        done();
+      });
+      const req = controller.expectOne(`${environment.peopleEndpoint}/peoples/${PEOPLE[0].id}`);
+      req.flush([PEOPLE.at(1)]);
+    });
+    test('should set the people to the store', done => {
+      const spy = jest.spyOn(store, 'dispatch');
+      service.deletePeople(PEOPLE[0].id).subscribe(() => {
+        expect(spy).toHaveBeenCalled();
+        expect(spy).toHaveBeenCalledWith(setPeople({ people: [PEOPLE.at(1)] }));
+        done();
+      });
+      const req = controller.expectOne(`${environment.peopleEndpoint}/peoples/${PEOPLE[0].id}`);
+      req.flush([PEOPLE.at(1)]);
+    });
+    test('should throw correctly the error', done => {
       service.deletePeople(PEOPLE[0].id).subscribe({
         next: () => void 0,
-        error: err => (error = err),
+        error: err => {
+          expect(err).toBeInstanceOf(HttpErrorResponse);
+          done();
+        },
       });
       controller.expectOne(`${environment.peopleEndpoint}/peoples/${PEOPLE[0].id}`).error(new ProgressEvent('ERROR'));
-      expect(error).toBeInstanceOf(HttpErrorResponse);
-    }));
+    });
   });
-
   describe('#addPeople', () => {
     test('should format the url correctly', () => {
       service.addNewPerson(PEOPLE[0]).subscribe();
       const req = controller.expectOne(`${environment.peopleEndpoint}/peoples`);
       req.flush(null);
     });
-    test('should throw correctly the error', fakeAsync(() => {
-      let error: HttpErrorResponse;
+    test('should throw correctly the error', done => {
       service.addNewPerson(PEOPLE[0]).subscribe({
         next: () => void 0,
-        error: err => (error = err),
+        error: err => {
+          expect(err).toBeInstanceOf(HttpErrorResponse);
+          done();
+        },
       });
       controller.expectOne(`${environment.peopleEndpoint}/peoples`).error(new ProgressEvent('ERROR'));
-      expect(error).toBeInstanceOf(HttpErrorResponse);
-    }));
+    });
   });
   describe('#getPersonDetails', () => {
     test('should format the url correctly', () => {
@@ -139,58 +157,54 @@ describe('PeopleService', () => {
       const req = controller.expectOne(`${environment.peopleEndpoint}/peoples/123`);
       req.flush(null);
     });
-    test('should return the person details', fakeAsync(() => {
-      let person = null;
-      service.getPersonDetails('123').subscribe(personDetails => (person = personDetails));
+    test('should return the person details', done => {
+      service.getPersonDetails('123').subscribe(personDetails => {
+        expect(personDetails).toEqual(PEOPLE[0]);
+        done();
+      });
       controller.expectOne(`${environment.peopleEndpoint}/peoples/123`).flush(PEOPLE.at(0));
-      expect(person).toEqual(PEOPLE.at(0));
-    }));
-    test('should throw correctly the error', fakeAsync(() => {
-      let error: HttpErrorResponse;
+    });
+    test('should throw correctly the error', done => {
       service.getPersonDetails('123').subscribe({
         next: () => void 0,
-        error: err => (error = err),
+        error: err => {
+          expect(err).toBeInstanceOf(HttpErrorResponse);
+          done();
+        },
       });
       controller.expectOne(`${environment.peopleEndpoint}/peoples/123`).error(new ProgressEvent('ERROR'));
-      expect(error).toBeInstanceOf(HttpErrorResponse);
-    }));
+    });
   });
   describe('#updatePerson', () => {
     let updatePerson: PeopleForm;
     beforeAll(() => {
-      updatePerson = { id: '123', email: 'sfeir.s@sfeir.com', firstname: 'Sfeir', lastname: 'sfeir', phone: '0123456789', photo: 'sfeir.png' };
+      updatePerson = {
+        id: '123',
+        email: 'sfeir.s@sfeir.com',
+        firstname: 'Sfeir',
+        lastname: 'sfeir',
+        phone: '0123456789',
+        photo: 'sfeir.png',
+      };
     });
     test('should format the url correctly', () => {
       service.updatePerson(updatePerson).subscribe();
       const req = controller.expectOne(`${environment.peopleEndpoint}/peoples/123`);
       req.flush(null);
     });
-    test('should dispatch the list of people to the store', fakeAsync(() => {
-      const spy = jest.spyOn(storeService, 'dispatch');
-      service.updatePerson(updatePerson).subscribe();
-      const req = controller.expectOne(`${environment.peopleEndpoint}/peoples/123`);
-      req.flush(PEOPLE);
-      expect(spy).toHaveBeenCalled();
-      expect(spy).toHaveBeenCalledWith(setPeople({ people: PEOPLE }));
-    }));
-    test('should throw correctly the error', fakeAsync(() => {
-      let error: HttpErrorResponse;
+    test('should throw correctly the error', done => {
       service.updatePerson(updatePerson).subscribe({
         next: () => void 0,
-        error: err => (error = err),
+        error: err => {
+          expect(err).toBeInstanceOf(HttpErrorResponse);
+          done();
+        },
       });
       controller.expectOne(`${environment.peopleEndpoint}/peoples/123`).error(new ProgressEvent('ERROR'));
-      expect(error).toBeInstanceOf(HttpErrorResponse);
-    }));
+    });
   });
 
   afterEach(() => {
     controller.verify();
   });
 });
-
-@Component({
-  standalone: true,
-  template: '',
-})
-class MockContainerProviderComponent {}

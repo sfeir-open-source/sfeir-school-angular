@@ -26,15 +26,16 @@ function stateManagementNgxs() {
 }
 
 function stateManagementNgrx() {
+  const STATE_MANAGEMENT_NGRX = 'state-management/ngrx';
   return [
-    'state-management/ngrx/introduction.md',
-    'state-management/ngrx/actions.md',
-    'state-management/ngrx/state.md',
-    'state-management/ngrx/selectors.md',
-    'state-management/ngrx/reducers.md',
-    'state-management/ngrx/store.md',
-    'state-management/ngrx/effects.md',
-    'state-management/ngrx/100-LAB.md',
+    `${STATE_MANAGEMENT_NGRX}/01-INTRODUCTION.md`,
+    `${STATE_MANAGEMENT_NGRX}/02-ACTIONS.md`,
+    `${STATE_MANAGEMENT_NGRX}/03-STATE.md`,
+    `${STATE_MANAGEMENT_NGRX}/04-SELECTORS.md`,
+    `${STATE_MANAGEMENT_NGRX}/05-REDUCERS.md`,
+    `${STATE_MANAGEMENT_NGRX}/06-STORE.md`,
+    `${STATE_MANAGEMENT_NGRX}/07-EFFECTS.md`,
+    `${STATE_MANAGEMENT_NGRX}/100-LAB.md`,
   ];
 }
 
