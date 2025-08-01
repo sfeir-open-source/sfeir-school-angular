@@ -64,7 +64,8 @@ function unitTestSlides() {
 }
 
 function pwaSlides() {
-  return ['pwa/00-TRANSITION-SLIDE.md', 'pwa/01-INTRODUCTION.md', 'pwa/service_worker_configuration.md', 'pwa/service_worker_communication.md'];
+  const PWA = 'pwa';
+  return ['pwa/00-TRANSITION-SLIDE.md', 'pwa/01-INTRODUCTION.md', 'pwa/02-SERVICE-WORKER-CONFIGURATION.md', 'pwa/03-SERVICE-WORKER-COMMUNICATION.md'];
 }
 
 function serverSideSlides() {
