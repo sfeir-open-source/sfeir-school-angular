@@ -1,0 +1,20 @@
+name: 'Install dependencies'
+description: Install node and bun, and finally install all dependencies of the project
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Use Bun version 1.x
+      uses: oven-sh/setup-bun@v2
+
+    - name: Cache node_modules
+      id: cache-modules
+      uses: actions/cache@v4
+      with:
+        lookup-only: true
+        path: '**/node_modules'
+        key: bun-${{ hashFiles('bun.lockb', 'bun.lock') }}
+
+    - name: Install dependencies
+      run: bun install --frozen-lockfile
+      shell: bash

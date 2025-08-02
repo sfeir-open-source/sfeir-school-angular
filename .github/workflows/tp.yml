@@ -1,35 +1,33 @@
-name: TP CI Action
+name: CI
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [ opened, reopened, synchronize ]
 
-on: [ push ]
+permissions:
+  actions: read
+  contents: read
 
 jobs:
   build-and-run-tests:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Use Node.js 20.x
-        uses: actions/setup-node@v3
+      - name: Install bun, and dependencies
+        uses: ./.github/actions/install-dependencies
+
+      - name: Derive appropriate SHAs for base and head for `nx affected` commands
+        uses: nrwl/nx-set-shas@v4
         with:
-          node-version: 20.x
-          cache: 'npm'
-          cache-dependency-path: '**/package-lock.json'
+          main-branch-name: 'main'
 
-      - name: Install last version of npm
-        run: npm install -g npm@latest
+      # This line is needed for nx affected to work when CI is running on a PR
+      - run: git branch --track main origin/main || exit 0
 
-      - name: Install dependencies
-        run: npm install ci
-
-      - name: Run lint
-        run: npm run lint:ci
-
-      - name: Run build
-        run: npm run build:ci
-
-      - name: Run tests
-        run: npm run test:ci
+      - run: bunx nx affected -t lint test build --parallel=5 --exclude=docs
