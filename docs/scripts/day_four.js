@@ -65,11 +65,17 @@ function unitTestSlides() {
 
 function pwaSlides() {
   const PWA = 'pwa';
-  return ['pwa/00-TRANSITION-SLIDE.md', 'pwa/01-INTRODUCTION.md', 'pwa/02-SERVICE-WORKER-CONFIGURATION.md', 'pwa/03-SERVICE-WORKER-COMMUNICATION.md'];
+  return [
+    `${PWA}/00-TRANSITION-SLIDE.md`,
+    `${PWA}/01-INTRODUCTION.md`,
+    `${PWA}/02-SERVICE-WORKER-CONFIGURATION.md`,
+    `${PWA}/03-SERVICE-WORKER-COMMUNICATION.md`,
+  ];
 }
 
 function serverSideSlides() {
-  return ['server-side/00-TRANSITION-SLIDE.md', 'server-side/01-INTRODUCTION.md'];
+  const SERVER_SIDE = 'server-side';
+  return [`${SERVER_SIDE}/00-TRANSITION-SLIDE.md`, `${SERVER_SIDE}/01-INTRODUCTION.md`];
 }
 
 function librarySlides() {
