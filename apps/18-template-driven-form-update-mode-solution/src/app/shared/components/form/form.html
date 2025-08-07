@@ -8,7 +8,16 @@
     <section class="form-container__form">
       <mat-form-field appearance="outline">
         <mat-label>First name</mat-label>
-        <input type="text" matInput placeholder="First name" name="firstname" required minlength="2" ngModel #firstname="ngModel" />
+        <input
+          type="text"
+          matInput
+          placeholder="First name"
+          name="firstname"
+          required
+          minlength="2"
+          [(ngModel)]="people.firstname"
+          #firstname="ngModel"
+        />
         @if (firstname.errors?.['required']) {
         <mat-error>Ce champs est requis</mat-error>
         } @if (firstname.errors?.['minlength']) {
@@ -17,7 +26,16 @@
       </mat-form-field>
       <mat-form-field appearance="outline">
         <mat-label>Last name</mat-label>
-        <input type="text" matInput placeholder="Last name" name="lastname" ngModel required minlength="2" #lastname="ngModel" />
+        <input
+          type="text"
+          matInput
+          placeholder="Last name"
+          name="lastname"
+          [(ngModel)]="people.lastname"
+          required
+          minlength="2"
+          #lastname="ngModel"
+        />
         @if (lastname.errors?.['required']) {
         <mat-error>Ce champs est requis</mat-error>
         } @if (lastname.errors?.['minlength']) {
@@ -26,14 +44,14 @@
       </mat-form-field>
       <mat-form-field appearance="outline">
         <mat-label>Email</mat-label>
-        <input type="email" matInput placeholder="email" name="email" ngModel required #email="ngModel" />
+        <input type="email" matInput placeholder="email" name="email" [(ngModel)]="people.email" required #email="ngModel" />
         @if (email.errors?.['required']) {
         <mat-error>Ce champs est requis</mat-error>
         }
       </mat-form-field>
       <mat-form-field appearance="outline">
         <mat-label>phone</mat-label>
-        <input type="phone" matInput placeholder="phone" name="phone" ngModel required pattern="\d{10}" #phone="ngModel" />
+        <input type="phone" matInput placeholder="phone" name="phone" [(ngModel)]="people.phone" required pattern="\d{10}" #phone="ngModel" />
         @if (phone.errors?.['required']) {
         <mat-error>Ce champs est requis</mat-error>
         } @if (phone.errors?.['pattern']) {
