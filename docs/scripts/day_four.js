@@ -90,7 +90,12 @@ function librarySlides() {
 }
 
 function nativeFederationSlides() {
-  return ['native-federation/00-TRANSITION-SLIDE.md', 'native-federation/01-INTRODUCTION.md', 'native-federation/setup-native-federation.md'];
+  const NATIVE_FEDERATION = 'native-federation';
+  return [
+    `${NATIVE_FEDERATION}/00-TRANSITION-SLIDE.md`,
+    `${NATIVE_FEDERATION}/01-INTRODUCTION.md`,
+    `${NATIVE_FEDERATION}/02-SETUP-NATIVE-FEDERATION.md`,
+  ];
 }
 
 export function dayFourSlides() {
