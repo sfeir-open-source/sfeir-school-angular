@@ -149,7 +149,7 @@ ng generate @angular/core:control-flow
 
 # Benefits of the new syntax
 
-- **Clearer and more intuitive**: The syntax is closer to native JavaScript control flow.
-- **No more microsyntax**: Eliminates the complex grammar of `let`, `as`, and `of`.
-- **Improved type checking**: The compiler can better infer types within the blocks.
+- **Clearer and more intuitive**: The syntax is closer to native JavaScript control flow. <br/><br/>
+- **No more microsyntax**: Eliminates the complex grammar of `let`, `as`, and `of`. <br/><br/>
+- **Improved type checking**: The compiler can better infer types within the blocks. <br/><br/>
 - **Built-in**: Control flow is part of the core framework, no need to import `CommonModule` for `@if`, `@for`, etc.

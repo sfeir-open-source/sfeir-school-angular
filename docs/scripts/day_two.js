@@ -25,15 +25,14 @@ function pipeSlides() {
   ];
 }
 
+function controlFlowSlides() {
+  const CONTROL_FLOW = 'control-flow';
+  return [`${CONTROL_FLOW}/00-TRANSITION-SLIDE.md`, `${CONTROL_FLOW}/01-INTRODUCTION.md`, `${CONTROL_FLOW}/100-LAB.md`];
+}
+
 function directiveSlides() {
   const DIRECTIVE = 'directive';
-  return [
-    `${DIRECTIVE}/00-TRANSITION-SLIDE.md`,
-    `${DIRECTIVE}/01-CONTROL-FLOW.md`,
-    `${DIRECTIVE}/100-LAB.md`,
-    `${DIRECTIVE}/02-CUSTOM-DIRECTIVE.md`,
-    `${DIRECTIVE}/101-LAB.md`,
-  ];
+  return [`${DIRECTIVE}/00-TRANSITION-SLIDE.md`, `${DIRECTIVE}/02-CUSTOM-DIRECTIVE.md`, `${DIRECTIVE}/100-LAB.md`];
 }
 
 function templateDrivenForms() {
@@ -65,6 +64,7 @@ export function dayTwoSlides() {
     ...providersSlide(),
     ...dependencyInjectionSlides(),
     ...pipeSlides(),
+    ...controlFlowSlides(),
     ...directiveSlides(),
     ...templateDrivenForms(),
     ...reactiveFormSlides(),

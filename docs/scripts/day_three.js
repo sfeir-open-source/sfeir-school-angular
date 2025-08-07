@@ -52,7 +52,7 @@ function hostDirectivesSlides() {
     `${DIRECTIVE}/03-HOST-BINDING-LISTENER.md`,
     `${DIRECTIVE}/04-HOST-BINDING.md`,
     `${DIRECTIVE}/05-HOST-LISTENER.md`,
-    `${DIRECTIVE}/103-LAB.md`,
+    `${DIRECTIVE}/101-LAB.md`,
   ];
 }
 
@@ -63,7 +63,7 @@ function structuralDirectiveSlides() {
     `${DIRECTIVE}/06-STRUCTURAL-TRANSITION-SLIDE.md`,
     `${DIRECTIVE}/07-STRUCTURAL-DEFINITION.md`,
     `${DIRECTIVE}/08-STRUCTURAL-PROVIDERS.md`,
-    `${DIRECTIVE}/104-LAB.md`,
+    `${DIRECTIVE}/102-LAB.md`,
   ];
 }
 
