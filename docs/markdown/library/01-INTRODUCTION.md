@@ -9,7 +9,7 @@
 
 # Official definition of a library?
 
-An Angular library is a collection of components, services, and other elements that can be shared between multiple Angular applications. <br/><br/> 
+An Angular library is a collection of components, services, and other elements that can be shared between multiple Angular applications. <br/><br/>
 There are several types of Angular libraries, each with its own characteristics and use cases:
 <br/><br/>
 
@@ -20,6 +20,7 @@ There are several types of Angular libraries, each with its own characteristics 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
+
 # How to create a library with Angular?
 
 The Angular CLI will be your best ally for creating an Angular library. <br/><br/>
@@ -27,6 +28,7 @@ The Angular CLI will be your best ally for creating an Angular library. <br/><br
 ```shell
 ng new sfeir-library-workspace  --no-create-application
 ```
+
 <!-- .element: class="big-code" -->
 
 <br/><br/>
@@ -38,6 +40,7 @@ Then, in the sfeir-library-workspace folder, run the following command to create
 ```shell
 ng generate library sfeir-components
 ```
+
 <!-- .element: class="big-code" -->
 
 ##==##
@@ -47,15 +50,13 @@ ng generate library sfeir-components
 <br/><br/>
 
 A workspace makes more sense when creating an Angular library as it can contain multiple libraries. <br/><br/>
-This workspace can also contain Angular applications to test your libraries. <br/><br/>
-
+This workspace can also contain Angular applications to test your libraries in a real context. <br/><br/>
 
 ##==##
 
-<!-- slide: class="with-code inconsolata" -->
-# An Angular.json that has changed a lot
+<!-- .slide: class="with-code inconsolata" -->
 
-<br/><br/>
+# An Angular.json that has changed a lot
 
 ```json
 {
@@ -74,7 +75,8 @@ This workspace can also contain Angular applications to test your libraries. <br
   }
 }
 ```
-<!-- .element: class="big-code" -->
+
+<!-- .element: class="small-code" -->
 
 <br/><br/>
 

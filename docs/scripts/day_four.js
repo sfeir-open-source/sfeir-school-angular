@@ -79,7 +79,14 @@ function serverSideSlides() {
 }
 
 function librarySlides() {
-  return ['library/00-TRANSITION-SLIDE.md', 'library/01-INTRODUCTION.md', 'library/library.md', 'library/ng-packager.md', 'library/dependencies.md'];
+  const LIBRARY = 'library';
+  return [
+    `${LIBRARY}/00-TRANSITION-SLIDE.md`,
+    `${LIBRARY}/01-INTRODUCTION.md`,
+    `${LIBRARY}/02-LIBRARY.md`,
+    `${LIBRARY}/03-NG-PACKAGR.md`,
+    `${LIBRARY}/04-DEPENDENCIES.md`,
+  ];
 }
 
 function nativeFederationSlides() {

@@ -8,29 +8,30 @@ It allows you to create Angular packages that can be published to npm and used i
 - Scoped and non-scoped packages<br/><br/>
 - Support Css Feature
 
-
 ##==##
 
-
 <!-- .slide: class="with-code inconsolata" -->
+
 # ng-package.json: The Configuration File for Your Lib
 
 <br/><br/>
 
 ```json
 {
-   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
-   "dest": "../../dist/libs/sfeir-components",
-   "lib": {
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/libs/sfeir-components",
+  "lib": {
     "entryFile": "src/index.ts"
   }
 }
 ```
+
 <!-- .element: class="big-code" -->
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
+
 # Managing assets with ng-packagr
 
 The advantage of using Ng-Packagr is that it does almost everything for you; it allows you to copy your assets to your build directory with a simple configuration.
@@ -39,15 +40,13 @@ The advantage of using Ng-Packagr is that it does almost everything for you; it 
 
 ```json
 {
-    "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
-    "dest": "../../dist/libs/sfeir-components",
-    "lib": {
-        "entryFile": "src/index.ts"
-    },
-    "assets": [
-      "src/assets",
-      { "glob": "**/*.scss", "input": "src/styles", "output": "./styles" }
-    ]
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/libs/sfeir-components",
+  "lib": {
+    "entryFile": "src/index.ts"
+  },
+  "assets": ["src/assets", { "glob": "**/*.scss", "input": "src/styles", "output": "./styles" }]
 }
 ```
+
 <!-- .element: class="big-code" -->
