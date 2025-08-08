@@ -4,34 +4,110 @@ A [SFEIR School](https://www.sfeir.com/formation/school/)
 
 ![logo](https://www.sfeir.com/img/school/formations/Angular%20200.png)
 
-[Calendrier des formations, liste des formateurs et programme de formation](https://www.sfeir.com/formation/school/angular-200/)
+[Training schedule, trainers, and program](https://www.sfeir.com/formation/school/angular-200/)
 
-## Installation
+## Overview
 
-- `git clone https://github.com/sfeir-open-source/sfeir-school-angular.git`
-- `cd sfeir-school-angular`
-- `npm install`
+This repository contains the SFEIR School Angular 200 hands-on training. It is an Nx workspace that hosts many small Angular applications used as progressive exercises. For each step, you will find:
+
+- an exercise project, and
+- a corresponding solution project
+
+Both live under the `apps/` folder and follow the naming pattern `<nn>-<topic>` and `<nn>-<topic>-solution` (for example, `01-hands-on` and `01-hands-on-solution`).
 
 ## Slides
 
-Les slides sont disponibles ici : [Sfeir School Angular](https://sfeir-open-source.github.io/sfeir-school-angular/)
+- View the slides: https://sfeir-open-source.github.io/sfeir-school-angular/
+- Slide sources are licensed under CC BY-ND 3.0: [docs/LICENSE](./docs/LICENSE)
 
-Les Slides sont derrière une license [CC BY ND 3.0](https://github.com/sfeir-open-source/sfeir-school-angular/blob/master/docs/LICENSE)
+## Prerequisites
 
-## Commandes
+- Node.js 18+ (LTS recommended)
+- Bun (recommended) or npm
+- Git
 
-La formation se déroule step by step, chaque TP ayant deux projets associés dans le dossier [`apps/`](apps), un pour la réalisation de l'excice et un autre avec la solution pour cet exercice, toujours intitulé avec le nom du projet step suivi de `-solution`.
+## Quick start
 
-Chacun de ces projets étant un projet Angular CLI, vous pouvez utiliser les commande Angular CLI habituelles.
-Exemple : `ng test <projet>`
+```bash
+git clone https://github.com/sfeir-open-source/sfeir-school-angular.git
+cd sfeir-school-angular
+bun install   # or: npm install
+```
 
-Nous avons cependant mis en place différents scripts pour vous faciliter cela. Cf. (package.json)[package.json].
-La majorité de ces scripts sont simplement des alias pour une commande Angular CLI. Vous pouvez donc utiliser les options de Angular CLI, mais [après l'option `--` de npm](https://docs.npmjs.com/cli/run-script.html) afin de lui indiquer qu'il s'agit d'options à passer au script et non d'options npm.
+Serve the first exercise (default project is `01-hands-on`):
 
-- lancer le server nodejs : `npm run server:start` (indispensable pour tous les exercices avec des appels HTTP)
-- lancer la Web App : `npm run client -- <projet>`
-- en mode prod : ̀npm run client -- <projet> --prod`
-- lancer les tests unitaires : `npm run client:test --  <projet>`
-- lancer les slides: `npm run start:prez`
+```bash
+# Using Nx directly
+bunx nx serve 01-hands-on
+# or using the provided script alias
+bun run client -- 01-hands-on   # npm run client -- 01-hands-on
+```
 
-Voir la [documentation d'Angular CLI](https://angular.io/cli) pour toute autre commande.
+Open the browser to the URL shown by the CLI (Angular defaults to http://localhost:4200 unless configured otherwise).
+
+The mock API listens on http://localhost:9000 (see `apps/server-express/src/main.js`). Available endpoints include `/api/peoples`, `/api/peoples/:id`, `/api/peoples/random`, etc.
+
+Run unit tests for a specific project:
+
+```bash
+bun run client:test -- 01-hands-on   # npm run client:test -- 01-hands-on
+```
+
+Run all tests across the workspace:
+
+```bash
+bun run test:all   # npm run test:all
+```
+
+Serve the slides locally:
+
+```bash
+# Nx target defined in docs/project.json
+bunx nx serve docs
+```
+
+## Repository structure
+
+```
+.
+├─ apps/
+│  ├─ 01-hands-on/                 # exercise
+│  ├─ 01-hands-on-solution/        # solution
+│  ├─ …                            # more steps and their solutions
+│  └─ server-express/              # mock API (Express on port 9000)
+├─ docs/                           # Reveal.js slides and assets
+├─ tools/                          # development utilities
+├─ nx.json                         # Nx workspace configuration
+├─ package.json                    # scripts and dependencies
+├─ bun.lock                        # Bun lockfile
+├─ tsconfig.base.json              # base TS config
+├─ jest.config.ts / jest.preset.js # Jest configuration
+└─ LICENSE                         # MIT license for the code
+```
+
+## Provided scripts (aliases)
+
+The root `package.json` provides convenient aliases around Nx:
+
+- `client` → `nx serve` (serve a project)
+- `client:build` → `nx build` (build a project)
+- `client:test` → run tests for multiple projects
+- `server:start` → `nx serve server-express` (start the mock API on port 9000)
+- `test:all` / `lint:all` → run tests/lint across the workspace
+
+You can pass any Angular CLI or Nx options after `--`, for example:
+
+```bash
+bun run client -- 01-hands-on --configuration=production
+```
+
+## Credits
+
+This project is maintained by the SFEIR Open Source team.
+
+## License
+
+- Code: MIT (see [LICENSE](./LICENSE))
+- Slides: CC BY-ND 3.0 (see [docs/LICENSE](./docs/LICENSE))
+
+See the Angular CLI documentation for additional commands: https://angular.io/cli
