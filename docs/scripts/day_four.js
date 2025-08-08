@@ -98,6 +98,17 @@ function nativeFederationSlides() {
   ];
 }
 
+function performancesSlides() {
+  const PERFORMANCES = 'performances';
+  return [
+    `${PERFORMANCES}/00-TRANSITION-SLIDE.md`,
+    `${PERFORMANCES}/01-IMAGES.md`,
+    `${PERFORMANCES}/02-DEFERRED-VIEWS.md`,
+    `${PERFORMANCES}/03-LAZYLOAD-COMPONENT.md`,
+    `${PERFORMANCES}/100-LAB.md`,
+  ];
+}
+
 export function dayFourSlides() {
   return [
     ...stateManagementElf(),
@@ -108,5 +119,6 @@ export function dayFourSlides() {
     ...serverSideSlides(),
     ...librarySlides(),
     ...nativeFederationSlides(),
+    ...performancesSlides(),
   ];
 }
