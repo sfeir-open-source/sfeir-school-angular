@@ -8,16 +8,26 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/12-pipe-using",
         "index": "apps/12-pipe-using/src/index.html",
         "browser": "apps/12-pipe-using/src/main.ts",
-        "polyfills": ["apps/12-pipe-using/src/polyfills.ts"],
+        "polyfills": [
+          "apps/12-pipe-using/src/polyfills.ts"
+        ],
         "tsConfig": "apps/12-pipe-using/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/12-pipe-using/src/favicon.ico", "apps/12-pipe-using/src/assets"],
-        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/12-pipe-using/src/styles.scss"],
+        "assets": [
+          "apps/12-pipe-using/src/favicon.ico",
+          "apps/12-pipe-using/src/assets"
+        ],
+        "styles": [
+          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+          "apps/12-pipe-using/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -53,6 +63,12 @@
     },
     "serve": {
       "executor": "@angular-devkit/build-angular:dev-server",
+      "dependsOn": [
+        {
+          "projects": "server-express",
+          "target": "serve"
+        }
+      ],
       "configurations": {
         "production": {
           "buildTarget": "12-pipe-using:build:production"
@@ -61,7 +77,8 @@
           "buildTarget": "12-pipe-using:build:development"
         }
       },
-      "defaultConfiguration": "development"
+      "defaultConfiguration": "development",
+      "continuous": true
     },
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
@@ -74,7 +91,9 @@
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/apps/12-pipe-using"],
+      "outputs": [
+        "{workspaceRoot}/coverage/apps/12-pipe-using"
+      ],
       "options": {
         "jestConfig": "apps/12-pipe-using/jest.config.ts"
       }

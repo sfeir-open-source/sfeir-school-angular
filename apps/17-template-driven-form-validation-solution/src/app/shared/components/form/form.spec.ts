@@ -1,0 +1,102 @@
+import { fireEvent, render, screen } from '@testing-library/angular';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { PeopleForm } from '../../models/people.model';
+import { Form } from './form';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+const CANCEL_SPY = jest.fn();
+const SAVE_SPY = jest.fn();
+
+describe('FormComponent', () => {
+  let fixture: ComponentFixture<Form>;
+  let component: Form;
+
+  beforeEach(async () => {
+    const { fixture: componentFixture } = await render(Form, {
+      imports: [CommonModule, FormsModule],
+      declarations: [Form],
+      schemas: [NO_ERRORS_SCHEMA],
+      on: {
+        cancel: CANCEL_SPY,
+        save: SAVE_SPY,
+      },
+    });
+    fixture = componentFixture;
+    component = fixture.componentInstance;
+  });
+  describe('#UI', () => {
+    it('should create an instance of FormComponent', () => {
+      expect(component).toBeInstanceOf(Form);
+    });
+    it('should create an input for the firstname', () => {
+      const input = screen.getByPlaceholderText('First name');
+      expect(input).toBeTruthy();
+    });
+    it('should create an input for the lastname', () => {
+      const input = screen.getByPlaceholderText('Last name');
+      expect(input).toBeTruthy();
+    });
+    it('should create an input for the email', () => {
+      const input = screen.getByPlaceholderText('email');
+      expect(input).toBeTruthy();
+    });
+    it('should create an input for the phone', () => {
+      const input = screen.getByPlaceholderText('phone');
+      expect(input).toBeTruthy();
+    });
+    it('should disable the submit button', async () => {
+      await fixture.whenStable();
+      TestBed.tick();
+      const submitButton = screen.getByText<HTMLButtonElement>('Save');
+      expect(submitButton).toBeTruthy();
+    });
+  });
+  describe('#Functions', () => {
+    it('should correctly bind the input', () => {
+      const spy = jest.spyOn(component, 'submit');
+      const personForm = screen.getByTestId('person-form');
+      const firstnameInput: HTMLInputElement = screen.getByPlaceholderText('First name');
+      const lastnameInput: HTMLInputElement = screen.getByPlaceholderText('Last name');
+      const emailInput: HTMLInputElement = screen.getByPlaceholderText('email');
+      const phoneInput: HTMLInputElement = screen.getByPlaceholderText('phone');
+      const ngSubmitEvent = new CustomEvent('ngSubmit');
+      fireEvent.input(firstnameInput, { target: { value: 'SFEIR' } });
+      fireEvent.input(lastnameInput, { target: { value: 'SFEIR' } });
+      fireEvent.input(emailInput, { target: { value: 's.sfeir@sfeir.com' } });
+      fireEvent.input(phoneInput, { target: { value: '0123456789' } });
+      fireEvent(personForm, ngSubmitEvent);
+      expect(spy).toHaveBeenCalled();
+      expect(spy).toHaveBeenCalledWith({
+        firstname: 'SFEIR',
+        lastname: 'SFEIR',
+        email: 's.sfeir@sfeir.com',
+        phone: '0123456789',
+        photo: 'https://randomuser.me/api/portraits/lego/6.jpg',
+      });
+    });
+    it('should call the submit method', () => {
+      const spy = jest.spyOn(component, 'submit');
+      const submitButton = screen.getByText('Save');
+      fireEvent.submit(submitButton);
+      expect(spy).toHaveBeenCalled();
+    });
+    it('should call the save event emitter', () => {
+      const personForm = { firstname: 'SFEIR', lastname: 'SFEIR' } as PeopleForm;
+      component.submit(personForm);
+      expect(SAVE_SPY).toHaveBeenCalled();
+      expect(SAVE_SPY).toHaveBeenCalledWith(personForm);
+    });
+    it('should call the onCancel method', () => {
+      const spy = jest.spyOn(component, 'onCancel');
+      const cancelButton: HTMLButtonElement = screen.getByText('Cancel');
+      fireEvent.click(cancelButton);
+      expect(spy).toHaveBeenCalled();
+    });
+    it('should call the cancel event emitter', () => {
+      component.onCancel();
+      expect(CANCEL_SPY).toHaveBeenCalled();
+    });
+  });
+});

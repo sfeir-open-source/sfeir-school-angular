@@ -1,37 +1,55 @@
-# Exercice 13-pipe-custom (apps steps/13-pipe-custom)
+# Custom Pipe Workshop
 
-L'objectif de ce workshop est de créer votre propre pipe
+In this workshop, you will learn how to create and use a custom pipe in an Angular application. Pipes are powerful tools that allow you to transform data directly in your templates.
 
-<br>
+## Objective
 
-## Etape 1
+Create a custom pipe called "NaPipe" that will display "N/A" (Not Available) when a value is undefined or null, instead of displaying an empty string.
 
-Dans le dossier shared, créez un dossier pipes
+## Prerequisites
 
-## Etape 1
+- Basic knowledge of Angular
+- Understanding of built-in pipe concepts like date, uppercase, etc.
 
-A l'aide du CLI dans le dossier pipes, créez un pipe NaPipe et pensez à l'enregistrer dans le module shared
-<br<br
+## Workshop Steps
 
-## Etape 2
+### Step 1: Prepare the structure
 
-Analyser le contenue du fichier **na.pipe.ts**
-<br><br>
+1. In the `shared` folder, create a new folder named `pipes`
 
-## Etape 3
+### Step 2: Create the custom pipe
 
-La fonction transform doit retourner "N/A" si la valeur passé en paramètre n'est pas définie, ce qui signifie si le nom du manager est pas défini
-<br><br>
+1. Generate a new pipe named "NaPipe" in the pipes folder you just created
+2. Make sure the pipe is correctly declared in the CardComponent
 
-## Etape 4
+### Step 3: Implement the pipe
 
-Appelez votre pipe na sur la propriété "person.manager", si cette personne n'a pas de manager, vous devriez apercevoir la valeur NA, au lieu d'une chaîne vide
-<br><br>
+1. Open the generated `na.pipe.ts` file and analyze its structure
 
-## Etape 5
+   - You'll see the class decorated with `@Pipe` and a `transform` method that will be responsible for the data transformation
 
-Vérifier votre travail en vous plaçant à la racine du dossier TP et en lançant la commande:
+2. Implement the `transform` method to return "N/A" if the passed value is undefined or null, otherwise return the original value
 
-```bash
-npm run client -- 13-pipe-custom
-```
+### Step 4: Use the pipe in the template
+
+1. In your component that displays a person's details, identify where the manager is displayed
+2. Modify the template to apply your "na" pipe to the "person.manager" property
+3. Verify that when a person doesn't have a manager (undefined or null value), you see "N/A" instead of an empty string
+
+### Step 5: Test your implementation
+
+1. Launch the development server with the server
+
+   ```bash
+   npm run client -- 13-pipe-custom
+   ```
+
+2. Check in the user interface that:
+   - People who have a manager correctly display the manager's name
+   - People without a manager display "N/A" instead
+
+## Key Concepts to Understand
+
+- **Angular Pipes**: Pipes are an elegant way to transform data in your templates without modifying the original data
+- **Reusability**: A well-designed pipe can be reused throughout your application
+- **Code Readability**: Pipes help keep your templates clean and readable by moving transformation logic into dedicated classes

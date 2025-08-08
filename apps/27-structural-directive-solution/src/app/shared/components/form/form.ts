@@ -1,35 +1,39 @@
-import { AbstractControl, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
-import { ControlsFromInterface } from '../../models/common.model';
-import { PeopleForm } from '../../models/people.model';
+import { NgOptimizedImage } from '@angular/common';
+import { Component, effect, input, output } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { type Person, PersonForm } from './people-form';
+import { PhoneSecret } from '../../directives/phone-secret';
 
-export interface PersonFormGroup {
-  id: FormControl<string | null>;
-  photo: FormControl<string>;
-  firstname: FormControl<string | null>;
-  lastname: FormControl<string | null>;
-  email: FormControl<string | null>;
-  phone: FormControl<string | null>;
-}
+@Component({
+  selector: 'sfeir-form',
+  templateUrl: './form.html',
+  styleUrl: './form.scss',
+  imports: [NgOptimizedImage, ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatButtonModule, PhoneSecret],
+})
+export class Form {
+  person = input<Person>({ photo: 'https://randomuser.me/api/portraits/lego/6.jpg' } as Person);
+  cancel = output<void>();
+  save = output<Person>();
 
-export class PersonForm extends FormGroup<ControlsFromInterface<PeopleForm>> {
-  constructor(data?: PeopleForm) {
-    super({
-      id: new FormControl(null),
-      photo: new FormControl('https://randomuser.me/api/portraits/lego/6.jpg', { nonNullable: true }),
-      firstname: new FormControl(null, [Validators.required, Validators.minLength(2)]),
-      lastname: new FormControl(null, [Validators.required, Validators.minLength(2)]),
-      email: new FormControl(null, [Validators.required, PersonForm.sfeirEmailValidator]),
-      phone: new FormControl(null, [Validators.required, Validators.pattern(/\d{10}/)]),
+  peopleForm = new PersonForm();
+
+  constructor() {
+    effect(() => {
+      const person = this.person();
+      if (person) {
+        this.peopleForm.patchValue(person, { emitEvent: false });
+      }
     });
-
-    !!data && this.patchValue(data);
   }
 
-  static sfeirEmailValidator(c: AbstractControl<string | null>): ValidationErrors {
-    if (!c.value) {
-      return null;
-    }
-    const regex = /^\w+.\w@sfeir.com$/;
-    return regex.test(c.value) ? null : { sfeirEmail: true };
+  submit(): void {
+    this.save.emit(this.peopleForm.getRawValue());
+  }
+
+  onCancel(): void {
+    this.cancel.emit();
   }
 }

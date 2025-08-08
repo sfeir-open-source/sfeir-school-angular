@@ -1,82 +1,72 @@
-# Exercice 09-input (dossier apps/09-input)
+# Angular Component Inputs Exercise
 
-Ce workshop a plusieurs buts:
-- comprendre le fonctionnement d'une application modulaire
-- comprendre le fonctionnement des inputs en Angular et à quoi peut servir la création de composant
+## Objective
 
-<br>
+In this exercise, you'll learn how to create reusable components in Angular by using input properties. You'll refactor the existing code to extract a reusable card component that can display person information.
 
-## Etape 1
+## Learning Outcomes
 
-Dans le dossier src/app:
-- créez un dossier shared
-<br><br>
+By the end of this exercise, you'll be able to:
 
-## Etape 2
+- Create reusable components with input properties
+- Use the `input` function to define component inputs
+- Compose components together
+- Pass data from parent to child components
+- Structure your application with shared components
 
-Dans ce dossier shared et à l'aide du CLI
-- créez un module shared
-<br><br>
+## Prerequisites
 
-## Etape 3
+- Basic understanding of Angular components
+- Familiarity with TypeScript
+- Completion of previous exercises on components and data binding
 
-Déplacez le fichier **material-design-module.ts** dans le dossier shared
+## Exercise Steps
 
-Dans le ficher **shared.module.ts**
-- dans la propriété imports ajoutez votre MaterialDesignModule
-- dans la propriété exports, ajoutez votre MaterialDesignModule
+### Step 1: Create a Card Component
 
-Dans le fichiez **app.module.ts**
-- dans la propriété imports retirez le module MaterialDesignModule
-- dans la propriété imports ajoutez le module SharedModule
+1. Generate a new component called `CardComponent` in the `shared/components` folder:
+2. Move the card template and styles from the `PeopleComponent` to the new `CardComponent`
+3. Define an input property to receive person data
 
-<br><br>
+### Step 2: Update the People Component
 
-## Etape 4
+1. Import and use the new `CardComponent` in the `PeopleComponent`
+2. Update the template to use the `sfeir-card` component
+3. Pass the person data to the card component using property binding
 
-Lancez l'application à l'aide de la commande suivante, pour vérifier que tout fonctionne comme avant:
-```bash
-npm run client -- 09-input
-```
+### Step 3: Update the Home Component
 
-<br><br>
+1. Import and use the `CardComponent` in the `HomeComponent`
+2. Update the template to use the `sfeir-card` component
+3. Pass the random person data to the card component
 
-## Etape 5
+````
 
-Dans le dossier shared. créez un dossier components
+## Testing Your Implementation
 
-Dans ce dossier components, et à l'aide du CLI, créer le composant card
+1. Start the application:
+   ```bash
+   npm run client -- 09-input
+````
 
-Astuce: pensez bien à importer et exporter votre composant dans le SharedModule
+2. Verify that:
+   - The home page displays a random person's information in the card component
+   - The people page displays a list of people using the same card component
+   - Clicking the refresh button on the home page loads a new random person
+   - The card component is properly styled and responsive
 
-<br><br> 
+## Key Concepts
 
-## Etape 6
+### Component Inputs
 
-A l'aide du ficher **home.component.html**, copiez le contenue de la card dans le fichier **card.component.html**
-A l'aide du fichier **card.component.css**, copiez le contenue du style de la card dans le fichier **card.component.css**
-<br><pr>
+Input properties allow you to pass data from a parent component to a child component. In this exercise, we use the `input` function to define the `person` input in the `CardComponent`.
 
-## Etape 7
+### Component Composition
 
-Dans le fichiez **card.component.ts** créez un input person à l'aide de l'annotation **@Input()**
-<br><br>
+By creating a reusable `CardComponent`, we've improved code organization and reduced duplication. The same card is now used in both the home and people components.
 
-## Etape 8
+## Troubleshooting
 
-Dans le fichier **home.component.html** remplacez le contenue du fichier **home.component.html** par votre nouveau composant CardComponent en appelant la balise <sfeir-card> et en passant la person en input
-<br><br>
-
-## Etape 9
-
-Dans le fichier **people.component.html**, remplacez le contenue de la card par le composant CardComponent en appelant la balise <sfeir-card>
-
-Indice:  pensez à utiliser la directive *ngFor sur cette balise pour afficher une card par person
-
-## Etape 6
-
-Vérifiez votre travail en vous plaçant à la racine du dossier TP et en lançant la commande:
-
-```bash
-npm run client -- 09-input
-```
+- **Input Not Working**: Ensure you've properly defined the input property in the child component and are using the correct property binding syntax in the parent template.
+- **Styling Issues**: Make sure all required Angular Material modules are imported in the component that uses them.
+- **Missing Data**: Verify that the API endpoint is correct and the server is running.

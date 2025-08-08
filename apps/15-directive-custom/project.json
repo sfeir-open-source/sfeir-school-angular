@@ -53,6 +53,7 @@
     },
     "serve": {
       "executor": "@angular-devkit/build-angular:dev-server",
+      "dependsOn": [{ "projects":  "server-express", "target": "serve"}],
       "configurations": {
         "production": {
           "buildTarget": "15-directive-custom:build:production"
@@ -61,7 +62,8 @@
           "buildTarget": "15-directive-custom:build:development"
         }
       },
-      "defaultConfiguration": "development"
+      "defaultConfiguration": "development",
+      "continuous": true
     },
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",

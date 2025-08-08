@@ -1,0 +1,105 @@
+{
+  "name": "35-performances-solution",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/35-performances-solution/src",
+  "prefix": "sfeir",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:application",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/apps/35-performances-solution",
+        "index": "apps/35-performances-solution/src/index.html",
+        "browser": "apps/35-performances-solution/src/main.ts",
+        "polyfills": [
+          "apps/35-performances-solution/src/polyfills.ts"
+        ],
+        "tsConfig": "apps/35-performances-solution/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "apps/35-performances-solution/src/favicon.ico",
+          "apps/35-performances-solution/src/assets"
+        ],
+        "styles": [
+          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+          "apps/35-performances-solution/src/styles.scss"
+        ],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/35-performances-solution/src/environments/environment.ts",
+              "with": "apps/35-performances-solution/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "optimization": false,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "options": {
+        "hmr": false
+      },
+      "dependsOn": [
+        {
+          "projects": "server-express",
+          "target": "serve"
+        }
+      ],
+      "configurations": {
+        "production": {
+          "buildTarget": "35-performances-solution:build:production"
+        },
+        "development": {
+          "buildTarget": "35-performances-solution:build:development"
+        }
+      },
+      "defaultConfiguration": "development",
+      "continuous": true
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "35-performances-solution:build"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": [
+        "{workspaceRoot}/coverage/apps/35-performances-solution"
+      ],
+      "options": {
+        "jestConfig": "apps/35-performances-solution/jest.config.ts"
+      }
+    }
+  }
+}

@@ -4,7 +4,7 @@
   "projectType": "application",
   "tags": [],
   "targets": {
-    "start-prez": {
+    "serve": {
       "executor": "nx:run-script",
       "options": {
         "script": "start"

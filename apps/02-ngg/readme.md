@@ -1,48 +1,42 @@
-# Exercice 2: 02-ngg (dossier apps/02-ngg)
+# Angular Exercise: Component Basics
 
-L'objectif de ce workshop est de vous entraîner à créer des composant à l'aide du CLI d'Angular
+## Overview
 
-En général pour être plus productif on utilise son IDE, ce workshop a également pour objectif de vous entraîner à utiliser les fonctionnalités que vous offre votre IDE
+This exercise will guide you through creating and understanding Angular components. You'll build a simple application with a navigation bar and a home component that displays a welcome message.
 
-VOus aurez aussi l'occasion d'appliquer les connaissances précédentes acquises.
+### Step 1: Create the Home Component
 
-<br>
+1. Generate a new home component:
 
-## Etape 1
+   ```bash
+   npx nx generate @nx/angular:component apps/02-ngg/src/app/feature/home --dry-run
+   ```
 
-Dans le dossier src/app/feature, créez le composant HomeComponent grâce au CLI d'Angular.
+The --dry-run option is used to preview the changes that will be made without actually modifying the files.
+Remove it when you're ready to create the component.
 
-<br><br>
+2. In `home.component.ts`:
 
-## Etape 2
+   - Set up a simple component with a name property
+   - Import and use Angular Material's CardModule
 
-Analysez les fichiers que le cli vous a générés.
-<br><br>
+3. In `home.component.html`:
+   - Create a card that displays the name property
 
-## Etape 3
+### Step 2: Set Up Routing
 
-Dans le fichier **home.component.ts** créez une propriété **name** avec comme valeur d'initialisation votre prénom
-<br><br>
+Bootstrap the application on the home Component in the `main.ts` file.
 
-## Etape 4
+### Step 3: Styling
 
-Dans le fichier **home.component.html** affichez la valeur de la variable **name** grâce à la syntaxe {{ name}}
-<br><br>
+Change the selector in the `index.html` file to match the name of the component.
 
-## Etape 5
+## Testing
 
-Dans le fichier **app.module.ts** dans le tableau de la propriété bootstrap remplacez AppComponent par HomeComponent
-<br><br>
-
-## Etape 6
-
-Dans le fichier **index.html** remplacez la baise <sfeir-app> par la balise <sfeir-home>
-<br><br>
-
-## Etape 7
-
-Vérifiez votre travail en vous plaçant à la racine du dossier TP et en lançant la commande:
-
-```bash
-npm run client -- 02-ngg
-```
+1. Run the application:
+   ```bash
+   npx nx serve 02-ngg
+   ```
+2. Navigate to `http://localhost:4200`
+3. Verify that:
+   - your home component is rendered

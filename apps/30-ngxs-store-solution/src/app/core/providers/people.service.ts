@@ -1,32 +1,30 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { Store } from '@ngxs/store';
-import { map, Observable, switchMap } from 'rxjs';
+import { HttpClient, httpResource, HttpResourceRef } from '@angular/common/http';
+import { inject, Injectable } from '@angular/core';
+import { Observable, tap } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { People, PeopleForm } from '../../shared/models/people.model';
-import { SetPeople } from '../store/app.store';
+import { createDispatchMap } from '@ngxs/store';
+import { SetPeople } from '../store/app-store';
 
 @Injectable({ providedIn: 'root' })
 export class PeopleService {
-  constructor(
-    private readonly httpClient: HttpClient,
-    private readonly store: Store,
-  ) {}
+  private readonly httpClient = inject(HttpClient);
+  actions = createDispatchMap({
+    setPeople: SetPeople,
+  });
 
   getPeople(): Observable<Array<People>> {
-    return this.httpClient
-      .get<Array<People>>(`${environment.peopleEndpoint}/peoples`)
-      .pipe(switchMap(people => this.store.dispatch(new SetPeople(people)).pipe(map(() => people))));
+    return this.httpClient.get<Array<People>>(`${environment.peopleEndpoint}/peoples`).pipe(tap(people => this.actions.setPeople(people)));
   }
 
-  getRandomPeople(): Observable<People> {
-    return this.httpClient.get<People>(`${environment.peopleEndpoint}/peoples/random`);
+  getRandomPeople(): HttpResourceRef<People> {
+    return httpResource(() => `${environment.peopleEndpoint}/peoples/random`);
   }
 
-  deletePeople(personId: string): Observable<unknown> {
+  deletePeople(personId: string): Observable<Array<People>> {
     return this.httpClient
       .delete<Array<People>>(`${environment.peopleEndpoint}/peoples/${personId}`)
-      .pipe(switchMap(people => this.store.dispatch(new SetPeople(people))));
+      .pipe(tap(people => this.actions.setPeople(people)));
   }
 
   addNewPerson(person: PeopleForm): Observable<void> {

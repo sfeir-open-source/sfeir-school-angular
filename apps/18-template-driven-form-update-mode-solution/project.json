@@ -8,12 +8,16 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/18-template-driven-form-update-mode-solution",
         "index": "apps/18-template-driven-form-update-mode-solution/src/index.html",
         "browser": "apps/18-template-driven-form-update-mode-solution/src/main.ts",
-        "polyfills": ["apps/18-template-driven-form-update-mode-solution/src/polyfills.ts"],
+        "polyfills": [
+          "apps/18-template-driven-form-update-mode-solution/src/polyfills.ts"
+        ],
         "tsConfig": "apps/18-template-driven-form-update-mode-solution/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
@@ -59,6 +63,12 @@
     },
     "serve": {
       "executor": "@angular-devkit/build-angular:dev-server",
+      "dependsOn": [
+        {
+          "projects": "server-express",
+          "target": "serve"
+        }
+      ],
       "configurations": {
         "production": {
           "buildTarget": "18-template-driven-form-update-mode-solution:build:production"
@@ -67,7 +77,8 @@
           "buildTarget": "18-template-driven-form-update-mode-solution:build:development"
         }
       },
-      "defaultConfiguration": "development"
+      "defaultConfiguration": "development",
+      "continuous": true
     },
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
@@ -80,7 +91,9 @@
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/apps/18-template-driven-form-update-mode-solution"],
+      "outputs": [
+        "{workspaceRoot}/coverage/apps/18-template-driven-form-update-mode-solution"
+      ],
       "options": {
         "jestConfig": "apps/18-template-driven-form-update-mode-solution/jest.config.ts"
       }

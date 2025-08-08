@@ -8,16 +8,26 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/19-reactive-form",
         "index": "apps/19-reactive-form/src/index.html",
         "browser": "apps/19-reactive-form/src/main.ts",
-        "polyfills": ["apps/19-reactive-form/src/polyfills.ts"],
+        "polyfills": [
+          "apps/19-reactive-form/src/polyfills.ts"
+        ],
         "tsConfig": "apps/19-reactive-form/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/19-reactive-form/src/favicon.ico", "apps/19-reactive-form/src/assets"],
-        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/19-reactive-form/src/styles.scss"],
+        "assets": [
+          "apps/19-reactive-form/src/favicon.ico",
+          "apps/19-reactive-form/src/assets"
+        ],
+        "styles": [
+          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+          "apps/19-reactive-form/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -53,6 +63,12 @@
     },
     "serve": {
       "executor": "@angular-devkit/build-angular:dev-server",
+      "dependsOn": [
+        {
+          "projects": "server-express",
+          "target": "serve"
+        }
+      ],
       "configurations": {
         "production": {
           "buildTarget": "19-reactive-form:build:production"
@@ -61,7 +77,8 @@
           "buildTarget": "19-reactive-form:build:development"
         }
       },
-      "defaultConfiguration": "development"
+      "defaultConfiguration": "development",
+      "continuous": true
     },
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
@@ -74,7 +91,9 @@
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/apps/19-reactive-form"],
+      "outputs": [
+        "{workspaceRoot}/coverage/apps/19-reactive-form"
+      ],
       "options": {
         "jestConfig": "apps/19-reactive-form/jest.config.ts"
       }

@@ -1,54 +1,77 @@
-# Exercice 08-ng-for (dossier apps/08-ng-for)
+# Angular @for Loop Exercise
 
-L'objectif de ce workshop est:
-- d'utiliser la directive ngFor
-- appliquer les connaissances précédemment acquises avec le routing
+## Objective
 
+In this exercise, you'll learn how to use Angular's new control flow syntax with the `@for` loop to display lists of data. You'll work with the `httpResource` to fetch data and display it in your components.
 
-<br/><br/>
+## Learning Outcomes
 
-## Etape 1
+By the end of this exercise, you'll be able to:
 
-Dans le dossier app/feature, créer le composant people
+- Use the `@for` loop to iterate over collections
+- Work with the new control flow syntax in Angular
+- Fetch and display data using `httpResource`
+- Create reusable components with proper typing
+- Handle loading states in your templates
 
-<br/><br/>
+## Prerequisites
 
-## Etape 2
+- Basic understanding of Angular components
+- Familiarity with TypeScript
+- Completion of previous exercises on components and services
 
-Dans le fichier **app-routing.module.ts**, ajoutez la nouvelle route /people qui permettra d'afficher la liste des personnes
+## Exercise Steps
 
-<br/><br/>
+### Step 1: Set Up the People Component
 
-## Etape 3
+1. Create a new component called `PeopleComponent` in the `feature/people` folder
+2. Update the component to use the `toSignal` to fetch a list of people from the API
+3. Use the `@for` loop to display each person in a card
 
-Copier le contenue du fichier **home.component.html** dans le fichier **people.component.html** et le contenu du fichier **home.component.scss**
-dans le fichier **people.component.scss**
+## Step 2: Register a new view
 
-<br/><br/>
+1. Register a new path called people in the `main.ts` file
 
-## Etape 4
+## Testing Your Implementation
 
-Dans le fichier **people.component.ts**, récupérer la liste des personnes à l'aide de l'endpoint: http://localhost:9000/api/peoples
+1. Start the application:
 
-<br/><br/>
+   ```bash
+   npm run client -- 08-ng-for
+   ```
 
-## Etape 5
+2. Verify that:
+   - The home page displays a random person's information
+   - Clicking the refresh button loads a new random person
+   - The "List" link in the navigation works
+   - The people page displays a list of all people
+   - The UI is responsive and styled correctly
 
-Dans le fichier **people.component.html**, à l'aide de la directive *ngFor, dupliquez la card de la personne
+## Key Concepts
 
-Astuce:
+### @for Loop
+
+The `@for` loop is a new control flow syntax in Angular that replaces `*ngFor`. It provides better type checking and performance improvements.
 
 ```html
-<mat-card *ngFor="let person of people"></mat-card>
+@for (item of items(); track item.id) {
+<!-- Template for each item -->
+} @empty {
+<!-- Template when collection is empty -->
+}
 ```
 
-## Etape 6
+### toSignal
 
-Vérifiez votre travail en vous plaçant à la racine du dossier TP et en lançant la commande:
+The `toSignal` is a utility that helps convert observables to signals. It takes an observable and an optional configuration object as parameters.
 
-```bash
-npm run client -- 08-ng-for
+```typescript
+const configObject = { initialValue: '[]', sync: true | false };
 ```
 
+## Troubleshooting
 
-
+- **Blank Page**: Ensure all components are properly imported and declared in the `main.ts` file
+- **Type Errors**: Check that all properties accessed in the template exist in the corresponding TypeScript interfaces
+- **Missing Styles**: Verify that all required Angular Material modules are imported
+- **API Errors**: Make sure the backend server is running and accessible at the specified endpoint

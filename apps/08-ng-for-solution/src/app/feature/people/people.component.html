@@ -1,5 +1,5 @@
 <section>
-  @for (person of people$ |async;track person.id) {
+  @for (person of people();track person.id) {
     <mat-card appearance="outlined" class="mat-whiteframe-2dp">
       <mat-card-title-group>
         <img mat-card-image [ngSrc]="person.photo" alt="person-photo" height="128" width="128" />
@@ -32,5 +32,7 @@
         </div>
       </mat-card-content>
     </mat-card>
+  } @empty {
+    No People for this moment
   }
 </section>

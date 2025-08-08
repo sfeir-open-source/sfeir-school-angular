@@ -1,37 +1,30 @@
-# Exercice 20-reactive-form-custom-validator (dossier apps/20-reactive-form-custom-validator)
+# Exercise 20: Reactive Form Custom Validator
 
-L'objectif de ce workshop est de vous faire créer un validateur de formulaire custom
+In this exercise, you'll learn how to create and implement a custom validator for reactive forms in Angular. You'll create a validator that ensures email addresses follow the SFEIR company format.
 
-<br>
+## Step 1: Create a Custom Validator
 
+1. In the `shared/components/form/people-form.ts` file, add a static method called `sfeirEmailValidator`:
 
-## Etape 1
+This validator checks if the email follows the pattern: `firstname.lastinitial@sfeir.com` (e.g., `john.d@sfeir.com`).
 
-Dans le fichier **shared/components/form/form.ts**,  créez une fonction static nommé 'sfeirEmailValidator'
+## Step 2: Apply the Custom Validator
 
-Ce validator doit valider le pattern de votre adresse mail en matchant la regex suivante: /^\w+\.\w@sfeir\.com\$/
+1. In the `PersonForm` class constructor, apply your custom validator to the email field:
 
-<br><br>
+## Step 3: Display Validation Errors
 
-## Etape 3
+1. In the `form.html` file, add error messages for the email field:
 
-Dans le fichier **form.ts** enregistrez votre custom validateur sur le control Email, celui doit être requis et respecter votre pattern de l'address mail
+## Step 4: Test Your Validator
 
-Astuce, appelez votre validator de la manière suivante:
+1. Try submitting the form with different email formats to verify your validator works correctly.
+2. The form should only accept emails in the format `xxxxx.x@sfeir.com`.
+3. The appropriate error message should appear when an invalid email is entered.
 
-```typescript
-PersonForm.sfeirEmailValidator;
-```
+## Step 5: Run Your Application
 
-<br><br>
-
-## Etape 5
-
-Dans le fichier **form.component.html**, affichez un message d'erreur en cas de non matching à cette regex
-
-## Etape 6
-
-Vérifiez votre travail en lançant la commande suivante:
+Verify your work by running the following command:
 
 ```bash
 npm run client -- 20-reactive-form-custom-validator

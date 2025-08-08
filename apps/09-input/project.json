@@ -8,16 +8,26 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/09-input",
         "index": "apps/09-input/src/index.html",
         "browser": "apps/09-input/src/main.ts",
-        "polyfills": ["apps/09-input/src/polyfills.ts"],
+        "polyfills": [
+          "apps/09-input/src/polyfills.ts"
+        ],
         "tsConfig": "apps/09-input/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/09-input/src/favicon.ico", "apps/09-input/src/assets"],
-        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/09-input/src/styles.scss"],
+        "assets": [
+          "apps/09-input/src/favicon.ico",
+          "apps/09-input/src/assets"
+        ],
+        "styles": [
+          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+          "apps/09-input/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -53,6 +63,12 @@
     },
     "serve": {
       "executor": "@angular-devkit/build-angular:dev-server",
+      "dependsOn": [
+        {
+          "projects": "server-express",
+          "target": "serve"
+        }
+      ],
       "configurations": {
         "production": {
           "buildTarget": "09-input:build:production"
@@ -61,7 +77,8 @@
           "buildTarget": "09-input:build:development"
         }
       },
-      "defaultConfiguration": "development"
+      "defaultConfiguration": "development",
+      "continuous": true
     },
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
@@ -74,7 +91,9 @@
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/apps/09-input"],
+      "outputs": [
+        "{workspaceRoot}/coverage/apps/09-input"
+      ],
       "options": {
         "jestConfig": "apps/09-input/jest.config.ts"
       }

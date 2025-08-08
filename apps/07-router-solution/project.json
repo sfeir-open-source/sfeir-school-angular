@@ -8,16 +8,26 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/07-router-solution",
         "index": "apps/07-router-solution/src/index.html",
         "browser": "apps/07-router-solution/src/main.ts",
-        "polyfills": ["apps/07-router-solution/src/polyfills.ts"],
+        "polyfills": [
+          "apps/07-router-solution/src/polyfills.ts"
+        ],
         "tsConfig": "apps/07-router-solution/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/07-router-solution/src/favicon.ico", "apps/07-router-solution/src/assets"],
-        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/07-router-solution/src/styles.scss"],
+        "assets": [
+          "apps/07-router-solution/src/favicon.ico",
+          "apps/07-router-solution/src/assets"
+        ],
+        "styles": [
+          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+          "apps/07-router-solution/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -53,6 +63,12 @@
     },
     "serve": {
       "executor": "@angular-devkit/build-angular:dev-server",
+      "dependsOn": [
+        {
+          "projects": "server-express",
+          "target": "serve"
+        }
+      ],
       "configurations": {
         "production": {
           "buildTarget": "07-router-solution:build:production"
@@ -61,7 +77,8 @@
           "buildTarget": "07-router-solution:build:development"
         }
       },
-      "defaultConfiguration": "development"
+      "defaultConfiguration": "development",
+      "continuous": true
     },
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
@@ -74,7 +91,9 @@
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/apps/07-router-solution"],
+      "outputs": [
+        "{workspaceRoot}/coverage/apps/07-router-solution"
+      ],
       "options": {
         "jestConfig": "apps/07-router-solution/jest.config.ts"
       }

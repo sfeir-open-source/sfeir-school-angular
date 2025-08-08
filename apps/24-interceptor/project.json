@@ -8,16 +8,26 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/24-interceptor",
         "index": "apps/24-interceptor/src/index.html",
         "browser": "apps/24-interceptor/src/main.ts",
-        "polyfills": ["apps/24-interceptor/src/polyfills.ts"],
+        "polyfills": [
+          "apps/24-interceptor/src/polyfills.ts"
+        ],
         "tsConfig": "apps/24-interceptor/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/24-interceptor/src/favicon.ico", "apps/24-interceptor/src/assets"],
-        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/24-interceptor/src/styles.scss"],
+        "assets": [
+          "apps/24-interceptor/src/favicon.ico",
+          "apps/24-interceptor/src/assets"
+        ],
+        "styles": [
+          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+          "apps/24-interceptor/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -53,6 +63,12 @@
     },
     "serve": {
       "executor": "@angular-devkit/build-angular:dev-server",
+      "dependsOn": [
+        {
+          "projects": "server-express",
+          "target": "serve"
+        }
+      ],
       "configurations": {
         "production": {
           "buildTarget": "24-interceptor:build:production"
@@ -61,7 +77,8 @@
           "buildTarget": "24-interceptor:build:development"
         }
       },
-      "defaultConfiguration": "development"
+      "defaultConfiguration": "development",
+      "continuous": true
     },
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
@@ -74,7 +91,9 @@
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/apps/24-interceptor"],
+      "outputs": [
+        "{workspaceRoot}/coverage/apps/24-interceptor"
+      ],
       "options": {
         "jestConfig": "apps/24-interceptor/jest.config.ts"
       }

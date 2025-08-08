@@ -1,52 +1,60 @@
-# Exercice 22-guards (dossier apps/22-guards)
+# Exercise 22: Route Guards in Angular (folder apps/22-guards)
 
-L'objectif de ce workshop est de vous faire écrire un guard qui vérifie que l'id de l'utilisateur est bien formaté
+In this workshop, you'll implement a route guard to validate the format of a person ID before allowing navigation to the person details page. Route guards are an essential part of Angular's routing system that allow you to control access to routes based on certain conditions.
 
-<br>
+## Step 1: Create a Guards Directory
 
-## Etape 1
+1. Create a new directory called `guards` in the `core` directory:
 
-Dans le dossier update-person, créez un dossier guards
+## Step 2: Create the Route Guard
 
-<br><br>
+1. Create a new file called `main-routing-guard.ts` in the `core/guards` directory
+2. Inside this file create the updatePersonGuard function
+   This guard:
+   - Uses the functional guard approach with `CanMatchFn`
+   - Checks if the person ID in the URL matches the pattern `[a-z0-9]{24}` (24 alphanumeric characters)
+   - Returns `true` if the ID is valid, allowing navigation to proceed
+   - Redirects to the home page if the ID is invalid
 
-## Etape 2
+## Step 3: Apply the Guard to the Route
 
-Dans le dossier guards créez un guard update à l'aide du CLI qui va implémenter l'interface canActivate
+1. In `main.ts`, import the guard:
+2. Apply the guard to the 'people/:id' route:
 
-Astuce: passez l'option --implements [canActivate]
+## Step 4: Test Your Implementation
 
-<br><br>
+1. Run the application:
 
-## Etape 3
+   ```bash
+   npm run client -- 22-guards
+   ```
 
-Implémentez votre guard qui doit respectez les condition suivante:
+2. Test the guard by navigating to different URLs:
+   - Try a valid ID: `/people/abc123456789012345678901` (should work)
+   - Try an invalid ID: `/people/123` (should redirect to home)
 
-- si l'id de la personne ne respecte pas le pattern: [a-z0-9]{24} alors il faut retourner sur la page home
+## Understanding Angular Route Guards
 
-<br><br>
+Angular provides several types of route guards:
 
-## Etape 4
+- **CanMatch**: Determines if a route can be matched (used in our example)
+- **CanActivate**: Determines if a route can be activated
+- **CanActivateChild**: Determines if child routes can be activated
+- **CanDeactivate**: Determines if a user can leave a route
+- **Resolve**: Pre-fetches data before activating a route
 
-Dans le module UpdatePerson module, dans la propriété providers, ajoutez votre guard
+In modern Angular (v14+), functional guards are preferred over class-based guards for their simplicity and better tree-shaking.
 
-<br><br>
+## Troubleshooting
 
-## Etape 5
+- If the guard isn't working, check that you've imported it correctly in `main.ts`
+- Verify that the regex pattern is correctly defined
+- Check the browser console for any errors
+- Make sure you're using the correct guard type for your use case
 
-Dans le module UpdatePersonRoutingModule, protégez votre route avec votre guard
+## Additional Notes
 
-```javascript
-{ path: '', component: UpdatePersonComponent, canActivate: [UpdateGuard] }
-```
-
-<br><br>
-
-## Etape 6
-
-Vérifiez votre travail en lançant la commande suivante:
-
-```bash
-npm run client -- 22-guards
-```
-
+- Route guards are a powerful way to control navigation in your application
+- They can be used for authentication, authorization, form validation, and more
+- Consider using multiple guards for complex navigation rules
+- Guards can return observables or promises for asynchronous validation

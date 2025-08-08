@@ -1,6 +1,0 @@
-<section>
-  @if (person$ | async;as person) {
-    <sfeir-card [person]="person" (personDelete)="getRandomPerson()" />
-  }
-</section>
-<button mat-fab color="accent" (click)="getRandomPerson()"><i class="material-icons">autorenew</i></button>

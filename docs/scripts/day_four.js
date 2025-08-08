@@ -1,75 +1,112 @@
 function stateManagementElf() {
+  const STATE_MANAGEMENT = 'state-management';
   return [
-    'state-management/angular_500.md',
-    'state-management/transition_slide.md',
-    'state-management/introduction.md',
-    'state-management/elf/introduction.md',
-    'state-management/elf/store.md',
-    'state-management/elf/entities.md',
+    `${STATE_MANAGEMENT}/ANGULAR-500.md`,
+    `${STATE_MANAGEMENT}/00-TRANSITION-SLIDE.md`,
+    `${STATE_MANAGEMENT}/01-INTRODUCTION.md`,
+    `${STATE_MANAGEMENT}/elf/01-INTRODUCTION.md`,
+    `${STATE_MANAGEMENT}/elf/02-STORE.md`,
+    `${STATE_MANAGEMENT}/elf/03-ENTITIES.md`,
+    `${STATE_MANAGEMENT}/elf/100-LAB.md`,
   ];
 }
 
 function stateManagementNgxs() {
+  const STATE_MANAGEMENT_NGXS = 'state-management/ngxs';
+
   return [
-    'state-management/ngxs/introduction.md',
-    'state-management/ngxs/store.md',
-    'state-management/ngxs/actions.md',
-    'state-management/ngxs/state.md',
-    'state-management/ngxs/selectors.md',
-    'state-management/ngxs/exercice.md',
+    `${STATE_MANAGEMENT_NGXS}/01-INTRODUCTION.md`,
+    `${STATE_MANAGEMENT_NGXS}/02-STORE.md`,
+    `${STATE_MANAGEMENT_NGXS}/03-ACTIONS.md`,
+    `${STATE_MANAGEMENT_NGXS}/04-STATE.md`,
+    `${STATE_MANAGEMENT_NGXS}/05-SELECTORS.md`,
+    `${STATE_MANAGEMENT_NGXS}/06-NGRX-SIGNALS.md`,
+    `${STATE_MANAGEMENT_NGXS}/100-LAB.md`,
   ];
 }
 
 function stateManagementNgrx() {
+  const STATE_MANAGEMENT_NGRX = 'state-management/ngrx';
   return [
-    'state-management/ngrx/introduction.md',
-    'state-management/ngrx/actions.md',
-    'state-management/ngrx/state.md',
-    'state-management/ngrx/selectors.md',
-    'state-management/ngrx/reducers.md',
-    'state-management/ngrx/store.md',
-    'state-management/ngrx/effects.md',
-    'state-management/ngrx/exercice.md',
+    `${STATE_MANAGEMENT_NGRX}/01-INTRODUCTION.md`,
+    `${STATE_MANAGEMENT_NGRX}/02-ACTIONS.md`,
+    `${STATE_MANAGEMENT_NGRX}/03-STATE.md`,
+    `${STATE_MANAGEMENT_NGRX}/04-SELECTORS.md`,
+    `${STATE_MANAGEMENT_NGRX}/05-REDUCERS.md`,
+    `${STATE_MANAGEMENT_NGRX}/06-STORE.md`,
+    `${STATE_MANAGEMENT_NGRX}/07-EFFECTS.md`,
+    `${STATE_MANAGEMENT_NGRX}/100-LAB.md`,
   ];
 }
 
 function unitTestSlides() {
+  const UNIT_TESTS = 'unit-tests';
   return [
-    'unit-tests/transition_slide.md',
-    'unit-tests/tools.md',
-    'unit-tests/concepts.md',
-    'unit-tests/components/introduction.md',
-    'unit-tests/components/exemple.md',
-    'unit-tests/directives/introduction.md',
-    'unit-tests/directives/exemple.md',
-    'unit-tests/services/introduction.md',
-    'unit-tests/services/helpers_service.md',
-    'unit-tests/services/http_service.md',
-    'unit-tests/pipes/introduction.md',
-    'unit-tests/pipes/exemple.md',
-    'unit-tests/jest/introduction.md',
-    'unit-tests/jest/mock.md',
-    'unit-tests/angular-testing-library/introduction.md',
-    'unit-tests/angular-testing-library/core-concepts.md',
-    'unit-tests/angular-testing-library/exemple.md',
-    'unit-tests/exercice.md',
+    `${UNIT_TESTS}/00-TRANSITION-SLIDE.md`,
+    `${UNIT_TESTS}/01-TOOLS.md`,
+    `${UNIT_TESTS}/02-CONCEPTS.md`,
+    `${UNIT_TESTS}/components/01-INTRODUCTION.md`,
+    `${UNIT_TESTS}/components/02-EXAMPLE.md`,
+    `${UNIT_TESTS}/directives/01-INTRODUCTION.md`,
+    `${UNIT_TESTS}/directives/02-EXAMPLE.md`,
+    `${UNIT_TESTS}/services/01-INTRODUCTION.md`,
+    `${UNIT_TESTS}/services/02-HELPERS-SERVICE.md`,
+    `${UNIT_TESTS}/services/03-HTTP-SERVICE.md`,
+    `${UNIT_TESTS}/pipes/01-INTRODUCTION.md`,
+    `${UNIT_TESTS}/pipes/02-EXAMPLE.md`,
+    `${UNIT_TESTS}/jest/01-INTRODUCTION.md`,
+    `${UNIT_TESTS}/jest/02-MOCK.md`,
+    `${UNIT_TESTS}/angular-testing-library/01-INTRODUCTION.md`,
+    `${UNIT_TESTS}/angular-testing-library/02-CORE-CONCEPTS.md`,
+    `${UNIT_TESTS}/angular-testing-library/03-EXAMPLE.md`,
+    `${UNIT_TESTS}/100-LAB.md`,
   ];
 }
 
 function pwaSlides() {
-  return ['pwa/transition_slide.md', 'pwa/introduction.md', 'pwa/service_worker_configuration.md', 'pwa/service_worker_communication.md'];
+  const PWA = 'pwa';
+  return [
+    `${PWA}/00-TRANSITION-SLIDE.md`,
+    `${PWA}/01-INTRODUCTION.md`,
+    `${PWA}/02-SERVICE-WORKER-CONFIGURATION.md`,
+    `${PWA}/03-SERVICE-WORKER-COMMUNICATION.md`,
+  ];
 }
 
 function serverSideSlides() {
-  return ['server-side/transition_slide.md', 'server-side/introduction.md'];
+  const SERVER_SIDE = 'server-side';
+  return [`${SERVER_SIDE}/00-TRANSITION-SLIDE.md`, `${SERVER_SIDE}/01-INTRODUCTION.md`];
 }
 
 function librarySlides() {
-  return ['library/transition_slide.md', 'library/introduction.md', 'library/library.md', 'library/ng-packager.md', 'library/dependencies.md'];
+  const LIBRARY = 'library';
+  return [
+    `${LIBRARY}/00-TRANSITION-SLIDE.md`,
+    `${LIBRARY}/01-INTRODUCTION.md`,
+    `${LIBRARY}/02-LIBRARY.md`,
+    `${LIBRARY}/03-NG-PACKAGR.md`,
+    `${LIBRARY}/04-DEPENDENCIES.md`,
+  ];
 }
 
 function nativeFederationSlides() {
-  return ['native-federation/transition_slide.md', 'native-federation/introduction.md', 'native-federation/setup-native-federation.md'];
+  const NATIVE_FEDERATION = 'native-federation';
+  return [
+    `${NATIVE_FEDERATION}/00-TRANSITION-SLIDE.md`,
+    `${NATIVE_FEDERATION}/01-INTRODUCTION.md`,
+    `${NATIVE_FEDERATION}/02-SETUP-NATIVE-FEDERATION.md`,
+  ];
+}
+
+function performancesSlides() {
+  const PERFORMANCES = 'performances';
+  return [
+    `${PERFORMANCES}/00-TRANSITION-SLIDE.md`,
+    `${PERFORMANCES}/01-IMAGES.md`,
+    `${PERFORMANCES}/02-DEFERRED-VIEWS.md`,
+    `${PERFORMANCES}/03-LAZYLOAD-COMPONENT.md`,
+    `${PERFORMANCES}/100-LAB.md`,
+  ];
 }
 
 export function dayFourSlides() {
@@ -82,5 +119,6 @@ export function dayFourSlides() {
     ...serverSideSlides(),
     ...librarySlides(),
     ...nativeFederationSlides(),
+    ...performancesSlides(),
   ];
 }

@@ -6,10 +6,10 @@
 
 Dans le composant FormComponent, et particulièrement dans le fichier **form.component.html** ajouter les règles de validations suivantes:
 
--   firstname --> required et minLength à deux caractères
--   lastname --> required et minLength à deux caractères
--   email --> required
--   phone --> required et pattern (\d{10})
+- firstname --> required et minLength à deux caractères
+- lastname --> required et minLength à deux caractères
+- email --> required
+- phone --> required et pattern (\d{10})
 
 <br><br>
 
@@ -21,18 +21,9 @@ Astuce: voici un example
 
 ```html
 <mat-form-field appearance="outline">
-    <mat-label>First name</mat-label>
-    <input
-        type="text"
-        matInput
-        placeholder="First name"
-        [(ngModel)]="person.firstname"
-        name="firstname"
-        #firstName="ngModel"
-        required
-        minlength="2"
-    />
-    <mat-error *ngIf="firstName.errors?.['required']">Ce champs est requis</mat-error>
+  <mat-label>First name</mat-label>
+  <input type="text" matInput placeholder="First name" [(ngModel)]="person.firstname" name="firstname" #firstName="ngModel" required minlength="2" />
+  <mat-error *ngIf="firstName.errors?.['required']">Ce champs est requis</mat-error>
 </mat-form-field>
 ```
 
@@ -48,6 +39,6 @@ Désactivez le bouton submit si le formulaire n'est pas valide
 
 Vérifiez votre travail en lançant la commande suivante:
 
-```bash
+```shell
 npm run client -- 17-template-driven-form-validation
 ```

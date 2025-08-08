@@ -19,7 +19,7 @@ describe('HomeComponent', () => {
   });
   test('should create a people set to the first person of the PEOPLE mock', () => {
     const [firstPerson] = PEOPLE;
-    expect(component.person).toEqual(firstPerson);
+    expect(component.person()).toEqual(firstPerson);
   });
   test('should create a card', () => {
     const card = debugElement.query(By.css('mat-card'));
@@ -30,12 +30,12 @@ describe('HomeComponent', () => {
     expect(image).toBeTruthy();
     expect(image.getAttribute('height')).toEqual('128');
     expect(image.getAttribute('width')).toEqual('128');
-    expect((image as any).ngSrc).toEqual(component.person.photo);
+    expect(image.getAttribute('src')).toEqual(component.person().photo);
   });
   test('should display the name of the person', () => {
     const title: HTMLElement = debugElement.query(By.css('mat-card-title')).nativeElement;
-    expect(title.textContent).toContain(component.person.firstname);
-    expect(title.textContent).toContain(component.person.lastname);
+    expect(title.textContent).toContain(component.person().firstname);
+    expect(title.textContent).toContain(component.person().lastname);
   });
   test('should display three subtitle', () => {
     const subtitle: HTMLElement[] = debugElement.queryAll(By.css('mat-card-subtitle')).map(el => el.nativeElement);
@@ -43,20 +43,20 @@ describe('HomeComponent', () => {
   });
   test('should display the entity of the person as a subtitle', () => {
     const [entity]: HTMLElement[] = debugElement.queryAll(By.css('mat-card-subtitle')).map(el => el.nativeElement);
-    expect(entity.textContent).toContain(component.person.entity);
+    expect(entity.textContent).toContain(component.person().entity);
   });
   test('should display the mail of the person as a subtitle', () => {
     const [, email]: HTMLElement[] = debugElement.queryAll(By.css('mat-card-subtitle')).map(el => el.nativeElement);
-    expect(email.textContent).toContain(component.person.email);
+    expect(email.textContent).toContain(component.person().email);
   });
   test('should display the phone of the person as subtitle', () => {
     const [, , phone]: HTMLElement[] = debugElement.queryAll(By.css('mat-card-subtitle')).map(el => el.nativeElement);
-    expect(phone.textContent).toContain(component.person.phone);
+    expect(phone.textContent).toContain(component.person().phone);
   });
   test('should display the manager of the person', () => {
     const cardContent: DebugElement = debugElement.query(By.css('mat-card-content'));
     const manager: HTMLElement = cardContent.queryAll(By.css('.contact-info'))[0].nativeElement;
-    expect(manager.textContent).toContain(component.person.manager);
+    expect(manager.textContent).toContain(component.person().manager);
   });
   test('should display three action buttons', () => {
     const buttons: HTMLAnchorElement[] = debugElement.queryAll(By.css('[mat-button]')).map(el => el.nativeElement);

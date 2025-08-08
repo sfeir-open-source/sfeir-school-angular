@@ -1,0 +1,23 @@
+<section>
+  @switch (view()) {
+    @case ('card') {
+      @for (person of people(); track person.id) {
+        <sfeir-card data-testid="card-view" [person]="person" (personDelete)="deletePerson($event)" />
+      } @empty {
+        No Data Yet
+      }
+    }
+    @case ('list') {
+      @defer (when view() === 'list') {
+        <sfeir-people-preview-list data-testid="list-view" [people]="people()" />
+      }
+    }
+  }
+</section>
+
+<section class="buttons-fab">
+  <button mat-fab color="accent" class="button-add" (click)="showDialog()" data-testid="button-modal"><i class="material-icons">add</i></button>
+  <button mat-fab color="warn" (click)="changeView()" data-testid="view-button">
+    <i class="material-icons">{{ view() === 'card' ? 'list' : 'view_stream' }}</i>
+  </button>
+</section>

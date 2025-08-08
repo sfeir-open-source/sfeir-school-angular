@@ -8,16 +8,26 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/16-template-driven-form",
         "index": "apps/16-template-driven-form/src/index.html",
         "browser": "apps/16-template-driven-form/src/main.ts",
-        "polyfills": ["apps/16-template-driven-form/src/polyfills.ts"],
+        "polyfills": [
+          "apps/16-template-driven-form/src/polyfills.ts"
+        ],
         "tsConfig": "apps/16-template-driven-form/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/16-template-driven-form/src/favicon.ico", "apps/16-template-driven-form/src/assets"],
-        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/16-template-driven-form/src/styles.scss"],
+        "assets": [
+          "apps/16-template-driven-form/src/favicon.ico",
+          "apps/16-template-driven-form/src/assets"
+        ],
+        "styles": [
+          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+          "apps/16-template-driven-form/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -53,6 +63,12 @@
     },
     "serve": {
       "executor": "@angular-devkit/build-angular:dev-server",
+      "dependsOn": [
+        {
+          "projects": "server-express",
+          "target": "serve"
+        }
+      ],
       "configurations": {
         "production": {
           "buildTarget": "16-template-driven-form:build:production"
@@ -61,7 +77,8 @@
           "buildTarget": "16-template-driven-form:build:development"
         }
       },
-      "defaultConfiguration": "development"
+      "defaultConfiguration": "development",
+      "continuous": true
     },
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
@@ -74,7 +91,9 @@
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/apps/16-template-driven-form"],
+      "outputs": [
+        "{workspaceRoot}/coverage/apps/16-template-driven-form"
+      ],
       "options": {
         "jestConfig": "apps/16-template-driven-form/jest.config.ts"
       }

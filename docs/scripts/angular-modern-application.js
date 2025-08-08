@@ -1,22 +1,22 @@
 function introduction() {
-  return ['standalone-components/angular-modern-application.md', 'speaker/nicolas_frizzarin.md', 'presentation/flow_school.md'];
+  return ['standalone-components/angular-modern-application.md', 'speaker/00-nicolas-frizzarin.md', 'presentation/01-fLOW-SCHOOL.md'];
 }
 
 function summary() {
   return [
-    'architecture/transition_slide.md',
-    'architecture/introduction_schema.md',
-    'architecture/component.md',
-    'architecture/module.md',
-    'architecture/bootstrap_app.md',
-    'architecture/module-bundler.md',
+    'architecture/00-TRANSITION-SLIDE.md',
+    'architecture/01-INTRODUCTION-SCHEMA.md',
+    'architecture/02-COMPONENT.md',
+    'architecture/04-MODULE.md',
+    'architecture/05-BOOTSTRAPPING.md',
+    'architecture/06-MODULE-BUNDLER.md',
   ];
 }
 
 function standaloneComponents() {
   return [
-    'standalone-components/transition_slide.md',
-    'standalone-components/introduction.md',
+    'standalone-components/00-TRANSITION-SLIDE.md',
+    'standalone-components/01-INTRODUCTION.md',
     'standalone-components/injector.md',
     'standalone-components/routing.md',
   ];
@@ -32,12 +32,12 @@ function interceptorsSlides() {
     'interceptors/modification.md',
     'interceptors/register.md',
     'interceptors/context.md',
-    'standalone-components/exercice.md',
+    'standalone-components/100-LAB.md',
   ];
 }
 
 function signals() {
-  return ['signals/transition_slide.md', 'signals/introduction.md', 'signals/signals.md', 'signals/exercice.md'];
+  return ['signals/00-TRANSITION-SLIDE.md', 'signals/01-INTRODUCTION.md', 'signals/signals.md', 'signals/100-LAB.md'];
 }
 
 export function AngularModernApplication() {

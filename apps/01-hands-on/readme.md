@@ -1,32 +1,31 @@
-# Exercice: 01:hands-on (dossier apps/01-hands-on)
+# Exercise: 01-hands-on (apps/01-hands-on directory)
 
-Le but de cet exercice est de comprendre comment fonctionne le bootstrapping d'une application angular
+The goal of this exercise is to understand how Angular application bootstrapping works.
 
-Actuellement si vous lancez, l'application une erreur va s'afficher dans l'inspecteur de votre navigateur.
+Currently, if you run the application, an error will appear in your browser's developer tools console.
 
-Cet exercice a pour but de corriger cette erreur :) 
+This exercise aims to fix this error :)
 
 <br>
 
-## Etape 1
+## Step 1
 
-Dans le dossier src/app, créez le composant AppComponent, ce composant doit posséder une properties name avec pour valeur votre prénom
+In the src/app directory, create the AppComponent component. This component should have a property called name with your first name as its value.
 <br><br>
 
-## Etape 2
+## Step 2
 
-Dans le fichier **app.module.ts** et particulièrement dans le tableau de la propriété **declarations** et **bootstrap** ajoutez le composant AppComponent
+In the **app.component.html** file, display the value of the **name** variable using the {{ name }} syntax, which is Angular's interpolation syntax.
 <br><br>
 
-## Etape 3
+## Step 3
 
-Dans le fichier, **app.component.html** affichez la valeur de la variable **name**, grâce à la syntax {{ name }} qui est la syntax de l'interpolation en Angular
-<br><br>
+In the **main.ts** file, bootstrap the AppComponent.
 
-## Etape 4
+## Step 4
 
-Vérifiez votre travail en vous plaçant à la racine du dossier workshop et en lançant la commande:
+Check your work by navigating to the workshop root directory and running the following command:
 
-```bash
+```shell
 npm run client -- 01-hands-on
 ```

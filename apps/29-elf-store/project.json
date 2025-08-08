@@ -8,16 +8,26 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/29-elf-store",
         "index": "apps/29-elf-store/src/index.html",
         "browser": "apps/29-elf-store/src/main.ts",
-        "polyfills": ["apps/29-elf-store/src/polyfills.ts"],
+        "polyfills": [
+          "apps/29-elf-store/src/polyfills.ts"
+        ],
         "tsConfig": "apps/29-elf-store/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/29-elf-store/src/favicon.ico", "apps/29-elf-store/src/assets"],
-        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/29-elf-store/src/styles.scss"],
+        "assets": [
+          "apps/29-elf-store/src/favicon.ico",
+          "apps/29-elf-store/src/assets"
+        ],
+        "styles": [
+          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+          "apps/29-elf-store/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -53,6 +63,14 @@
     },
     "serve": {
       "executor": "@angular-devkit/build-angular:dev-server",
+      "dependsOn": [
+        {
+          "projects": [
+            "server-express"
+          ],
+          "target": "serve"
+        }
+      ],
       "configurations": {
         "production": {
           "buildTarget": "29-elf-store:build:production"
@@ -61,7 +79,8 @@
           "buildTarget": "29-elf-store:build:development"
         }
       },
-      "defaultConfiguration": "development"
+      "defaultConfiguration": "development",
+      "continuous": true
     },
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
@@ -74,7 +93,9 @@
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/apps/29-elf-store"],
+      "outputs": [
+        "{workspaceRoot}/coverage/apps/29-elf-store"
+      ],
       "options": {
         "jestConfig": "apps/29-elf-store/jest.config.ts"
       }
