@@ -1,5 +1,3 @@
-<!-- .slide: class="with-code inconsolata" -->
-
 # NGXS Signal Utilities
 
 NGXS offers utilities for working with signals that can be used with various state management solutions: <br/><br/>

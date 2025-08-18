@@ -44,8 +44,8 @@ export class App {
 # Available hooks
 
 - **effect**: called during the change detection phase (called multiple times) <br/><br/>
-- **afterRender**: called when the component is rendered (called only on time) <br/><br/>
-- **afterEachRender**: called each time the component is rendered (called multiple time) <br/><br/>
+- **afterNextRender**: called when the component is rendered (called only on time) <br/><br/>
+- **afterEveryRender**: called each time the component is rendered (called multiple time) <br/><br/>
 - **afterRenderEffects**: called when the component is rendered (called multiple time) <br/><br/>
 
 ##==##
