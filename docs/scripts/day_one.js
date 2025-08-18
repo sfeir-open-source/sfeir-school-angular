@@ -4,22 +4,22 @@
  */
 
 function introductionSlides() {
-  const PRESENTATION = 'presentation';
+  const PRESENTATION = '00-PRESENTATION';
   return [`${PRESENTATION}/00-WELCOME.md`, `${PRESENTATION}/01-fLOW-SCHOOL.md`];
 }
 
 function speakerSlides() {
-  const SPEAKER = 'speaker';
+  const SPEAKER = '00-SPEAKER';
   return [`${SPEAKER}/00-nicolas-frizzarin.md`];
 }
 
 function basicsSlides() {
-  const BASICS = 'basics';
+  const BASICS = '01-BASICS';
   return [`${BASICS}/00-TRANSITION-SLIDE.md`, `${BASICS}/01-ENVIRONMENT-SETUP.md`, `${BASICS}/02-ANGULAR.md`, `${BASICS}/03-MATERIAL.md`];
 }
 
 function architectureSlides() {
-  const ARCHITECTURE = 'architecture';
+  const ARCHITECTURE = '02-ARCHITECTURE';
   return [
     `${ARCHITECTURE}/00-TRANSITION-SLIDE.md`,
     `${ARCHITECTURE}/01-INTRODUCTION-SCHEMA.md`,
@@ -32,17 +32,17 @@ function architectureSlides() {
 }
 
 function cliSlides() {
-  const CLI = 'cli';
+  const CLI = '03-CLI';
   return [`${CLI}/00-TRANSITION-SLIDE.md`, `${CLI}/01-COMMANDS.md`, `${CLI}/100-LAB.md`];
 }
 
 function componentsSlides() {
-  const COMPONENTS = 'components';
+  const COMPONENTS = '04-COMPONENTS';
   return [`${COMPONENTS}/00-TRANSITION-SLIDE.md`, `${COMPONENTS}/01-CONCEPTS.md`, `${COMPONENTS}/100-LAB.md`];
 }
 
 function dataBindingSlides() {
-  const DATA_BINDING = 'databinding';
+  const DATA_BINDING = '05-DATA-BINDING';
   return [
     `${DATA_BINDING}/00-TRANSITION-SLIDE.md`,
     `${DATA_BINDING}/01-INTRODUCTION.md`,
@@ -55,17 +55,17 @@ function dataBindingSlides() {
 }
 
 function lifecycleSlides() {
-  const LIFECYCLE = 'lifecycle';
+  const LIFECYCLE = '06-LIFECYCLE';
   return [`${LIFECYCLE}/00-TRANSITION-SLIDE.md`, `${LIFECYCLE}/02-HOOK-IMPLEMENTATION.md`, `${LIFECYCLE}/03-HOOK.md`];
 }
 
 function eventSlides() {
-  const EVENT = 'event';
+  const EVENT = '07-EVENT';
   return [`${EVENT}/00-TRANSITION-SLIDE.md`, `${EVENT}/02-EVENTS.md`, `${EVENT}/100-LAB.md`];
 }
 
 function serverCommunicationSlides() {
-  const SERVER_COMMUNICATION = 'server-communication';
+  const SERVER_COMMUNICATION = '08-SERVER-COMMUNICATION';
 
   return [
     `${SERVER_COMMUNICATION}/00-TRANSITION-SLIDE.md`,
@@ -78,7 +78,7 @@ function serverCommunicationSlides() {
 }
 
 function navigationSlides() {
-  const NAVIGATION = 'navigation';
+  const NAVIGATION = '09-NAVIGATION';
   return [
     `${NAVIGATION}/00-TRANSITION-SLIDE.md`,
     `${NAVIGATION}/01-INTRODUCTION.md`,
@@ -89,12 +89,12 @@ function navigationSlides() {
 }
 
 function basicsFunctionalitiesSlides() {
-  const FUNCTIONALITIES = 'functionalities';
+  const FUNCTIONALITIES = '10-FUNCTIONALITIES';
   return [`${FUNCTIONALITIES}/00-TRANSITION-SLIDE.md`, `${FUNCTIONALITIES}/01-lOOP.md`, `${FUNCTIONALITIES}/100-LAB.md`];
 }
 
 function communicationSlides() {
-  const COMPONENT_COMMUNICATION = 'component-communication';
+  const COMPONENT_COMMUNICATION = '11-COMPONENT-COMMUNICATION';
 
   return [
     `${COMPONENT_COMMUNICATION}/00-TRANSITION-SLIDE.md`,

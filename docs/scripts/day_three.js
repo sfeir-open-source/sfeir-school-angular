@@ -1,28 +1,22 @@
-function lazyLoadingSlides() {
-  const NAVIGATION = 'navigation';
+function navigationAdvancedSlides() {
+  const NAVIGATION_ADVANCED = '18-NAVIGATION-ADVANCED';
   return [
-    `${NAVIGATION}/ANGULAR-300.md`,
-    `${NAVIGATION}/04-LAZY-LOADING-TRANSITION-SLIDE.md`,
-    `${NAVIGATION}/05-LAZY-LOADING-PRINCIPES.md`,
-    `${NAVIGATION}/06-LAZY-LOADING-ROUTE-DEFINITION.md`,
-    `${NAVIGATION}/07-LAZY-LOADING-ROUTE-DEFINITION-CHILD.md`,
-  ];
-}
-
-function guardsSlides() {
-  const NAVIGATION = 'navigation';
-  return [
-    `${NAVIGATION}/08-GUARDS-TRANSITION-SLIDE.md`,
-    `${NAVIGATION}/09-GUARDS-INTRODUCTION.md`,
-    `${NAVIGATION}/10-GUARDS-VERIFICATION.md`,
-    `${NAVIGATION}/11-GUARDS-RESOLVER.md`,
-    `${NAVIGATION}/101-LAB.md`,
-    `${NAVIGATION}/102-LAB.md`,
+    `${NAVIGATION_ADVANCED}/ANGULAR-300.md`,
+    `${NAVIGATION_ADVANCED}/00-LAZY-LOADING-TRANSITION-SLIDE.md`,
+    `${NAVIGATION_ADVANCED}/01-LAZY-LOADING-PRINCIPES.md`,
+    `${NAVIGATION_ADVANCED}/02-LAZY-LOADING-ROUTE-DEFINITION.md`,
+    `${NAVIGATION_ADVANCED}/03-LAZY-LOADING-ROUTE-DEFINITION-CHILD.md`,
+    `${NAVIGATION_ADVANCED}/04-GUARDS-TRANSITION-SLIDE.md`,
+    `${NAVIGATION_ADVANCED}/05-GUARDS-INTRODUCTION.md`,
+    `${NAVIGATION_ADVANCED}/06-GUARDS-VERIFICATION.md`,
+    `${NAVIGATION_ADVANCED}/07-GUARDS-RESOLVER.md`,
+    `${NAVIGATION_ADVANCED}/100-LAB.md`,
+    `${NAVIGATION_ADVANCED}/101-LAB.md`,
   ];
 }
 
 function interceptorsSlides() {
-  const INTERCEPTORS = 'interceptors';
+  const INTERCEPTORS = '19-INTERCEPTORS';
   return [
     `${INTERCEPTORS}/00-TRANSITION-SLIDE.md`,
     `${INTERCEPTORS}/01-CONCEPTS.md`,
@@ -34,7 +28,7 @@ function interceptorsSlides() {
 }
 
 function templatingSlides() {
-  const TEMPLATING = 'templating';
+  const TEMPLATING = '20-TEMPLATING';
   return [
     `${TEMPLATING}/00-TRANSITION-SLIDE.md`,
     `${TEMPLATING}/01-INTRODUCTION.md`,
@@ -46,39 +40,33 @@ function templatingSlides() {
   ];
 }
 
-function hostDirectivesSlides() {
-  const DIRECTIVE = 'directive';
+function directiveAdvancedSlides() {
+  const DIRECTIVE_ADVANCED = '21-DIRECTIVE-ADVANCED';
   return [
-    `${DIRECTIVE}/03-HOST-BINDING-LISTENER.md`,
-    `${DIRECTIVE}/04-HOST-BINDING.md`,
-    `${DIRECTIVE}/05-HOST-LISTENER.md`,
-    `${DIRECTIVE}/101-LAB.md`,
+    `${DIRECTIVE_ADVANCED}/00-TRANSITION-SLIDE.md`,
+    `${DIRECTIVE_ADVANCED}/01-HOST-BINDING.md`,
+    `${DIRECTIVE_ADVANCED}/02-HOST-LISTENER.md`,
+    `${DIRECTIVE_ADVANCED}/100-LAB.md`,
+    `${DIRECTIVE_ADVANCED}/ANGULAR-400.md`,
+    `${DIRECTIVE_ADVANCED}/03-STRUCTURAL-TRANSITION-SLIDE.md`,
+    `${DIRECTIVE_ADVANCED}/04-STRUCTURAL-DEFINITION.md`,
+    `${DIRECTIVE_ADVANCED}/05-STRUCTURAL-PROVIDERS.md`,
+    `${DIRECTIVE_ADVANCED}/101-LAB.md`,
   ];
 }
 
-function structuralDirectiveSlides() {
-  const DIRECTIVE = 'directive';
+function formAdvancedSlide() {
+  const FORMS_ADVANCED = '22-FORMS-ADVANCED';
   return [
-    `${DIRECTIVE}/ANGULAR-400.md`,
-    `${DIRECTIVE}/06-STRUCTURAL-TRANSITION-SLIDE.md`,
-    `${DIRECTIVE}/07-STRUCTURAL-DEFINITION.md`,
-    `${DIRECTIVE}/08-STRUCTURAL-PROVIDERS.md`,
-    `${DIRECTIVE}/102-LAB.md`,
-  ];
-}
-
-function customFormControlSlides() {
-  const FORMS = 'forms';
-  return [
-    `${FORMS}/custom-control/00-TRANSITION-SLIDE.md`,
-    `${FORMS}/custom-control/01-INTRODUCTION.md`,
-    `${FORMS}/custom-control/02-SETUP.md`,
-    `${FORMS}/custom-control/100-LAB.md`,
+    `${FORMS_ADVANCED}/00-TRANSITION-SLIDE.md`,
+    `${FORMS_ADVANCED}/01-INTRODUCTION.md`,
+    `${FORMS_ADVANCED}/02-SETUP.md`,
+    `${FORMS_ADVANCED}/100-LAB.md`,
   ];
 }
 
 function changeDetectionSlides() {
-  const CHANGE_DETECTION = 'change-detection';
+  const CHANGE_DETECTION = '23-CHANGE-DETECTION';
   return [
     `${CHANGE_DETECTION}/00-TRANSITION-SLIDE.md`,
     `${CHANGE_DETECTION}/01-INTRODUCTION.md`,
@@ -87,15 +75,13 @@ function changeDetectionSlides() {
   ];
 }
 
-export function dayThreeSLides() {
+export function dayThreeSlides() {
   return [
-    ...lazyLoadingSlides(),
-    ...guardsSlides(),
+    ...navigationAdvancedSlides(),
     ...interceptorsSlides(),
     ...templatingSlides(),
-    ...hostDirectivesSlides(),
-    ...structuralDirectiveSlides(),
-    ...customFormControlSlides(),
+    ...directiveAdvancedSlides(),
+    ...formAdvancedSlide(),
     ...changeDetectionSlides(),
   ];
 }

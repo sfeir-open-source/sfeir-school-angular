@@ -80,7 +80,7 @@ The feature already uses Signals and `ChangeDetectionStrategy.OnPush`. Keep it t
 Verify your work by running the application:
 
 ```bash
-npm run client -- 35-performances
+npm run client -- 35-30-PERFORMANCE
 ```
 
 Then:

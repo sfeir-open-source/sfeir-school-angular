@@ -1,18 +1,18 @@
 function stateManagementElf() {
-  const STATE_MANAGEMENT = 'state-management';
+  const STATE_MANAGEMENT = '24-STATE-MANAGEMENT';
   return [
     `${STATE_MANAGEMENT}/ANGULAR-500.md`,
     `${STATE_MANAGEMENT}/00-TRANSITION-SLIDE.md`,
     `${STATE_MANAGEMENT}/01-INTRODUCTION.md`,
-    `${STATE_MANAGEMENT}/elf/01-INTRODUCTION.md`,
-    `${STATE_MANAGEMENT}/elf/02-STORE.md`,
-    `${STATE_MANAGEMENT}/elf/03-ENTITIES.md`,
-    `${STATE_MANAGEMENT}/elf/100-LAB.md`,
+    `${STATE_MANAGEMENT}/ELF/01-INTRODUCTION.md`,
+    `${STATE_MANAGEMENT}/ELF/02-STORE.md`,
+    `${STATE_MANAGEMENT}/ELF/03-ENTITIES.md`,
+    `${STATE_MANAGEMENT}/ELF/100-LAB.md`,
   ];
 }
 
 function stateManagementNgxs() {
-  const STATE_MANAGEMENT_NGXS = 'state-management/ngxs';
+  const STATE_MANAGEMENT_NGXS = '24-STATE-MANAGEMENT/NGXS';
 
   return [
     `${STATE_MANAGEMENT_NGXS}/01-INTRODUCTION.md`,
@@ -20,13 +20,13 @@ function stateManagementNgxs() {
     `${STATE_MANAGEMENT_NGXS}/03-ACTIONS.md`,
     `${STATE_MANAGEMENT_NGXS}/04-STATE.md`,
     `${STATE_MANAGEMENT_NGXS}/05-SELECTORS.md`,
-    `${STATE_MANAGEMENT_NGXS}/06-NGRX-SIGNALS.md`,
+    `${STATE_MANAGEMENT_NGXS}/06-NGXS-SIGNALS.md`,
     `${STATE_MANAGEMENT_NGXS}/100-LAB.md`,
   ];
 }
 
 function stateManagementNgrx() {
-  const STATE_MANAGEMENT_NGRX = 'state-management/ngrx';
+  const STATE_MANAGEMENT_NGRX = '24-STATE-MANAGEMENT/NGRX';
   return [
     `${STATE_MANAGEMENT_NGRX}/01-INTRODUCTION.md`,
     `${STATE_MANAGEMENT_NGRX}/02-ACTIONS.md`,
@@ -40,31 +40,31 @@ function stateManagementNgrx() {
 }
 
 function unitTestSlides() {
-  const UNIT_TESTS = 'unit-tests';
+  const UNIT_TESTS = '25-UNIT-TESTS';
   return [
     `${UNIT_TESTS}/00-TRANSITION-SLIDE.md`,
     `${UNIT_TESTS}/01-TOOLS.md`,
     `${UNIT_TESTS}/02-CONCEPTS.md`,
-    `${UNIT_TESTS}/components/01-INTRODUCTION.md`,
-    `${UNIT_TESTS}/components/02-EXAMPLE.md`,
-    `${UNIT_TESTS}/directives/01-INTRODUCTION.md`,
-    `${UNIT_TESTS}/directives/02-EXAMPLE.md`,
-    `${UNIT_TESTS}/services/01-INTRODUCTION.md`,
-    `${UNIT_TESTS}/services/02-HELPERS-SERVICE.md`,
-    `${UNIT_TESTS}/services/03-HTTP-SERVICE.md`,
-    `${UNIT_TESTS}/pipes/01-INTRODUCTION.md`,
-    `${UNIT_TESTS}/pipes/02-EXAMPLE.md`,
-    `${UNIT_TESTS}/jest/01-INTRODUCTION.md`,
-    `${UNIT_TESTS}/jest/02-MOCK.md`,
-    `${UNIT_TESTS}/angular-testing-library/01-INTRODUCTION.md`,
-    `${UNIT_TESTS}/angular-testing-library/02-CORE-CONCEPTS.md`,
-    `${UNIT_TESTS}/angular-testing-library/03-EXAMPLE.md`,
+    `${UNIT_TESTS}/COMPONENTS/01-INTRODUCTION.md`,
+    `${UNIT_TESTS}/COMPONENTS/02-EXAMPLE.md`,
+    `${UNIT_TESTS}/DIRECTIVES/01-INTRODUCTION.md`,
+    `${UNIT_TESTS}/DIRECTIVES/02-EXAMPLE.md`,
+    `${UNIT_TESTS}/SERVICES/01-INTRODUCTION.md`,
+    `${UNIT_TESTS}/SERVICES/02-HELPERS-SERVICE.md`,
+    `${UNIT_TESTS}/SERVICES/03-HTTP-SERVICE.md`,
+    `${UNIT_TESTS}/PIPES/01-INTRODUCTION.md`,
+    `${UNIT_TESTS}/PIPES/02-EXAMPLE.md`,
+    `${UNIT_TESTS}/JEST/01-INTRODUCTION.md`,
+    `${UNIT_TESTS}/JEST/02-MOCK.md`,
+    `${UNIT_TESTS}/ANGULAR-TESTING-LIBRARY/01-INTRODUCTION.md`,
+    `${UNIT_TESTS}/ANGULAR-TESTING-LIBRARY/02-CORE-CONCEPTS.md`,
+    `${UNIT_TESTS}/ANGULAR-TESTING-LIBRARY/03-EXAMPLE.md`,
     `${UNIT_TESTS}/100-LAB.md`,
   ];
 }
 
 function pwaSlides() {
-  const PWA = 'pwa';
+  const PWA = '26-PWA';
   return [
     `${PWA}/00-TRANSITION-SLIDE.md`,
     `${PWA}/01-INTRODUCTION.md`,
@@ -74,12 +74,12 @@ function pwaSlides() {
 }
 
 function serverSideSlides() {
-  const SERVER_SIDE = 'server-side';
+  const SERVER_SIDE = '27-SERVER-SIDE';
   return [`${SERVER_SIDE}/00-TRANSITION-SLIDE.md`, `${SERVER_SIDE}/01-INTRODUCTION.md`];
 }
 
 function librarySlides() {
-  const LIBRARY = 'library';
+  const LIBRARY = '28-LIBRARY';
   return [
     `${LIBRARY}/00-TRANSITION-SLIDE.md`,
     `${LIBRARY}/01-INTRODUCTION.md`,
@@ -90,7 +90,7 @@ function librarySlides() {
 }
 
 function nativeFederationSlides() {
-  const NATIVE_FEDERATION = 'native-federation';
+  const NATIVE_FEDERATION = '29-NATIVE-FEDERATION';
   return [
     `${NATIVE_FEDERATION}/00-TRANSITION-SLIDE.md`,
     `${NATIVE_FEDERATION}/01-INTRODUCTION.md`,
@@ -99,7 +99,7 @@ function nativeFederationSlides() {
 }
 
 function performancesSlides() {
-  const PERFORMANCES = 'performances';
+  const PERFORMANCES = '30-PERFORMANCES';
   return [
     `${PERFORMANCES}/00-TRANSITION-SLIDE.md`,
     `${PERFORMANCES}/01-IMAGES.md`,
