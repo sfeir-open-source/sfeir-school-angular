@@ -16,7 +16,7 @@ import { MatButtonModule } from '@angular/material/button';
   styles: `
     .container-field-icon {
       display: flex;
-      gap: 1rem
+      gap: 1rem;
     }
   `,
 })
