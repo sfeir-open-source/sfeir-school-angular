@@ -37,8 +37,8 @@ describe('AppComponent', () => {
     const card = debugElement.query(By.css('mat-card'));
     expect(card).toBeTruthy();
   });
-  test('should contain the name of SFEIR - LUXEMBOURG in the card', () => {
+  test('should contain the name of SFEIR in the card', () => {
     const card: HTMLElement = debugElement.query(By.css('mat-card')).nativeElement;
-    expect(card.textContent?.includes('SFEIR - LUXEMBOURG')).toBeTruthy();
+    expect(card.textContent?.includes('SFEIR')).toBeTruthy();
   });
 });

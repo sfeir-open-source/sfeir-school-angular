@@ -9,5 +9,5 @@ import { MatToolbarModule } from '@angular/material/toolbar';
   imports: [MatToolbarModule, MatCardModule],
 })
 export class AppComponent {
-  name = 'SFEIR - LUXEMBOURG';
+  name = 'SFEIR';
 }

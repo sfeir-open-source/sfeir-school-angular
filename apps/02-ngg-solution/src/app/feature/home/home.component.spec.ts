@@ -20,8 +20,8 @@ describe('HomeComponent', () => {
     const matCard = debugElement.query(By.css('mat-card'));
     expect(matCard).toBeTruthy();
   });
-  test('should display the name Sfeir Luxembourg in the card', () => {
+  test('should display the name Sfeir in the card', () => {
     const matCard = debugElement.query(By.css('mat-card'));
-    expect(matCard.nativeElement.textContent).toContain('Sfeir Luxembourg');
+    expect(matCard.nativeElement.textContent).toContain('Sfeir');
   });
 });

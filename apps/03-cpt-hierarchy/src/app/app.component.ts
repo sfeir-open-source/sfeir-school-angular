@@ -9,5 +9,5 @@ import { MatToolbarModule } from '@angular/material/toolbar';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
-  name = 'SFEIR - LUXEMBOURG';
+  name = 'SFEIR';
 }
