@@ -31,7 +31,7 @@ function controlFlowSlides() {
 }
 
 function directiveSlides() {
-  const DIRECTIVE = '16-directive';
+  const DIRECTIVE = '16-DIRECTIVE';
   return [`${DIRECTIVE}/00-TRANSITION-SLIDE.md`, `${DIRECTIVE}/01-CUSTOM-DIRECTIVE.md`, `${DIRECTIVE}/100-LAB.md`];
 }
 
