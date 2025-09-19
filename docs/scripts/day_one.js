@@ -90,7 +90,7 @@ function navigationSlides() {
 
 function basicsFunctionalitiesSlides() {
   const FUNCTIONALITIES = '10-FUNCTIONALITIES';
-  return [`${FUNCTIONALITIES}/00-TRANSITION-SLIDE.md`, `${FUNCTIONALITIES}/01-lOOP.md`, `${FUNCTIONALITIES}/100-LAB.md`];
+  return [`${FUNCTIONALITIES}/00-TRANSITION-SLIDE.md`, `${FUNCTIONALITIES}/01-LOOP.md`, `${FUNCTIONALITIES}/100-LAB.md`];
 }
 
 function communicationSlides() {

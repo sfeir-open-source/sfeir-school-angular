@@ -21,7 +21,7 @@ A component's identity card<br/>
 
 - selector: Defines the HTML tag name to use this component (**mandatory**)
 - template/templateUrl: Defines the view structure (**mandatory**)
-- styles/styleUrls: Defines the component's styles (**mandatory**)
+- styles/styleUrls: Defines the component's styles
 - changeDetection: Controls how often the component checks for changes
 - providers: Defines dependency injection providers
 - animations: Defines animations for the component
