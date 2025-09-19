@@ -1,6 +1,6 @@
 {
   "cli": {
-    "packageManager": "bun"
+    "packageManager": "npm"
   },
   "tasksRunnerOptions": {
     "default": {

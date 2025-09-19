@@ -23,7 +23,7 @@ Both live under the `apps/` folder and follow the naming pattern `<nn>-<topic>` 
 ## Prerequisites
 
 - Node.js 18+ (LTS recommended)
-- Bun (recommended) or npm
+- npm
 - Git
 
 ## Quick start
@@ -31,16 +31,16 @@ Both live under the `apps/` folder and follow the naming pattern `<nn>-<topic>` 
 ```bash
 git clone https://github.com/sfeir-open-source/sfeir-school-angular.git
 cd sfeir-school-angular
-bun install   # or: npm install
+npm ci
 ```
 
 Serve the first exercise (default project is `01-hands-on`):
 
 ```bash
 # Using Nx directly
-bunx nx serve 01-hands-on
+npx nx serve 01-hands-on
 # or using the provided script alias
-bun run client -- 01-hands-on   # npm run client -- 01-hands-on
+npm run client -- 01-hands-on   # npm run client -- 01-hands-on
 ```
 
 Open the browser to the URL shown by the CLI (Angular defaults to http://localhost:4200 unless configured otherwise).
@@ -50,20 +50,20 @@ The mock API listens on http://localhost:9000 (see `apps/server-express/src/main
 Run unit tests for a specific project:
 
 ```bash
-bun run client:test -- 01-hands-on   # npm run client:test -- 01-hands-on
+npm run client:test -- 01-hands-on   # npm run client:test -- 01-hands-on
 ```
 
 Run all tests across the workspace:
 
 ```bash
-bun run test:all   # npm run test:all
+npm run test:all   # npm run test:all
 ```
 
 Serve the slides locally:
 
 ```bash
 # Nx target defined in docs/project.json
-bunx nx serve docs
+npmx nx serve docs
 ```
 
 ## Repository structure
@@ -79,7 +79,7 @@ bunx nx serve docs
 ├─ tools/                          # development utilities
 ├─ nx.json                         # Nx workspace configuration
 ├─ package.json                    # scripts and dependencies
-├─ bun.lock                        # Bun lockfile
+├─ package-lock.json               # NPM lockfile
 ├─ tsconfig.base.json              # base TS config
 ├─ jest.config.ts / jest.preset.js # Jest configuration
 └─ LICENSE                         # MIT license for the code
@@ -98,7 +98,7 @@ The root `package.json` provides convenient aliases around Nx:
 You can pass any Angular CLI or Nx options after `--`, for example:
 
 ```bash
-bun run client -- 01-hands-on --configuration=production
+npm run client -- 01-hands-on --configuration=production
 ```
 
 ## Credits
