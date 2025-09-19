@@ -61,7 +61,7 @@ describe('PeopleComponent', () => {
     expect(johnName).toBeTruthy();
     expect(johnName.textContent).toEqual(`${PERSON[0].firstname} ${PERSON[0].lastname}`);
   });
-  test('should the second card display the sfeir Luxembourg person', () => {
+  test('should the second card display the sfeir person', () => {
     const [, sfeirCard] = debugElement.queryAll(By.css('mat-card'));
     const sfeirImage: HTMLImageElement = sfeirCard.query(By.css('img')).nativeElement;
     expect(sfeirImage).toBeTruthy();

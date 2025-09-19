@@ -10,5 +10,5 @@ import { HomeComponent } from './feature/home/home.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
-  name = 'SFEIR - LUXEMBOURG';
+  name = 'SFEIR';
 }

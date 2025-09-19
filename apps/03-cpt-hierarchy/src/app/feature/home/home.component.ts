@@ -9,5 +9,5 @@ import { MatCardModule } from '@angular/material/card';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeComponent {
-  name = 'Sfeir Luxembourg';
+  name = 'Sfeir';
 }
