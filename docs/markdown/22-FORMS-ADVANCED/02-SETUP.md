@@ -39,7 +39,7 @@ Notes:
   - **writeValue**: Updates the view when the model changes.
   - **registerOnChange**: Registers a callback to update the model when the view changes.
   - **registerOnTouched**: Registers a callback for when the control is 'touched'.
-  - **setDisabledState**` (optional): Handles the control's disabled state.
+  - **setDisabledState** (optional): Handles the control's disabled state.
 
 ##==##
 

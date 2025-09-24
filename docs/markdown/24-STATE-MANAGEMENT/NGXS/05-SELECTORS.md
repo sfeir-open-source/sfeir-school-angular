@@ -6,7 +6,7 @@ Selectors are functions that retrieve a slice of your state.<br/><br/>
 In **NGXS**, there are two primary ways to select state:<br/><br/>
 
 - The **store.select()** method to return an `Observable`.<br/><br/>
-- The **store.selectSignal()** method to return a `Signal`.
+- The **store.selectSignal()** method to return a `Signal`. <br/><br/>
 - The select function helper to return a `Signal`.<br/><br/>
 
 ##==##

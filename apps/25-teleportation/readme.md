@@ -30,7 +30,6 @@ Angular provides powerful tools for this with `ng-template`, `TemplateRef`, and 
 1. Create a new file `header.ts` in the header directory with the following content:
 
    This component:
-
    - Uses the modern `input()` API to define a required template input
    - Uses `NgTemplateOutlet` to render the provided template
    - Has an inline template for simplicity
@@ -41,7 +40,6 @@ Angular provides powerful tools for this with `ng-template`, `TemplateRef`, and 
 2. Update the `app.component.html` file to use the template teleportation pattern:
 
    The changes include:
-
    - Wrapping the toolbar in an `ng-template` with a reference name
    - Using the `sfeir-header` component with the template reference as input
 

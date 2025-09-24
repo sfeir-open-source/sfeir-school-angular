@@ -108,4 +108,4 @@ Notes:
 
 # What else can we generate?
 
-![h-800](assets/images/school/cli/generate_helper.png)
+![](assets/images/school/cli/generate_helper.png 'h-800')

@@ -25,7 +25,7 @@ Notes:
 - You want to pass inputs dynamically to the loaded component <br/><br/>
 - You need custom DI context or content projection for the loaded component <br/><br/>
 
-Compared to alternatives:
+Compared to alternatives: <br/><br/>
 
 - Router lazy-loading → for pages/routes <br/>
 - `@defer` → template-driven triggers <br/>

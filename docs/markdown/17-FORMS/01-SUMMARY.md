@@ -1,18 +1,22 @@
 <!-- .slide: class="transition-bg-sfeir-1 underline" -->
+
 # Summary
 
 ##==##
 
-<!-- .slide: class="two-column" -->
+<!-- .slide: class="tc-multiple-columns" -->
+
+##++##
+
 # Template vs Reactive
 
 - The class exposes the data model
 - Binding and validation are done in the view
 - The view contains the data binding
 
-![h-350](assets/images/school/forms/template_driven.png)
-
-##--##
+![](assets/images/school/forms/template_driven.png 'h-350')
+##++##
+##++##
 
 <br/><br/><br/>
 
@@ -20,11 +24,15 @@
 - Binding and validation are done in the class
 - The view contains the mapping
 
-![h-350](assets/images/school/forms/reactive_forms.png)
+![](assets/images/school/forms/reactive_forms.png 'h-350')
+##++##
 
 ##==##
 
-<!-- .slide: class="two-column"-->
+<!-- .slide: class="tc-multiple-columns"-->
+
+##++##
+
 # Advantages of Reactive Forms
 
 <br/><br/><br/>
@@ -33,7 +41,11 @@
 - Easier to test
 - Ready for future scenarios (Data-Driven-Form)
 
-##--##
+##++##
+
+##++##
+
 <br/><br/><br/>
 
-![h-450](assets/images/school/forms/avantage_reactive_forms.png)
+![](assets/images/school/forms/avantage_reactive_forms.png 'h-450')
+##++##

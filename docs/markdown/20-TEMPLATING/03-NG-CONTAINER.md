@@ -32,7 +32,7 @@
     <ng-template #estimateTemplate let-lessonsCounter="estimate">
       <div>Approximately {{ lessonsCounter }} lessons ...</div>
     </ng-template>
-    <ng-container *ngTemplateOutlet="estimateTemplate; context: ctx"> </ng-container>
+    <ng-container *ngTemplateOutlet="estimateTemplate; context: ctx" />
   `,
 })
 export class AppComponent {
@@ -63,7 +63,7 @@ Notes:
     <ng-template #estimateTemplate let-lessonsCounter>
       <div>Approximately {{ lessonsCounter }} lessons ...</div>
     </ng-template>
-    <ng-container *ngTemplateOutlet="estimateTemplate; context: ctx"> </ng-container>
+    <ng-container *ngTemplateOutlet="estimateTemplate; context: ctx" />
   `,
 })
 export class AppComponent {

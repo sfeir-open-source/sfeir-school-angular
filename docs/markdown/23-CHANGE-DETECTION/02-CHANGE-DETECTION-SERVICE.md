@@ -35,7 +35,9 @@ export class ChildComponent {
 
 ##==##
 
-<!-- .slide: class="two-column with-code inconsolata" -->
+<!-- .slide: class="tc-multiple-columns with-code inconsolata" -->
+
+##++##
 
 # Example: markForCheck
 
@@ -66,9 +68,8 @@ export class AppComponent {
 
 <!-- .element: class="medium-code" -->
 
-##--##
-
-<!-- .slide: class="with-code inconsolata" -->
+##++##
+##++## class="with-code inconsolata"
 
 <br/><br/><br/>
 
@@ -96,3 +97,5 @@ export class ChildComponent implements OnInit {
 ```
 
 <!-- .element: class="medium-code" -->
+
+##++##

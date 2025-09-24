@@ -37,7 +37,9 @@ For module-based apps, you would add `ReactiveFormsModule` to the `imports` arra
 
 ##==##
 
-<!-- .slide: class="two-column with-code inconsolata" -->
+<!-- .slide: class="tc-multiple-columns with-code inconsolata" -->
+
+##++##
 
 # Building a Reactive Form
 
@@ -71,9 +73,8 @@ export class UserProfileComponent implements OnInit {
 
 <!-- .element: class="small-code" -->
 
-##--##
-
-<!-- .slide: class="with-code inconsolata" -->
+##++##
+##++## class="with-code inconsolata"
 
 <br/><br/><br/>
 
@@ -97,6 +98,8 @@ export class UserProfileComponent implements OnInit {
 ```
 
 <!-- .element: class="medium-code" -->
+
+##++##
 
 ##==##
 

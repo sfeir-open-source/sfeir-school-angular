@@ -44,7 +44,7 @@
 
 # Principle of DI in Angular
 
-![center h-600](../../assets/images/school/dependency-injection/di_working.png)
+![](../../assets/images/school/dependency-injection/di_working.png 'center h-600')
 
 ##==##
 
@@ -59,7 +59,9 @@
 
 ##==##
 
-<!-- .slide: class="two-column with-code inconsolata" -->
+<!-- .slide: class="tc-multiple-columns with-code inconsolata" -->
+
+##++##
 
 # Injector Types: ModuleInjector
 
@@ -84,9 +86,8 @@ export class ItemService {
 
 <!-- .element: class="medium-code" -->
 
-##--##
-
-<!-- .slide: class="with-code inconsolata" -->
+##++##
+##++## class="with-code inconsolata"
 
 <br/><br/>
 
@@ -111,6 +112,8 @@ export class ItemService {
 ```
 
 <!-- .element: class="medium-code" -->
+
+##++##
 
 ##==##
 
@@ -152,7 +155,7 @@ const ROUTES = [
 
 # Injector Types: ModuleInjector
 
-- For each application, there is an **EnvironmentInjector | ModuleInjector** called <b>'root'</b> at the top of the hierarchy
+For each application, there is an **EnvironmentInjector | ModuleInjector** called <b>'root'</b> at the top of the hierarchy <br/><br/>
 
 ```typescript
 import { Injectable } from '@angular/core';
@@ -168,17 +171,17 @@ export class ItemService {
 
 ##==##
 
-# Injector Types: ElementInjector
+<!-- .slide: class="tc-multiple-columns" -->
 
-<!-- .slide: class="two-column" -->
+##++##
+
+# Injector Types: ElementInjector
 
 ## Hierarchy Injection
 
-![center h-500](../../assets/images/school/dependency-injection/DI-module.png)
-
-##--##
-
-<!-- .slide: class="with-code inconsolata" -->
+![](../../assets/images/school/dependency-injection/DI-module.png 'center h-500')
+##++##
+##++## class="with-code inconsolata"
 
 <br/><br/><br/><br/>
 
@@ -194,17 +197,19 @@ export class ItemsModule {
 
 <!-- .element: class="medium-code" -->
 
+##++##
+
 ##==##
 
-<!-- .slide: class="two-column" -->
+<!-- .slide: class="tc-multiple-columns" -->
+
+##++##
 
 ## Hierarchy Injection
 
-![center h-450](../../assets/images/school/dependency-injection/DI-parent.png)
-
-##--##
-
-<!-- .slide: class="with-code inconsolata" -->
+![](../../assets/images/school/dependency-injection/DI-parent.png 'center h-450')
+##++##
+##++## class="with-code inconsolata"
 
 <br/><br/><br/><br/>
 
@@ -220,17 +225,19 @@ export class Parent {}
 
 <!-- .element: class="medium-code" -->
 
+##++##
+
 ##==##
 
-<!-- .slide: class="two-column" -->
+<!-- .slide: class="tc-multiple-columns" -->
+
+##++##
 
 ## Hierarchy Injection
 
-![center h-500](../../assets/images/school/dependency-injection/DI-root.png)
-
-##--##
-
-<!-- .slide: class="with-code inconsolata" -->
+![](../../assets/images/school/dependency-injection/DI-root.png 'center h-500')
+##++##
+##++## class="with-code inconsolata"
 
 <br/><br/><br/><br/>
 
@@ -245,6 +252,8 @@ export class SimpleService {
 ```
 
 <!-- .element: class="medium-code" -->
+
+##++##
 
 ##==##
 

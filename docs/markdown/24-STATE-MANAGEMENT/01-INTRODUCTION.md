@@ -42,19 +42,25 @@ There are two main families of communication:<br/><br/>
   - `subscribe` and `emit`
     <br/><br/>
 
-![h-500](assets/images/school/state-management/bus_methods.png)
-![h-500](assets/images/school/state-management/bus_import.png)
+![](assets/images/school/state-management/bus_methods.png 'h-500')
+![](assets/images/school/state-management/bus_import.png 'h-500')
 
 ##==##
 
-<!-- .slide: class="two-column" -->
+<!-- .slide: class="tc-multiple-columns" -->
+
+##++##
 
 # State Management
 
 - Dataflow architecture: like Redux :)<br/><br/>
 - Requires installing a third-party library
 
-##--##
+##++##
+
+##++##
+
 <br/><br/><br/>
 
-![h-500](assets/images/school/state-management/redux_concepts.png)
+![](assets/images/school/state-management/redux_concepts.png 'h-500')
+##++##

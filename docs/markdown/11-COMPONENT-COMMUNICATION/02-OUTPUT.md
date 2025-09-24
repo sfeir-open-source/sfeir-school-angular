@@ -28,7 +28,9 @@ export class ChildComponent {
 - In the parent component's HTML template (`parent.component.html`) <br/><br/>
 
 ```html
-<section><app-child (childEvent)="refreshList($event)" /></section>
+<section>
+  <app-child (childEvent)="refreshList($event)" />
+</section>
 ```
 
 <!-- .element: class="big-code" -->
@@ -76,7 +78,9 @@ export class ChildComponent {
 - In the parent component's HTML template (`parent.component.html`) <br/><br/>
 
 ```html
-<section><app-child (childEvent)="refreshList($event)" /></section>
+<section>
+  <app-child (childEvent)="refreshList($event)" />
+</section>
 ```
 
 <!-- .element: class="big-code" -->

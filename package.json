@@ -36,7 +36,7 @@
     "cors": "^2.8.5",
     "express": "4.21.2",
     "rxjs": "7.8.0",
-    "sfeir-school-theme": "^3.2.0",
+    "sfeir-school-theme": "4.0.0-rc-14",
     "tslib": "^2.0.0",
     "underscore": "^1.13.2",
     "zone.js": "0.15.0"

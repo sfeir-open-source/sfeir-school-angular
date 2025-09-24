@@ -25,7 +25,6 @@ Create a custom pipe called "NaPipe" that will display "N/A" (Not Available) whe
 ### Step 3: Implement the pipe
 
 1. Open the generated `na.pipe.ts` file and analyze its structure
-
    - You'll see the class decorated with `@Pipe` and a `transform` method that will be responsible for the data transformation
 
 2. Implement the `transform` method to return "N/A" if the passed value is undefined or null, otherwise return the original value

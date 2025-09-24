@@ -11,7 +11,7 @@
 The component is made up of three basic concepts.
 <br/><br/>
 
-![center h-600](assets/images/school/architecture/components.png)
+![](assets/images/school/architecture/components.png 'center h-600')
 
 ##==##
 

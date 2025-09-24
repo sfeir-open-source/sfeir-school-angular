@@ -113,10 +113,10 @@ export class TodoState {
 # State: Action Handler Summary
 
 - An action handler is a method within a state class that is decorated with **`@Action`** and takes the state context and the action as parameters. <br/><br/>
-- The **`StateContext`** provides the following methods:
-  - `getState()`: Returns the current value of the state slice.
-  - `setState()`: Sets the state slice to a new value.
-  - `patchState()`: Modifies a part of the state slice.
+- The **`StateContext`** provides the following methods: <br/><br/>
+  - `getState()`: Returns the current value of the state slice. <br/><br/>
+  - `setState()`: Sets the state slice to a new value. <br/><br/>
+  - `patchState()`: Modifies a part of the state slice. <br/><br/>
   - `dispatch()`: Dispatches a new action.
 
 Notes:

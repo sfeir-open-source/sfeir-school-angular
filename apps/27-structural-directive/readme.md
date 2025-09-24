@@ -53,7 +53,7 @@ First, create a helper component that will be dynamically created by our directi
   styles: `
     .container-field-icon {
       display: flex;
-      gap: 1rem
+      gap: 1rem;
     }
   `,
 })

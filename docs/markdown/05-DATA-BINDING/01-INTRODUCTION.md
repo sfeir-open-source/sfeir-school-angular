@@ -1,4 +1,6 @@
-<!-- .slide: class="two-column with-code insconsolata" -->
+<!-- .slide: class="tc-multiple-columns with-code insconsolata" -->
+
+##++##
 
 # Binding in Javascript
 
@@ -12,9 +14,8 @@
 
 <!-- .element: class="big-code" -->
 
-##--##
-
-<!-- .slide: class="with-code inconsolata" -->
+##++##
+##++## class="with-code inconsolata"
 
 <br/><br/><br/>
 
@@ -31,9 +32,13 @@ window.onload = function () {
 
 <!-- .element: class="big-code" -->
 
+##++##
+
 ##==##
 
-<!-- .slide: class="two-column" -->
+<!-- .slide: class="tc-multiple-columns" -->
+
+##++##
 
 # Binding with Jquery
 
@@ -47,9 +52,8 @@ window.onload = function () {
 
 <!-- .element: class="big-code" -->
 
-##--##
-
-<!-- .slide: class="with-code inconsolata" -->
+##++##
+##++## class="with-code inconsolata"
 
 <br/><br/><br/>
 
@@ -65,6 +69,8 @@ $(document).ready(function () {
 ```
 
 <!-- .element: class="big-code" -->
+
+##++##
 
 ##==##
 

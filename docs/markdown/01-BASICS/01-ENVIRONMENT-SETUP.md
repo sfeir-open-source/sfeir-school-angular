@@ -15,8 +15,8 @@ JetBrains solution, comes with the necessary plugins for web development:<br><br
 - Pre - Debug configuration<br>
   <br><br>
 
-![h-300](assets/images/school/basics/WebStorm_logo.png)
-![h-300 float-right](assets/images/school/basics/IntelliJ_IDEA_Logo.png)
+![](assets/images/school/basics/WebStorm_logo.png 'h-300')
+![](assets/images/school/basics/IntelliJ_IDEA_Logo.png 'h-300 float-right')
 Notes:
 
 - If you want to use WebStorm on large projects, make sure to get a version > 2019.
@@ -34,5 +34,5 @@ Microsoft solution, comes alone, you need to install plugins to have a powerful 
 - Visual Studio IntelliCode for intelligent auto-completion<br><br>
 - Editor Config: to have a common editor configuration with all your team members
 
-![h-300](assets/images/school/basics/vscode.svg)
-![h-300 float-right](assets/images/school/basics/editor_config.png)
+![](assets/images/school/basics/vscode.svg 'h-300')
+![](assets/images/school/basics/editor_config.png 'h-300 float-right')

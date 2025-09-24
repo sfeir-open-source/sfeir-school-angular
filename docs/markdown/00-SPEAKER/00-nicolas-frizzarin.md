@@ -1,21 +1,23 @@
 <!-- .slide: class="speaker-slide" -->
 
-![speaker](assets/images/speaker/nicolas-frizzarin/nicolas-frizzarin.jpg)
-![company](assets/images/speaker/logo-sfeir-blanc.png)
-![badge first-badge](assets/images/speaker/nicolas-frizzarin/GDE-2025-WEB.png)
-![badge second-badge](assets/images/speaker/nicolas-frizzarin/GDE-2025-Angular.png)
-![badge third-badge](assets/images/speaker/nicolas-frizzarin/MVP.png)
+<div class="speaker-slide">
+
+![](assets/images/speaker/nicolas-frizzarin/nicolas-frizzarin.jpg 'speaker')
+
+![](assets/images/speaker/logo-sfeir-blanc.png 'company')
+
+![](assets/images/speaker/nicolas-frizzarin/GDE-2025-WEB.png 'badge badge')
+
+![](assets/images/speaker/nicolas-frizzarin/GDE-2025-Angular.png 'badge badge')
+
+![](assets/images/speaker/nicolas-frizzarin/MVP.png 'badge badge')
 
 <h2>Nicolas <span>Frizzarin</span></h2>
 
 ### Developer Advocate
 
-<!-- .element: class="icon-rule icon-first"-->
-
 ### @Nicooss54
-
-<!-- .element: class="icon-twitter icon-second" -->
 
 ### frizzarin.n@sfeir.com
 
-<!-- .element: class="icon-mail icon-third" -->
+</div>

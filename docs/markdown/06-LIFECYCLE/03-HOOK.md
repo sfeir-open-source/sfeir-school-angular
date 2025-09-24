@@ -128,7 +128,7 @@ export class App {
 
 ##==##
 
-<!-- .slide: class="two-column"-->
+<!-- .slide: class="with-code inconsolata"-->
 
 # Resources
 
@@ -137,13 +137,7 @@ export class App {
   - **value**: WritableSignal which is the result of the derivation
   - **loading**: Signal which is true when the resource is loading
   - **error**: Signal which represent the error of the resource
-  - **status**: Signal which represent the status of the resource <br/><br/>
-
-##--##
-
-<!-- .slide: class="with-code inconsolata"-->
-
-<br/><br/><br/><br/>
+  - **status**: Signal which represent the status of the resource
 
 ```typescript
 @Component({
@@ -159,4 +153,4 @@ export class App {
 }
 ```
 
-<!-- .element: class="medium-code"-->
+<!-- .element: class="small-code"-->

@@ -92,7 +92,9 @@
 
 ##==##
 
-<!-- .slide: class="two-column with-code inconsolata" -->
+<!-- .slide: class="tc-multiple-columns with-code inconsolata" -->
+
+##++##
 
 # Properties binding
 
@@ -108,9 +110,8 @@
 
 <!-- .element: class="big-code" -->
 
-##--##
-
-<!-- .slide: class="with-code inconsolata" -->
+##++##
+##++## class="with-code inconsolata"
 
 <br/><br/><br/>
 
@@ -124,9 +125,13 @@
 
 <!-- .element: class="big-code" -->
 
+##++##
+
 ##==##
 
-<!-- .slide: class="two-column with-code inconsolata" -->
+<!-- .slide: class="tc-multiple-columns with-code inconsolata" -->
+
+##++##
 
 # Event Binding
 
@@ -143,14 +148,19 @@
 
 <!-- .element: class="big-code" -->
 
-##--##
+##++##
+##++##
+
 <br/><br/><br/>
 
 - Reference to the event with $event
+  ##++##
 
 ##==##
 
-<!-- .slide: class="two-column with-code inconsolata" -->
+<!-- .slide: class="tc-multiple-columns with-code inconsolata" -->
+
+##++##
 
 # 2 way binding
 
@@ -165,9 +175,8 @@
 
 <!-- .element: class="big-code" -->
 
-##--##
-
-<!-- .slide: class="with-code inconsolata" -->
+##++##
+##++## class="with-code inconsolata"
 
 <br/><br/><br/>
 
@@ -183,3 +192,4 @@
 
 - `ngModel` comes from the **@angular/forms** library <br/><br/>
 - `firstName` don't need to be a signal for reactivity, ngModel handles it
+  ##++##
