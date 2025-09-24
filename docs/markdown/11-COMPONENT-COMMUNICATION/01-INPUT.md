@@ -26,7 +26,7 @@ export class ChildComponent {
 </section>
 ```
 
-<!-- .element: class="big-code" -->
+<!-- .element: class="medium-code" -->
 
 ##==##
 
@@ -58,7 +58,7 @@ export class ChildComponent {
 </section>
 ```
 
-<!-- .element: class="big-code" -->
+<!-- .element: class="medium-code" -->
 
 ##==##
 

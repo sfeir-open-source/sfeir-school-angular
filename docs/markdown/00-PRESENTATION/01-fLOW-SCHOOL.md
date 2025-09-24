@@ -25,7 +25,7 @@ For your convenience, please note the following: <br/><br/>
 
 ##==##
 
-![center](assets/images/school/basics/sfeir_people.png)
+![](assets/images/school/basics/sfeir_people.png 'center')
 
 ##==##
 

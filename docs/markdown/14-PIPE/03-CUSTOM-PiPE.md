@@ -1,9 +1,9 @@
 <!-- .slide: class="transition-bg-sfeir-2" -->
+
 # Creating your own pipes
 
 ##==##
 
-<!-- .slide -->
 # How a pipe is composed
 
 - From a class decorated with the <b>@Pipe</b> decorator, which has a mandatory `name` property that will be used to call the pipe in an HTML template. <br/><br/>
@@ -12,7 +12,11 @@
 - Remember to register your Pipe in your module's declarations array (like a component).
 
 ##==##
-<!-- .slide: class="two-column with-code inconsolata" -->
+
+<!-- .slide: class="tc-multiple-columns with-code inconsolata" -->
+
+##++##
+
 ## Let's materialize this with code
 
 ```typescript
@@ -20,7 +24,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-   name: 'multiplyByTwo'
+  name: 'multiplyByTwo',
 })
 export class MultiplyByTwoPipe implements PipeTransform {
   transform(value: number): number {
@@ -28,10 +32,12 @@ export class MultiplyByTwoPipe implements PipeTransform {
   }
 }
 ```
+
 <!-- .element: class="medium-code" -->
 
-##--##
-<!-- .slide: class="with-code inconsolata"> -->
+##++##
+
+##++##
 
 <br/><br/><br/>
 
@@ -40,14 +46,12 @@ export class MultiplyByTwoPipe implements PipeTransform {
 import { NgModule } from '@angular/core';
 import { MultiplyByTwoPipe } from './shared/multiply-by-two.pipe';
 
-
 @NgModule({
-  declarations: [
-    MultiplyByTwoPipe
-  ],
+  declarations: [MultiplyByTwoPipe],
 })
 export class AppModule {}
 ```
+
 <!-- .element: class="medium-code" -->
 
 <br/>
@@ -57,4 +61,7 @@ export class AppModule {}
 <p>{{ 2 | multiplyByTwo }}</p>
 <!-- displays 4 -->
 ```
+
 <!-- .element: class="medium-code" -->
+
+##++##

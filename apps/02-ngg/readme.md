@@ -16,7 +16,6 @@ The --dry-run option is used to preview the changes that will be made without ac
 Remove it when you're ready to create the component.
 
 2. In `home.component.ts`:
-
    - Set up a simple component with a name property
    - Import and use Angular Material's CardModule
 

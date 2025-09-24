@@ -21,13 +21,14 @@
 - Implementing lazy loading of modules in your application implies organizing your project well beforehand
 - <b>Root Module</b>: your application's loading module (app.module.ts)
 - <b>Feature Module</b>: grouping a specific application feature into a module (page components)<br/><br/>
-  ![full-center](assets/images/school/lazy-loading/module-architecture-level-1.png)
+
+![](assets/images/school/lazy-loading/module-architecture-level-1.png 'center h-400')
 
 ##==##
 
 # The Principle of Lazy Loading with Modules
 
-![full-center](assets/images/school/lazy-loading/module-architecture-level-2.png)
+![](assets/images/school/lazy-loading/module-architecture-level-2.png 'full-center')
 
 ##==##
 

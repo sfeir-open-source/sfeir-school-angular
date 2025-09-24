@@ -33,19 +33,25 @@ Notes:
 
 # Change Detection Strategy: Default (waiting event)
 
-![full-center](assets/images/school/change-detection/cd_default.png)
+![](assets/images/school/change-detection/cd_default.png)
+
+<!-- .element: class="full-center" -->
 
 ##==##
 
 # Change Detection Strategy: Default (dirty checking)
 
-![full-center](assets/images/school/change-detection/cd_default_dirty.png)
+![](assets/images/school/change-detection/cd_default_dirty.png)
+
+<!-- .element: class="full-center" -->
 
 ##==##
 
 # Change Detection Strategy: Default (change detection)
 
-![full-center](assets/images/school/change-detection/cd_default_cd.png)
+![](assets/images/school/change-detection/cd_default_cd.png)
+
+<!-- .element: class="full-center" -->
 
 ##==##
 
@@ -57,7 +63,9 @@ Only triggers a change when the reference of a variable changes or an observable
 
 ##==##
 
-<!-- .slide: class="two-column with-code inconsolata" -->
+<!-- .slide: class="tc-multiple-columns with-code inconsolata" -->
+
+##++##
 
 # Examples
 
@@ -85,9 +93,8 @@ export class AppComponent {
 
 <!-- .element: class="medium-code" -->
 
-##--##
-
-<!-- .slide: class="with-code inconsolata" -->
+##++##
+##++## class="with-code inconsolata"
 
 <br/><br/><br/>
 
@@ -104,9 +111,13 @@ export class ChildComponent {
 
 <!-- .element: class="medium-code" -->
 
+##++##
+
 ##==##
 
-<!-- .slide: class="two-column with-code inconsolata" -->
+<!-- .slide: class="tc-multiple-columns with-code inconsolata" -->
+
+##++##
 
 # Examples
 
@@ -137,9 +148,8 @@ export class AppComponent {
 
 <!-- .element: class="medium-code" -->
 
-##--##
-
-<!-- .slide: class="with-code inconsolata" -->
+##++##
+##++## class="with-code inconsolata"
 
 <br/><br/><br/>
 
@@ -157,6 +167,8 @@ export class ChildComponent {
 
 <!-- .element: class="medium-code" -->
 
+##++##
+
 Notes:
 
 - In this example, the child component uses `ChangeDetectionStrategy.OnPush`.
@@ -167,16 +179,22 @@ Notes:
 
 # Change Detection Strategy: On Push (waiting event)
 
-![full-center](assets/images/school/change-detection/cd_on-push.png)
+![](assets/images/school/change-detection/cd_on-push.png)
+
+<!-- .element: class="full-center" -->
 
 ##==##
 
 # Change Detection Strategy: Default (dirty checking)
 
-![full-center](assets/images/school/change-detection/cd_on-push_dirty.png)
+![](assets/images/school/change-detection/cd_on-push_dirty.png)
+
+<!-- .element: class="full-center" -->
 
 ##==##
 
 # Change Detection Strategy: Default (change detection)
 
-![full-center](assets/images/school/change-detection/cd_on-push_cd.png)
+![](assets/images/school/change-detection/cd_on-push_cd.png)
+
+<!-- .element: class="full-center" -->

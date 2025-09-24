@@ -1,3 +1,5 @@
+<!-- .slide: class="with-code"-->
+
 # NGXS Signal Utilities
 
 NGXS offers utilities for working with signals that can be used with various state management solutions: <br/><br/>
@@ -99,7 +101,7 @@ class AppComponent {
 }
 ```
 
-<!-- .element: class="small-code" -->
+<!-- .element: class="medium-code" -->
 
 <br/>
 
@@ -109,7 +111,7 @@ In templates or component methods, you can dispatch actions easily:
 <button (click)="actions.reloadInvoiceLines(selectors.invoiceId())">Reload invoice lines</button>
 ```
 
-<!-- .element: class="small-code" -->
+<!-- .element: class="medium-code" -->
 
 ##==##
 

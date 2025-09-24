@@ -19,13 +19,11 @@
 
 ##==##
 
-<!-- .slide: class="two-column-layout"-->
+<!-- .slide: class="tc-multiple-columns with-code inconsolata"-->
+
+##++##
 
 # An example is better for understanding
-
-##--##
-
-<!-- .slide: class="with-code inconsolata" -->
 
 ```typescript
 @Component({
@@ -34,7 +32,7 @@
     <section>
       <div class="loading" *ngIf="isLoading; else notLoading"></div>
       <ng-template #notLoading>
-        <ng-content></ng-content>
+        <ng-content />
       </ng-template>
     </section>
   `,
@@ -44,9 +42,11 @@ export class LoadingComponent {}
 
 <!-- .element: class="big-code"-->
 
-##--##
+##++##
 
-<!-- .slide: class="with-code inconsolata" -->
+##++## class="with-code inconsolata"
+
+<br/><br/><br/><br/><br/>
 
 ```typescript
 @Component({
@@ -62,15 +62,15 @@ export class AppComponent {}
 
 <!-- .element: class="big-code"-->
 
+##++##
+
 ##==##
 
-<!-- .slide: class="two-column-layout"-->
+<!-- .slide: class="tc-multiple-columns with-code inconsolata"-->
+
+##++##
 
 # An example is better for understanding
-
-##--##
-
-<!-- .slide: class="with-code inconsolata" -->
 
 ```typescript
 @Component({
@@ -79,7 +79,7 @@ export class AppComponent {}
     <section>
       <div class="loading" *ngIf="isLoading; else notLoading"></div>
       <ng-template #notLoading>
-        <ng-content select="button[type='submit']"> </ng-content>
+        <ng-content select="button[type='submit']" />
       </ng-template>
     </section>
   `,
@@ -89,9 +89,11 @@ export class LoadingComponent {}
 
 <!-- .element: class="big-code"-->
 
-##--##
+##++##
 
-<!-- .slide: class="with-code inconsolata" -->
+##++## class="with-code inconsolata"
+
+<br/><br/><br/><br/><br/>
 
 ```typescript
 @Component({
@@ -107,6 +109,8 @@ export class AppComponent {}
 ```
 
 <!-- .element: class="big-code"-->
+
+##++##
 
 ##==##
 
@@ -130,7 +134,9 @@ export class AppComponent {}
 
 ##==##
 
-<!-- .slide: class="two-column with-code inconsolata "-->
+<!-- .slide: class="tc-multiple-columns with-code inconsolata "-->
+
+##++##
 
 # An example is better for understanding after v18
 
@@ -155,9 +161,8 @@ export class LoadingComponent {
 
 <!-- .element: class="medium-code"-->
 
-##--##
-
-<!-- .slide: class="with-code inconsolata" -->
+##++##
+##++## class="with-code inconsolata"
 
 <br/><br/><br/><br/><br/>
 
@@ -175,9 +180,13 @@ export class AppComponent {}
 
 <!-- .element: class="medium-code"-->
 
+##++##
+
 ##==##
 
-<!-- .slide: class="two-column with-code inconsolata"-->
+<!-- .slide: class="tc-multiple-columns with-code inconsolata"-->
+
+##++##
 
 # An example is better for understanding before v18
 
@@ -202,9 +211,8 @@ export class LoadingComponent {
 
 <!-- .element: class="medium-code"-->
 
-##--##
-
-<!-- .slide: class="with-code inconsolata" -->
+##++##
+##++## class="with-code inconsolata"
 
 <br/><br/><br/><br/><br/>
 
@@ -221,3 +229,5 @@ export class AppComponent {}
 ```
 
 <!-- .element: class="medium-code"-->
+
+##++##

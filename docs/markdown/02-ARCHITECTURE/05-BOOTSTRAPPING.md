@@ -32,7 +32,9 @@
 
 ##==##
 
-<!-- .slide: class="two-column with-code inconsolata" -->
+<!-- .slide: class="tc-multiple-columns with-code inconsolata" -->
+
+##++##
 
 ## Bootstrapping: standalone component
 
@@ -58,9 +60,8 @@ bootstrapApplication(AppComponent, {
 
 <!-- .element: class="medium-code" -->
 
-##--##
-
-<!-- .slide: class="with-code inconsolata" -->
+##++##
+##++## class="with-code inconsolata"
 
 <br/><br/><br/>
 
@@ -82,6 +83,8 @@ bootstrapApplication(AppComponent, {
 
 <!-- .element: class="medium-code" -->
 
+##++##
+
 ##==##
 
 # Bootstrapping on a module
@@ -102,7 +105,9 @@ bootstrapApplication(AppComponent, {
 
 ##==##
 
-<!-- .slide: class="two-column with-code inconsolata" -->
+<!-- .slide: class="tc-multiple-columns with-code inconsolata" -->
+
+##++##
 
 ## Bootstrapping on a module
 
@@ -118,7 +123,7 @@ export class App {}
 
 <!-- .element: class="medium-code" -->
 
-<br/><br/>
+<br/>
 
 ```typescript
 // app-module.ts | app.module.ts file
@@ -132,9 +137,8 @@ export class AppModule {}
 
 <!-- .element: class="medium-code" -->
 
-##--##
-
-<!-- .slide: class="with-code inconsolata" -->
+##++##
+##++## class="with-code inconsolata"
 
 <br/><br/><br/><br/>
 
@@ -162,3 +166,5 @@ platformBrowser.bootstrapModule(AppModule).then(console.log).catch(console.error
 ```
 
 <!-- .element: class="medium-code" -->
+
+##++##

@@ -32,13 +32,13 @@ In your service, use the `context` option in an HTTP call to provide the token. 
 
 ```typescript
 // user.service.ts
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CACHEABLE } from './context.tokens';
 
 @Injectable({ providedIn: 'root' })
 export class UserService {
-  constructor(private readonly http: HttpClient) {}
+  private readonly http = inject(HttpClient);
 
   getUser(): any {
     const context = new HttpContext().set(CACHEABLE, true);

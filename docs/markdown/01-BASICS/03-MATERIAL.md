@@ -6,7 +6,7 @@
 
 <!-- .slide: class="full-center" -->
 
-![Angular Material Logo](assets/images/school/basics/angular_material.png)
+![](assets/images/school/basics/angular_material.png 'Angular Material Logo')
 
 ##==##
 

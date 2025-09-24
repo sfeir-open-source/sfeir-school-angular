@@ -10,10 +10,10 @@
 
 <br/><br/>
 
-![h-400](assets/images/school/unit-tests/jest-logo.png)
-![h-400](assets/images/school/unit-tests/vitest.png)
-![h-400](assets/images/school/unit-tests/angular-testing-library.png)
-![h-400](assets/images/school/unit-tests/typescript.png)
+![](assets/images/school/unit-tests/jest-logo.png 'h-400')
+![](assets/images/school/unit-tests/vitest.png 'h-400')
+![](assets/images/school/unit-tests/angular-testing-library.png 'h-400')
+![](assets/images/school/unit-tests/typescript.png 'h-400')
 
 ##==##
 
@@ -31,4 +31,4 @@
 
 - Angular comes with everything you need to perform unit tests (no configuration required)<br>
 
-![center h-700](assets/images/school/unit-tests/ng_test_helper.png)
+![](assets/images/school/unit-tests/ng_test_helper.png 'center h-700')

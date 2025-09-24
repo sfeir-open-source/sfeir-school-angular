@@ -38,7 +38,9 @@ bootstrapApplication(App, {
 
 ##==##
 
-<!-- .slide: class="two-column" -->
+<!-- .slide: class="tc-multiple-columns" -->
+
+##++##
 
 # Key Concepts of NGXS
 
@@ -47,11 +49,14 @@ bootstrapApplication(App, {
 - State <br/><br/>
 - Selects <br/><br/>
 
-##--##
+##++##
+
+##++##
 
 <br/><br/><br/>
 
-![h-550](assets/images/school/state-management/ngxs/ngxs_concepts.png)
+![](assets/images/school/state-management/ngxs/ngxs_concepts.png 'h-550')
+##++##
 
 Notes:
 

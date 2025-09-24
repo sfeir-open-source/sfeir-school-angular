@@ -1,4 +1,5 @@
 <!-- .slide-->
+
 # ng-template / ng-container / ng-content
 
 - Template directives<br/><br/>
@@ -7,4 +8,5 @@
   <br/><br/>
 
 Okay, so how do we use them?
+
 <!-- .element: class="important center" -->

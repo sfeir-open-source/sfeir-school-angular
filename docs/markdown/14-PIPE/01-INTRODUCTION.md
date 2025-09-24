@@ -1,12 +1,16 @@
 # Example
 
-![full-center h-800](assets/images/school/pipe/exemple_filter_uppercase.png)
+![](assets/images/school/pipe/exemple_filter_uppercase.png 'h-800')
+
+<!-- .element: class="full-center" -->
 
 ##==##
 
 # Example
 
-![full-center h-800](assets/images/school/pipe/exemple_filter_date.png)
+![](assets/images/school/pipe/exemple_filter_date.png 'h-800')
+
+<!-- .element: class="full-center" -->
 
 ##==##
 

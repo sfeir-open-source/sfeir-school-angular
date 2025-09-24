@@ -28,7 +28,9 @@ Notes:
 
 ##==##
 
-<!-- .slide: class="two-column with-code inconsolata" -->
+<!-- .slide: class="tc-multiple-columns with-code inconsolata" -->
+
+##++##
 
 # Using Your Service Globally
 
@@ -48,9 +50,8 @@ export class TodoService {
 
 <!-- .element: class="medium-code" -->
 
-##--##
-
-<!-- .slide: class="with-code inconsolata" -->
+##++##
+##++## class="with-code inconsolata"
 
 <br/><br/>
 
@@ -78,9 +79,13 @@ bootstrapApplication(AppComponent, { providers: [] });
 
 <!-- .element: class="medium-code" -->
 
+##++##
+
 ##==##
 
-<!-- .slide: class="two-column with-code inconsolata" -->
+<!-- .slide: class="tc-multiple-columns with-code inconsolata" -->
+
+##++##
 
 # Using a Service Locally
 
@@ -96,9 +101,8 @@ export class TodoService {
 
 <!-- .element: class="big-code" -->
 
-##--##
-
-<!-- .slide: class="with-code inconsolata" -->
+##++##
+##++## class="with-code inconsolata"
 
 <br/><br/>
 
@@ -117,3 +121,5 @@ export class AppComponent {
 ```
 
 <!-- .element: class="big-code" -->
+
+##++##

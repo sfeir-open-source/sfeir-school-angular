@@ -8,7 +8,7 @@
 
 # A few reminders about directives
 
-![h-300 center](assets/images/school/directive/directive_schema.png) <br/>
+![](assets/images/school/directive/directive_schema.png 'h-300 center') <br/>
 
 - structural directives: modify the DOM<br/>
 - attribute directives: modify the appearance or behavior of an element<br/>
@@ -45,7 +45,9 @@ export class MyDirective {}
 
 ##==##
 
-<!-- .slide: class="two-column with-code inconsolata" -->
+<!-- .slide: class="tc-multiple-columns with-code inconsolata" -->
+
+##++##
 
 ## Some examples
 
@@ -69,9 +71,8 @@ export class ErrorDirective {}
 
 <!-- .element: class="big-code" -->
 
-##--##
-
-<!-- .slide: class="with-code inconsolata"-->
+##++##
+##++## class="with-code inconsolata"
 
 <br/><br/><br/>
 
@@ -83,6 +84,8 @@ export class OnlyNumberDirective {}
 ```
 
 <!-- .element: class="big-code" -->
+
+##++##
 
 ##==##
 

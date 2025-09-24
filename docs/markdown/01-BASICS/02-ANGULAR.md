@@ -17,7 +17,7 @@ npm install -g @angular/cli
 <!-- .element: class="big-code" -->
 <br>
 
-![h-600 center](assets/images/school/basics/angular_cli_helper.png)
+![](assets/images/school/basics/angular_cli_helper.png 'h-600 center')
 <br><br>
 
 [Documentation](https://cli.angular.io/)
@@ -36,4 +36,4 @@ If you don't want to install the Angular/CLI globally, you can use your favorite
 
 The Angular.json file is the identity card of your project.
 
-![center h-700](assets/images/school/basics/angular_json.png)
+![](assets/images/school/basics/angular_json.png 'center h-700')

@@ -28,7 +28,6 @@ While `@HostBinding` and `@HostListener` decorators are still supported, Angular
 ## Step 2: Add Host Bindings and Listeners
 
 1. Update the `@Directive` decorator to include host metadata:
-
    - Binds the `style.color` property to the `badgeColor()` signal
    - Listens to `mouseover` events and calls `onMouseOver()`
    - Listens to `mouseout` events and calls `onMouseOut()`

@@ -26,4 +26,4 @@
 }
 ```
 
-<!-- .element: class="medium-code" -->
+<!-- .element: class="small-code" -->

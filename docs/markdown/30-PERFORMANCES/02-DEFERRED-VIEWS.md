@@ -4,6 +4,8 @@
 
 Minimize the initial bundle
 
+##==##
+
 <!-- .slide: class="with-code inconsolata" -->
 
 # Overview of Deferred Views :)

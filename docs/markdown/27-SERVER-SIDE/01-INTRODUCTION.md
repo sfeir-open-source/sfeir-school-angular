@@ -4,7 +4,7 @@
 
 ## Introduction to Hybrid Rendering
 
-![h-900 center](assets/images/school/server-side/schema-ssr.png)
+![](assets/images/school/server-side/schema-ssr.png 'h-900 center')
 
 ##==##
 

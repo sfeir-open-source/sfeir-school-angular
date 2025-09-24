@@ -6,19 +6,25 @@
 
 # Change Detection Strategy: On Push (waiting event)
 
-![full-center](assets/images/school/change-detection/cd_on-push_OP.png)
+![](assets/images/school/change-detection/cd_on-push_OP.png)
+
+<!-- .element: class="full-center" -->
 
 ##==##
 
 # Change Detection Strategy: Default (dirty checking)
 
-![full-center](assets/images/school/change-detection/cd_on-push_OP_dirty.png)
+![](assets/images/school/change-detection/cd_on-push_OP_dirty.png)
+
+<!-- .element: class="full-center" -->
 
 ##==##
 
 # Change Detection Strategy: Default (change detection)
 
-![full-center](assets/images/school/change-detection/cd_on-push_OP_cd.png)
+![](assets/images/school/change-detection/cd_on-push_OP_cd.png)
+
+<!-- .element: class="full-center" -->
 
 ##==##
 
@@ -130,7 +136,9 @@ Notes:
 
 ##==##
 
-<!-- .slide: class="two-column with-code inconsolata" -->
+<!-- .slide: class="tc-multiple-columns with-code inconsolata" -->
+
+##++##
 
 # Traditional Property
 
@@ -150,7 +158,8 @@ export class CounterComponent {
 
 <!-- .element: class="medium-code" -->
 
-##--##
+##++##
+##++##
 
 # Signal
 
@@ -169,6 +178,8 @@ export class CounterComponent {
 ```
 
 <!-- .element: class="medium-code" -->
+
+##++##
 
 Notes:
 

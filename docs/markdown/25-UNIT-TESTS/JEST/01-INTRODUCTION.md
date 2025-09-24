@@ -6,7 +6,7 @@
 
 # What is Jest?
 
-![h-250 center](assets/images/school/unit-tests/jest-logo.png)
+![](assets/images/school/unit-tests/jest-logo.png 'h-250 center')
 
 <br/><br/>
 
@@ -55,7 +55,9 @@ One file to modify:
 
 ##==##
 
-<!-- .slide: class="two-column with-code inconsolata" -->
+<!-- .slide: class="tc-multiple-columns with-code inconsolata" -->
+
+##++##
 
 ```javascript
 // jest.config.js
@@ -79,9 +81,8 @@ module.exports = {
 
 <!-- .element: class="big-code" -->
 
-##--##
-
-<!-- .slide: class="with-code inconsolata" -->
+##++##
+##++## class="with-code inconsolata"
 
 ```typescript
 import { setupZoneTestEnv } from 'jest-preset-angular/setup-env/zone';
@@ -99,3 +100,5 @@ setupZonelessTestEnv();
 ```
 
 <!-- .element: class="big-code" -->
+
+##++##

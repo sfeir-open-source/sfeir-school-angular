@@ -41,11 +41,11 @@ export class AppComponent {
 
   constructor() {
     effect(() => {
-      console.log(this.componentRef()); // first undefined and then the component
+      console.log(this.componentRef()); // first undefined and then the component instance
     });
     afterNextRender({
       read: () => {
-        console.log(this.componentRef());
+        console.log(this.componentRef()); // show the component instance
       },
     });
   }
@@ -71,7 +71,7 @@ export class AppComponent {
 # @ViewChild and @ViewChildren Decorators example
 
 ```html
-<my-component />
+<my-component #myComp />
 ```
 
 <!-- .element: class="medium-code" -->
@@ -79,13 +79,13 @@ export class AppComponent {
 ```typescript
 @Component({ selector: 'sfeir-app', templateUrl: './app.component.html' })
 export class AppComponent implements OnInit, AfterViewInit {
-  @ViewChild('myComp') private myComponentRef!: ElementRef<HTMLDivElement>;
+  @ViewChild('myComp') private myComponentRef!: ElementRef<HTMLElement>;
 
   ngOnInit(): void {
     console.log(this.myComponentRef); // Returns undefined because the view is not yet initialized
   }
   ngAfterViewInit(): void {
-    console.log(this.myComponentRef); // The reference is available here
+    console.log(this.myComponentRef); // The ElementRef<HTMLElement> is available here
   }
 }
 ```

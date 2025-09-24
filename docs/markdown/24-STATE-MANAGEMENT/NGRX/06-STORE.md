@@ -8,7 +8,6 @@
 ```typescript
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
 import { selectCount } from './counter.selectors';
 import { increment } from './counter.actions';
 
@@ -23,4 +22,4 @@ export class Counter {
 }
 ```
 
-<!-- .element: class="small-code" -->
+<!-- .element: class="medium-code" -->

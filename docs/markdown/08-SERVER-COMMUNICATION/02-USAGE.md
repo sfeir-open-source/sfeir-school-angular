@@ -76,6 +76,8 @@ this.http.get(url, { responseType: 'text' }).subscribe(data => {
 
 To access the full HTTP response including headers, use the `{ observe: 'response' }` option.
 
+<br/><br/>
+
 ```typescript
 import { HttpResponse } from '@angular/common/http';
 

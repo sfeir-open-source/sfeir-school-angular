@@ -25,13 +25,14 @@ The library's [documentation](https://testing-library.com/docs/) can be found he
 
 ##==##
 
-
 <!-- .slide: class="with-code inconsolata" -->
+
 # Installing Angular Testing Library
 
 ```shell
 ng add @testing-library/angular
 ```
+
 <!-- .element: class="big-code" -->
 
 <br/><br/>
@@ -43,8 +44,10 @@ Nico's little extra :)
 ```shell
 npm install --save-dev @testing-library/jest-dom
 ```
+
 <!-- .element: class="big-code" -->
 
 This provides new DOM assertions. Don't forget to:
+
 - import this library in the `setup-jest.ts` file
 - add it to the types in `tsconfig.spec.json`

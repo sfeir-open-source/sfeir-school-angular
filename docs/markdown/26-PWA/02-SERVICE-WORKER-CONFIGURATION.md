@@ -2,7 +2,7 @@
 
 # Service Worker Configuration: ngsw-config.json
 
-![h-900 center](assets/images/school/pwa/service-worker-configuration.png)
+![](assets/images/school/pwa/service-worker-configuration.png 'h-900 center')
 
 Notes:
 

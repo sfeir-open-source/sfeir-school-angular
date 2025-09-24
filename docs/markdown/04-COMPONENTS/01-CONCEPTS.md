@@ -2,7 +2,7 @@
 
 # Angular: a component tree
 
-![h-300 center](assets/images/school/components/component_tree.png)
+![](assets/images/school/components/component_tree.png 'h-300 center')
 
 ## Key Concepts
 

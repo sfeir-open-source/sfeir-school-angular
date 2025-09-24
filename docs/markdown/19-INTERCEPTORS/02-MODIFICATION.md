@@ -1,4 +1,6 @@
-<!-- .slide: class="two-column with-code inconsolata" -->
+<!-- .slide: class="tc-multiple-columns with-code inconsolata" -->
+
+##++##
 
 # Modifying the Request
 
@@ -18,9 +20,8 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
 
 <!-- .element: class="medium-code" -->
 
-##--##
-
-<!-- .slide: class="with-code inconsolata" -->
+##++##
+##++## class="with-code inconsolata"
 
 <br/><br/><br/><br/><br/>
 
@@ -33,16 +34,20 @@ export class AuthInterceptor implements HttpInterceptor {
       setHeaders: { Authorization: 'Bearer YOUR_TOKEN_HERE' },
     });
     // Pass the modified request to the next handler.
-    return next(authReq);
+    return next.handle(authReq);
   }
 }
 ```
 
 <!-- .element: class="medium-code" -->
 
+##++##
+
 ##==##
 
-<!-- .slide: class="two-column with-code inconsolata" -->
+<!-- .slide: class="tc-multiple-columns with-code inconsolata" -->
+
+##++##
 
 # Modifying the Response
 
@@ -63,9 +68,8 @@ export const responseInterceptor: HttpInterceptorFn = (req, next) => {
 
 <!-- .element: class="medium-code" -->
 
-##--##
-
-<!-- .slide: class="with-code inconsolata" -->
+##++##
+##++## class="with-code inconsolata"
 
 <br/><br/><br/><br/><br/>
 
@@ -73,7 +77,7 @@ export const responseInterceptor: HttpInterceptorFn = (req, next) => {
 @Injectable()
 export class ResponseInterceptor implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    return next(req).pipe(
+    return next.handle(req).pipe(
       map(event => {
         if (event instanceof HttpResponse) {
           return event.clone({ body: { ...event.body, modified: true } });
@@ -86,3 +90,5 @@ export class ResponseInterceptor implements HttpInterceptor {
 ```
 
 <!-- .element: class="medium-code" -->
+
+##++##

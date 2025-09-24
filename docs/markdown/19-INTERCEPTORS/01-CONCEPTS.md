@@ -60,7 +60,9 @@ export class AuthInterceptor implements HttpInterceptor {
 
 ##==##
 
-<!-- .slide: class="two-column with-code inconsolata" -->
+<!-- .slide: class="tc-multiple-columns with-code inconsolata" -->
+
+##++##
 
 # Handling the Response
 
@@ -84,9 +86,8 @@ export const loggingInterceptor: HttpInterceptorFn = (req, next) => {
 
 <!-- .element: class="medium-code" -->
 
-##--##
-
-<!-- .slide: class="with-code inconsolata" -->
+##++##
+##++## class="with-code inconsolata"
 
 <br/><br/>
 
@@ -112,3 +113,5 @@ export class AuthInterceptor implements HttpInterceptor {
 ```
 
 <!-- .element: class="medium-code" -->
+
+##++##

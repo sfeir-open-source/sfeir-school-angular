@@ -54,4 +54,6 @@ bootstrapApplication(AppComponent, {
 
 # NGRX: Global Architecture
 
-![full-center h-800](assets/images/school/state-management/ngrx/state_management_lifecycle.png)
+![](assets/images/school/state-management/ngrx/state_management_lifecycle.png 'h-800')
+
+<!-- .element: class="full-center" -->

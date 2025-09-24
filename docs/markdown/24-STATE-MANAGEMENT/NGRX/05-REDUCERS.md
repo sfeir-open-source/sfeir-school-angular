@@ -1,19 +1,19 @@
-<!-- .slide: class="two-column" -->
+<!-- .slide: class="tc-multiple-columns" -->
+
+##++##
 
 # NGRX: Reducers
-
-<br/><br/>
 
 - Reducers are pure functions that handle state transitions. <br/><br/>
 - They contain the logic for how the state changes in response to actions. <br/><br/>
 - They are the only place where the state is modified. <br/><br/>
 - A state mutation is always synchronous.
 
-##--##
+##++##
 
-<!-- .slide: class="with-code inconsolata" -->
+##++## class="with-code inconsolata"
 
-<br/><br/><br/><br/><br/>
+<br/><br/><br/>
 
 ```typescript
 import { createReducer, on } from '@ngrx/store';
@@ -30,3 +30,5 @@ export const counterReducer = createReducer(
 ```
 
 <!-- .element: class="big-code" -->
+
+##++##

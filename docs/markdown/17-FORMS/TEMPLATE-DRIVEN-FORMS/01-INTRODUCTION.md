@@ -36,7 +36,9 @@ For module-based apps, you would add `FormsModule` to the `imports` array of you
 
 ##==##
 
-<!-- .slide: class="two-column with-code inconsolata" -->
+<!-- .slide: class="tc-multiple-columns with-code inconsolata" -->
+
+##++##
 
 # Building a Template-Driven Form
 
@@ -60,9 +62,8 @@ export class UserProfile {
 }
 ```
 
-##--##
-
-<!-- .slide: class="with-code inconsolata" -->
+##++##
+##++## class="with-code inconsolata"
 
 <br/></br><br/></br>
 
@@ -83,6 +84,8 @@ export class UserProfile {
 ```
 
 <!-- .element: class="medium-code" -->
+
+##++##
 
 ##==##
 

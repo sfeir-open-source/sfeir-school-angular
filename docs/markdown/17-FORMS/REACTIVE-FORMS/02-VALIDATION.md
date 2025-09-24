@@ -1,4 +1,4 @@
-<!-- .slide: class="two-column with-code inconsolata" -->
+<!-- .slide: class=" with-code inconsolata" -->
 
 # Validation with reactive forms
 
@@ -16,13 +16,7 @@ export class UserProfileComponent {
 }
 ```
 
-<!-- .element: class="medium-code" -->
-
-##--##
-
-<!-- .slide: class="with-code inconsolata" -->
-
-<br/><br/><br/>
+<!-- .element: class="small-code" -->
 
 ```angular181html
 <!-- user-profile.component.html -->
@@ -43,4 +37,4 @@ export class UserProfileComponent {
 </form>
 ```
 
-<!-- .element: class="big-code" -->
+<!-- .element: class="small-code" -->

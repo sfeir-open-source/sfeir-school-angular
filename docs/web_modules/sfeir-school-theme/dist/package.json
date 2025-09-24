@@ -1,0 +1,49 @@
+{
+  "name": "sfeir-school-theme",
+  "version": "4.0.0-rc-14",
+  "description": "Sfeir School Theme for RevealJS",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "./sfeir-school-theme.js",
+  "module": "./dist/sfeir-school-theme.mjs",
+  "types": "./dist/sfeir-school-theme.d.ts",
+  "style": "./dist/sfeir-school-theme.css",
+  "bin": {
+    "sfeir-school-theme-cleanup": "./dist/sfeir-school-theme-cleanup.mjs",
+    "sfeir-school-theme-migrate": "./dist/sfeir-school-theme-migration.mjs",
+    "sfeir-school-theme": "./dist/sfeir-school-theme-cli.mjs"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/sfeir-school-theme.mjs",
+      "require": "./dist/sfeir-school-theme.umd.js",
+      "types": "./dist/sfeir-school-theme.d.ts"
+    },
+    "./theme": {
+      "import": "./dist/sfeir-school-theme.css",
+      "require": "./dist/sfeir-school-theme.css"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sfeir-open-source/sfeir-school-theme.git"
+  },
+  "keywords": [
+    "css",
+    "sfeir"
+  ],
+  "author": "jefbinomed",
+  "contributors": [
+    "kuroidoruido"
+  ],
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/sfeir-open-source/sfeir-school-theme/issues"
+  },
+  "homepage": "https://github.com/sfeir-open-source/sfeir-school-theme#readme",
+  "type": "module"
+}

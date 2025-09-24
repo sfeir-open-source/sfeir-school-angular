@@ -6,7 +6,9 @@
 
 ##==##
 
-<!-- .slide: class="two-column" -->
+<!-- .slide: class="tc-multiple-columns" -->
+
+##++##
 
 ## Signal
 
@@ -16,7 +18,9 @@
 - Signal have **an initial value** <br/><br/>
 - Signal represent the **current state** of you view
 
-##--##
+##++##
+
+##++##
 
 ## Observable
 
@@ -25,6 +29,7 @@
 - Observable is **asynchronous** <br/><br/>
 - Observable doesn't really necessary have **initial value** <br/><br/>
 - Observable represent the **flow of your user**
+  ##++##
 
 ##==##
 
@@ -68,7 +73,9 @@ export class App {
 
 ##==##
 
-<!-- .slide: class="two-column"-->
+<!-- .slide: class="tc-multiple-columns"-->
+
+##++##
 
 # rxResource
 
@@ -79,11 +86,11 @@ export class App {
   - **error**: Signal which represent the error of the resource
   - **status**: Signal which represent the status of the resource
 
-##--##
+##++##
 
-<!-- .slide: class="with-code inconsolata"-->
+##++## class="with-code inconsolata"
 
-<br/><br/>
+<br/><br/><br/><br/><br/><br/>
 
 ```typescript
 @Component({
@@ -96,7 +103,7 @@ export class App {
   readonly todoResource = rxResource({
     /**
      * if you don't want to refresh the call each time the id change:
-     * params: () => undefined
+     * params: undefined
      */
     params: this.idTodo,
     stream: ({ params: id }) => this.http.get<Todo[]>(`/api/todos/${id}`),
@@ -105,3 +112,5 @@ export class App {
 ```
 
 <!-- .element: class="medium-code" -->
+
+##++##
