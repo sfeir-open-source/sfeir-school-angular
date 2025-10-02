@@ -32,16 +32,20 @@ In your index.html add the following lines:
 ```html
 ...
 <head>
-  ...
-  <!-- SFEIR Theme includes -->
-  <script type="module" src="./scripts/slides.js"></script>
-  <link rel="stylesheet" type="text/css" href="./web_modules/sfeir-school-theme/dist/sfeir-school-theme.css" id="theme" />
+    ...
+    <!-- SFEIR Theme includes -->
+    <script type="module" src="./scripts/slides.js"></script>
+    <link
+        rel="stylesheet"
+        type="text/css"
+        href="./web_modules/sfeir-school-theme/dist/sfeir-school-theme.css"
+        id="theme" />
 </head>
 <body>
-  <div class="reveal">
-    <!-- Any section element inside of this container is displayed as a slide -->
-    <div class="slides" data-type-show="prez"></div>
-  </div>
+    <div class="reveal">
+        <!-- Any section element inside of this container is displayed as a slide -->
+        <div class="slides" data-type-show="prez"></div>
+    </div>
 </body>
 ...
 ```
@@ -91,9 +95,9 @@ You can still use RevealJS API by importing `Reveal` object in `import { Reveal 
 There is too many features to list them all, but here somes usefull:
 
 - Code Higlighting (sequential highlighting will come after)
-  - Choice of Dark code or Light code
-  - Choice of font
-  - Progess Highlithing
+    - Choice of Dark code or Light code
+    - Choice of font
+    - Progess Highlithing
 - As it's controlled by class, it's compatible with markdown syntax or html
 - Fragment management to have progress display of elements
 - Print the slides (see bellow)
@@ -107,34 +111,34 @@ The theme use [TalkControl RevealJS extensions](https://github.com/TalkControl/t
 ## Features availables:
 
 - Specifics slides management:
-  - Speaker slide
-  - Transition Slides
-  - I18N for your slides mechanism
-  - Multiple Columns layout
-  - Copy/paste for code slides
-  - Configurations for slides
-  - Helpers for positionning / images size / credits notes
-  - Admonition
-  - Quotes slides
-  - QrCodes
-  - Font icons (material / feather / fontawesome)
-  - UI
-    - Slide selector
-    - Define theme
-    - Define data-type
-    - Define language
+    - Speaker slide
+    - Transition Slides
+    - I18N for your slides mechanism
+    - Multiple Columns layout
+    - Copy/paste for code slides
+    - Configurations for slides
+    - Helpers for positionning / images size / credits notes
+    - Admonition
+    - Quotes slides
+    - QrCodes
+    - Font icons (material / feather / fontawesome)
+    - UI
+        - Slide selector
+        - Define theme
+        - Define data-type
+        - Define language
 
 See the documentation about all thoses features [here](https://github.com/TalkControl/talk-control-revealjs-extensions/blob/main/docs/how-to.md)
 
 # Features add to Sfeir School theme
 
 - Specifics slides management:
-  - First Slide
-  - Speaker Slide (rework)
-  - Transitions Slides (some configurations)
-  - Three theme mode available : institute, school or conf
-  - Blur slide
-  - Exercices Slides
+    - First Slide
+    - Speaker Slide (rework)
+    - Transitions Slides (some configurations)
+    - Three theme mode available : institute, school or conf
+    - Blur slide
+    - Exercices Slides
 
 ## Play with mode theme
 
@@ -151,9 +155,9 @@ Below are `index.html` and URL examples for the available themes.
 
 ```html
 <body>
-  <div class="reveal">
-    <div class="slides" data-theme="institute">...</div>
-  </div>
+    <div class="reveal">
+        <div class="slides" data-theme="institute">...</div>
+    </div>
 </body>
 ```
 
@@ -163,9 +167,9 @@ https://sfeir-school-theme.netlify.app/index.html?data-theme=institute#/
 
 ```html
 <body>
-  <div class="reveal">
-    <div class="slides" data-theme="school">...</div>
-  </div>
+    <div class="reveal">
+        <div class="slides" data-theme="school">...</div>
+    </div>
 </body>
 ```
 
@@ -175,9 +179,9 @@ https://sfeir-school-theme.netlify.app/index.html?data-theme=school#/
 
 ```html
 <body>
-  <div class="reveal">
-    <div class="slides" data-theme="conf">...</div>
-  </div>
+    <div class="reveal">
+        <div class="slides" data-theme="conf">...</div>
+    </div>
 </body>
 ```
 
@@ -227,9 +231,9 @@ To specify the langage you want to use, you have two options :
 
 ```html
 <body>
-  <div class="reveal">
-    <div class="slides" data-lang="EN">...</div>
-  </div>
+    <div class="reveal">
+        <div class="slides" data-lang="EN">...</div>
+    </div>
 </body>
 ```
 
@@ -469,9 +473,9 @@ With this configuration option you can easily create content that is different b
 
 ```html
 <body>
-  <div class="reveal">
-    <div class="slides" data-type="prez">...</div>
-  </div>
+    <div class="reveal">
+        <div class="slides" data-type="prez">...</div>
+    </div>
 </body>
 ```
 

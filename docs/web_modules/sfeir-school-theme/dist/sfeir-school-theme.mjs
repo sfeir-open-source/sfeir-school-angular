@@ -17631,7 +17631,7 @@ class c9 {
     ];
     for (const a of t) {
       const c = document.createElement("DIV");
-      c.classList.add("sfeir-logo"), c.style["background-image"] = "url(web_modules/sfeir-school-theme/dist/images/logo_empty.webp)";
+      c.classList.add("sfeir-logo"), c.style["background-image"] = "url(./web_modules/sfeir-school-theme/dist/images/logo_empty.webp)";
       const n = a.hasAttribute("sfeir-level") ? +a.getAttribute("sfeir-level") : 1, s = a.hasAttribute("sfeir-techno") ? a.getAttribute("sfeir-techno") : "";
       c.setAttribute("data-sfeir-level", `${n}`), c.setAttribute("data-sfeir-techno", `${s}`), a.insertAdjacentElement("afterbegin", c);
     }
@@ -17664,15 +17664,15 @@ const n9 = () => ({
   /**
    * @param {() => Array.<string>} slidesFactory
    */
-  async init(e) {
+  async init(e, t = []) {
     await Qo.init({
       slidesFactory: e,
       tcCustomBackgroundOptions: {
-        basePath: "/web_modules/sfeir-school-theme/dist/images/",
-        mapBackgrounds(t) {
+        basePath: "./web_modules/sfeir-school-theme/dist/images/",
+        mapBackgrounds(a) {
           return {
-            "first-slide": t === "institute" ? "bg-blue-1.webp" : "bg-green-1.webp",
-            transition: t === "institute" ? "bg-blue-1.webp" : "bg-green-1.webp",
+            "first-slide": a === "institute" ? "bg-blue-1.webp" : "bg-green-1.webp",
+            transition: a === "institute" ? "bg-blue-1.webp" : "bg-green-1.webp",
             "speaker-slide": "var(--black)",
             "quote-slide": "var(--black)",
             "sfeir-slide": "bg-green-1.webp",
@@ -17680,10 +17680,10 @@ const n9 = () => ({
             "bg-pink": "bg-green-1.webp",
             "bg-blue": "bg-green-1.webp",
             "bg-green": "bg-green-1.webp",
-            "bg-blur": t === "institute" ? "bg-blue-blur.webp" : "bg-green-blur.webp",
-            "transition-bg-sfeir-1": t === "institute" ? "bg-blue-1.webp" : "bg-green-1.webp",
-            "transition-bg-sfeir-2": t === "institute" ? "bg-blue-2.webp" : "bg-green-2.webp",
-            "transition-bg-sfeir-3": t === "institute" ? "bg-blue-3.webp" : "bg-green-3.webp",
+            "bg-blur": a === "institute" ? "bg-blue-blur.webp" : "bg-green-blur.webp",
+            "transition-bg-sfeir-1": a === "institute" ? "bg-blue-1.webp" : "bg-green-1.webp",
+            "transition-bg-sfeir-2": a === "institute" ? "bg-blue-2.webp" : "bg-green-2.webp",
+            "transition-bg-sfeir-3": a === "institute" ? "bg-blue-3.webp" : "bg-green-3.webp",
             "transition-bg-blue-1": "bg-blue-1.webp",
             "transition-bg-blue-2": "bg-blue-2.webp",
             "transition-bg-blue-3": "bg-blue-3.webp",
@@ -17707,7 +17707,7 @@ const n9 = () => ({
           t9(),
           a9()
         ],
-        knowStyles: []
+        knowStyles: t
       },
       tcThemeOptions: {
         defaultTheme: "school"
@@ -17717,6 +17717,7 @@ const n9 = () => ({
   }
 };
 export {
+  o2 as Reveal,
   l9 as SfeirThemeInitializer
 };
 //# sourceMappingURL=sfeir-school-theme.mjs.map
