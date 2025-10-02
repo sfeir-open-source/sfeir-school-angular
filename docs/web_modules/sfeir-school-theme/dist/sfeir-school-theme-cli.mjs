@@ -74,6 +74,7 @@ var init_assert_utils = __esm({
     CheckError = class extends Error {
       constructor(ruleId, message, continueCheck = true) {
         super(`[CheckError] ${ruleId} ${message}`);
+        this.ruleId = ruleId;
         this.continueCheck = continueCheck;
       }
     };
@@ -88,6 +89,10 @@ function parseArgs(args, currentWorkingDir) {
   }
   if (args.includes("version")) {
     return { type: "version" };
+  }
+  if (args.includes("explain")) {
+    const [ruleCode] = args.slice(args.indexOf("explain") + 1);
+    return { type: "explain", ruleCode };
   }
   if (args.includes("info")) {
     return {
@@ -180,8 +185,36 @@ function isDirectory(dir, file) {
     return false;
   }
 }
+function readdirSync(pathLike, options) {
+  return fs.readdirSync(pathLike, options).filter((file) => !file.startsWith(".") && file !== "Thumbs.db");
+}
 var init_fs_utils = __esm({
   "cli/utils/fs.utils.ts"() {
+    "use strict";
+  }
+});
+
+// cli/utils/fp.utils.ts
+function isDefined(x) {
+  return x != void 0;
+}
+function isNotDefined(x) {
+  return x == void 0;
+}
+function isEmpty(x) {
+  return x.length === 0;
+}
+function isNotEmpty(x) {
+  return x.length > 0;
+}
+function isDefinedAndNotEmpty(x) {
+  return isDefined(x) && isNotEmpty(x);
+}
+function isNotDefinedOrEmpty(x) {
+  return isNotDefined(x) || isEmpty(x);
+}
+var init_fp_utils = __esm({
+  "cli/utils/fp.utils.ts"() {
     "use strict";
   }
 });
@@ -191,25 +224,35 @@ import fs2 from "fs";
 import path4 from "path";
 function getSlideFilesFromSlidesJs(rootDir) {
   return __async(this, null, function* () {
-    return (yield import(importSlidesJs(rootDir))).formation();
+    const slideJs = yield import(importSlidesJs(rootDir));
+    if (typeof slideJs.formation !== "function") {
+      throw new Error(
+        "scripts/slides.js should have an exported function formation"
+      );
+    }
+    return slideJs.formation();
   });
 }
 function getSlideFilesFromFs(rootDir) {
-  return fs2.readdirSync(path4.resolve(docsMarkdownPath(rootDir)), {
+  return readdirSync(path4.resolve(docsMarkdownPath(rootDir)), {
     encoding: "utf-8",
     recursive: true
   }).filter((path5) => path5.endsWith(".md"));
 }
 function importSlidesJs(rootDir) {
-  return "data:text/javascript;charset=utf-8," + encodeURIComponent(
-    fs2.readFileSync(
-      path4.resolve(
-        docsPath(rootDir),
-        "scripts/slides.js"
-      ),
-      "utf-8"
-    ).split("\n").filter((line) => !line.includes("SfeirThemeInitializer")).join("\n")
-  );
+  try {
+    return "data:text/javascript;charset=utf-8," + encodeURIComponent(
+      fs2.readFileSync(
+        path4.resolve(
+          docsPath(rootDir),
+          "scripts/slides.js"
+        ),
+        "utf-8"
+      ).split("\n").filter((line) => !line.includes("SfeirThemeInitializer")).join("\n")
+    );
+  } catch (err) {
+    throw new Error("Failed to read scripts/slides.js", { cause: err });
+  }
 }
 function isSlideFileExists(slideFilePath) {
   return fs2.existsSync(slideFilePath);
@@ -233,14 +276,26 @@ function getLabSlideCommandRow(file, config) {
   );
 }
 function getImagesPathFromSlides(rootDir, fileContent) {
-  return fileContent.split("\n").filter((row) => row.startsWith("![")).map(extractUrlPart).filter((url) => !url.startsWith("http")).filter(isImageInAssetsDir).map((imgPath) => docsFilePath(rootDir, imgPath));
-  function extractUrlPart(imageMdRow) {
-    const secondPart = imageMdRow.split("](")[1];
-    const urlPart = secondPart == null ? void 0 : secondPart.substring(0, secondPart.lastIndexOf(")"));
-    if (urlPart.endsWith("'")) {
-      return urlPart.substring(0, urlPart.lastIndexOf(" '"));
+  return fileContent.split("\n").flatMap(extractUrlPart).filter(isDefinedAndNotEmpty).filter((url) => !url.startsWith("http")).filter(isImageInAssetsDir).map((imgPath) => docsFilePath(rootDir, imgPath));
+  function extractUrlPart(row) {
+    if (row.startsWith("![")) {
+      const secondPart = row.split("](")[1];
+      const urlPart = secondPart == null ? void 0 : secondPart.substring(0, secondPart.lastIndexOf(")"));
+      if (urlPart.endsWith("'")) {
+        return urlPart.substring(0, urlPart.lastIndexOf(" '"));
+      } else {
+        return urlPart;
+      }
+    } else if (row.includes("<!--") && row.includes("data-background=")) {
+      const dataBackgroundPart = row.split('data-background="')[1];
+      return dataBackgroundPart == null ? void 0 : dataBackgroundPart.substring(0, dataBackgroundPart.indexOf('"'));
+    } else if (row.includes("<img")) {
+      return row.split("<img").map((img) => {
+        var _a, _b;
+        return (_b = (_a = img.match(new RegExp('src="(?<src>[^"]*)"'))) == null ? void 0 : _a.groups) == null ? void 0 : _b.src;
+      }).filter(isDefinedAndNotEmpty);
     } else {
-      return urlPart;
+      return null;
     }
   }
   function isImageInAssetsDir(imagePath) {
@@ -248,7 +303,7 @@ function getImagesPathFromSlides(rootDir, fileContent) {
   }
 }
 function getImagesPathFromFs(rootDir) {
-  return fs2.readdirSync(docsImagesPath(rootDir), {
+  return readdirSync(docsImagesPath(rootDir), {
     encoding: "utf-8",
     recursive: true
   }).filter((imagePath) => !isDirectory(docsImagesPath(rootDir), imagePath)).filter((imagePath) => !imagePath.includes("sfeir-school-logo.png")).map((imagePath) => docsImagePath(rootDir, imagePath));
@@ -261,6 +316,7 @@ var init_slide_utils = __esm({
     "use strict";
     init_path_utils();
     init_fs_utils();
+    init_fp_utils();
   }
 });
 
@@ -310,25 +366,6 @@ var init_css_utils = __esm({
       ".transition-bg-sfeir-2",
       ".transition-bg-sfeir-3"
     ];
-  }
-});
-
-// cli/utils/fp.utils.ts
-function isDefined(x) {
-  return x != void 0;
-}
-function isNotDefined(x) {
-  return x == void 0;
-}
-function isNotEmpty(x) {
-  return x.length > 0;
-}
-function isDefinedAndNotEmpty(x) {
-  return isDefined(x) && isNotEmpty(x);
-}
-var init_fp_utils = __esm({
-  "cli/utils/fp.utils.ts"() {
-    "use strict";
   }
 });
 
@@ -382,7 +419,7 @@ function getLabCommandTarget(labCommandRow, config) {
   return (_a = labCommandRow.split(config.stepCommandPrefix)[1]) == null ? void 0 : _a.trim();
 }
 function getAllLabsFromFs(rootDir, config) {
-  return fs4.readdirSync(labsPath(rootDir), { encoding: "utf-8" }).filter((filePath) => !config.ignoreStepsDirectories.includes(filePath)).filter(
+  return readdirSync(labsPath(rootDir), { encoding: "utf-8" }).filter((filePath) => !config.ignoreStepsDirectories.includes(filePath)).filter(
     (filePath) => isDirectory(labsPath(rootDir), filePath)
   );
 }
@@ -426,8 +463,8 @@ function getLabReadme(rootDir, lab) {
 var init_labs_utils = __esm({
   "cli/utils/labs.utils.ts"() {
     "use strict";
-    init_path_utils();
     init_fs_utils();
+    init_path_utils();
     init_fp_utils();
   }
 });
@@ -435,9 +472,17 @@ var init_labs_utils = __esm({
 // cli/command/check/check-docs.ts
 function checkDocs(rootDir, config) {
   return __async(this, null, function* () {
-    const slideFilesFromSlidesJs = yield getSlideFilesFromSlidesJs(
-      rootDir
-    );
+    let slideFilesFromSlidesJs;
+    try {
+      slideFilesFromSlidesJs = yield getSlideFilesFromSlidesJs(rootDir);
+    } catch (e) {
+      check(
+        "S_010",
+        { msg: `slides.js should export "formation" function`, continueCheck: false },
+        () => false
+      );
+      return;
+    }
     checkSlideFilePathInSlideJs(rootDir, slideFilesFromSlidesJs);
     checkSlideFileInFs(rootDir, slideFilesFromSlidesJs, config);
     checkLabSlideFile(rootDir, slideFilesFromSlidesJs, config);
@@ -660,7 +705,6 @@ var init_check_labs = __esm({
 });
 
 // cli/command/check/check-root-dir.ts
-import fs5 from "fs";
 function checkRootDir(command) {
   check(
     "G_001",
@@ -688,13 +732,13 @@ function checkRootDir(command) {
   );
 }
 function readRootDir(command) {
-  return fs5.readdirSync(command.rootDir);
+  return readdirSync(command.rootDir);
 }
 var init_check_root_dir = __esm({
   "cli/command/check/check-root-dir.ts"() {
     "use strict";
-    init_assert_utils();
     init_fs_utils();
+    init_assert_utils();
   }
 });
 
@@ -711,11 +755,11 @@ var init_config_template = __esm({
 });
 
 // cli/utils/config.utils.ts
-import fs6 from "fs";
+import fs5 from "fs";
 function getProjectConfig(rootDir) {
   const configPath = projectConfigPath(rootDir);
-  if (fs6.existsSync(configPath)) {
-    return __spreadValues(__spreadValues({}, config_template_default), JSON.parse(fs6.readFileSync(configPath, "utf-8")));
+  if (fs5.existsSync(configPath)) {
+    return __spreadValues(__spreadValues({}, config_template_default), JSON.parse(fs5.readFileSync(configPath, "utf-8")));
   } else {
     return config_template_default;
   }
@@ -747,6 +791,16 @@ var init_internal = __esm({
   }
 });
 
+// cli/utils/array.utils.ts
+function unique(all) {
+  return [...new Set(all)];
+}
+var init_array_utils = __esm({
+  "cli/utils/array.utils.ts"() {
+    "use strict";
+  }
+});
+
 // cli/command/check/index.ts
 function checkCommand(command) {
   return __async(this, null, function* () {
@@ -758,6 +812,10 @@ function checkCommand(command) {
       getErrors().forEach((error) => {
         console.error(error.message);
       });
+      console.error("");
+      const errorIds = unique(getErrors().map((e) => e.ruleId)).sort();
+      console.error(`You can call "sfeir-school-theme explain ${errorIds.join("|")}" to have more details.`);
+      console.error("");
       process.exit(getErrors().length);
     }
   });
@@ -767,6 +825,39 @@ var init_check = __esm({
     "use strict";
     init_internal();
     init_assert_utils();
+    init_array_utils();
+  }
+});
+
+// cli/README.md
+var README_default;
+var init_README = __esm({
+  "cli/README.md"() {
+    README_default = '# CLI\n\n## Check\n\n### Global checks\n\n##### G_001 the root directory exists (current working dir by default, --rootDir value if specified)\n\nTo make the sfeir-school-theme CLI work correctly, it should be run in the repository root (or be run with --rootDir specified), and the root directory should exists.\n\n##### G_002 the `<root>/docs` directory exists\n\nThe root directory should contains a minimal structure:\n\n```\n<root>\n\u251C\u2500\u2500 CONTRIBUTING.md\n\u251C\u2500\u2500 docs\n|   \u251C\u2500\u2500 ...\n\u251C\u2500\u2500 LICENSE\n\u251C\u2500\u2500 README.md\n\u2514\u2500\u2500 steps\n    \u251C\u2500\u2500 ...\n```\n\n##### G_003 the `<root>/steps` directory exists\n\nThe root directory should contains a minimal structure:\n\n```\n<root>\n\u251C\u2500\u2500 CONTRIBUTING.md\n\u251C\u2500\u2500 docs\n|   \u251C\u2500\u2500 ...\n\u251C\u2500\u2500 LICENSE\n\u251C\u2500\u2500 README.md\n\u2514\u2500\u2500 steps\n    \u251C\u2500\u2500 ...\n```\n\n### Slides checks\n\n#### General slides checks\n\n##### S_010 the script `<root>/docs/scripts/slides.js` should contain an exported function `formation()`\n\nEvery school should have a file `slides.js` in the correct directory and with an exported function `formation()`.\n\n`<root>/docs/scripts/slides.js` :\n\n```JavaScript\nimport { SfeirThemeInitializer } from \'../web_modules/sfeir-school-theme/dist/sfeir-school-theme.mjs\';\n\nfunction schoolSlides() {\n  const dir = \'00-school\';\n  return [\n    `${dir}/00-TITLE.md`,\n    `${dir}/01-wifi.md`,\n    ...\n  ];\n}\n\n...\n\nexport function formation() {\n  return [\n    schoolSlides(),\n    ...\n  ].flatMap((slidePath) => ({ path: slidePath }));\n}\n\nSfeirThemeInitializer.init(formation);\n```\n\n##### S_001 every entry returned by the function `formation()` in `<root>/docs/scripts/slides.js` is valid\n\nEvery entry returned by the function `formation()` should be an object which have a path property.\n\n##### S_002 every entry returned by the function `formation()` in `<root>/docs/scripts/slides.js` exists in the `<root>/docs/markdown` directory\n\nEvery entry returned by the function `formation()` should have a path matching an existing markdown file in the `<root>/docs/markdown` directory.\n\n##### S_003 every markdown file in the `<root>/docs/markdown` directory is declared in the `<root>/docs/scripts/slides.js`\n\nEvery markdown files in the `<root>/docs/markdown` directory should be declared with a valid entry in the result of the `formation()` function in `<root>/docs/scripts/slides.js`.\n\n#### Lab slides specific checks\n\n##### S_004 every lab slide file contains the command to run the exercise\n\nEvery labs should have the expected format:\n\n```Markdown\n<!-- .slide: class="exercice" -->\n\n# Lab title\n\n## Lab\n\n<br>\n\n1. First thing to do\n2. Another thing to do\n3. Last thing to do\n\n<br>\n\n- note for the students\n\n### command to run\n\nNotes:\n- eventual speaker notes\n```\n\nThe command should start with `stepCommandPrefix` specified in the `<root>/.sfeir-theme-config.json`. This command should also contains an existing lab command.\n\n##### S_005 every lab slide file contains the valid command to run the exercise\n\nEvery labs should have the expected format:\n\n```Markdown\n<!-- .slide: class="exercice" -->\n\n# Lab title\n\n## Lab\n\n<br>\n\n1. First thing to do\n2. Another thing to do\n3. Last thing to do\n\n<br>\n\n- note for the students\n\n### command to run\n\nNotes:\n- eventual speaker notes\n```\n\nThe command should start with `stepCommandPrefix` specified in the `<root>/.sfeir-theme-config.json`. This command should also contains an existing lab command.\n\n##### S_006 every lab slide should have lab format\n\nEvery labs should have the expected format:\n\n```Markdown\n<!-- .slide: class="exercice" -->\n\n# Lab title\n\n## Lab\n\n<br>\n\n1. First thing to do\n2. Another thing to do\n3. Last thing to do\n\n<br>\n\n- note for the students\n\n### command to run\n\nNotes:\n- eventual speaker notes\n```\n\nThe command should start with `stepCommandPrefix` specified in the `<root>/.sfeir-theme-config.json`. This command should also contains an existing lab command.\n\n#### Images / slides checks\n\n##### S_007 every images (relative one\'s only) in a slide should exists\n\nEvery images linked in a slide should exists in the assets directory `<root>/docs/assets/images/`.\n\n##### S_008 every images in assets should be referenced at least in one slide\n\nEvery images in `<root>/docs/assets/images/` directory should be linked in a slide.\n\n#### CSS classes\n\n##### S_009 every classes used in slide files should be known\n\nEvery classes used in a slide file should exists:\n\n- in `<root>/docs/web_modules/sfeir-school-theme/dist/sfeir-school-theme.css`;\n- in `<root>/docs/css/slides.css`;\n- in any css files declared in the property `extraCssFiles` in the `<root>/.sfeir-theme-config.json`;\n\n### Labs checks\n\n#### General labs checks\n\n##### L_001 every labs should be used in a slide\n\nEvery lab should be referenced in the lab slide.\n\n#### Workspace / Scripts checks\n\n##### L_002 every lab should be declared in the workspace (either "workspaces" or "labs" in a file `<root>/steps/package.json` or `<root>/steps/labs.json` at the root of "steps" directory)\n\nEvery lab should be declared either in `<root>/steps/package.json` or `<root>/steps/labs.json`.\n\nFor `package.json` format:\n\n```Json\n{\n    "workspaces": [\n        "01-getting-started",\n        "01-getting-started-solution"\n    ]\n}\n```\n\nFor `labs.json` format:\n\n```Json\n{\n    "labs": [\n        "01-getting-started",\n        "01-getting-started-solution"\n    ]\n}\n```\n\n##### L_003 every lab should have a script in `package.json` to start it (only if workspace is declared in a `<root>/steps/package.json` file) (NPM PROJECT ONLY)\n\nRules for NPM projects only. If you have a `<root>/steps/package.json` the this rules will be activated automatically.\n\nEvery lab should have a dedicated script in the `package.json`.\n\n```Json\n{\n    "workspaces": [\n        "01-getting-started",\n        "01-getting-started-solution"\n    ],\n    "scripts": {\n        "01-getting-started": "...",\n        "01-getting-started-solution": "..."\n    }\n}\n```\n\n##### L_004 every lab should have a `package.json` with corresponding name (only if workspace is declared in a `<root>/steps/package.json` file) (NPM PROJECT ONLY)\n\nRules for NPM projects only. If you have a `<root>/steps/package.json` the this rules will be activated automatically.\n\nEvery lab in the `workspaces` property in `<root>/steps/package.json` file should correspond to a directory in `<root>/steps/` with a package.json file.\n\n#### Instructions checks\n\n##### L_005 every lab should have a `README.md`\n\nEvery lab directory in `<root>/steps/` should contain a `README.md` file with the lab title and the correct command.\n\nExample of minimal `README.md`:\n\n```Markdown\n# 01-getting-started instructions\n\nnpm run 01-getting-started\n```\n\n##### L_006 every lab `README.md` should have correct title\n\nEvery lab directory in `<root>/steps/` should contain a `README.md` file with the lab title and the correct command.\n\nExample of minimal `README.md`:\n\n```Markdown\n# 01-getting-started instructions\n\nnpm run 01-getting-started\n```\n##### L_007 every lab `README.md` should contains the correct command to start the lab\n\nEvery lab directory in `<root>/steps/` should contain a `README.md` file with the lab title and the correct command.\n\nExample of minimal `README.md`:\n\n```Markdown\n# 01-getting-started instructions\n\nnpm run 01-getting-started\n```\n\n#### Solutions checks\n\n##### L_008 every lab should have solution\n\nEvery lab should have a equivalent solution\'s lab. For example, if you create a lab "01-getting-started", you should create an other lab "01-getting-started-solution".\n\n##### L_009 every solution directory should match a lab\n\nEvery lab with `-solution` suffix should match a lab with the exact same name without the `-solution` suffix.\n\n##### L_010 every solution `README.md` should be the same as the lab\'s one\n\nBoth lab and solution\'s lab should have the same `README.md` file content.\n';
+  }
+});
+
+// cli/command/explain.ts
+function explainCommand({ ruleCode }) {
+  if (isNotDefinedOrEmpty(ruleCode)) {
+    console.error("You should specify the rule code you wanted.\n\n");
+    return;
+  }
+  if (!README_default.includes("##### " + ruleCode)) {
+    console.error("You should specify an existing rule code.\n\n");
+    return;
+  }
+  const doc = README_default.split("\n");
+  const ruleSectionIndex = doc.findIndex((row) => row.startsWith("##### " + ruleCode));
+  let docSection = doc.slice(ruleSectionIndex);
+  docSection = docSection.slice(0, docSection.slice(1).findIndex((row) => row.startsWith("##### ")));
+  console.log(docSection.join("\n") + "\n");
+}
+var init_explain = __esm({
+  "cli/command/explain.ts"() {
+    "use strict";
+    init_fp_utils();
+    init_README();
   }
 });
 
@@ -785,6 +876,7 @@ Command:
     version: Display the CLI version
     check: Run project checks
         --rootDir=/path/to/root/dir
+    explain [ruleCode]: Give the rule documentation
 `);
 }
 var init_help = __esm({
@@ -824,13 +916,13 @@ var init_info = __esm({
 });
 
 // cli/command/init-config.ts
-import fs7 from "fs";
+import fs6 from "fs";
 function initConfigCommand({ rootDir }) {
   const configPath = projectConfigPath(rootDir);
-  if (fs7.existsSync(configPath)) {
+  if (fs6.existsSync(configPath)) {
     throw new Error("Cannot init config as there is already one.");
   }
-  fs7.writeFileSync(
+  fs6.writeFileSync(
     configPath,
     JSON.stringify(config_template_default, void 0, 2)
   );
@@ -893,7 +985,7 @@ var init_package = __esm({
         lint: "eslint src/ cli/",
         "lint:fix": "eslint --fix src/ cli/",
         "cli-build": "tsup --config ./tsup.cli.config.ts",
-        "cli-run": "node dist/cli/main.js"
+        "cli-run": "node dist/sfeir-school-theme-cli.mjs"
       },
       repository: {
         type: "git",
@@ -967,6 +1059,9 @@ function runCommand(command) {
       case "init-config":
         yield initConfigCommand(command);
         break;
+      case "explain":
+        explainCommand(command);
+        break;
       case "help":
         helpCommand();
         break;
@@ -987,6 +1082,7 @@ var init_run = __esm({
   "cli/command/run.ts"() {
     "use strict";
     init_check();
+    init_explain();
     init_help();
     init_info();
     init_init_config();
@@ -1006,6 +1102,9 @@ var require_main = __commonJS({
       } catch (error) {
         if (error instanceof CheckError) {
           console.error(error.message);
+          console.error("");
+          console.error(`You can call "sfeir-school-theme explain ${error.ruleId}" to have more details.`);
+          console.error("");
           process.exit(1);
         }
         if (error instanceof Error) {
