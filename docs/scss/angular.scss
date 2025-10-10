@@ -62,6 +62,20 @@
   }
 }
 
+/** Ensure decent display on non-chrome-based browser **/
+@media all and (min--moz-device-pixel-ratio:0) {
+  .reveal .slides section :not(section).full-center {
+    height: 100vh;
+    img {
+      height: 100%;
+    }
+  }
+  .reveal .slides section p:has(img.full-center) {
+    height: 100vh;
+  }
+}
+
+
 /** Specific **/
 
 @import 'custom-directive';

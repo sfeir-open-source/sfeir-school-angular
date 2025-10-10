@@ -21,7 +21,7 @@ export const userResolver: ResolveFn<User[]> = (route, state) => {
 
 ##==##
 
-<!-- .slide: class="with-code inconsolata" -->
+<!-- .slide: class="with-code inconsolata" data-type-show="on-stage" -->
 
 # How to write a resolver before v14
 

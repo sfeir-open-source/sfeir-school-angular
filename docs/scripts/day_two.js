@@ -1,6 +1,13 @@
+import { showByDefault } from './utils.js';
+
 function providersSlide() {
   const PROVIDERS = '12-PROVIDERS';
-  return [`${PROVIDERS}/SCHOOL-200.md`, `${PROVIDERS}/00-TRANSITION-SLIDE.md`, `${PROVIDERS}/01-INTRODUCTION.md`, `${PROVIDERS}/100-LAB.md`];
+  return [
+    showByDefault(`${PROVIDERS}/SCHOOL-200.md`), //
+    `${PROVIDERS}/00-TRANSITION-SLIDE.md`, //
+    `${PROVIDERS}/01-INTRODUCTION.md`, //
+    `${PROVIDERS}/100-LAB.md`, //
+  ];
 }
 
 function dependencyInjectionSlides() {
@@ -10,7 +17,7 @@ function dependencyInjectionSlides() {
     `${DEPENDENCY_INJECTION}/01-BASICS.md`,
     `${DEPENDENCY_INJECTION}/02-DI-WORKING.md`,
     `${DEPENDENCY_INJECTION}/03-DI-RESOLUTION.md`,
-  ];
+  ].map(showByDefault);
 }
 
 function pipeSlides() {
@@ -20,19 +27,31 @@ function pipeSlides() {
     `${PIPE}/01-INTRODUCTION.md`,
     `${PIPE}/02-SYNTAX.md`,
     `${PIPE}/100-LAB.md`,
-    `${PIPE}/03-CUSTOM-PiPE.md`,
-    `${PIPE}/101-LAB.md`,
+    `${PIPE}/03-CUSTOM-PIPE.md`,
+    showByDefault(`${PIPE}/101-LAB.md`),
   ];
 }
 
 function controlFlowSlides() {
   const CONTROL_FLOW = '15-CONTROL-FLOW';
-  return [`${CONTROL_FLOW}/00-TRANSITION-SLIDE.md`, `${CONTROL_FLOW}/01-INTRODUCTION.md`, `${CONTROL_FLOW}/100-LAB.md`];
+  return [
+    `${CONTROL_FLOW}/00-TRANSITION-SLIDE.md`,
+    showByDefault(`${CONTROL_FLOW}/01-INTRODUCTION.md`),
+    `${CONTROL_FLOW}/02-if.md`,
+    `${CONTROL_FLOW}/03-for.md`,
+    showByDefault(`${CONTROL_FLOW}/04-switch.md`),
+    showByDefault(`${CONTROL_FLOW}/05-migration.md`),
+    `${CONTROL_FLOW}/100-LAB.md`,
+  ];
 }
 
 function directiveSlides() {
   const DIRECTIVE = '16-DIRECTIVE';
-  return [`${DIRECTIVE}/00-TRANSITION-SLIDE.md`, `${DIRECTIVE}/01-CUSTOM-DIRECTIVE.md`, `${DIRECTIVE}/100-LAB.md`];
+  return [
+    `${DIRECTIVE}/00-TRANSITION-SLIDE.md`, //
+    `${DIRECTIVE}/01-CUSTOM-DIRECTIVE.md`, //
+    `${DIRECTIVE}/100-LAB.md`, //
+  ].map(showByDefault);
 }
 
 function templateDrivenForms() {
@@ -44,7 +63,7 @@ function templateDrivenForms() {
     `${FORMS}/TEMPLATE-DRIVEN-FORMS/02-VALIDATION.md`,
     `${FORMS}/TEMPLATE-DRIVEN-FORMS/101-LAB.md`,
     `${FORMS}/TEMPLATE-DRIVEN-FORMS/102-LAB.md`,
-  ];
+  ].map(showByDefault);
 }
 
 function reactiveFormSlides() {
@@ -54,7 +73,7 @@ function reactiveFormSlides() {
     `${FORMS}/REACTIVE-FORMS/02-VALIDATION.md`,
     `${FORMS}/REACTIVE-FORMS/100-LAB.md`,
     `${FORMS}/REACTIVE-FORMS/03-CUSTOM-VALIDATION.md`,
-    `${FORMS}/REACTIVE-FORMS/101-LAB.md`,
+    showByDefault(`${FORMS}/REACTIVE-FORMS/101-LAB.md`),
     `${FORMS}/01-SUMMARY.md`,
   ];
 }

@@ -1,17 +1,20 @@
+import { showByDefault } from './utils.js';
+
 function navigationAdvancedSlides() {
   const NAVIGATION_ADVANCED = '18-NAVIGATION-ADVANCED';
   return [
-    `${NAVIGATION_ADVANCED}/ANGULAR-300.md`,
+    showByDefault(`${NAVIGATION_ADVANCED}/ANGULAR-300.md`),
     `${NAVIGATION_ADVANCED}/00-LAZY-LOADING-TRANSITION-SLIDE.md`,
     `${NAVIGATION_ADVANCED}/01-LAZY-LOADING-PRINCIPES.md`,
     `${NAVIGATION_ADVANCED}/02-LAZY-LOADING-ROUTE-DEFINITION.md`,
-    `${NAVIGATION_ADVANCED}/03-LAZY-LOADING-ROUTE-DEFINITION-CHILD.md`,
+    showByDefault(`${NAVIGATION_ADVANCED}/03-LAZY-LOADING-ROUTE-DEFINITION-CHILD.md`),
     `${NAVIGATION_ADVANCED}/04-GUARDS-TRANSITION-SLIDE.md`,
     `${NAVIGATION_ADVANCED}/05-GUARDS-INTRODUCTION.md`,
     `${NAVIGATION_ADVANCED}/06-GUARDS-VERIFICATION.md`,
     `${NAVIGATION_ADVANCED}/07-GUARDS-RESOLVER.md`,
-    `${NAVIGATION_ADVANCED}/100-LAB.md`,
-    `${NAVIGATION_ADVANCED}/101-LAB.md`,
+    showByDefault(`${NAVIGATION_ADVANCED}/100-LAB.md`),
+    showByDefault(`${NAVIGATION_ADVANCED}/101-LAB.md`),
+    showByDefault(`${NAVIGATION_ADVANCED}/102-LAB.md`),
   ];
 }
 
@@ -24,7 +27,7 @@ function interceptorsSlides() {
     `${INTERCEPTORS}/03-REGISTER.md`,
     `${INTERCEPTORS}/04-CONTEXT.md`,
     `${INTERCEPTORS}/100-LAB.md`,
-  ];
+  ].map(showByDefault);
 }
 
 function templatingSlides() {
@@ -37,7 +40,7 @@ function templatingSlides() {
     `${TEMPLATING}/04-NG-CONTENT.md`,
     `${TEMPLATING}/05-REFERENCE.md`,
     `${TEMPLATING}/100-LAB.md`,
-  ];
+  ].map(showByDefault);
 }
 
 function directiveAdvancedSlides() {
@@ -52,7 +55,7 @@ function directiveAdvancedSlides() {
     `${DIRECTIVE_ADVANCED}/04-STRUCTURAL-DEFINITION.md`,
     `${DIRECTIVE_ADVANCED}/05-STRUCTURAL-PROVIDERS.md`,
     `${DIRECTIVE_ADVANCED}/101-LAB.md`,
-  ];
+  ].map(showByDefault);
 }
 
 function formAdvancedSlide() {
@@ -62,15 +65,15 @@ function formAdvancedSlide() {
     `${FORMS_ADVANCED}/01-INTRODUCTION.md`,
     `${FORMS_ADVANCED}/02-SETUP.md`,
     `${FORMS_ADVANCED}/100-LAB.md`,
-  ];
+  ].map(showByDefault);
 }
 
 function changeDetectionSlides() {
   const CHANGE_DETECTION = '23-CHANGE-DETECTION';
   return [
     `${CHANGE_DETECTION}/00-TRANSITION-SLIDE.md`,
-    `${CHANGE_DETECTION}/01-INTRODUCTION.md`,
-    `${CHANGE_DETECTION}/02-CHANGE-DETECTION-SERVICE.md`,
+    showByDefault(`${CHANGE_DETECTION}/01-INTRODUCTION.md`),
+    showByDefault(`${CHANGE_DETECTION}/02-CHANGE-DETECTION-SERVICE.md`),
     `${CHANGE_DETECTION}/03-ZONELESS.md`,
   ];
 }
