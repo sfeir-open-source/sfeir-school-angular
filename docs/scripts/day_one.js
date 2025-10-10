@@ -10,7 +10,7 @@ function introductionSlides() {
 
 function speakerSlides() {
   const SPEAKER = '00-SPEAKER';
-  return [`${SPEAKER}/00-nicolas-frizzarin.md`];
+  return [`${SPEAKER}/00-nicolas-frizzarin.md`, `${SPEAKER}/00-anthony-pena.md`];
 }
 
 function basicsSlides() {
