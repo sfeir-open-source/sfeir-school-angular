@@ -1,3 +1,5 @@
+import { showOnModern2days, showByDefault } from './utils.js';
+
 /** Here is all the slides for day one
  *
  * This school is big on content, it must be a good id to split slides by days
@@ -5,7 +7,7 @@
 
 function introductionSlides() {
   const PRESENTATION = '00-PRESENTATION';
-  return [`${PRESENTATION}/00-WELCOME.md`, `${PRESENTATION}/01-fLOW-SCHOOL.md`];
+  return [`${PRESENTATION}/00-WELCOME.md`, `${PRESENTATION}/01-FLOW-SCHOOL.md`];
 }
 
 function speakerSlides() {
@@ -15,30 +17,44 @@ function speakerSlides() {
 
 function basicsSlides() {
   const BASICS = '01-BASICS';
-  return [`${BASICS}/00-TRANSITION-SLIDE.md`, `${BASICS}/01-ENVIRONMENT-SETUP.md`, `${BASICS}/02-ANGULAR.md`, `${BASICS}/03-MATERIAL.md`];
+  return [
+    `${BASICS}/00-TRANSITION-SLIDE.md`, //
+    `${BASICS}/01-ENVIRONMENT-SETUP.md`, //
+    `${BASICS}/02-ANGULAR.md`, //
+    `${BASICS}/03-MATERIAL.md`,
+  ].map(showOnModern2days);
 }
 
 function architectureSlides() {
   const ARCHITECTURE = '02-ARCHITECTURE';
   return [
-    `${ARCHITECTURE}/00-TRANSITION-SLIDE.md`,
-    `${ARCHITECTURE}/01-INTRODUCTION-SCHEMA.md`,
-    `${ARCHITECTURE}/02-COMPONENT.md`,
-    `${ARCHITECTURE}/04-MODULE.md`,
-    `${ARCHITECTURE}/05-BOOTSTRAPPING.md`,
-    `${ARCHITECTURE}/06-MODULE-BUNDLER.md`,
-    `${ARCHITECTURE}/100-LAB.md`,
+    showOnModern2days(`${ARCHITECTURE}/00-TRANSITION-SLIDE.md`),
+    showOnModern2days(`${ARCHITECTURE}/01-INTRODUCTION-SCHEMA.md`),
+    showOnModern2days(`${ARCHITECTURE}/02-COMPONENT.md`),
+    showByDefault(`${ARCHITECTURE}/04-MODULE.md`),
+    showOnModern2days(`${ARCHITECTURE}/05-BOOTSTRAPPING.md`),
+    showByDefault(`${ARCHITECTURE}/06-BOOTSTRAPPING-MODULE.md`),
+    showByDefault(`${ARCHITECTURE}/07-MODULE-BUNDLER.md`),
+    showByDefault(`${ARCHITECTURE}/100-LAB.md`),
   ];
 }
 
 function cliSlides() {
   const CLI = '03-CLI';
-  return [`${CLI}/00-TRANSITION-SLIDE.md`, `${CLI}/01-COMMANDS.md`, `${CLI}/100-LAB.md`];
+  return [
+    `${CLI}/00-TRANSITION-SLIDE.md`, //
+    `${CLI}/01-COMMANDS.md`, //
+    `${CLI}/100-LAB.md`,
+  ].map(showByDefault);
 }
 
 function componentsSlides() {
   const COMPONENTS = '04-COMPONENTS';
-  return [`${COMPONENTS}/00-TRANSITION-SLIDE.md`, `${COMPONENTS}/01-CONCEPTS.md`, `${COMPONENTS}/100-LAB.md`];
+  return [
+    `${COMPONENTS}/00-TRANSITION-SLIDE.md`, //
+    `${COMPONENTS}/01-CONCEPTS.md`, //
+    `${COMPONENTS}/100-LAB.md`, //
+  ];
 }
 
 function dataBindingSlides() {
@@ -49,14 +65,18 @@ function dataBindingSlides() {
     `${DATA_BINDING}/02-REACTIVITY-CONCEPT.md`,
     `${DATA_BINDING}/03-BINDING.md`,
     `${DATA_BINDING}/04-REMINDER.md`,
-    `${DATA_BINDING}/05-TEMPLATE-VARIABLE.md`,
+    showByDefault(`${DATA_BINDING}/05-TEMPLATE-VARIABLE.md`),
     `${DATA_BINDING}/100-LAB.md`,
   ];
 }
 
 function lifecycleSlides() {
   const LIFECYCLE = '06-LIFECYCLE';
-  return [`${LIFECYCLE}/00-TRANSITION-SLIDE.md`, `${LIFECYCLE}/02-HOOK-IMPLEMENTATION.md`, `${LIFECYCLE}/03-HOOK.md`];
+  return [
+    `${LIFECYCLE}/00-TRANSITION-SLIDE.md`, //
+    showByDefault(`${LIFECYCLE}/02-HOOK-IMPLEMENTATION.md`), //
+    `${LIFECYCLE}/03-HOOK.md`, //
+  ];
 }
 
 function eventSlides() {

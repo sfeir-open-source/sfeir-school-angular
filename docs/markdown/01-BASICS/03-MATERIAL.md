@@ -5,8 +5,7 @@
 ##==##
 
 <!-- .slide: class="full-center" -->
-
-![](assets/images/school/basics/angular_material.png 'Angular Material Logo')
+![](assets/images/school/basics/angular_material.png)
 
 ##==##
 

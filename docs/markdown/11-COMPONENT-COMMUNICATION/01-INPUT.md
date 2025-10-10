@@ -1,4 +1,4 @@
-<!-- .slide: class="with-code inconsolata" -->
+<!-- .slide: class="with-code inconsolata" data-type-show="modern-2days" -->
 
 # Parent-child communication: input signal function
 
@@ -30,7 +30,7 @@ export class ChildComponent {
 
 ##==##
 
-<!-- .slide: class="with-code inconsolata" -->
+<!-- .slide: class="with-code inconsolata" data-type-show="on-stage" -->
 
 # Parent-child communication: @Input decorator
 
@@ -61,6 +61,8 @@ export class ChildComponent {
 <!-- .element: class="medium-code" -->
 
 ##==##
+
+<!-- .slide: class="with-code inconsolata" data-type-show="on-stage" -->
 
 # Keep in mind
 

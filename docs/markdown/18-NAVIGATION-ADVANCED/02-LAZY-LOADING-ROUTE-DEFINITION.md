@@ -1,4 +1,4 @@
-<!-- .slide: class="with-code inconsolata" -->
+<!-- .slide: class="with-code inconsolata" data-type-show="on-stage" -->
 
 # Definition in the main routing with Module
 
@@ -30,9 +30,9 @@ Notes:
 const ROUTES: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'login', LoadComponent: () => import('./login/login.component').then(m => m.LoginComponent) },
-  { path: 'admin', LoadComponent: () => import('./admin/admin.component').then(m => m.AdminComponent) },
-  { path: 'order', LoadComponent: () => import('./order/order.component').then(m => m.OrderComponent) },
+  { path: 'login', loadComponent: () => import('./login/login.component').then(m => m.LoginComponent) },
+  { path: 'admin', loadComponent: () => import('./admin/admin.component').then(m => m.AdminComponent) },
+  { path: 'order', loadComponent: () => import('./order/order.component').then(m => m.OrderComponent) },
 ];
 ```
 

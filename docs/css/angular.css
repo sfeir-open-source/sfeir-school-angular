@@ -54,6 +54,18 @@
   left: 0;
 }
 
+/** Ensure decent display on non-chrome-based browser **/
+@media all and (min--moz-device-pixel-ratio: 0) {
+  .reveal .slides section :not(section).full-center {
+    height: 100vh;
+  }
+  .reveal .slides section :not(section).full-center img {
+    height: 100%;
+  }
+  .reveal .slides section p:has(img.full-center) {
+    height: 100vh;
+  }
+}
 /** Specific **/
 div.container-practice {
   display: inline-flex;

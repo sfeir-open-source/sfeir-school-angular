@@ -33,7 +33,7 @@ export function loginGuard(): CanMatchFn {
 
 ##==##
 
-<!-- .slide: class="with-code inconsolata" -->
+<!-- .slide: class="with-code inconsolata" data-type-show="on-stage" -->
 
 # How to write a guard before v14 (deprecated)
 
@@ -75,7 +75,7 @@ export const APP_ROUTES: Routes = [
   {
     path: 'dashboard',
     canMatch: [loginGuard],
-    loadChildren: () => import('app/feature/dashboard/dashboard.module').then(m => m.DashboardModule),
+    loadComponent: () => import('app/feature/dashboard/dashboard.component').then(m => m.DashboardComponent),
   },
 ];
 ```
