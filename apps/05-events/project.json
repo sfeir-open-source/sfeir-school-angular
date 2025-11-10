@@ -7,17 +7,27 @@
   "tags": [],
   "targets": {
     "build": {
-      "executor": "@angular-devkit/build-angular:application",
-      "outputs": ["{options.outputPath}"],
+      "executor": "@angular/build:application",
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/05-events",
         "index": "apps/05-events/src/index.html",
         "browser": "apps/05-events/src/main.ts",
-        "polyfills": ["apps/05-events/src/polyfills.ts"],
+        "polyfills": [
+          "apps/05-events/src/polyfills.ts"
+        ],
         "tsConfig": "apps/05-events/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/05-events/src/favicon.ico", "apps/05-events/src/assets"],
-        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/05-events/src/styles.scss"],
+        "assets": [
+          "apps/05-events/src/favicon.ico",
+          "apps/05-events/src/assets"
+        ],
+        "styles": [
+          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+          "apps/05-events/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -52,7 +62,7 @@
       "defaultConfiguration": "production"
     },
     "serve": {
-      "executor": "@angular-devkit/build-angular:dev-server",
+      "executor": "@angular/build:dev-server",
       "configurations": {
         "production": {
           "buildTarget": "05-events:build:production"
@@ -65,7 +75,7 @@
       "continuous": true
     },
     "extract-i18n": {
-      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "executor": "@angular/build:extract-i18n",
       "options": {
         "buildTarget": "05-events:build"
       }
@@ -74,11 +84,13 @@
       "executor": "@nx/eslint:lint"
     },
     "test": {
-      "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/apps/05-events"],
+      "executor": "@nx/vite:test",
+      "outputs": [
+        "{options.reportsDirectory}"
+      ],
       "options": {
-        "jestConfig": "apps/05-events/jest.config.ts",
-        "tsConfig": "apps/05-events/tsconfig.spec.json"
+        "reportsDirectory": "../../coverage/apps/05-events",
+        "passWithNoTests": true
       }
     }
   }

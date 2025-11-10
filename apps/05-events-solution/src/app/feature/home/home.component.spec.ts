@@ -3,6 +3,7 @@ import { By } from '@angular/platform-browser';
 import { fireEvent, render, screen } from '@testing-library/angular';
 import { PEOPLE } from '../../mocks/people.mock';
 import { HomeComponent } from './home.component';
+import { vi } from 'vitest';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -72,7 +73,7 @@ describe('HomeComponent', () => {
     expect(randomButton).toBeTruthy();
   });
   test('should call the method getRandomPerson', () => {
-    const spy = jest.spyOn(component, 'getRandomPerson');
+    const spy = vi.spyOn(component, 'getRandomPerson');
     const randomButton: HTMLButtonElement = debugElement.query(By.css('[mat-fab]')).nativeElement;
     fireEvent.click(randomButton);
     expect(spy).toHaveBeenCalled();
