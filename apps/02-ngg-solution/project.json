@@ -77,7 +77,8 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/apps/02-ngg-solution"],
       "options": {
-        "jestConfig": "apps/02-ngg-solution/jest.config.ts"
+        "jestConfig": "apps/02-ngg-solution/jest.config.ts",
+        "tsConfig": "apps/02-ngg-solution/tsconfig.spec.json"
       }
     }
   }

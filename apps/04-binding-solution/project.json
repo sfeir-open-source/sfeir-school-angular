@@ -77,7 +77,8 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/apps/04-binding-solution"],
       "options": {
-        "jestConfig": "apps/04-binding-solution/jest.config.ts"
+        "jestConfig": "apps/04-binding-solution/jest.config.ts",
+        "tsConfig": "apps/04-binding-solution/tsconfig.spec.json"
       }
     }
   }

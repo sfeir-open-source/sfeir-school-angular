@@ -8,26 +8,16 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/29-elf-store-solution",
         "index": "apps/29-elf-store-solution/src/index.html",
         "browser": "apps/29-elf-store-solution/src/main.ts",
-        "polyfills": [
-          "apps/29-elf-store-solution/src/polyfills.ts"
-        ],
+        "polyfills": ["apps/29-elf-store-solution/src/polyfills.ts"],
         "tsConfig": "apps/29-elf-store-solution/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": [
-          "apps/29-elf-store-solution/src/favicon.ico",
-          "apps/29-elf-store-solution/src/assets"
-        ],
-        "styles": [
-          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-          "apps/29-elf-store-solution/src/styles.scss"
-        ],
+        "assets": ["apps/29-elf-store-solution/src/favicon.ico", "apps/29-elf-store-solution/src/assets"],
+        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/29-elf-store-solution/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -91,11 +81,10 @@
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": [
-        "{workspaceRoot}/coverage/apps/29-elf-store-solution"
-      ],
+      "outputs": ["{workspaceRoot}/coverage/apps/29-elf-store-solution"],
       "options": {
-        "jestConfig": "apps/29-elf-store-solution/jest.config.ts"
+        "jestConfig": "apps/29-elf-store-solution/jest.config.ts",
+        "tsConfig": "apps/29-elf-store-solution/tsconfig.spec.json"
       }
     }
   }
