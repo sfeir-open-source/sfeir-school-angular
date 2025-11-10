@@ -8,26 +8,16 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/24-interceptor",
         "index": "apps/24-interceptor/src/index.html",
         "browser": "apps/24-interceptor/src/main.ts",
-        "polyfills": [
-          "apps/24-interceptor/src/polyfills.ts"
-        ],
+        "polyfills": ["apps/24-interceptor/src/polyfills.ts"],
         "tsConfig": "apps/24-interceptor/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": [
-          "apps/24-interceptor/src/favicon.ico",
-          "apps/24-interceptor/src/assets"
-        ],
-        "styles": [
-          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-          "apps/24-interceptor/src/styles.scss"
-        ],
+        "assets": ["apps/24-interceptor/src/favicon.ico", "apps/24-interceptor/src/assets"],
+        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/24-interceptor/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -91,11 +81,10 @@
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": [
-        "{workspaceRoot}/coverage/apps/24-interceptor"
-      ],
+      "outputs": ["{workspaceRoot}/coverage/apps/24-interceptor"],
       "options": {
-        "jestConfig": "apps/24-interceptor/jest.config.ts"
+        "jestConfig": "apps/24-interceptor/jest.config.ts",
+        "tsConfig": "apps/24-interceptor/tsconfig.spec.json"
       }
     }
   }

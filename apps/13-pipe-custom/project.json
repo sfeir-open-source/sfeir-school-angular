@@ -8,26 +8,16 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/13-pipe-custom",
         "index": "apps/13-pipe-custom/src/index.html",
         "browser": "apps/13-pipe-custom/src/main.ts",
-        "polyfills": [
-          "apps/13-pipe-custom/src/polyfills.ts"
-        ],
+        "polyfills": ["apps/13-pipe-custom/src/polyfills.ts"],
         "tsConfig": "apps/13-pipe-custom/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": [
-          "apps/13-pipe-custom/src/favicon.ico",
-          "apps/13-pipe-custom/src/assets"
-        ],
-        "styles": [
-          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-          "apps/13-pipe-custom/src/styles.scss"
-        ],
+        "assets": ["apps/13-pipe-custom/src/favicon.ico", "apps/13-pipe-custom/src/assets"],
+        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/13-pipe-custom/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -91,11 +81,10 @@
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": [
-        "{workspaceRoot}/coverage/apps/13-pipe-custom"
-      ],
+      "outputs": ["{workspaceRoot}/coverage/apps/13-pipe-custom"],
       "options": {
-        "jestConfig": "apps/13-pipe-custom/jest.config.ts"
+        "jestConfig": "apps/13-pipe-custom/jest.config.ts",
+        "tsConfig": "apps/13-pipe-custom/tsconfig.spec.json"
       }
     }
   }
