@@ -8,6 +8,7 @@ import { CardComponent } from '../../shared/components/card/card.component';
 import { People } from '../../shared/models/people.model';
 import { HomeComponent } from './home.component';
 import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
+import { vi } from 'vitest';
 
 const PERSON: People = {
   id: '1',
@@ -51,14 +52,14 @@ describe('HomeComponent', () => {
     expect(sfeirCard.person()).toEqual(PERSON);
   });
   test('should call the getRandomPerson', () => {
-    const spy = jest.spyOn(component, 'getRandomPerson');
+    const spy = vi.spyOn(component, 'getRandomPerson');
     const button = container.querySelector('button');
     fireEvent.click(button);
     expect(spy).toHaveBeenCalled();
     expect(spy).toHaveBeenCalledTimes(1);
   });
   test('should call the getRandomPerson', () => {
-    const spy = jest.spyOn(component, 'getRandomPerson');
+    const spy = vi.spyOn(component, 'getRandomPerson');
     const customEvent = new CustomEvent('personDelete');
     const sfeirCard: HTMLElement = debugElement.query(By.css('sfeir-card')).nativeElement;
     fireEvent(sfeirCard, customEvent);
