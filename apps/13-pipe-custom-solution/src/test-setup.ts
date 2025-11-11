@@ -3,5 +3,11 @@ import '@angular/compiler';
 
 import { getTestBed } from '@angular/core/testing';
 import { BrowserTestingModule, platformBrowserTesting } from '@angular/platform-browser/testing';
+import { NgModule, provideZonelessChangeDetection } from '@angular/core';
 
-getTestBed().initTestEnvironment(BrowserTestingModule, platformBrowserTesting());
+@NgModule({
+  providers: [provideZonelessChangeDetection()],
+})
+export class ZonelessModule {}
+
+getTestBed().initTestEnvironment([BrowserTestingModule, ZonelessModule], platformBrowserTesting());
