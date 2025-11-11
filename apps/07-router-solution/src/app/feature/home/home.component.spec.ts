@@ -7,6 +7,7 @@ import { fireEvent, render, screen } from '@testing-library/angular';
 import { People } from '../../shared/models/people.model';
 import { HomeComponent } from './home.component';
 import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
+import { vi } from 'vitest';
 
 const PERSON: People[] = [
   {
@@ -99,13 +100,13 @@ describe('HomeComponent', () => {
     expect(randomButton).toBeTruthy();
   });
   test('should call the method getRandomPerson', () => {
-    const spy = jest.spyOn(component, 'getRandomPerson');
+    const spy = vi.spyOn(component, 'getRandomPerson');
     const randomButton: HTMLButtonElement = debugElement.query(By.css('[mat-fab]')).nativeElement;
     fireEvent.click(randomButton);
     expect(spy).toHaveBeenCalled();
   });
   test('should change the person', () => {
-    const spy = jest.spyOn(component.personResource, 'reload');
+    const spy = vi.spyOn(component.personResource, 'reload');
     component.getRandomPerson();
     expect(spy).toHaveBeenCalled();
   });
