@@ -8,10 +8,11 @@ import { CardComponent } from '../../shared/components/card/card.component';
 import { People } from '../../shared/models/people.model';
 import { PeopleComponent } from './people.component';
 import { PeopleService } from '../../core/providers/people.service';
+import { vi } from 'vitest';
 
 const PEOPLE_SERVICE = {
-  getPeople: jest.fn(),
-  deletePeople: jest.fn(),
+  getPeople: vi.fn(),
+  deletePeople: vi.fn(),
 };
 
 const PEOPLE = [
@@ -26,7 +27,7 @@ describe('PeopleComponent', () => {
   let debugElement: DebugElement;
 
   beforeAll(() => {
-    jest.spyOn(PEOPLE_SERVICE, 'getPeople').mockReturnValue(of(PEOPLE));
+    vi.spyOn(PEOPLE_SERVICE, 'getPeople').mockReturnValue(of(PEOPLE));
   });
   beforeEach(async () => {
     const { fixture, container: rendererResult } = await render(PeopleComponent, {
@@ -54,15 +55,15 @@ describe('PeopleComponent', () => {
     expect(sfeirCard2.componentInstance.person()).toEqual(PEOPLE[1]);
   });
   test('should call the delete method', () => {
-    jest.spyOn(PEOPLE_SERVICE, 'deletePeople').mockReturnValue(of([PEOPLE.at(1)]));
+    vi.spyOn(PEOPLE_SERVICE, 'deletePeople').mockReturnValue(of([PEOPLE.at(1)]));
     const sfeirCard = container.querySelectorAll('sfeir-card').item(0);
     const customEvent = new CustomEvent('personDelete', { detail: PEOPLE[0] });
-    const spy = jest.spyOn(component, 'deletePerson');
+    const spy = vi.spyOn(component, 'deletePerson');
     fireEvent(sfeirCard, customEvent);
     expect(spy).toHaveBeenCalled();
   });
   test('should delete the person', async () => {
-    jest.spyOn(PEOPLE_SERVICE, 'deletePeople').mockReturnValue(of([PEOPLE.at(1)]));
+    vi.spyOn(PEOPLE_SERVICE, 'deletePeople').mockReturnValue(of([PEOPLE.at(1)]));
     component.deletePerson(PEOPLE.at(0));
     await componentFixture.whenStable();
     componentFixture.detectChanges();

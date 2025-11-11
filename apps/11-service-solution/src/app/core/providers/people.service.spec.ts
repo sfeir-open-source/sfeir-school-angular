@@ -38,20 +38,18 @@ describe('PeopleService', () => {
       const req = controller.expectOne(`${environment.peopleEndpoint}/peoples`);
       req.flush(PEOPLE);
     });
-    test('should return the correct data', done => {
+    test('should return the correct data', ({ expect }) => {
       service.getPeople().subscribe(data => {
         expect(data).toEqual(PEOPLE);
-        done();
       });
       const req = controller.expectOne(`${environment.peopleEndpoint}/peoples`);
       req.flush(PEOPLE);
     });
-    test('should throw correctly the error', done => {
+    test('should throw correctly the error', ({ expect }) => {
       service.getPeople().subscribe({
         next: () => void 0,
         error: err => {
           expect(err).toBeInstanceOf(HttpErrorResponse);
-          done();
         },
       });
       controller.expectOne(`${environment.peopleEndpoint}/peoples`).error(new ProgressEvent('ERROR'));
@@ -61,7 +59,7 @@ describe('PeopleService', () => {
   describe('#getRandomPeople', () => {
     test('should format the url correctly', async () => {
       TestBed.runInInjectionContext(() => service.getRandomPeople());
-      TestBed.tick(); // Triggers the effect
+      TestBed.tick();
       const req = controller.expectOne(`${environment.peopleEndpoint}/peoples/random`);
       req.flush(PEOPLE[0]);
     });
@@ -89,20 +87,18 @@ describe('PeopleService', () => {
       const req = controller.expectOne(`${environment.peopleEndpoint}/peoples/${PEOPLE[0].id}`);
       req.flush(PEOPLE);
     });
-    test('should return the correct data', done => {
+    test('should return the correct data', ({ expect }) => {
       service.deletePeople(PEOPLE[0].id).subscribe(data => {
         expect(data).toEqual([PEOPLE.at(1)]);
-        done();
       });
       const req = controller.expectOne(`${environment.peopleEndpoint}/peoples/${PEOPLE[0].id}`);
       req.flush([PEOPLE.at(1)]);
     });
-    test('should throw correctly the error', done => {
+    test('should throw correctly the error', ({ expect }) => {
       service.deletePeople(PEOPLE[0].id).subscribe({
         next: () => void 0,
         error: err => {
           expect(err).toBeInstanceOf(HttpErrorResponse);
-          done();
         },
       });
       controller.expectOne(`${environment.peopleEndpoint}/peoples/${PEOPLE[0].id}`).error(new ProgressEvent('ERROR'));
