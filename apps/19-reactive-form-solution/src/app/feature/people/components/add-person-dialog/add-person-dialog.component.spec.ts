@@ -3,9 +3,10 @@ import { fireEvent, render } from '@testing-library/angular';
 import { MatDialogRef } from '@angular/material/dialog';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { PeopleForm } from '../../../../shared/models/people.model';
+import { vi } from 'vitest';
 
 const DIALOG_REF = {
-  close: jest.fn(),
+  close: vi.fn(),
 };
 
 describe('AddPersonDialogComponent', () => {
@@ -26,14 +27,14 @@ describe('AddPersonDialogComponent', () => {
   });
   it('should call the method closeDialog when cancel event is emit', () => {
     const cancelEvent = new CustomEvent('cancel');
-    const spy = jest.spyOn(component, 'closeDialog');
+    const spy = vi.spyOn(component, 'closeDialog');
     const sfeirForm = container.querySelector('sfeir-form');
     fireEvent(sfeirForm, cancelEvent);
     expect(spy).toHaveBeenCalled();
   });
   it('should call the method closeDialog when save event is emit', () => {
     const cancelEvent = new CustomEvent('save');
-    const spy = jest.spyOn(component, 'closeDialog');
+    const spy = vi.spyOn(component, 'closeDialog');
     const sfeirForm = container.querySelector('sfeir-form');
     fireEvent(sfeirForm, cancelEvent);
     expect(spy).toHaveBeenCalled();
