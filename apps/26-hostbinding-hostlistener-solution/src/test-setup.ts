@@ -1,4 +1,4 @@
-import '@analogjs/vitest-angular/setup-zone';
+import '@analogjs/vitest-angular/setup-snapshots';
 import '@angular/compiler';
 
 import { NgModule, provideZonelessChangeDetection } from '@angular/core';
