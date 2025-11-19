@@ -2,6 +2,7 @@ import { HttpErrorResponse, provideHttpClient } from '@angular/common/http';
 import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { ApplicationRef } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
+import { vi } from 'vitest';
 import { environment } from '../../../environments/environment';
 import { People, PeopleForm } from '../../shared/models/people.model';
 import { AppStore } from '../store/app-store';
@@ -13,7 +14,7 @@ const PEOPLE: Array<People> = [
 ] as Array<People>;
 
 const APP_STORE = {
-  setPeople: jest.fn(),
+  setPeople: vi.fn(),
 };
 
 describe('PeopleService', () => {
@@ -43,29 +44,22 @@ describe('PeopleService', () => {
       const req = controller.expectOne(`${environment.peopleEndpoint}/peoples`);
       req.flush(PEOPLE);
     });
-    test('should return the correct data', done => {
-      service.getPeople().subscribe(data => {
-        expect(data).toEqual(PEOPLE);
-        done();
-      });
+    test('should return the correct data', ({ expect }) => {
+      service.getPeople().subscribe(data => expect(data).toEqual(PEOPLE));
       const req = controller.expectOne(`${environment.peopleEndpoint}/peoples`);
       req.flush(PEOPLE);
     });
-    test('should set the people to the store', done => {
+    test('should set the people to the store', ({ expect }) => {
       service.getPeople().subscribe(() => {
         expect(APP_STORE.setPeople).toHaveBeenCalledWith(PEOPLE);
-        done();
       });
       const req = controller.expectOne(`${environment.peopleEndpoint}/peoples`);
       req.flush(PEOPLE);
     });
-    test('should throw correctly the error', done => {
+    test('should throw correctly the error', ({ expect }) => {
       service.getPeople().subscribe({
         next: () => void 0,
-        error: err => {
-          expect(err).toBeInstanceOf(HttpErrorResponse);
-          done();
-        },
+        error: err => expect(err).toBeInstanceOf(HttpErrorResponse),
       });
       controller.expectOne(`${environment.peopleEndpoint}/peoples`).error(new ProgressEvent('ERROR'));
     });
@@ -102,29 +96,20 @@ describe('PeopleService', () => {
       const req = controller.expectOne(`${environment.peopleEndpoint}/peoples/${PEOPLE[0].id}`);
       req.flush(PEOPLE);
     });
-    test('should return the correct data', done => {
-      service.deletePeople(PEOPLE[0].id).subscribe(data => {
-        expect(data).toEqual([PEOPLE.at(1)]);
-        done();
-      });
+    test('should return the correct data', ({ expect }) => {
+      service.deletePeople(PEOPLE[0].id).subscribe(data => expect(data).toEqual([PEOPLE.at(1)]));
       const req = controller.expectOne(`${environment.peopleEndpoint}/peoples/${PEOPLE[0].id}`);
       req.flush([PEOPLE.at(1)]);
     });
-    test('should set the people to the store', done => {
-      service.deletePeople(PEOPLE[0].id).subscribe(() => {
-        expect(APP_STORE.setPeople).toHaveBeenCalledWith([PEOPLE.at(1)]);
-        done();
-      });
+    test('should set the people to the store', ({ expect }) => {
+      service.deletePeople(PEOPLE[0].id).subscribe(() => expect(APP_STORE.setPeople).toHaveBeenCalledWith([PEOPLE.at(1)]));
       const req = controller.expectOne(`${environment.peopleEndpoint}/peoples/${PEOPLE[0].id}`);
       req.flush([PEOPLE.at(1)]);
     });
-    test('should throw correctly the error', done => {
+    test('should throw correctly the error', ({ expect }) => {
       service.deletePeople(PEOPLE[0].id).subscribe({
         next: () => void 0,
-        error: err => {
-          expect(err).toBeInstanceOf(HttpErrorResponse);
-          done();
-        },
+        error: err => expect(err).toBeInstanceOf(HttpErrorResponse),
       });
       controller.expectOne(`${environment.peopleEndpoint}/peoples/${PEOPLE[0].id}`).error(new ProgressEvent('ERROR'));
     });
@@ -135,13 +120,10 @@ describe('PeopleService', () => {
       const req = controller.expectOne(`${environment.peopleEndpoint}/peoples`);
       req.flush(null);
     });
-    test('should throw correctly the error', done => {
+    test('should throw correctly the error', ({ expect }) => {
       service.addNewPerson(PEOPLE[0]).subscribe({
         next: () => void 0,
-        error: err => {
-          expect(err).toBeInstanceOf(HttpErrorResponse);
-          done();
-        },
+        error: err => expect(err).toBeInstanceOf(HttpErrorResponse),
       });
       controller.expectOne(`${environment.peopleEndpoint}/peoples`).error(new ProgressEvent('ERROR'));
     });
@@ -152,20 +134,14 @@ describe('PeopleService', () => {
       const req = controller.expectOne(`${environment.peopleEndpoint}/peoples/123`);
       req.flush(null);
     });
-    test('should return the person details', done => {
-      service.getPersonDetails('123').subscribe(personDetails => {
-        expect(personDetails).toEqual(PEOPLE[0]);
-        done();
-      });
+    test('should return the person details', ({ expect }) => {
+      service.getPersonDetails('123').subscribe(personDetails => expect(personDetails).toEqual(PEOPLE[0]));
       controller.expectOne(`${environment.peopleEndpoint}/peoples/123`).flush(PEOPLE.at(0));
     });
-    test('should throw correctly the error', done => {
+    test('should throw correctly the error', ({ expect }) => {
       service.getPersonDetails('123').subscribe({
         next: () => void 0,
-        error: err => {
-          expect(err).toBeInstanceOf(HttpErrorResponse);
-          done();
-        },
+        error: err => expect(err).toBeInstanceOf(HttpErrorResponse),
       });
       controller.expectOne(`${environment.peopleEndpoint}/peoples/123`).error(new ProgressEvent('ERROR'));
     });
@@ -187,13 +163,10 @@ describe('PeopleService', () => {
       const req = controller.expectOne(`${environment.peopleEndpoint}/peoples/123`);
       req.flush(null);
     });
-    test('should throw correctly the error', done => {
+    test('should throw correctly the error', ({ expect }) => {
       service.updatePerson(updatePerson).subscribe({
         next: () => void 0,
-        error: err => {
-          expect(err).toBeInstanceOf(HttpErrorResponse);
-          done();
-        },
+        error: err => expect(err).toBeInstanceOf(HttpErrorResponse),
       });
       controller.expectOne(`${environment.peopleEndpoint}/peoples/123`).error(new ProgressEvent('ERROR'));
     });

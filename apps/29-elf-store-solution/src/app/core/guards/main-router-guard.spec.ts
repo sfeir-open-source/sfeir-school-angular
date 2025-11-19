@@ -6,14 +6,14 @@ import { PeopleService } from '../providers/people.service';
 import { personDetailsResolver, updatePersonGuard } from './main-routing-guard';
 
 const ROUTER = {
-  createUrlTree: jest.fn(),
+  createUrlTree: vi.fn(),
 };
 
 const ROUTE = {};
 
 const ACTIVATED_ROUTER_SNAPSHOT = {
   paramMap: {
-    get: jest.fn(() => '123'),
+    get: vi.fn(() => '123'),
   },
 } as any;
 
@@ -24,7 +24,7 @@ const PERSON = {
 } as People;
 
 const PEOPLE_SERVICE_STUB = {
-  getPersonDetails: jest.fn(() => defer(() => of(PERSON))),
+  getPersonDetails: vi.fn(() => defer(() => of(PERSON))),
 };
 
 describe('MainRouterGuard', () => {
@@ -52,15 +52,12 @@ describe('MainRouterGuard', () => {
   });
 
   describe('#personDetailsResolver', () => {
-    it('should return the person details', done => {
+    it('should return the person details', ({ expect }) => {
       const resultResolver = TestBed.runInInjectionContext(() =>
         personDetailsResolver(ACTIVATED_ROUTER_SNAPSHOT as ActivatedRouteSnapshot, {} as any),
       ) as Observable<People>;
 
-      resultResolver.subscribe(person => {
-        expect(person).toEqual(PERSON);
-        done();
-      });
+      resultResolver.subscribe(person => expect(person).toEqual(PERSON));
     });
   });
 });

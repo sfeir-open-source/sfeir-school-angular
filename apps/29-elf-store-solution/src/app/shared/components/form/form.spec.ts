@@ -1,11 +1,12 @@
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { fireEvent, render, screen } from '@testing-library/angular';
+import { vi } from 'vitest';
 import type { People } from '../../models/people.model';
 import { Form } from './form';
 
-const CANCEL_SPY = jest.fn();
-const SAVE_SPY = jest.fn();
+const CANCEL_SPY = vi.fn();
+const SAVE_SPY = vi.fn();
 const PERSON = {
   firstname: 'John',
   lastname: 'Doe',
@@ -73,7 +74,7 @@ describe('FormComponent', () => {
   });
   describe('#Functions', () => {
     it('should correctly bind the input', () => {
-      const spy = jest.spyOn(component, 'submit');
+      const spy = vi.spyOn(component, 'submit');
       const personForm = screen.getByTestId('person-form');
       const firstnameInput: HTMLInputElement = screen.getByPlaceholderText('First name');
       const lastnameInput: HTMLInputElement = screen.getByPlaceholderText('Last name');
@@ -88,7 +89,7 @@ describe('FormComponent', () => {
       expect(spy).toHaveBeenCalled();
     });
     it('should call the submit method', () => {
-      const spy = jest.spyOn(component, 'submit');
+      const spy = vi.spyOn(component, 'submit');
       const submitButton = screen.getByText('Save');
       fireEvent.submit(submitButton);
       expect(spy).toHaveBeenCalled();
@@ -98,7 +99,7 @@ describe('FormComponent', () => {
       expect(SAVE_SPY).toHaveBeenCalled();
     });
     it('should call the onCancel method', () => {
-      const spy = jest.spyOn(component, 'onCancel');
+      const spy = vi.spyOn(component, 'onCancel');
       const cancelButton: HTMLButtonElement = screen.getByText('Cancel');
       fireEvent.click(cancelButton);
       expect(spy).toHaveBeenCalled();

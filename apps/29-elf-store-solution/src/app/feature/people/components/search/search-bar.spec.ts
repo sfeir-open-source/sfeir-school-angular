@@ -1,8 +1,9 @@
 import { ComponentFixture } from '@angular/core/testing';
-import { SearchBar } from './search-bar';
 import { render } from '@testing-library/angular';
+import { vi } from 'vitest';
+import { SearchBar } from './search-bar';
 
-const SEARCH = jest.fn();
+const SEARCH = vi.fn();
 
 describe('SearchBar', () => {
   let fixture: ComponentFixture<SearchBar>;
@@ -25,11 +26,8 @@ describe('SearchBar', () => {
   test('should set the control to the initial search', () => {
     expect(component.searchControl.value).toEqual('sfeir');
   });
-  test('should emit the search value', done => {
+  test('should emit the search value', ({ expect }) => {
     component.searchControl.patchValue('Hello');
-    setTimeout(() => {
-      expect(SEARCH).toHaveBeenCalledWith('Hello');
-      done();
-    }, 400);
+    setTimeout(() => expect(SEARCH).toHaveBeenCalledWith('Hello'), 400);
   });
 });
