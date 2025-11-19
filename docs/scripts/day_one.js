@@ -22,20 +22,20 @@ function basicsSlides() {
     `${BASICS}/01-ENVIRONMENT-SETUP.md`, //
     `${BASICS}/02-ANGULAR.md`, //
     `${BASICS}/03-MATERIAL.md`,
-  ].map(showOnModern2days);
+  ];
 }
 
 function architectureSlides() {
   const ARCHITECTURE = '02-ARCHITECTURE';
   return [
-    showOnModern2days(`${ARCHITECTURE}/00-TRANSITION-SLIDE.md`),
-    showOnModern2days(`${ARCHITECTURE}/01-INTRODUCTION-SCHEMA.md`),
-    showOnModern2days(`${ARCHITECTURE}/02-COMPONENT.md`),
-    showByDefault(`${ARCHITECTURE}/04-MODULE.md`),
-    showOnModern2days(`${ARCHITECTURE}/05-BOOTSTRAPPING.md`),
-    showByDefault(`${ARCHITECTURE}/06-BOOTSTRAPPING-MODULE.md`),
-    showByDefault(`${ARCHITECTURE}/07-MODULE-BUNDLER.md`),
-    showByDefault(`${ARCHITECTURE}/100-LAB.md`),
+    showOnModern2days(showByDefault(`${ARCHITECTURE}/00-TRANSITION-SLIDE.md`)),
+    showOnModern2days(showByDefault(`${ARCHITECTURE}/01-INTRODUCTION-SCHEMA.md`)),
+    showOnModern2days(showByDefault(`${ARCHITECTURE}/02-COMPONENT.md`)),
+    `${ARCHITECTURE}/04-MODULE.md`,
+    showOnModern2days(showByDefault(`${ARCHITECTURE}/05-BOOTSTRAPPING.md`)),
+    `${ARCHITECTURE}/06-BOOTSTRAPPING-MODULE.md`,
+    `${ARCHITECTURE}/07-MODULE-BUNDLER.md`,
+    `${ARCHITECTURE}/100-LAB.md`,
   ];
 }
 
