@@ -18,62 +18,54 @@ describe('AppStore', () => {
   test('should create an instance of Store', () => {
     expect(store).toBeInstanceOf(Store);
   });
-  test('should the default search be an empty string', done => {
+  test('should the default search be an empty string', ({ expect }) => {
     store.select(AppStore.search).subscribe(value => {
       expect(value).toEqual('');
-      done();
     });
   });
-  test('should the default people be an empty array', done => {
+  test('should the default people be an empty array', ({ expect }) => {
     store.select(AppStore.people).subscribe(value => {
       expect(value).toEqual([]);
-      done();
     });
   });
-  test('should set the search', done => {
+  test('should set the search', ({ expect }) => {
     store.dispatch(new SetSearch('test'));
     store.select(AppStore.search).subscribe(value => {
       expect(value).toEqual('test');
-      done();
     });
   });
-  test('should set the people', done => {
+  test('should set the people', ({ expect }) => {
     store.dispatch(new SetPeople(PEOPLE));
     store.select(AppStore.people).subscribe(value => {
       expect(value).toEqual(PEOPLE);
-      done();
     });
   });
-  test('should filter the people - [cast - respected', done => {
+  test('should filter the people - [cast - respected', ({ expect }) => {
     store.dispatch(new SetPeople(PEOPLE));
     store.dispatch(new SetSearch('sfeir'));
     store.select(AppStore.people).subscribe(value => {
       expect(value).toEqual(PEOPLE);
-      done();
     });
   });
-  test('should filter the people - [cast - non-respected]', done => {
+  test('should filter the people - [cast - non-respected]', ({ expect }) => {
     store.dispatch(new SetPeople(PEOPLE));
     store.dispatch(new SetSearch('sFEIR'));
     store.select(AppStore.people).subscribe(value => {
       expect(value).toEqual(PEOPLE);
-      done();
     });
   });
-  test('should filter the people - [or logique]', done => {
+  test('should filter the people - [or logique]', ({ expect }) => {
     store.dispatch(new SetPeople(PEOPLE));
     store.dispatch(new SetSearch('luxembourg'));
     store.select(AppStore.people).subscribe(value => {
       expect(value).toEqual(PEOPLE);
-      done();
     });
   });
-  test('should filter the people - [or logique]', done => {
+  test('should filter the people - [or logique]', ({ expect }) => {
     store.dispatch(new SetPeople(PEOPLE));
     store.dispatch(new SetSearch('Paris'));
     store.select(AppStore.people).subscribe(value => {
       expect(value).toEqual([]);
-      done();
     });
   });
 });

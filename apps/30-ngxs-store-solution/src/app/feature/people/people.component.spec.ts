@@ -6,6 +6,7 @@ import { By } from '@angular/platform-browser';
 import { provideStore } from '@ngxs/store';
 import { fireEvent, render, screen } from '@testing-library/angular';
 import { EMPTY, of } from 'rxjs';
+import { vi } from 'vitest';
 import { PeopleService } from '../../core/providers/people.service';
 import { AppStore } from '../../core/store/app-store';
 import { CardComponent } from '../../shared/components/card/card.component';
@@ -15,9 +16,9 @@ import { AddPersonDialogComponent } from './components/add-person-dialog/add-per
 import { PeopleComponent } from './people.component';
 
 const PEOPLE_SERVICE = {
-  getPeople: jest.fn(),
-  deletePeople: jest.fn(),
-  addNewPerson: jest.fn(() => of(null)),
+  getPeople: vi.fn(),
+  deletePeople: vi.fn(),
+  addNewPerson: vi.fn(() => of(null)),
 };
 
 const PEOPLE = [
@@ -26,17 +27,17 @@ const PEOPLE = [
 ] as Array<People>;
 
 const MAT_DIALOG = {
-  open: jest.fn(),
+  open: vi.fn(),
 };
 
-const DISPATCHED_ACTION = jest.fn(() => void 0);
+const DISPATCHED_ACTION = vi.fn(() => void 0);
 
-jest.mock('@ngxs/store', () => {
-  const library = jest.requireActual('@ngxs/store');
+vi.mock('@ngxs/store', async () => {
+  const library = await vi.importActual<any>('@ngxs/store');
   return {
     ...library,
-    select: jest.fn(() => signal(PEOPLE)),
-    dispatch: jest.fn(() => DISPATCHED_ACTION),
+    select: vi.fn(() => signal(PEOPLE)),
+    dispatch: vi.fn(() => DISPATCHED_ACTION),
   };
 });
 
@@ -47,7 +48,7 @@ describe('PeopleComponent', () => {
   let debugElement: DebugElement;
 
   beforeAll(() => {
-    jest.spyOn(PEOPLE_SERVICE, 'getPeople').mockReturnValue(of(PEOPLE));
+    vi.spyOn(PEOPLE_SERVICE, 'getPeople').mockReturnValue(of(PEOPLE));
   });
   beforeEach(async () => {
     const { fixture, container: rendererResult } = await render(PeopleComponent, {
@@ -70,7 +71,7 @@ describe('PeopleComponent', () => {
     componentFixture.detectChanges();
   });
   afterEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   describe('#basics', () => {
@@ -78,7 +79,7 @@ describe('PeopleComponent', () => {
       expect(component).toBeInstanceOf(PeopleComponent);
     });
     test('should call the changeView method', () => {
-      const spy = jest.spyOn(component, 'changeView');
+      const spy = vi.spyOn(component, 'changeView');
       const button = screen.getByTestId('view-button');
       fireEvent.click(button);
       expect(spy).toHaveBeenCalled();
@@ -110,16 +111,16 @@ describe('PeopleComponent', () => {
     });
 
     test('should call the delete method', () => {
-      jest.spyOn(PEOPLE_SERVICE, 'deletePeople').mockReturnValue(of([PEOPLE[1]]));
+      vi.spyOn(PEOPLE_SERVICE, 'deletePeople').mockReturnValue(of([PEOPLE[1]]));
       const sfeirCards = container.querySelectorAll('sfeir-card');
       expect(sfeirCards.length).toEqual(2);
-      const spy = jest.spyOn(component, 'deletePerson');
+      const spy = vi.spyOn(component, 'deletePerson');
       component.deletePerson(PEOPLE[0]);
       expect(spy).toHaveBeenCalledWith(PEOPLE[0]);
     });
 
     test('should set the search to filter', () => {
-      const spy = jest.spyOn(component, 'filterPeopleBySearch');
+      const spy = vi.spyOn(component, 'filterPeopleBySearch');
       const customEvent = new CustomEvent('search', { detail: 'test' });
       const searchInput = container.querySelector('sfeir-search-bar');
       fireEvent(searchInput, customEvent);
@@ -139,27 +140,27 @@ describe('PeopleComponent', () => {
   });
   describe('#dialog', () => {
     test('should open the dialog', () => {
-      jest.spyOn(MAT_DIALOG, 'open').mockReturnValue({ afterClosed: () => EMPTY } as any);
-      const spy = jest.spyOn(component, 'showDialog');
+      vi.spyOn(MAT_DIALOG, 'open').mockReturnValue({ afterClosed: () => EMPTY } as any);
+      const spy = vi.spyOn(component, 'showDialog');
       const button = screen.getByTestId('button-modal');
       fireEvent.click(button);
       expect(spy).toHaveBeenCalled();
     });
     test('should call the open method of the dialog service', () => {
-      jest.spyOn(MAT_DIALOG, 'open').mockReturnValue({ afterClosed: () => EMPTY } as any);
-      const spy = jest.spyOn(MAT_DIALOG, 'open');
+      vi.spyOn(MAT_DIALOG, 'open').mockReturnValue({ afterClosed: () => EMPTY } as any);
+      const spy = vi.spyOn(MAT_DIALOG, 'open');
       component.showDialog();
       expect(spy).toHaveBeenCalledWith(AddPersonDialogComponent, { width: '50%', height: 'fit-content' });
     });
     test('should call the addNewPerson method', async () => {
-      jest.spyOn(MAT_DIALOG, 'open').mockReturnValue({ afterClosed: () => of(PEOPLE[0]) } as any);
+      vi.spyOn(MAT_DIALOG, 'open').mockReturnValue({ afterClosed: () => of(PEOPLE[0]) } as any);
       component.showDialog();
       await componentFixture.whenStable();
       expect(PEOPLE_SERVICE.addNewPerson).toHaveBeenCalled();
       expect(PEOPLE_SERVICE.addNewPerson).toHaveBeenCalledWith(PEOPLE[0]);
     });
     test('should refresh the list', async () => {
-      jest.spyOn(MAT_DIALOG, 'open').mockReturnValue({ afterClosed: () => of(PEOPLE[0]) } as any);
+      vi.spyOn(MAT_DIALOG, 'open').mockReturnValue({ afterClosed: () => of(PEOPLE[0]) } as any);
       component.showDialog();
       await componentFixture.whenStable();
       expect(PEOPLE_SERVICE.getPeople).toHaveBeenCalled();

@@ -3,6 +3,7 @@ import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { type ComponentFixture } from '@angular/core/testing';
 import { fireEvent, render } from '@testing-library/angular';
 import { of } from 'rxjs';
+import { vi } from 'vitest';
 import { PeopleService } from '../../core/providers/people.service';
 import { People } from '../../shared/models/people.model';
 import { UpdatePerson } from './update-person';
@@ -10,7 +11,7 @@ import { UpdatePerson } from './update-person';
 const PERSON: People = { id: '1', lastname: 'SFEIR', firstname: 'SFEIR', photo: 'https://randomuser.me/api/portraits/lego/6.jpg' } as People;
 
 const PEOPLE_SERVICE = {
-  updatePerson: jest.fn(() => of(void 0)),
+  updatePerson: vi.fn(() => of(void 0)),
 };
 
 describe('UpdatePersonComponent', () => {
@@ -56,14 +57,14 @@ describe('UpdatePersonComponent', () => {
     });
     it('should call the method updatePerson', () => {
       const sfeirForm = container.querySelector('sfeir-form');
-      const updatePersonSpy = jest.spyOn(component, 'updatePerson');
+      const updatePersonSpy = vi.spyOn(component, 'updatePerson');
       const customEvent = new CustomEvent('save');
       fireEvent(sfeirForm, customEvent);
       expect(updatePersonSpy).toHaveBeenCalled();
     });
     it('should call the method goBack', () => {
       const sfeirForm = container.querySelector('sfeir-form');
-      const goBackSpy = jest.spyOn(component, 'goBack');
+      const goBackSpy = vi.spyOn(component, 'goBack');
       const customEvent = new CustomEvent('cancel');
       fireEvent(sfeirForm, customEvent);
       expect(goBackSpy).toHaveBeenCalled();
@@ -71,8 +72,8 @@ describe('UpdatePersonComponent', () => {
   });
   describe('#functions', () => {
     it('should call the method updatePerson of PeopleService', () => {
-      const updatePersonSpy = jest.spyOn(PEOPLE_SERVICE, 'updatePerson');
-      const goBAckSpy = jest.spyOn(component, 'goBack');
+      const updatePersonSpy = vi.spyOn(PEOPLE_SERVICE, 'updatePerson');
+      const goBAckSpy = vi.spyOn(component, 'goBack');
       component.updatePerson(PERSON);
       expect(updatePersonSpy).toHaveBeenCalledWith(PERSON);
       expect(goBAckSpy).toHaveBeenCalled();
