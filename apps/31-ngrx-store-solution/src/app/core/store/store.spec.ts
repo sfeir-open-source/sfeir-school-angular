@@ -27,54 +27,47 @@ describe('Store', () => {
   test('should create an instance of the store', () => {
     expect(store).toBeInstanceOf(Store);
   });
-  test('should have an empty string as initial search', done => {
+  test('should have an empty string as initial search', ({ expect }) => {
     store.select(selectSearch).subscribe(data => {
       expect(data).toEqual('');
-      done();
     });
   });
-  test('should have an empty array as initial people', done => {
+  test('should have an empty array as initial people', ({ expect }) => {
     store.select(selectPeople).subscribe(data => {
       expect(data).toEqual([]);
-      done();
     });
   });
-  test('should set the search', done => {
+  test('should set the search', ({ expect }) => {
     store.dispatch(setSearch({ search: 'test' }));
     store.select(selectSearch).subscribe(data => {
       expect(data).toEqual('test');
-      done();
     });
   });
-  test('should set the people', done => {
+  test('should set the people', ({ expect }) => {
     store.dispatch(setPeople({ people: PEOPLE }));
     store.select(selectPeople).subscribe(data => {
       expect(data).toEqual(PEOPLE);
-      done();
     });
   });
-  test('should filter the people [cast sensitive]', done => {
+  test('should filter the people [cast sensitive]', ({ expect }) => {
     store.dispatch(setPeople({ people: PEOPLE }));
     store.dispatch(setSearch({ search: 'John' }));
     store.select(selectPeople).subscribe(data => {
       expect(data).toEqual([PEOPLE[0]]);
-      done();
     });
   });
-  test('should filter the people [cast insensitive]', done => {
+  test('should filter the people [cast insensitive]', ({ expect }) => {
     store.dispatch(setPeople({ people: PEOPLE }));
     store.dispatch(setSearch({ search: 'john' }));
     store.select(selectPeople).subscribe(data => {
       expect(data).toEqual([PEOPLE[0]]);
-      done();
     });
   });
-  test('should filter the people [firstname or lastname]', done => {
+  test('should filter the people [firstname or lastname]', ({ expect }) => {
     store.dispatch(setPeople({ people: PEOPLE }));
     store.dispatch(setSearch({ search: 'doe' }));
     store.select(selectPeople).subscribe(data => {
       expect(data).toEqual(PEOPLE);
-      done();
     });
   });
 });

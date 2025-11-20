@@ -7,7 +7,7 @@
   "tags": [],
   "targets": {
     "build": {
-      "executor": "@angular-devkit/build-angular:application",
+      "executor": "@angular/build:application",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/31-ngrx-store",
@@ -52,7 +52,7 @@
       "defaultConfiguration": "production"
     },
     "serve": {
-      "executor": "@angular-devkit/build-angular:dev-server",
+      "executor": "@angular/build:dev-server",
       "dependsOn": [
         {
           "projects": "server-express",
@@ -71,7 +71,7 @@
       "continuous": true
     },
     "extract-i18n": {
-      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "executor": "@angular/build:extract-i18n",
       "options": {
         "buildTarget": "31-ngrx-store:build"
       }
@@ -80,11 +80,11 @@
       "executor": "@nx/eslint:lint"
     },
     "test": {
-      "executor": "@nx/jest:jest",
+      "executor": "@nx/vite:test",
       "outputs": ["{workspaceRoot}/coverage/apps/31-ngrx-store"],
       "options": {
-        "jestConfig": "apps/31-ngrx-store/jest.config.ts",
-        "tsConfig": "apps/31-ngrx-store/tsconfig.spec.json"
+        "config": "apps/31-ngrx-store/vite.config.mts",
+        "passWithNoTests": true
       }
     }
   }
