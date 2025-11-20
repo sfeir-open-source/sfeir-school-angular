@@ -1,16 +1,16 @@
 import { CommonModule } from '@angular/common';
-import { ApplicationRef, DebugElement, NO_ERRORS_SCHEMA } from '@angular/core';
+import { DebugElement, NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture } from '@angular/core/testing';
+import { MatDialog } from '@angular/material/dialog';
 import { By } from '@angular/platform-browser';
 import { fireEvent, render, screen } from '@testing-library/angular';
 import { EMPTY, of } from 'rxjs';
+import { PeopleService } from '../../core/providers/people.service';
 import { CardComponent } from '../../shared/components/card/card.component';
 import { People } from '../../shared/models/people.model';
 import { NaPipe } from '../../shared/pipes/na.pipe';
-import { PeopleComponent } from './people.component';
-import { PeopleService } from '../../core/providers/people.service';
 import { AddPersonDialogComponent } from './components/add-person-dialog/add-person-dialog.component';
-import { MatDialog } from '@angular/material/dialog';
+import { PeopleComponent } from './people.component';
 
 const PEOPLE_SERVICE = {
   getPeople: vi.fn(),
@@ -32,7 +32,6 @@ describe('PeopleComponent', () => {
   let component: PeopleComponent;
   let container: Element;
   let debugElement: DebugElement;
-  let applicationRef: ApplicationRef;
 
   beforeAll(() => {
     vi.spyOn(PEOPLE_SERVICE, 'getPeople').mockReturnValue(of(PEOPLE));
