@@ -1,4 +1,4 @@
-<!-- .slide: class="with-code inconsolata" -->
+<!-- .slide: class="with-code inconsolata" data-type-show="on-stage" -->
 
 # Migrating from ngSwitch to @switch block
 
@@ -13,6 +13,28 @@
 ```
 
 **After**
+
+```angular17html
+@if (user$ | async; as user) {
+  @switch(user.role) {
+    @case('admin') {
+      <div>Admin</div>
+    }
+    @case('user') {
+      <div>User</div>
+    }
+    @default {
+      <div>Guest</div>
+    }
+  }
+}
+```
+
+##==##
+
+<!-- .slide: class="with-code inconsolata" data-type-show="modern-2days" -->
+
+# @switch block
 
 ```angular17html
 @if (user$ | async; as user) {
