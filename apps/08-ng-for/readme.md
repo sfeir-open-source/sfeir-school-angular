@@ -25,7 +25,7 @@ By the end of this exercise, you'll be able to:
 ### Step 1: Set Up the People Component
 
 1. Create a new component called `PeopleComponent` in the `feature/people` folder
-2. Update the component to use the `toSignal` to fetch a list of people from the API
+2. Update the component to use the `httpResource` to fetch a list of people from the API
 3. Use the `@for` loop to display each person in a card
 
 ## Step 2: Register a new view
