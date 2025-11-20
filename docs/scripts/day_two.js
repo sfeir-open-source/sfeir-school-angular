@@ -28,7 +28,7 @@ function pipeSlides() {
     `${PIPE}/02-SYNTAX.md`,
     `${PIPE}/100-LAB.md`,
     `${PIPE}/03-CUSTOM-PIPE.md`,
-    showByDefault(`${PIPE}/101-LAB.md`),
+    `${PIPE}/101-LAB.md`,
   ];
 }
 
@@ -36,11 +36,11 @@ function controlFlowSlides() {
   const CONTROL_FLOW = '15-CONTROL-FLOW';
   return [
     `${CONTROL_FLOW}/00-TRANSITION-SLIDE.md`,
-    showByDefault(`${CONTROL_FLOW}/01-INTRODUCTION.md`),
+    `${CONTROL_FLOW}/01-INTRODUCTION.md`,
     `${CONTROL_FLOW}/02-if.md`,
     `${CONTROL_FLOW}/03-for.md`,
-    showByDefault(`${CONTROL_FLOW}/04-switch.md`),
-    showByDefault(`${CONTROL_FLOW}/05-migration.md`),
+    `${CONTROL_FLOW}/04-switch.md`,
+    `${CONTROL_FLOW}/05-migration.md`,
     `${CONTROL_FLOW}/100-LAB.md`,
   ];
 }
@@ -73,7 +73,7 @@ function reactiveFormSlides() {
     `${FORMS}/REACTIVE-FORMS/02-VALIDATION.md`,
     `${FORMS}/REACTIVE-FORMS/100-LAB.md`,
     `${FORMS}/REACTIVE-FORMS/03-CUSTOM-VALIDATION.md`,
-    showByDefault(`${FORMS}/REACTIVE-FORMS/101-LAB.md`),
+    `${FORMS}/REACTIVE-FORMS/101-LAB.md`,
     `${FORMS}/01-SUMMARY.md`,
   ];
 }
