@@ -14,7 +14,7 @@ const PEOPLE: People = {
   photo: 'john-doe.jpg',
 } as People;
 
-const PERSON_DELETE = jest.fn();
+const PERSON_DELETE = vi.fn();
 
 describe('CardComponent', () => {
   let component: CardComponent;
@@ -95,7 +95,7 @@ describe('CardComponent', () => {
     expect(image.getAttribute('src')).toEqual(newPerson.photo);
   });
   test('should call the method deletePerson', () => {
-    const spy = jest.spyOn(component, 'deletePerson');
+    const spy = vi.spyOn(component, 'deletePerson');
     const buttonDelete = screen.getByTitle('Delete');
     fireEvent.click(buttonDelete);
     expect(spy).toHaveBeenCalledWith(PEOPLE);
