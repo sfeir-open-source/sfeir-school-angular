@@ -7,9 +7,10 @@ import { of } from 'rxjs';
 import { CardComponent } from '../../shared/components/card/card.component';
 import { People } from '../../shared/models/people.model';
 import { PeopleComponent } from './people.component';
+import { vi } from 'vitest';
 
 const HTTP_CLIENT = {
-  get: jest.fn(),
+  get: vi.fn(),
 };
 
 const PEOPLE = [
@@ -23,7 +24,7 @@ describe('PeopleComponent', () => {
   let debugElement: DebugElement;
 
   beforeAll(() => {
-    jest.spyOn(HTTP_CLIENT, 'get').mockReturnValue(of(PEOPLE));
+    vi.spyOn(HTTP_CLIENT, 'get').mockReturnValue(of(PEOPLE));
   });
   beforeEach(async () => {
     const { fixture, container: rendererResult } = await render(PeopleComponent, {

@@ -1,6 +1,7 @@
 import { DebugElement, NO_ERRORS_SCHEMA, signal } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { fireEvent, render } from '@testing-library/angular';
+import { vi } from 'vitest';
 import { PeopleService } from '../../core/providers/people.service';
 import { CardComponent } from '../../shared/components/card/card.component';
 import { People } from '../../shared/models/people.model';
@@ -12,10 +13,10 @@ const PERSON: People = {
 } as People;
 
 const PEOPLE_SERVICE = {
-  getRandomPeople: jest.fn(() => ({
+  getRandomPeople: vi.fn(() => ({
     hasValue: signal(true),
     value: signal(PERSON),
-    reload: jest.fn(),
+    reload: vi.fn(),
   })),
 };
 
@@ -46,14 +47,14 @@ describe('HomeComponent', () => {
     expect(sfeirCard.person()).toEqual(PERSON);
   });
   test('should call the getRandomPerson', () => {
-    const spy = jest.spyOn(component, 'getRandomPerson');
+    const spy = vi.spyOn(component, 'getRandomPerson');
     const button = container.querySelector('button');
     fireEvent.click(button);
     expect(spy).toHaveBeenCalled();
     expect(spy).toHaveBeenCalledTimes(1);
   });
   test('should call the getRandomPerson', () => {
-    const spy = jest.spyOn(component, 'getRandomPerson');
+    const spy = vi.spyOn(component, 'getRandomPerson');
     const customEvent = new CustomEvent('personDelete');
     const sfeirCard: HTMLElement = debugElement.query(By.css('sfeir-card')).nativeElement;
     fireEvent(sfeirCard, customEvent);

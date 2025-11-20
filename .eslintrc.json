@@ -50,6 +50,16 @@
     },
     {
       "files": [
+        "*.mts",
+        "*.cts"
+      ],
+      "extends": [
+        "plugin:@nx/typescript"
+      ],
+      "rules": {}
+    },
+    {
+      "files": [
         "*.spec.ts",
         "*.tsx"
       ],

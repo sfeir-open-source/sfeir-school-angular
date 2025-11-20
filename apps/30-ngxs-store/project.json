@@ -7,17 +7,27 @@
   "tags": [],
   "targets": {
     "build": {
-      "executor": "@angular-devkit/build-angular:application",
-      "outputs": ["{options.outputPath}"],
+      "executor": "@angular/build:application",
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/30-ngxs-store",
         "index": "apps/30-ngxs-store/src/index.html",
         "browser": "apps/30-ngxs-store/src/main.ts",
-        "polyfills": ["apps/30-ngxs-store/src/polyfills.ts"],
+        "polyfills": [
+          "apps/30-ngxs-store/src/polyfills.ts"
+        ],
         "tsConfig": "apps/30-ngxs-store/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/30-ngxs-store/src/favicon.ico", "apps/30-ngxs-store/src/assets"],
-        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/30-ngxs-store/src/styles.scss"],
+        "assets": [
+          "apps/30-ngxs-store/src/favicon.ico",
+          "apps/30-ngxs-store/src/assets"
+        ],
+        "styles": [
+          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+          "apps/30-ngxs-store/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -52,7 +62,7 @@
       "defaultConfiguration": "production"
     },
     "serve": {
-      "executor": "@angular-devkit/build-angular:dev-server",
+      "executor": "@angular/build:dev-server",
       "dependsOn": [
         {
           "projects": "server-express",
@@ -71,7 +81,7 @@
       "continuous": true
     },
     "extract-i18n": {
-      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "executor": "@angular/build:extract-i18n",
       "options": {
         "buildTarget": "30-ngxs-store:build"
       }
@@ -80,11 +90,13 @@
       "executor": "@nx/eslint:lint"
     },
     "test": {
-      "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/apps/30-ngxs-store"],
+      "executor": "@nx/vite:test",
+      "outputs": [
+        "{workspaceRoot}/coverage/apps/30-ngxs-store"
+      ],
       "options": {
-        "jestConfig": "apps/30-ngxs-store/jest.config.ts",
-        "tsConfig": "apps/30-ngxs-store/tsconfig.spec.json"
+        "config": "apps/30-ngxs-store/vite.config.mts",
+        "passWithNoTests": true
       }
     }
   }

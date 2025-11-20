@@ -7,6 +7,7 @@ import { of } from 'rxjs';
 import { People } from '../../shared/models/people.model';
 import { PeopleComponent } from './people.component';
 import { provideHttpClientTesting } from '@angular/common/http/testing';
+import { vi } from 'vitest';
 
 const PERSON: People[] = [
   {
@@ -23,7 +24,7 @@ const PERSON: People[] = [
 ] as People[];
 
 const HTTP_CLIENT = {
-  get: jest.fn(),
+  get: vi.fn(),
 };
 
 describe('PeopleComponent', () => {
@@ -31,7 +32,7 @@ describe('PeopleComponent', () => {
   let debugElement: DebugElement;
 
   beforeAll(() => {
-    jest.spyOn(HTTP_CLIENT, 'get').mockReturnValue(of(PERSON));
+    vi.spyOn(HTTP_CLIENT, 'get').mockReturnValue(of(PERSON));
   });
   beforeEach(async () => {
     const { fixture } = await render(PeopleComponent, {

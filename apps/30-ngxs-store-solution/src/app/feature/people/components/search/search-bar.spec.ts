@@ -1,14 +1,16 @@
 import { ComponentFixture } from '@angular/core/testing';
-import { SearchBar } from './search-bar';
 import { render } from '@testing-library/angular';
+import { vi } from 'vitest';
+import { SearchBar } from './search-bar';
 
-const SEARCH = jest.fn();
+const SEARCH = vi.fn();
 
 describe('SearchBar', () => {
   let fixture: ComponentFixture<SearchBar>;
   let component: SearchBar;
 
   beforeEach(async () => {
+    vi.useFakeTimers();
     const { fixture: componentFixture } = await render(SearchBar, {
       inputs: { initialSearch: 'sfeir' },
       on: {
@@ -19,17 +21,20 @@ describe('SearchBar', () => {
     component = fixture.componentInstance;
   });
 
+  afterEach(() => {
+    vi.useRealTimers();
+    SEARCH.mockClear();
+  });
+
   test('should create an instance of SearchBar', () => {
     expect(component).toBeInstanceOf(SearchBar);
   });
   test('should set the control to the initial search', () => {
     expect(component.searchControl.value).toEqual('sfeir');
   });
-  test('should emit the search value', done => {
+  test('should emit the search value', () => {
     component.searchControl.patchValue('Hello');
-    setTimeout(() => {
-      expect(SEARCH).toHaveBeenCalledWith('Hello');
-      done();
-    }, 400);
+    vi.advanceTimersByTime(400);
+    expect(SEARCH).toHaveBeenCalledWith('Hello');
   });
 });

@@ -7,17 +7,27 @@
   "tags": [],
   "targets": {
     "build": {
-      "executor": "@angular-devkit/build-angular:application",
-      "outputs": ["{options.outputPath}"],
+      "executor": "@angular/build:application",
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/11-service",
         "index": "apps/11-service/src/index.html",
         "browser": "apps/11-service/src/main.ts",
-        "polyfills": ["apps/11-service/src/polyfills.ts"],
+        "polyfills": [
+          "apps/11-service/src/polyfills.ts"
+        ],
         "tsConfig": "apps/11-service/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/11-service/src/favicon.ico", "apps/11-service/src/assets"],
-        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/11-service/src/styles.scss"],
+        "assets": [
+          "apps/11-service/src/favicon.ico",
+          "apps/11-service/src/assets"
+        ],
+        "styles": [
+          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+          "apps/11-service/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -52,7 +62,7 @@
       "defaultConfiguration": "production"
     },
     "serve": {
-      "executor": "@angular-devkit/build-angular:dev-server",
+      "executor": "@angular/build:dev-server",
       "dependsOn": [
         {
           "projects": "server-express",
@@ -71,7 +81,7 @@
       "continuous": true
     },
     "extract-i18n": {
-      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "executor": "@angular/build:extract-i18n",
       "options": {
         "buildTarget": "11-service:build"
       }
@@ -80,11 +90,13 @@
       "executor": "@nx/eslint:lint"
     },
     "test": {
-      "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/apps/11-service"],
+      "executor": "@nx/vite:test",
+      "outputs": [
+        "{options.reportsDirectory}"
+      ],
       "options": {
-        "jestConfig": "apps/11-service/jest.config.ts",
-        "tsConfig": "apps/11-service/tsconfig.spec.json"
+        "reportsDirectory": "../../coverage/apps/11-service",
+        "passWithNoTests": true
       }
     }
   }

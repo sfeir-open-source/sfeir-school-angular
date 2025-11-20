@@ -7,17 +7,27 @@
   "tags": [],
   "targets": {
     "build": {
-      "executor": "@angular-devkit/build-angular:application",
-      "outputs": ["{options.outputPath}"],
+      "executor": "@angular/build:application",
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/01-hands-on",
         "index": "apps/01-hands-on/src/index.html",
         "browser": "apps/01-hands-on/src/main.ts",
-        "polyfills": ["apps/01-hands-on/src/polyfills.ts"],
+        "polyfills": [
+          "apps/01-hands-on/src/polyfills.ts"
+        ],
         "tsConfig": "apps/01-hands-on/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/01-hands-on/src/favicon.ico", "apps/01-hands-on/src/assets"],
-        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/01-hands-on/src/styles.scss"],
+        "assets": [
+          "apps/01-hands-on/src/favicon.ico",
+          "apps/01-hands-on/src/assets"
+        ],
+        "styles": [
+          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+          "apps/01-hands-on/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -52,7 +62,7 @@
       "defaultConfiguration": "production"
     },
     "serve": {
-      "executor": "@angular-devkit/build-angular:dev-server",
+      "executor": "@angular/build:dev-server",
       "configurations": {
         "production": {
           "buildTarget": "01-hands-on:build:production"
@@ -65,7 +75,7 @@
       "continuous": true
     },
     "extract-i18n": {
-      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "executor": "@angular/build:extract-i18n",
       "options": {
         "buildTarget": "01-hands-on:build"
       }
@@ -74,11 +84,13 @@
       "executor": "@nx/eslint:lint"
     },
     "test": {
-      "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/apps/01-hands-on"],
+      "executor": "@nx/vite:test",
+      "outputs": [
+        "{options.reportsDirectory}"
+      ],
       "options": {
-        "jestConfig": "apps/01-hands-on/jest.config.ts",
-        "tsConfig": "apps/01-hands-on/tsconfig.spec.json"
+        "reportsDirectory": "../../coverage/apps/01-hands-on",
+        "passWithNoTests": true
       }
     }
   }

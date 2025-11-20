@@ -1,3 +1,7 @@
-import { setupZonelessTestEnv } from 'jest-preset-angular/setup-env/zoneless';
+import '@angular/compiler';
+import '@analogjs/vitest-angular/setup-zone';
 
-setupZonelessTestEnv();
+import { BrowserTestingModule, platformBrowserTesting } from '@angular/platform-browser/testing';
+import { getTestBed } from '@angular/core/testing';
+
+getTestBed().initTestEnvironment(BrowserTestingModule, platformBrowserTesting());

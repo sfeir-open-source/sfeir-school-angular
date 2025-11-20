@@ -7,7 +7,7 @@
   "tags": [],
   "targets": {
     "build": {
-      "executor": "@angular-devkit/build-angular:application",
+      "executor": "@angular/build:application",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/18-template-driven-form-update-mode-solution",
@@ -58,7 +58,7 @@
       "defaultConfiguration": "production"
     },
     "serve": {
-      "executor": "@angular-devkit/build-angular:dev-server",
+      "executor": "@angular/build:dev-server",
       "dependsOn": [
         {
           "projects": "server-express",
@@ -77,7 +77,7 @@
       "continuous": true
     },
     "extract-i18n": {
-      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "executor": "@angular/build:extract-i18n",
       "options": {
         "buildTarget": "18-template-driven-form-update-mode-solution:build"
       }
@@ -86,11 +86,10 @@
       "executor": "@nx/eslint:lint"
     },
     "test": {
-      "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/apps/18-template-driven-form-update-mode-solution"],
+      "executor": "@nx/vite:test",
+      "outputs": ["{options.reportsDirectory}"],
       "options": {
-        "jestConfig": "apps/18-template-driven-form-update-mode-solution/jest.config.ts",
-        "tsConfig": "apps/18-template-driven-form-update-mode-solution/tsconfig.spec.json"
+        "reportsDirectory": "../../coverage/apps/18-template-driven-form-update-mode-solution"
       }
     }
   }

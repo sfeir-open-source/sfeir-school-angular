@@ -1,9 +1,10 @@
 import { TestBed } from '@angular/core/testing';
 import { Router, type UrlSegment } from '@angular/router';
+import { vi } from 'vitest';
 import { updatePersonGuard } from './main-routing-guard';
 
 const ROUTER = {
-  createUrlTree: jest.fn(),
+  createUrlTree: vi.fn(),
 };
 
 const ROUTE = {};
