@@ -5,6 +5,7 @@
   "scripts": {
     "nx": "nx",
     "client": "nx serve",
+    "test": "nx run-many --exclude=docs --target=test -p ",
     "client:build": "nx build",
     "client:test": "nx run-many --target=test --exclude=docs --parallel=50%",
     "start:prez": "nx serve docs",
