@@ -40,17 +40,18 @@ In this workshop, you'll learn how to create a reactive form in Angular. You'll 
 
 ## Step 3: Update the Form Component
 
-1. In `form.ts`, import the `PersonForm` and `Person` types:
-2. Replace the `PeopleForm` import and usage with the new `Person` type:
-3. Add a form instance and effect to handle updates:
-4. Update the `submit` method to use the form value:
+1. In `form.ts`, import the `PersonForm` and `Person` types
+2. Replace the `PeopleForm` import and usage with the new `Person` type
+3. Create an instance of `PeopleForm` in `form.ts`
+4. Create an effect to handle `this.person` changes and use it to set `PeopleForm` value
+5. Update the `submit` method to use the form value
 
 ## Step 4: Update the Form Template
 
-1. In `form.html`, replace the template-driven form directives with reactive form directives:
-2. Replace all `[(ngModel)]` directives with `formControlName` directives:
-3. Update all form fields with their respective `formControlName` attributes:
-4. Update the submit button to use the reactive form's validity:
+1. In `form.html`, replace the template-driven form directives with reactive form directives
+2. Replace all `[(ngModel)]` directives with `formControlName` directives
+3. Update all form fields with their respective `formControlName` attributes
+4. Update the submit button to use the reactive form's validity
 
 ## Testing Your Work
 
