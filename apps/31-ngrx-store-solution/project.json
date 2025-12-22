@@ -8,26 +8,16 @@
   "targets": {
     "build": {
       "executor": "@angular/build:application",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/31-ngrx-store-solution",
         "index": "apps/31-ngrx-store-solution/src/index.html",
         "browser": "apps/31-ngrx-store-solution/src/main.ts",
-        "polyfills": [
-          "apps/31-ngrx-store-solution/src/polyfills.ts"
-        ],
+        "polyfills": ["apps/31-ngrx-store-solution/src/polyfills.ts"],
         "tsConfig": "apps/31-ngrx-store-solution/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": [
-          "apps/31-ngrx-store-solution/src/favicon.ico",
-          "apps/31-ngrx-store-solution/src/assets"
-        ],
-        "styles": [
-          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-          "apps/31-ngrx-store-solution/src/styles.scss"
-        ],
+        "assets": ["apps/31-ngrx-store-solution/src/favicon.ico", "apps/31-ngrx-store-solution/src/assets"],
+        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/31-ngrx-store-solution/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -90,10 +80,8 @@
       "executor": "@nx/eslint:lint"
     },
     "test": {
-      "executor": "@nx/vite:test",
-      "outputs": [
-        "{workspaceRoot}/coverage/apps/31-ngrx-store-solution"
-      ],
+      "executor": "@nx/vitest:test",
+      "outputs": ["{workspaceRoot}/coverage/apps/31-ngrx-store-solution"],
       "options": {
         "config": "apps/31-ngrx-store-solution/vite.config.mts",
         "passWithNoTests": true

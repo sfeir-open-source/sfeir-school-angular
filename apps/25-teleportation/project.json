@@ -8,26 +8,16 @@
   "targets": {
     "build": {
       "executor": "@angular/build:application",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/25-teleportation",
         "index": "apps/25-teleportation/src/index.html",
         "browser": "apps/25-teleportation/src/main.ts",
-        "polyfills": [
-          "apps/25-teleportation/src/polyfills.ts"
-        ],
+        "polyfills": ["apps/25-teleportation/src/polyfills.ts"],
         "tsConfig": "apps/25-teleportation/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": [
-          "apps/25-teleportation/src/favicon.ico",
-          "apps/25-teleportation/src/assets"
-        ],
-        "styles": [
-          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-          "apps/25-teleportation/src/styles.scss"
-        ],
+        "assets": ["apps/25-teleportation/src/favicon.ico", "apps/25-teleportation/src/assets"],
+        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/25-teleportation/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -90,10 +80,8 @@
       "executor": "@nx/eslint:lint"
     },
     "test": {
-      "executor": "@nx/vite:test",
-      "outputs": [
-        "{options.reportsDirectory}"
-      ],
+      "executor": "@nx/vitest:test",
+      "outputs": ["{options.reportsDirectory}"],
       "options": {
         "reportsDirectory": "../../coverage/apps/25-teleportation",
         "passWithNoTests": true

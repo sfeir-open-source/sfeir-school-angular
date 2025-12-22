@@ -8,26 +8,16 @@
   "targets": {
     "build": {
       "executor": "@angular/build:application",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/26-hostbinding-hostlistener",
         "index": "apps/26-hostbinding-hostlistener/src/index.html",
         "browser": "apps/26-hostbinding-hostlistener/src/main.ts",
-        "polyfills": [
-          "apps/26-hostbinding-hostlistener/src/polyfills.ts"
-        ],
+        "polyfills": ["apps/26-hostbinding-hostlistener/src/polyfills.ts"],
         "tsConfig": "apps/26-hostbinding-hostlistener/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": [
-          "apps/26-hostbinding-hostlistener/src/favicon.ico",
-          "apps/26-hostbinding-hostlistener/src/assets"
-        ],
-        "styles": [
-          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-          "apps/26-hostbinding-hostlistener/src/styles.scss"
-        ],
+        "assets": ["apps/26-hostbinding-hostlistener/src/favicon.ico", "apps/26-hostbinding-hostlistener/src/assets"],
+        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/26-hostbinding-hostlistener/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -90,10 +80,8 @@
       "executor": "@nx/eslint:lint"
     },
     "test": {
-      "executor": "@nx/vite:test",
-      "outputs": [
-        "{options.reportsDirectory}"
-      ],
+      "executor": "@nx/vitest:test",
+      "outputs": ["{options.reportsDirectory}"],
       "options": {
         "reportsDirectory": "../../coverage/apps/26-hostbinding-hostlistener",
         "passWithNoTests": true

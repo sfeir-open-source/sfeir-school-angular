@@ -80,7 +80,7 @@
       "executor": "@nx/eslint:lint"
     },
     "test": {
-      "executor": "@nx/vite:test",
+      "executor": "@nx/vitest:test",
       "outputs": ["{workspaceRoot}/coverage/apps/31-ngrx-store"],
       "options": {
         "config": "apps/31-ngrx-store/vite.config.mts",

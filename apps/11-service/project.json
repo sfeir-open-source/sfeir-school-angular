@@ -8,26 +8,16 @@
   "targets": {
     "build": {
       "executor": "@angular/build:application",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/11-service",
         "index": "apps/11-service/src/index.html",
         "browser": "apps/11-service/src/main.ts",
-        "polyfills": [
-          "apps/11-service/src/polyfills.ts"
-        ],
+        "polyfills": ["apps/11-service/src/polyfills.ts"],
         "tsConfig": "apps/11-service/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": [
-          "apps/11-service/src/favicon.ico",
-          "apps/11-service/src/assets"
-        ],
-        "styles": [
-          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-          "apps/11-service/src/styles.scss"
-        ],
+        "assets": ["apps/11-service/src/favicon.ico", "apps/11-service/src/assets"],
+        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/11-service/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -90,10 +80,8 @@
       "executor": "@nx/eslint:lint"
     },
     "test": {
-      "executor": "@nx/vite:test",
-      "outputs": [
-        "{options.reportsDirectory}"
-      ],
+      "executor": "@nx/vitest:test",
+      "outputs": ["{options.reportsDirectory}"],
       "options": {
         "reportsDirectory": "../../coverage/apps/11-service",
         "passWithNoTests": true
