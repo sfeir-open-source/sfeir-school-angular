@@ -1,7 +1,7 @@
 /**
   - modify the top of icon to avoid the icon be just below the name of the speaker
 **/
-.reveal .slides section[data-background].speaker-slide img[alt*=badge] {
+.reveal .slides section[data-background].speaker-slide img[alt*='badge'] {
   top: 800px;
 }
 
@@ -43,12 +43,12 @@
 .reveal .slides section .fill-rest {
   flex: 2;
 }
-.reveal .slides section img[alt*=full-width-screen] {
+.reveal .slides section img[alt*='full-width-screen'] {
   width: 100%;
   max-width: 100%;
   max-height: 100%;
 }
-.reveal .slides section img[alt*=bottom] {
+.reveal .slides section img[alt*='bottom'] {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -107,26 +107,26 @@ div.container-practice .code {
   margin-top: -90px;
 }
 
-.reveal .slides section:not(.sfeir-specific-slide):not(.stack):not([class*=transition]) h1 ~ h2,
-.reveal .slides section:not(.sfeir-specific-slide):not(.stack):not([class*=transition]) h2 ~ h3,
-.reveal .slides section:not(.sfeir-specific-slide):not(.stack):not([class*=transition]) h1 ~ h3,
-.reveal .slides section.sfeir-basic-slide:not(.stack):not([class*=transition]) h1 ~ h2,
-.reveal .slides section.sfeir-basic-slide:not(.stack):not([class*=transition]) h2 ~ h3,
-.reveal .slides section.sfeir-basic-slide:not(.stack):not([class*=transition]) h1 ~ h3,
-.reveal .slides section.sfeir-specific-slide.sfeir-bg-axololt:not(.stack):not([class*=transition]) h1 ~ h2,
-.reveal .slides section.sfeir-specific-slide.sfeir-bg-axololt:not(.stack):not([class*=transition]) h2 ~ h3,
-.reveal .slides section.sfeir-specific-slide.sfeir-bg-axololt:not(.stack):not([class*=transition]) h1 ~ h3 {
+.reveal .slides section:not(.sfeir-specific-slide):not(.stack):not([class*='transition']) h1 ~ h2,
+.reveal .slides section:not(.sfeir-specific-slide):not(.stack):not([class*='transition']) h2 ~ h3,
+.reveal .slides section:not(.sfeir-specific-slide):not(.stack):not([class*='transition']) h1 ~ h3,
+.reveal .slides section.sfeir-basic-slide:not(.stack):not([class*='transition']) h1 ~ h2,
+.reveal .slides section.sfeir-basic-slide:not(.stack):not([class*='transition']) h2 ~ h3,
+.reveal .slides section.sfeir-basic-slide:not(.stack):not([class*='transition']) h1 ~ h3,
+.reveal .slides section.sfeir-specific-slide.sfeir-bg-axololt:not(.stack):not([class*='transition']) h1 ~ h2,
+.reveal .slides section.sfeir-specific-slide.sfeir-bg-axololt:not(.stack):not([class*='transition']) h2 ~ h3,
+.reveal .slides section.sfeir-specific-slide.sfeir-bg-axololt:not(.stack):not([class*='transition']) h1 ~ h3 {
   margin-top: 0;
 }
-.reveal .slides section:not(.sfeir-specific-slide):not(.stack):not([class*=transition]) h1 + h2,
-.reveal .slides section:not(.sfeir-specific-slide):not(.stack):not([class*=transition]) h2 + h3,
-.reveal .slides section:not(.sfeir-specific-slide):not(.stack):not([class*=transition]) h1 + h3,
-.reveal .slides section.sfeir-basic-slide:not(.stack):not([class*=transition]) h1 + h2,
-.reveal .slides section.sfeir-basic-slide:not(.stack):not([class*=transition]) h2 + h3,
-.reveal .slides section.sfeir-basic-slide:not(.stack):not([class*=transition]) h1 + h3,
-.reveal .slides section.sfeir-specific-slide.sfeir-bg-axololt:not(.stack):not([class*=transition]) h1 + h2,
-.reveal .slides section.sfeir-specific-slide.sfeir-bg-axololt:not(.stack):not([class*=transition]) h2 + h3,
-.reveal .slides section.sfeir-specific-slide.sfeir-bg-axololt:not(.stack):not([class*=transition]) h1 + h3 {
+.reveal .slides section:not(.sfeir-specific-slide):not(.stack):not([class*='transition']) h1 + h2,
+.reveal .slides section:not(.sfeir-specific-slide):not(.stack):not([class*='transition']) h2 + h3,
+.reveal .slides section:not(.sfeir-specific-slide):not(.stack):not([class*='transition']) h1 + h3,
+.reveal .slides section.sfeir-basic-slide:not(.stack):not([class*='transition']) h1 + h2,
+.reveal .slides section.sfeir-basic-slide:not(.stack):not([class*='transition']) h2 + h3,
+.reveal .slides section.sfeir-basic-slide:not(.stack):not([class*='transition']) h1 + h3,
+.reveal .slides section.sfeir-specific-slide.sfeir-bg-axololt:not(.stack):not([class*='transition']) h1 + h2,
+.reveal .slides section.sfeir-specific-slide.sfeir-bg-axololt:not(.stack):not([class*='transition']) h2 + h3,
+.reveal .slides section.sfeir-specific-slide.sfeir-bg-axololt:not(.stack):not([class*='transition']) h1 + h3 {
   margin-top: -90px;
 }
 

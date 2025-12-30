@@ -49,6 +49,7 @@ export class App {
 - **afterRenderEffects**: called when the component is rendered (called multiple time) <br/><br/>
 
 ##==##
+
 <!-- .slide: data-type-show="modern-2days" -->
 
 # How to move from the older lifecycle ?

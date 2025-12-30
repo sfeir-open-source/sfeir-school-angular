@@ -12,7 +12,7 @@
   - Bootstrap an application on a **module** <br/><br/>
 
 ##==##
- 
+
 <!-- .slide: data-type-show="modern-2days" -->
 
 # Bootstrapping: standalone component
@@ -86,4 +86,3 @@ bootstrapApplication(AppComponent, {
 <!-- .element: class="medium-code" -->
 
 ##++##
-

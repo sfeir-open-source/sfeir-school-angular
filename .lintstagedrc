@@ -1,8 +1,4 @@
 {
-    "*.ts": [
-        "npx nx affected:lint --files"
-    ],
-    "*": [
-        "npx nx format:write --files"
-    ]
+  "*.ts": ["npx nx affected:lint --files"],
+  "*": ["npx nx format:write --files"]
 }

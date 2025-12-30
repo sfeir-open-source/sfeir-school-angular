@@ -38,26 +38,26 @@ div.container-practice .code {
   margin-top: -90px;
 }
 
-.reveal .slides section:not(.sfeir-specific-slide):not(.stack):not([class*=transition]) h1 ~ h2,
-.reveal .slides section:not(.sfeir-specific-slide):not(.stack):not([class*=transition]) h2 ~ h3,
-.reveal .slides section:not(.sfeir-specific-slide):not(.stack):not([class*=transition]) h1 ~ h3,
-.reveal .slides section.sfeir-basic-slide:not(.stack):not([class*=transition]) h1 ~ h2,
-.reveal .slides section.sfeir-basic-slide:not(.stack):not([class*=transition]) h2 ~ h3,
-.reveal .slides section.sfeir-basic-slide:not(.stack):not([class*=transition]) h1 ~ h3,
-.reveal .slides section.sfeir-specific-slide.sfeir-bg-axololt:not(.stack):not([class*=transition]) h1 ~ h2,
-.reveal .slides section.sfeir-specific-slide.sfeir-bg-axololt:not(.stack):not([class*=transition]) h2 ~ h3,
-.reveal .slides section.sfeir-specific-slide.sfeir-bg-axololt:not(.stack):not([class*=transition]) h1 ~ h3 {
+.reveal .slides section:not(.sfeir-specific-slide):not(.stack):not([class*='transition']) h1 ~ h2,
+.reveal .slides section:not(.sfeir-specific-slide):not(.stack):not([class*='transition']) h2 ~ h3,
+.reveal .slides section:not(.sfeir-specific-slide):not(.stack):not([class*='transition']) h1 ~ h3,
+.reveal .slides section.sfeir-basic-slide:not(.stack):not([class*='transition']) h1 ~ h2,
+.reveal .slides section.sfeir-basic-slide:not(.stack):not([class*='transition']) h2 ~ h3,
+.reveal .slides section.sfeir-basic-slide:not(.stack):not([class*='transition']) h1 ~ h3,
+.reveal .slides section.sfeir-specific-slide.sfeir-bg-axololt:not(.stack):not([class*='transition']) h1 ~ h2,
+.reveal .slides section.sfeir-specific-slide.sfeir-bg-axololt:not(.stack):not([class*='transition']) h2 ~ h3,
+.reveal .slides section.sfeir-specific-slide.sfeir-bg-axololt:not(.stack):not([class*='transition']) h1 ~ h3 {
   margin-top: 0;
 }
-.reveal .slides section:not(.sfeir-specific-slide):not(.stack):not([class*=transition]) h1 + h2,
-.reveal .slides section:not(.sfeir-specific-slide):not(.stack):not([class*=transition]) h2 + h3,
-.reveal .slides section:not(.sfeir-specific-slide):not(.stack):not([class*=transition]) h1 + h3,
-.reveal .slides section.sfeir-basic-slide:not(.stack):not([class*=transition]) h1 + h2,
-.reveal .slides section.sfeir-basic-slide:not(.stack):not([class*=transition]) h2 + h3,
-.reveal .slides section.sfeir-basic-slide:not(.stack):not([class*=transition]) h1 + h3,
-.reveal .slides section.sfeir-specific-slide.sfeir-bg-axololt:not(.stack):not([class*=transition]) h1 + h2,
-.reveal .slides section.sfeir-specific-slide.sfeir-bg-axololt:not(.stack):not([class*=transition]) h2 + h3,
-.reveal .slides section.sfeir-specific-slide.sfeir-bg-axololt:not(.stack):not([class*=transition]) h1 + h3 {
+.reveal .slides section:not(.sfeir-specific-slide):not(.stack):not([class*='transition']) h1 + h2,
+.reveal .slides section:not(.sfeir-specific-slide):not(.stack):not([class*='transition']) h2 + h3,
+.reveal .slides section:not(.sfeir-specific-slide):not(.stack):not([class*='transition']) h1 + h3,
+.reveal .slides section.sfeir-basic-slide:not(.stack):not([class*='transition']) h1 + h2,
+.reveal .slides section.sfeir-basic-slide:not(.stack):not([class*='transition']) h2 + h3,
+.reveal .slides section.sfeir-basic-slide:not(.stack):not([class*='transition']) h1 + h3,
+.reveal .slides section.sfeir-specific-slide.sfeir-bg-axololt:not(.stack):not([class*='transition']) h1 + h2,
+.reveal .slides section.sfeir-specific-slide.sfeir-bg-axololt:not(.stack):not([class*='transition']) h2 + h3,
+.reveal .slides section.sfeir-specific-slide.sfeir-bg-axololt:not(.stack):not([class*='transition']) h1 + h3 {
   margin-top: -90px;
 }
 

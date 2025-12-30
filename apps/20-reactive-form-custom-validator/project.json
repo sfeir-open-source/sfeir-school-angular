@@ -8,26 +8,16 @@
   "targets": {
     "build": {
       "executor": "@angular/build:application",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/20-reactive-form-custom-validator",
         "index": "apps/20-reactive-form-custom-validator/src/index.html",
         "browser": "apps/20-reactive-form-custom-validator/src/main.ts",
-        "polyfills": [
-          "apps/20-reactive-form-custom-validator/src/polyfills.ts"
-        ],
+        "polyfills": ["apps/20-reactive-form-custom-validator/src/polyfills.ts"],
         "tsConfig": "apps/20-reactive-form-custom-validator/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": [
-          "apps/20-reactive-form-custom-validator/src/favicon.ico",
-          "apps/20-reactive-form-custom-validator/src/assets"
-        ],
-        "styles": [
-          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-          "apps/20-reactive-form-custom-validator/src/styles.scss"
-        ],
+        "assets": ["apps/20-reactive-form-custom-validator/src/favicon.ico", "apps/20-reactive-form-custom-validator/src/assets"],
+        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/20-reactive-form-custom-validator/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -91,9 +81,7 @@
     },
     "test": {
       "executor": "@nx/vite:test",
-      "outputs": [
-        "{options.reportsDirectory}"
-      ],
+      "outputs": ["{options.reportsDirectory}"],
       "options": {
         "reportsDirectory": "../../coverage/apps/20-reactive-form-custom-validator",
         "passWithNoTests": true

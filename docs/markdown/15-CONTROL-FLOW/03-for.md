@@ -26,8 +26,8 @@
 
 <!-- .element: class="big-code" -->
 
-
 ##==##
+
 <!-- .slide: class="with-code inconsolata" data-type-show="modern-2days" -->
 
 # @for block
@@ -63,4 +63,3 @@
 Each variable can be aliased with the 'let' keyword
 
 <!-- .element: class="important" -->
-

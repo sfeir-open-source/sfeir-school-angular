@@ -8,26 +8,16 @@
   "targets": {
     "build": {
       "executor": "@angular/build:application",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/21-lazyloading",
         "index": "apps/21-lazyloading/src/index.html",
         "browser": "apps/21-lazyloading/src/main.ts",
-        "polyfills": [
-          "apps/21-lazyloading/src/polyfills.ts"
-        ],
+        "polyfills": ["apps/21-lazyloading/src/polyfills.ts"],
         "tsConfig": "apps/21-lazyloading/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": [
-          "apps/21-lazyloading/src/favicon.ico",
-          "apps/21-lazyloading/src/assets"
-        ],
-        "styles": [
-          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-          "apps/21-lazyloading/src/styles.scss"
-        ],
+        "assets": ["apps/21-lazyloading/src/favicon.ico", "apps/21-lazyloading/src/assets"],
+        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/21-lazyloading/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -91,9 +81,7 @@
     },
     "test": {
       "executor": "@nx/vite:test",
-      "outputs": [
-        "{options.reportsDirectory}"
-      ],
+      "outputs": ["{options.reportsDirectory}"],
       "options": {
         "reportsDirectory": "../../coverage/apps/21-lazyloading",
         "passWithNoTests": true

@@ -1,8 +1,8 @@
 /**
   - modify the top of icon to avoid the icon be just below the name of the speaker
 **/
-.reveal .slides section[data-background].speaker-slide img[alt*=badge] {
-  top: 800px
+.reveal .slides section[data-background].speaker-slide img[alt*='badge'] {
+  top: 800px;
 }
 
 /**
@@ -63,7 +63,7 @@
 }
 
 /** Ensure decent display on non-chrome-based browser **/
-@media all and (min--moz-device-pixel-ratio:0) {
+@media all and (min--moz-device-pixel-ratio: 0) {
   .reveal .slides section :not(section).full-center {
     height: 100vh;
     img {
@@ -74,7 +74,6 @@
     height: 100vh;
   }
 }
-
 
 /** Specific **/
 
