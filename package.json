@@ -16,7 +16,8 @@
     "lint:all": "nx run-many --target=lint --exclude=docs --all --parallel=5 --fix",
     "test:all": "nx run-many --target=test --exclude=docs --all --parallel=5",
     "migrate-nx": "nx migrate latest",
-    "run-migration": "nx migrate --run-migrations=migrations.json"
+    "run-migration": "nx migrate --run-migrations=migrations.json",
+    "prepare": "husky"
   },
   "private": true,
   "dependencies": {
@@ -77,9 +78,10 @@
     "eslint-config-prettier": "10.1.5",
     "eslint-plugin-cypress": "2.14.0",
     "eslint-plugin-prettier": "^5.0.1",
-    "husky": "^8.0.3",
+    "husky": "^9.1.7",
     "jiti": "2.4.2",
     "jsdom": "~22.1.0",
+    "lint-staged": "^16.2.7",
     "live-server": "^1.2.1",
     "nx": "22.0.2",
     "nx-cloud": "19.1.0",

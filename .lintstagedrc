@@ -1,3 +1,8 @@
 {
-  "*.{json,css,scss,md,js,ts,html}": ["prettier --write", "git add"]
+    "*.ts": [
+        "npx nx affected:lint --files"
+    ],
+    "*": [
+        "npx nx format:write --files"
+    ]
 }
