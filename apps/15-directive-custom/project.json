@@ -8,26 +8,16 @@
   "targets": {
     "build": {
       "executor": "@angular/build:application",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/15-directive-custom",
         "index": "apps/15-directive-custom/src/index.html",
         "browser": "apps/15-directive-custom/src/main.ts",
-        "polyfills": [
-          "apps/15-directive-custom/src/polyfills.ts"
-        ],
+        "polyfills": ["apps/15-directive-custom/src/polyfills.ts"],
         "tsConfig": "apps/15-directive-custom/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": [
-          "apps/15-directive-custom/src/favicon.ico",
-          "apps/15-directive-custom/src/assets"
-        ],
-        "styles": [
-          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-          "apps/15-directive-custom/src/styles.scss"
-        ],
+        "assets": ["apps/15-directive-custom/src/favicon.ico", "apps/15-directive-custom/src/assets"],
+        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/15-directive-custom/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -90,10 +80,8 @@
       "executor": "@nx/eslint:lint"
     },
     "test": {
-      "executor": "@nx/vite:test",
-      "outputs": [
-        "{options.reportsDirectory}"
-      ],
+      "executor": "@nx/vitest:test",
+      "outputs": ["{options.reportsDirectory}"],
       "options": {
         "reportsDirectory": "../../coverage/apps/15-directive-custom",
         "passWithNoTests": true

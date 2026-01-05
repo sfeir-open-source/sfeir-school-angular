@@ -8,26 +8,16 @@
   "targets": {
     "build": {
       "executor": "@angular/build:application",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/30-ngxs-store",
         "index": "apps/30-ngxs-store/src/index.html",
         "browser": "apps/30-ngxs-store/src/main.ts",
-        "polyfills": [
-          "apps/30-ngxs-store/src/polyfills.ts"
-        ],
+        "polyfills": ["apps/30-ngxs-store/src/polyfills.ts"],
         "tsConfig": "apps/30-ngxs-store/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": [
-          "apps/30-ngxs-store/src/favicon.ico",
-          "apps/30-ngxs-store/src/assets"
-        ],
-        "styles": [
-          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-          "apps/30-ngxs-store/src/styles.scss"
-        ],
+        "assets": ["apps/30-ngxs-store/src/favicon.ico", "apps/30-ngxs-store/src/assets"],
+        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/30-ngxs-store/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -90,10 +80,8 @@
       "executor": "@nx/eslint:lint"
     },
     "test": {
-      "executor": "@nx/vite:test",
-      "outputs": [
-        "{workspaceRoot}/coverage/apps/30-ngxs-store"
-      ],
+      "executor": "@nx/vitest:test",
+      "outputs": ["{workspaceRoot}/coverage/apps/30-ngxs-store"],
       "options": {
         "config": "apps/30-ngxs-store/vite.config.mts",
         "passWithNoTests": true

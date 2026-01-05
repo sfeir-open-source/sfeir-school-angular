@@ -8,26 +8,16 @@
   "targets": {
     "build": {
       "executor": "@angular/build:application",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/01-hands-on-solution",
         "index": "apps/01-hands-on-solution/src/index.html",
         "browser": "apps/01-hands-on-solution/src/main.ts",
-        "polyfills": [
-          "apps/01-hands-on-solution/src/polyfills.ts"
-        ],
+        "polyfills": ["apps/01-hands-on-solution/src/polyfills.ts"],
         "tsConfig": "apps/01-hands-on-solution/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": [
-          "apps/01-hands-on-solution/src/favicon.ico",
-          "apps/01-hands-on-solution/src/assets"
-        ],
-        "styles": [
-          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-          "apps/01-hands-on-solution/src/styles.scss"
-        ],
+        "assets": ["apps/01-hands-on-solution/src/favicon.ico", "apps/01-hands-on-solution/src/assets"],
+        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/01-hands-on-solution/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -84,10 +74,8 @@
       "executor": "@nx/eslint:lint"
     },
     "test": {
-      "executor": "@nx/vite:test",
-      "outputs": [
-        "{options.reportsDirectory}"
-      ],
+      "executor": "@nx/vitest:test",
+      "outputs": ["{options.reportsDirectory}"],
       "options": {
         "reportsDirectory": "../../coverage/apps/01-hands-on-solution"
       }

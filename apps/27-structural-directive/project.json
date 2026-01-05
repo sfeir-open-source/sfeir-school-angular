@@ -8,26 +8,16 @@
   "targets": {
     "build": {
       "executor": "@angular/build:application",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/27-structural-directive",
         "index": "apps/27-structural-directive/src/index.html",
         "browser": "apps/27-structural-directive/src/main.ts",
-        "polyfills": [
-          "apps/27-structural-directive/src/polyfills.ts"
-        ],
+        "polyfills": ["apps/27-structural-directive/src/polyfills.ts"],
         "tsConfig": "apps/27-structural-directive/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": [
-          "apps/27-structural-directive/src/favicon.ico",
-          "apps/27-structural-directive/src/assets"
-        ],
-        "styles": [
-          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-          "apps/27-structural-directive/src/styles.scss"
-        ],
+        "assets": ["apps/27-structural-directive/src/favicon.ico", "apps/27-structural-directive/src/assets"],
+        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/27-structural-directive/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -90,10 +80,8 @@
       "executor": "@nx/eslint:lint"
     },
     "test": {
-      "executor": "@nx/vite:test",
-      "outputs": [
-        "{options.reportsDirectory}"
-      ],
+      "executor": "@nx/vitest:test",
+      "outputs": ["{options.reportsDirectory}"],
       "options": {
         "reportsDirectory": "../../coverage/apps/27-structural-directive",
         "passWithNoTests": true

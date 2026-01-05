@@ -8,26 +8,16 @@
   "targets": {
     "build": {
       "executor": "@angular/build:application",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/03-cpt-hierarchy",
         "index": "apps/03-cpt-hierarchy/src/index.html",
         "browser": "apps/03-cpt-hierarchy/src/main.ts",
-        "polyfills": [
-          "apps/03-cpt-hierarchy/src/polyfills.ts"
-        ],
+        "polyfills": ["apps/03-cpt-hierarchy/src/polyfills.ts"],
         "tsConfig": "apps/03-cpt-hierarchy/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": [
-          "apps/03-cpt-hierarchy/src/favicon.ico",
-          "apps/03-cpt-hierarchy/src/assets"
-        ],
-        "styles": [
-          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-          "apps/03-cpt-hierarchy/src/styles.scss"
-        ],
+        "assets": ["apps/03-cpt-hierarchy/src/favicon.ico", "apps/03-cpt-hierarchy/src/assets"],
+        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/03-cpt-hierarchy/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -84,10 +74,8 @@
       "executor": "@nx/eslint:lint"
     },
     "test": {
-      "executor": "@nx/vite:test",
-      "outputs": [
-        "{options.reportsDirectory}"
-      ],
+      "executor": "@nx/vitest:test",
+      "outputs": ["{options.reportsDirectory}"],
       "options": {
         "reportsDirectory": "../../coverage/apps/03-cpt-hierarchy",
         "passWithNoTests": true

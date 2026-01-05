@@ -8,26 +8,16 @@
   "targets": {
     "build": {
       "executor": "@angular/build:application",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/23-resolver",
         "index": "apps/23-resolver/src/index.html",
         "browser": "apps/23-resolver/src/main.ts",
-        "polyfills": [
-          "apps/23-resolver/src/polyfills.ts"
-        ],
+        "polyfills": ["apps/23-resolver/src/polyfills.ts"],
         "tsConfig": "apps/23-resolver/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": [
-          "apps/23-resolver/src/favicon.ico",
-          "apps/23-resolver/src/assets"
-        ],
-        "styles": [
-          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-          "apps/23-resolver/src/styles.scss"
-        ],
+        "assets": ["apps/23-resolver/src/favicon.ico", "apps/23-resolver/src/assets"],
+        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/23-resolver/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -90,10 +80,8 @@
       "executor": "@nx/eslint:lint"
     },
     "test": {
-      "executor": "@nx/vite:test",
-      "outputs": [
-        "{options.reportsDirectory}"
-      ],
+      "executor": "@nx/vitest:test",
+      "outputs": ["{options.reportsDirectory}"],
       "options": {
         "reportsDirectory": "../../coverage/apps/23-resolver",
         "passWithNoTests": true

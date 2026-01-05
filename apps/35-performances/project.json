@@ -80,7 +80,7 @@
       "executor": "@nx/eslint:lint"
     },
     "test": {
-      "executor": "@nx/vite:test",
+      "executor": "@nx/vitest:test",
       "outputs": ["{workspaceRoot}/coverage/apps/35-performances"],
       "options": {
         "config": "apps/35-performances/vite.config.mts",
