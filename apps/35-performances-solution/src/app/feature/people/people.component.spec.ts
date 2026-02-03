@@ -3,7 +3,7 @@ import { DebugElement, NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, DeferBlockState } from '@angular/core/testing';
 import { MatDialog } from '@angular/material/dialog';
 import { By } from '@angular/platform-browser';
-import { fireEvent, render, screen } from '@testing-library/angular';
+import { fireEvent, render, screen, waitFor } from '@testing-library/angular';
 import { EMPTY, of } from 'rxjs';
 import { PeopleService } from '../../core/providers/people.service';
 import { CardComponent } from '../../shared/components/card/card.component';
@@ -142,17 +142,12 @@ describe('PeopleComponent', () => {
       }
     });
     test('should call the addNewPerson method', async () => {
-      vi.useFakeTimers();
-      try {
-        vi.spyOn(MAT_DIALOG, 'open').mockReturnValue({ afterClosed: () => of(PEOPLE[0]) } as any);
-        component.showDialog();
-        await vi.runAllTimersAsync();
-        componentFixture.detectChanges();
+      vi.spyOn(MAT_DIALOG, 'open').mockReturnValue({ afterClosed: () => of(PEOPLE[0]) } as any);
+      component.showDialog();
+      await waitFor(() => {
         expect(PEOPLE_SERVICE.addNewPerson).toHaveBeenCalled();
-        expect(PEOPLE_SERVICE.addNewPerson).toHaveBeenCalledWith(PEOPLE[0]);
-      } finally {
-        vi.useRealTimers();
-      }
+      });
+      expect(PEOPLE_SERVICE.addNewPerson).toHaveBeenCalledWith(PEOPLE[0]);
     });
     test('should refresh the list', async () => {
       vi.spyOn(MAT_DIALOG, 'open').mockReturnValue({ afterClosed: () => of(PEOPLE[0]) } as any);
