@@ -1,4 +1,4 @@
-<!-- .slide: class="with-code inconsolata" data-type-show="modern-2days" -->
+<!-- .slide: class="with-code inconsolata" -->
 
 # Parent-child communication: output signal function
 
@@ -21,7 +21,7 @@ export class ChildComponent {
 
 ##==##
 
-<!-- .slide: class="with-code inconsolata" data-type-show="modern-2days" -->
+<!-- .slide: class="with-code inconsolata" -->
 
 # Parent-child communication: output signal function
 
@@ -48,7 +48,7 @@ refreshList(value: string): void {
 
 ##==##
 
-<!-- .slide: class="with-code inconsolata" data-type-show="on-stage" -->
+<!-- .slide: class="with-code inconsolata" -->
 
 # Parent-child communication: @Output decorator
 
@@ -71,7 +71,7 @@ export class ChildComponent {
 
 ##==##
 
-<!-- .slide: class="with-code inconsolata" data-type-show="on-stage" -->
+<!-- .slide: class="with-code inconsolata" -->
 
 # Parent-child communication: @Output decorator
 

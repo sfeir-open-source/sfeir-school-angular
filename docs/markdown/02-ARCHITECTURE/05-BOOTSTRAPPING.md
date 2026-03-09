@@ -1,4 +1,4 @@
-<!-- .slide: class="transition-bg-sfeir-2" data-type-show="modern-2days" -->
+<!-- .slide: class="transition-bg-sfeir-2"-->
 
 # Bootstrapping
 
@@ -12,8 +12,6 @@
   - Bootstrap an application on a **module** <br/><br/>
 
 ##==##
- 
-<!-- .slide: data-type-show="modern-2days" -->
 
 # Bootstrapping: standalone component
 
@@ -34,7 +32,7 @@
 
 ##==##
 
-<!-- .slide: class="tc-multiple-columns with-code inconsolata" data-type-show="modern-2days" -->
+<!-- .slide: class="tc-multiple-columns with-code inconsolata"  -->
 
 ##++##
 
@@ -86,4 +84,3 @@ bootstrapApplication(AppComponent, {
 <!-- .element: class="medium-code" -->
 
 ##++##
-
