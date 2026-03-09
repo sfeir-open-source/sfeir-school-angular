@@ -32,7 +32,7 @@
 
 ##==##
 
-<!-- .slide: class="with-code inconsolata" data-type-show="modern-2days" -->
+<!-- .slide: class="with-code inconsolata"-->
 
 # @switch block
 
