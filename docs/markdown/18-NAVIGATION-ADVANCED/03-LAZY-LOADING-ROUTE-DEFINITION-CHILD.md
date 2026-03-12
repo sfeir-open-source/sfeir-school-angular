@@ -33,7 +33,7 @@ export class AdminModule {}
 ```typescript
 const adminRoutes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'users', loadComponent: () => import('./admin-users/admin-users.routes').then(m => m.routes) },
+  { path: 'users', loadChildren: () => import('./admin-users/admin-users.routes').then(m => m.routes) },
 ];
 ```
 
