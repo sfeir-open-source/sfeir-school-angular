@@ -27,6 +27,8 @@ In this workshop, you'll learn how to create a template-driven form in Angular. 
 ## Step 5: Implement Form Logic
 
 1. In `form.ts`, create two output properties:
+   - `cancel` to emit when the user clicks the cancel button
+   - `save` to emit when the user clicks the save button. The value to emit is the form value as `PeopleForm`
 
 2. Implement the form submission
 
@@ -36,7 +38,7 @@ In this workshop, you'll learn how to create a template-driven form in Angular. 
 
 1. In the file `people.service.ts`, add a new function to add a people. Endpoint to use /peoples with the Post method
 2. In the file `people.component.ts`, complete the Rxjs flux with the correct operator
-   - first use the filer operator to avoid sending request if user close the dialog without submitting
+   - first use the filter operator to avoid sending request if user close the dialog without submitting
    - then use the switchMap operator to send the request
    - finally use again a switchMap operator to retrieve the list of person updated
 3. Register the new flow in the merge operator
