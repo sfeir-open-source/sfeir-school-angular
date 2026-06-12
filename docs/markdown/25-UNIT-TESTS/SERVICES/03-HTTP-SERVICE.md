@@ -34,8 +34,7 @@ export class UserService {
 let service: UserService;
 beforeEach(() => {
   TestBed.configureTestingModule({
-    imports: [provideHttpClient()],
-    providers: [UserService],
+    providers: [UserService, provideHttpClient()],
   });
   service = TestBed.inject(UserService);
 });
@@ -63,8 +62,7 @@ let httpTestingController: HttpTestingController;
 
 beforeEach(() => {
   TestBed.configureTestingModule({
-    imports: [provideHttpClient(), provideHttpClientTesting()],
-    providers: [UserService],
+    providers: [UserService, provideHttpClient(), provideHttpClientTesting()],
   });
   service = TestBed.inject(UserService);
   httpTestingController = TestBed.inject(HttpTestingController);
