@@ -78,6 +78,24 @@ function reactiveFormSlides() {
   ];
 }
 
+function signalFormSlides() {
+  const FORMS = '17-FORMS';
+  return [
+    `${FORMS}/SIGNAL-FORMS/00-TRANSITION-SLIDE.md`,
+    `${FORMS}/SIGNAL-FORMS/01-INTRODUCTION.md`,
+    `${FORMS}/SIGNAL-FORMS/02-GETTING-STARTED.md`,
+    `${FORMS}/SIGNAL-FORMS/03-FIELD-STATE.md`,
+    `${FORMS}/SIGNAL-FORMS/04-VALIDATION.md`,
+    `${FORMS}/SIGNAL-FORMS/05-CUSTOM-VALIDATION.md`,
+    `${FORMS}/SIGNAL-FORMS/06-LOGIC.md`,
+    `${FORMS}/SIGNAL-FORMS/07-SCHEMAS.md`,
+    `${FORMS}/SIGNAL-FORMS/08-ASYNC.md`,
+    `${FORMS}/SIGNAL-FORMS/09-SUBMIT.md`,
+    `${FORMS}/SIGNAL-FORMS/10-CUSTOM-CONTROLS.md`,
+    `${FORMS}/SIGNAL-FORMS/11-BEST-PRACTICES.md`,
+  ].map(showByDefault);
+}
+
 export function dayTwoSlides() {
   return [
     ...providersSlide(),
@@ -87,5 +105,6 @@ export function dayTwoSlides() {
     ...directiveSlides(),
     ...templateDrivenForms(),
     ...reactiveFormSlides(),
+    ...signalFormSlides(),
   ];
 }
