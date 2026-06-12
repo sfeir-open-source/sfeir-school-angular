@@ -27,6 +27,8 @@ In the `BadgeDirective` inject the following services:
 
 Use the `effect` function to react to changes in the `isManager` input. When `isManager` is true, display a manager icon using Material Icons.
 
+icon to use: supervisor_account
+
 ## Step 6: Use the Directive in Template
 
 In the `people.component.html` file, add the `sfeirBadge` directive to the person's name in list view mode:

@@ -23,7 +23,11 @@ Astuce: voici un example
 <mat-form-field appearance="outline">
   <mat-label>First name</mat-label>
   <input type="text" matInput placeholder="First name" [(ngModel)]="person.firstname" name="firstname" #firstName="ngModel" required minlength="2" />
-  <mat-error *ngIf="firstName.errors?.['required']">Ce champs est requis</mat-error>
+  @if(firstName.errors?.['required']) {
+  <mat-error>Ce champs est requis</mat-error>
+  } @if(firstName.errors?.['minlength']) {
+  <mat-error>Ce champs doit posséder minimum 2 caractères</mat-error>
+  }
 </mat-form-field>
 ```
 

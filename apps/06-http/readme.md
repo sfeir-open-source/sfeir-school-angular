@@ -50,7 +50,7 @@ export const environment = {
 
 1. Open **home.component.ts**
 2. Import the necessary dependencies:
-3. Create an HTTP resource to fetch random people:
+3. Create an HTTP resource to fetch random people: (/peoples/random)
 
 ## Step 4: Update the Template
 

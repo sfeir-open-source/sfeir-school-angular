@@ -31,7 +31,7 @@ By the end of this exercise, you'll be able to:
 ### Step 2: Update the People Component
 
 1. Implement the `deletePerson` method to handle the delete event
-2. Use RxJS to manage the people list state and handle API calls
+2. Use RxJS to manage the people list state and handle API calls (peoples/:id)
 3. Update the template to handle the `personDelete` event
 
 ### Step 3: Update the Home Component

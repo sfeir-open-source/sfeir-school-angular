@@ -14,19 +14,17 @@
 # How to write a guard since v14
 
 ```typescript
-export function loginGuard(): CanMatchFn {
-  return (route: Route, segments: UrlSegment[]) => {
-    const authentificationService = inject(AuthentificationService);
-    const router = inject(Router);
-    return authentificationService.verifyToken().pipe(
-      map(() => true),
-      catchError(() => {
-        router.navigate(['/login']);
-        return of(false);
-      }),
-    );
-  };
-}
+export const loginGuard: CanMatchFn = (route: Route, segments: UrlSegment[]) => {
+  const authentificationService = inject(AuthentificationService);
+  const router = inject(Router);
+  return authentificationService.verifyToken().pipe(
+    map(() => true),
+    catchError(() => {
+      router.navigate(['/login']);
+      return of(false);
+    }),
+  );
+};
 ```
 
 <!-- .element: class="big-code" -->
