@@ -8,12 +8,17 @@
   "targets": {
     "build": {
       "executor": "@angular/build:application",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "defaultConfiguration": "production",
       "options": {
         "outputPath": "dist/apps/18-template-driven-form-update-mode-solution",
         "index": "apps/18-template-driven-form-update-mode-solution/src/index.html",
         "browser": "apps/18-template-driven-form-update-mode-solution/src/main.ts",
-        "polyfills": ["apps/18-template-driven-form-update-mode-solution/src/polyfills.ts"],
+        "polyfills": [
+          "apps/18-template-driven-form-update-mode-solution/src/polyfills.ts"
+        ],
         "tsConfig": "apps/18-template-driven-form-update-mode-solution/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
@@ -54,8 +59,7 @@
           "sourceMap": true,
           "namedChunks": true
         }
-      },
-      "defaultConfiguration": "production"
+      }
     },
     "serve": {
       "executor": "@angular/build:dev-server",
@@ -65,6 +69,8 @@
           "target": "serve"
         }
       ],
+      "defaultConfiguration": "development",
+      "continuous": true,
       "configurations": {
         "production": {
           "buildTarget": "18-template-driven-form-update-mode-solution:build:production"
@@ -72,9 +78,7 @@
         "development": {
           "buildTarget": "18-template-driven-form-update-mode-solution:build:development"
         }
-      },
-      "defaultConfiguration": "development",
-      "continuous": true
+      }
     },
     "extract-i18n": {
       "executor": "@angular/build:extract-i18n",
@@ -87,9 +91,11 @@
     },
     "test": {
       "executor": "@nx/vitest:test",
-      "outputs": ["{options.reportsDirectory}"],
+      "outputs": [
+        "{options.reportsDirectory}"
+      ],
       "options": {
-        "reportsDirectory": "../../coverage/apps/18-template-driven-form-update-mode-solution"
+        "reportsDirectory": "{projectRoot}/../../coverage/apps/18-template-driven-form-update-mode-solution"
       }
     }
   }

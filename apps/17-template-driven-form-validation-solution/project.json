@@ -8,15 +8,23 @@
   "targets": {
     "build": {
       "executor": "@angular/build:application",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "defaultConfiguration": "production",
       "options": {
         "outputPath": "dist/apps/17-template-driven-form-validation-solution",
         "index": "apps/17-template-driven-form-validation-solution/src/index.html",
         "browser": "apps/17-template-driven-form-validation-solution/src/main.ts",
-        "polyfills": ["apps/17-template-driven-form-validation-solution/src/polyfills.ts"],
+        "polyfills": [
+          "apps/17-template-driven-form-validation-solution/src/polyfills.ts"
+        ],
         "tsConfig": "apps/17-template-driven-form-validation-solution/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/17-template-driven-form-validation-solution/src/favicon.ico", "apps/17-template-driven-form-validation-solution/src/assets"],
+        "assets": [
+          "apps/17-template-driven-form-validation-solution/src/favicon.ico",
+          "apps/17-template-driven-form-validation-solution/src/assets"
+        ],
         "styles": [
           "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
           "apps/17-template-driven-form-validation-solution/src/styles.scss"
@@ -51,8 +59,7 @@
           "sourceMap": true,
           "namedChunks": true
         }
-      },
-      "defaultConfiguration": "production"
+      }
     },
     "serve": {
       "executor": "@angular/build:dev-server",
@@ -62,6 +69,8 @@
           "target": "serve"
         }
       ],
+      "defaultConfiguration": "development",
+      "continuous": true,
       "configurations": {
         "production": {
           "buildTarget": "17-template-driven-form-validation-solution:build:production"
@@ -69,9 +78,7 @@
         "development": {
           "buildTarget": "17-template-driven-form-validation-solution:build:development"
         }
-      },
-      "defaultConfiguration": "development",
-      "continuous": true
+      }
     },
     "extract-i18n": {
       "executor": "@angular/build:extract-i18n",
@@ -84,9 +91,11 @@
     },
     "test": {
       "executor": "@nx/vitest:test",
-      "outputs": ["{options.reportsDirectory}"],
+      "outputs": [
+        "{options.reportsDirectory}"
+      ],
       "options": {
-        "reportsDirectory": "../../coverage/apps/17-template-driven-form-validation-solution"
+        "reportsDirectory": "{projectRoot}/../../coverage/apps/17-template-driven-form-validation-solution"
       }
     }
   }

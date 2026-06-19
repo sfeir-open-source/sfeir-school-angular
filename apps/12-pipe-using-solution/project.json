@@ -8,16 +8,27 @@
   "targets": {
     "build": {
       "executor": "@angular/build:application",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "defaultConfiguration": "production",
       "options": {
         "outputPath": "dist/apps/12-pipe-using-solution",
         "index": "apps/12-pipe-using-solution/src/index.html",
         "browser": "apps/12-pipe-using-solution/src/main.ts",
-        "polyfills": ["apps/12-pipe-using-solution/src/polyfills.ts"],
+        "polyfills": [
+          "apps/12-pipe-using-solution/src/polyfills.ts"
+        ],
         "tsConfig": "apps/12-pipe-using-solution/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/12-pipe-using-solution/src/favicon.ico", "apps/12-pipe-using-solution/src/assets"],
-        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/12-pipe-using-solution/src/styles.scss"],
+        "assets": [
+          "apps/12-pipe-using-solution/src/favicon.ico",
+          "apps/12-pipe-using-solution/src/assets"
+        ],
+        "styles": [
+          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+          "apps/12-pipe-using-solution/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -48,8 +59,7 @@
           "sourceMap": true,
           "namedChunks": true
         }
-      },
-      "defaultConfiguration": "production"
+      }
     },
     "serve": {
       "executor": "@angular/build:dev-server",
@@ -59,6 +69,8 @@
           "target": "serve"
         }
       ],
+      "defaultConfiguration": "development",
+      "continuous": true,
       "configurations": {
         "production": {
           "buildTarget": "12-pipe-using-solution:build:production"
@@ -66,9 +78,7 @@
         "development": {
           "buildTarget": "12-pipe-using-solution:build:development"
         }
-      },
-      "defaultConfiguration": "development",
-      "continuous": true
+      }
     },
     "extract-i18n": {
       "executor": "@angular/build:extract-i18n",
@@ -81,9 +91,11 @@
     },
     "test": {
       "executor": "@nx/vitest:test",
-      "outputs": ["{options.reportsDirectory}"],
+      "outputs": [
+        "{options.reportsDirectory}"
+      ],
       "options": {
-        "reportsDirectory": "../../coverage/apps/12-pipe-using-solution"
+        "reportsDirectory": "{projectRoot}/../../coverage/apps/12-pipe-using-solution"
       }
     }
   }
