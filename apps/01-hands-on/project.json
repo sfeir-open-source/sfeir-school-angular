@@ -70,9 +70,6 @@
         "buildTarget": "01-hands-on:build"
       }
     },
-    "lint": {
-      "executor": "@nx/eslint:lint"
-    },
     "test": {
       "outputs": ["{projectRoot}/{options.coverage.reportsDirectory}", "{workspaceRoot}/coverage/apps/01-hands-on"],
       "options": {

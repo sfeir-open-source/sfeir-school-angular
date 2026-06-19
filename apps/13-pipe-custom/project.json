@@ -76,9 +76,6 @@
         "buildTarget": "13-pipe-custom:build"
       }
     },
-    "lint": {
-      "executor": "@nx/eslint:lint"
-    },
     "test": {
       "outputs": ["{projectRoot}/{options.coverage.reportsDirectory}", "{workspaceRoot}/coverage/apps/13-pipe-custom"],
       "options": {

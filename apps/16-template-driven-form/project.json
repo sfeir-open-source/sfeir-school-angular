@@ -76,9 +76,6 @@
         "buildTarget": "16-template-driven-form:build"
       }
     },
-    "lint": {
-      "executor": "@nx/eslint:lint"
-    },
     "test": {
       "outputs": ["{projectRoot}/{options.coverage.reportsDirectory}", "{workspaceRoot}/coverage/apps/16-template-driven-form"],
       "options": {

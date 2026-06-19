@@ -76,10 +76,6 @@
         "buildTarget": "31-ngrx-store-solution:build"
       }
     },
-    "lint": {
-      "executor": "@nx/eslint:lint"
-    },
     "test": {}
-
   }
 }

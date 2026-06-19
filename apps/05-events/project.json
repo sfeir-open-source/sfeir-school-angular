@@ -70,9 +70,6 @@
         "buildTarget": "05-events:build"
       }
     },
-    "lint": {
-      "executor": "@nx/eslint:lint"
-    },
     "test": {
       "outputs": ["{projectRoot}/{options.coverage.reportsDirectory}", "{workspaceRoot}/coverage/apps/05-events"],
       "options": {

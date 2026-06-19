@@ -76,9 +76,6 @@
         "buildTarget": "09-input:build"
       }
     },
-    "lint": {
-      "executor": "@nx/eslint:lint"
-    },
     "test": {
       "outputs": ["{projectRoot}/{options.coverage.reportsDirectory}", "{workspaceRoot}/coverage/apps/09-input"],
       "options": {

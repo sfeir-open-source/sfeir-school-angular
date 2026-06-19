@@ -76,9 +76,6 @@
         "buildTarget": "29-elf-store-solution:build"
       }
     },
-    "lint": {
-      "executor": "@nx/eslint:lint"
-    },
     "test": {
       "outputs": ["{projectRoot}/{options.coverage.reportsDirectory}", "{workspaceRoot}/coverage/apps/29-elf-store-solution"],
       "options": {

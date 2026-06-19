@@ -1,11 +1,11 @@
 'use strict';
 
-var express = require('express'),
+const express = require('express'),
   bodyParser = require('body-parser'),
   api = require('./routes/api'),
   cors = require('cors');
 
-var app = express();
+const app = express();
 
 app.set('port', process.env.PORT || 9000);
 app.use(bodyParser.json());

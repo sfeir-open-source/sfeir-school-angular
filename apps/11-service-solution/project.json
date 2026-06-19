@@ -76,9 +76,6 @@
         "buildTarget": "11-service-solution:build"
       }
     },
-    "lint": {
-      "executor": "@nx/eslint:lint"
-    },
     "test": {
       "outputs": ["{projectRoot}/{options.coverage.reportsDirectory}", "{workspaceRoot}/coverage/apps/11-service-solution"],
       "options": {

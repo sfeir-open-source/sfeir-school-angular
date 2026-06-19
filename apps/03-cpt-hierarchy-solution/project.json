@@ -70,9 +70,6 @@
         "buildTarget": "03-cpt-hierarchy-solution:build"
       }
     },
-    "lint": {
-      "executor": "@nx/eslint:lint"
-    },
     "test": {
       "outputs": ["{projectRoot}/{options.coverage.reportsDirectory}", "{workspaceRoot}/coverage/apps/03-cpt-hierarchy-solution"],
       "options": {

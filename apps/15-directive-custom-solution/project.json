@@ -76,9 +76,6 @@
         "buildTarget": "15-directive-custom-solution:build"
       }
     },
-    "lint": {
-      "executor": "@nx/eslint:lint"
-    },
     "test": {
       "outputs": ["{projectRoot}/{options.coverage.reportsDirectory}", "{workspaceRoot}/coverage/apps/15-directive-custom-solution"],
       "options": {

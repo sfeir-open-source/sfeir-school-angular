@@ -76,9 +76,6 @@
         "buildTarget": "28-custom-control-solution:build"
       }
     },
-    "lint": {
-      "executor": "@nx/eslint:lint"
-    },
     "test": {
       "outputs": ["{projectRoot}/{options.coverage.reportsDirectory}", "{workspaceRoot}/coverage/apps/28-custom-control-solution"],
       "options": {

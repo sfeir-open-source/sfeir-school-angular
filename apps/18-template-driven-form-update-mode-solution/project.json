@@ -82,9 +82,6 @@
         "buildTarget": "18-template-driven-form-update-mode-solution:build"
       }
     },
-    "lint": {
-      "executor": "@nx/eslint:lint"
-    },
     "test": {
       "outputs": ["{projectRoot}/{options.coverage.reportsDirectory}", "{workspaceRoot}/coverage/apps/18-template-driven-form-update-mode-solution"],
       "options": {

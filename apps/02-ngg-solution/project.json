@@ -70,9 +70,6 @@
         "buildTarget": "02-ngg-solution:build"
       }
     },
-    "lint": {
-      "executor": "@nx/eslint:lint"
-    },
     "test": {
       "outputs": ["{projectRoot}/{options.coverage.reportsDirectory}", "{workspaceRoot}/coverage/apps/02-ngg-solution"],
       "options": {

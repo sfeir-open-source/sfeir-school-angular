@@ -76,9 +76,6 @@
         "buildTarget": "06-http-solution:build"
       }
     },
-    "lint": {
-      "executor": "@nx/eslint:lint"
-    },
     "test": {
       "outputs": ["{projectRoot}/{options.coverage.reportsDirectory}", "{workspaceRoot}/coverage/apps/06-http-solution"],
       "options": {

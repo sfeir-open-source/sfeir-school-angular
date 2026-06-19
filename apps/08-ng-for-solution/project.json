@@ -76,9 +76,6 @@
         "buildTarget": "08-ng-for-solution:build"
       }
     },
-    "lint": {
-      "executor": "@nx/eslint:lint"
-    },
     "test": {
       "outputs": ["{projectRoot}/{options.coverage.reportsDirectory}", "{workspaceRoot}/coverage/apps/08-ng-for-solution"],
       "options": {

@@ -76,9 +76,6 @@
         "buildTarget": "21-lazyloading-solution:build"
       }
     },
-    "lint": {
-      "executor": "@nx/eslint:lint"
-    },
     "test": {
       "outputs": ["{projectRoot}/{options.coverage.reportsDirectory}", "{workspaceRoot}/coverage/apps/21-lazyloading-solution"],
       "options": {

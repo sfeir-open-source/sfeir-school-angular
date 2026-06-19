@@ -70,9 +70,6 @@
         "buildTarget": "04-binding:build"
       }
     },
-    "lint": {
-      "executor": "@nx/eslint:lint"
-    },
     "test": {
       "outputs": ["{projectRoot}/{options.coverage.reportsDirectory}", "{workspaceRoot}/coverage/apps/04-binding"],
       "options": {

@@ -76,10 +76,6 @@
         "buildTarget": "30-ngxs-store-solution:build"
       }
     },
-    "lint": {
-      "executor": "@nx/eslint:lint"
-    },
     "test": {}
-
   }
 }

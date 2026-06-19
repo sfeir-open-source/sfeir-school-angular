@@ -79,9 +79,6 @@
         "buildTarget": "17-template-driven-form-validation-solution:build"
       }
     },
-    "lint": {
-      "executor": "@nx/eslint:lint"
-    },
     "test": {
       "outputs": ["{projectRoot}/{options.coverage.reportsDirectory}", "{workspaceRoot}/coverage/apps/17-template-driven-form-validation-solution"],
       "options": {

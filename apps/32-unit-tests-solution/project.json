@@ -76,10 +76,6 @@
         "buildTarget": "32-unit-tests-solution:build"
       }
     },
-    "lint": {
-      "executor": "@nx/eslint:lint"
-    },
     "test": {}
-
   }
 }

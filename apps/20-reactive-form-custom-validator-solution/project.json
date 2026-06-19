@@ -79,9 +79,6 @@
         "buildTarget": "20-reactive-form-custom-validator-solution:build"
       }
     },
-    "lint": {
-      "executor": "@nx/eslint:lint"
-    },
     "test": {
       "outputs": ["{projectRoot}/{options.coverage.reportsDirectory}", "{workspaceRoot}/coverage/apps/20-reactive-form-custom-validator-solution"],
       "options": {
