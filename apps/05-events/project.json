@@ -8,27 +8,17 @@
   "targets": {
     "build": {
       "executor": "@angular/build:application",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
         "outputPath": "dist/apps/05-events",
         "index": "apps/05-events/src/index.html",
         "browser": "apps/05-events/src/main.ts",
-        "polyfills": [
-          "apps/05-events/src/polyfills.ts"
-        ],
+        "polyfills": ["apps/05-events/src/polyfills.ts"],
         "tsConfig": "apps/05-events/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": [
-          "apps/05-events/src/favicon.ico",
-          "apps/05-events/src/assets"
-        ],
-        "styles": [
-          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-          "apps/05-events/src/styles.scss"
-        ],
+        "assets": ["apps/05-events/src/favicon.ico", "apps/05-events/src/assets"],
+        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/05-events/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -84,13 +74,10 @@
       "executor": "@nx/eslint:lint"
     },
     "test": {
-      "executor": "@nx/vitest:test",
-      "outputs": [
-        "{options.reportsDirectory}"
-      ],
+      "outputs": ["{projectRoot}/{options.coverage.reportsDirectory}", "{workspaceRoot}/coverage/apps/05-events"],
       "options": {
-        "reportsDirectory": "{projectRoot}/../../coverage/apps/05-events",
-        "passWithNoTests": true
+        "passWithNoTests": true,
+        "coverage.reportsDirectory": "../../../coverage/apps/05-events"
       }
     }
   }

@@ -8,17 +8,13 @@
   "targets": {
     "build": {
       "executor": "@angular/build:application",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
         "outputPath": "dist/apps/18-template-driven-form-update-mode-solution",
         "index": "apps/18-template-driven-form-update-mode-solution/src/index.html",
         "browser": "apps/18-template-driven-form-update-mode-solution/src/main.ts",
-        "polyfills": [
-          "apps/18-template-driven-form-update-mode-solution/src/polyfills.ts"
-        ],
+        "polyfills": ["apps/18-template-driven-form-update-mode-solution/src/polyfills.ts"],
         "tsConfig": "apps/18-template-driven-form-update-mode-solution/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
@@ -90,12 +86,9 @@
       "executor": "@nx/eslint:lint"
     },
     "test": {
-      "executor": "@nx/vitest:test",
-      "outputs": [
-        "{options.reportsDirectory}"
-      ],
+      "outputs": ["{projectRoot}/{options.coverage.reportsDirectory}", "{workspaceRoot}/coverage/apps/18-template-driven-form-update-mode-solution"],
       "options": {
-        "reportsDirectory": "{projectRoot}/../../coverage/apps/18-template-driven-form-update-mode-solution"
+        "coverage.reportsDirectory": "../../../coverage/apps/18-template-driven-form-update-mode-solution"
       }
     }
   }

@@ -8,27 +8,17 @@
   "targets": {
     "build": {
       "executor": "@angular/build:application",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
         "outputPath": "dist/apps/21-lazyloading-solution",
         "index": "apps/21-lazyloading-solution/src/index.html",
         "browser": "apps/21-lazyloading-solution/src/main.ts",
-        "polyfills": [
-          "apps/21-lazyloading-solution/src/polyfills.ts"
-        ],
+        "polyfills": ["apps/21-lazyloading-solution/src/polyfills.ts"],
         "tsConfig": "apps/21-lazyloading-solution/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": [
-          "apps/21-lazyloading-solution/src/favicon.ico",
-          "apps/21-lazyloading-solution/src/assets"
-        ],
-        "styles": [
-          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-          "apps/21-lazyloading-solution/src/styles.scss"
-        ],
+        "assets": ["apps/21-lazyloading-solution/src/favicon.ico", "apps/21-lazyloading-solution/src/assets"],
+        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/21-lazyloading-solution/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -90,12 +80,9 @@
       "executor": "@nx/eslint:lint"
     },
     "test": {
-      "executor": "@nx/vitest:test",
-      "outputs": [
-        "{options.reportsDirectory}"
-      ],
+      "outputs": ["{projectRoot}/{options.coverage.reportsDirectory}", "{workspaceRoot}/coverage/apps/21-lazyloading-solution"],
       "options": {
-        "reportsDirectory": "{projectRoot}/../../coverage/apps/21-lazyloading-solution"
+        "coverage.reportsDirectory": "../../../coverage/apps/21-lazyloading-solution"
       }
     }
   }
