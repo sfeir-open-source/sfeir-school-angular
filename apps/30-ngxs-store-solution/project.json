@@ -79,10 +79,7 @@
     "lint": {
       "executor": "@nx/eslint:lint"
     },
-    "test": {
-      "options": {
-        "config": "apps/30-ngxs-store-solution/vite.config.mts"
-      }
-    }
+    "test": {}
+
   }
 }

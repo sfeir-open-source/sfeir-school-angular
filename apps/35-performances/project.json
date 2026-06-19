@@ -80,9 +80,10 @@
       "executor": "@nx/eslint:lint"
     },
     "test": {
+      "outputs": ["{projectRoot}/{options.coverage.reportsDirectory}", "{workspaceRoot}/coverage/apps/35-performances"],
       "options": {
-        "config": "apps/35-performances/vite.config.mts",
-        "passWithNoTests": true
+        "passWithNoTests": true,
+        "coverage.reportsDirectory": "../../../coverage/apps/35-performances"
       }
     }
   }

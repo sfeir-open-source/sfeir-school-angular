@@ -5,7 +5,8 @@
   ],
   "plugins": [
     "@nx",
-    "prettier"
+    "prettier",
+    "@stylistic"
   ],
   "overrides": [
     {
@@ -44,7 +45,7 @@
       ],
       "rules": {
         "prettier/prettier": "error",
-        "@typescript-eslint/no-extra-semi": "error",
+        "@stylistic/no-extra-semi": "error",
         "no-extra-semi": "off"
       }
     },
@@ -69,7 +70,7 @@
       "rules": {
         "prettier/prettier": "error",
         "@typescript-eslint/no-explicit-any": "off",
-        "@typescript-eslint/no-extra-semi": "error",
+        "@stylistic/no-extra-semi": "error",
         "no-extra-semi": "off"
       }
     },
@@ -84,7 +85,7 @@
       ],
       "rules": {
         "prettier/prettier": "error",
-        "@typescript-eslint/no-extra-semi": "error",
+        "@stylistic/no-extra-semi": "error",
         "no-extra-semi": "off"
       }
     }
