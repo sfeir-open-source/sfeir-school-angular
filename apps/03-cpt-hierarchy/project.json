@@ -9,6 +9,7 @@
     "build": {
       "executor": "@angular/build:application",
       "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
       "options": {
         "outputPath": "dist/apps/03-cpt-hierarchy",
         "index": "apps/03-cpt-hierarchy/src/index.html",
@@ -48,11 +49,12 @@
           "sourceMap": true,
           "namedChunks": true
         }
-      },
-      "defaultConfiguration": "production"
+      }
     },
     "serve": {
       "executor": "@angular/build:dev-server",
+      "defaultConfiguration": "development",
+      "continuous": true,
       "configurations": {
         "production": {
           "buildTarget": "03-cpt-hierarchy:build:production"
@@ -60,9 +62,7 @@
         "development": {
           "buildTarget": "03-cpt-hierarchy:build:development"
         }
-      },
-      "defaultConfiguration": "development",
-      "continuous": true
+      }
     },
     "extract-i18n": {
       "executor": "@angular/build:extract-i18n",
@@ -70,15 +70,11 @@
         "buildTarget": "03-cpt-hierarchy:build"
       }
     },
-    "lint": {
-      "executor": "@nx/eslint:lint"
-    },
     "test": {
-      "executor": "@nx/vitest:test",
-      "outputs": ["{options.reportsDirectory}"],
+      "outputs": ["{projectRoot}/{options.coverage.reportsDirectory}", "{workspaceRoot}/coverage/apps/03-cpt-hierarchy"],
       "options": {
-        "reportsDirectory": "../../coverage/apps/03-cpt-hierarchy",
-        "passWithNoTests": true
+        "passWithNoTests": true,
+        "coverage.reportsDirectory": "../../../coverage/apps/03-cpt-hierarchy"
       }
     }
   }

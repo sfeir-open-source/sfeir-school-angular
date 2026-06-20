@@ -5,33 +5,6 @@
   "projectType": "application",
   "tags": [],
   "targets": {
-    "build": {
-      "executor": "@nx/webpack:webpack",
-      "outputs": [
-        "{options.outputPath}"
-      ],
-      "options": {
-        "outputPath": "dist/apps/server-express",
-        "main": "apps/server-express/src/main.js",
-        "tsConfig": "apps/server-express/tsconfig.app.json",
-        "target": "node",
-        "compiler": "tsc",
-        "webpackConfig": "apps/server-express/webpack.config.js"
-      },
-      "configurations": {
-        "production": {
-          "optimization": true,
-          "extractLicenses": true,
-          "inspect": false,
-          "fileReplacements": [
-            {
-              "replace": "apps/server-express/src/environments/environment.js",
-              "with": "apps/server-express/src/environments/environment.prod.js"
-            }
-          ]
-        }
-      }
-    },
     "serve": {
       "executor": "@nx/js:node",
       "continuous": true,
@@ -39,9 +12,6 @@
         "buildTarget": "server-express:build",
         "watch": true
       }
-    },
-    "lint": {
-      "executor": "@nx/eslint:lint"
     }
   }
 }

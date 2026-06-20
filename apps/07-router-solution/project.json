@@ -9,6 +9,7 @@
     "build": {
       "executor": "@angular/build:application",
       "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
       "options": {
         "outputPath": "dist/apps/07-router-solution",
         "index": "apps/07-router-solution/src/index.html",
@@ -48,8 +49,7 @@
           "sourceMap": true,
           "namedChunks": true
         }
-      },
-      "defaultConfiguration": "production"
+      }
     },
     "serve": {
       "executor": "@angular/build:dev-server",
@@ -59,6 +59,8 @@
           "target": "serve"
         }
       ],
+      "defaultConfiguration": "development",
+      "continuous": true,
       "configurations": {
         "production": {
           "buildTarget": "07-router-solution:build:production"
@@ -66,9 +68,7 @@
         "development": {
           "buildTarget": "07-router-solution:build:development"
         }
-      },
-      "defaultConfiguration": "development",
-      "continuous": true
+      }
     },
     "extract-i18n": {
       "executor": "@angular/build:extract-i18n",
@@ -76,14 +76,10 @@
         "buildTarget": "07-router-solution:build"
       }
     },
-    "lint": {
-      "executor": "@nx/eslint:lint"
-    },
     "test": {
-      "executor": "@nx/vitest:test",
-      "outputs": ["{options.reportsDirectory}"],
+      "outputs": ["{projectRoot}/{options.coverage.reportsDirectory}", "{workspaceRoot}/coverage/apps/07-router-solution"],
       "options": {
-        "reportsDirectory": "../../coverage/apps/07-router-solution"
+        "coverage.reportsDirectory": "../../../coverage/apps/07-router-solution"
       }
     }
   }

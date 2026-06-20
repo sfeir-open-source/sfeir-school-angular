@@ -1,9 +1,9 @@
+import { NgOptimizedImage } from '@angular/common';
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
-import { People } from '../../models/people.model';
+import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
-import { NgOptimizedImage } from '@angular/common';
+import { People } from '../../models/people.model';
 
 @Component({
   selector: 'sfeir-card',

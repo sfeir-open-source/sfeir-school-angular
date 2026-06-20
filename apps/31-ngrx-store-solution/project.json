@@ -9,6 +9,7 @@
     "build": {
       "executor": "@angular/build:application",
       "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
       "options": {
         "outputPath": "dist/apps/31-ngrx-store-solution",
         "index": "apps/31-ngrx-store-solution/src/index.html",
@@ -48,8 +49,7 @@
           "sourceMap": true,
           "namedChunks": true
         }
-      },
-      "defaultConfiguration": "production"
+      }
     },
     "serve": {
       "executor": "@angular/build:dev-server",
@@ -59,6 +59,8 @@
           "target": "serve"
         }
       ],
+      "defaultConfiguration": "development",
+      "continuous": true,
       "configurations": {
         "production": {
           "buildTarget": "31-ngrx-store-solution:build:production"
@@ -66,9 +68,7 @@
         "development": {
           "buildTarget": "31-ngrx-store-solution:build:development"
         }
-      },
-      "defaultConfiguration": "development",
-      "continuous": true
+      }
     },
     "extract-i18n": {
       "executor": "@angular/build:extract-i18n",
@@ -76,16 +76,6 @@
         "buildTarget": "31-ngrx-store-solution:build"
       }
     },
-    "lint": {
-      "executor": "@nx/eslint:lint"
-    },
-    "test": {
-      "executor": "@nx/vitest:test",
-      "outputs": ["{workspaceRoot}/coverage/apps/31-ngrx-store-solution"],
-      "options": {
-        "config": "apps/31-ngrx-store-solution/vite.config.mts",
-        "passWithNoTests": true
-      }
-    }
+    "test": {}
   }
 }

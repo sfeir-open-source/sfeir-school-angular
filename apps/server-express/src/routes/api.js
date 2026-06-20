@@ -1,7 +1,7 @@
 'use strict';
 
-var _ = require('underscore');
-var PEOPLES = require('./data/persons').people.map(person => {
+const _ = require('underscore');
+const PEOPLES = require('./data/persons').people.map(person => {
   // work with timestamps, it's cleaner
   person.entryDate = parseDate(person.entryDate);
   person.birthDate = parseDate(person.birthDate);
@@ -17,19 +17,19 @@ exports.listAll = function (req, res) {
 };
 
 exports.filterByName = function (req, res) {
-  var name = getParam(req, 'name');
+  const name = getParam(req, 'name');
   console.log('List by name : name=' + name);
 
-  var PEOPLES = _.union(_.where(PEOPLES, { lastname: name }), _.where(PEOPLES, { firstname: name }));
+  const filteredPeoples = _.union(_.where(PEOPLES, { lastname: name }), _.where(PEOPLES, { firstname: name }));
 
-  return res.status(200).json(PEOPLES);
+  return res.status(200).json(filteredPeoples);
 };
 
 exports.filterBySkill = function (req, res) {
-  var skill = getParam(req, 'skill');
+  const skill = getParam(req, 'skill');
   console.log('List by skill : skill=' + skill);
 
-  var filteredPeoples = _.filter(PEOPLES, function (person) {
+  const filteredPeoples = _.filter(PEOPLES, function (person) {
     return _.contains(person.skills, skill);
   });
 
@@ -37,10 +37,10 @@ exports.filterBySkill = function (req, res) {
 };
 
 exports.get = function (req, res) {
-  var id = getId(req);
+  const id = getId(req);
   console.log('Get person : id=' + id);
 
-  var person = _.findWhere(PEOPLES, { id: id });
+  const person = _.findWhere(PEOPLES, { id: id });
 
   if (!person) {
     return res.status(404).json({ error: 'La personne avec l\'id "' + id + '" n\'existe pas.' });
@@ -50,7 +50,7 @@ exports.get = function (req, res) {
 };
 
 exports.getRandom = function (req, res) {
-  var person = PEOPLES[Math.floor(Math.random() * PEOPLES.length)];
+  const person = PEOPLES[Math.floor(Math.random() * PEOPLES.length)];
   if (!person) {
     return res.status(204).json();
   }
@@ -58,12 +58,12 @@ exports.getRandom = function (req, res) {
 };
 
 exports.create = function (req, res) {
-  var person = req.body;
-  var lastname = person.lastname;
-  var firstname = person.firstname;
+  const person = req.body;
+  const lastname = person.lastname;
+  const firstname = person.firstname;
   console.log('Create person : lastname=' + lastname + ', firstname=' + firstname);
 
-  var found = _.findWhere(PEOPLES, { lastname: lastname, firstname: firstname });
+  const found = _.findWhere(PEOPLES, { lastname: lastname, firstname: firstname });
   if (found) {
     return res.status(409).json({ error: 'La personne "' + lastname + ' ' + firstname + '" existe déjà.' });
   }
@@ -78,12 +78,12 @@ exports.create = function (req, res) {
 };
 
 exports.update = function (req, res) {
-  var id = getId(req);
+  const id = getId(req);
   console.log('Update person : id=' + id);
 
-  var person = req.body;
+  const person = req.body;
 
-  var index = _.findIndex(PEOPLES, function (p) {
+  const index = _.findIndex(PEOPLES, function (p) {
     return p.id === id;
   });
 
@@ -97,10 +97,10 @@ exports.update = function (req, res) {
 };
 
 exports.delete = function (req, res) {
-  var id = getId(req);
+  const id = getId(req);
   console.log('Delete person : id=' + id);
 
-  var index = _.findIndex(PEOPLES, function (p) {
+  const index = _.findIndex(PEOPLES, function (p) {
     return p.id === id;
   });
 
@@ -122,7 +122,7 @@ function getParam(req, param) {
 }
 
 function getId(req) {
-  var param = getParam(req, 'id');
+  const param = getParam(req, 'id');
   return param;
 }
 

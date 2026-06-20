@@ -9,6 +9,7 @@
     "build": {
       "executor": "@angular/build:application",
       "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
       "options": {
         "outputPath": "dist/apps/35-performances-solution",
         "index": "apps/35-performances-solution/src/index.html",
@@ -48,20 +49,21 @@
           "sourceMap": true,
           "namedChunks": true
         }
-      },
-      "defaultConfiguration": "production"
+      }
     },
     "serve": {
       "executor": "@angular/build:dev-server",
-      "options": {
-        "hmr": false
-      },
       "dependsOn": [
         {
           "projects": "server-express",
           "target": "serve"
         }
       ],
+      "defaultConfiguration": "development",
+      "continuous": true,
+      "options": {
+        "hmr": false
+      },
       "configurations": {
         "production": {
           "buildTarget": "35-performances-solution:build:production"
@@ -69,9 +71,7 @@
         "development": {
           "buildTarget": "35-performances-solution:build:development"
         }
-      },
-      "defaultConfiguration": "development",
-      "continuous": true
+      }
     },
     "extract-i18n": {
       "executor": "@angular/build:extract-i18n",
@@ -79,15 +79,11 @@
         "buildTarget": "35-performances-solution:build"
       }
     },
-    "lint": {
-      "executor": "@nx/eslint:lint"
-    },
     "test": {
-      "executor": "@nx/vitest:test",
-      "outputs": ["{workspaceRoot}/coverage/apps/35-performances-solution"],
+      "outputs": ["{projectRoot}/{options.coverage.reportsDirectory}", "{workspaceRoot}/coverage/apps/35-performances-solution"],
       "options": {
-        "config": "apps/35-performances-solution/vite.config.mts",
-        "passWithNoTests": true
+        "passWithNoTests": true,
+        "coverage.reportsDirectory": "../../../coverage/apps/35-performances-solution"
       }
     }
   }

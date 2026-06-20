@@ -46,5 +46,6 @@
     "UTARA",
     "whiteframe",
     "wrappez"
-  ]
+  ],
+  "typescript.tsdk": "node_modules/typescript/lib"
 }

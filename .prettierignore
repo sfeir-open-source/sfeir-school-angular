@@ -30,3 +30,5 @@
 
 /.nx/cache
 /.nx/workspace-data
+
+.nx/self-healing
