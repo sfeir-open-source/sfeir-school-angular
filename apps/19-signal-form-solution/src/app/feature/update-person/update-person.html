@@ -1,0 +1,6 @@
+@let person = peopleResource.value();
+<section>
+  @if (person) {
+  <sfeir-form [person]="person" (cancel)="goBack()" (save)="updatePerson($event)" />
+  }
+</section>
