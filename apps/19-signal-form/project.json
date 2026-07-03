@@ -92,7 +92,8 @@
         "{workspaceRoot}/coverage/apps/19-signal-form"
       ],
       "options": {
-        "coverage.reportsDirectory": "../../../coverage/apps/19-signal-form"
+        "coverage.reportsDirectory": "../../../coverage/apps/19-signal-form",
+        "passWithNoTests": true
       }
     }
   }
