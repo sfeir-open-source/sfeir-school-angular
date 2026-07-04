@@ -49,10 +49,10 @@ describe('Form', () => {
     expect(form.lastname().errors()).toEqual(expect.arrayContaining([expect.objectContaining({ kind: 'minLength' })]));
   });
 
-  test('should the email field be invalid when the value is not a valid email', () => {
+  test('should the email field be invalid when the value is not a valid sfeir email', () => {
     expect(form.email().errors()).toEqual([]);
     personModel.update(person => ({ ...person, email: 'a' }));
-    expect(form.email().errors()).toEqual(expect.arrayContaining([expect.objectContaining({ kind: 'email' })]));
+    expect(form.email().errors()).toEqual(expect.arrayContaining([expect.objectContaining({ kind: 'pattern' })]));
   });
 
   test('should the phone field have a pattern of 10 digits', () => {

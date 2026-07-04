@@ -1,4 +1,4 @@
-import { Component, output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, output } from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -11,6 +11,7 @@ import { PeopleForm } from '../../models/people.model';
   templateUrl: './form.html',
   styleUrl: './form.scss',
   imports: [NgOptimizedImage, FormsModule, MatFormFieldModule, MatInputModule, MatButtonModule],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Form {
   cancel = output<void>();

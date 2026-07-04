@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { PeopleForm } from '../../../../shared/models/people.model';
 
@@ -6,6 +6,7 @@ import { PeopleForm } from '../../../../shared/models/people.model';
   selector: 'sfeir-add-person-dialog',
   templateUrl: './add-person-dialog.component.html',
   styleUrls: ['./add-person-dialog.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AddPersonDialogComponent {
   private readonly dialogRef: MatDialogRef<AddPersonDialogComponent> = inject(MatDialogRef);

@@ -1,5 +1,5 @@
 import { NgOptimizedImage } from '@angular/common';
-import { Component, effect, input, output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, effect, input, output } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -12,6 +12,7 @@ import { PhoneSecret } from '../../directives/phone-secret';
   templateUrl: './form.html',
   styleUrl: './form.scss',
   imports: [NgOptimizedImage, ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatButtonModule, PhoneSecret],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Form {
   person = input<Person>({ photo: 'https://randomuser.me/api/portraits/lego/6.jpg' } as Person);

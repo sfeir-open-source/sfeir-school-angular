@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 import { fireEvent, render, screen } from '@testing-library/angular';
 import type { People } from '../../models/people.model';
@@ -60,7 +60,7 @@ describe('FormComponent', () => {
     });
     it('should disable the submit button', async () => {
       await fixture.whenStable();
-      TestBed.tick();
+      fixture.detectChanges();
       const submitButton = screen.getByText<HTMLButtonElement>('Save');
       expect(submitButton).toBeTruthy();
     });

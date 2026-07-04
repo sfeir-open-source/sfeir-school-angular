@@ -1,4 +1,4 @@
-import { Component, effect, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, effect, input } from '@angular/core';
 import { outputFromObservable } from '@angular/core/rxjs-interop';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -23,6 +23,7 @@ import { SfeirCustomInput } from '../../../../shared/components/custom-input/cus
     }
   `,
   imports: [ReactiveFormsModule, MatFormFieldModule, MatInputModule, SfeirCustomInput],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SearchBar {
   initialSearch = input.required<string>();

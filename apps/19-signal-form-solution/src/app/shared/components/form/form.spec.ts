@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture } from '@angular/core/testing';
 import { fireEvent, render, screen } from '@testing-library/angular';
 import { Form } from './form';
 import { vi } from 'vitest';
@@ -60,13 +60,13 @@ describe('FormComponent', () => {
       expect(input).toBeTruthy();
     });
     it('should disable the submit button', () => {
-      TestBed.tick();
+      fixture.detectChanges();
       const submitButton = screen.getByText<HTMLButtonElement>('Save');
       expect(submitButton).toBeTruthy();
     });
     test('should correctly bind the input', async () => {
       await reload({ inputs: { person: PERSON }, partialUpdate: true });
-      TestBed.tick();
+      fixture.detectChanges();
       const firstnameInput = screen.getByPlaceholderText<HTMLInputElement>('First name');
       const lastnameInput = screen.getByPlaceholderText<HTMLInputElement>('Last name');
       const emailInput = screen.getByPlaceholderText<HTMLInputElement>('email');
@@ -80,7 +80,7 @@ describe('FormComponent', () => {
   describe('#Functions', () => {
     it('should correctly bind the input', async () => {
       await reload({ inputs: { person: VALID_PERSON }, partialUpdate: true });
-      TestBed.tick();
+      fixture.detectChanges();
       const spy = vi.spyOn(component, 'submit');
       fireEvent.submit(screen.getByTestId('person-form'));
       await fixture.whenStable();
@@ -88,7 +88,7 @@ describe('FormComponent', () => {
     });
     it('should call the submit method', async () => {
       await reload({ inputs: { person: VALID_PERSON }, partialUpdate: true });
-      TestBed.tick();
+      fixture.detectChanges();
       const spy = vi.spyOn(component, 'submit');
       fireEvent.click(screen.getByText('Save'));
       await fixture.whenStable();

@@ -1,5 +1,5 @@
 import { NgOptimizedImage } from '@angular/common';
-import { Component, input, linkedSignal, output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input, linkedSignal, output } from '@angular/core';
 import { FormField, FormRoot } from '@angular/forms/signals';
 import { MatButtonModule } from '@angular/material/button';
 import { PhoneSecret } from '../../directives/phone-secret';
@@ -20,6 +20,7 @@ const DEFAULT_PERSON: Person = {
   templateUrl: './form.html',
   styleUrl: './form.scss',
   imports: [NgOptimizedImage, MatButtonModule, FormField, FormRoot, PhoneSecret, SfeirCustomInput],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Form {
   person = input<Person>(DEFAULT_PERSON);

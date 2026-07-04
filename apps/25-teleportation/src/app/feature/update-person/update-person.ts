@@ -1,5 +1,5 @@
 import { Location } from '@angular/common';
-import { Component, inject, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, input } from '@angular/core';
 import { PeopleService } from '../../core/providers/people.service';
 import { Form } from '../../shared/components/form/form';
 import { People, type PeopleForm } from '../../shared/models/people.model';
@@ -9,6 +9,7 @@ import { People, type PeopleForm } from '../../shared/models/people.model';
   templateUrl: './update-person.html',
   styleUrl: './update-person.scss',
   imports: [Form],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UpdatePerson {
   private readonly peopleService = inject(PeopleService);

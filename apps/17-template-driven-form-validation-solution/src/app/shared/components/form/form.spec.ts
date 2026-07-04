@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { PeopleForm } from '../../models/people.model';
 import { Form } from './form';
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture } from '@angular/core/testing';
 import { vi } from 'vitest';
 
 const CANCEL_SPY = vi.fn();
@@ -49,7 +49,7 @@ describe('FormComponent', () => {
     });
     it('should disable the submit button', async () => {
       await fixture.whenStable();
-      TestBed.tick();
+      fixture.detectChanges();
       const submitButton = screen.getByText<HTMLButtonElement>('Save');
       expect(submitButton).toBeTruthy();
     });

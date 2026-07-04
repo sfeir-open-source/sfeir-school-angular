@@ -57,7 +57,7 @@ describe('PeopleService', () => {
   describe('#getRandomPeople', () => {
     test('should format the url correctly', async () => {
       TestBed.runInInjectionContext(() => service.getRandomPeople());
-      TestBed.tick(); // Triggers the effect
+      TestBed.tick();
       const req = controller.expectOne(`${environment.peopleEndpoint}/peoples/random`);
       req.flush(PEOPLE[0]);
     });
@@ -71,7 +71,7 @@ describe('PeopleService', () => {
     });
     test('should throw correctly the error', async () => {
       const personResource = TestBed.runInInjectionContext(() => service.getRandomPeople());
-      TestBed.tick(); // Triggers the effect
+      TestBed.tick();
       controller.expectOne(`${environment.peopleEndpoint}/peoples/random`).error(new ProgressEvent('ERROR'));
       await TestBed.inject(ApplicationRef).whenStable();
       expect(() => personResource.value()).toThrow();

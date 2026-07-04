@@ -17,7 +17,7 @@ const VALID_PERSON = {
   id: '',
   firstname: 'SFEIR',
   lastname: 'SFEIR',
-  email: 's.sfeir@sfeir.com',
+  email: 'sfeir.s@sfeir.com',
   phone: '0123456789',
   photo: 'john-doe.jpg',
 };
