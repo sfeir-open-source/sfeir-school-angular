@@ -1,5 +1,5 @@
 import { NgOptimizedImage } from '@angular/common';
-import { Component, input, output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input, output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -11,6 +11,7 @@ import { PeopleForm } from '../../models/people.model';
   templateUrl: './form.html',
   styleUrl: './form.scss',
   imports: [NgOptimizedImage, FormsModule, MatFormFieldModule, MatInputModule, MatButtonModule],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Form {
   person = input<PeopleForm>({ photo: 'https://randomuser.me/api/portraits/lego/6.jpg' } as PeopleForm);

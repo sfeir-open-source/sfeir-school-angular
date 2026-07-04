@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 import { fireEvent, render, screen } from '@testing-library/angular';
 import { vi } from 'vitest';
@@ -59,13 +59,13 @@ describe('FormComponent', () => {
       expect(input).toBeTruthy();
     });
     it('should disable the submit button', () => {
-      TestBed.tick();
+      fixture.detectChanges();
       const submitButton = screen.getByText<HTMLButtonElement>('Save');
       expect(submitButton).toBeTruthy();
     });
     test('should correctly bind the input', async () => {
       await reload({ inputs: { person: PERSON }, partialUpdate: true });
-      TestBed.tick();
+      fixture.detectChanges();
       const firstnameInput = screen.getByPlaceholderText<HTMLInputElement>('First name');
       const lastnameInput = screen.getByPlaceholderText<HTMLInputElement>('Last name');
       const emailInput = screen.getByPlaceholderText<HTMLInputElement>('email');

@@ -1,4 +1,4 @@
-import { Component, DestroyRef, effect, forwardRef, inject, input, signal, Type } from '@angular/core';
+import { ChangeDetectionStrategy, Component, DestroyRef, effect, forwardRef, inject, input, signal, Type } from '@angular/core';
 import { ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/forms';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { MatInputModule } from '@angular/material/input';
@@ -34,6 +34,7 @@ const provideControlValueAccessor = <T>(component: Type<T>) => {
   `,
   imports: [ReactiveFormsModule, MatFormFieldModule, MatInputModule],
   providers: [provideControlValueAccessor(SfeirCustomInput)],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SfeirCustomInput implements ControlValueAccessor {
   private readonly destroyRef = inject(DestroyRef);

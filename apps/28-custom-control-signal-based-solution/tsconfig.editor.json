@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.json",
+  "include": [
+    "**/*.ts"
+  ],
+  "compilerOptions": {
+    "types": [
+      "vitest",
+      "vitest/globals",
+      "vitest/importMeta",
+      "vite/client",
+      "node",
+    ]
+  },
+}

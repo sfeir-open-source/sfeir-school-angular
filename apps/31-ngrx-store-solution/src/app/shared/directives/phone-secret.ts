@@ -1,4 +1,4 @@
-import { Component, Directive, inject, input, inputBinding, signal, TemplateRef, ViewContainerRef } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Directive, inject, input, inputBinding, signal, TemplateRef, ViewContainerRef } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { NgTemplateOutlet } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
@@ -19,6 +19,7 @@ import { MatButtonModule } from '@angular/material/button';
       gap: 1rem;
     }
   `,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 class Phone {
   templateRef = input.required<TemplateRef<{ $implicit: string }>>();

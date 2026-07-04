@@ -73,7 +73,7 @@ describe('PeopleService', () => {
     });
     test('should throw correctly the error', async () => {
       const personResource = TestBed.runInInjectionContext(() => service.getRandomPeople());
-      TestBed.tick(); // Triggers the effect
+      TestBed.tick();
       controller.expectOne(`${environment.peopleEndpoint}/peoples/random`).error(new ProgressEvent('ERROR'));
       await TestBed.inject(ApplicationRef).whenStable();
       expect(() => personResource.value()).toThrow();

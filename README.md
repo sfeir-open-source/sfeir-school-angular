@@ -22,7 +22,7 @@ Both live under the `apps/` folder and follow the naming pattern `<nn>-<topic>` 
 
 ## Prerequisites
 
-- Node.js 18+ (LTS recommended)
+- Node.js 24+ (LTS recommended)
 - npm
 - Git
 
