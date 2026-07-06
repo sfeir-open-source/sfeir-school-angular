@@ -65,6 +65,8 @@ function formAdvancedSlide() {
     `${FORMS_ADVANCED}/01-INTRODUCTION.md`,
     `${FORMS_ADVANCED}/02-SETUP.md`,
     `${FORMS_ADVANCED}/100-LAB.md`,
+    `${FORMS_ADVANCED}/03-SIGNAL-FORMS-CUSTOM-CONTROL.md`,
+    `${FORMS_ADVANCED}/101-LAB.md`,
   ].map(showByDefault);
 }
 
