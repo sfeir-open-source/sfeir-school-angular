@@ -14,7 +14,7 @@ For standalone components, import `FormsModule` directly into the component's `i
 ```typescript
 @Component({
   selector: 'app-user-profile',
-  imports: [FormsModule]
+  imports: [FormsModule],
   templateUrl: './user-profile.html',
 })
 export class UserProfile {}
@@ -32,7 +32,7 @@ For module-based apps, you would add `FormsModule` to the `imports` array of you
 
 <br/><br/>
 
-> Template driven forms is entirely based on templates and manage by it
+> With template-driven forms, the **template is the source of truth**: you declare the form in HTML and Angular builds the form model from it.
 
 ##==##
 

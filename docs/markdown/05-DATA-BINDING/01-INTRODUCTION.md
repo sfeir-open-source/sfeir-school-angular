@@ -78,11 +78,25 @@ $(document).ready(function () {
 
 # Binding in Angular
 
+You declare the **intent** — Angular keeps the DOM in sync for you. No `querySelector`, no manual listeners:
+
+```typescript
+export class App {
+  name = signal('');
+}
+```
+
+<!-- .element: class="medium-code" -->
+
 ```html
 <div>
-  <input type="text" name="myName" [(ngModel)]="myName" />
-  <span>Hello {{ myName }}</span>
+  <input type="text" (input)="name.set($any($event.target).value)" />
+  <span>Hello {{ name() }}</span>
 </div>
 ```
 
 <!-- .element: class="big-code" -->
+
+Notes:
+
+- We will see the shorter two-way `[(ngModel)]` and signal-based forms later. The point here: state lives in a signal, and the view follows it automatically.

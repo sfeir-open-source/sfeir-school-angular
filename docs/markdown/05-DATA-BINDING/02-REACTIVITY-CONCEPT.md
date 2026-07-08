@@ -1,85 +1,107 @@
-# Reactivity in Angular
+<!-- .slide -->
 
-## What is Reactivity?
+# Reactivity: keeping the view in sync
 
-- Reactivity is about automatic updates when data changes
-- In Angular, it ensures UI stays in sync with application state
-- Signals are Angular's modern reactivity solution
+**Reactivity** is the framework's ability to update the UI **automatically** when your data changes — no manual DOM manipulation, no `refresh()`.
 
-## Why Reactivity Matters
+<br/>
 
-- Automatic UI updates without manual refresh
-- Better developer experience
-- More efficient and predictable state management
-- Easier to reason about application state
+- The view should always reflect the **current state** of the application
+- You change the state; Angular updates only what depends on it
+- In modern Angular, that state lives in **signals**
 
-## Introducing Signals
+Notes:
 
-- New primitive for reactive state management
-- Introduced in Angular 17
-- Built-in to Angular's core
+- Signals were introduced in v17 and are the stable, recommended reactivity primitive in v22. They also power zoneless change detection.
 
 ##==##
 
-<!-- .slide: class="with-code inconsolata"-->
+<!-- .slide: class="with-code inconsolata" -->
 
-# Basic Signal Concepts
+# A signal: a reactive value
+
+A **signal** is a container around a value that knows who reads it. Read it by **calling it** like a function.
+
+<br/>
 
 ```typescript
-// Creating a signal
-const count = signal(0);
+import { signal } from '@angular/core';
 
-// Reading a signal
-console.log(count()); // 0
+const count = signal(0); // create with an initial value
 
-// Updating a signal
-count.set(1);
+count(); // read  -> 0
+count.set(1); // replace the value
+count.update(n => n + 1); // derive from the previous value  -> 2
 ```
 
 <!-- .element: class="big-code" -->
 
-##==##
+Notes:
 
-# Benefits of Signals
-
-- Zero configuration needed <br/><br/>
-- No need for change detection strategies <br/><br/>
-- More efficient than traditional change detection <br/><br/>
-- Better performance for small to medium applications <br/><br/>
+- Reading a signal inside a template or a `computed`/`effect` **registers a dependency**. That is how Angular knows what to update.
 
 ##==##
 
-# When to Use Signals
+<!-- .slide: class="with-code inconsolata" -->
 
-- Simple state management <br/><br/>
-- Component-local state <br/><br/>
-- Form handling <br/><br/>
-- Basic UI interactions
+# `computed`: derived state
+
+A **computed** signal derives a new value from other signals. It is **lazy** and **memoized** — recomputed only when a dependency changes.
+
+<br/>
+
+```typescript
+const price = signal(100);
+const quantity = signal(2);
+
+const total = computed(() => price() * quantity()); // read-only signal
+
+total(); // 200
+quantity.set(3);
+total(); // 300  (recomputed automatically)
+```
+
+<!-- .element: class="big-code" -->
+
+Notes:
+
+- Never store derived data in a plain signal you update by hand — use `computed` so it can never fall out of sync.
 
 ##==##
 
-# Best Practices
+<!-- .slide: class="with-code inconsolata" -->
 
-- Keep signals simple and focused <br/><br/>
-- Use computed signals for derived state <br/><br/>
-- Prefer signals over RxJS for simple cases <br/><br/>
-- Use RxJS for complex async operations
+# `effect`: reacting to changes
+
+An **effect** runs a side effect whenever any signal it reads changes. Use it for logging, syncing to `localStorage`, integrating non-reactive APIs…
+
+<br/>
+
+```typescript
+const theme = signal('dark');
+
+effect(() => {
+  document.body.dataset['theme'] = theme(); // re-runs whenever theme() changes
+});
+
+theme.set('light'); // effect runs again
+```
+
+<!-- .element: class="big-code" -->
+
+Notes:
+
+- Effects run in an injection context (e.g. a constructor or a field initializer) and are cleaned up automatically when the component is destroyed.
+- Prefer `computed` for deriving values; reserve `effect` for true side effects.
 
 ##==##
 
-# Common Patterns
+<!-- .slide -->
 
-- Form validation <br/><br/>
-- UI state management <br/><br/>
-- Local component state <br/><br/>
-- Simple data fetching <br/><br/>
-- Event handling
+# Signals vs RxJS — not a competition
 
-##==##
+- **Signals** model **synchronous state**: "what is the current value?" — perfect for the view <br/><br/>
+- **RxJS (Observables)** model **asynchronous streams of events over time** — perfect for user flows and complex async <br/><br/>
+- They **interoperate**: `toSignal()` and `rxResource()` bridge the two worlds <br/><br/>
 
-# Conclusion
-
-- Signals provide a simpler way to handle reactivity <br/><br/>
-- Perfect for modern Angular applications <br/><br/>
-- Complements RxJS for more complex scenarios <br/><br/>
-- Learn and use them to write cleaner, more maintainable code <br/><br/>
+> Rule of thumb: **signals for state, observables for streams.** We come back to this when we talk to a server.

@@ -2,51 +2,55 @@
 
 # HttpClient
 
-- Angular provides its own HTTP client for server communication.
-- **provideHttpClient()**.
-- come from the <b>@angular/common/http</b> package.
-  <br/><br/>
+- Angular ships its own HTTP client for talking to a server.
+- You enable it once, at bootstrap, with **`provideHttpClient()`**.
+- It lives in the **`@angular/common/http`** package.
+
+<br/>
 
 ```typescript
-// For module-based applications
-import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+// main.ts
+import { provideHttpClient, withFetch } from '@angular/common/http';
 
-@NgModule({
-  providers: [provideHttpClient()],
-})
-export class AppModule {}
-```
-
-<!-- .element: class="medium-code" -->
-
-```typescript
-bootstrapApplication(AppComponent, {
-  providers: [provideHttpClient()],
+bootstrapApplication(App, {
+  providers: [
+    provideHttpClient(withFetch()), // withFetch() uses the modern fetch API
+  ],
 });
 ```
 
-<!-- .element: class="medium-code" -->
+<!-- .element: class="big-code" -->
+
+Notes:
+
+- `provideHttpClient` accepts features such as `withFetch()`, `withInterceptors([...])`, and `withInterceptorsFromDi()`.
+- The old `HttpClientModule` is deprecated — always use `provideHttpClient()`.
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata"-->
 
-# Injecting into a Component
+# Injecting HttpClient into a component or service
 
-- To use a service in a component, you need to inject it.<br/>
-- Let's inject the HttpClient service provided by the `provideHttpClient()` function.<br/><br/>
+Once provided, inject `HttpClient` anywhere with the `inject()` function:
+
+<br/>
 
 ```typescript
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'sfeir-app',
-  template: './app.html',
+  templateUrl: './app.html',
 })
 export class App {
-  private readonly httpClient = inject(HttpClient);
+  private readonly http = inject(HttpClient);
 }
 ```
 
 <!-- .element: class="big-code"-->
+
+Notes:
+
+- In practice you inject `HttpClient` inside a dedicated service, not directly in the component — more on that in the Dependency Injection chapter.

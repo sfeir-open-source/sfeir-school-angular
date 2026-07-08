@@ -2,7 +2,7 @@
 
 <br/><br/>
 
-> STOP! Don't do think like that! Signal and Observable are different things! They work together to make you Angular application more robust
+> STOP — it's not one _or_ the other! Signals and Observables solve different problems, and they work **together** to make your Angular application more robust.
 
 ##==##
 
@@ -81,10 +81,10 @@ export class App {
 
 - function to **derive** a signal in **asynchronous** with an **observable** <br/><br/>
 - return a **resource** composed of
-  - **value**: WritableSignal which is the result of the derivation
-  - **loading**: Signal which is true when the resource is loading
-  - **error**: Signal which represent the error of the resource
-  - **status**: Signal which represent the status of the resource
+  - **value**: Signal holding the result of the derivation
+  - **isLoading**: Signal which is `true` while the resource is loading
+  - **error**: Signal holding the error, if any
+  - **status**: Signal describing the resource status
 
 ##++##
 

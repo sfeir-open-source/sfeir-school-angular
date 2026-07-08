@@ -1,8 +1,8 @@
-# Bootstrapping on a module
+# Bootstrapping on a module (legacy)
 
 <br/><br/>
 
-> This means that the application is bootstrapped on a module. <br/><br/>
+> You will only see this in **older** applications. Modern Angular bootstraps directly on a standalone component with `bootstrapApplication` (previous slide). This is here so you can recognise and migrate it. <br/><br/>
 
 ##==##
 

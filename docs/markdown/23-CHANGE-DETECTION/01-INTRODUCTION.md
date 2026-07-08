@@ -1,23 +1,31 @@
-# Warning !!!!!
+# First, the mental model
 
-> All the next content is for application based on Zone Js
+**Change detection** is how Angular decides _when_ to re-render a component and _what_ to update in the DOM.
 
-<!-- .element: class="important full-center" -->
+<br/>
+
+- Historically driven by **Zone.js** (the model in this first part) <br/><br/>
+- Since **v21, Angular is zoneless by default** and change detection is driven by **signals** (next part) <br/><br/>
+- Understanding the Zone.js/`OnPush` model still matters: you will meet it in every existing codebase
+
+Notes:
+
+- This chapter goes from the legacy Zone.js model → OnPush → the modern signal-based, zoneless default. Each step motivates the next.
 
 ##==##
 
-# What is Zone.js?
+# The legacy engine: Zone.js
 
 - A library that intercepts and keeps track of asynchronous operations <br/><br/>
 - Automatically triggers change detection when async operations complete <br/><br/>
-- Included by default in Angular applications <br/><br/>
+- Shipped by default **before v21** <br/><br/>
 - Responsible for the "magic" automatic UI updates
 
 Notes:
 
-- Zone.js is what enables Angular to know when to run change detection without explicit calls
+- Zone.js is what enabled Angular to know when to run change detection without explicit calls.
 - It patches browser APIs like setTimeout, Promise, XHR, etc.
-- This is why UI updates automatically after async operations
+- This is why the UI updated automatically after async operations — at the cost of checking a lot, often.
 
 ##==##
 

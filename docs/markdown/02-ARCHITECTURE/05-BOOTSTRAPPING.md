@@ -39,21 +39,21 @@
 ## Bootstrapping: standalone component
 
 ```typescript
-// app.ts | app.component.ts file
+// app.ts file
 @Component({
   selector: 'sfeir-app',
   template: `<div>My app</div>`,
-  styleUrls: []
 })
+export class App {}
 ```
 
 <!-- .element: class="medium-code" -->
 
 ```typescript
 // main.ts file
-bootstrapApplication(AppComponent, {
+bootstrapApplication(App, {
   providers: [
-    // Here register your global providers like httpClient
+    // Register your global providers here, e.g. provideHttpClient()
   ],
 });
 ```

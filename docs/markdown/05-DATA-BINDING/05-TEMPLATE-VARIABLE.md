@@ -6,7 +6,7 @@
   - Element (# or ref-XXX)
   - Available throughout the template<br/><br/>
 
-```angular181html
+```html
 <input #phone type="text" />
 <button type="button" (click)="call(phone.value)">Click</button>
 <!-- the following syntax is the same as above but not very used by the community -->
@@ -20,7 +20,7 @@
 
 - Input variables in a loop<br/><br/>
 
-```angular181html
+```html
 @for (movie of movies(); track movie.id) {
   <movie-details [movie]="movie"/>
 }

@@ -46,7 +46,7 @@ A `hidden` rule hides the field from form **state** — you must still remove it
 
 <br/>
 
-```angular181html
+```html
 @if (!form.companyName().hidden()) {
   <label>
     Company name

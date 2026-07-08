@@ -67,7 +67,7 @@ export class Host {
 
 # Host Template (Basic)
 
-```angular181html
+```html
 <button type="button" (click)="load()">Load widget</button>
 
 <!-- Renders nothing until componentType is set -->
@@ -104,7 +104,7 @@ export class HeavyWidget {
 
 <!-- .element: class="small-code" -->
 
-```angular181html
+```html
 <!-- host.component.html -->
 <button type="button" (click)="load()">Load widget</button>
 
@@ -129,7 +129,7 @@ Notes:
 
 - Show a lightweight placeholder while the chunk is being fetched <br/><br/>
 
-```angular181html
+```html
 <button type="button" (click)="load()">Open panel</button>
 
 @if (!componentType()) {

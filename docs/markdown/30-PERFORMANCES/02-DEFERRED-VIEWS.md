@@ -17,7 +17,7 @@ Minimize the initial bundle
 - Prefetch to download early without rendering yet <br/><br/>
 - Best practices and pitfalls with real-world examples
 
-```angular181html
+```html
 @defer {
   <todo-list />
 }
@@ -48,7 +48,7 @@ There are two conditions for a component to be deferred: <br/><br/>
 
 # @defer and the @placeholder Sub-block
 
-```angular181html
+```html
 @defer {
   <todo-list />
 }@placeholder(minimum 500ms) {
@@ -69,7 +69,7 @@ The **@placeholder** block takes an additional argument (minimum) which is the m
 
 # @defer and the @error Sub-block
 
-```angular181html
+```html
 @defer {
   <todo-list />
 }@error {
@@ -89,7 +89,7 @@ The error block is used to display alternative content in case of an error while
 
 # @defer and the @loading Sub-block
 
-```angular181html
+```html
 @defer {
   <todo-list />
 }@loading(after 100ms; minimum 1s) {
@@ -116,7 +116,7 @@ It takes two additional arguments: after and minimum:
 - **on interaction** : triggers loading when the user interacts with an element <br/><br/>
 - **on hover** : triggers loading when the user hovers over an element <br/><br/>
 - **on immediate**: triggers loading immediately <br/><br/>
-- **on time** : triggers loading after a certain time <br/><br/>
+- **on timer(...)** : triggers loading after a certain time (e.g. `on timer(5s)`) <br/><br/>
 - **when** : triggers loading when the condition is true
 
 ##==##
@@ -153,7 +153,7 @@ It takes two additional arguments: after and minimum:
 
 # A Complete Example (Advanced)
 
-```angular181html
+```html
 <!-- Combined triggers + prefetch -->
 <button #open>Open details</button>
 <div #sentry></div>

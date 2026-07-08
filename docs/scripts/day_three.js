@@ -58,18 +58,6 @@ function directiveAdvancedSlides() {
   ].map(showByDefault);
 }
 
-function formAdvancedSlide() {
-  const FORMS_ADVANCED = '22-FORMS-ADVANCED';
-  return [
-    `${FORMS_ADVANCED}/00-TRANSITION-SLIDE.md`,
-    `${FORMS_ADVANCED}/01-INTRODUCTION.md`,
-    `${FORMS_ADVANCED}/02-SETUP.md`,
-    `${FORMS_ADVANCED}/100-LAB.md`,
-    `${FORMS_ADVANCED}/03-SIGNAL-FORMS-CUSTOM-CONTROL.md`,
-    `${FORMS_ADVANCED}/101-LAB.md`,
-  ].map(showByDefault);
-}
-
 function changeDetectionSlides() {
   const CHANGE_DETECTION = '23-CHANGE-DETECTION';
   return [
@@ -81,12 +69,5 @@ function changeDetectionSlides() {
 }
 
 export function dayThreeSlides() {
-  return [
-    ...navigationAdvancedSlides(),
-    ...interceptorsSlides(),
-    ...templatingSlides(),
-    ...directiveAdvancedSlides(),
-    ...formAdvancedSlide(),
-    ...changeDetectionSlides(),
-  ];
+  return [...navigationAdvancedSlides(), ...interceptorsSlides(), ...templatingSlides(), ...directiveAdvancedSlides(), ...changeDetectionSlides()];
 }

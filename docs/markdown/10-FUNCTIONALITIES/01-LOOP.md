@@ -8,7 +8,7 @@
 - It provides implicit variables like `$index`, `$first`, `$last`, `$even`, and `$odd`.
 - An optional `@empty` block can be used to render content when the collection is empty.
 
-```angular181html
+```html
 <ul>
   @for (fruit of fruits(); track fruit.id; let i = $index; let isEven = $even) {
   <li>{{ i }}: {{ fruit.name }} ({{ isEven ? 'Even' : 'Odd' }})</li>
@@ -34,7 +34,7 @@ Notes:
 - It provides implicit variables like `index`, `first`, `last`, `even`, and `odd`.
 - deprecated in Angular v20
 
-```angular181html
+```html
 <ul>
   <li *ngFor="let fruit of fruits(); let i = index; let isEven = even">
     {{ i }}: {{ fruit.name }} ({{ isEven ? 'Even' : 'Odd' }})

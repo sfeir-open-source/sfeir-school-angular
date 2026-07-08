@@ -6,9 +6,27 @@
 
 <!-- .slide: class="with-code inconsolata" -->
 
+# A simpler way than `ControlValueAccessor`
+
+Remember the `ControlValueAccessor` boilerplate for reactive forms? With **Signal Forms**, custom controls need none of it:
+<br/>
+
+- No `NG_VALUE_ACCESSOR` token, no `forwardRef`<br/><br/>
+- No `writeValue` / `registerOnChange` / `registerOnTouched`<br/><br/>
+- Just implement a **control interface** exposing a `model()` signal
+
+Notes:
+
+- Signal Forms works with any component implementing one of its control interfaces: `FormValueControl` or `FormCheckboxControl`.
+- When your component implements one, the `[formField]` directive wires it up to form state, validation and data binding automatically — no adapter class.
+
+##==##
+
+<!-- .slide: class="with-code inconsolata" -->
+
 # `FormValueControl` — a single value
 
-Implement the interface and expose a `value` **model** — no `ControlValueAccessor` needed:
+Implement the interface and expose a `value` **model** — that's it:
 
 <br/>
 
@@ -33,7 +51,7 @@ export class Rating implements FormValueControl<number> {
 
 <!-- .element: class="medium-code" -->
 
-```angular181html
+```html
 <sfeir-rating [formField]="reviewForm.rating" />
 ```
 
@@ -42,7 +60,7 @@ export class Rating implements FormValueControl<number> {
 Notes:
 
 - A `FormValueControl` must expose a `value` model and must **not** declare a `checked` property.
-- The `[formField]` directive detects the interface and two-way binds the field value to your `value` model — exactly like a native input.
+- The `[formField]` directive detects the interface and two-way binds the field value to your `value` model — exactly like a native input, and like `formControlName` did but with far less code.
 
 ##==##
 
@@ -50,7 +68,7 @@ Notes:
 
 # `FormCheckboxControl` — a boolean
 
-For toggles / switches, expose a `checked` model instead of `value`:
+For toggles / switches / checkboxes, expose a `checked` model instead of `value`:
 
 <br/>
 
@@ -84,7 +102,7 @@ Notes:
 
 # Reacting to form state (optional inputs)
 
-Add only what your control needs — the directive feeds them automatically:
+Add only what your control needs — the `[formField]` directive feeds them automatically:
 
 <br/>
 
@@ -92,7 +110,7 @@ Add only what your control needs — the directive feeds them automatically:
 export class StatefulInput implements FormValueControl<string> {
   readonly value = model<string>('');
 
-  // control updates these:
+  // the control updates these:
   readonly touched = model<boolean>(false);
 
   // the form feeds these in:
@@ -109,23 +127,27 @@ export class StatefulInput implements FormValueControl<string> {
 Notes:
 
 - Available optional inputs: `touched`, `dirty`, `errors`, `valid`, `invalid`, `pending`, `disabled`, `disabledReasons`, `readonly`, `hidden`, `required`, `min`, `max`, `minLength`, `maxLength`, `pattern`, `name`.
-- For display formatting (currency, dates...) use `linkedSignal()` to derive a display value from `value` and write back on blur.
+- For display formatting (currency, dates...) use `linkedSignal()` to derive a display value from `value` and write it back on blur.
 
 ##==##
 
 <!-- .slide -->
 
-# Custom controls — best practice
+# `ControlValueAccessor` vs Signal Forms
 
-> Controls **display** state. Validation lives in the **schema**.
+|                             | `ControlValueAccessor`                                  | Signal Forms                                     |
+| --------------------------- | ------------------------------------------------------- | ------------------------------------------------ |
+| Registration                | `NG_VALUE_ACCESSOR` + `forwardRef`                      | Implement an interface, nothing to register      |
+| API                         | `writeValue` / `registerOnChange` / `registerOnTouched` | A single `model()` signal (`value` or `checked`) |
+| State (disabled, errors...) | Manual wiring via `setDisabledState`, template logic    | Optional `input()` signals, auto-populated       |
+| Reactivity model            | Callbacks / imperative                                  | Signals, end-to-end                              |
 
-<br/><br/>
+<br/>
 
-- ✅ Define rules with `required`, `min`, `validate`... in the form schema<br/><br/>
-- ✅ Let the control render `invalid()` / `errors()` / constraint hints<br/><br/>
-- ❌ Don't put validation logic inside the control component<br/><br/>
-- ♻️ Legacy `ControlValueAccessor` components still work for interop — but prefer `FormValueControl` for new controls
+> Controls **display** state. Validation lives in the **schema** — never inside the control.
 
 Notes:
 
-- Keeping validation in the schema keeps it testable, reusable, and co-located with the rest of the form's rules — and the same control can be reused across forms with different rules.
+- Signal Forms is fully interoperable: existing `ControlValueAccessor` components keep working, so you can migrate incrementally.
+- Prefer `FormValueControl` / `FormCheckboxControl` for any **new** custom control.
+- Source: [angular.dev — Custom controls](https://angular.dev/guide/forms/signals/custom-controls)

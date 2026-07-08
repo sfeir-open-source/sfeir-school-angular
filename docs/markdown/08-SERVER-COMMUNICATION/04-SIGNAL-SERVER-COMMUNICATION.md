@@ -45,20 +45,21 @@ export class App {
 
 # HttpResourceRef
 
-HttpResource provides several signals:
+HttpResource exposes several signals:
 
-- `value`: The response data <br/><br/>
-- `loading`: Boolean indicating if a request is in progress <br/><br/>
-- `error`: Any error that occurred <br/><br/>
-- `state`: Combined state object
+- `value`: the response data <br/><br/>
+- `isLoading`: `true` while a request is in progress <br/><br/>
+- `error`: any error that occurred <br/><br/>
+- `status`: the resource status (`idle`, `loading`, `resolved`, `error`…) <br/><br/>
+- `headers` / `statusCode`: the response metadata (specific to `httpResource`)
 
 ##==##
 
 # HttpResourceRef Methods
 
-- **set** allows you to manually set the value of the resource <br/><br/>
-- **mutate** allows you to update the value of the resource using its previous value <br/><br/>
-- **reload** reload the resource <br/><br/>
+- **set** manually sets the value of the resource <br/><br/>
+- **update** updates the value from its previous value <br/><br/>
+- **reload** re-runs the request <br/><br/>
 
 ##==##
 
@@ -101,8 +102,8 @@ httpResource(() => ({
 
 ##==##
 
-# HttpResource Advise
+# HttpResource: good to know
 
 <br/><br/>
 
-> Keep it mind that httpResource is design for the moment to make Get Request and need to be done in injection context
+> `httpResource` is meant for **reading** data (mainly GET) reactively, and must be created in an **injection context** (a field initializer or constructor). For commands (POST/PUT/DELETE), keep using `HttpClient` directly.

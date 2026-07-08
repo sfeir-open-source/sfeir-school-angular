@@ -32,7 +32,7 @@ Well, we use the property bound to the attribute.
 - Use a template reference variable (e.g., `#firstname="ngModel"`) to access the control's state.
 - Check if the control is `invalid` and `touched` before showing errors. <br/><br/>
 
-```angular181html
+```html
 <form #profileForm="ngForm">
   <input type="text" name="firstname" [(ngModel)]="person.firstname" #firstname="ngModel" required minlength="4" />
   @if (firstname.invalid && firstname.touched) {

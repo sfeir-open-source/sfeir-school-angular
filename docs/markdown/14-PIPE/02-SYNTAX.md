@@ -53,7 +53,7 @@ this.amount = 1234.56;
 
 Notes:
 
-- https://angular.io/api/common/CurrencyPipe
+- https://angular.dev/api/common/CurrencyPipe
 
 ##==##
 
