@@ -1,41 +1,64 @@
-# Angular Router Exercise (folder: apps/07-router)
+# 07 · Routing
 
-## Objective
+> Turn the app into a single-page application with client-side navigation via the Angular Router.
 
-In this exercise, you'll learn how to implement client-side navigation in an Angular application using the Angular Router. You'll set up routes, configure navigation, and create a basic single-page application (SPA) with multiple views.
+**Folder** `apps/07-router` · **Solution** `apps/07-router-solution` · **Run** `npm run client -- 07-router`
 
-By the end of this exercise, you'll be able to:
+## 🎯 Goal
 
-- Set up basic routing in an Angular application
-- Configure route definitions
-- Use router directives in templates
-- Navigate between different views
-- Use route parameters
+Introduce the router so views are swapped in a `<router-outlet>` based on the URL — no full page reloads. You'll define routes, add a `routerLink`, and render the active route.
 
-## Prerequisites
+## 📚 What you'll learn
 
-- Basic understanding of Angular components
-- Familiarity with TypeScript
-- Completion of previous exercises on components and services
-- Basic understanding of Angular standalone components
+- How to provide and configure the router in a standalone app
+- How to declare routes (including a default redirect)
+- The difference between `routerLink` and a plain `href`, plus `<router-outlet>`
 
-## Step 1: Set Up the Router
+## ✅ Before you start
 
-1. Open **main.ts**
-2. Import the necessary router functions and components:
-3. Define your routes array:
-4. Update the `bootstrapApplication` call to include the router and HTTP client:
+- Completion of the HTTP exercise (06-http)
+- Start the mock API: `npm run server:start`
 
-## Step 2: Configure the App Component
+## 🛠️ Steps
 
-1. Open **app.component.ts**
-2. Import the necessary router directives and modules:
-3. Update the component decorator to include the necessary imports:
+### Step 1 — Provide the router with routes
 
-## Step 3: Update the App Template
+In `main.ts`, define a `Routes` array and register it. Redirect the empty path to `home`:
 
-1. Open **app.component.html**
-2. Replace the content with the following to add navigation and router outlet:
+```typescript
+import { provideRouter, Routes } from '@angular/router';
+import { HomeComponent } from './app/feature/home/home.component';
+
+const ROUTES: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+];
+
+bootstrapApplication(AppComponent, {
+  providers: [provideZonelessChangeDetection(), provideRouter(ROUTES), provideHttpClient(withFetch())],
+}).catch(console.error);
+```
+
+### Step 2 — Import the router directives in the shell
+
+In `app.component.ts`, add `RouterOutlet` and `RouterLink` to the `imports`:
+
+```typescript
+import { RouterLink, RouterOutlet } from '@angular/router';
+
+@Component({
+  selector: 'sfeir-app',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss'],
+  imports: [RouterOutlet, RouterLink, MatToolbarModule],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+})
+export class AppComponent {}
+```
+
+### Step 3 — Add navigation and the outlet
+
+In `app.component.html`, use `routerLink` for internal navigation and render the active route with `<router-outlet />`:
 
 ```html
 <mat-toolbar class="extend-toolbar">
@@ -56,32 +79,26 @@ By the end of this exercise, you'll be able to:
 <router-outlet />
 ```
 
-## Step 4: Test Your Implementation
-
-1. From the project root, run the application:
+## ▶️ Run & verify
 
 ```bash
 npm run client -- 07-router
 ```
 
-2.Open your browser and verify that:
+Open <http://localhost:4200> and check:
 
-- The application loads with the home component displayed
-- The navigation links are visible in the toolbar
-- Clicking the home link refreshes the home view
-- The "Get Random Person" button fetches and displays a new person
+- [ ] Visiting `/` redirects to `/home`
+- [ ] The home view renders inside the outlet with its refresh button working
+- [ ] Clicking the logo (a `routerLink`) navigates **without** a full page reload
 
-## Expected Outcome
+## 💡 Key concepts
 
-- The application should display a toolbar with navigation links
-- The home component should be displayed by default
-- The home component should show a person's details with a refresh button
-- Navigation between different views should work without full page reloads
-- The URL should update to reflect the current route
+- **`provideRouter(ROUTES)`** — the standalone way to enable routing (replaces `RouterModule.forRoot`).
+- **`routerLink` vs `href`** — `routerLink` navigates client-side (no reload, preserves app state); `href` triggers a full browser navigation. The `Maps`/`List` links still use `href` on purpose — you'll wire them up in later exercises.
+- **`<router-outlet>`** — the placeholder where the router renders the component matching the current URL.
 
-## Troubleshooting
+## 🧯 Troubleshooting
 
-- If you see errors about missing modules, make sure you've imported all required Angular Material modules
-- If routing doesn't work, check the browser console for any error messages
-- Ensure your route paths are correctly defined and match the navigation links
-- If the person data doesn't load, verify that the API server is running and accessible at the correct URL
+- **`'router-outlet' is not a known element`** — add `RouterOutlet` to the component's `imports`.
+- **Links do a full reload** — you used `href` where you meant `[routerLink]`.
+- **Blank page at `/`** — check the redirect route uses `pathMatch: 'full'`.

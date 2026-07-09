@@ -1,72 +1,94 @@
-# Angular Component Inputs Exercise
+# 09 · Component Inputs
 
-## Objective
+> Extract a reusable `CardComponent` and feed it data from a parent through an `input`.
 
-In this exercise, you'll learn how to create reusable components in Angular by using input properties. You'll refactor the existing code to extract a reusable card component that can display person information.
+**Folder** `apps/09-input` · **Solution** `apps/09-input-solution` · **Run** `npm run client -- 09-input`
 
-## Learning Outcomes
+## 🎯 Goal
 
-By the end of this exercise, you'll be able to:
+The person card is currently duplicated between the Home and People views. Extract it into a single `sfeir-card` component that receives its data from the outside — the foundation of reusable, composable UI.
 
-- Create reusable components with input properties
-- Use the `input` function to define component inputs
-- Compose components together
-- Pass data from parent to child components
-- Structure your application with shared components
+## 📚 What you'll learn
 
-## Prerequisites
+- How to define a component **input** with the signal-based `input()` / `input.required()`
+- How to pass data from parent to child with property binding
+- How component composition removes duplication
 
-- Basic understanding of Angular components
-- Familiarity with TypeScript
-- Completion of previous exercises on components and data binding
+## ✅ Before you start
 
-## Exercise Steps
+- Completion of the `@for` exercise (08-ng-for)
+- Start the mock API: `npm run server:start`
 
-### Step 1: Create a Card Component
+## 🛠️ Steps
 
-1. Generate a new component called `CardComponent` in the `shared/components` folder:
-2. Move the card template and styles from the `PeopleComponent` to the new `CardComponent`
-3. Define an input property to receive person data
+### Step 1 — Create the Card component
 
-### Step 2: Update the People Component
+Generate `CardComponent` in `shared/components/card`, move the card markup and styles into it, and declare a required `person` input:
 
-1. Import and use the new `CardComponent` in the `PeopleComponent`
-2. Update the template to use the `sfeir-card` component
-3. Pass the person data to the card component using property binding
+```typescript
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { People } from '../../models/people.model';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { NgOptimizedImage } from '@angular/common';
 
-### Step 3: Update the Home Component
+@Component({
+  selector: 'sfeir-card',
+  templateUrl: './card.component.html',
+  styleUrls: ['./card.component.scss'],
+  imports: [MatCardModule, MatIconModule, MatButtonModule, NgOptimizedImage],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+})
+export class CardComponent {
+  person = input.required<People>();
+}
+```
 
-1. Import and use the `CardComponent` in the `HomeComponent`
-2. Update the template to use the `sfeir-card` component
-3. Pass the random person data to the card component
+> 💡 `input()` returns a **read-only signal**, so the card template reads `person()` exactly like the component did before.
 
-````
+### Step 2 — Use the card in the People view
 
-## Testing Your Implementation
+In `people.component.html`, replace the inline card markup with the new component, passing each person via property binding:
 
-1. Start the application:
-   ```bash
-   npm run client -- 09-input
-````
+```html
+@for (person of people(); track person.id) {
+  <sfeir-card [person]="person" />
+} @empty {
+  No people for the moment
+}
+```
 
-2. Verify that:
-   - The home page displays a random person's information in the card component
-   - The people page displays a list of people using the same card component
-   - Clicking the refresh button on the home page loads a new random person
-   - The card component is properly styled and responsive
+Don't forget to add `CardComponent` to the People component's `imports`.
 
-## Key Concepts
+### Step 3 — Use the card in the Home view
 
-### Component Inputs
+Do the same in `home.component.html`, passing the random person:
 
-Input properties allow you to pass data from a parent component to a child component. In this exercise, we use the `input` function to define the `person` input in the `CardComponent`.
+```html
+<sfeir-card [person]="person()" />
+```
 
-### Component Composition
+## ▶️ Run & verify
 
-By creating a reusable `CardComponent`, we've improved code organization and reduced duplication. The same card is now used in both the home and people components.
+```bash
+npm run client -- 09-input
+```
 
-## Troubleshooting
+Open <http://localhost:4200> and check:
 
-- **Input Not Working**: Ensure you've properly defined the input property in the child component and are using the correct property binding syntax in the parent template.
-- **Styling Issues**: Make sure all required Angular Material modules are imported in the component that uses them.
-- **Missing Data**: Verify that the API endpoint is correct and the server is running.
+- [ ] Home shows the random person **through** the card component
+- [ ] The People list shows every person using the **same** card
+- [ ] Refresh on Home still works; layout and styling are unchanged
+
+## 💡 Key concepts
+
+- **`input.required<T>()`** — a required input: Angular errors at build time if a parent forgets to pass it. Use `input<T>(defaultValue)` for optional ones.
+- **Signal inputs** — inputs are signals, so they play nicely with `computed`, `effect` and `OnPush` change detection.
+- **Presentational components** — `CardComponent` only receives data and renders it. It doesn't know where the data comes from, which makes it reusable anywhere.
+
+## 🧯 Troubleshooting
+
+- **`person` is undefined** — a required input must be bound: `[person]="…"`. Check the binding exists in every parent.
+- **`sfeir-card` unknown element** — add `CardComponent` to the parent's `imports`.
+- **Styles missing** — make sure the card's `.scss` moved with the markup.

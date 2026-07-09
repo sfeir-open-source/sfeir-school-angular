@@ -1,24 +1,28 @@
-# Exercise: Handling Events in Angular (folder: apps/05-events)
+# 05 · Handling Events
 
-## Objective
+> Wire a button so clicking it swaps the displayed person for a random one.
 
-In this exercise, you'll learn how to handle DOM events in Angular by implementing a feature that allows users to display a random person's information when clicking a button. This will help you understand:
+**Folder** `apps/05-events` · **Solution** `apps/05-events-solution` · **Run** `npm run client -- 05-events`
 
-- How to bind to DOM events in Angular templates
-- How to implement event handler methods in components
-- How to update component state in response to user interactions
+## 🎯 Goal
 
-## Prerequisites
+Add interactivity to the card from exercise 04: a floating refresh button that picks a random person and updates the view — your first **event binding** and your first signal **update**.
 
-- Basic understanding of Angular components
-- Familiarity with TypeScript
-- Completion of the previous binding exercise (04-binding)
+## 📚 What you'll learn
 
-## Step 1: Set Up the Button Event
+- How to bind to DOM events with `(event)="handler()"`
+- How to write an event-handler method on the component
+- How to update a signal with `.set()` and watch the template react automatically
 
-1. Open **home.component.html**
-2. Locate the floating action button (FAB) with the refresh icon at the bottom of the template
-3. Add a click event binding to call the `getRandomPerson()` method when the button is clicked
+## ✅ Before you start
+
+- Completion of the binding exercise (04-binding)
+
+## 🛠️ Steps
+
+### Step 1 — Bind the click event
+
+In `home.component.html`, find the floating action button (FAB) with the refresh icon at the bottom, and bind its click to a `getRandomPerson()` method:
 
 ```html
 <button mat-fab color="accent" (click)="getRandomPerson()">
@@ -26,40 +30,39 @@ In this exercise, you'll learn how to handle DOM events in Angular by implementi
 </button>
 ```
 
-## Step 2: Implement the Event Handler
+> 💡 `( )` around an event name means **event binding** — the expression runs when the event fires.
 
-1. Open **home.component.ts**
-2. Add a `getRandomPerson()` method to the `HomeComponent` class
-3. Inside this method, update the `person` signal with a random person from the `PEOPLE` array
+### Step 2 — Implement the handler
 
-## Step 3: Test Your Implementation
+In `home.component.ts`, add the method. It picks a random entry from `PEOPLE` and pushes it into the signal:
 
-1. Save all your changes
-2. From the project root, run the following command to start the application:
+```typescript
+getRandomPerson(): void {
+  this.person.set(PEOPLE[Math.floor(Math.random() * PEOPLE.length)]);
+}
+```
+
+Because the template reads `person()`, updating the signal with `.set()` re-renders the card — no manual DOM work, no change-detection call.
+
+## ▶️ Run & verify
 
 ```bash
 npm run client -- 05-events
 ```
 
-3. Open your browser and navigate to the application
-4. Click the circular refresh button in the bottom-right corner
-5. Verify that a different person's information is displayed each time you click the button
+Open <http://localhost:4200> and check:
 
-## Expected Outcome
+- [ ] Clicking the refresh button (bottom-right) shows a different person each time
+- [ ] The whole card updates: photo, name, email, phone, manager
+- [ ] No error in the DevTools console
 
-- When you click the refresh button, the person's information should change to display a random person from the `PEOPLE` array
-- The card should update to show the new person's details including their photo, name, email, phone, and manager
-- No errors should appear in the browser console
+## 💡 Key concepts
 
-## Tips
+- **Event binding** — `(click)`, `(input)`, `(keyup)`… bind template events to component methods. `$event` gives you the DOM event object when you need it.
+- **Signal updates** — `.set(value)` replaces the value; `.update(fn)` derives the next value from the current one. Reading `person()` in the template creates the dependency that triggers the re-render.
 
-- Remember that `person` is a signal, so you need to use `.set()` to update its value
-- The `PEOPLE` array is already imported from `'../../mocks/people.mock'`
-- The button uses Angular Material's `mat-fab` component for a floating action button
-- The refresh icon is from Material Icons (autorenew)
+## 🧯 Troubleshooting
 
-## Troubleshooting
-
-- If the person's information doesn't update when clicking the button, check the browser's developer console for any errors
-- Make sure you've added the parentheses `()` when calling `getRandomPerson()` in the template
-- Verify that you're using the signal's `set()` method to update the person's data
+- **Nothing happens on click** — check the parentheses in the template: `(click)="getRandomPerson()"` (call with `()`).
+- **`Cannot set property of…`** — use the signal API `this.person.set(…)`, not `this.person = …`.
+- **Same person keeps appearing** — that's random chance; keep clicking, or verify the index math uses `PEOPLE.length`.

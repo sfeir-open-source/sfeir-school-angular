@@ -1,72 +1,85 @@
-# Exercise 23: Route Resolvers in Angular (folder apps/23-resolver)
+# 23 · Route Resolvers
 
-In this workshop, you'll implement a route resolver to fetch person details before navigating to the person edit view. Resolvers are a powerful feature in Angular's routing system that allow you to pre-fetch data before a route is activated, ensuring that the data is available when the component is loaded.
+> Pre-fetch a person's details during navigation, so the edit form has data the instant it renders.
 
-## Step 1: Understand the Current Implementation
+**Folder** `apps/23-resolver` · **Solution** `apps/23-resolver-solution` · **Run** `npm run client -- 23-resolver`
 
-Currently, the `UpdatePerson` component fetches person details using the `rxResource` approach:
+## 🎯 Goal
+
+The UpdatePerson component currently fetches its data *after* it loads, causing a brief loading state. Move that fetch into a **resolver** that runs during routing, and read the result straight from an input.
+
+## 📚 What you'll learn
+
+- What resolvers are and when they beat in-component fetching
+- How to write a functional `ResolveFn`
+- How resolved data reaches the component (via `withComponentInputBinding`)
+
+## ✅ Before you start
+
+- Completion of guards (22) — you'll extend the same guards file
+- Start the mock API: `npm run server:start`
+
+## 🛠️ Steps
+
+### Step 1 — Add the resolver
+
+In `core/guards/main-routing-guard.ts`, add a `ResolveFn` that returns the person for the route's `id`:
 
 ```typescript
-id = input.required<string>();
-peopleResource = rxResource({
-  params: this.id,
-  stream: ({ params: personId }) => this.peopleService.getPersonDetails(personId),
-});
+import { type ResolveFn } from '@angular/router';
+import type { Observable } from 'rxjs';
+import type { People } from '../../shared/models/people.model';
+import { PeopleService } from '../providers/people.service';
+
+export const personDetailsResolver: ResolveFn<Observable<People>> = route => {
+  const id = route.paramMap.get('id');
+  return inject(PeopleService).getPersonDetails(id);
+};
 ```
 
-This works, but it means the data is fetched after the component is loaded, which can lead to a loading state in the UI. With a resolver, we can pre-fetch this data during the routing process.
+### Step 2 — Attach it to the route
 
-## Step 2: Create the Resolver Function
+In `main.ts`, add the resolver under a key (`person`):
 
-1. Open the `main-routing-guard.ts` file in the `core/guards` directory
-2. Add a new resolver function called `personDetailsResolver` below the existing guard:
-3. Return the details of the person using the `PeopleService`
+```typescript
+{
+  path: 'people/:id',
+  canMatch: [updatePersonGuard],
+  resolve: { person: personDetailsResolver },
+  loadComponent: async () => (await import('./app/feature/update-person/update-person')).UpdatePerson,
+},
+```
 
-## Step 3: Apply the Resolver to the Route
+### Step 3 — Consume the resolved data
 
-1. In `main.ts`, import the resolver:
-2. Add the resolver to the 'people/:id' route configuration:
+In `update-person.ts`, drop the `rxResource` fetch and read the resolved value from a required input named after the resolve key. With `withComponentInputBinding()`, `resolve: { person }` becomes:
 
-## Step 4: Update the Component to Use Resolved Data
+```typescript
+person = input.required<People>();
+```
 
-1. Modify the `update-person.ts` file to use the resolved data instead of fetching it directly.
-   - create a person input required for that
-2. Update the `update-person.html` template to use the resolved data:
+Update `update-person.html` to use `person()` directly.
 
-## Step 5: Test Your Implementation
+## ▶️ Run & verify
 
-1. Run the application:
+```bash
+npm run client -- 23-resolver
+```
 
-   ```bash
-   npm run client -- 23-resolver
-   ```
+Open an edit page and check:
 
-2. Navigate to a person detail page and observe that:
-   - The data is available immediately when the component loads
-   - There's no loading state or flickering in the UI
-   - The form is pre-populated with the person's details
+- [ ] The form is populated **immediately** — no loading flash
+- [ ] The data matches the selected person
+- [ ] Navigation waits for the resolver before rendering the component
 
-## Understanding Angular Resolvers
+## 💡 Key concepts
 
-Resolvers provide several benefits:
+- **Resolver** — data-fetching that runs *before* activation, so the component mounts with data ready.
+- **Resolve key → input** — the key in `resolve: { … }` maps to an input of the same name via `withComponentInputBinding()`.
+- **Trade-off** — resolvers delay navigation until data arrives; keep them fast (or add a global loading indicator).
 
-- **Pre-fetched data**: Data is available before the component is activated
-- **Better user experience**: No loading states or flickering in the UI
-- **Error handling**: You can handle data loading errors during navigation
-- **Simplified components**: Components don't need to handle data fetching logic
+## 🧯 Troubleshooting
 
-In modern Angular (v14+), functional resolvers are preferred over class-based resolvers for their simplicity and better tree-shaking.
-
-## Troubleshooting
-
-- If the resolver isn't working, check that you've imported it correctly in `main.ts`
-- Verify that the resolver is properly configured in the route definition
-- Make sure the component is correctly using the resolved data
-- Check the browser console for any errors
-
-## Additional Notes
-
-- Resolvers can return observables, promises, or synchronous values
-- Consider using a loading indicator if the resolver takes a long time to resolve
-- For complex data requirements, you can use multiple resolvers for a single route
-- Be careful not to block navigation for too long with slow resolvers
+- **`person` is undefined** — the input name must match the resolve key, and `withComponentInputBinding()` must be enabled.
+- **Navigation hangs** — the resolver's observable must complete/emit; check the API is reachable.
+- **Still see a loading flash** — make sure you removed the in-component `rxResource` fetch.

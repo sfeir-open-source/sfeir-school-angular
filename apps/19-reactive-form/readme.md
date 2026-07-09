@@ -1,81 +1,126 @@
-# Exercise 19-reactive-form (folder apps/19-reactive-form)
+# 19 · Reactive Forms
 
-In this workshop, you'll learn how to create a reactive form in Angular. You'll transform an existing template-driven form into a reactive form, which offers more robust form handling, validation, and testing capabilities.
+> Convert the template-driven person form into a typed, class-driven reactive form.
 
-## Step 1: Import ReactiveFormsModule
+**Folder** `apps/19-reactive-form` · **Solution** `apps/19-reactive-form-solution` · **Run** `npm run client -- 19-reactive-form`
 
-1. In `form.ts`, replace the import of `FormsModule` with `ReactiveFormsModule`:
+## 🎯 Goal
 
-## Step 2: Create a Typed Form Model
+Move the form's structure and validation out of the template and into a strongly-typed `FormGroup`. Reactive forms give you better typing, easier testing and a single source of truth in the component.
 
-1. Create a new file called `people-form.ts` in the `shared/components/form` directory:
+## 📚 What you'll learn
 
-   ```typescript
-   import { FormControl, FormGroup, Validators } from '@angular/forms';
+- The difference between template-driven and reactive forms
+- How to build a typed `FormGroup` with `FormControl` and `Validators`
+- How to bind the model with `formControlName` and sync inputs with an `effect`
 
-   type Controls = {
-     id: FormControl<string>;
-     photo: FormControl<string>;
-     firstname: FormControl<string>;
-     lastname: FormControl<string>;
-     email: FormControl<string>;
-     phone: FormControl<string>;
-   };
+## ✅ Before you start
 
-   export class PersonForm extends FormGroup<Controls> {
-     constructor() {
-       super({
-         id: new FormControl('', { nonNullable: true }),
-         photo: new FormControl('https://randomuser.me/api/portraits/lego/6.jpg', { nonNullable: true }),
-         firstname: new FormControl(null, [Validators.required, Validators.minLength(2)]),
-         lastname: new FormControl(null, [Validators.required, Validators.minLength(2)]),
-         email: new FormControl(null, [Validators.required]),
-         phone: new FormControl(null, [Validators.required, Validators.pattern(/\d{10}/)]),
-       });
-     }
-   }
+- Completion of the template-driven form exercises (16–18)
+- Start the mock API: `npm run server:start`
 
-   export type Person = ReturnType<PersonForm['getRawValue']>;
-   ```
+## 🛠️ Steps
 
-## Step 3: Update the Form Component
+### Step 1 — Swap the module
 
-1. In `form.ts`, import the `PersonForm` and `Person` types
-2. Replace the `PeopleForm` import and usage with the new `Person` type
-3. Create an instance of `PeopleForm` in `form.ts`
-4. Create an effect to handle `this.person` changes and use it to set `PeopleForm` value
-5. Update the `submit` method to use the form value
+In `form.ts`, replace `FormsModule` with `ReactiveFormsModule` in the `imports`.
 
-## Step 4: Update the Form Template
+### Step 2 — Define a typed form model
 
-1. In `form.html`, replace the template-driven form directives with reactive form directives
-2. Replace all `[(ngModel)]` directives with `formControlName` directives
-3. Update all form fields with their respective `formControlName` attributes
-4. Update the submit button to use the reactive form's validity
+Create `people-form.ts` in `shared/components/form`:
 
-## Testing Your Work
+```typescript
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
-1. Run the application:
+type Controls = {
+  id: FormControl<string>;
+  photo: FormControl<string>;
+  firstname: FormControl<string>;
+  lastname: FormControl<string>;
+  email: FormControl<string>;
+  phone: FormControl<string>;
+};
 
-   ```bash
-   npm run client -- 19-reactive-form
-   ```
+export class PersonForm extends FormGroup<Controls> {
+  constructor() {
+    super({
+      id: new FormControl('', { nonNullable: true }),
+      photo: new FormControl('https://randomuser.me/api/portraits/lego/6.jpg', { nonNullable: true }),
+      firstname: new FormControl(null, [Validators.required, Validators.minLength(2)]),
+      lastname: new FormControl(null, [Validators.required, Validators.minLength(2)]),
+      email: new FormControl(null, [Validators.required]),
+      phone: new FormControl(null, [Validators.required, Validators.pattern(/\d{10}/)]),
+    });
+  }
+}
 
-2. Click the "+" button to open the form
-3. Fill out the form and submit it
-4. Verify that validation works correctly
-5. Check that the form data is passed correctly when submitted
+export type Person = ReturnType<PersonForm['getRawValue']>;
+```
 
-## Troubleshooting
+### Step 3 — Drive the component from the form
 
-- If you see errors about missing imports, make sure you've imported `ReactiveFormsModule` correctly
-- If form validation isn't working, check that you've set up the validators correctly in the `PersonForm` class
-- If the form doesn't update with existing data, ensure your `effect` is working properly
-- Check the browser console for any errors
+In `form.ts`, instantiate the form, keep it in sync with the `person` input via an `effect`, and emit its value on submit:
 
-## Key Differences Between Template-Driven and Reactive Forms
+```typescript
+export class Form {
+  person = input<Person>({ photo: 'https://randomuser.me/api/portraits/lego/6.jpg' } as Person);
+  cancel = output<void>();
+  save = output<Person>();
 
-- **Template-driven forms**: Form structure and validation are defined in the template using directives
-- **Reactive forms**: Form structure and validation are defined in the component class
-- Reactive forms provide more robust validation, testing, and dynamic form capabilities
-- Reactive forms make it easier to handle complex form scenarios and custom validation
+  peopleForm = new PersonForm();
+
+  constructor() {
+    effect(() => {
+      const person = this.person();
+      if (person) {
+        this.peopleForm.patchValue(person, { emitEvent: false });
+      }
+    });
+  }
+
+  submit(): void {
+    this.save.emit(this.peopleForm.getRawValue());
+  }
+}
+```
+
+### Step 4 — Bind the template
+
+In `form.html`, wrap the form with `[formGroup]="peopleForm"` and replace every `[(ngModel)]` with `formControlName`. Gate submit on `peopleForm.invalid`:
+
+```html
+<form [formGroup]="peopleForm" (ngSubmit)="submit()">
+  <input type="text" matInput placeholder="First name" formControlName="firstname" />
+  <!-- …other controls… -->
+  <button mat-button color="primary" type="submit" [disabled]="peopleForm.invalid">Save</button>
+</form>
+```
+
+## ▶️ Run & verify
+
+```bash
+npm run client -- 19-reactive-form
+```
+
+Open the Add/Edit dialog and check:
+
+- [ ] Validation behaves as before (required, min length, phone pattern)
+- [ ] The form pre-fills when editing (thanks to the `effect` + `patchValue`)
+- [ ] Save emits the typed value and Save is disabled while invalid
+
+## 💡 Key concepts
+
+| | Template-driven | Reactive |
+| --- | --- | --- |
+| Where the form lives | Template (`ngModel`) | Component class (`FormGroup`) |
+| Typing | Implicit | Explicit & strong |
+| Best for | Simple forms | Complex/dynamic/tested forms |
+
+- **`nonNullable: true`** — keeps controls from resetting to `null`, so `getRawValue()` stays typed as `string`.
+- **`patchValue(…, { emitEvent: false })`** — updates the form without re-triggering `valueChanges`, avoiding feedback loops with the `effect`.
+
+## 🧯 Troubleshooting
+
+- **`formControlName must be used with a parent formGroup`** — add `[formGroup]="peopleForm"` on the `<form>` and import `ReactiveFormsModule`.
+- **Form doesn't pre-fill** — verify the `effect` reads `person()` and calls `patchValue`.
+- **Validation missing** — the validators are now in `PersonForm`, not the template.

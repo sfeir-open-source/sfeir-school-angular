@@ -1,91 +1,86 @@
-# Exercise 32: Unit Testing in Angular
+# 32 · Unit Testing
 
-In this exercise, you'll learn how to write effective unit tests for different Angular components. You'll implement tests for pipes, directives, components, and services using Jest and Angular Testing Library.
+> Write unit tests for a pipe, a directive, a component and a service with Jest.
 
-## What You'll Learn
+**Folder** `apps/32-unit-tests` · **Solution** `apps/32-unit-tests-solution` · **Run tests** `npm run test -- 32-unit-tests`
 
-- How to test Angular pipes
-- How to test Angular directives
-- How to test Angular components
-- How to test Angular services with HTTP requests
-- How to use Angular Testing Library for more user-centric tests
+## 🎯 Goal
 
-## Step 1: Testing Pipes
+Cover the building blocks you've created throughout the workshop with focused unit tests — from the simplest (a pure pipe) to the trickiest (a service that makes HTTP calls).
 
-Pipes are the simplest Angular elements to test since they are pure functions.
+## 📚 What you'll learn
 
-1. Open the file `src/app/shared/pipes/na.pipe.spec.ts`
-2. Write tests for the `NaPipe` that verify:
-   - The pipe is created successfully
-   - The pipe returns the input value when it's defined
-   - The pipe returns "N/A" when the input is undefined and no default value is provided
-   - The pipe returns the default value when provided and the input is undefined
+- How to test pipes, directives, components and services
+- How to mock HTTP and assert requests
+- How to test `httpResource` with `TestBed` in a zoneless app
 
-## Step 2: Testing Directives
+## ✅ Before you start
 
-Directives require a host component to be tested properly.
+- The mock API isn't needed — tests mock their own HTTP.
 
-1. Open the file `src/app/shared/directives/badge.spec.ts`
-2. Create a host component that uses the directive
-3. Write tests that verify:
-   - The directive is created successfully
-   - The directive correctly adds an icon when the input is true
-   - The directive doesn't add an icon when the input is false
-   - The directive changes color on mouse events
+## 🛠️ Steps
 
-## Step 3: Testing Components
+### Step 1 — Test the pipe
 
-Components often have complex interactions and dependencies.
+Pipes are pure functions, so they're the easiest to test. In `na.pipe.spec.ts`, verify:
 
-1. Open the file `src/app/shared/components/form/form.spec.ts`
-2. Write tests that verify:
-   - The component is created successfully
-   - The component renders the correct form fields
-   - The component emits the correct events when the form is submitted
-   - The component validates form inputs correctly
+- it's created
+- it returns the input when defined
+- it returns `N/A` when the input is empty and no default is given
+- it returns the provided default when the input is empty
 
-## Step 4: Testing Services
+### Step 2 — Test the directive
 
-Services often interact with HTTP, so we need to mock those interactions.
+Directives need a host component. In `badge.spec.ts`, create a tiny host that applies `sfeirBadge`, then verify:
 
-1. Open the file `src/app/core/providers/people.service.spec.ts`
-2. Write tests that verify:
-   - The service is created successfully
-   - The service makes HTTP requests to the correct endpoints
-   - The service correctly processes successful responses
-   - The service correctly handles errors
-   - For httpResource tests, remember to:
-     - Use TestBed.runInInjectionContext for creating the resource
-     - Call TestBed.tick() to trigger the effect
-     - Use await TestBed.inject(ApplicationRef).whenStable() to ensure values are propagated
-     - Test error handling using the error() method
+- it's created
+- it adds the icon when the input is `true`
+- it adds nothing when `false`
+- the color changes on `mouseover` / `mouseout`
 
-## Step 5: Running Your Tests
+### Step 3 — Test the component
 
-Verify your work by running the tests:
+In `form.spec.ts`, verify:
 
-```shell
+- it's created
+- it renders the expected fields
+- it emits the correct events on submit
+- validation behaves as expected
+
+### Step 4 — Test the service
+
+Services usually hit HTTP, so mock it. In `people.service.spec.ts`, verify the endpoints, success handling and errors. For `httpResource` in a zoneless app:
+
+- create the resource inside `TestBed.runInInjectionContext`
+- call `TestBed.tick()` to flush effects
+- `await TestBed.inject(ApplicationRef).whenStable()` before asserting
+- exercise error handling via the resource's `error()` signal
+
+## ▶️ Run & verify
+
+```bash
 npm run test -- 32-unit-tests
 ```
 
-## Step 6: Exploring Advanced Testing Techniques
+Check:
 
-After completing the basic tests, explore more advanced testing techniques:
+- [ ] All four suites pass
+- [ ] Each suite isolates its subject (mocks HTTP, hosts the directive, etc.)
 
-1. Testing components with inputs and outputs
-2. Testing components with child components
-3. Testing components with services
-4. Testing components with routing
-5. Using Angular Testing Library for more user-centric tests
+## 💡 Key concepts
 
-## What You've Learned
+- **Test pyramid** — many fast unit tests (pipes, services) under fewer integration/UI tests.
+- **`TestBed`** — Angular's testing harness for configuring and creating things under test.
+- **Mocking HTTP** — `HttpTestingController` (or `provideHttpClientTesting`) lets you assert requests and flush fake responses.
+- **Zoneless testing** — drive change detection explicitly with `TestBed.tick()` / `whenStable()`.
 
-By completing this exercise, you've learned:
+## 🧯 Troubleshooting
 
-- How to write effective unit tests for different Angular elements
-- How to use Jest as a test runner
-- How to mock dependencies and HTTP requests
-- How to test complex interactions between components
-- Best practices for Angular testing
+- **Directive test sees nothing** — you need a host component that actually applies the directive.
+- **`httpResource` value is stale** — you forgot `TestBed.tick()` / `whenStable()`.
+- **Unexpected open request** — every mocked request must be flushed and `verify()`-ed.
 
-These skills will help you build more reliable and maintainable Angular applications.
+## 🚀 Going further
+
+- Test components with inputs/outputs, child components and routing.
+- Try Angular Testing Library for more user-centric assertions.

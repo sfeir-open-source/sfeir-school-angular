@@ -1,59 +1,136 @@
-# Exercise 16-template-driven-form (folder apps/16-template-driven-form)
+# 16 · Template-Driven Forms
 
-In this workshop, you'll learn how to create a template-driven form in Angular. The PeopleComponent already has a button to open a modal dialog, and the modal component is already set up. Your task is to create a form component and implement the form logic.
+> Build an "Add person" form with `ngModel`, then wire its submission into an RxJS flow that creates the person and refreshes the list.
 
-## Step 1: Create Form Component
+**Folder** `apps/16-template-driven-form` · **Solution** `apps/16-template-driven-form-solution` · **Run** `npm run client -- 16-template-driven-form`
 
-1. In the `shared/components` directory, create a new component called `Form`:
-2. In the generated `form.html`, copy the content from `assets/static/form.component.html`
-3. In the generated `form.scss`, copy the content from `assets/static/form.scss`
+## 🎯 Goal
 
-## Step 2: Add Form to Dialog
+The People page already has a "+" button that opens a dialog. Fill that dialog with a form component, make it template-driven, emit the submitted value, and hook it up to a `POST /peoples` request.
 
-1. In `add-person-dialog.component.ts`, import and add the `Form` to the `imports` array
-2. In `add-person-dialog.component.html`, add the form component:
+## 📚 What you'll learn
 
-## Step 3: Import FormsModule
+- How template-driven forms work with `FormsModule`, `ngModel` and `#form="ngForm"`
+- How to emit form results through component outputs
+- How to compose a dialog + HTTP create + list refresh with `Subject`, `filter` and `switchMap`
 
-1. In `form.ts`, import `FormsModule` from `@angular/forms`
-2. Add it to the `imports` array of the `@NgModule` decorator
+## ✅ Before you start
 
-## Step 4: Make the Form Template-Driven
+- Completion of the outputs (10) and control-flow (14) exercises
+- Start the mock API: `npm run server:start`
 
-1. In `form.html`, add `#personForm="ngForm"` to the form element
-2. Add `ngModel` directive to each form control (input fields)
-3. Add `name` attribute to each form control that matches your model properties
+## 🛠️ Steps
 
-## Step 5: Implement Form Logic
+### Step 1 — Create the Form component
 
-1. In `form.ts`, create two output properties:
-   - `cancel` to emit when the user clicks the cancel button
-   - `save` to emit when the user clicks the save button. The value to emit is the form value as `PeopleForm`
+In `shared/components`, create a `Form` component. Seed its template and styles from the provided assets:
 
-2. Implement the form submission
+- Copy `assets/static/form.component.html` into `form.html`
+- Copy `assets/static/form.scss` into `form.scss`
 
-3. Implement the cancel action
+### Step 2 — Show the form inside the dialog
 
-## Step 6: Make the business Logic for adding people
+In `add-person-dialog.component.ts`, add `Form` to the `imports`, then render `<sfeir-form />` in `add-person-dialog.component.html`.
 
-1. In the file `people.service.ts`, add a new function to add a people. Endpoint to use /peoples with the Post method
-2. In the file `people.component.ts`, complete the Rxjs flux with the correct operator
-   - first use the filter operator to avoid sending request if user close the dialog without submitting
-   - then use the switchMap operator to send the request
-   - finally use again a switchMap operator to retrieve the list of person updated
-3. Register the new flow in the merge operator
+### Step 3 — Enable template-driven forms
 
-## Testing Your Work
+`FormsModule` is a **standalone** import — add it to the `Form` component's own `imports` array (there's no `NgModule`/`SharedModule` here):
 
-1. Run the application:
-   ```bash
-   npm run client -- 16-template-driven-form
-   ```
-2. Click the "+" button to open the form
-3. Submit the form and verify the data is passed correctly
+```typescript
+import { FormsModule } from '@angular/forms';
 
-## Troubleshooting
+@Component({
+  selector: 'sfeir-form',
+  templateUrl: './form.html',
+  styleUrl: './form.scss',
+  imports: [NgOptimizedImage, FormsModule, MatFormFieldModule, MatInputModule, MatButtonModule],
+})
+export class Form { /* … */ }
+```
 
-- If the form doesn't submit, check the browser console for errors
-- Make sure all form controls have both `name` and `ngModel` directives
-- Verify that the `FormsModule` is properly imported in the `SharedModule`
+### Step 4 — Make the template a form
+
+In `form.html`, expose the form as a template reference, and register each field with `name` + `ngModel`:
+
+```html
+<form #personForm="ngForm" (ngSubmit)="submit(personForm.value)">
+  <input type="text" matInput name="firstname" ngModel />
+  <input type="text" matInput name="lastname" ngModel />
+  <input type="email" matInput name="email" ngModel />
+  <input type="phone" matInput name="phone" ngModel />
+  <!-- hidden photo field, cancel/save buttons… -->
+</form>
+```
+
+> 💡 `name` + `ngModel` together register a control on the `ngForm`; `personForm.value` is then an object keyed by those `name`s.
+
+### Step 5 — Emit save & cancel
+
+In `form.ts`, declare two outputs and emit from the handlers:
+
+```typescript
+cancel = output<void>();
+save = output<PeopleForm>();
+
+submit(personForm: PeopleForm): void {
+  this.save.emit(personForm);
+}
+
+onCancel(): void {
+  this.cancel.emit();
+}
+```
+
+### Step 6 — Create the person & refresh the list
+
+Add the create endpoint to `people.service.ts`:
+
+```typescript
+addNewPerson(person: PeopleForm): Observable<void> {
+  return this.httpClient.post<void>(`${environment.peopleEndpoint}/peoples`, person);
+}
+```
+
+Then, in `people.component.ts`, model the "add" flow and merge it with the existing streams:
+
+```typescript
+private readonly triggerAddPeople$ = new Subject<void>();
+
+private readonly addPeople$ = this.triggerAddPeople$.pipe(
+  switchMap(() =>
+    this.matDialog.open(AddPersonDialogComponent, { width: '50%', height: 'fit-content' })
+      .afterClosed()
+      .pipe(
+        filter(Boolean),                                    // ignore a cancelled dialog
+        switchMap(personForm => this.peopleService.addNewPerson(personForm)),
+        switchMap(() => this.retrievePeople$),              // reload the fresh list
+      ),
+  ),
+);
+
+private peopleFlow$ = merge(this.retrievePeople$, this.deletePeople$, this.addPeople$);
+```
+
+## ▶️ Run & verify
+
+```bash
+npm run client -- 16-template-driven-form
+```
+
+Open <http://localhost:4200> → People, and check:
+
+- [ ] The "+" button opens the dialog with the form
+- [ ] Submitting adds the person and the list refreshes
+- [ ] Cancelling closes the dialog and changes nothing
+
+## 💡 Key concepts
+
+- **Template-driven forms** — the form's shape and state live in the **template**; `ngModel` + `name` build the model implicitly. Great for simple forms.
+- **`filter(Boolean)`** — a concise guard: only proceed when the dialog returns a truthy value (i.e. the user saved).
+- **`switchMap` chaining** — dialog → create → reload, each step cancelling any stale previous one.
+
+## 🧯 Troubleshooting
+
+- **`personForm.value` is empty** — every field needs both `name` and `ngModel`.
+- **`Can't bind to 'ngModel'`** — `FormsModule` isn't in the `Form` component's `imports`.
+- **List doesn't update after save** — make sure the flow ends with `switchMap(() => this.retrievePeople$)` and is `merge`d in.

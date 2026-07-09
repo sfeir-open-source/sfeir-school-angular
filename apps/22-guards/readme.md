@@ -1,60 +1,73 @@
-# Exercise 22: Route Guards in Angular (folder apps/22-guards)
+# 22 · Route Guards
 
-In this workshop, you'll implement a route guard to validate the format of a person ID before allowing navigation to the person details page. Route guards are an essential part of Angular's routing system that allow you to control access to routes based on certain conditions.
+> Block navigation to `/people/:id` unless the id looks like a real identifier.
 
-## Step 1: Create a Guards Directory
+**Folder** `apps/22-guards` · **Solution** `apps/22-guards-solution` · **Run** `npm run client -- 22-guards`
 
-1. Create a new directory called `guards` in the `core` directory:
+## 🎯 Goal
 
-## Step 2: Create the Route Guard
+Protect the edit route: only allow it when the id matches the expected format (24 alphanumeric chars). Otherwise, redirect home — before the component ever loads.
 
-1. Create a new file called `main-routing-guard.ts` in the `core/guards` directory
-2. Inside this file create the updatePersonGuard function
-   This guard:
-   - Uses the functional guard approach with `CanMatchFn`
-   - Checks if the person ID in the URL matches the pattern `[a-z0-9]{24}` (24 alphanumeric characters)
-   - Returns `true` if the ID is valid, allowing navigation to proceed
-   - Redirects to the home page if the ID is invalid
+## 📚 What you'll learn
 
-## Step 3: Apply the Guard to the Route
+- What route guards are and the guard types Angular offers
+- How to write a functional `CanMatchFn` guard
+- How to redirect with a `UrlTree`
 
-1. In `main.ts`, import the guard:
-2. Apply the guard to the 'people/:id' route:
+## ✅ Before you start
 
-## Step 4: Test Your Implementation
+- Completion of lazy loading (21) — guards pair naturally with `CanMatch`
+- Start the mock API: `npm run server:start`
 
-1. Run the application:
+## 🛠️ Steps
 
-   ```bash
-   npm run client -- 22-guards
-   ```
+### Step 1 — Create the guard
 
-2. Test the guard by navigating to different URLs:
-   - Try a valid ID: `/people/abc123456789012345678901` (should work)
-   - Try an invalid ID: `/people/123` (should redirect to home)
+In `core/guards`, create `main-routing-guard.ts`. A `CanMatchFn` returns `true` to allow, or a `UrlTree` to redirect:
 
-## Understanding Angular Route Guards
+```typescript
+import { inject } from '@angular/core';
+import { Router, type CanMatchFn } from '@angular/router';
 
-Angular provides several types of route guards:
+const regexId = /[a-z0-9]{24}/;
 
-- **CanMatch**: Determines if a route can be matched (used in our example)
-- **CanActivate**: Determines if a route can be activated
-- **CanActivateChild**: Determines if child routes can be activated
-- **CanDeactivate**: Determines if a user can leave a route
-- **Resolve**: Pre-fetches data before activating a route
+export const updatePersonGuard: CanMatchFn = (route, segments) => {
+  const id = segments[1].path;
+  return regexId.test(id) ? true : inject(Router).createUrlTree(['/home']);
+};
+```
 
-In modern Angular (v14+), functional guards are preferred over class-based guards for their simplicity and better tree-shaking.
+### Step 2 — Apply it to the route
 
-## Troubleshooting
+In `main.ts`, guard the `people/:id` route:
 
-- If the guard isn't working, check that you've imported it correctly in `main.ts`
-- Verify that the regex pattern is correctly defined
-- Check the browser console for any errors
-- Make sure you're using the correct guard type for your use case
+```typescript
+{
+  path: 'people/:id',
+  canMatch: [updatePersonGuard],
+  loadComponent: async () => (await import('./app/feature/update-person/update-person')).UpdatePerson,
+},
+```
 
-## Additional Notes
+## ▶️ Run & verify
 
-- Route guards are a powerful way to control navigation in your application
-- They can be used for authentication, authorization, form validation, and more
-- Consider using multiple guards for complex navigation rules
-- Guards can return observables or promises for asynchronous validation
+```bash
+npm run client -- 22-guards
+```
+
+Try both URLs:
+
+- [ ] `/people/abc123456789012345678901` (24 chars) → the edit page opens
+- [ ] `/people/123` → redirected to `/home`
+
+## 💡 Key concepts
+
+- **Guard types** — `CanMatch` (should the route even match?), `CanActivate`, `CanActivateChild`, `CanDeactivate`, `Resolve`.
+- **`CanMatch` + lazy loading** — because it runs *before* matching, a failed `CanMatch` skips downloading the lazy chunk entirely — cheaper than `CanActivate`.
+- **Functional guards** — plain functions using `inject()`; preferred over class guards for simplicity and tree-shaking.
+
+## 🧯 Troubleshooting
+
+- **Guard never blocks** — confirm it's listed in `canMatch: [...]` and the regex is correct.
+- **Redirect loops** — make sure you redirect to a route that isn't itself guarded away.
+- **`segments[1]` undefined** — the id is the second segment of `people/:id`; adjust if your path differs.

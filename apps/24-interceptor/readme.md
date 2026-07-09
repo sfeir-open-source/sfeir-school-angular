@@ -1,102 +1,81 @@
-# Exercise 24: HTTP Interceptors in Angular (folder apps/24-interceptor)
+# 24 · HTTP Interceptors
 
-In this workshop, you'll implement an HTTP interceptor to automatically add an authorization header to all outgoing HTTP requests. Interceptors are a powerful feature in Angular's HTTP client that allow you to intercept and modify HTTP requests and responses.
+> Add an `Authorization` header to every outgoing request with a functional interceptor.
 
-## Step 1: Understand HTTP Interceptors
+**Folder** `apps/24-interceptor` · **Solution** `apps/24-interceptor-solution` · **Run** `npm run client -- 24-interceptor`
 
-Interceptors provide a way to:
+## 🎯 Goal
 
-- Add authentication tokens to outgoing requests
-- Log HTTP activity
-- Handle errors globally
-- Transform request/response data
-- Implement caching strategies
+Cross-cutting HTTP concerns (auth, logging, error handling) don't belong in each service. Write an interceptor that clones every request and attaches `Authorization: Bearer SFEIR`.
 
-In modern Angular (v15+), interceptors are implemented as functions with the `HttpInterceptorFn` type, which is more efficient and tree-shakable than the older class-based approach.
+## 📚 What you'll learn
 
-## Step 2: Create the Interceptor
+- What interceptors are and what they're good for
+- How to write a functional interceptor (`HttpInterceptorFn`)
+- Why requests are immutable and must be **cloned**
 
-1. Create a new file in the `src/app/core/interceptors` directory named `core-interceptors.ts`
+## ✅ Before you start
 
-2. Implement the token interceptor function
+- Start the mock API: `npm run server:start`
 
-3. This interceptor:
-   - Takes the original request and creates a clone of it
-   - Adds an `Authorization` header with the value `Bearer SFEIR`
-   - Passes the modified request to the next handler in the chain
+## 🛠️ Steps
 
-## Step 3: Register the Interceptor
+### Step 1 — Create the interceptor
 
-1. Open `main.ts` and import the interceptor and necessary functions:
-
-2. Register the interceptor in the application bootstrap providers:
-
-## Step 4: Verify in the Application
-
-1. Run the application:
-
-   ```bash
-   npm run client -- 24-interceptor
-   ```
-
-2. Open your browser's developer tools and navigate to the Network tab
-
-3. Interact with the application to trigger HTTP requests
-
-4. Observe that each request now includes the `Authorization: Bearer SFEIR` header
-
-## Understanding Interceptor Order
-
-When using multiple interceptors, they are applied in the order they are provided:
+In `core/interceptors/core-interceptors.ts`, clone the request with an extra header and pass it on:
 
 ```typescript
-provideHttpClient(
-  withInterceptors([
-    firstInterceptor, // Applied first and get the response last
-    secondInterceptor, // Applied second and get the response second
-    thirdInterceptor, // Applied third and get the response first
-  ]),
-);
+import type { HttpInterceptorFn } from '@angular/common/http';
+
+export const TokenInterceptor: HttpInterceptorFn = (request, next) => {
+  const clonedRequest = request.clone({
+    setHeaders: { Authorization: 'Bearer SFEIR' },
+  });
+
+  return next(clonedRequest);
+};
 ```
 
-The request flows through the interceptors in order (1→2→3), while the response flows in reverse order (3→2→1).
+> 💡 `HttpRequest` is immutable — you can't mutate `request`; you clone it with the changes and forward the clone to `next()`.
 
-## Advanced Interceptor Techniques
+### Step 2 — Register it
 
-1. **Conditional Interception**: Only modify certain requests based on URL or other criteria
+In `main.ts`, wire the interceptor into the HTTP client:
 
-   ```typescript
-   if (request.url.includes('/api/secure')) {
-     // Add headers only for secure endpoints
-   }
-   ```
+```typescript
+import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
+import { TokenInterceptor } from './app/core/interceptors/core-interceptors';
 
-2. **Response Transformation**: Transform response data before it reaches components
+providers: [
+  provideHttpClient(withFetch(), withInterceptors([TokenInterceptor])),
+  // …
+];
+```
 
-   ```typescript
-   return next(request).pipe(
-     map(event => {
-       // Transform response events
-       return event;
-     }),
-   );
-   ```
+## ▶️ Run & verify
 
-3. **Error Handling**: Catch and handle HTTP errors globally
-   ```typescript
-   return next(request).pipe(
-     catchError(error => {
-       // Handle error
-       return throwError(() => error);
-     }),
-   );
-   ```
+```bash
+npm run client -- 24-interceptor
+```
 
-## Troubleshooting
+Open DevTools → **Network**, trigger any request, and check:
 
-- If your interceptor isn't being applied, check that it's correctly registered in the providers
-- Verify that the interceptor is returning the result of `next(clonedRequest)`
-- Check the browser console for any errors
-- Use the browser's Network tab to confirm headers are being added correctly
+- [ ] Every request carries `Authorization: Bearer SFEIR` in its headers
+- [ ] The app still works exactly as before
 
-By completing this workshop, you've learned how to create and register HTTP interceptors in Angular to automatically add authentication headers to all outgoing requests.
+## 💡 Key concepts
+
+- **`HttpInterceptorFn`** — a function `(req, next) => Observable<HttpEvent>`; register several with `withInterceptors([...])`.
+- **Order** — requests flow through interceptors top-to-bottom; responses flow back bottom-to-top.
+- **Common uses** — auth tokens, correlation ids, retry/`catchError`, response transforms, caching.
+
+## 🧯 Troubleshooting
+
+- **Header not added** — ensure the interceptor is registered in `withInterceptors([...])` and returns `next(clonedRequest)`.
+- **Nothing changes** — you may have mutated `request` instead of using the clone.
+- **Only some requests affected** — check for conditional logic (e.g. `if (request.url.includes(...))`).
+
+## 🚀 Going further
+
+- Add a second interceptor that logs each request/response duration.
+- Handle 401s globally with `catchError` and a redirect to login.

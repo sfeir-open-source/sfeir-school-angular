@@ -1,43 +1,44 @@
-# Exercise: HTTP Client in Angular (folder: apps/06-http)
+# 06 · HTTP Client
 
-## Objective
+> Fetch a random person from a REST API using `httpResource`, and refresh it on demand.
 
-In this exercise, you'll learn how to make HTTP requests in an Angular application using the built-in `HttpClient` service. You'll also learn how to use environment files to manage API endpoints across different environments.
+**Folder** `apps/06-http` · **Solution** `apps/06-http-solution` · **Run** `npm run client -- 06-http`
 
-By the end of this exercise, you'll be able to:
+## 🎯 Goal
 
-- Set up the HTTP client in an Angular application
-- Make GET requests to a REST API
-- Use environment variables to manage API endpoints
-- Handle asynchronous data fetching in components
+Replace the local `PEOPLE` mock with **live data**. You'll enable Angular's HTTP client, point it at an environment-configured endpoint, and load a random person with the signal-based `httpResource`.
 
-## Prerequisites
+## 📚 What you'll learn
 
-- Basic understanding of Angular components and services
-- Familiarity with TypeScript and Observables
-- Completion of previous exercises on components and data binding
+- How to provide `HttpClient` in a standalone app
+- How to keep API URLs in environment files
+- How `httpResource` turns an HTTP request into signals (`value()`, `isLoading()`, `error()`) and how to `reload()` it
 
-## Step 1: Set Up the HTTP Client
+## ✅ Before you start
 
-1. Open **main.ts**
-2. Import the necessary HTTP client functions:
+- Start the mock API in a separate terminal (it serves the `/peoples` endpoints on port 9000):
+
+  ```bash
+  npm run server:start
+  ```
+
+## 🛠️ Steps
+
+### Step 1 — Provide the HTTP client
+
+In `main.ts`, register the client in the bootstrap providers:
 
 ```typescript
 import { provideHttpClient, withFetch } from '@angular/common/http';
-```
 
-3. Update the `bootstrapApplication` call to include the HTTP client:
-
-```typescript
 bootstrapApplication(AppComponent, {
-  providers: [provideHttpClient(withFetch())],
+  providers: [provideZonelessChangeDetection(), provideHttpClient(withFetch())],
 }).catch(console.error);
 ```
 
-## Step 2: Configure the API Endpoint
+### Step 2 — Configure the API endpoint
 
-1. Open **src/environments/environment.ts**
-2. Add the `peopleEndpoint` property to the environment object:
+In `src/environments/environment.ts`, add the base URL:
 
 ```typescript
 export const environment = {
@@ -46,23 +47,34 @@ export const environment = {
 };
 ```
 
-## Step 3: Create the HTTP Resource in Home Component
+### Step 3 — Create the resource
 
-1. Open **home.component.ts**
-2. Import the necessary dependencies:
-3. Create an HTTP resource to fetch random people: (/peoples/random)
+In `home.component.ts`, declare an `httpResource` that fetches a random person, and a method to reload it:
 
-## Step 4: Update the Template
+```typescript
+import { httpResource } from '@angular/common/http';
+import { environment } from '../../../environments/environment';
+import { People } from '../../shared/models/people.model';
 
-1. Open **home.component.html**
-2. Update the template to use the person data from the resource:
+export class HomeComponent {
+  personResource = httpResource<People>(() => `${environment.peopleEndpoint}/peoples/random`);
 
-```angular181html
+  getRandomPerson(): void {
+    this.personResource.reload();
+  }
+}
+```
+
+### Step 4 — Render the resource state
+
+In `home.component.html`, only render the card once the resource has a value:
+
+```html
 @if (personResource.hasValue()) {
   @let person = personResource.value();
   <mat-card>
     <mat-card-header>
-      <img mat-card-avatar [src]="person.photo" [alt]="person.firstname + ' ' + person.lastname">
+      <img mat-card-avatar [ngSrc]="person.photo" [alt]="person.firstname + ' ' + person.lastname" width="40" height="40" />
       <mat-card-title>{{ person.firstname }} {{ person.lastname }}</mat-card-title>
       <mat-card-subtitle>{{ person.email }}</mat-card-subtitle>
     </mat-card-header>
@@ -78,37 +90,27 @@ export const environment = {
 }
 ```
 
-## Step 5: Test Your Implementation
-
-1. Make sure your API server is running (if not, start it with `npm run server` from the project root)
-2. From the project root, run the application:
+## ▶️ Run & verify
 
 ```bash
-npm run client -- 06-http
+npm run client -- 06-http   # (with `npm run server:start` already running)
 ```
 
-3. Open your browser and verify that:
-   - A person's information is displayed when the page loads
-   - Clicking the refresh button fetches and displays a different random person
-   - The UI updates automatically when new data is received
+Open <http://localhost:4200> and check:
 
-## Expected Outcome
+- [ ] A person loads automatically on page load
+- [ ] The refresh button fetches and displays a **new** random person
+- [ ] The card updates on its own — you never touch the DOM
 
-- The application should display a random person's information in a card
-- Clicking the refresh button should fetch and display a new random person
-- The UI should update automatically when new data is received
-- No errors should appear in the browser console
+## 💡 Key concepts
 
-## Tips
+- **`httpResource`** — a reactive wrapper around an HTTP GET. It exposes `value()`, `hasValue()`, `isLoading()` and `error()` as signals, and re-fetches whenever its URL (a reactive expression) changes.
+- **`reload()`** — forces a re-fetch of the same request, perfect for a "refresh" button.
+- **`withFetch()`** — uses the browser Fetch API under the hood (recommended, SSR-friendly).
+- **Environment files** — keep endpoints out of your components so builds can swap them per environment.
 
-- The `httpResource` function creates a resource that automatically handles the HTTP request and state management
-- The resource provides `value()`, `loading()`, and `error()` signals that you can use in your template
-- The `reload()` method can be called to refresh the data
-- Always use environment variables for API endpoints to make your application more maintainable
+## 🧯 Troubleshooting
 
-## Troubleshooting
-
-- If you see CORS errors, make sure your API server is running and accessible
-- If the data doesn't update, check the network tab in your browser's developer tools to see if the request is being made
-- Make sure you've imported all necessary modules and components
-- Check the browser console for any error messages
+- **CORS / connection errors** — the API isn't running. Start it with `npm run server:start`.
+- **Data never appears** — check the Network tab: is the request hitting `http://localhost:9000/api/peoples/random`?
+- **`NullInjectorError: No provider for HttpClient`** — you skipped `provideHttpClient()` in `main.ts`.

@@ -1,65 +1,106 @@
-# Control Flow Workshop
+# 14 · Control Flow (`@if` / `@for` / `@switch`)
 
-In this workshop, you will learn how to use Angular's control flow directives to create dynamic and interactive templates. Control flow directives allow you to conditionally display content, iterate over data, and switch between different views based on your application's state.
+> Toggle the People page between a card view and a list view using the new control-flow blocks.
 
-## Objective
+**Folder** `apps/14-control-flow` · **Solution** `apps/14-control-flow-solution` · **Run** `npm run client -- 14-control-flow`
 
-Implement control flow logic in an Angular application using the new Angular control flow syntax (`@if`, `@for`, `@switch`) to display and manipulate data dynamically in templates.
+## 🎯 Goal
 
-## Prerequisites
+Add a button that switches the People view between two layouts. A `view` signal drives a `@switch` that renders either the cards or a Material list — the modern, built-in way to branch templates.
 
-- Basic knowledge of Angular
-- Understanding of Angular components and templates
-- Familiarity with TypeScript
+## 📚 What you'll learn
 
-## Workshop Steps
+- Angular's control-flow blocks: `@if`, `@for` (with `track` / `@empty`) and `@switch` / `@case`
+- How to drive the template from a signal and flip it with `.update()`
+- Why control-flow blocks replace the old structural directives (`*ngIf`, `*ngFor`, `*ngSwitch`)
 
-### Step 1: Analyze the component structure
+## ✅ Before you start
 
-1. Examine the existing component files to understand the data structure
-2. Identify where control flow directives need to be implemented
-3. Look at the component's TypeScript file to understand the available properties and methods
+- Start the mock API: `npm run server:start`
 
-### Step 2: Create a view signal
+## 🛠️ Steps
 
-1. In the `people.component.ts` create a view signal initiate to card
-2. create a function changeView that changes the value of the signal each time you click on it
+### Step 1 — Add a `view` signal and a toggle
 
-### Step 3: Adapte the view
+In `people.component.ts`, hold the current view in a signal and flip it on demand:
 
-1. display card view if view value is card
-2. display list view if view value is list
-3. show the correct icon on the button
+```typescript
+import { signal } from '@angular/core';
 
-### Step 4: Test your implementation
+export class PeopleComponent {
+  // …existing people flow…
+  view = signal<'card' | 'list'>('card');
 
-1. Launch the development server:
+  changeView(): void {
+    this.view.update(view => (view === 'card' ? 'list' : 'card'));
+  }
+}
+```
 
-   ```bash
-   npm run client -- 14-control-flow
-   ```
+Remember to import `MatListModule`, `NgOptimizedImage`, `MatButtonModule` and `MatIconModule` for the list view and button.
 
-2. Verify that:
+### Step 2 — Branch the template with `@switch`
 
-- Conditional content appears and disappears correctly
-- Lists are rendered properly with all items
-- Switch statements work for different cases
-- Empty states are handled appropriately
-- The user interface responds correctly to data changes
+In `people.component.html`, render one layout per case:
 
-## Key Concepts to Understand
+```html
+<section>
+  @switch (view()) {
+    @case ('card') {
+      @for (person of people(); track person.id) {
+        <sfeir-card [person]="person" (personDelete)="deletePerson($event)" />
+      } @empty {
+        No Data Yet
+      }
+    }
+    @case ('list') {
+      <mat-list>
+        @for (person of people(); track person.id) {
+          <mat-list-item class="mat-whiteframe-2dp mat-card">
+            <img alt="person-image" [ngSrc]="person.photo" matListItemAvatar height="40" width="40" />
+            <h3 matListItemLine>{{ person.firstname }} {{ person.lastname }}</h3>
+            <p matListItemLine><span>{{ person.entity }}</span> — <span>{{ person.email }}</span></p>
+          </mat-list-item>
+        }
+      </mat-list>
+    }
+  }
+</section>
+```
 
-- **Control Flow Syntax**: Angular's new control flow blocks (`@if`, `@for`, `@switch`) provide a more intuitive way to handle template logic compared to structural directives
-- **Conditional Rendering**: Use `@if` to show or hide content based on component state or data availability
-- **List Rendering**: Use `@for` to iterate over arrays and display dynamic lists of content
-- **Switch Logic**: Use `@switch` for complex conditional scenarios with multiple possible outcomes
-- **Performance**: Proper use of `track` expressions in `@for` loops helps Angular optimize rendering performance
-- **Template Readability**: Control flow blocks make templates more readable and maintainable compared to traditional structural directives
+### Step 3 — Add the toggle button
 
-## Tips for Success
+Show the icon that hints the *other* view:
 
-- Always consider edge cases like empty arrays or null values
-- Use meaningful variable names in your control flow blocks
-- Test different data scenarios to ensure robust behavior
-- Keep your templates clean and well-organized
-- Use appropriate tracking strategies for optimal performance
+```html
+<section class="buttons-fab">
+  <button mat-fab color="warn" (click)="changeView()">
+    <i class="material-icons">{{ view() === 'card' ? 'list' : 'view_stream' }}</i>
+  </button>
+</section>
+```
+
+## ▶️ Run & verify
+
+```bash
+npm run client -- 14-control-flow
+```
+
+Open <http://localhost:4200> and check:
+
+- [ ] The People page starts in card view
+- [ ] The FAB toggles between card and list layouts
+- [ ] The button icon reflects the view you'd switch to
+- [ ] The empty state renders when there's no data
+
+## 💡 Key concepts
+
+- **Built-in control flow** — `@if`, `@for`, `@switch` are compiler features (no import needed), with better type-narrowing and performance than `*ngIf`/`*ngFor`/`*ngSwitch`, which are now legacy.
+- **`@for … track`** — mandatory `track` keeps DOM reconciliation cheap; `@empty` handles the no-items case.
+- **Signal-driven UI** — the template reads `view()`, so calling `.update()` re-renders exactly the affected block.
+
+## 🧯 Troubleshooting
+
+- **List view is unstyled/empty** — did you add `MatListModule` (and `NgOptimizedImage`) to the component `imports`?
+- **Nothing toggles** — confirm the button calls `changeView()` and that `view` is a signal.
+- **`@for` compile error** — every `@for` needs a `track` expression.

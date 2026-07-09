@@ -1,49 +1,48 @@
-# 28-custom-control-signal-based (dossier apps/28-custom-control-signal-based)
+# 28 · Custom Form Control (Signal Forms)
 
-In this exercise, you'll learn how to create a custom form control for Angular Signal Forms using the `FormValueControl` interface. You'll extract the repeated `mat-form-field` markup into a reusable `SfeirCustomInput` component that integrates seamlessly with `[formField]` bindings.
+> Build a reusable `sfeir-custom-input` for Signal Forms with the `FormValueControl` interface.
 
-## What Are Custom Signal Form Controls?
+**Folder** `apps/28-custom-control-signal-based` · **Solution** `apps/28-custom-control-signal-based-solution` · **Run** `npm run client -- 28-custom-control-signal-based`
 
-Signal Forms provide a model-driven API built on Angular signals. Custom controls participate in this system by implementing `FormValueControl` (for single-value fields) or `FormCheckboxControl` (for booleans). Unlike the legacy `ControlValueAccessor` approach, you only need to expose the right **models** and **inputs** — Angular's `[formField]` directive handles the wiring.
+## 🎯 Goal
 
-A `FormValueControl` can:
+Extract the repeated `mat-form-field` markup into a reusable control that integrates with `[formField]` bindings — the signal-native counterpart to the `ControlValueAccessor` approach.
 
-- Two-way bind its `value` model to the parent form field
-- React to validation state via optional inputs (`invalid`, `errors`, `required`…)
-- Track interaction state via a `touched` model
-- Support disabled states via a `disabled` input
+## 📚 What you'll learn
 
-## What You'll Build
+- The `FormValueControl` interface and how `[formField]` auto-wires it
+- Which models/inputs a custom control exposes (`value`, `touched`, `errors`, `invalid`, `disabled`)
+- Why this is dramatically less boilerplate than `ControlValueAccessor`
 
-A `SfeirCustomInput` component that:
+## ✅ Before you start
 
-- Works with Angular Signal Forms via `[formField]`
-- Supports different input types (text, email, password, etc.)
-- Shows validation messages when the input is invalid and touched
-- Integrates with the `sfeirPhoneSecret` structural directive from the previous exercise
+- Completion of the signal forms (19-signal) and structural directive (27) exercises
+- Start the mock API: `npm run server:start`
 
-## Step 1: Create the Custom Input Component
+## ℹ️ What are custom Signal Form controls?
 
-Create a new file `custom-input.ts` in the `shared/components/custom-input` directory with the following imports:
+A control participates by implementing `FormValueControl` (single value) or `FormCheckboxControl` (boolean). Unlike `ControlValueAccessor`, you only expose the right **models** and **inputs** — `[formField]` handles the wiring: it two-way binds the parent field value to your `value` model, and feeds validation state in through optional inputs.
+
+## 🛠️ Steps
+
+### Step 1 — Implement `FormValueControl`
+
+Create `custom-input.ts` in `shared/components/custom-input`:
 
 ```typescript
 import { ChangeDetectionStrategy, Component, input, model } from '@angular/core';
 import { disabled, form, FormField, FormValueControl, ValidationError } from '@angular/forms/signals';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-```
 
-## Step 2: Implement the `FormValueControl` Interface
-
-Create the component and implement `FormValueControl<string>`:
-
-```typescript
 @Component({
   selector: 'sfeir-custom-input',
   template: `
-    <mat-form-field appearance="outline" subscriptSizing="dynamic" [class.mat-form-field-invalid]="invalid() && touched()">
+    <mat-form-field appearance="outline" subscriptSizing="dynamic"
+                    [class.mat-form-field-invalid]="invalid() && touched()">
       <mat-label>{{ inputPlaceholder() }}</mat-label>
-      <input matInput [type]="inputType()" [placeholder]="inputPlaceholder()" (blur)="touched.set(true)" [formField]="inputField" />
+      <input matInput [type]="inputType()" [placeholder]="inputPlaceholder()"
+             (blur)="touched.set(true)" [formField]="inputField" />
     </mat-form-field>
 
     @if (invalid() && touched()) {
@@ -70,31 +69,14 @@ export class SfeirCustomInput implements FormValueControl<string> {
 }
 ```
 
-This component:
+- `value` is the **only required** part of `FormValueControl`
+- `errors`, `invalid`, `disabled` are optional inputs fed automatically by `[formField]`
+- `touched` is tracked locally and set on blur
+- an internal `form()` drives the native `<input>` and disabled state
 
-- Exposes a `value` model — the only **required** part of `FormValueControl`
-- Receives form state (`errors`, `invalid`, `disabled`) as optional inputs fed automatically by `[formField]`
-- Tracks `touched` locally and sets it on blur
-- Uses an internal `form()` for the native `<input>` binding and disabled state
+### Step 2 — Use it in the form
 
-## Step 3: Understanding `FormValueControl`
-
-The `[formField]` directive detects components implementing `FormValueControl` and two-way binds the parent field value to your `value` model — exactly like a native input.
-
-| Property / input                        | Role                                                |
-| --------------------------------------- | --------------------------------------------------- |
-| `value` (model, required)               | Holds the field value, synced with the parent form  |
-| `touched` (model, optional)             | Tracks whether the user interacted with the control |
-| `disabled` (input, optional)            | Reflects the form's disabled state                  |
-| `invalid` / `errors` (inputs, optional) | Reflect validation state from the schema            |
-
-> Validation rules stay in the **form schema** (`people-form.ts`). The control only **displays** `invalid()` and `errors()`.
-
-## Step 4: Use the Custom Input in the Form Component
-
-Update `form.ts` to import `SfeirCustomInput` and add it to the component's `imports` array.
-
-Then replace the `mat-form-field` blocks in `form.html` with:
+Add `SfeirCustomInput` to the `Form` component's `imports`, then replace the `mat-form-field` blocks in `form.html`:
 
 ```html
 <sfeir-custom-input [formField]="peopleForm.firstname" inputPlaceholder="First name" inputType="text" />
@@ -103,55 +85,47 @@ Then replace the `mat-form-field` blocks in `form.html` with:
 <sfeir-custom-input [formField]="peopleForm.phone" inputPlaceholder="Phone" *sfeirPhoneSecret="let type" [inputType]="type" />
 ```
 
-Notice how:
+> Validation rules stay in the **form schema** (`people-form.ts`). The control only *displays* `invalid()` and `errors()`.
 
-- The custom input is used with `[formField]` just like a native input
-- Validation messages are rendered inside the control when `invalid()` and `touched()` are true
-- The phone input combines the custom control with the `sfeirPhoneSecret` structural directive
-
-## Step 5: Style the Form
-
-Add component styles so the custom input stretches to the full width of its container:
+### Step 3 — Style the control
 
 ```scss
 :host {
   width: 100%;
-
-  mat-form-field {
-    width: 100%;
-  }
+  mat-form-field { width: 100%; }
 }
 ```
 
-## Step 6: Test Your Implementation
-
-Verify your work by running the application:
+## ▶️ Run & verify
 
 ```bash
 npm run client -- 28-custom-control-signal-based
 ```
 
-Test the functionality by:
+Open the form and check:
 
-1. Navigating to a form with your custom inputs
-2. Entering values in the fields
-3. Observing validation messages when fields lose focus
-4. Testing the phone field with the visibility toggle
+- [ ] The custom inputs read/write field values through `[formField]`
+- [ ] Errors appear only when a field is `invalid()` **and** `touched()`
+- [ ] The phone field keeps its visibility toggle
 
 Run the unit tests:
 
 ```bash
-npx nx test 28-custom-control-signal-based-solution
+npm run test -- 28-custom-control-signal-based-solution
 ```
 
-## Key Differences from `ControlValueAccessor`
+## 💡 Key concepts
 
-|                    | Signal Forms (`FormValueControl`) | Reactive Forms (`ControlValueAccessor`) |
-| ------------------ | --------------------------------- | --------------------------------------- |
-| Registration       | Automatic via `[formField]`       | Manual `NG_VALUE_ACCESSOR` provider     |
-| Value binding      | `value` model                     | `writeValue` / `registerOnChange`       |
-| Touched state      | `touched` model                   | `registerOnTouched` callback            |
-| Validation display | `invalid` / `errors` inputs       | Read from parent `FormControl`          |
-| Internal input     | `form()` + `[formField]`          | `FormControl` + `[formControl]`         |
+| | Signal Forms (`FormValueControl`) | Reactive (`ControlValueAccessor`) |
+| --- | --- | --- |
+| Registration | Automatic via `[formField]` | Manual `NG_VALUE_ACCESSOR` provider |
+| Value binding | `value` model | `writeValue` / `registerOnChange` |
+| Touched state | `touched` model | `registerOnTouched` callback |
+| Validation display | `invalid` / `errors` inputs | read from parent `FormControl` |
+| Internal input | `form()` + `[formField]` | `FormControl` + `[formControl]` |
 
-By completing this exercise, you've learned how to build reusable custom controls for Angular Signal Forms — a simpler, signal-native alternative to the `ControlValueAccessor` pattern.
+## 🧯 Troubleshooting
+
+- **Value doesn't bind** — `value` must be a `model()`, and the parent must use `[formField]="peopleForm.x"`.
+- **Errors always/never show** — gate them with `@if (invalid() && touched())`; set `touched` on `(blur)`.
+- **Disabled state ignored** — apply `disabled(inputField, this.disabled)` inside the internal `form()`.

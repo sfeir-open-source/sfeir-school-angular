@@ -1,86 +1,95 @@
-# Angular Services and HTTP Communication Exercise
+# 11 · Services & Dependency Injection
 
-## Objective
+> Move every HTTP call into an injectable `PeopleService` so components stop talking to the network directly.
 
-In this exercise, you'll learn how to create and use Angular services to encapsulate HTTP communication. You'll refactor the existing code to move all HTTP calls into a dedicated service, making your components more maintainable and following the single responsibility principle.
+**Folder** `apps/11-service` · **Solution** `apps/11-service-solution` · **Run** `npm run client -- 11-service`
 
-## Learning Outcomes
+## 🎯 Goal
 
-By the end of this exercise, you'll be able to:
+Right now the Home and People components each build their own HTTP requests. Extract that logic into a single `PeopleService`, inject it, and let components focus on the UI — the single-responsibility principle in action.
 
-- Create and use Angular services
-- Encapsulate HTTP communication in services
-- Use dependency injection to provide services
-- Understand the benefits of the service layer pattern
-- Work with Observables for asynchronous operations
+## 📚 What you'll learn
 
-## Prerequisites
+- How to create an injectable service with `@Injectable({ providedIn: 'root' })`
+- How to inject dependencies with `inject()`
+- Why a service layer improves testability and reuse
 
-- Understanding of Angular components
-- Basic knowledge of HTTP and REST APIs
-- Familiarity with RxJS Observables
-- Completion of previous exercises on components and routing
+## ✅ Before you start
 
-## Exercise Steps
+- Completion of the outputs exercise (10-output)
+- Start the mock API: `npm run server:start`
 
-### Step 1: Create a PeopleService
+## 🛠️ Steps
 
-1. Generate a new service called `PeopleService` in the `core/providers` folder:
-2. Implement the service with the following methods:
-   - `getPeople()` - Fetches the list of all people
-   - `getRandomPeople()` - Fetches a random person
-   - `deletePeople(id: string)` - Deletes a person by ID
+### Step 1 — Create the People service
 
-### Step 2: Update the HomeComponent
+Generate `PeopleService` in `core/providers` and centralize the three operations:
 
-1. Inject the `PeopleService` into the `HomeComponent`
-2. Replace direct httpResource with the resource returned by the people service
+```typescript
+import { HttpClient, httpResource, HttpResourceRef } from '@angular/common/http';
+import { inject, Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { environment } from '../../../environments/environment';
+import { People } from '../../shared/models/people.model';
 
-### Step 3: Update the PeopleComponent
+@Injectable({ providedIn: 'root' })
+export class PeopleService {
+  private readonly httpClient = inject(HttpClient);
 
-1. Inject the `PeopleService` into the `PeopleComponent`
-2. Replace direct HTTP calls with calls to the service methods
+  getPeople(): Observable<Array<People>> {
+    return this.httpClient.get<Array<People>>(`${environment.peopleEndpoint}/peoples`);
+  }
 
-## Testing Your Implementation
+  getRandomPeople(): HttpResourceRef<People> {
+    return httpResource(() => `${environment.peopleEndpoint}/peoples/random`);
+  }
 
-1. Start the application:
+  deletePeople(personId: string): Observable<Array<People>> {
+    return this.httpClient.delete<Array<People>>(`${environment.peopleEndpoint}/peoples/${personId}`);
+  }
+}
+```
 
-   ```bash
-   npm run client -- 11-service
-   ```
+### Step 2 — Use the service in Home
 
-2. Verify that:
-   - The home page still shows a random person
-   - The people page still shows the list of people
-   - Deleting a person from the people page works as expected
-   - The random person refreshes when clicking the button on the home page
+Inject the service and get the random-person resource from it:
 
-## Key Concepts
+```typescript
+export class HomeComponent {
+  private readonly peopleService = inject(PeopleService);
 
-### Angular Services
+  personResource = this.peopleService.getRandomPeople();
 
-Services are a fundamental part of Angular applications. They are:
+  getRandomPerson(): void {
+    this.personResource.reload();
+  }
+}
+```
 
-- Singleton by default (when provided in root)
-- Used to share data and functionality across components
-- Ideal for encapsulating business logic and data access
+### Step 3 — Use the service in People
 
-### Dependency Injection
+Inject the service and replace the inline `httpClient` calls with `getPeople()` and `deletePeople(id)` in your RxJS flow.
 
-Angular's dependency injection system:
+## ▶️ Run & verify
 
-- Manages the creation and lifetime of service instances
-- Makes services available to components and other services
-- Promotes loose coupling and testability
+```bash
+npm run client -- 11-service
+```
 
-### HTTP Communication
+Open <http://localhost:4200> and check:
 
-- The `HttpClient` service is used to make HTTP requests
-- Services encapsulate HTTP calls to keep components focused on the UI
-- Observables are used to handle asynchronous operations
+- [ ] Home still shows a random person and refreshes
+- [ ] People still lists everyone and deletion still works
+- [ ] The behaviour is identical — you only moved *where* the code lives
 
-## Troubleshooting
+## 💡 Key concepts
 
-- **Service Not Found**: Ensure the service is provided in the root injector with `@Injectable({ providedIn: 'root' })`
-- **HTTP Errors**: Check the browser's developer tools network tab for failed requests
-- **No Data**: Verify that the API endpoint in the environment file is correct
+- **`providedIn: 'root'`** — registers a tree-shakable **singleton**: one shared instance for the whole app, created only if something injects it.
+- **`inject()`** — the modern functional way to grab a dependency, usable in field initializers.
+- **Service layer** — components describe *what* they need; the service knows *how* to get it. Swapping the data source later touches one file.
+
+## 🧯 Troubleshooting
+
+- **`No provider for PeopleService`** — ensure the `@Injectable({ providedIn: 'root' })` decorator is present.
+- **Circular/undefined at construction** — inject with `inject(PeopleService)` in a field, not before the class is set up.
+- **No data** — verify the endpoint in `environment.ts` and that the API is running.
