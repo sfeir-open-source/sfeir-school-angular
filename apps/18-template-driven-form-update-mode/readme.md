@@ -1,64 +1,132 @@
-# Exercise 18: Template-driven Form Update Mode
+# 18 · Edit Mode (Reusing the Form)
 
-In this exercise, you'll implement an update form for people using Angular's template-driven forms.
+> Reuse the person form to **edit** an existing person, pre-filled from a route parameter.
 
-## Step 1: Create UpdatePerson Component
+**Folder** `apps/18-template-driven-form-update-mode` · **Solution** `apps/18-template-driven-form-update-mode-solution` · **Run** `npm run client -- 18-template-driven-form-update-mode`
 
-1. Create `UpdatePerson` in the `feature` directory:
-2. Add route in `app.routes.ts` to navigate to the update person page
+## 🎯 Goal
 
-## Step 2: Add Edit Navigation
+Add an update flow: clicking a card's edit icon navigates to `/people/:id`, loads that person, pre-fills the form, and saves changes with `PUT`. The same `Form` component now serves both create and edit.
 
-In `card.component.html`, update the edit button:
+## 📚 What you'll learn
 
-## Step 3: Update the People service
+- Route parameters bound straight to a component input (`withComponentInputBinding`)
+- Loading data reactively with `rxResource`
+- Giving the form component an optional `person` input so it works in both modes
 
-In the `people.service.ts`, add
+## ✅ Before you start
 
-- `updatePerson` method to update the person details (/peoples/{id}) on PUT method
-- `getPersonDetails` method to get the person details (/peoples/{id}) on GET method
+- Completion of the form-validation exercise (17)
+- Start the mock API: `npm run server:start`
 
-## Step 4: Implement UpdatePerson Component
+## 🛠️ Steps
 
-In `update-person.ts`, implement the component to load person details:
+### Step 1 — Create the UpdatePerson component & route
 
-- `id` input to receive the person id (use with the withInputBinding feature router)
-- `peopleResource` to load the person details
-- `updatePerson` method to update the person details
-- `goBack` method to navigate back to the people list
+Create `UpdatePerson` under `feature/update-person`, then register the parameterized route. Enable input binding so `:id` maps to an input:
 
-## Step 5: Update Form Component
+```typescript
+// main.ts
+import { provideRouter, Routes, withComponentInputBinding } from '@angular/router';
 
-1. In `form.component.ts`, add an input for the person data with a default value set to { photo: 'https://randomuser.me/api/portraits/lego/6.jpg' }
-2. Update the form to use the person
+const ROUTES: Routes = [
+  // …existing routes…
+  { path: 'people/:id', component: UpdatePerson },
+];
 
-## Step 6: Create Update Template
+providers: [
+  provideRouter(ROUTES, withComponentInputBinding()),
+  // …
+];
+```
 
-In `update-person.component.html` display the form
+### Step 2 — Link the edit button
 
-## Step 7: Implement Save Logic
+In `card.component.html`, make the edit icon navigate with `routerLink`:
 
-In `update-person.component.ts`, add updatePerson and goBack methods
+```html
+<a mat-button title="Edit" [routerLink]="['/people', person().id]">
+  <mat-icon>create</mat-icon>
+</a>
+```
 
-- updatePerson is the callback of save event of the form
-- goBack is the callback of cancel event of the form
+### Step 3 — Add the service methods
 
-## Testing Your Work
+In `people.service.ts`:
 
-1. Run the application:
+```typescript
+getPersonDetails(personId: string): Observable<People> {
+  return this.httpClient.get<People>(`${environment.peopleEndpoint}/peoples/${personId}`);
+}
 
-   ```bash
-   npm run client -- 18-template-driven-form-update
-   ```
+updatePerson(person: PeopleForm): Observable<void> {
+  return this.httpClient.put<void>(`${environment.peopleEndpoint}/peoples/${person.id}`, person);
+}
+```
 
-2. Click the edit icon on any person card
-3. Verify the form is pre-filled with the person's data
-4. Make changes and save
-5. Verify the changes are reflected in the people list
+### Step 4 — Load the person in UpdatePerson
 
-## Troubleshooting
+`withComponentInputBinding` feeds the `:id` param into a matching input. Load the details with `rxResource`, and add save/back handlers:
 
-- If the form doesn't load, check the browser console for errors
-- Ensure all routes are properly configured
-- Verify the person ID is being correctly passed to the update endpoint
-- Check that the form's submit handler is being called with the correct data personne
+```typescript
+export class UpdatePerson {
+  private readonly peopleService = inject(PeopleService);
+  private readonly location = inject(Location);
+
+  id = input.required<string>();
+  peopleResource = rxResource({
+    params: this.id,
+    stream: ({ params: personId }) => this.peopleService.getPersonDetails(personId),
+  });
+
+  updatePerson(person: PeopleForm): void {
+    this.peopleService.updatePerson(person).subscribe(() => this.goBack());
+  }
+
+  goBack(): void {
+    this.location.back();
+  }
+}
+```
+
+### Step 5 — Make the form accept a person
+
+In `form.ts`, add an optional `person` input (with a default photo) and emit it on submit:
+
+```typescript
+person = input<PeopleForm>({ photo: 'https://randomuser.me/api/portraits/lego/6.jpg' } as PeopleForm);
+
+submit(): void {
+  this.save.emit(this.person());
+}
+```
+
+Bind `[(ngModel)]` in the template to the `person()` fields so the form is pre-filled in edit mode.
+
+### Step 6 — Render the form in edit mode
+
+In `update-person.html`, show the form once the resource has a value, feeding it the loaded person and wiring `(save)` / `(cancel)` to `updatePerson` / `goBack`.
+
+## ▶️ Run & verify
+
+```bash
+npm run client -- 18-template-driven-form-update-mode
+```
+
+Open <http://localhost:4200> → People, and check:
+
+- [ ] The edit icon opens `/people/:id`
+- [ ] The form is pre-filled with that person's data
+- [ ] Saving persists the change (`PUT`) and navigates back to the list
+
+## 💡 Key concepts
+
+- **`withComponentInputBinding()`** — the router assigns route params, query params and data to inputs of the same name — no `ActivatedRoute` boilerplate.
+- **`rxResource`** — like `httpResource`, but you supply the stream. It re-runs whenever its `params` signal changes.
+- **One form, two modes** — an optional `person` input makes the component reusable for both create and edit.
+
+## 🧯 Troubleshooting
+
+- **`id` is undefined** — you forgot `withComponentInputBinding()`, or the input name doesn't match the route param.
+- **Form not pre-filled** — ensure the template binds to `person()` and the resource resolved before rendering.
+- **Save does nothing** — verify `updatePerson` PUTs to `/peoples/:id` and you subscribed to the observable.

@@ -104,3 +104,33 @@ refreshList(value: string): void {
 
 - **outputToObservable** converts an output() to an observable. <br/><br/>
 - **outputFromObservable** converts an observable to an output().
+
+##==##
+
+<!-- .slide: class="with-code inconsolata" -->
+
+# Two-way binding with `model()`
+
+Need an input **and** its matching output (the `[( )]` "banana in a box")? `model()` gives you both from a single writable signal:
+
+<br/>
+
+```typescript
+@Component({ selector: 'app-rating' })
+export class Rating {
+  value = model(0); // creates `value` input + `valueChange` output
+}
+```
+
+<!-- .element: class="medium-code" -->
+
+```html
+<!-- parent template: reads and writes the child's signal -->
+<app-rating [(value)]="rating" />
+```
+
+<!-- .element: class="medium-code" -->
+
+Notes:
+
+- Inside the child, update it like any signal: `this.value.set(4)`. The parent's `rating` stays in sync automatically.

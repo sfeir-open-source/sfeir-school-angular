@@ -43,10 +43,9 @@ export class App {
 
 # Available hooks
 
-- **effect**: called during the change detection phase (called multiple times) <br/><br/>
-- **afterNextRender**: called when the component is rendered (called only on time) <br/><br/>
-- **afterEveryRender**: called each time the component is rendered (called multiple time) <br/><br/>
-- **afterRenderEffects**: called when the component is rendered (called multiple time) <br/><br/>
+- **effect**: runs whenever a signal it reads changes (called multiple times) <br/><br/>
+- **afterNextRender**: runs once, after the **next** render (great for DOM measurement) <br/><br/>
+- **afterEveryRender**: runs after **every** render (called multiple times) <br/><br/>
 
 ##==##
 
@@ -134,10 +133,10 @@ export class App {
 
 - function to **derive** a signal in **asynchronous** with a **promise** <br/><br/>
 - return a **resource** composed of
-  - **value**: WritableSignal which is the result of the derivation
-  - **loading**: Signal which is true when the resource is loading
-  - **error**: Signal which represent the error of the resource
-  - **status**: Signal which represent the status of the resource
+  - **value**: Signal holding the result of the derivation
+  - **isLoading**: Signal which is `true` while the resource is loading
+  - **error**: Signal holding the error, if any
+  - **status**: Signal describing the resource status (`idle`, `loading`, `resolved`, `error`…)
 
 ```typescript
 @Component({

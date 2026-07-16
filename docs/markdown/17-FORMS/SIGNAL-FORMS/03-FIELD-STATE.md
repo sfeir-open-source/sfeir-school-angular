@@ -59,7 +59,7 @@ loginForm.email().reset();
 
 # Showing errors the right way
 
-```angular181html
+```html
 <label>
   Email
   <input type="email" [formField]="loginForm.email" />

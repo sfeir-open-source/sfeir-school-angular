@@ -75,7 +75,7 @@ Notes:
 - the style extension depends on the choice you made when initializing your project
 - You can skip creating the test file by using the `skipTests` option.
 - A shorter command with an alias exists: ng g component user
-- Warning: if the module option is not specified, the component will be imported into the root module
+- The generated component is **standalone** — you import it wherever you need it, there is no NgModule to update
 
 ##==##
 

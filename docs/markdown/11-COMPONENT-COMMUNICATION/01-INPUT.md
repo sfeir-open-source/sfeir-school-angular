@@ -5,13 +5,13 @@
 - Child - Component <br/>
 
 ```typescript
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 @Component({
   selector: 'app-child',
 })
 export class ChildComponent {
-  name = input('');
-  age = input.required();
+  name = input('');            // InputSignal<string>, optional, default ''
+  age = input.required<number>(); // InputSignal<number>, must be provided
 }
 ```
 

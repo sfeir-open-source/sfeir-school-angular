@@ -22,7 +22,7 @@ protected async save(event: Event) {
 
 <!-- .element: class="medium-code" -->
 
-```angular181html
+```html
 <form (submit)="save($event)">
   <!-- fields … -->
   <button type="submit" [disabled]="loginForm().invalid() || loginForm().submitting()">
@@ -98,7 +98,7 @@ export class Checkout {
 
 <!-- .element: class="medium-code" -->
 
-```angular181html
+```html
 <form [formRoot]="checkoutForm">
   <!-- fields … -->
   <button type="submit">Place order</button>

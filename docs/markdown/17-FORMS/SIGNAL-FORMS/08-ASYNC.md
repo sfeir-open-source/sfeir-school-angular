@@ -43,7 +43,7 @@ While async validation runs, `pending()` is `true` and `valid()` is `false`:
 
 <br/>
 
-```angular181html
+```html
 <label>
   Username
   <input [formField]="usernameForm.username" />

@@ -30,7 +30,7 @@
 
 # Example of a structural directive
 
-```angular181html
+```html
 <input *secret="let type" [type]="type"/>
 ```
 

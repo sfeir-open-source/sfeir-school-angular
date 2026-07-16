@@ -1,144 +1,114 @@
-# Exercise 30: Implementing State Management with NGXS
+# 30 · State Management with NGXS
 
-In this exercise, you'll learn how to implement state management in Angular using NGXS. You'll create a store to manage application state, define actions, selectors, and integrate them with your components and services.
+> Manage the People feature's state with NGXS: a state class, actions and memoized selectors.
 
-## What is NGXS?
+**Folder** `apps/30-ngxs-store` · **Solution** `apps/30-ngxs-store-solution` · **Run** `npm run client -- 30-ngxs-store`
 
-NGXS is a state management pattern + library for Angular. It acts as a single source of truth for your application's state, providing simple rules for predictable state mutations.
+## 🎯 Goal
 
-Key concepts in NGXS:
+Re-implement the same people + search state with NGXS, an opinionated, decorator-based state library. You'll define a state container, dispatch actions to mutate it, and select derived (filtered) data.
 
-- **Store**: The global state container
-- **Actions**: Classes that describe unique events
-- **State**: Classes with decorators that define a state container
-- **Selectors**: Methods that slice a specific portion of state
-- **Dispatch**: Method to send actions to the store
+## 📚 What you'll learn
 
-## What You'll Build
+- The NGXS building blocks: `@State`, `@Action`, `@Selector`, dispatch
+- How immutable state updates work
+- How to wire NGXS into a standalone app and connect it to components
 
-In this workshop, you'll implement a state management solution for the People feature that will:
+## ✅ Before you start
 
-- Store the list of people
-- Store and manage search criteria
-- Filter people based on search input
-- Update state when people are added or deleted
+- Start the mock API: `npm run server:start`
 
-## Step 1: Create the Store Directory
+## 🛠️ Steps
 
-First, create a directory structure for your store:
+### Step 1 — Define actions
 
-1. In the `core` folder, create a new directory called `store`
-2. This directory will contain all your store-related files
-
-## Step 2: Create the App Store Service
-
-Create a file called `app-store.ts` in the `store` directory:
-
-## Step 3: Define Actions
-
-Actions are events that trigger state changes. Create two action classes:
-
-These actions will:
-
-- `SetPeople`: Update the people array in the store
-- `SetSearch`: Update the search term in the store
-
-## Step 4: Implement State Logic
-
-Now, implement the state logic in your `AppStore` service:
-
-1. Add a helper method to filter people based on search criteria:
+Actions are event classes with a unique `type`:
 
 ```typescript
-// HELPERS
-static filterPerson(search: string) {
-  return (people: People) =>
-    people.lastname.toLowerCase().includes(search.toLowerCase()) ||
-    people.firstname.toLowerCase().includes(search.toLowerCase());
+export class SetPeople {
+  static readonly type = '[App] SetPeople';
+  constructor(public payload: People[]) {}
+}
+
+export class SetSearch {
+  static readonly type = '[App] SetSearch';
+  constructor(public payload: string) {}
 }
 ```
 
-2. Add memoized selectors to retrieve state
-3. Add action handlers to update state
-4. register in the file `main.ts` your store
+### Step 2 — Define the state, selectors and handlers
 
-## Step 5: Integrate with the People Service
+```typescript
+@State<AppState>({
+  name: 'app',
+  defaults: { people: [], search: '' },
+})
+@Injectable()
+export class AppStore {
+  static filterPerson(search: string) {
+    return (people: People) =>
+      people.lastname.toLowerCase().includes(search.toLowerCase()) ||
+      people.firstname.toLowerCase().includes(search.toLowerCase());
+  }
 
-Update the `PeopleService` to interact with the store:
+  @Selector()
+  static search(state: AppState): string {
+    return state.search;
+  }
 
-1. Import the necessary NGXS functions and your actions:
-2. Add a dispatch map to your service:
-3. Update your service methods to dispatch actions when data changes:
+  @Selector()
+  static people(state: AppState): Array<People> {
+    return state.people.filter(AppStore.filterPerson(state.search));
+  }
 
-## Step 6: Connect the Store to Components
+  @Action(SetPeople)
+  setPeople({ getState, setState }: StateContext<AppState>, { payload }: SetPeople): void {
+    setState({ ...getState(), people: payload });
+  }
 
-Update the `PeopleComponent` to use the store:
+  @Action(SetSearch)
+  setSearch({ getState, setState }: StateContext<AppState>, { payload }: SetSearch): void {
+    setState({ ...getState(), search: payload });
+  }
+}
+```
 
-1. Import the necessary NGXS functions and your actions:
-2. Replace direct service calls with store selectors:
-3. Add a dispatch method for the search action:
+### Step 3 — Register the store
 
-## Step 7: Test Your Implementation
+In `main.ts`:
 
-Run your application to verify that the store is working correctly:
+```typescript
+import { provideStore } from '@ngxs/store';
+import { AppStore } from './app/core/store/app-store';
 
-```shell
+providers: [provideStore([AppStore]), /* … */];
+```
+
+### Step 4 — Connect service & component
+
+- In `people.service.ts`, dispatch `SetPeople` when data changes (`dispatch(SetPeople)`).
+- In `people.component.ts`, read `AppStore.people` / `AppStore.search` selectors and dispatch `SetSearch` from the search bar.
+
+## ▶️ Run & verify
+
+```bash
 npm run client -- 30-ngxs-store
 ```
 
-Test the following functionality:
+Open the People page and check:
 
-1. The list of people should load correctly
-2. Searching should filter the list based on first or last name
-3. Deleting a person should update the list
-4. Adding a new person should update the list
+- [ ] The list loads via the store
+- [ ] Search filters by first/last name
+- [ ] Delete and add both update the state
 
-## Understanding NGXS Patterns
+## 💡 Key concepts
 
-### Immutable State Updates
+- **Immutable updates** — always spread the previous state: `setState({ ...getState(), search })`, enabling predictable changes and time-travel debugging.
+- **Memoized `@Selector`** — recomputes only when its input state slice changes; here it also applies the search filter.
+- **Dispatch styles** — `store.dispatch(new SetSearch(term))` or the functional `dispatch(SetSearch)` helper.
 
-NGXS follows the immutability principle. When updating state, always create a new state object:
+## 🧯 Troubleshooting
 
-```typescript
-setState({
-  ...state, // spread the existing state
-  search: payload, // update only what changes
-});
-```
-
-### Selectors memoized
-
-Selectors can compute derived state:
-
-```typescript
-@Selector()
-static people(state: AppState): Array<People> {
-  return state.people.filter(AppStore.filterPerson(state.search));
-}
-```
-
-This selector not only returns people but also applies filtering based on the current search term.
-
-### Dispatch Patterns
-
-There are multiple ways to dispatch actions in NGXS:
-
-1. Using the Store service directly:
-
-```typescript
-const store = inject(Store);
-
-updateSearch(term: string) {
-  this.store.dispatch(new SetSearch(term));
-}
-```
-
-2. Using the dispatch function (as shown in this workshop):
-
-```typescript
-private readonly setSearch = dispatch(SetSearch);
-// Later in code:
-this.setSearch(searchTerm);
-```
-
-By completing this exercise, you've learned how to implement a complete state management solution using NGXS, including defining state structure, creating actions, implementing selectors, and integrating with Angular services and components.
+- **`No state found`** — register the state via `provideStore([AppStore])` in `main.ts`.
+- **Selector never updates** — make sure you dispatch the action that changes the underlying slice.
+- **Mutation bugs** — never mutate state in place; return a new object.

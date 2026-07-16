@@ -1,65 +1,51 @@
-<!-- .slide: class="with-code inconsolata" data-type-show="on-stage" -->
+<!-- .slide: class="with-code inconsolata" -->
 
-# Migrating from ngFor to @for block
+# `@for` — rendering lists
 
-**Before**
-
-```angular2html
-<ul *ngFor="let user of users$ | async trackBy: trackByFn">
-  <li>{{ user.name }}</li>
-</ul>
-```
-
-<!-- .element: class="big-code" -->
+Iterate over a collection to render a template per item. `track` is **mandatory** — it tells Angular how to identify each item, so it can move DOM nodes instead of rebuilding them.
 
 <br/>
 
-**After**
-
-```angular18html
+```html
 <ul>
-@for(user of users$ | async; track user.id) {
-  <li>{{ user.name }}</li>
-}
+  @for (movie of movies(); track movie.id) {
+    <li>{{ movie.title }}</li>
+  } @empty {
+    <li>No movie to display.</li>
+  }
 </ul>
 ```
 
 <!-- .element: class="big-code" -->
+
+Notes:
+
+- Use a stable unique id (`movie.id`). For a fixed list of primitives you can use `track $index`.
+- The optional `@empty` block renders when the collection is empty.
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
 
-# @for block
+# `@for` — implicit variables
 
-```angular18html
-<ul>
-@for(user of users$ | async; track user.id) {
-  <li>{{ user.name }}</li>
-}
-</ul>
-```
-
-<!-- .element: class="big-code" -->
-
-##==##
-
-<!-- .slide: class="with-code inconsolata" -->
-
-# Implicit variables of the for loop
-
-| Variable | Meaning of the variable                                          |
-| -------- | ---------------------------------------------------------------- |
-| $count   | Number of items in the list                                      |
-| $index   | Index of the item in the list                                    |
-| $first   | First item in the list                                           |
-| $last    | Last item in the list                                            |
-| $even    | Even index                                                       |
-| $odd     | Odd index                                                        |
-| $track   | Tracking function or tracking value (mandatory with @for syntax) |
+Angular exposes contextual variables inside the loop; alias any of them with `let`:
 
 <br/>
 
-Each variable can be aliased with the 'let' keyword
+```html
+@for (movie of movies(); track movie.id; let i = $index, let isEven = $even) {
+  <li>{{ i }} — {{ movie.title }} ({{ isEven ? 'even' : 'odd' }})</li>
+}
+```
 
-<!-- .element: class="important" -->
+<!-- .element: class="medium-code" -->
+
+| Variable | Meaning                                    |
+| -------- | ------------------------------------------ |
+| `$index` | index of the item in the list              |
+| `$count` | number of items in the list                |
+| `$first` | `true` for the first item                  |
+| `$last`  | `true` for the last item                   |
+| `$even`  | `true` when the index is even              |
+| `$odd`   | `true` when the index is odd               |

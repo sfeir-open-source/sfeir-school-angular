@@ -17,7 +17,7 @@ Other configuration options exist, allowing for more advanced routing.
 - <b>outlet: </b>the name of the location where the component should be displayed<br/><br/>
 - <b>data: </b>data passed to the route via ActivatedRoute<br/><br/>
 - <b>canActivate / canDeactivate: </b>allows activating or deactivating the route<br/><br/>
-- <b>resolver: </b>retrieves data before navigating to the route<br/><br/>
+- <b>resolve: </b>retrieves data before navigating to the route<br/><br/>
 - <b>children: </b>an array of sub-route definitions
 
 ##==##
@@ -56,13 +56,16 @@ Notes:
   - Example: `localhost/#/people/1` => `{ useHash: true } | withHashLocation()` <br/><br/>
 
 ```typescript
-// app.module.ts
+// main.ts — the modern, standalone way
+bootstrapApplication(App, {
+  providers: [provideRouter(ROUTES, withHashLocation())],
+});
+
+// legacy, NgModule-based equivalent
 @NgModule({
   imports: [RouterModule.forRoot(ROUTES, { useHash: true })],
 })
 export class AppModule {}
-// main.ts file
-bootstrapApplication(AppComponent, { providers: [provideRouter(ROUTES, withHashLocation())] });
 ```
 
 <!-- .element: class="medium-code" -->
@@ -75,7 +78,7 @@ bootstrapApplication(AppComponent, { providers: [provideRouter(ROUTES, withHashL
 
 <br/><br/><br/>
 
-```angular181html
+```html
 <!-- app.component.html -->
 <section class="container">
   <router-outlet />

@@ -9,7 +9,7 @@
 - From a class decorated with the <b>@Pipe</b> decorator, which has a mandatory `name` property that will be used to call the pipe in an HTML template. <br/><br/>
 - This class implements the <b>transform</b> method, which takes a value as a parameter and optionally an array of arguments. <br/><br/>
 - This <b>transform</b> method performs transformations (or not) but always returns a new value.<br/><br/>
-- Remember to register your Pipe in your module's declarations array (like a component).
+- Pipes are **standalone** by default: import them in a component's `imports` array (no NgModule).
 
 ##==##
 
@@ -42,14 +42,15 @@ export class MultiplyByTwoPipe implements PipeTransform {
 <br/><br/><br/>
 
 ```typescript
-// app.module.ts
-import { NgModule } from '@angular/core';
+// app.ts — import the pipe like any standalone dependency
 import { MultiplyByTwoPipe } from './shared/multiply-by-two.pipe';
 
-@NgModule({
-  declarations: [MultiplyByTwoPipe],
+@Component({
+  selector: 'sfeir-app',
+  templateUrl: './app.html',
+  imports: [MultiplyByTwoPipe],
 })
-export class AppModule {}
+export class App {}
 ```
 
 <!-- .element: class="medium-code" -->
@@ -57,7 +58,7 @@ export class AppModule {}
 <br/>
 
 ```html
-<!-- app.component.html -->
+<!-- app.html -->
 <p>{{ 2 | multiplyByTwo }}</p>
 <!-- displays 4 -->
 ```

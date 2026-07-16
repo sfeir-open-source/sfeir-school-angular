@@ -1,5 +1,17 @@
 import { showByDefault } from './utils.js';
 
+/** Here is all the slides for day two
+ *
+ * Day 2 goes from "a component that renders" to "a real feature": how Angular
+ * gives your components their dependencies (providers & DI), how to transform
+ * what you display (pipes), how to extend the DOM (directives) and finally how
+ * to capture user input safely with the three flavours of forms
+ * (template-driven -> reactive -> signal forms).
+ *
+ * Control flow (@if / @for / @switch) now lives on day 1, right after data
+ * binding, so learners can render lists before they fetch them from a server.
+ */
+
 function providersSlide() {
   const PROVIDERS = '12-PROVIDERS';
   return [
@@ -32,19 +44,6 @@ function pipeSlides() {
   ];
 }
 
-function controlFlowSlides() {
-  const CONTROL_FLOW = '15-CONTROL-FLOW';
-  return [
-    `${CONTROL_FLOW}/00-TRANSITION-SLIDE.md`,
-    `${CONTROL_FLOW}/01-INTRODUCTION.md`,
-    `${CONTROL_FLOW}/02-if.md`,
-    `${CONTROL_FLOW}/03-for.md`,
-    `${CONTROL_FLOW}/04-switch.md`,
-    `${CONTROL_FLOW}/05-migration.md`,
-    `${CONTROL_FLOW}/100-LAB.md`,
-  ];
-}
-
 function directiveSlides() {
   const DIRECTIVE = '16-DIRECTIVE';
   return [
@@ -74,6 +73,8 @@ function reactiveFormSlides() {
     `${FORMS}/REACTIVE-FORMS/100-LAB.md`,
     `${FORMS}/REACTIVE-FORMS/03-CUSTOM-VALIDATION.md`,
     `${FORMS}/REACTIVE-FORMS/101-LAB.md`,
+    `${FORMS}/REACTIVE-FORMS/04-CUSTOM-CONTROL.md`, // custom control with ControlValueAccessor
+    `${FORMS}/REACTIVE-FORMS/102-LAB.md`,
     `${FORMS}/01-SUMMARY.md`,
   ];
 }
@@ -91,7 +92,8 @@ function signalFormSlides() {
     `${FORMS}/SIGNAL-FORMS/07-SCHEMAS.md`,
     `${FORMS}/SIGNAL-FORMS/08-ASYNC.md`,
     `${FORMS}/SIGNAL-FORMS/09-SUBMIT.md`,
-    `${FORMS}/SIGNAL-FORMS/10-CUSTOM-CONTROLS.md`,
+    `${FORMS}/SIGNAL-FORMS/10-CUSTOM-CONTROLS.md`, // FormValueControl / FormCheckboxControl + CVA comparison
+    `${FORMS}/SIGNAL-FORMS/100-LAB.md`,
     `${FORMS}/SIGNAL-FORMS/11-BEST-PRACTICES.md`,
   ].map(showByDefault);
 }
@@ -101,7 +103,6 @@ export function dayTwoSlides() {
     ...providersSlide(),
     ...dependencyInjectionSlides(),
     ...pipeSlides(),
-    ...controlFlowSlides(),
     ...directiveSlides(),
     ...templateDrivenForms(),
     ...reactiveFormSlides(),

@@ -124,7 +124,7 @@ export class MyDirective {
   selector: '[foobar]',
 })
 export class MyDirective {
-  private readonly elementRef = inject(ElementRef<HTMLElement>);
+  private readonly elementRef = inject<ElementRef<HTMLElement>>(ElementRef);
   private readonly renderer = inject(Renderer2);
 }
 ```
@@ -200,7 +200,7 @@ import { EventEmitter, HostListener } from '@angular/core';
 export class MyDirective {
   @Output() somethingChange = new EventEmitter<{ event: MouseEvent; data: any }>();
 
-  @HostListener('click', [$event]) handleClick(event: MouseEvent) {
+  @HostListener('click', ['$event']) handleClick(event: MouseEvent) {
     this.somethingChange.emit({ event, data: 'some data' });
   }
 }

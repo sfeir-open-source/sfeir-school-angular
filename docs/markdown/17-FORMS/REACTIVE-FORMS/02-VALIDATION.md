@@ -18,7 +18,7 @@ export class UserProfileComponent {
 
 <!-- .element: class="small-code" -->
 
-```angular181html
+```html
 <!-- user-profile.component.html -->
 <form [formGroup]="editForm">
   <div>

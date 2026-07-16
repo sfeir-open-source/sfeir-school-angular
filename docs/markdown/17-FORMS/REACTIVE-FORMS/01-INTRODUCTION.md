@@ -33,7 +33,7 @@ For module-based apps, you would add `ReactiveFormsModule` to the `imports` arra
 
 <br/><br/>
 
-> Reactive forms is entirely based on code (means in the component) and manage by
+> With reactive forms, the **component class is the source of truth**: you build an explicit, typed form model in code and the template maps onto it.
 
 ##==##
 
@@ -78,7 +78,7 @@ export class UserProfileComponent implements OnInit {
 
 <br/><br/><br/>
 
-```angular181html
+```html
 <form [formGroup]="profileForm" (ngSubmit)="save()">
   <!-- Bind a simple control -->
   <input type="text" formControlName="firstname" />

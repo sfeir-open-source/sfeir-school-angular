@@ -1,41 +1,95 @@
-# Angular Exercise: Component Basics
+# 02 · Generating a Component with the CLI
 
-## Overview
+> Scaffold a `HomeComponent` with the Nx/Angular generator and boot the app from it.
 
-This exercise will guide you through creating and understanding Angular components. You'll build a simple application with a navigation bar and a home component that displays a welcome message.
+**Folder** `apps/02-ngg` · **Solution** `apps/02-ngg-solution` · **Run** `npm run client -- 02-ngg`
 
-### Step 1: Create the Home Component
+## 🎯 Goal
 
-1. Generate a new home component:
+Instead of writing a component by hand (like in exercise 01), you'll let the CLI generate one for you, then render it as the application root.
 
-   ```bash
-   npx nx generate @nx/angular:component apps/02-ngg/src/app/feature/home --dry-run
-   ```
+## 📚 What you'll learn
 
-The --dry-run option is used to preview the changes that will be made without actually modifying the files.
-Remove it when you're ready to create the component.
+- How to generate a component with `nx generate`
+- What files a component is made of and how they fit together
+- How the `--dry-run` flag lets you preview a generator before touching the disk
 
-2. In `home.component.ts`:
-   - Set up a simple component with a name property
-   - Import and use Angular Material's CardModule
+## 🛠️ Steps
 
-3. In `home.component.html`:
-   - Create a card that displays the name property
+### Step 1 — Generate the Home component
 
-### Step 2: Set Up Routing
+From the workshop root, preview the generation first with `--dry-run`:
 
-Bootstrap the application on the home Component in the `main.ts` file.
+```bash
+npx nx generate @nx/angular:component apps/02-ngg/src/app/feature/home --dry-run
+```
 
-### Step 3: Styling
+`--dry-run` prints the files that **would** be created without writing anything — a safe way to check the path and options. When the output looks right, run the same command **without** `--dry-run` to actually create the component.
 
-Change the selector in the `index.html` file to match the name of the component.
+### Step 2 — Implement the component
 
-## Testing
+In `home.component.ts`, add a `name` property and import Angular Material's card module:
 
-1. Run the application:
-   ```bash
-   npx nx serve 02-ngg
-   ```
-2. Navigate to `http://localhost:4200`
-3. Verify that:
-   - your home component is rendered
+```typescript
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { MatCardModule } from '@angular/material/card';
+
+@Component({
+  selector: 'sfeir-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss'],
+  imports: [MatCardModule],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+})
+export class HomeComponent {
+  name = 'Sfeir';
+}
+```
+
+In `home.component.html`, render the name inside a card:
+
+```html
+<mat-card appearance="outlined">{{ name }}</mat-card>
+```
+
+### Step 3 — Bootstrap on the Home component
+
+In `main.ts`, bootstrap `HomeComponent`:
+
+```typescript
+bootstrapApplication(HomeComponent, {
+  providers: [provideZonelessChangeDetection()],
+}).catch(console.error);
+```
+
+### Step 4 — Match the selector in `index.html`
+
+The app mounts the tag declared in `index.html`. Update the root element so it matches the component's selector (`sfeir-home`):
+
+```html
+<body class="mat-typography">
+  <sfeir-home></sfeir-home>
+</body>
+```
+
+## ▶️ Run & verify
+
+```bash
+npm run client -- 02-ngg
+```
+
+Open <http://localhost:4200> and check:
+
+- [ ] The home component is rendered (a card showing the name)
+- [ ] No error in the DevTools console
+
+## 💡 Key concepts
+
+- **A component = 4 files** — a `.ts` class, an `.html` template, a `.scss` stylesheet and a `.spec.ts` test, generated together and co-located in one folder.
+- **`selector`** — the custom HTML tag the component answers to. The bootstrapped component's selector must exist in `index.html`.
+- **Feature folders** — components that represent a page/screen live under `feature/`. You'll follow this convention throughout the workshop.
+
+## 🧯 Troubleshooting
+
+- **Generator writes to the wrong place** — double-check the path (`apps/02-ngg/src/app/feature/home`) and re-run with `--dry-run` first.
+- **Nothing renders** — confirm the `index.html` tag matches the `sfeir-home` selector and that `main.ts` bootstraps `HomeComponent`.

@@ -1,66 +1,70 @@
-# Exercise 21: Lazy Loading in Angular (folder apps/21-lazyloading)
+# 21 · Lazy Loading Routes
 
-In this workshop, you'll implement lazy loading for the main features of your application. Lazy loading is a design pattern that improves application performance by loading modules only when they're needed, reducing the initial bundle size and improving startup time.
+> Load feature components only when their route is visited, shrinking the initial bundle.
 
-## Step 1: Understand the Current Routing Configuration
+**Folder** `apps/21-lazyloading` · **Solution** `apps/21-lazyloading-solution` · **Run** `npm run client -- 21-lazyloading`
 
-Currently, all components are eagerly loaded in the `main.ts` file:
+## 🎯 Goal
+
+Today every component is imported eagerly in `main.ts`, so it all ships in the first bundle. Switch the People and UpdatePerson routes to **lazy loading** so their code is fetched on demand.
+
+## 📚 What you'll learn
+
+- The difference between eager and lazy route loading
+- How to lazy-load a standalone component with `loadComponent` + dynamic `import()`
+- How to confirm code-splitting in the Network tab
+
+## ✅ Before you start
+
+- Start the mock API: `npm run server:start`
+
+## 🛠️ Steps
+
+### Step 1 — Notice the eager imports
+
+`main.ts` currently imports each feature component at the top and references it via `component:`. Everything loads at startup, even routes the user never visits.
+
+### Step 2 — Lazy-load People
+
+Remove the top-level `PeopleComponent` import and switch the route to `loadComponent`:
 
 ```typescript
-import { HomeComponent } from './app/feature/home/home.component';
-import { PeopleComponent } from './app/feature/people/people.component';
-import { UpdatePerson } from './app/feature/update-person/update-person';
-
-const ROUTES: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
-  { path: 'people', component: PeopleComponent },
-  { path: 'people/:id', component: UpdatePerson },
-];
+{
+  path: 'people',
+  loadComponent: async () => (await import('./app/feature/people/people.component')).PeopleComponent,
+},
 ```
 
-This means all components are loaded when the application starts, even if the user doesn't visit all routes.
+### Step 3 — Lazy-load UpdatePerson
 
-## Step 2: Implement Lazy Loading for the People Component
+Do the same for the parameterized route:
 
-1. In `main.ts`, remove the import for `PeopleComponent`:
+```typescript
+{
+  path: 'people/:id',
+  loadComponent: async () => (await import('./app/feature/update-person/update-person')).UpdatePerson,
+},
+```
 
-2. Update the route configuration for the 'people' path to use lazy loading:
+## ▶️ Run & verify
 
-## Step 3: Implement Lazy Loading for the UpdatePerson Component
+```bash
+npm run client -- 21-lazyloading
+```
 
-1. In `main.ts`, remove the import for `UpdatePerson`:
-2. Update the route configuration for the 'people/:id' path to use lazy loading:
+Open <http://localhost:4200>, open DevTools → **Network**, filter by JS, and check:
 
-## Step 4: Test Your Implementation
+- [ ] On first load, only the main + Home code is fetched
+- [ ] Navigating to **People** downloads a **new** chunk
+- [ ] Editing a person downloads the UpdatePerson chunk on demand
 
-1. Run the application:
+## 💡 Key concepts
 
-   ```bash
-   npm run client -- 21-lazyloading
-   ```
+- **`loadComponent`** — the standalone way to lazy-load a single component; `import()` creates a separate bundle the router fetches when the route activates.
+- **Bundle splitting** — deferring rarely-used features improves first paint and time-to-interactive.
+- **Preloading (going further)** — `withPreloading(PreloadAllModules)` can warm lazy chunks in the background after the app boots.
 
-2. Open your browser's developer tools and navigate to the Network tab
+## 🧯 Troubleshooting
 
-3. Observe the network requests as you navigate through the application:
-   - When you first load the app, only the main bundle and HomeComponent should be loaded
-   - When you navigate to the People list, a new JavaScript bundle for the PeopleComponent should be loaded
-   - When you navigate to edit a person, a new JavaScript bundle for the UpdatePerson component should be loaded
-
-## Benefits of Lazy Loading
-
-- **Faster initial loading**: Only the necessary code for the current route is loaded
-- **Better resource utilization**: Memory consumption is reduced as unused modules aren't loaded
-- **Improved user experience**: Users get to interact with the application sooner
-
-## Troubleshooting
-
-- If you encounter errors about missing modules, ensure your import paths are correct
-- Check the browser console for any errors related to loading modules
-- Verify that your component exports are properly named in their respective files
-
-## Additional Notes
-
-- Lazy loading works best for larger features that aren't needed immediately
-- Consider preloading strategies for frequently accessed routes to improve user experience
-- The Angular Router provides additional options for controlling how and when modules are loaded
+- **`Cannot find module`** — check the import path and that the export name (`PeopleComponent`) matches.
+- **No extra chunk appears** — you likely left the eager `import` at the top of `main.ts`; remove it.

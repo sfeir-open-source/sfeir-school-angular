@@ -1,77 +1,93 @@
-# Angular @for Loop Exercise
+# 08 · Rendering Lists with `@for`
 
-## Objective
+> Fetch the full list of people and render it with Angular's `@for` control-flow block.
 
-In this exercise, you'll learn how to use Angular's new control flow syntax with the `@for` loop to display lists of data. You'll work with the `httpResource` to fetch data and display it in your components.
+**Folder** `apps/08-ng-for` · **Solution** `apps/08-ng-for-solution` · **Run** `npm run client -- 08-ng-for`
 
-## Learning Outcomes
+## 🎯 Goal
 
-By the end of this exercise, you'll be able to:
+Build a **People** page that lists every person returned by the API. You'll fetch the collection, convert the resulting observable into a signal, and loop over it in the template with `@for`.
 
-- Use the `@for` loop to iterate over collections
-- Work with the new control flow syntax in Angular
-- Fetch and display data using `httpResource`
-- Create reusable components with proper typing
-- Handle loading states in your templates
+## 📚 What you'll learn
 
-## Prerequisites
+- The modern `@for` control-flow block (the successor to `*ngFor`) and its `track` and `@empty`
+- How to bridge RxJS and signals with `toSignal`
+- How to register a second route/view
 
-- Basic understanding of Angular components
-- Familiarity with TypeScript
-- Completion of previous exercises on components and services
+## ✅ Before you start
 
-## Exercise Steps
+- Completion of the routing exercise (07-router)
+- Start the mock API: `npm run server:start`
 
-### Step 1: Set Up the People Component
+## 🛠️ Steps
 
-1. Create a new component called `PeopleComponent` in the `feature/people` folder
-2. Update the component to use the `toSignal` to fetch a list of people from the API (/peoples)
-3. Use the `@for` loop to display each person in a card
+### Step 1 — Create the People component
 
-## Step 2: Register a new view
+Create `PeopleComponent` under `feature/people`. Fetch the list with `HttpClient` and expose it as a signal via `toSignal`:
 
-1. Register a new path called people in the `main.ts` file
+```typescript
+import { HttpClient } from '@angular/common/http';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { environment } from '../../../environments/environment';
+import { People } from '../../shared/models/people.model';
 
-## Testing Your Implementation
+export class PeopleComponent {
+  private readonly httpClient = inject(HttpClient);
 
-1. Start the application:
-
-   ```bash
-   npm run client -- 08-ng-for
-   ```
-
-2. Verify that:
-   - The home page displays a random person's information
-   - Clicking the refresh button loads a new random person
-   - The "List" link in the navigation works
-   - The people page displays a list of all people
-   - The UI is responsive and styled correctly
-
-## Key Concepts
-
-### @for Loop
-
-The `@for` loop is a new control flow syntax in Angular that replaces `*ngFor`. It provides better type checking and performance improvements.
-
-```html
-@for (item of items(); track item.id) {
-<!-- Template for each item -->
-} @empty {
-<!-- Template when collection is empty -->
+  people = toSignal(
+    this.httpClient.get<Array<People>>(`${environment.peopleEndpoint}/peoples`),
+    { initialValue: [] },
+  );
 }
 ```
 
-### toSignal
+### Step 2 — Loop with `@for`
 
-The `toSignal` is a utility that helps convert observables to signals. It takes an observable and an optional configuration object as parameters.
+In `people.component.html`, iterate over `people()`. **Always** provide a `track` expression, and handle the empty case with `@empty`:
 
-```typescript
-const configObject = { initialValue: '[]', sync: true | false };
+```html
+<section>
+  @for (person of people(); track person.id) {
+    <mat-card appearance="outlined">
+      <mat-card-title>{{ person.firstname }} {{ person.lastname }}</mat-card-title>
+      <mat-card-subtitle>{{ person.email }}</mat-card-subtitle>
+      <!-- …the rest of the card… -->
+    </mat-card>
+  } @empty {
+    No people for the moment
+  }
+</section>
 ```
 
-## Troubleshooting
+### Step 3 — Register the `people` route
 
-- **Blank Page**: Ensure all components are properly imported and declared in the `main.ts` file
-- **Type Errors**: Check that all properties accessed in the template exist in the corresponding TypeScript interfaces
-- **Missing Styles**: Verify that all required Angular Material modules are imported
-- **API Errors**: Make sure the backend server is running and accessible at the specified endpoint
+In `main.ts`, add a route so the view is reachable:
+
+```typescript
+{ path: 'people', component: PeopleComponent },
+```
+
+## ▶️ Run & verify
+
+```bash
+npm run client -- 08-ng-for
+```
+
+Open <http://localhost:4200> and check:
+
+- [ ] The **List** link navigates to the people page
+- [ ] Every person from the API is rendered as a card
+- [ ] The home page still shows a random person with a working refresh button
+
+## 💡 Key concepts
+
+- **`@for … track`** — `track` gives each item a stable identity so Angular can move DOM nodes instead of re-creating them. Use a unique id (`person.id`), never the index for dynamic lists.
+- **`@empty`** — a first-class "no results" block, no extra `@if` needed.
+- **`toSignal`** — subscribes to an observable and exposes its latest value as a signal. Pass `{ initialValue: [] }` so the template has data to render before the first HTTP response arrives.
+
+## 🧯 Troubleshooting
+
+- **Blank list** — is the API running (`npm run server:start`) and reachable at `/api/peoples`?
+- **`track` error** — every `@for` must declare a `track` expression.
+- **Type errors in template** — the properties you read must exist on the `People` model.

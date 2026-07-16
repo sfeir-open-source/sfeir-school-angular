@@ -1,43 +1,41 @@
-# Exercise 27: Creating a Structural Directive in Angular
+# 27 · Structural Directive
 
-In this exercise, you'll learn how to create a custom structural directive in Angular. You'll implement a directive that adds a toggle button to hide/show sensitive information like phone numbers, demonstrating how structural directives can enhance your UI with reusable behaviors.
+> Build a `*sfeirPhoneSecret` directive that adds a show/hide toggle to a phone input.
 
-## What Are Structural Directives?
+**Folder** `apps/27-structural-directive` · **Solution** `apps/27-structural-directive-solution` · **Run** `npm run client -- 27-structural-directive`
 
-Structural directives are a powerful feature in Angular that modify the DOM layout by adding, removing, or manipulating elements. Unlike attribute directives that change the appearance or behavior of an existing element, structural directives actually change the structure of the DOM.
+## 🎯 Goal
 
-Common built-in structural directives include:
+Create a structural directive that wraps an input, renders it through a helper component, and adds a visibility button to switch the field between `text` and `password`.
 
-- `*ngIf` - conditionally adds or removes elements
-- `*ngFor` - repeats elements for each item in an array
-- `*ngSwitch` - conditionally displays one element from a set
+## 📚 What you'll learn
 
-Keep in mind the structural directives above are deprecated, and now you should use the @-block
+- What structural directives are and how the `*` syntax desugars
+- How `TemplateRef` and `ViewContainerRef` let a directive render content dynamically
+- How to create a component at runtime with `createComponent` + `inputBinding`
 
-All structural directives use the asterisk (\*) prefix syntax, which is syntactic sugar for a more complex template transformation.
+## ✅ Before you start
 
-## What You'll Build
+- Completion of the custom directive exercises (15, 26)
+- Start the mock API: `npm run server:start`
 
-A `*sfeirPhoneSecret` directive that:
+## ℹ️ How the `*` syntax works
 
-- Allows toggling between showing a phone number as plain text or as a password
-- Adds a visibility toggle button next to the input field
-- Demonstrates advanced directive techniques with component creation
+`*sfeirPhoneSecret="let type"` is sugar for:
 
-## Step 1: Create the Directive File
-
-Create a new file `phone-secret.ts` in the `shared/directives` directory with the following imports:
-
-```typescript
-import { Component, Directive, inject, input, inputBinding, signal, TemplateRef, ViewContainerRef } from '@angular/core';
-import { MatIconModule } from '@angular/material/icon';
-import { NgTemplateOutlet } from '@angular/common';
-import { MatButtonModule } from '@angular/material/button';
+```html
+<ng-template [sfeirPhoneSecret]="">
+  <input [type]="type" … />
+</ng-template>
 ```
 
-## Step 2: Create a Helper Component
+That's why a structural directive receives a `TemplateRef` — it's the content Angular wraps in the generated `ng-template`. The `let type` variable binds to the context's `$implicit` value.
 
-First, create a helper component that will be dynamically created by our directive. This component will render both the original input and a toggle button:
+## 🛠️ Steps
+
+### Step 1 — Create the helper component
+
+The directive renders this component, which shows the original input (via `ngTemplateOutlet`) plus a toggle button:
 
 ```typescript
 @Component({
@@ -50,100 +48,67 @@ First, create a helper component that will be dynamically created by our directi
       </button>
     </div>
   `,
-  styles: `
-    .container-field-icon {
-      display: flex;
-      gap: 1rem;
-    }
-  `,
+  styles: `.container-field-icon { display: flex; gap: 1rem; }`,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-class Phone {}
+class Phone {
+  templateRef = input.required<TemplateRef<{ $implicit: string }>>();
+  type = signal('text');
+
+  changeVisibility(event: MouseEvent): void {
+    event.stopPropagation();
+    this.type.update(type => (type === 'text' ? 'password' : 'text'));
+  }
+}
 ```
 
-This component:
+### Step 2 — Implement the directive
 
-- Takes a `templateRef` input that will receive the original template
-- Uses a signal to track the current input type ('text' or 'password')
-- Provides a method to toggle between visibility states
-- Uses `NgTemplateOutlet` to render the original template with the current type as context
+Inject the host `TemplateRef` and a `ViewContainerRef`, then create the `Phone` component and hand it the template:
 
-## Step 3: Implement the Structural Directive
+```typescript
+@Directive({ selector: '[sfeirPhoneSecret]' })
+export class PhoneSecret {
+  private readonly templateRef = inject(TemplateRef<{ $implicit: string }>);
+  private readonly viewContainerRef = inject(ViewContainerRef);
 
-Now, create the actual structural directive that will use the helper component:
+  constructor() {
+    this.viewContainerRef.createComponent(Phone, {
+      bindings: [inputBinding('templateRef', () => this.templateRef)],
+    });
+  }
+}
+```
 
-This directive:
-
-- Uses the selector `[sfeirPhoneSecret]` to match elements with the `*sfeirPhoneSecret` attribute
-- Injects the `TemplateRef` which contains the host element and its attributes
-- Injects the `ViewContainerRef` which represents the container where views can be attached
-- Creates an instance of the `Phone` component and binds the template reference to it
-
-## Step 4: Use the Directive in a Form
-
-Apply your directive to an input field in your form:
+### Step 3 — Use it on the phone field
 
 ```html
 <mat-form-field appearance="outline">
   <mat-label>Phone</mat-label>
-  <input *sfeirPhoneSecret="let type" [type]="type" matInput placeholder="phone" name="phone" formControlName="phone" required pattern="\d{10}" />
-  <!-- Error messages -->
+  <input *sfeirPhoneSecret="let type" [type]="type" matInput placeholder="phone" formControlName="phone" />
 </mat-form-field>
 ```
 
-The `*sfeirPhoneSecret="let type"` syntax:
-
-- Creates a template from the host element (the input)
-- Defines a variable `type` that will receive the `$implicit` value from the context
-- Binds this variable to the input's `[type]` property
-
-## Step 5: Understanding the Magic Behind Structural Directives
-
-### The Asterisk (\*) Syntax
-
-When you write `*sfeirPhoneSecret="let type"`, Angular transforms it to:
-
-```html
-<ng-template [sfeirPhoneSecret]="">
-  <input [type]="type" ... />
-</ng-template>
-```
-
-This is why structural directives receive a `TemplateRef` - it's the content inside the generated `ng-template`.
-
-### The Context Object
-
-The `{ $implicit: type() }` context object allows the directive to pass data to the template. The `$implicit` property is what gets bound to the variable in `let type`.
-
-### Component Creation vs. Embedded View
-
-This directive uses `createComponent()` instead of the more common `createEmbeddedView()` approach. This allows us to:
-
-1. Create a wrapper component with additional UI elements (the toggle button)
-2. Maintain state (the current visibility type)
-3. Add behavior (the toggle functionality)
-
-## Step 6: Test Your Implementation
-
-Verify your work by running the application:
+## ▶️ Run & verify
 
 ```bash
 npm run client -- 27-structural-directive
 ```
 
-Test the functionality by:
+Open the person form and check:
 
-1. Navigating to a form with a phone field
-2. Entering a phone number
-3. Clicking the visibility toggle button to switch between text and password modes
+- [ ] The phone field shows a visibility toggle button
+- [ ] Clicking it switches the field between visible text and masked password
+- [ ] The field still participates in the form
 
-## Advanced Concepts
+## 💡 Key concepts
 
-### Input Binding
+- **`TemplateRef` + `ViewContainerRef`** — the building blocks of dynamic rendering: the template to stamp, and the place to stamp it.
+- **`$implicit` context** — the value bound to `let type`; the directive feeds the current `type` back into the input.
+- **`createComponent` vs `createEmbeddedView`** — creating a *component* lets you wrap the projected input in extra UI (the button) and hold state (the current type).
 
-The `inputBinding()` function is a modern Angular API that creates a binding between a component input and a value provider. It's used here to connect the directive's template reference to the component's input.
+## 🧯 Troubleshooting
 
-### ViewContainerRef
-
-The `ViewContainerRef` represents a container where one or more views can be attached. It's a key part of dynamic UI manipulation in Angular, allowing for programmatic creation of components and views.
-
-By completing this exercise, you've learned how to create a powerful structural directive that enhances form inputs with additional functionality while maintaining a clean, reusable interface.
+- **Input doesn't render** — ensure the helper uses `ngTemplateOutlet` with the `$implicit` context and the directive passes `templateRef`.
+- **Toggle doesn't switch** — the button must `stopPropagation()` and `update` the `type` signal.
+- **Legacy note** — `*ngIf`/`*ngFor`/`*ngSwitch` are the old structural directives; prefer `@if`/`@for`/`@switch` for control flow. Custom structural directives like this one are still the right tool for DOM-shaping behaviour.

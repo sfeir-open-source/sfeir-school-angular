@@ -22,7 +22,7 @@ HttpClient provides the following methods, among others:<br/><br/>
 
 ```typescript
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-function postData(url: string, data: any): Observable<T> {
+function postData<T>(url: string, data: unknown): Observable<T> {
   return this.http.post<T>(
     url,
     data,

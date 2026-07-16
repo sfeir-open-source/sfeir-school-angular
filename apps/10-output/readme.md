@@ -1,81 +1,106 @@
-# Angular Component Outputs Exercise
+# 10 · Component Outputs
 
-## Objective
+> Emit a delete event from the card and let each parent handle it differently.
 
-In this exercise, you'll learn how to use component outputs in Angular to handle user interactions. You'll implement a delete functionality in the card component and handle the event differently in the home and people components.
+**Folder** `apps/10-output` · **Solution** `apps/10-output-solution` · **Run** `npm run client -- 10-output`
 
-## Learning Outcomes
+## 🎯 Goal
 
-By the end of this exercise, you'll be able to:
+Add a delete button to the reusable card. The card doesn't decide *what* deleting means — it just **emits** an event. The People view removes the person from the list; the Home view loads a new random person. Same child, two behaviours.
 
-- Use the `output` function to define component outputs
-- Emit events from child to parent components
-- Handle events differently in different parent components
-- Implement delete functionality with proper event handling
-- Work with RxJS for handling asynchronous operations
+## 📚 What you'll learn
 
-## Prerequisites
+- How to define a component **output** with `output()` and emit events
+- How a child notifies a parent (the mirror image of inputs)
+- How to model a delete-and-refresh flow with RxJS (`Subject`, `merge`, `switchMap`)
 
-- Understanding of Angular components and inputs
-- Basic knowledge of RxJS
-- Completion of the previous exercise on component inputs
+## ✅ Before you start
 
-## Exercise Steps
+- Completion of the inputs exercise (09-input)
+- Start the mock API: `npm run server:start`
 
-### Step 1: Update the Card Component
+## 🛠️ Steps
 
-1. Add an output property to the `CardComponent` to emit delete events
-2. Implement a method to handle the delete button click
-3. Update the template to trigger the delete method
+### Step 1 — Emit from the Card component
 
-### Step 2: Update the People Component
+Add a `personDelete` output and a method that emits the current person:
 
-1. Implement the `deletePerson` method to handle the delete event
-2. Use RxJS to manage the people list state and handle API calls (peoples/:id)
-3. Update the template to handle the `personDelete` event
+```typescript
+import { ChangeDetectionStrategy, Component, input, output } from '@angular/core';
+import { People } from '../../models/people.model';
 
-### Step 3: Update the Home Component
+export class CardComponent {
+  person = input.required<People>();
+  personDelete = output<People>();
 
-1. Update the template to handle the `personDelete` event by refreshing the random person
+  deletePerson(person: People): void {
+    this.personDelete.emit(person);
+  }
+}
+```
 
-## Testing Your Implementation
+In `card.component.html`, wire the delete button to `deletePerson(person())`.
 
-1. Start the application:
+### Step 2 — Handle deletion in the People view
 
-   ```bash
-   npm run client -- 10-output
-   ```
+Delete on the server, then keep the list in sync. Model it as a reactive flow that **merges** the initial fetch with the delete stream:
 
-2. Test the delete functionality:
-   - On the home page, deleting a person should load a new random person
-   - On the people page, deleting a person should remove them from the list
+```typescript
+import { merge, Subject, switchMap } from 'rxjs';
 
-## Key Concepts
+export class PeopleComponent {
+  private readonly httpClient = inject(HttpClient);
 
-### Component Outputs
+  private readonly triggerDeletePeople$ = new Subject<string>();
+  private readonly retrievePeople$ = this.httpClient.get<Array<People>>(`${environment.peopleEndpoint}/peoples`);
+  private readonly deletePeople$ = this.triggerDeletePeople$.pipe(
+    switchMap(id => this.httpClient.delete<Array<People>>(`${environment.peopleEndpoint}/peoples/${id}`)),
+  );
+  private readonly peopleFlow$ = merge(this.retrievePeople$, this.deletePeople$);
 
-Output properties allow child components to emit events to their parent components. In this exercise, we use the `output` function to define a `personDelete` output in the `CardComponent`.
+  people = toSignal(this.peopleFlow$, { initialValue: [] });
 
-### Event Handling
+  deletePerson({ id }: People): void {
+    this.triggerDeletePeople$.next(id);
+  }
+}
+```
 
-- The `CardComponent` emits a `personDelete` event when the delete button is clicked
-- The parent components (`HomeComponent` and `PeopleComponent`) handle this event differently based on their needs
+In the template, bind the output: `<sfeir-card [person]="person" (personDelete)="deletePerson($event)" />`.
 
-### RxJS for managing the user flow
+### Step 3 — Handle deletion in the Home view
 
-- The `PeopleComponent` uses RxJS to manage the people list state and handle API calls
-- The `merge` operator combines multiple observables into one
-- The `switchMap` operator is used to chain the delete API call
+On Home, deleting simply means "give me another one". Bind the same output to the existing refresh logic:
 
-## Troubleshooting
+```html
+<sfeir-card [person]="person()" (personDelete)="getRandomPerson()" />
+```
 
-- **Event Not Emitted**: Ensure you're calling the `emit` method on the output property
-- **Event Not Received**: Check that the event binding in the parent template matches the output property name
-- **API Errors**: Verify that the API endpoint is correct and the server is running
+## ▶️ Run & verify
 
-## Next Steps
+```bash
+npm run client -- 10-output
+```
 
-1. Add a confirmation dialog before deleting a person
-2. Implement error handling for failed API calls
-3. Add a loading indicator during API operations
-4. Add a success message after a successful delete operation
+Open <http://localhost:4200> and check:
+
+- [ ] On **People**, deleting a card removes that person from the list
+- [ ] On **Home**, deleting loads a new random person
+- [ ] The delete request is visible in the Network tab (`DELETE /peoples/:id`)
+
+## 💡 Key concepts
+
+- **`output<T>()`** — declares an event stream a child emits with `.emit(value)`; the parent listens with `(outputName)="handler($event)"`.
+- **Inputs down, outputs up** — data flows into a component through inputs; notifications flow out through outputs. The child stays reusable because it never hard-codes the reaction.
+- **`switchMap`** — maps the delete trigger to an HTTP call; the returned (updated) list flows back through `toSignal`. **`merge`** combines the initial load and the delete responses into one stream.
+
+## 🧯 Troubleshooting
+
+- **Event never received** — the binding name must match the output: `(personDelete)`.
+- **Nothing emitted** — check you call `this.personDelete.emit(person)` in the click handler.
+- **List doesn't refresh** — confirm the delete endpoint returns the updated list and that both streams are `merge`d.
+
+## 🚀 Going further
+
+- Add a confirmation dialog before deleting.
+- Show a loading indicator while the delete request is in flight.

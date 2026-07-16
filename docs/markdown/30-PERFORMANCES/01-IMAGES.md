@@ -80,7 +80,7 @@ Notes:
 
 Replace `src` with `ngSrc`: <br/><br/>
 
-```angular181html
+```html
 <!-- Before: Standard img tag -->
 <img src="profile.jpg" width="200" height="200" alt="Profile picture" />
 
@@ -373,7 +373,7 @@ bootstrapApplication(AppComponent, appConfig);
 
 <!-- .element: class="small -code" -->
 
-```angular181html
+```html
 <!-- hero.component.html -->
 <div class="hero-container" style="position: relative; height: 50vh;">
   <img ngSrc="hero-image.jpg" fill priority sizes="100vw" placeholder alt="Hero image" />

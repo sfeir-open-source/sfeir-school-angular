@@ -66,7 +66,7 @@ loginForm().value(); // { email: 'ada@sfeir.com', password: '' }
 
 # Bind it in the template
 
-```angular181html
+```html
 <form>
   <label>
     Email
@@ -98,7 +98,7 @@ Notes:
 
 # `[formField]` works with native inputs
 
-```angular181html
+```html
 <!-- text / email / password -->
 <input type="text" [formField]="form.name" />
 

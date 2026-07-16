@@ -14,7 +14,7 @@
 - **Component Library**: Utilizes Material Design components (e.g., `mat-toolbar`, `mat-checkbox`, `mat-card`) <br/><br/>
 - **Focus Area**: This training emphasizes Angular concepts rather than Material Design specifics <br/><br/>
 - **Flexibility**: Material Design is optional for your projects <br/><br/>
-- **Documentation**: [Angular Material](https://material.angular.io/)
+- **Documentation**: [Angular Material](https://material.angular.dev/)
 
 ##==##
 
@@ -27,7 +27,7 @@
 
 ##==##
 
-# Qwik word and Alternative
+# Quick word and alternatives
 
 - **Material Design**: Google's comprehensive design system focusing on:
   - Clean, intuitive interfaces

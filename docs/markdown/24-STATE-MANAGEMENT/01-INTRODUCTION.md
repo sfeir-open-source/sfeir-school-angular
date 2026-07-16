@@ -22,15 +22,16 @@ We need to find a common communication method.
 
 ##==##
 
-# 3 Ways to Communicate
+# Ways to share state
 
-There are two main families of communication:<br/><br/>
+Two main families of communication:<br/><br/>
 
-- **Parent-Child**: - Input / Output (e.g., `input()`, `output()` in an Angular application)
+- **Parent-Child**: `input()` / `output()` / `model()` — great locally, painful across a large tree
   <br/><br/>
 - **Independent Elements**
-  - Communication Bus (e.g., notification system, event emitter...)
-  - Flux Architecture
+  - a **shared service** (the modern default: a service exposing **signals**)
+  - a Communication Bus (notification system, event emitter…)
+  - a Flux/Redux architecture (a dedicated state-management library)
 
 ##==##
 
@@ -54,7 +55,8 @@ There are two main families of communication:<br/><br/>
 # State Management
 
 - Dataflow architecture: like Redux :)<br/><br/>
-- Requires installing a third-party library
+- Requires a third-party library (ELF, NgRx, NgXS…)<br/><br/>
+- For simple to medium apps, a **service exposing signals** (`signal` + `computed`) is often enough — reach for a library when the state and its transitions become complex
 
 ##++##
 

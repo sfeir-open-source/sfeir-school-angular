@@ -1,56 +1,93 @@
-# Exercise 15-directive-custom (folder apps/15-directive-custom)
+# 15 · Custom Attribute Directive
 
-In this workshop, you'll learn how to create your own custom directive in Angular. We'll create a badge directive that shows a manager icon when a person is marked as a manager.
+> Build a `sfeirBadge` directive that stamps a manager icon next to managers in the list view.
 
-We'll also introduce the concept of input aliasing to reduce boilerplate in your templates when using this directive.
+**Folder** `apps/15-directive-custom` · **Solution** `apps/15-directive-custom-solution` · **Run** `npm run client -- 15-directive-custom`
 
-## Step 1: Create Directives Directory
+## 🎯 Goal
 
-In the `shared` folder, create a new directory called `directives`. This is where we'll place our custom directives.
+Create your first custom directive. When a person is a manager, the directive injects a Material icon into its host element — and you'll alias its input so the template reads cleanly.
 
-## Step 2: Generate Badge Directive
+## 📚 What you'll learn
 
-Create a new directive called `Badge` in the `directives` folder.
+- How to generate and write an attribute directive
+- How to read an aliased signal **input** inside a directive
+- How to manipulate the host element safely with `ElementRef` + `Renderer2`, reacting to changes with `effect()`
 
-## Step 3: Add Input with Alias
+## ✅ Before you start
 
-In your `BadgeDirective`, add an input property called `isManager` and alias it as `sfeirBadge`.
+- Start the mock API: `npm run server:start`
 
-## Step 4: Inject Required Services
+## 🛠️ Steps
 
-In the `BadgeDirective` inject the following services:
+### Step 1 — Create the directives folder & directive
 
-- `ElementRef<HTMLElement>` as `elementRef`
-- `Renderer2` as `renderer2`
+In `shared`, create a `directives` folder and generate a `Badge` directive in it.
 
-## Step 5: Implement the Badge Logic
+### Step 2 — Declare an aliased input
 
-Use the `effect` function to react to changes in the `isManager` input. When `isManager` is true, display a manager icon using Material Icons.
+Add a required boolean input, exposed to templates under the alias `sfeirBadge`:
 
-icon to use: supervisor_account
+```typescript
+isManager = input.required<boolean>({ alias: 'sfeirBadge' });
+```
 
-## Step 6: Use the Directive in Template
+> 💡 Aliasing lets the selector and the input share one name — `[sfeirBadge]="…"` sets the value **and** matches the directive.
 
-In the `people.component.html` file, add the `sfeirBadge` directive to the person's name in list view mode:
+### Step 3 — Inject the host & renderer, then react
+
+Inject `ElementRef` and `Renderer2`, and use an `effect()` to update the host whenever `isManager` changes:
+
+```typescript
+import { Directive, effect, ElementRef, inject, input, Renderer2 } from '@angular/core';
+
+@Directive({ selector: '[sfeirBadge]' })
+export class Badge {
+  private readonly elementRef = inject(ElementRef<HTMLElement>);
+  private readonly renderer2 = inject(Renderer2);
+
+  isManager = input.required<boolean>({ alias: 'sfeirBadge' });
+
+  constructor() {
+    effect(() => {
+      this.renderer2.setProperty(
+        this.elementRef.nativeElement,
+        'innerHTML',
+        this.isManager() ? '<i class="material-icons">supervisor_account</i>' : '',
+      );
+    });
+  }
+}
+```
+
+### Step 4 — Use it in the list view
+
+In `people.component.html`, apply the directive right after the person's name in the **list** view, and add `Badge` to the component `imports`:
 
 ```html
 <span [sfeirBadge]="person.isManager"></span>
 ```
 
-Place this span right after the `h3` tag that displays the person's name.
-
-## Step 7: Test Your Work
-
-To see your custom directive in action, run the application with:
+## ▶️ Run & verify
 
 ```bash
 npm run client -- 15-directive-custom
 ```
 
-## Troubleshooting
+Open <http://localhost:4200>, switch to the list view, and check:
 
-- If you don't see the icon, make sure Material Icons is properly imported in your `index.html`
-- Check the browser console for any errors
-- Verify that the `isManager` property is correctly set in your person objects
+- [ ] Managers show a `supervisor_account` icon next to their name
+- [ ] Non-managers show nothing
+- [ ] No error in the DevTools console
 
-Happy coding! 🚀
+## 💡 Key concepts
+
+- **Attribute directive** — attaches behaviour/appearance to an existing element via a `[selector]`, without its own template.
+- **`Renderer2`** — the platform-safe way to touch the DOM (works with SSR and avoids direct `nativeElement` mutations).
+- **`effect()`** — re-runs whenever any signal it reads changes; here it re-renders the badge each time `isManager` flips.
+
+## 🧯 Troubleshooting
+
+- **No icon appears** — make sure Material Icons is loaded (`index.html`) and you're on the list view.
+- **`sfeirBadge` does nothing** — confirm the alias matches the selector and that `Badge` is in the component `imports`.
+- **`Required input is not set`** — bind the value: `[sfeirBadge]="person.isManager"`.

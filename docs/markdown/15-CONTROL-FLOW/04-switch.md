@@ -1,53 +1,28 @@
-<!-- .slide: class="with-code inconsolata" data-type-show="on-stage" -->
+<!-- .slide: class="with-code inconsolata" -->
 
-# Migrating from ngSwitch to @switch block
+# `@switch` — one of many
 
-**Before**
+Pick a single branch based on a value, like a JavaScript `switch`. Matching uses strict equality (`===`), with an optional `@default`:
 
-```angular2html
-<div [ngSwitch]="(user$ | async)?.role">
-  <div *ngSwitchCase="'admin'">Admin</div>
-  <div *ngSwitchCase="'user'">User</div>
-  <div *ngSwitchDefault>Guest</div>
-</div>
-```
+<br/>
 
-**After**
-
-```angular17html
-@if (user$ | async; as user) {
-  @switch(user.role) {
-    @case('admin') {
-      <div>Admin</div>
-    }
-    @case('user') {
-      <div>User</div>
-    }
-    @default {
-      <div>Guest</div>
-    }
+```html
+@switch (user().role) {
+  @case ('admin') {
+    <admin-panel />
+  }
+  @case ('member') {
+    <member-area />
+  }
+  @default {
+    <guest-view />
   }
 }
 ```
 
-##==##
+<!-- .element: class="big-code" -->
 
-<!-- .slide: class="with-code inconsolata"-->
+Notes:
 
-# @switch block
-
-```angular17html
-@if (user$ | async; as user) {
-  @switch(user.role) {
-    @case('admin') {
-      <div>Admin</div>
-    }
-    @case('user') {
-      <div>User</div>
-    }
-    @default {
-      <div>Guest</div>
-    }
-  }
-}
-```
+- There is no fall-through: only the first matching `@case` renders.
+- `@default` is optional; if no case matches and there is no default, nothing renders.

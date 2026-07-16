@@ -8,10 +8,15 @@
 
 # The component
 
-The component is made up of three basic concepts.
-<br/><br/>
+A component is the **building block** of any Angular application. It is made up of three parts:
 
-![](assets/images/school/architecture/components.png 'center h-600')
+<br/>
+
+![](assets/images/school/architecture/components.png 'center h-500')
+
+<br/>
+
+- a **template** (the HTML view), some **styles**, and a **class** (the logic)
 
 ##==##
 
@@ -19,41 +24,51 @@ The component is made up of three basic concepts.
 
 # The component: its logic
 
-The component's logic uses the ES2015 class syntax
-<br/><br/>
+The logic lives in a plain TypeScript **class**. State is held in **signals**:
+
+<br/>
 
 ```typescript
-export class AppComponent {
-  name: string;
+export class App {
+  name = signal('Angular');
 
-  constructor() {
-    this.name = 'Angular';
+  rename() {
+    this.name.set('Angular 22');
   }
 }
 ```
 
 <!-- .element: class="big-code" -->
+
 <br/>
+
+Notes:
+
+- `signal()` creates a reactive value. You read it with `name()` and write it with `.set()` / `.update()`.
+- The template re-renders automatically whenever a signal it reads changes — no manual refresh.
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
 
-# The component: its template
+# The component: its metadata
 
-The component is displayed on the page using a decorator
-<br/><br/>
+A class becomes a component through the `@Component` **decorator**, which links it to a template and styles:
+
+<br/>
 
 ```typescript
-// app.component.ts
+// app.ts
 @Component({
   selector: 'sfeir-app',
-  templateUrl: 'app.component.html',
-  styleUrls: ['app.component.scss']
+  templateUrl: './app.html',
+  styleUrl: './app.scss',
 })
+export class App {}
 ```
 
 <!-- .element: class="big-code" -->
+
 <br/>
 
 ```html
@@ -62,9 +77,11 @@ The component is displayed on the page using a decorator
 ```
 
 <!-- .element: class="big-code" -->
-<br/>
+
 Notes:
-- A @Component decorator is always placed above a class. Without this class, the build and the linter will show an error
+
+- The `@Component` decorator always sits directly above the class. Without it, Angular does not know the class is a component.
+- `selector` is the custom HTML tag you use to place the component in a template.
 
 ##==##
 
@@ -72,22 +89,19 @@ Notes:
 
 # The component: as a whole
 
-Writing a component in its entirety is therefore as follows
-<br/><br/>
+Putting it together, a full component looks like this:
+
+<br/>
 
 ```typescript
-// app.component.ts
+// app.ts
 @Component({
   selector: 'sfeir-app',
-  templateUrl: 'app.component.html',
-  styleUrls: ['app.component.scss'],
+  templateUrl: './app.html',
+  styleUrl: './app.scss',
 })
-export class AppComponent {
-  name: string;
-
-  constructor() {
-    this.name = 'Angular';
-  }
+export class App {
+  name = signal('Angular');
 }
 ```
 
@@ -97,42 +111,39 @@ export class AppComponent {
 
 <!-- .slide: class="with-code inconsolata" -->
 
-# Components are Standalone
+# Components are standalone
 
-Standalone components are Angular components that do not require an NgModule to be declared. Introduced in Angular v14, they simplify the structure of Angular applications by allowing components, directives, and pipes to be self-contained and directly imported where needed.
+Since **Angular 19**, components are **standalone by default**: they no longer need to be declared in an `NgModule`. A component declares its own dependencies through `imports`.
 
-Today (since Angular v19) standalone components are the default way to structure Angular applications. But before (Angular v14 - v18), they were optional.
+<br/>
 
 ```typescript
 @Component({
   selector: 'sfeir-app',
-  templateUrl: 'app.component.html',
-  styleUrls: ['app.component.scss'],
-  standalone: true,
-  imports: [CommonModule], //imports module or standalone components, pipes and directives
+  templateUrl: './app.html',
+  styleUrl: './app.scss',
+  imports: [UserCard, UpperCasePipe], // components, directives and pipes used in the template
 })
-export class AppComponent {}
+export class App {}
 ```
 
 <!-- .element: class="medium-code" -->
 
-##==##
+Notes:
 
-# Why do teams choose standalone components?
-
-- **Simpler Architecture:** Eliminates the need for boilerplate NgModules, making projects easier to navigate and maintain.
-- **Better Reusability:** Components can be shared and imported directly, improving modularity and code sharing across projects.
-- **Faster Onboarding:** New developers can focus on components without learning module configuration.
-- **Improved Tree-Shaking:** Smaller bundles, as only used components are included in the final build.
-- **Modern Angular:** Aligns with the latest Angular best practices and ecosystem evolution.
-
-> Standalone components empower teams to build modern, maintainable, and scalable Angular applications with less overhead.
+- Standalone was introduced in v14 (optional), became the recommended approach in v17, and the default in v19.
+- The `standalone: true` flag is now implicit — you only write `standalone: false` for the rare legacy component that still belongs to an NgModule.
 
 ##==##
 
-# Properties of a standalone component
+<!-- .slide -->
 
-- **Self-contained:** Components are self-contained and do not require an NgModule to be declared. <br/> <br/>
-- **Directly imported:** Components can be directly imported where needed, making them easy to reuse across projects. <br/> <br/>
-- **Lazy loading:** Components can be loaded lazily, making them efficient for on-demand loading of features. <br/> <br/>
-- **Virtual Module:** Application can be boostrap directly with a standalone component
+# Why standalone?
+
+- **Simpler architecture** — no `NgModule` boilerplate to navigate or maintain <br/><br/>
+- **Explicit dependencies** — a component's `imports` show exactly what it uses <br/><br/>
+- **Better tree-shaking** — the bundler keeps only what is actually imported <br/><br/>
+- **Easier lazy loading** — any standalone component can be loaded on demand <br/><br/>
+- **Faster onboarding** — new developers focus on components, not module wiring
+
+> Standalone components let teams build modern, maintainable, and scalable Angular applications with far less overhead.

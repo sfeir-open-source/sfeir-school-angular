@@ -1,99 +1,70 @@
-# Exercise 12-pipe-using (dossier apps/12-pipe-use)
+# 12 · Using Built-in Pipes
 
-# Angular Pipes Exercise
+> Format a person's birth date in the template with Angular's `DatePipe`.
 
-## Objective
+**Folder** `apps/12-pipe-using` · **Solution** `apps/12-pipe-using-solution` · **Run** `npm run client -- 12-pipe-using`
 
-In this exercise, you'll learn how to use Angular's built-in pipes to format data displayed in your templates. Specifically, you'll format a date of birth to make it more readable for users.
+## 🎯 Goal
 
-## Learning Outcomes
+Display the raw `birthDate` as a human-friendly `dd/MM/yyyy` string — without touching the data — using a **pipe** directly in the template.
 
-By the end of this exercise, you'll be able to:
+## 📚 What you'll learn
 
-- Understand what Angular pipes are and their purpose
-- Use built-in Angular pipes in templates
-- Format dates using Angular's date pipe
-- Learn the pipe syntax in Angular templates
+- What pipes are and when to use them
+- How to import and apply a built-in pipe (`DatePipe`)
+- The pipe syntax, including parameters and chaining
 
-## Prerequisites
+## ✅ Before you start
 
-- Understanding of Angular components
-- Basic knowledge of Angular templates
-- Familiarity with Angular modules
+- Start the mock API: `npm run server:start`
 
-## Exercise Steps
+## 🛠️ Steps
 
-### Step 1: Import the DatePipe
+### Step 1 — Import the DatePipe
 
-1. Open the `card.component.ts` file
-2. In the imports array, add the DatePipe
+Pipes are standalone: add `DatePipe` to the card component's `imports`:
 
-### Step 2: Apply the Date Pipe
+```typescript
+import { DatePipe } from '@angular/common';
 
-Now that we have access to Angular's built-in pipes, we can use the date pipe to format the birthdate:
+@Component({
+  // …
+  imports: [MatCardModule, MatIconModule, MatButtonModule, NgOptimizedImage, DatePipe],
+})
+export class CardComponent { /* … */ }
+```
 
-1. Open the `card.component.html` file
-2. Find the birthDate display section in the template
-3. Modify it to use the date pipe with the format 'dd/MM/yyyy':
+### Step 2 — Apply it in the template
 
-The pipe syntax uses the `|` character followed by the pipe name and any parameters the pipe accepts. In this case, we're using the format 'dd/MM/yyyy' as a parameter for the date pipe.
+In `card.component.html`, format the birth date where it's displayed:
 
-## Testing Your Implementation
+```html
+<div class="contact-info">
+  birthDate <a href="birthDate">{{ person().birthDate | date: 'dd/MM/yyyy' }}</a>
+</div>
+```
 
-To test your implementation, run the application:
+The `|` applies the pipe; `'dd/MM/yyyy'` is the format argument.
+
+## ▶️ Run & verify
 
 ```bash
 npm run client -- 12-pipe-using
 ```
 
-Verify that:
+Open <http://localhost:4200> and check:
 
-- The person card shows the birthdate formatted as day/month/year (e.g., "25/12/1990")
-- The date format follows the European standard with day first, then month, then year
+- [ ] The birth date renders as day/month/year, e.g. `25/12/1990`
+- [ ] The underlying value is unchanged — only the display is transformed
 
-## Key Concepts
+## 💡 Key concepts
 
-### Angular Pipes
+- **Pipe syntax** — `{{ value | pipeName:arg1:arg2 }}`. Pipes are pure functions that transform a value for display only.
+- **Chaining** — `{{ value | date:'shortDate' | uppercase }}` feeds each result into the next pipe.
+- **Common built-ins** — `date`, `uppercase` / `lowercase`, `currency`, `decimal`, `percent`, `json`, `async`.
 
-Pipes in Angular are simple functions that accept an input value and return a transformed value. They are used in template expressions to transform data before displaying it to the user.
+## 🧯 Troubleshooting
 
-### Pipe Syntax
-
-The basic syntax for using pipes in Angular templates is:
-
-```
-{{ value | pipeName:parameter1:parameter2:... }}
-```
-
-Where:
-
-- `value` is the expression to be transformed
-- `pipeName` is the name of the pipe
-- `parameter1`, `parameter2`, etc. are optional parameters passed to the pipe
-
-### Built-in Pipes
-
-Angular provides several built-in pipes, including:
-
-- `DatePipe`: Formats dates according to locale rules or custom formats
-- `UpperCasePipe`: Transforms text to uppercase
-- `LowerCasePipe`: Transforms text to lowercase
-- `CurrencyPipe`: Transforms a number to a currency string
-- `DecimalPipe`: Transforms a number to a decimal string
-- `PercentPipe`: Transforms a number to a percentage string
-
-### Pipe Chaining
-
-Pipes can be chained together to apply multiple transformations:
-
-```
-{{ value | pipe1 | pipe2 | pipe3 }}
-```
-
-The output of each pipe becomes the input to the next pipe in the chain.
-
-## Troubleshooting
-
-- **No Pipe Found**: Make sure the CommonModule is imported in your module
-- **Incorrect Format**: Check the format string passed to the date pipe
-- **Date Isn't Displayed**: Ensure the date value is a valid date object or string
+- **`No pipe found with name 'date'`** — you didn't add `DatePipe` to the component `imports`.
+- **Wrong output** — double-check the format tokens (`dd` day, `MM` month, `yyyy` year — case matters).
+- **`Invalid Date`** — the source value must be a `Date`, an ISO string or an epoch number.

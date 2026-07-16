@@ -1,76 +1,81 @@
 <!-- .slide -->
 
-# Angular: a component tree
+# An application is a tree of components
 
 ![](assets/images/school/components/component_tree.png 'h-300 center')
 
-## Key Concepts
+<br/>
 
-- Components are the building blocks of Angular applications
-- Each component is a self-contained UI element with its own template, styles, and logic
-- Components can be nested to create complex UI hierarchies
-- The root component (AppComponent) serves as the entry point of the application
-- Components communicate through input properties and output events
-- Each component has its own lifecycle hooks for managing its state
+- Components are the **building blocks** of an Angular application
+- Each one bundles its own **template**, **styles** and **logic**
+- They **nest** to form a tree, rooted at a single component (bootstrapped in `main.ts`)
+- Parents and children **communicate** through inputs, outputs and shared services
 
 ##==##
 
-# The @Component decorator
+<!-- .slide -->
 
-A component's identity card<br/>
+# The `@Component` decorator
 
-- selector: Defines the HTML tag name to use this component (**mandatory**)
-- template/templateUrl: Defines the view structure (**mandatory**)
-- styles/styleUrls: Defines the component's styles
-- changeDetection: Controls how often the component checks for changes
-- providers: Defines dependency injection providers
-- animations: Defines animations for the component
-- viewProviders: Defines providers for the component's view
-- exportAs: Makes the component referenceable in templates
+The decorator is the component's **identity card**. The most common options:
+
+- **selector** — the HTML tag used to place the component _(mandatory)_
+- **template / templateUrl** — the view _(one of them is mandatory)_
+- **styles / styleUrl / styleUrls** — the component's styles
+- **imports** — components, directives and pipes used in the template
+- **providers** — dependency-injection providers scoped to this component
+- **changeDetection** — the change-detection strategy (default or `OnPush`)
+- **host** — bindings and listeners applied to the component's own element
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
 
-# The @Component decorator
+# The `@Component` decorator
 
 ```typescript
 @Component({
-  selector: 'sfeir-app',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css'],
+  selector: 'sfeir-home',
+  templateUrl: './home.html',
+  styleUrl: './home.scss',
+  imports: [UserCard],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  animations: [trigger('fadeInOut', [transition(':enter', [style({ opacity: 0 }), animate('300ms', style({ opacity: 1 }))])])],
 })
-export class App {}
+export class Home {}
 ```
 
 <!-- .element: class="big-code" -->
 
+Notes:
+
+- `ChangeDetectionStrategy.OnPush` is a good default for signal-based components; it tells Angular to check the component only when its inputs or signals change.
+
 ##==##
+
+<!-- .slide -->
 
 # Nesting components
 
-When a parent component wants to use child components<br/>
+When a parent renders a child component:
 
-- child components must be referenced using their selectors <br/><br/>
-- child components must be declared in the "imports" of the <b>@Components()</b> <br/><br/>
-- Components can communicate through:
-  - Input properties (input function)
-  - Output events (output function)
-  - Template reference variables (#)
-  - viewChild/contentChild function
-  - Services (shared state)
+- the child is placed via its **selector** <br/><br/>
+- the child must be listed in the parent's **`imports`** (standalone) <br/><br/>
+- parent and child communicate through:
+  - **`input()`** — data flowing down (parent → child)
+  - **`output()`** — events flowing up (child → parent)
+  - **template reference variables** (`#ref`)
+  - **`viewChild()` / `contentChild()`** — querying children
+  - **services** — shared state across the tree
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
 
-# Nesting Components
+# Nesting components
 
 ```html
 <!-- app.html -->
-<sfeir-home [title]="pageTitle" (onSubmit)="handleSubmit($event)">
+<sfeir-home [title]="pageTitle()" (saved)="handleSave($event)">
   <sfeir-header />
   <sfeir-footer />
 </sfeir-home>
@@ -80,14 +85,18 @@ When a parent component wants to use child components<br/>
 
 ```typescript
 // app.ts
-import { Home } from './app/home';
-import { Header } from './app/header';
-import { Footer } from './app/footer';
+import { Home } from './home';
+import { Header } from './header';
+import { Footer } from './footer';
 
 @Component({
-  import: [Home, Header, Footer],
+  selector: 'sfeir-app',
+  templateUrl: './app.html',
+  imports: [Home, Header, Footer],
 })
-export class App {}
+export class App {
+  pageTitle = signal('Dashboard');
+}
 ```
 
 <!-- .element: class="medium-code" -->
