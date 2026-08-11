@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, input, model } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input, model, output } from '@angular/core';
 import { disabled, form, FormField, FormValueControl, ValidationError } from '@angular/forms/signals';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -8,7 +8,7 @@ import { MatInputModule } from '@angular/material/input';
   template: `
     <mat-form-field appearance="outline" subscriptSizing="dynamic" [class.mat-form-field-invalid]="invalid() && touched()">
       <mat-label>{{ inputPlaceholder() }}</mat-label>
-      <input matInput [type]="inputType()" [placeholder]="inputPlaceholder()" (blur)="touched.set(true)" [formField]="inputField" />
+      <input matInput [type]="inputType()" [placeholder]="inputPlaceholder()" (blur)="touch.emit()" [formField]="inputField" />
     </mat-form-field>
 
     @if (invalid() && touched()) {
@@ -33,7 +33,8 @@ export class SfeirCustomInput implements FormValueControl<string> {
   errors = input<readonly ValidationError.WithOptionalFieldTree[]>([]);
   invalid = input<boolean>(false);
   disabled = input<boolean>(false);
-  touched = model<boolean>(false);
+  touched = input<boolean>(false);
+  touch = output<void>();
   inputPlaceholder = input<string>();
   inputType = input<string>();
 

@@ -85,15 +85,6 @@
       "options": {
         "buildTarget": "28-custom-control-reactive-based-solution:build"
       }
-    },
-    "test": {
-      "outputs": [
-        "{projectRoot}/{options.coverage.reportsDirectory}",
-        "{workspaceRoot}/coverage/apps/28-custom-control-reactive-based-solution"
-      ],
-      "options": {
-        "coverage.reportsDirectory": "../../../coverage/apps/28-custom-control-reactive-based-solution"
-      }
     }
   }
 }

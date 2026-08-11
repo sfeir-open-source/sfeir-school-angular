@@ -25,5 +25,6 @@ export default defineConfig(() => ({
       reportsDirectory: '../../coverage/apps/01-hands-on',
       provider: 'v8' as const,
     },
+    passWithNoTests: true,
   },
 }));

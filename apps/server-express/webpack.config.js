@@ -8,6 +8,7 @@ const configValues = {
       tsConfig: './tsconfig.app.json',
       target: 'node',
       compiler: 'tsc',
+      outputHashing: 'none',
     },
     production: {
       optimization: true,

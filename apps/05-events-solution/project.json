@@ -8,17 +8,27 @@
   "targets": {
     "build": {
       "executor": "@angular/build:application",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "defaultConfiguration": "production",
       "options": {
         "outputPath": "dist/apps/05-events-solution",
         "index": "apps/05-events-solution/src/index.html",
         "browser": "apps/05-events-solution/src/main.ts",
-        "polyfills": ["apps/05-events-solution/src/polyfills.ts"],
+        "polyfills": [
+          "apps/05-events-solution/src/polyfills.ts"
+        ],
         "tsConfig": "apps/05-events-solution/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/05-events-solution/src/favicon.ico", "apps/05-events-solution/src/assets"],
-        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/05-events-solution/src/styles.scss"],
+        "assets": [
+          "apps/05-events-solution/src/favicon.ico",
+          "apps/05-events-solution/src/assets"
+        ],
+        "styles": [
+          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+          "apps/05-events-solution/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -68,12 +78,6 @@
       "executor": "@angular/build:extract-i18n",
       "options": {
         "buildTarget": "05-events-solution:build"
-      }
-    },
-    "test": {
-      "outputs": ["{projectRoot}/{options.coverage.reportsDirectory}", "{workspaceRoot}/coverage/apps/05-events-solution"],
-      "options": {
-        "coverage.reportsDirectory": "../../../coverage/apps/05-events-solution"
       }
     }
   }

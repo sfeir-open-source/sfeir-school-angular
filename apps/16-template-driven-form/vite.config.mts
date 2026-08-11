@@ -25,5 +25,6 @@ export default defineConfig(() => ({
       reportsDirectory: '../../coverage/apps/16-template-driven-form',
       provider: 'v8' as const,
     },
+    passWithNoTests: true,
   },
 }));

@@ -85,16 +85,6 @@
       "options": {
         "buildTarget": "28-custom-control-signal-based-solution:build"
       }
-    },
-    "test": {
-      "outputs": [
-        "{projectRoot}/{options.coverage.reportsDirectory}",
-        "{workspaceRoot}/coverage/apps/28-custom-control-signal-based-solution"
-      ],
-      "options": {
-        "passWithNoTests": true,
-        "coverage.reportsDirectory": "../../../coverage/apps/28-custom-control-signal-based-solution"
-      }
     }
   }
 }

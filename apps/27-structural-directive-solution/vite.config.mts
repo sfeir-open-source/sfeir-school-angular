@@ -25,5 +25,6 @@ export default defineConfig(() => ({
       reportsDirectory: '../../coverage/apps/27-structural-directive-solution',
       provider: 'v8' as const,
     },
+    passWithNoTests: true,
   },
 }));

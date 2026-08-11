@@ -25,5 +25,6 @@ export default defineConfig(() => ({
       reportsDirectory: '../../coverage/apps/26-hostbinding-hostlistener',
       provider: 'v8' as const,
     },
+    passWithNoTests: true,
   },
 }));

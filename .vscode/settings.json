@@ -45,7 +45,9 @@
     "testid",
     "UTARA",
     "whiteframe",
-    "wrappez"
+    "wrappez",
+    "esnext",
+    "nodenext"
   ],
-  "typescript.tsdk": "node_modules/typescript/lib"
+  "js/ts.tsdk.path": "node_modules/typescript/lib"
 }

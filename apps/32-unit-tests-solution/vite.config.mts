@@ -25,5 +25,6 @@ export default defineConfig(() => ({
       reportsDirectory: '../../coverage/apps/32-unit-tests-solution',
       provider: 'v8' as const,
     },
+    passWithNoTests: true,
   },
 }));

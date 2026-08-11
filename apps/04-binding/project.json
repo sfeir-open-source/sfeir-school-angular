@@ -8,17 +8,27 @@
   "targets": {
     "build": {
       "executor": "@angular/build:application",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "defaultConfiguration": "production",
       "options": {
         "outputPath": "dist/apps/04-binding",
         "index": "apps/04-binding/src/index.html",
         "browser": "apps/04-binding/src/main.ts",
-        "polyfills": ["apps/04-binding/src/polyfills.ts"],
+        "polyfills": [
+          "apps/04-binding/src/polyfills.ts"
+        ],
         "tsConfig": "apps/04-binding/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/04-binding/src/favicon.ico", "apps/04-binding/src/assets"],
-        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/04-binding/src/styles.scss"],
+        "assets": [
+          "apps/04-binding/src/favicon.ico",
+          "apps/04-binding/src/assets"
+        ],
+        "styles": [
+          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+          "apps/04-binding/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -68,13 +78,6 @@
       "executor": "@angular/build:extract-i18n",
       "options": {
         "buildTarget": "04-binding:build"
-      }
-    },
-    "test": {
-      "outputs": ["{projectRoot}/{options.coverage.reportsDirectory}", "{workspaceRoot}/coverage/apps/04-binding"],
-      "options": {
-        "passWithNoTests": true,
-        "coverage.reportsDirectory": "../../../coverage/apps/04-binding"
       }
     }
   }

@@ -2,10 +2,21 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "types": ["node", "express"]
+    "module": "NodeNext",
+    "moduleResolution": "nodenext",
+    "types": [
+      "node",
+      "express"
+    ]
   },
-  "exclude": ["**/*.spec.ts", "**/*.test.ts", "**/*.spec.js", "**/*.test.js"],
-  "include": ["**/*.ts", "**/*.js"]
+  "exclude": [
+    "**/*.spec.ts",
+    "**/*.test.ts",
+    "**/*.spec.js",
+    "**/*.test.js"
+  ],
+  "include": [
+    "**/*.ts",
+    "**/*.js"
+  ]
 }

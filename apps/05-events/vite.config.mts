@@ -25,5 +25,6 @@ export default defineConfig(() => ({
       reportsDirectory: '../../coverage/apps/05-events',
       provider: 'v8' as const,
     },
+    passWithNoTests: true,
   },
 }));
