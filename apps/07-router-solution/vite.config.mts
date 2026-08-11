@@ -25,5 +25,6 @@ export default defineConfig(() => ({
       reportsDirectory: '../../coverage/apps/07-router-solution',
       provider: 'v8' as const,
     },
+    passWithNoTests: true,
   },
 }));

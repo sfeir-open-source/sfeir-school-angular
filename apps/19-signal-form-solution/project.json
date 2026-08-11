@@ -85,15 +85,6 @@
       "options": {
         "buildTarget": "19-signal-form-solution:build"
       }
-    },
-    "test": {
-      "outputs": [
-        "{projectRoot}/{options.coverage.reportsDirectory}",
-        "{workspaceRoot}/coverage/apps/19-signal-form-solution"
-      ],
-      "options": {
-        "coverage.reportsDirectory": "../../../coverage/apps/19-signal-form-solution"
-      }
     }
   }
 }

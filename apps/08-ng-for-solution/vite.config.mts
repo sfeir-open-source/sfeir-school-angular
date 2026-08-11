@@ -25,5 +25,6 @@ export default defineConfig(() => ({
       reportsDirectory: '../../coverage/apps/08-ng-for-solution',
       provider: 'v8' as const,
     },
+    passWithNoTests: true,
   },
 }));

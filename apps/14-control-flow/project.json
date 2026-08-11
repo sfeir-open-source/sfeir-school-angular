@@ -8,17 +8,27 @@
   "targets": {
     "build": {
       "executor": "@angular/build:application",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "defaultConfiguration": "production",
       "options": {
         "outputPath": "dist/apps/14-control-flow",
         "index": "apps/14-control-flow/src/index.html",
         "browser": "apps/14-control-flow/src/main.ts",
-        "polyfills": ["apps/14-control-flow/src/polyfills.ts"],
+        "polyfills": [
+          "apps/14-control-flow/src/polyfills.ts"
+        ],
         "tsConfig": "apps/14-control-flow/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/14-control-flow/src/favicon.ico", "apps/14-control-flow/src/assets"],
-        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/14-control-flow/src/styles.scss"],
+        "assets": [
+          "apps/14-control-flow/src/favicon.ico",
+          "apps/14-control-flow/src/assets"
+        ],
+        "styles": [
+          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+          "apps/14-control-flow/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -74,13 +84,6 @@
       "executor": "@angular/build:extract-i18n",
       "options": {
         "buildTarget": "14-control-flow:build"
-      }
-    },
-    "test": {
-      "outputs": ["{projectRoot}/{options.coverage.reportsDirectory}", "{workspaceRoot}/coverage/apps/14-control-flow"],
-      "options": {
-        "passWithNoTests": true,
-        "coverage.reportsDirectory": "../../../coverage/apps/14-control-flow"
       }
     }
   }

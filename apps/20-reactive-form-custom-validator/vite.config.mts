@@ -25,5 +25,6 @@ export default defineConfig(() => ({
       reportsDirectory: '../../coverage/apps/20-reactive-form-custom-validator',
       provider: 'v8' as const,
     },
+    passWithNoTests: true,
   },
 }));

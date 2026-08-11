@@ -25,5 +25,6 @@ export default defineConfig(() => ({
       reportsDirectory: '../../coverage/apps/04-binding',
       provider: 'v8' as const,
     },
+    passWithNoTests: true,
   },
 }));

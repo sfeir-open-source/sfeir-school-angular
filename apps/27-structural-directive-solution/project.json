@@ -8,17 +8,27 @@
   "targets": {
     "build": {
       "executor": "@angular/build:application",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "defaultConfiguration": "production",
       "options": {
         "outputPath": "dist/apps/27-structural-directive-solution",
         "index": "apps/27-structural-directive-solution/src/index.html",
         "browser": "apps/27-structural-directive-solution/src/main.ts",
-        "polyfills": ["apps/27-structural-directive-solution/src/polyfills.ts"],
+        "polyfills": [
+          "apps/27-structural-directive-solution/src/polyfills.ts"
+        ],
         "tsConfig": "apps/27-structural-directive-solution/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/27-structural-directive-solution/src/favicon.ico", "apps/27-structural-directive-solution/src/assets"],
-        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/27-structural-directive-solution/src/styles.scss"],
+        "assets": [
+          "apps/27-structural-directive-solution/src/favicon.ico",
+          "apps/27-structural-directive-solution/src/assets"
+        ],
+        "styles": [
+          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+          "apps/27-structural-directive-solution/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -74,12 +84,6 @@
       "executor": "@angular/build:extract-i18n",
       "options": {
         "buildTarget": "27-structural-directive-solution:build"
-      }
-    },
-    "test": {
-      "outputs": ["{projectRoot}/{options.coverage.reportsDirectory}", "{workspaceRoot}/coverage/apps/27-structural-directive-solution"],
-      "options": {
-        "coverage.reportsDirectory": "../../../coverage/apps/27-structural-directive-solution"
       }
     }
   }

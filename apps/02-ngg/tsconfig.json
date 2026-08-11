@@ -20,10 +20,14 @@
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "target": "es2020",
+    "target": "esnext",
     "module": "preserve",
     "moduleResolution": "bundler",
-    "lib": ["dom", "es2022"]
+    "lib": [
+      "dom",
+      "esnext"
+    ],
+    "ignoreDeprecations": "6.0"
   },
   "angularCompilerOptions": {
     "strictInjectionParameters": true,

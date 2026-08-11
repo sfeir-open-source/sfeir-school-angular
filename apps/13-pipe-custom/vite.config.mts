@@ -25,5 +25,6 @@ export default defineConfig(() => ({
       reportsDirectory: '../../coverage/apps/13-pipe-custom',
       provider: 'v8' as const,
     },
+    passWithNoTests: true,
   },
 }));

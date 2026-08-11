@@ -8,17 +8,27 @@
   "targets": {
     "build": {
       "executor": "@angular/build:application",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "defaultConfiguration": "production",
       "options": {
         "outputPath": "dist/apps/02-ngg",
         "index": "apps/02-ngg/src/index.html",
         "browser": "apps/02-ngg/src/main.ts",
-        "polyfills": ["apps/02-ngg/src/polyfills.ts"],
+        "polyfills": [
+          "apps/02-ngg/src/polyfills.ts"
+        ],
         "tsConfig": "apps/02-ngg/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/02-ngg/src/favicon.ico", "apps/02-ngg/src/assets"],
-        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/02-ngg/src/styles.scss"],
+        "assets": [
+          "apps/02-ngg/src/favicon.ico",
+          "apps/02-ngg/src/assets"
+        ],
+        "styles": [
+          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+          "apps/02-ngg/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -68,13 +78,6 @@
       "executor": "@angular/build:extract-i18n",
       "options": {
         "buildTarget": "02-ngg:build"
-      }
-    },
-    "test": {
-      "outputs": ["{projectRoot}/{options.coverage.reportsDirectory}", "{workspaceRoot}/coverage/apps/02-ngg"],
-      "options": {
-        "passWithNoTests": true,
-        "coverage.reportsDirectory": "../../../coverage/apps/02-ngg"
       }
     }
   }

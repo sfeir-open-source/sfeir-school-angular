@@ -25,5 +25,6 @@ export default defineConfig(() => ({
       reportsDirectory: '../../coverage/apps/35-performances',
       provider: 'v8' as const,
     },
+    passWithNoTests: true,
   },
 }));

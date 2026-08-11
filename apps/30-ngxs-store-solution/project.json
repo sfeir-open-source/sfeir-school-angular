@@ -8,17 +8,27 @@
   "targets": {
     "build": {
       "executor": "@angular/build:application",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "defaultConfiguration": "production",
       "options": {
         "outputPath": "dist/apps/30-ngxs-store-solution",
         "index": "apps/30-ngxs-store-solution/src/index.html",
         "browser": "apps/30-ngxs-store-solution/src/main.ts",
-        "polyfills": ["apps/30-ngxs-store-solution/src/polyfills.ts"],
+        "polyfills": [
+          "apps/30-ngxs-store-solution/src/polyfills.ts"
+        ],
         "tsConfig": "apps/30-ngxs-store-solution/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/30-ngxs-store-solution/src/favicon.ico", "apps/30-ngxs-store-solution/src/assets"],
-        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/30-ngxs-store-solution/src/styles.scss"],
+        "assets": [
+          "apps/30-ngxs-store-solution/src/favicon.ico",
+          "apps/30-ngxs-store-solution/src/assets"
+        ],
+        "styles": [
+          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+          "apps/30-ngxs-store-solution/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -75,7 +85,6 @@
       "options": {
         "buildTarget": "30-ngxs-store-solution:build"
       }
-    },
-    "test": {}
+    }
   }
 }

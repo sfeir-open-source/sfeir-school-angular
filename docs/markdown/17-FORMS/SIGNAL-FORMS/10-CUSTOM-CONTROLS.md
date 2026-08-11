@@ -110,15 +110,16 @@ Add only what your control needs — the `[formField]` directive feeds them auto
 export class StatefulInput implements FormValueControl<string> {
   readonly value = model<string>('');
 
-  // the control updates these:
-  readonly touched = model<boolean>(false);
-
   // the form feeds these in:
+  readonly touched = input<boolean>(false);
   readonly disabled = input<boolean>(false);
   readonly readonly = input<boolean>(false);
   readonly invalid = input<boolean>(false);
   readonly errors = input<readonly ValidationError[]>([]);
   readonly required = input<boolean>(false);
+
+  // the control emits this on blur:
+  readonly touch = output<void>();
 }
 ```
 
@@ -127,6 +128,7 @@ export class StatefulInput implements FormValueControl<string> {
 Notes:
 
 - Available optional inputs: `touched`, `dirty`, `errors`, `valid`, `invalid`, `pending`, `disabled`, `disabledReasons`, `readonly`, `hidden`, `required`, `min`, `max`, `minLength`, `maxLength`, `pattern`, `name`.
+- Emit the `touch` output on blur so `[formField]` can mark the parent field as touched.
 - For display formatting (currency, dates...) use `linkedSignal()` to derive a display value from `value` and write it back on blur.
 
 ##==##

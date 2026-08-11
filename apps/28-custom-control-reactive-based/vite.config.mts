@@ -25,5 +25,6 @@ export default defineConfig(() => ({
       reportsDirectory: '../../coverage/apps/28-custom-control-reactive-based',
       provider: 'v8' as const,
     },
+    passWithNoTests: true,
   },
 }));

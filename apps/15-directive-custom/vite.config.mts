@@ -25,5 +25,6 @@ export default defineConfig(() => ({
       reportsDirectory: '../../coverage/apps/15-directive-custom',
       provider: 'v8' as const,
     },
+    passWithNoTests: true,
   },
 }));

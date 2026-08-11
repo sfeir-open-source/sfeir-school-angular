@@ -30,7 +30,7 @@ A control participates by implementing `FormValueControl` (single value) or `For
 Create `custom-input.ts` in `shared/components/custom-input`:
 
 ```typescript
-import { ChangeDetectionStrategy, Component, input, model } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input, model, output } from '@angular/core';
 import { disabled, form, FormField, FormValueControl, ValidationError } from '@angular/forms/signals';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -42,7 +42,7 @@ import { MatInputModule } from '@angular/material/input';
                     [class.mat-form-field-invalid]="invalid() && touched()">
       <mat-label>{{ inputPlaceholder() }}</mat-label>
       <input matInput [type]="inputType()" [placeholder]="inputPlaceholder()"
-             (blur)="touched.set(true)" [formField]="inputField" />
+             (blur)="touch.emit()" [formField]="inputField" />
     </mat-form-field>
 
     @if (invalid() && touched()) {
@@ -59,7 +59,8 @@ export class SfeirCustomInput implements FormValueControl<string> {
   errors = input<readonly ValidationError.WithOptionalFieldTree[]>([]);
   invalid = input<boolean>(false);
   disabled = input<boolean>(false);
-  touched = model<boolean>(false);
+  touched = input<boolean>(false);
+  touch = output<void>();
   inputPlaceholder = input<string>();
   inputType = input<string>();
 
@@ -70,8 +71,8 @@ export class SfeirCustomInput implements FormValueControl<string> {
 ```
 
 - `value` is the **only required** part of `FormValueControl`
-- `errors`, `invalid`, `disabled` are optional inputs fed automatically by `[formField]`
-- `touched` is tracked locally and set on blur
+- `errors`, `invalid`, `disabled`, `touched` are optional inputs fed automatically by `[formField]`
+- emit `touch` on blur so the parent field is marked as touched
 - an internal `form()` drives the native `<input>` and disabled state
 
 ### Step 2 — Use it in the form
@@ -120,12 +121,12 @@ npm run test -- 28-custom-control-signal-based-solution
 | --- | --- | --- |
 | Registration | Automatic via `[formField]` | Manual `NG_VALUE_ACCESSOR` provider |
 | Value binding | `value` model | `writeValue` / `registerOnChange` |
-| Touched state | `touched` model | `registerOnTouched` callback |
+| Touched state | `touch` output + `touched` input | `registerOnTouched` callback |
 | Validation display | `invalid` / `errors` inputs | read from parent `FormControl` |
 | Internal input | `form()` + `[formField]` | `FormControl` + `[formControl]` |
 
 ## 🧯 Troubleshooting
 
 - **Value doesn't bind** — `value` must be a `model()`, and the parent must use `[formField]="peopleForm.x"`.
-- **Errors always/never show** — gate them with `@if (invalid() && touched())`; set `touched` on `(blur)`.
+- **Errors always/never show** — gate them with `@if (invalid() && touched())`; emit `touch` on `(blur)`.
 - **Disabled state ignored** — apply `disabled(inputField, this.disabled)` inside the internal `form()`.

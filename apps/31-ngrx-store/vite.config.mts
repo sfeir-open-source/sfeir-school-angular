@@ -25,5 +25,6 @@ export default defineConfig(() => ({
       reportsDirectory: '../../coverage/apps/31-ngrx-store',
       provider: 'v8' as const,
     },
+    passWithNoTests: true,
   },
 }));

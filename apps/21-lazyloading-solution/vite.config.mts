@@ -25,5 +25,6 @@ export default defineConfig(() => ({
       reportsDirectory: '../../coverage/apps/21-lazyloading-solution',
       provider: 'v8' as const,
     },
+    passWithNoTests: true,
   },
 }));
