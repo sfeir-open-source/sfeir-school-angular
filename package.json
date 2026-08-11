@@ -64,7 +64,6 @@
     "@eslint/js": "^10.0.1",
     "@ngrx/store-devtools": "22.0.0-rc.0",
     "@nx/angular": "23.1.1",
-    "@nx/cypress": "23.1.1",
     "@nx/eslint": "23.1.1",
     "@nx/eslint-plugin": "23.1.1",
     "@nx/express": "23.1.1",

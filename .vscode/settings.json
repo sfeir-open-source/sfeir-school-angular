@@ -47,7 +47,8 @@
     "whiteframe",
     "wrappez",
     "esnext",
-    "nodenext"
+    "nodenext",
+    "analogjs"
   ],
   "js/ts.tsdk.path": "node_modules/typescript/lib"
 }
