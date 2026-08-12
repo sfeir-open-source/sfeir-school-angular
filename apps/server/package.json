@@ -1,0 +1,8 @@
+{
+  "name": "@sfeir/server",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "@sfeir/types": "*"
+  }
+}

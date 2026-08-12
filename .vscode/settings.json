@@ -48,7 +48,8 @@
     "wrappez",
     "esnext",
     "nodenext",
-    "analogjs"
+    "analogjs",
+    "autoload"
   ],
   "js/ts.tsdk.path": "node_modules/typescript/lib"
 }

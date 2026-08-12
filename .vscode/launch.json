@@ -1,7 +1,4 @@
 {
-  // Use IntelliSense to learn about possible attributes.
-  // Hover to view descriptions of existing attributes.
-  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
   "configurations": [
     {
@@ -10,6 +7,21 @@
       "name": "DEBUG: Angular Application",
       "url": "http://localhost:4200",
       "webRoot": "${workspaceFolder}"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug server-rest with Nx",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["nx", "serve", "server-rest"],
+      "env": {
+        "NODE_OPTIONS": "--inspect=9229"
+      },
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "skipFiles": ["<node_internals>/**"],
+      "sourceMaps": true,
+      "outFiles": ["${workspaceFolder}/apps/server/dist/**/*.(m|c|)js", "!**/node_modules/**"]
     }
   ]
 }

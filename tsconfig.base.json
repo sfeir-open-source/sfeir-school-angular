@@ -10,20 +10,15 @@
     "importHelpers": true,
     "target": "esnext",
     "module": "esnext",
-    "lib": [
-      "esnext",
-      "dom"
-    ],
+    "lib": ["esnext", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "strict": false,
     "noUncheckedSideEffectImports": false,
-    "types": [
-      "*"
-    ]
+    "types": ["*"],
+    "paths": {
+      "@sfeir/types": ["./libs/types/src/index.ts"]
+    }
   },
-  "exclude": [
-    "node_modules",
-    "tmp"
-  ]
+  "exclude": ["node_modules", "tmp"]
 }
