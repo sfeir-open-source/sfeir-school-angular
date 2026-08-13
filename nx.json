@@ -179,7 +179,9 @@
       },
       "include": [
         "apps/01-hands-on/**/*",
-        "apps/01-hands-on-solution/**/*"
+        "apps/01-hands-on-solution/**/*",
+        "apps/02-component-tree/**/*",
+        "apps/02-component-tree-solution/**/*"
       ]
     },
     {
@@ -189,8 +191,11 @@
       },
       "include": [
         "apps/server/**/*",
+        "libs/types/**/*",
         "apps/01-hands-on/**/*",
-        "apps/01-hands-on-solution/**/*"
+        "apps/01-hands-on-solution/**/*",
+        "apps/02-component-tree/**/*",
+        "apps/02-component-tree-solution/**/*"
       ]
     }
   ]
