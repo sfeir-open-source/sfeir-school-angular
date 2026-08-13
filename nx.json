@@ -17,8 +17,9 @@
   },
   "generators": {
     "@nx/angular:application": {
-      "style": "scss",
+      "e2eTestRunner": "none",
       "linter": "eslint",
+      "style": "scss",
       "unitTestRunner": "vitest"
     },
     "@nx/angular:library": {
@@ -140,6 +141,16 @@
         "production",
         "^production"
       ]
+    },
+    "@angular/build:application": {
+      "cache": true,
+      "dependsOn": [
+        "^build"
+      ],
+      "inputs": [
+        "production",
+        "^production"
+      ]
     }
   },
   "namedInputs": {
@@ -166,7 +177,10 @@
         "testTargetName": "test",
         "testMode": "watch"
       },
-      "include": []
+      "include": [
+        "apps/01-hands-on/**/*",
+        "apps/01-hands-on-solution/**/*"
+      ]
     },
     {
       "plugin": "@nx/eslint/plugin",
@@ -174,7 +188,9 @@
         "targetName": "lint"
       },
       "include": [
-        "apps/server/**/*"
+        "apps/server/**/*",
+        "apps/01-hands-on/**/*",
+        "apps/01-hands-on-solution/**/*"
       ]
     }
   ]

@@ -5,9 +5,7 @@ import stylisticEslintPlugin from '@stylistic/eslint-plugin';
 import eslintPluginPrettier from 'eslint-plugin-prettier';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
-
 const workspaceRoot = dirname(fileURLToPath(import.meta.url));
-
 const compat = new FlatCompat({
   baseDirectory: workspaceRoot,
   recommendedConfig: js.configs.recommended,
@@ -56,6 +54,55 @@ export default [
       '@stylistic/no-extra-semi': 'error',
       'no-extra-semi': 'off',
       '@typescript-eslint/no-floating-promises': 'error',
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        {
+          args: 'after-used',
+          argsIgnorePattern: '^_',
+          caughtErrors: 'none',
+          caughtErrorsIgnorePattern: '^_',
+          destructuredArrayIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
+          ignoreRestSiblings: true,
+        },
+      ],
+      '@typescript-eslint/explicit-member-accessibility': [
+        'error',
+        {
+          overrides: {
+            accessors: 'explicit',
+            constructors: 'no-public',
+            methods: 'off',
+            properties: 'explicit',
+            parameterProperties: 'off',
+          },
+        },
+      ],
+      '@typescript-eslint/naming-convention': [
+        'error',
+        {
+          selector: 'classProperty',
+          modifiers: ['private'],
+          format: ['camelCase'],
+          leadingUnderscore: 'require',
+        },
+        {
+          selector: 'classProperty',
+          modifiers: ['public'],
+          format: ['camelCase'],
+          leadingUnderscore: 'forbid',
+        },
+        {
+          selector: 'classProperty',
+          modifiers: ['protected'],
+          format: ['camelCase'],
+          leadingUnderscore: 'require',
+        },
+        {
+          selector: 'variable',
+          format: ['camelCase', 'UPPER_CASE', 'PascalCase'],
+        },
+      ],
     },
   },
   ...nx.configs['flat/typescript'],
@@ -82,4 +129,7 @@ export default [
         'no-extra-semi': 'off',
       },
     })),
+  {
+    ignores: ['**/vitest.config.*.timestamp*'],
+  },
 ];

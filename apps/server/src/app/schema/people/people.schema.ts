@@ -36,7 +36,7 @@ const PERSON_SCHEMA = {
   },
 } as const;
 
-const UPSERT_PERSON__BODY_SCHEMA = {
+const UPSERT_PERSON_BODY_SCHEMA = {
   $id: UPSERT_PERSON_BODY_TOKEN,
   type: 'object',
   required: ['photo', 'firstname', 'lastname', 'email', 'phone'],
@@ -63,5 +63,5 @@ export const GET_PERSON_SCHEMA = {
 export const PEOPLE_SCHEMA = {
   getPeople: GET_PEOPLE_SCHEMA,
   getPerson: GET_PERSON_SCHEMA,
-  upsertPersonBody: UPSERT_PERSON__BODY_SCHEMA,
+  upsertPersonBody: UPSERT_PERSON_BODY_SCHEMA,
 };
