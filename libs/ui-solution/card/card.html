@@ -2,7 +2,10 @@
   <mat-card-title-group>
     <img mat-card-image [ngSrc]="person().photo" height="128" width="128" alt="person-photo" />
     <mat-card-title>
-      <a href="/people/1"> <span>{{ person().firstname }} {{ person().lastname }}</span> </a>
+      <a href="/people/1">
+        <span>{{ person().firstname }} {{ person().lastname }}</span>
+        <span [sfeirKing]="person().isManager"></span>
+      </a>
     </mat-card-title>
     <mat-card-subtitle>{{ person().entity }}</mat-card-subtitle>
     <mat-card-subtitle class="contact-info">

@@ -18,7 +18,7 @@ Every exercise folder `apps/NN-*` has a sibling solution folder `apps/NN-*-solut
 ## Required workflow
 
 1. **Identify the pair.** Given an exercise folder (e.g. `apps/07-signals`), confirm its solution counterpart exists (`apps/07-signals-solution`). If it doesn't exist, stop and tell the user — this skill cannot write an accurate README without a solution to diff against.
-2. **Delegate the diff to the Explore subagent.** Do not read every file yourself first — dispatch an `Explore` agent (or `general-purpose` if deeper reasoning about the diff is needed) with a self-contained prompt asking it to:
+2. **Delegate the diff to the `explorer` subagent.** Do not read every file yourself first — dispatch the custom `explorer` subagent with a self-contained prompt asking it to:
    - Walk the full file tree of both the exercise and solution `src/` (and any other relevant folders).
    - Report which files are empty/stub, contain `TODO`s, or are otherwise incomplete in the exercise.
    - Diff each such file against its solution counterpart and summarize *what concept/API* the missing code exercises (signals, standalone components, inputs/outputs, DI, HttpClient, control flow, forms, routing, RxJS, testing, etc.) — not the exact code to write.
@@ -26,7 +26,7 @@ Every exercise folder `apps/NN-*` has a sibling solution folder `apps/NN-*-solut
    - Read `project.json` (both apps) for the Nx targets (`serve`, `build`, `test`, `lint`) and check `nx.json` for `defaultProject` and the package manager/scripts in the root `package.json`.
    - Flag any environment gotchas: missing theme/global styles, required ports, seed/mock data files under `public/`, config differences between exercise and solution `project.json` that aren't part of the exercise itself but could confuse a student (e.g. a missing stylesheet entry).
    - Check whether a README already exists in the exercise folder (read it) so an update preserves anything still accurate.
-3. **Verify precisely before writing.** Agent reports can be imprecise about exact file names/paths. Before drafting, personally `Read` the specific files the agent flagged as incomplete (exercise side) and their solution counterparts, and spot-check `project.json`/`nx.json`/root `package.json` yourself. Never state a file name, selector, command, or port in the README without having read it directly.
+3. **Verify precisely before writing.** Subagent reports can be imprecise about exact file names/paths. Before drafting, personally `Read` the specific files `explorer` flagged as incomplete (exercise side) and their solution counterparts, and spot-check `project.json`/`nx.json`/root `package.json` yourself. Never state a file name, selector, command, or port in the README without having read it directly.
 4. **Write the README** into `apps/NN-*/README.md` following the structure below.
 5. **Never include solution code or the exact final values/text the student must produce** (e.g. don't reveal a literal string the solution hardcodes) — describe the *shape* of what's needed (a class property holding a name, a method with a given signature inferred from a spec file, etc.), not the literal answer.
 
