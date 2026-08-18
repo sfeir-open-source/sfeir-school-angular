@@ -2,7 +2,11 @@ import { Person, UpsertPersonBody } from '@sfeir/types';
 import { randomUUID } from 'crypto';
 import peopleJson from '../../db/people.json';
 
-const people: Person[] = peopleJson;
+const people: Person[] = peopleJson.map(person => ({
+  ...person,
+  entryDate: new Date(person.entryDate),
+  birthDate: new Date(person.birthDate),
+}));
 
 export const verifyPersonExists = (id: string): Person => {
   return people.find(person => person.id === id);
@@ -25,8 +29,8 @@ export const createPerson = (body: UpsertPersonBody): void => {
     ...body,
     id: randomUUID(),
     entity: 'SFEIR',
-    entryDate: new Date().toISOString(),
-    birthDate: new Date().toISOString(),
+    entryDate: new Date(),
+    birthDate: new Date(),
     gender: 'male',
     skills: [],
     address: {

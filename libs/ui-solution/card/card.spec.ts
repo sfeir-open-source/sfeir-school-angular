@@ -63,9 +63,15 @@ describe('Card', () => {
     });
     it('should display the manager of the person', () => {
       const contacteInfoElements = container.querySelectorAll('div.contact-info');
-      expect(contacteInfoElements.length).toBe(2);
-      const managerElement = contacteInfoElements[0];
+      expect(contacteInfoElements.length).toBe(3);
+      const managerElement = contacteInfoElements[1];
       expect(managerElement.textContent).toContain(personDisplayed().manager);
+    });
+    it('should display the birth date of the person', () => {
+      const contacteInfoElements = container.querySelectorAll('div.contact-info');
+      expect(contacteInfoElements.length).toBe(3);
+      const birthDateElement = contacteInfoElements[0];
+      expect(birthDateElement.textContent).toContain('birthDate: 02/01/1974');
     });
     it('should call the method handleDelete when the button delete is clicked', () => {
       const spy = vi.spyOn(component, 'handleDelete');
