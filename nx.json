@@ -201,7 +201,9 @@
         "apps/05-input-output/**/*",
         "apps/05-input-output-solution/**/*",
         "apps/06-pipe/**/*",
-        "apps/06-pipe-solution/**/*"
+        "apps/06-pipe-solution/**/*",
+        "apps/07-provider/**/*",
+        "apps/07-provider-solution/**/*"
       ]
     },
     {
@@ -225,7 +227,9 @@
         "apps/05-input-output/**/*",
         "apps/05-input-output-solution/**/*",
         "apps/06-pipe/**/*",
-        "apps/06-pipe-solution/**/*"
+        "apps/06-pipe-solution/**/*",
+        "apps/07-provider/**/*",
+        "apps/07-provider-solution/**/*"
       ]
     }
   ]
