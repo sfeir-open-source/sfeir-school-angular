@@ -1,0 +1,16 @@
+{
+  "name": "@sfeir/ui-solution",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^22.0.0",
+    "@angular/core": "^22.0.0",
+    "@angular/material": "^22.0.0",
+    "@analogjs/vite-plugin-angular": "2.6.4",
+    "@analogjs/vitest-angular": "2.6.4",
+    "@testing-library/jest-dom": "^7.0.1",
+    "@angular/compiler": "^22.0.0",
+    "vite": "^8.0.0",
+    "@sfeir/types": "workspace:*"
+  },
+  "sideEffects": false
+}

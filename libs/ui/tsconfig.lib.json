@@ -1,0 +1,36 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../dist/out-tsc",
+    "declaration": true,
+    "declarationMap": true,
+    "inlineSources": true,
+    "types": []
+  },
+  "include": [
+    "**/*.ts",
+  ],
+  "exclude": [
+    "src/**/*.spec.ts",
+    "src/**/*.test.ts",
+    "vite.config.ts",
+    "vite.config.mts",
+    "vitest.config.ts",
+    "vitest.config.mts",
+    "src/**/*.test.tsx",
+    "src/**/*.spec.tsx",
+    "src/**/*.test.js",
+    "src/**/*.spec.js",
+    "src/**/*.test.jsx",
+    "src/**/*.spec.jsx",
+    "src/test-setup.ts",
+    "card/src/**/*.spec.ts",
+    "card/src/**/*.test.ts",
+    "card/src/**/*.test.tsx",
+    "card/src/**/*.spec.tsx",
+    "card/src/**/*.test.js",
+    "card/src/**/*.spec.js",
+    "card/src/**/*.test.jsx",
+    "card/src/**/*.spec.jsx"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "name": "ui-solution",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/ui-solution",
+  "prefix": "sfeir",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:ng-packagr-lite",
+      "outputs": [
+        "{workspaceRoot}/dist/{projectRoot}"
+      ],
+      "defaultConfiguration": "production",
+      "options": {
+        "project": "libs/ui-solution/ng-package.json",
+        "tsConfig": "libs/ui-solution/tsconfig.lib.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/ui-solution/tsconfig.lib.prod.json"
+        },
+        "development": {}
+      }
+    }
+  }
+}

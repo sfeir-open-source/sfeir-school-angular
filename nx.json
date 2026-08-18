@@ -151,6 +151,16 @@
         "production",
         "^production"
       ]
+    },
+    "@nx/angular:ng-packagr-lite": {
+      "cache": true,
+      "dependsOn": [
+        "^build"
+      ],
+      "inputs": [
+        "production",
+        "^production"
+      ]
     }
   },
   "namedInputs": {
@@ -178,10 +188,18 @@
         "testMode": "watch"
       },
       "include": [
+        "libs/ui/**/*",
+        "libs/ui-solution/**/*",
         "apps/01-hands-on/**/*",
         "apps/01-hands-on-solution/**/*",
         "apps/02-component-tree/**/*",
-        "apps/02-component-tree-solution/**/*"
+        "apps/02-component-tree-solution/**/*",
+        "apps/03-bindings/**/*",
+        "apps/03-bindings-solution/**/*",
+        "apps/04-events/**/*",
+        "apps/04-events-solution/**/*",
+        "apps/05-input-output/**/*",
+        "apps/05-input-output-solution/**/*"
       ]
     },
     {
@@ -192,10 +210,18 @@
       "include": [
         "apps/server/**/*",
         "libs/types/**/*",
+        "libs/ui/**/*",
+        "libs/ui-solution/**/*",
         "apps/01-hands-on/**/*",
         "apps/01-hands-on-solution/**/*",
         "apps/02-component-tree/**/*",
-        "apps/02-component-tree-solution/**/*"
+        "apps/02-component-tree-solution/**/*",
+        "apps/03-bindings/**/*",
+        "apps/03-bindings-solution/**/*",
+        "apps/04-events/**/*",
+        "apps/04-events-solution/**/*",
+        "apps/05-input-output/**/*",
+        "apps/05-input-output-solution/**/*"
       ]
     }
   ]

@@ -10,15 +10,31 @@
     "importHelpers": true,
     "target": "esnext",
     "module": "esnext",
-    "lib": ["esnext", "dom"],
+    "lib": [
+      "esnext",
+      "dom"
+    ],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "strict": false,
     "noUncheckedSideEffectImports": false,
-    "types": ["*"],
+    "types": [
+      "*"
+    ],
     "paths": {
-      "@sfeir/types": ["./libs/types/src/index.ts"]
+      "@sfeir/types": [
+        "./libs/types/src/index.ts"
+      ],
+      "@sfeir/ui/*": [
+        "./libs/ui/*"
+      ],
+      "@sfeir/ui-solution/*": [
+        "./libs/ui-solution/*"
+      ],
     }
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
 }
