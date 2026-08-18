@@ -68,9 +68,9 @@ describe('Card', () => {
       expect(managerElement.textContent).toContain(personDisplayed().manager);
     });
     it('should display the birth date of the person', () => {
-      const contacteInfoElements = container.querySelectorAll('div.contact-info');
-      expect(contacteInfoElements.length).toBe(3);
-      const birthDateElement = contacteInfoElements[0];
+      const contactInfoElements = container.querySelectorAll('div.contact-info');
+      expect(contactInfoElements.length).toBe(3);
+      const birthDateElement = contactInfoElements[0];
       expect(birthDateElement.textContent).toContain('birthDate: 02/01/1974');
     });
     it('should call the method handleDelete when the button delete is clicked', () => {
