@@ -10,8 +10,8 @@ export type Person = {
   firstname: string;
   lastname: string;
   entity: string;
-  entryDate: string;
-  birthDate: string;
+  entryDate: Date;
+  birthDate: Date;
   gender: string;
   email: string;
   skills: string[];

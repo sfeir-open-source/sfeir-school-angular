@@ -17,8 +17,9 @@
     </mat-card-subtitle>
   </mat-card-title-group>
   <mat-card-content>
-    <div class="contact-info">Manager <a href="/people/{{ person().managerId }}">{{ person().manager }}</a></div>
-    <div class="contact-info">Location<a href="http://www.sfeir.com/contact/">SFEIR</a></div>
+    <div class="contact-info">birthDate: <a href="birthDate">{{ person().birthDate | date : 'dd/MM/yyyy' }}</a></div>
+    <div class="contact-info">Manager: <a href="/people/{{ person().managerId }}">{{ person().manager | na : 'No manager'}}</a></div>
+    <div class="contact-info">Location: <a href="http://www.sfeir.com/contact/">SFEIR</a></div>
     <div class="buttons-info">
       <a mat-button title="Locate" href="/people/{{ person().id }}">
         <mat-icon>map</mat-icon>
