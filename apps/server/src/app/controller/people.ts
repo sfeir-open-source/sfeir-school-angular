@@ -2,10 +2,15 @@ import { Person, UpsertPersonBody } from '@sfeir/types';
 import { randomUUID } from 'crypto';
 import peopleJson from '../../db/people.json';
 
+const parseDate = (value: string): Date => {
+  const [day, month, year] = value.split('/').map(Number);
+  return new Date(year, month - 1, day);
+};
+
 const people: Person[] = peopleJson.map(person => ({
   ...person,
-  entryDate: new Date(person.entryDate),
-  birthDate: new Date(person.birthDate),
+  entryDate: parseDate(person.entryDate),
+  birthDate: parseDate(person.birthDate),
 }));
 
 export const verifyPersonExists = (id: string): Person => {
