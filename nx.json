@@ -207,7 +207,9 @@
         "apps/08-directive/**/*",
         "apps/08-directive-solution/**/*",
         "apps/09-router/**/*",
-        "apps/09-router-solution/**/*"
+        "apps/09-router-solution/**/*",
+        "apps/10-control-flow/**/*",
+        "apps/10-control-flow-solution/**/*"
       ]
     },
     {
@@ -237,7 +239,9 @@
         "apps/08-directive/**/*",
         "apps/08-directive-solution/**/*",
         "apps/09-router/**/*",
-        "apps/09-router-solution/**/*"
+        "apps/09-router-solution/**/*",
+        "apps/10-control-flow/**/*",
+        "apps/10-control-flow-solution/**/*"
       ]
     }
   ]

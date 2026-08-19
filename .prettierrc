@@ -4,5 +4,13 @@
   "printWidth": 150,
   "bracketSpacing": true,
   "arrowParens": "avoid",
-  "semi": true
+  "semi": true,
+  "overrides": [
+    {
+      "files": "*.html",
+      "options": {
+        "parser": "angular"
+      }
+    }
+  ]
 }

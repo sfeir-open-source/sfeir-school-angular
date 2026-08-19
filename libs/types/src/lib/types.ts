@@ -29,3 +29,5 @@ export type UpsertPersonBody = {
   email: string;
   phone: string;
 };
+
+export type UiView = 'list' | 'card';
