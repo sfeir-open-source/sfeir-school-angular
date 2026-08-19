@@ -205,7 +205,9 @@
         "apps/07-provider/**/*",
         "apps/07-provider-solution/**/*",
         "apps/08-directive/**/*",
-        "apps/08-directive-solution/**/*"
+        "apps/08-directive-solution/**/*",
+        "apps/09-router/**/*",
+        "apps/09-router-solution/**/*"
       ]
     },
     {
@@ -233,7 +235,9 @@
         "apps/07-provider/**/*",
         "apps/07-provider-solution/**/*",
         "apps/08-directive/**/*",
-        "apps/08-directive-solution/**/*"
+        "apps/08-directive-solution/**/*",
+        "apps/09-router/**/*",
+        "apps/09-router-solution/**/*"
       ]
     }
   ]

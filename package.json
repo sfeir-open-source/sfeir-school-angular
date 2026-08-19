@@ -14,6 +14,7 @@
     "build:ci": "nx affected --exclude='*,!server-rest,!*-solution' --target=build --parallel=10",
     "lint:all": "nx run-many --target=lint --exclude='*,!server-rest,!*-solution' --all --parallel=10 --fix",
     "test:all": "nx run-many --target=test --exclude='*,!server-rest,!*-solution' --all --parallel=10",
+    "build:all": "nx run-many --target=build --exclude='*,!server-rest,!*-solution' --all --parallel=10",
     "migrate-nx": "nx migrate latest",
     "run-migration": "nx migrate --run-migrations=migrations.json"
   },

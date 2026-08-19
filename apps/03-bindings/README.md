@@ -47,8 +47,6 @@ Replace the one-line stub with a card that displays the person's photo, name, en
 - The email and phone links: build the `href` (`mailto:...`, `tel:...`) and any `title` attributes by interpolating values **inside the attribute string**, not just as the element's visible text.
 - The "Locate" and "Edit" action links: build their `href` from the person's `id`, the same interpolation-in-attribute technique.
 
-Refer to `home.spec.ts` in the solution folder's test file naming (or think about what a test would check) for the exact structure expected: one `mat-card`, one `mat-card-title` with the full name, three `mat-card-subtitle` elements (entity, then email, then phone, in that order), and two `div.contact-info` elements (manager first).
-
 ### 3. `home.scss` — style the card
 
 The 4-line stub only centers text and adds padding. Build out the full layout: card sizing/spacing, the contact info rows, the action buttons row, and text truncation for long values. You can copy `static/home.scss` directly — the styling itself isn't the point of this exercise, the bindings are.
