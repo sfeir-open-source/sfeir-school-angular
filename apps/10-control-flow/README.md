@@ -10,7 +10,7 @@ The toolbar's "List" link (`/people`) has been dead since `09-router` — clicki
 - Choosing a **stable identity** for `track` (a person's `id`) instead of array index — and understanding why index-based tracking silently breaks identity when the underlying array is reordered or an item is removed from the middle
 - Driving two structurally different templates (a card grid, a Material list) off of **one signal** holding UI state (`'card' | 'list'`), and toggling it with `signal.update()`
 - Reusing components you already built in earlier exercises (`Card` from `libs/ui/card`, the `King` directive from `libs/ui/king`) in a brand-new context, proving they were built generically enough to work outside `Home`
-- Extending a provider (`People`) with new read/write-shaped methods that return **new arrays** rather than mutating the mock data in place — keeping data flow through signals predictable
+- Extending a provider (`People`) with new read/write-shaped methods, including one that mutates the mock data in place and returns the same underlying array back to the caller
 
 ## 📁 What you're working with
 
@@ -43,7 +43,7 @@ The `static/` folder is not part of the Angular build — it's a plain HTML/SCSS
 `Home` only ever needed one person at a time. `StaffDirectory` needs the whole list, and a way to remove someone from it. Add two methods to the `People` class:
 
 - One that returns the **entire** list of people as an array — think about what you already have available on the mock data import used by the existing methods.
-- One that takes a person's `id` and returns a **new array** with that person removed, leaving the original data untouched. Look for an array method that returns a new array with elements removed at a given index, rather than mutating in place (there's a fairly recent addition to `Array.prototype` for exactly this — the same idea as `slice`, but pruning instead of extracting).
+- One that takes a person's `id`, removes that person from the mock data **in place**, and returns the (now shorter) array back to the caller. Find the person's index first, then reach for the classic `Array.prototype` method that removes elements at a given index by mutating the array it's called on — not one of the newer non-mutating variants.
 
 ### 2. `feature/staff-directory/` — build the new feature component
 

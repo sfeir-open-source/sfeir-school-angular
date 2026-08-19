@@ -41,10 +41,24 @@ describe('People', () => {
   });
 
   describe('should remove a person from the list', () => {
-    it('should remove the first person form the list', () => {
+    it('should mutate PEOPLE_MOCK in place and remove the specified person', () => {
+      const initialLength = PEOPLE_MOCK.length;
       const { id: firstPersonId } = PEOPLE_MOCK[0];
+
       const people = peopleService.removePerson(firstPersonId);
-      expect(people).toEqual(PEOPLE_MOCK.filter(person => person.id !== firstPersonId));
+
+      expect(people).toBe(PEOPLE_MOCK);
+      expect(people.length).toBe(initialLength - 1);
+      expect(people.some(person => person.id === firstPersonId)).toBeFalsy();
+    });
+
+    it('should return PEOPLE_MOCK unchanged when the id does not match any person', () => {
+      const initialLength = PEOPLE_MOCK.length;
+
+      const people = peopleService.removePerson('non-existent-id');
+
+      expect(people).toBe(PEOPLE_MOCK);
+      expect(people.length).toBe(initialLength);
     });
   });
 });

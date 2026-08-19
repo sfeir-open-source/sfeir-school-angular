@@ -19,7 +19,7 @@ export class People {
   removePerson(id: string): Person[] {
     const index = PEOPLE_MOCK.findIndex(person => person.id === id);
     if (index !== -1) {
-      return PEOPLE_MOCK.toSpliced(index, 1);
+      PEOPLE_MOCK.splice(index, 1);
     }
     return PEOPLE_MOCK;
   }
