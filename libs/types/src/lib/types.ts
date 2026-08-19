@@ -31,3 +31,8 @@ export type UpsertPersonBody = {
 };
 
 export type UiView = 'list' | 'card';
+
+export type Environment = {
+  production: boolean;
+  api: string;
+};
