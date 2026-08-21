@@ -9,6 +9,7 @@
     "@analogjs/vitest-angular": "2.6.4",
     "@testing-library/jest-dom": "^7.0.1",
     "@angular/compiler": "^22.0.0",
+    "@angular/forms": "^22.0.0",
     "vite": "^8.0.0",
     "@sfeir/types": "workspace:*"
   },
