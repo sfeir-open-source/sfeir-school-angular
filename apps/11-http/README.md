@@ -9,7 +9,7 @@ Since `10-control-flow`, `People` has been a thin wrapper around a hardcoded `PE
 - Using **`httpResource()`** (from `@angular/common/http`) as the built-in, reactive way to bind a component directly to a `GET` endpoint — it manages the request lifecycle for you (loading, value, error, reload) without any manual subscription
 - Reading a resource's `isLoading()` and `hasValue()` signals in a template to render a loading state instead of guessing whether data is ready
 - Calling `reload()` on an `HttpResourceRef` to re-trigger its request — the resource-based replacement for "call the service again and re-assign a signal"
-- Composing multiple async operations that all affect the _same_ list (an initial fetch, plus a delete that should refresh what's displayed) using RxJS — `Subject`/`BehaviorSubject` as triggers, `switchMap` to turn a trigger into an HTTP call, `merge` to combine several flows into one
+- Composing multiple async operations that all affect the _same_ list (an initial fetch, plus a delete that should refresh what's displayed) using RxJS — a `Subject` as a trigger for the delete, `switchMap` to turn that trigger into an HTTP call, `merge` to combine it with the initial fetch into a single flow
 - Bridging an RxJS `Observable` back into the signal world with **`toSignal()`** (from `@angular/core/rxjs-interop`) so templates keep reading a plain signal, unaware of the RxJS machinery behind it
 
 ## 📁 What you're working with
@@ -59,7 +59,7 @@ Since Angular v21, `HttpClient` is provided at the root injector by default — 
 
 The list can no longer be seeded once from a synchronous array — it needs to reflect: an initial fetch on load, and an updated list after every delete, while showing a loading state whenever there's nothing to show yet.
 
-- Think in terms of two "triggers": one for "(re)fetch the whole list" and one for "delete this id", each turned into an HTTP call via a `switchMap`-style flow, then combined into a single stream that always reflects the latest list.
+- The initial fetch is just `getPeople()`'s observable used directly — no trigger needed for it. Add a `Subject` as a "delete this id" trigger, turn it into an HTTP call via `switchMap`, then `merge` it with the initial fetch into a single stream that always reflects the latest list.
 - Bridge that combined stream back into a plain signal with `toSignal()` (from `@angular/core/rxjs-interop`) so the template's `@for` and `@switch` don't need to change how they read `_people()`.
 - `handleDelete(id)` should push into the "delete" trigger instead of calling the service and setting a signal directly.
 - `view` stays exactly what it already is — a plain signal toggled between `'card'` and `'list'`, untouched by this exercise.
@@ -90,7 +90,7 @@ Serve the app (with the backend running) and open it in the browser:
 
 ## 🛠️ Troubleshooting
 
-- **Every request fails in the Network tab with a connection error / `ERR_CONNECTION_REFUSED`**: the backend on port `9000` isn't running — either wire the `dependsOn` in `project.json` as described above, or start the API in a separate terminal before serving the app.
+- **Every request fails in the Network tab with a connection error / `ERR_CONNECTION_REFUSED`**: `apps/11-http/project.json`'s `serve` target already declares a `dependsOn` on the `server-rest` project's `serve` target, so `npx nx serve 11-http` should start the REST API on port `9000` for you automatically — check your terminal output for a second process log confirming it came up. If it still isn't running, start it yourself in a separate terminal with `npx nx serve server-rest`.
 - **The card/list never leaves the loading state**: double check you're actually reading the resource's/signal's _current_ value in the template (calling it as a function) rather than holding a reference to the resource object itself in an `@if`.
 - **Deleting a person makes it reappear on the next fetch, or the list never shrinks**: the delete trigger and the "refresh the list" flow need to feed into the _same_ combined stream that `_people` is derived from — if delete only calls the service without also driving what `toSignal()` observes, the template won't see the update.
 - **`httpResource` never fires a request / stays `isLoading()` forever**: the function passed to `httpResource()` must actually return a URL string — a syntax mistake there (e.g. forgetting the arrow function) silently breaks the resource.
