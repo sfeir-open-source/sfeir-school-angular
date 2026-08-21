@@ -61,6 +61,12 @@
     "serve": {
       "continuous": true,
       "executor": "@angular/build:dev-server",
+      "dependsOn": [
+        {
+          "projects": "server-rest",
+          "target": "serve"
+        }
+      ],
       "defaultConfiguration": "development",
       "configurations": {
         "production": {
