@@ -213,7 +213,9 @@
         "apps/11-http/**/*",
         "apps/11-http-solution/**/*",
         "apps/12-template-form/**/*",
-        "apps/12-template-form-solution/**/*"
+        "apps/12-template-form-solution/**/*",
+        "apps/13-reactive-form/**/*",
+        "apps/13-reactive-form-solution/**/*"
       ]
     },
     {
@@ -247,7 +249,11 @@
         "apps/10-control-flow/**/*",
         "apps/10-control-flow-solution/**/*",
         "apps/11-http/**/*",
-        "apps/11-http-solution/**/*"
+        "apps/11-http-solution/**/*",
+        "apps/12-template-form/**/*",
+        "apps/12-template-form-solution/**/*",
+        "apps/13-reactive-form/**/*",
+        "apps/13-reactive-form-solution/**/*"
       ]
     }
   ]
