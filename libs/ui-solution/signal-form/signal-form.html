@@ -1,0 +1,50 @@
+<form [formRoot]="_form">
+  <section class="form-container">
+    <section class="form-container__image">
+      <img width="100" height="100" [ngSrc]="_form.photo().value()" alt="person-photo" />
+      <input type="hidden" [formField]="_form.photo" />
+    </section>
+    <section class="form-container__form">
+      <mat-form-field appearance="outline">
+        <mat-label>First name</mat-label>
+        <input type="text" matInput placeholder="First name" [formField]="_form.firstname" />
+        <mat-error>
+          @if (_form.firstname().touched() && _form.firstname().invalid()) {
+            {{ _form.firstname().errors()[0]?.message }}
+          }
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Last name</mat-label>
+        <input type="text" matInput placeholder="Last name" [formField]="_form.lastname" />
+        <mat-error>
+          @if (_form.lastname().touched() && _form.lastname().invalid()) {
+            {{ _form.lastname().errors()[0]?.message }}
+          }
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input type="email" matInput placeholder="email" [formField]="_form.email" />
+        <mat-error>
+          @if (_form.email().touched() && _form.email().invalid()) {
+            {{ _form.email().errors()[0]?.message }}
+          }
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>phone</mat-label>
+        <input type="phone" matInput placeholder="phone" [formField]="_form.phone" />
+        <mat-error>
+          @if (_form.phone().touched() && _form.phone().invalid()) {
+            {{ _form.phone().errors()[0]?.message }}
+          }
+        </mat-error>
+      </mat-form-field>
+    </section>
+  </section>
+  <div class="form-user-action">
+    <button mat-button type="button" (click)="cancel()">Cancel</button>
+    <button mat-button color="primary" type="submit" [disabled]="_form().invalid()">Save</button>
+  </div>
+</form>
