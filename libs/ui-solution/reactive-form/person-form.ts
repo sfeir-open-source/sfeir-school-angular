@@ -8,6 +8,8 @@ type Controls = {
   phone: FormControl<string>;
 };
 
+const SFEIR_EMAIL_PATTERN = /^\w+\.\w@sfeir.com$/;
+
 export function SfeirEmailValidator(control: AbstractControl<string>): ValidationErrors | null {
   const value = control.value;
   if (!value) {
@@ -16,8 +18,8 @@ export function SfeirEmailValidator(control: AbstractControl<string>): Validatio
   if (!isFormControl(control)) {
     return null;
   }
-  const sfeirEmailPattern = /^\w+\.\w@sfeir.com$/;
-  return sfeirEmailPattern.test(value) ? null : { sfeirEmail: true };
+
+  return SFEIR_EMAIL_PATTERN.test(value) ? null : { sfeirEmail: true };
 }
 
 export class PersonForm extends FormGroup<Controls> {
