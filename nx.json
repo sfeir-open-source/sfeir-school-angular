@@ -219,7 +219,9 @@
         "apps/14-signal-form/**/*",
         "apps/14-signal-form-solution/**/*",
         "apps/15-reactive-thinking/**/*",
-        "apps/15-reactive-thinking-solution/**/*"
+        "apps/15-reactive-thinking-solution/**/*",
+        "apps/16-advanced-routing/**/*",
+        "apps/16-advanced-routing-solution/**/*"
       ]
     },
     {
@@ -261,7 +263,9 @@
         "apps/14-signal-form/**/*",
         "apps/14-signal-form-solution/**/*",
         "apps/15-reactive-thinking/**/*",
-        "apps/15-reactive-thinking-solution/**/*"
+        "apps/15-reactive-thinking-solution/**/*",
+        "apps/16-advanced-routing/**/*",
+        "apps/16-advanced-routing-solution/**/*"
       ]
     }
   ]
