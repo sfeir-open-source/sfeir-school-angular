@@ -217,7 +217,9 @@
         "apps/13-reactive-form/**/*",
         "apps/13-reactive-form-solution/**/*",
         "apps/14-signal-form/**/*",
-        "apps/14-signal-form-solution/**/*"
+        "apps/14-signal-form-solution/**/*",
+        "apps/15-reactive-thinking/**/*",
+        "apps/15-reactive-thinking-solution/**/*"
       ]
     },
     {
@@ -257,7 +259,9 @@
         "apps/13-reactive-form/**/*",
         "apps/13-reactive-form-solution/**/*",
         "apps/14-signal-form/**/*",
-        "apps/14-signal-form-solution/**/*"
+        "apps/14-signal-form-solution/**/*",
+        "apps/15-reactive-thinking/**/*",
+        "apps/15-reactive-thinking-solution/**/*"
       ]
     }
   ]

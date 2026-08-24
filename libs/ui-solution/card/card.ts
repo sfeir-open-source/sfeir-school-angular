@@ -3,6 +3,7 @@ import { Component, input, output } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
+import { RouterLink } from '@angular/router';
 import type { Person } from '@sfeir/types';
 import { King } from '@sfeir/ui-solution/king';
 import { Na } from '@sfeir/ui-solution/na';
@@ -11,7 +12,7 @@ import { Na } from '@sfeir/ui-solution/na';
   selector: 'sfeir-card',
   templateUrl: './card.html',
   styleUrl: './card.scss',
-  imports: [NgOptimizedImage, MatCardModule, MatButtonModule, MatIconModule, Na, DatePipe, King],
+  imports: [NgOptimizedImage, MatCardModule, MatButtonModule, MatIconModule, Na, DatePipe, King, RouterLink],
 })
 export class Card {
   public readonly person = input.required<Person>();

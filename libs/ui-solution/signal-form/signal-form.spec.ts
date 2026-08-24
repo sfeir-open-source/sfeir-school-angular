@@ -1,7 +1,7 @@
-import { outputBinding } from '@angular/core';
-import { ComponentFixture } from '@angular/core/testing';
+import { inputBinding, outputBinding, signal } from '@angular/core';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { fireEvent, render, screen } from '@testing-library/angular';
-import { UpsertPersonBody } from '@sfeir/types';
+import { PEOPLE_MOCK, UpsertPersonBody } from '@sfeir/types';
 import { SignalForm } from './signal-form';
 
 const DEFAULT_PHOTO = 'https://randomuser.me/api/portraits/lego/6.jpg';
@@ -102,6 +102,64 @@ describe('SignalForm', () => {
       fireEvent.click(screen.getByText('Cancel'));
       expect(cancelEvent).toHaveBeenCalledOnce();
       expect(submitEvent).not.toHaveBeenCalled();
+    });
+  });
+
+  describe('Template with a person input', () => {
+    const person = PEOPLE_MOCK[0];
+
+    beforeEach(async () => {
+      TestBed.resetTestingModule();
+      submitEvent.mockClear();
+      const { fixture: fixtureFromRender } = await render(SignalForm, {
+        bindings: [inputBinding('person', signal(person)), outputBinding('submitForm', submitEvent), outputBinding('cancelForm', cancelEvent)],
+      });
+      fixture = fixtureFromRender;
+    });
+
+    it('should pre-fill the form fields with the given person data', () => {
+      expect(screen.getByPlaceholderText('First name')).toHaveValue(person.firstname);
+      expect(screen.getByPlaceholderText('Last name')).toHaveValue(person.lastname);
+      expect(screen.getByPlaceholderText('email')).toHaveValue(person.email);
+      expect(screen.getByPlaceholderText('phone')).toHaveValue(person.phone);
+    });
+    it('should display the given person photo instead of the placeholder', () => {
+      const photo = screen.getByAltText('person-photo') as HTMLImageElement;
+      expect(photo.src).toBe(person.photo);
+    });
+  });
+
+  describe('Template with a valid person input', () => {
+    const validPerson = { ...PEOPLE_MOCK[0], email: 'leanne.w@sfeir.com' };
+
+    beforeEach(async () => {
+      TestBed.resetTestingModule();
+      submitEvent.mockClear();
+      const { fixture: fixtureFromRender } = await render(SignalForm, {
+        bindings: [inputBinding('person', signal(validPerson)), outputBinding('submitForm', submitEvent), outputBinding('cancelForm', cancelEvent)],
+      });
+      fixture = fixtureFromRender;
+    });
+
+    it('should enable the Save button since the pre-filled data is valid', async () => {
+      await fixture.whenStable();
+      expect(screen.getByText('Save').closest('button')).not.toBeDisabled();
+    });
+    it('should submit the updated form value keeping the untouched fields from the person', async () => {
+      const lastNameInput = screen.getByPlaceholderText('Last name');
+      fireEvent.input(lastNameInput, { target: { value: 'Updated' } });
+      await fixture.whenStable();
+
+      fireEvent.click(screen.getByText('Save').closest('button') as HTMLButtonElement);
+      await fixture.whenStable();
+
+      expect(submitEvent).toHaveBeenCalledExactlyOnceWith({
+        photo: validPerson.photo,
+        firstname: validPerson.firstname,
+        lastname: 'Updated',
+        email: validPerson.email,
+        phone: validPerson.phone,
+      } satisfies UpsertPersonBody);
     });
   });
 });

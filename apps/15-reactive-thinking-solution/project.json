@@ -1,0 +1,90 @@
+{
+  "name": "15-reactive-thinking-solution",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "sfeir",
+  "sourceRoot": "apps/15-reactive-thinking-solution/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@angular/build:application",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/apps/15-reactive-thinking-solution",
+        "browser": "apps/15-reactive-thinking-solution/src/main.ts",
+        "tsConfig": "apps/15-reactive-thinking-solution/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          {
+            "glob": "**/*",
+            "input": "apps/15-reactive-thinking-solution/public",
+            "output": "public"
+          }
+        ],
+        "styles": [
+          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+          "apps/15-reactive-thinking-solution/src/styles.scss"
+        ]
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "4kb",
+              "maximumError": "8kb"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "optimization": false,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "fileReplacements": [
+            {
+              "replace": "apps/15-reactive-thinking-solution/src/environments/environment.ts",
+              "with": "apps/15-reactive-thinking-solution/src/environments/environment.development.ts"
+            }
+          ]
+        }
+      }
+    },
+    "serve": {
+      "continuous": true,
+      "executor": "@angular/build:dev-server",
+      "dependsOn": [
+        {
+          "projects": "server-rest",
+          "target": "serve"
+        }
+      ],
+      "defaultConfiguration": "development",
+      "configurations": {
+        "production": {
+          "buildTarget": "15-reactive-thinking-solution:build:production"
+        },
+        "development": {
+          "buildTarget": "15-reactive-thinking-solution:build:development"
+        }
+      }
+    },
+    "serve-static": {
+      "continuous": true,
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "15-reactive-thinking-solution:build",
+        "staticFilePath": "dist/apps/15-reactive-thinking-solution/browser",
+        "spa": true
+      }
+    }
+  }
+}

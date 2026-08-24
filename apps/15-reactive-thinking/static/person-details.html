@@ -1,0 +1,6 @@
+<section class="person-details-view">
+  <!-- TODO: pass the person to the signal form -->
+  <sfeir-signal-form (cancelForm)="goBack()" (submitForm)="savePerson($event)" />
+  <!-- TODO: display the loader until the person is not loaded-->
+  <sfeir-loader />
+</section>

@@ -1,0 +1,7 @@
+<section class="person-details-view">
+  @if (_personResource.hasValue() && !_personResource.isLoading()) {
+    <sfeir-signal-form [person]="_personResource.value()" (cancelForm)="goBack()" (submitForm)="savePerson($event)" />
+  } @else {
+    <sfeir-loader />
+  }
+</section>

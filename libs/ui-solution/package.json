@@ -5,6 +5,7 @@
     "@angular/common": "^22.0.0",
     "@angular/core": "^22.0.0",
     "@angular/material": "^22.0.0",
+    "@angular/router": "^22.0.0",
     "@analogjs/vite-plugin-angular": "2.6.4",
     "@analogjs/vitest-angular": "2.6.4",
     "@testing-library/jest-dom": "^7.0.1",

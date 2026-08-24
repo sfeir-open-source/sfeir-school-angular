@@ -5,6 +5,7 @@
     "@angular/common": "^22.0.0",
     "@angular/core": "^22.0.0",
     "@angular/material": "^22.0.0",
+    "@angular/router": "^22.0.0",
     "@sfeir/types": "workspace:*"
   },
   "sideEffects": false
