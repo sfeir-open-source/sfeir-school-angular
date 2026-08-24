@@ -77,4 +77,34 @@ describe('People', () => {
       req.flush(null);
     });
   });
+
+  describe('getPerson', () => {
+    it('should return a single person by id', () => {
+      const { id: firstPersonId } = PEOPLE_MOCK[0];
+      let person: unknown;
+      peopleService.getPerson(firstPersonId).subscribe(result => (person = result));
+      const req = httpMock.expectOne(`${People.baseUrl}/people/${firstPersonId}`);
+      expect(req.request.method).toBe('GET');
+      req.flush(PEOPLE_MOCK[0]);
+      expect(person).toEqual(PEOPLE_MOCK[0]);
+    });
+  });
+
+  describe('updatePerson', () => {
+    it('should update an existing person', () => {
+      const { id: firstPersonId } = PEOPLE_MOCK[0];
+      const updatedPerson: UpsertPersonBody = {
+        photo: 'https://randomuser.me/api/portraits/lego/6.jpg',
+        firstname: 'Jane',
+        lastname: 'Doe',
+        email: 'jane.doe@sfeir.com',
+        phone: '0102030405',
+      };
+      peopleService.updatePerson(firstPersonId, updatedPerson).subscribe();
+      const req = httpMock.expectOne(`${People.baseUrl}/people/${firstPersonId}`);
+      expect(req.request.method).toBe('PUT');
+      expect(req.request.body).toEqual(updatedPerson);
+      req.flush(null);
+    });
+  });
 });
