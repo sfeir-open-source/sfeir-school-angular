@@ -221,7 +221,11 @@
         "apps/15-reactive-thinking/**/*",
         "apps/15-reactive-thinking-solution/**/*",
         "apps/16-advanced-routing/**/*",
-        "apps/16-advanced-routing-solution/**/*"
+        "apps/16-advanced-routing-solution/**/*",
+        "apps/17-guards/**/*",
+        "apps/17-guards-solution/**/*",
+        "apps/18-resolver/**/*",
+        "apps/18-resolver-solution/**/*"
       ]
     },
     {
@@ -265,7 +269,11 @@
         "apps/15-reactive-thinking/**/*",
         "apps/15-reactive-thinking-solution/**/*",
         "apps/16-advanced-routing/**/*",
-        "apps/16-advanced-routing-solution/**/*"
+        "apps/16-advanced-routing-solution/**/*",
+        "apps/17-guards/**/*",
+        "apps/17-guards-solution/**/*",
+        "apps/18-resolver/**/*",
+        "apps/18-resolver-solution/**/*"
       ]
     }
   ]

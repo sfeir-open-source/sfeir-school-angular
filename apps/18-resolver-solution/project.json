@@ -1,0 +1,90 @@
+{
+  "name": "18-resolver-solution",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "sfeir",
+  "sourceRoot": "apps/18-resolver-solution/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@angular/build:application",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/apps/18-resolver-solution",
+        "browser": "apps/18-resolver-solution/src/main.ts",
+        "tsConfig": "apps/18-resolver-solution/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          {
+            "glob": "**/*",
+            "input": "apps/18-resolver-solution/public",
+            "output": "public"
+          }
+        ],
+        "styles": [
+          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+          "apps/18-resolver-solution/src/styles.scss"
+        ]
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "4kb",
+              "maximumError": "8kb"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "optimization": false,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "fileReplacements": [
+            {
+              "replace": "apps/18-resolver-solution/src/environments/environment.ts",
+              "with": "apps/18-resolver-solution/src/environments/environment.development.ts"
+            }
+          ]
+        }
+      }
+    },
+    "serve": {
+      "continuous": true,
+      "executor": "@angular/build:dev-server",
+      "dependsOn": [
+        {
+          "projects": "server-rest",
+          "target": "serve"
+        }
+      ],
+      "defaultConfiguration": "development",
+      "configurations": {
+        "production": {
+          "buildTarget": "18-resolver-solution:build:production"
+        },
+        "development": {
+          "buildTarget": "18-resolver-solution:build:development"
+        }
+      }
+    },
+    "serve-static": {
+      "continuous": true,
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "18-resolver-solution:build",
+        "staticFilePath": "dist/apps/18-resolver-solution/browser",
+        "spa": true
+      }
+    }
+  }
+}
