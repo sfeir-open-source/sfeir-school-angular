@@ -1,0 +1,90 @@
+{
+  "name": "17-guards-solution",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "sfeir",
+  "sourceRoot": "apps/17-guards-solution/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@angular/build:application",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/apps/17-guards-solution",
+        "browser": "apps/17-guards-solution/src/main.ts",
+        "tsConfig": "apps/17-guards-solution/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          {
+            "glob": "**/*",
+            "input": "apps/17-guards-solution/public",
+            "output": "public"
+          }
+        ],
+        "styles": [
+          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+          "apps/17-guards-solution/src/styles.scss"
+        ]
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "4kb",
+              "maximumError": "8kb"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "optimization": false,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "fileReplacements": [
+            {
+              "replace": "apps/17-guards-solution/src/environments/environment.ts",
+              "with": "apps/17-guards-solution/src/environments/environment.development.ts"
+            }
+          ]
+        }
+      }
+    },
+    "serve": {
+      "continuous": true,
+      "executor": "@angular/build:dev-server",
+      "dependsOn": [
+        {
+          "projects": "server-rest",
+          "target": "serve"
+        }
+      ],
+      "defaultConfiguration": "development",
+      "configurations": {
+        "production": {
+          "buildTarget": "17-guards-solution:build:production"
+        },
+        "development": {
+          "buildTarget": "17-guards-solution:build:development"
+        }
+      }
+    },
+    "serve-static": {
+      "continuous": true,
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "17-guards-solution:build",
+        "staticFilePath": "dist/apps/17-guards-solution/browser",
+        "spa": true
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+<section class="login-page">
+  <mat-card class="login-card">
+    <img class="login-card__logo" src="public/images/logo-sfeir.svg" alt="Sfeir" />
+
+    <mat-card-header>
+      <mat-card-title>Welcome back</mat-card-title>
+      <mat-card-subtitle>Sign in with your username to access the staff directory</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <form class="login-form" [formRoot]="_loginForm">
+        <mat-form-field appearance="outline" class="login-form__field">
+          <mat-label>Username</mat-label>
+          <input matInput type="text" data-testid="username-input" [formField]="_loginForm" />
+          <mat-icon matPrefix>person</mat-icon>
+        </mat-form-field>
+
+        <button
+          mat-flat-button
+          color="primary"
+          type="submit"
+          class="login-form__submit"
+          data-testid="login-button"
+          [disabled]="_loginForm().invalid()"
+        >
+          Sign in
+        </button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</section>
