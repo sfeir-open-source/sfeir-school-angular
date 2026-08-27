@@ -225,7 +225,9 @@
         "apps/17-guards/**/*",
         "apps/17-guards-solution/**/*",
         "apps/18-resolver/**/*",
-        "apps/18-resolver-solution/**/*"
+        "apps/18-resolver-solution/**/*",
+        "apps/19-interceptors/**/*",
+        "apps/19-interceptors-solution/**/*"
       ]
     },
     {
@@ -273,7 +275,9 @@
         "apps/17-guards/**/*",
         "apps/17-guards-solution/**/*",
         "apps/18-resolver/**/*",
-        "apps/18-resolver-solution/**/*"
+        "apps/18-resolver-solution/**/*",
+        "apps/19-interceptors/**/*",
+        "apps/19-interceptors-solution/**/*"
       ]
     }
   ]
