@@ -27,8 +27,9 @@
 .path {
   stroke-dasharray: 1, 200;
   stroke-dashoffset: 0;
-  animation: dash 1.5s ease-in-out infinite,
-  color 6s ease-in-out infinite;
+  animation:
+    dash 1.5s ease-in-out infinite,
+    color 6s ease-in-out infinite;
   stroke-linecap: round;
 }
 
@@ -69,4 +70,14 @@
   90% {
     stroke: #ffa700;
   }
+}
+
+.loader-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(66, 66, 66, 0.4);
 }

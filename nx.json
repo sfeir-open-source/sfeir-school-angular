@@ -227,7 +227,9 @@
         "apps/18-resolver/**/*",
         "apps/18-resolver-solution/**/*",
         "apps/19-interceptors/**/*",
-        "apps/19-interceptors-solution/**/*"
+        "apps/19-interceptors-solution/**/*",
+        "apps/20-ng-content/**/*",
+        "apps/20-ng-content-solution/**/*"
       ]
     },
     {
@@ -277,7 +279,9 @@
         "apps/18-resolver/**/*",
         "apps/18-resolver-solution/**/*",
         "apps/19-interceptors/**/*",
-        "apps/19-interceptors-solution/**/*"
+        "apps/19-interceptors-solution/**/*",
+        "apps/20-ng-content/**/*",
+        "apps/20-ng-content-solution/**/*"
       ]
     }
   ]
