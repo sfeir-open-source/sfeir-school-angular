@@ -1,0 +1,5 @@
+<mat-list>
+  @for (item of data(); track item.id) {
+    <ng-container *ngTemplateOutlet="itemTemplate(); context: { $implicit: item }" />
+  }
+</mat-list>

@@ -1,0 +1,36 @@
+<sfeir-loader [isLoading]="_isLoading()">
+  <section>
+    @switch (view()) {
+      @case ('card') {
+        @for (person of _people(); track person.id) {
+          <sfeir-card [person]="person" (delete)="handleDelete($event)" />
+        }
+      }
+
+      @case ('list') {
+        <sfeir-list [data]="_people()">
+          <ng-template #item let-person>
+            <mat-list-item>
+              <img alt="person-image" [ngSrc]="person.photo" matListItemAvatar height="40" width="40" />
+              <h3 matListItemTitle>
+                {{ person.firstname }} {{ person.lastname }}
+                <span class="sfeir-badge" [sfeirKing]="person.isManager"></span>
+              </h3>
+              <p matListItemLine>
+                <span> {{ person.entity }} </span> — <span>{{ person.email }} </span>
+              </p>
+            </mat-list-item>
+          </ng-template>
+        </sfeir-list>
+      }
+    }
+  </section>
+  <section class="buttons-fab">
+    <button mat-fab color="accent" class="button-add" (click)="handleOpenAddDialog()" data-testid="button-modal">
+      <i class="material-icons">add</i>
+    </button>
+    <button mat-fab color="warn" (click)="handleChangeView()" data-testid="view-button">
+      <i class="material-icons">{{ view() === 'card' ? 'view_stream' : 'list' }}</i>
+    </button>
+  </section>
+</sfeir-loader>

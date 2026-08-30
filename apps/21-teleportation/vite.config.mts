@@ -1,21 +1,25 @@
 /// <reference types='vitest' />
 import angular from '@analogjs/vite-plugin-angular';
 import { defineConfig } from 'vite';
+
 export default defineConfig(() => ({
   root: __dirname,
-  cacheDir: '../../node_modules/.vite/libs/ui',
+  cacheDir: '../../node_modules/.vite/apps/21-teleportation',
   plugins: [angular()],
+  resolve: {
+    tsconfigPaths: true,
+  },
   test: {
-    name: 'ui',
+    name: '21-teleportation',
     watch: false,
     globals: true,
     environment: 'jsdom',
-    include: ['**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
-    setupFiles: ['./test-setup.ts'],
+    include: ['{src,tests}/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
+    setupFiles: ['src/test-setup.ts'],
     reporters: ['default'],
     passWithNoTests: true,
     coverage: {
-      reportsDirectory: '../../coverage/libs/ui',
+      reportsDirectory: '../../coverage/apps/21-teleportation',
       provider: 'v8' as const,
     },
   },
