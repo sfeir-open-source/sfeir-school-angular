@@ -2,6 +2,8 @@
 
 Up to now, `sfeir-card` has only ever displayed data. In this exercise you'll teach it to *react to the DOM directly*: some people in `PEOPLE_MOCK` are managers (`isManager: true`), and a manager's name should be marked with a small crown icon next to it. Rather than baking that icon into the card's own template with an `@if`, you'll build a reusable **attribute directive**, `King`, living in its own shared library entry point (`@sfeir/ui/king`), and attach it to a plain `<span>` in the card. This is your first hands-on encounter with directives — the third and least visible of Angular's three building blocks (component, directive, pipe), the one that adds behavior to an existing element instead of creating new DOM.
 
+Once the crown itself works, you'll add a small interactive touch on top: hovering the crown should turn it red, and moving away should restore its normal color. You'll build that second behavior a different way than the first — not with `Renderer2`, but with the `@Directive` decorator's own `host` metadata option, Angular's declarative mechanism for binding host properties and listening to host events straight from the decorator, without touching the DOM by hand.
+
 ## 🎯 Learning objectives
 
 - Understanding what a directive is: a class that attaches **behavior** to an existing DOM element, as opposed to a component (which owns its own template) or a pipe (which transforms a value in an expression)
@@ -12,6 +14,9 @@ Up to now, `sfeir-card` has only ever displayed data. In this exercise you'll te
 - Using `effect()` inside a directive's constructor to re-run DOM-writing logic automatically whenever a signal input changes, without a lifecycle hook or manual subscription
 - Registering a directive on a component exactly like a component or pipe — by adding it to the host component's `imports` array, no `NgModule` involved
 - Applying a directive to a plain `<span>` — a directive doesn't need a component behind it; it can enhance any native element
+- Declaring host bindings and host listeners **declaratively** through the `host` metadata object on `@Directive`, as an alternative to `Renderer2` for the simple, common case of reacting to a DOM event by updating a style or property
+- Recognizing when to reach for `host` bindings/listeners versus `Renderer2` inside an `effect()`: `host` is the directive-native way to wire a property or event in one line when the mapping between an event and a class member is direct; `Renderer2` remains the right tool when you need imperative control (like injecting raw markup), as you already do for the crown's `innerHTML`
+- Using a private signal as the single source of truth for a piece of host state (an icon color), read from a `host` property binding so the template updates itself whenever the signal changes — no manual DOM write needed for that part
 
 ## 📁 What you're working with
 
@@ -29,14 +34,14 @@ apps/08-directive/
 
 libs/ui/
 ├── king/
-│   ├── king.ts           🚧 to do — currently a plain function returning a string, not a directive yet
+│   ├── king.ts           🚧 to do — currently a plain function returning a string, not a directive yet (also gets the hover-color behavior via `host`)
 │   ├── index.ts           ✅ complete — already re-exports whatever `king.ts` exports
 │   └── ng-package.json    ✅ complete — declares this folder as a secondary entry point
 └── card/
     └── card.html          🚧 to do — needs one new binding, next to the person's name
 ```
 
-`libs/ui/king/king.ts` already contains the raw HTML snippet for the crown icon (a Material icon markup string) — your job isn't to invent that markup, it's to turn the surrounding code into a real directive that uses it.
+`libs/ui/king/king.ts` already contains the raw HTML snippet for the crown icon (a Material icon markup string) — your job isn't to invent that markup, it's to turn the surrounding code into a real directive that uses it, then layer a small hover interaction on top of it.
 
 ## 📝 Your tasks
 
@@ -62,6 +67,19 @@ libs/ui/
 - Bind the `sfeirKing` attribute on that `<span>` to whether the currently displayed person is a manager, reading from the `person` input's `isManager` field (`Person.isManager` is a `boolean` already on the model, nothing to compute).
 - You're not writing any content inside the `<span>` yourself — the directive is entirely responsible for what ends up inside it, based on the value you bind.
 
+### 4. `libs/ui/king/king.ts` — make the crown react to hover
+
+Once the crown shows and hides correctly, add a second behavior to the same directive: hovering the icon should turn it red, and moving the pointer away should restore its normal color. This time, don't use `Renderer2` — use the `host` metadata option of `@Directive` instead.
+
+- Introduce a small internal `signal` on the directive holding the icon's current color. A union type of the two possible string values (the "normal" color and `'red'`) is a good fit here, and keeps the signal from ever holding an unexpected value.
+- Add a `host` object to the `@Directive({...})` metadata, alongside the existing `selector`. Inside it:
+  - Bind a **host property** — the pattern is a key wrapped in square brackets pointing at a DOM property path (e.g. a CSS style property), with a string expression as its value that reads your color signal.
+  - Bind two **host listeners** — keys wrapped in parentheses naming a native DOM event, with a string expression calling a method on the directive.
+- Write the two methods your host listeners call: one sets the color signal to the "hover" value, the other resets it back to the default. Both should just be a one-line `.set(...)` on the signal — no `Renderer2`, no `ElementRef` needed for this part, because the `host` binding is what actually pushes the value to the DOM.
+- Double check the signal's default value matches what you want to see before any hover happens.
+
+Keep the existing constructor `effect()` from task 1 exactly as it is — the crown's `innerHTML` injection and the hover color are two independent behaviors on the same directive, one driven by `Renderer2` inside `effect()`, the other by the `host` object.
+
 ## ▶️ How to run the application
 
 This app is **not** the Nx default project, so always pass its name explicitly. The shared library has its own project name, `ui`, if you want to run its checks in isolation:
@@ -85,6 +103,7 @@ Serve the app and open it in the browser:
 - For a person who is **not** a manager, no icon appears next to the name — nothing extra in the DOM, nothing empty-looking either.
 - Click "refresh" a few times to cycle through different people: the crown should appear and disappear as you land on managers vs. non-managers, without a page reload — this is `effect()` reacting to the input signal changing on every new person.
 - Open devtools' Elements panel: the `<span>` next to the name should have a `sfeirKing` attribute, and its inner content should change between empty and the crown's markup depending on the person.
+- Refresh until a manager shows up, then hover the crown icon with the mouse: it should turn red while the pointer is over it, and go back to its normal color as soon as the pointer leaves — with no page reload or flicker, purely a CSS color change.
 - Open the console: no errors about an unknown attribute or a missing directive.
 
 ## 🛠️ Troubleshooting
@@ -97,7 +116,11 @@ Serve the app and open it in the browser:
 - **Compiler error about a required input with no value provided**: `input.required(...)` throws if `[sfeirKing]` isn't bound in the template — make sure the `<span>` in `card.html` has the binding, not just a bare attribute.
 - **`nx build 08-directive` fails referencing `@sfeir/ui`**: this app depends on the `ui` library at build time — an error inside `libs/ui/king` (a bad import, a typo in the `@Directive` decorator) will surface here even though `nx serve`/`nx test` only targeted the app.
 - **`nx serve` starts the wrong app**: the workspace's default project is `01-hands-on`, not this one — always run `nx serve 08-directive` explicitly.
+- **Hovering the crown does nothing, no error either**: check that the `host` object is actually inside `@Directive({...})`'s metadata (not a separate class member), and that its property-binding key is wrapped in square brackets and its listener keys in parentheses — a plain object key with no brackets/parentheses is just inert metadata, Angular won't wire it to anything.
+- **The color changes on hover but never resets on mouseout**: the `(mouseout)` listener is either missing from `host` or points at the wrong method — double check both listener expressions call a real method on the class, and that the "reset" method actually sets the signal back to its default value rather than leaving it untouched.
+- **Hover works on the whole card, not just the crown**: the `host` binding always applies to *this directive's own host element* — if the color changes even when hovering elsewhere on the card, the `sfeirKing` attribute (and therefore the directive) has probably ended up on the wrong element, not on the small `<span>` next to the name.
+- **The style reads as `undefined` instead of a color**: a signal used inside a `host` binding still needs to be *called* as a function in the binding expression (e.g. with `()`), the same way you already call signals elsewhere in this workspace — binding the signal reference itself won't work.
 
 ## 🙈 Stuck?
 
-Try writing the directive and wiring it into the card yourself first — that's the whole point of the exercise. If you're genuinely stuck, `apps/08-directive-solution` (app side) and `libs/ui-solution/king` / `libs/ui-solution/card` (library side) together form a complete, working version — including `card.spec.ts` and `home.spec.ts` test suites that document the exact expected behavior — that you can compare your code against. Use them to check your approach once you've made a real attempt, not as a starting point to copy from.
+Try writing the directive and wiring it into the card yourself first — that's the whole point of the exercise. If you're genuinely stuck, `apps/08-directive-solution` (app side) and `libs/ui-solution/king` / `libs/ui-solution/card` (library side) together form a complete, working version — including `king.spec.ts`, `card.spec.ts` and `home.spec.ts` test suites that document the exact expected behavior, hover included — that you can compare your code against. Use them to check your approach once you've made a real attempt, not as a starting point to copy from.
