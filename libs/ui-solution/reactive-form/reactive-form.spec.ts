@@ -43,10 +43,10 @@ describe('ReactiveForm', () => {
       expect(saveButton).toBeDisabled();
     });
     it('should enable the Save button and emit submitForm with the form value when filled correctly', async () => {
-      fireEvent.input(screen.getByPlaceholderText('First name'), { target: { value: 'John' } });
-      fireEvent.input(screen.getByPlaceholderText('Last name'), { target: { value: 'Doe' } });
-      fireEvent.input(screen.getByPlaceholderText('email'), { target: { value: 'john.d@sfeir.com' } });
-      fireEvent.input(screen.getByPlaceholderText('phone'), { target: { value: '0102030405' } });
+      fireEvent.input(screen.getByLabelText('First name'), { target: { value: 'John' } });
+      fireEvent.input(screen.getByLabelText('Last name'), { target: { value: 'Doe' } });
+      fireEvent.input(screen.getByLabelText('Email'), { target: { value: 'john.d@sfeir.com' } });
+      fireEvent.input(screen.getByLabelText('Phone'), { target: { value: '0102030405' } });
       await fixture.whenStable();
 
       const saveButton = screen.getByText('Save').closest('button') as HTMLButtonElement;
@@ -64,58 +64,58 @@ describe('ReactiveForm', () => {
       } satisfies UpsertPersonBody);
     });
     it('should display the required error for the firstname when it is empty', async () => {
-      const firstNameInput = screen.getByPlaceholderText('First name');
+      const firstNameInput = screen.getByLabelText('First name');
       fireEvent.blur(firstNameInput);
       await fixture.whenStable();
-      expect(screen.getByText('First name is required')).toBeInTheDocument();
+      expect(screen.getByText('This field is required')).toBeInTheDocument();
     });
     it('should display the minlength error for the firstname when it is too short', async () => {
-      const firstNameInput = screen.getByPlaceholderText('First name');
+      const firstNameInput = screen.getByLabelText('First name');
       fireEvent.input(firstNameInput, { target: { value: 'J' } });
       fireEvent.blur(firstNameInput);
       await fixture.whenStable();
-      expect(screen.getByText('First name must be at least 2 characters long')).toBeInTheDocument();
+      expect(screen.getByText('This field must be at least 2 characters long')).toBeInTheDocument();
     });
     it('should display the required error for the lastname when it is empty', async () => {
-      const lastNameInput = screen.getByPlaceholderText('Last name');
+      const lastNameInput = screen.getByLabelText('Last name');
       fireEvent.blur(lastNameInput);
       await fixture.whenStable();
-      expect(screen.getByText('Last name is required')).toBeInTheDocument();
+      expect(screen.getByText('This field is required')).toBeInTheDocument();
     });
     it('should display the minlength error for the lastname when it is too short', async () => {
-      const lastNameInput = screen.getByPlaceholderText('Last name');
+      const lastNameInput = screen.getByLabelText('Last name');
       fireEvent.input(lastNameInput, { target: { value: 'D' } });
       fireEvent.blur(lastNameInput);
       await fixture.whenStable();
-      expect(screen.getByText('Last name must be at least 2 characters long')).toBeInTheDocument();
+      expect(screen.getByText('This field must be at least 2 characters long')).toBeInTheDocument();
     });
     it('should display the required error for the email when it is empty', async () => {
-      const emailInput = screen.getByPlaceholderText('email');
+      const emailInput = screen.getByLabelText('Email');
       fireEvent.blur(emailInput);
       await fixture.whenStable();
-      expect(screen.getByText('Email is required')).toBeInTheDocument();
+      expect(screen.getByText('This field is required')).toBeInTheDocument();
     });
     it('should display the sfeirEmail error for the email when it does not match the Sfeir email pattern', async () => {
-      const emailInput = screen.getByPlaceholderText('email');
+      const emailInput = screen.getByLabelText('Email');
       fireEvent.input(emailInput, { target: { value: 'john.doe@gmail.com' } });
       fireEvent.blur(emailInput);
       await fixture.whenStable();
-      expect(screen.getByText('Email must be a valid Sfeir email')).toBeInTheDocument();
+      expect(screen.getByText('This field must be a valid Sfeir email address')).toBeInTheDocument();
     });
     it('should not display an email error when the email matches the Sfeir email pattern', async () => {
-      const emailInput = screen.getByPlaceholderText('email');
+      const emailInput = screen.getByLabelText('Email');
       fireEvent.input(emailInput, { target: { value: 'john.d@sfeir.com' } });
       fireEvent.blur(emailInput);
       await fixture.whenStable();
-      expect(screen.queryByText('Email is required')).not.toBeInTheDocument();
-      expect(screen.queryByText('Email must be a valid Sfeir email')).not.toBeInTheDocument();
+      expect(screen.queryByText('This field is required')).not.toBeInTheDocument();
+      expect(screen.queryByText('This field must be a valid Sfeir email address')).not.toBeInTheDocument();
     });
     it('should display the pattern error for the phone when it is invalid', async () => {
-      const phoneInput = screen.getByPlaceholderText('phone');
+      const phoneInput = screen.getByLabelText('Phone');
       fireEvent.input(phoneInput, { target: { value: '123' } });
       fireEvent.blur(phoneInput);
       await fixture.whenStable();
-      expect(screen.getByText('Phone must be 10 digits long')).toBeInTheDocument();
+      expect(screen.getByText('This field must match the pattern')).toBeInTheDocument();
     });
     it('should emit cancelForm and not submitForm when the Cancel button is clicked', () => {
       fireEvent.click(screen.getByText('Cancel'));

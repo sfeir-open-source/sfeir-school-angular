@@ -5,51 +5,10 @@
       <input type="hidden" name="photo" formControlName="photo" />
     </section>
     <section class="form-container__form">
-      <mat-form-field appearance="outline">
-        <mat-label>First name</mat-label>
-        <input type="text" matInput placeholder="First name" formControlName="firstname" required [minlength]="2" />
-        <mat-error>
-          @if (_personForm.controls.firstname.errors?.['required']) {
-            First name is required
-          }
-          @if (_personForm.controls.firstname.errors?.['minlength']) {
-            First name must be at least 2 characters long
-          }
-        </mat-error>
-      </mat-form-field>
-      <mat-form-field appearance="outline">
-        <mat-label>Last name</mat-label>
-        <input type="text" matInput placeholder="Last name" formControlName="lastname" required [minlength]="2" />
-        <mat-error>
-          @if (_personForm.controls.lastname.errors?.['required']) {
-            Last name is required
-          }
-          @if (_personForm.controls.lastname.errors?.['minlength']) {
-            Last name must be at least 2 characters long
-          }
-        </mat-error>
-      </mat-form-field>
-      <mat-form-field appearance="outline">
-        <mat-label>Email</mat-label>
-        <input type="email" matInput placeholder="email" formControlName="email" required />
-        <mat-error>
-          @if (_personForm.controls.email.errors?.['required']) {
-            Email is required
-          }
-          @if (_personForm.controls.email.errors?.['sfeirEmail']) {
-            Email must be a valid Sfeir email
-          }
-        </mat-error>
-      </mat-form-field>
-      <mat-form-field appearance="outline">
-        <mat-label>phone</mat-label>
-        <input type="phone" matInput placeholder="phone" formControlName="phone" required [pattern]="/^\d{10}$/" />
-        <mat-error>
-          @if (_personForm.controls.phone.errors?.['pattern']) {
-            Phone must be 10 digits long
-          }
-        </mat-error>
-      </mat-form-field>
+      <sfeir-input [errors]="_personForm.controls.firstname.errors" [placeholder]="'First name'" [type]="'text'" formControlName="firstname" />
+      <sfeir-input [errors]="_personForm.controls.lastname.errors" [placeholder]="'Last name'" [type]="'text'" formControlName="lastname" />
+      <sfeir-input [errors]="_personForm.controls.email.errors" [placeholder]="'Email'" [type]="'email'" formControlName="email" />
+      <sfeir-input [errors]="_personForm.controls.phone.errors" [placeholder]="'Phone'" [type]="'tel'" formControlName="phone" />
     </section>
   </section>
   <div class="form-user-action">
