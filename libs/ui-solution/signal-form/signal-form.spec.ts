@@ -43,10 +43,10 @@ describe('SignalForm', () => {
       expect(saveButton).toBeDisabled();
     });
     it('should enable the Save button and emit submitForm with the form value when filled correctly', async () => {
-      fireEvent.input(screen.getByPlaceholderText('First name'), { target: { value: 'John' } });
-      fireEvent.input(screen.getByPlaceholderText('Last name'), { target: { value: 'Doe' } });
-      fireEvent.input(screen.getByPlaceholderText('email'), { target: { value: 'john.d@sfeir.com' } });
-      fireEvent.input(screen.getByPlaceholderText('phone'), { target: { value: '0102030405' } });
+      fireEvent.input(screen.getByPlaceholderText('First Name'), { target: { value: 'John' } });
+      fireEvent.input(screen.getByPlaceholderText('Last Name'), { target: { value: 'Doe' } });
+      fireEvent.input(screen.getByPlaceholderText('Email'), { target: { value: 'john.d@sfeir.com' } });
+      fireEvent.input(screen.getByPlaceholderText('Phone'), { target: { value: '0102030405' } });
       await fixture.whenStable();
 
       const saveButton = screen.getByText('Save').closest('button') as HTMLButtonElement;
@@ -64,27 +64,27 @@ describe('SignalForm', () => {
       } satisfies UpsertPersonBody);
     });
     it('should display the required error for the firstname when it is touched and empty', async () => {
-      const firstNameInput = screen.getByPlaceholderText('First name');
+      const firstNameInput = screen.getByPlaceholderText('First Name');
       fireEvent.blur(firstNameInput);
       await fixture.whenStable();
       expect(screen.getByText('Field is required')).toBeInTheDocument();
     });
     it('should display the minLength error for the firstname when it is too short', async () => {
-      const firstNameInput = screen.getByPlaceholderText('First name');
+      const firstNameInput = screen.getByPlaceholderText('First Name');
       fireEvent.input(firstNameInput, { target: { value: 'J' } });
       fireEvent.blur(firstNameInput);
       await fixture.whenStable();
       expect(screen.getByText('Field must be at least 3 characters long')).toBeInTheDocument();
     });
     it('should display the sfeirEmail error for the email when it does not match the Sfeir email pattern', async () => {
-      const emailInput = screen.getByPlaceholderText('email');
+      const emailInput = screen.getByPlaceholderText('Email');
       fireEvent.input(emailInput, { target: { value: 'john.doe@gmail.com' } });
       fireEvent.blur(emailInput);
       await fixture.whenStable();
       expect(screen.getByText('Invalid SFEIR email')).toBeInTheDocument();
     });
     it('should not display an email error when the email matches the Sfeir email pattern', async () => {
-      const emailInput = screen.getByPlaceholderText('email');
+      const emailInput = screen.getByPlaceholderText('Email');
       fireEvent.input(emailInput, { target: { value: 'john.d@sfeir.com' } });
       fireEvent.blur(emailInput);
       await fixture.whenStable();
@@ -92,7 +92,7 @@ describe('SignalForm', () => {
       expect(screen.queryByText('Field is required')).not.toBeInTheDocument();
     });
     it('should display the pattern error for the phone when it is invalid', async () => {
-      const phoneInput = screen.getByPlaceholderText('phone');
+      const phoneInput = screen.getByPlaceholderText('Phone');
       fireEvent.input(phoneInput, { target: { value: '123' } });
       fireEvent.blur(phoneInput);
       await fixture.whenStable();
@@ -118,10 +118,10 @@ describe('SignalForm', () => {
     });
 
     it('should pre-fill the form fields with the given person data', () => {
-      expect(screen.getByPlaceholderText('First name')).toHaveValue(person.firstname);
-      expect(screen.getByPlaceholderText('Last name')).toHaveValue(person.lastname);
-      expect(screen.getByPlaceholderText('email')).toHaveValue(person.email);
-      expect(screen.getByPlaceholderText('phone')).toHaveValue(person.phone);
+      expect(screen.getByPlaceholderText('First Name')).toHaveValue(person.firstname);
+      expect(screen.getByPlaceholderText('Last Name')).toHaveValue(person.lastname);
+      expect(screen.getByPlaceholderText('Email')).toHaveValue(person.email);
+      expect(screen.getByPlaceholderText('Phone')).toHaveValue(person.phone);
     });
     it('should display the given person photo instead of the placeholder', () => {
       const photo = screen.getByAltText('person-photo') as HTMLImageElement;
@@ -146,7 +146,7 @@ describe('SignalForm', () => {
       expect(screen.getByText('Save').closest('button')).not.toBeDisabled();
     });
     it('should submit the updated form value keeping the untouched fields from the person', async () => {
-      const lastNameInput = screen.getByPlaceholderText('Last name');
+      const lastNameInput = screen.getByPlaceholderText('Last Name');
       fireEvent.input(lastNameInput, { target: { value: 'Updated' } });
       await fixture.whenStable();
 

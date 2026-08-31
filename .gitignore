@@ -17,6 +17,7 @@ bower_components
 *.launch
 .settings/
 *.sublime-workspace
+.zed
 
 # IDE - VSCode
 

@@ -50,7 +50,7 @@ Prefer the `mcp__angular-cli__*` and `mcp__nx-mcp__*` MCP tools over raw shell A
 
 | Agent | Model | Use for |
 | --- | --- | --- |
-| `developer` | Sonnet 5, thinking, medium effort | Writing/changing code in `apps/` or `libs/`: new features, tests, refactors, bug fixes. Has Angular CLI MCP tools + devserver control. |
+| `developer` | Sonnet 5, thinking, medium effort | Writing/changing code in `apps/` or `libs/`: new features, tests, refactors, bug fixes. Has Angular CLI MCP tools + devserver control. **Mandatory — no exceptions, including trivial/one-line fixes**: the top-level agent must never edit files under `apps/` or `libs/` itself; always dispatch to `developer` first. |
 | `trainer` | Sonnet 5, thinking, medium effort | Anything under `docs/` (slides), and student-facing `README.md` files under `apps/NN-*`. |
 | `examiner` | Haiku 4.5, no thinking | Quizzes the user on an exercise they just completed, to verify real understanding (not a tutor — an exam). |
 | `explorer` | Haiku 4.5, no thinking, read-only | Fast codebase lookups: where something lives, how it works, diffing an exercise against its `-solution`. Used standalone or by other subagents needing context. |
@@ -66,6 +66,7 @@ Prefer the `mcp__angular-cli__*` and `mcp__nx-mcp__*` MCP tools over raw shell A
 
 ## Working conventions
 
+- **Never edit code under `apps/` or `libs/` directly from the top-level session, even for a seemingly trivial one-line fix.** Always dispatch to the `developer` subagent first — see the Subagents table above.
 - Match an exercise's existing pattern in its `-solution` sibling before inventing a new approach — the whole training is meant to read as one continuous, consistent app.
 - Never put solution code or answers inside a plain `apps/NN-topic/README.md`.
 - Edit `docs/scss/*.scss` sources, not the generated `docs/css/*.css`.

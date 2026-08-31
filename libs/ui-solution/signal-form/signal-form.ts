@@ -2,16 +2,15 @@ import { NgOptimizedImage } from '@angular/common';
 import { Component, input, linkedSignal, output } from '@angular/core';
 import { FormField, FormRoot } from '@angular/forms/signals';
 import { MatButtonModule } from '@angular/material/button';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
 import { Person, UpsertPersonBody } from '@sfeir/types';
+import { CustomInput } from './custom-input/custom-input';
 import { createPersonForm } from './person-form';
 
 @Component({
   selector: 'sfeir-signal-form',
   templateUrl: './signal-form.html',
   styleUrl: './signal-form.scss',
-  imports: [MatButtonModule, FormField, FormRoot, MatFormFieldModule, MatInputModule, NgOptimizedImage],
+  imports: [MatButtonModule, FormField, FormRoot, NgOptimizedImage, CustomInput],
 })
 export class SignalForm {
   public readonly person = input<Person | undefined>();

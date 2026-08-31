@@ -12,7 +12,7 @@ const sfeirEmailValidator = (field: FieldContext<string>) => {
 
 const nameSchema = schema<string>(path => {
   required(path, { message: 'Field is required' });
-  minLength(path, 2, { message: 'Field must be at least 3 characters long' });
+  minLength(path, 2, { message: 'Field must be at least 2 characters long' });
 });
 
 export const createPersonForm = (model: WritableSignal<UpsertPersonBody>, callback: (field: FieldTree<UpsertPersonBody>) => void | Promise<void>) => {

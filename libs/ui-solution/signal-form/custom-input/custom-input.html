@@ -1,0 +1,19 @@
+<mat-form-field appearance="outline">
+  <mat-label>{{ placeholder() }}</mat-label>
+  <input
+    matInput
+    [formField]="_fieldControl"
+    [type]="type()"
+    [placeholder]="placeholder()"
+    [errorStateMatcher]="_errorMatcher()"
+    (blur)="handleBlur()"
+  />
+
+  <mat-error>
+    @if (invalid() && touched()) {
+      @for (e of errors(); track e.kind) {
+        {{ e.message }}
+      }
+    }
+  </mat-error>
+</mat-form-field>
