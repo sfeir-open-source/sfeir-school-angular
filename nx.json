@@ -189,7 +189,9 @@
         "apps/20-ng-content/**/*",
         "apps/20-ng-content-solution/**/*",
         "apps/21-teleportation/**/*",
-        "apps/21-teleportation-solution/**/*"
+        "apps/21-teleportation-solution/**/*",
+        "apps/22-structural-directive/**/*",
+        "apps/22-structural-directive-solution/**/*"
       ]
     },
     {
@@ -243,7 +245,9 @@
         "apps/20-ng-content/**/*",
         "apps/20-ng-content-solution/**/*",
         "apps/21-teleportation/**/*",
-        "apps/21-teleportation-solution/**/*"
+        "apps/21-teleportation-solution/**/*",
+        "apps/22-structural-directive/**/*",
+        "apps/22-structural-directive-solution/**/*"
       ]
     }
   ]

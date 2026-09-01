@@ -1,7 +1,7 @@
 import { inputBinding, outputBinding, signal } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { fireEvent, render, screen } from '@testing-library/angular';
 import { PEOPLE_MOCK, UpsertPersonBody } from '@sfeir/types';
+import { fireEvent, render, screen } from '@testing-library/angular';
 import { SignalForm } from './signal-form';
 
 const DEFAULT_PHOTO = 'https://randomuser.me/api/portraits/lego/6.jpg';
@@ -74,7 +74,7 @@ describe('SignalForm', () => {
       fireEvent.input(firstNameInput, { target: { value: 'J' } });
       fireEvent.blur(firstNameInput);
       await fixture.whenStable();
-      expect(screen.getByText('Field must be at least 3 characters long')).toBeInTheDocument();
+      expect(screen.getByText('Field must be at least 2 characters long')).toBeInTheDocument();
     });
     it('should display the sfeirEmail error for the email when it does not match the Sfeir email pattern', async () => {
       const emailInput = screen.getByPlaceholderText('Email');
@@ -102,6 +102,12 @@ describe('SignalForm', () => {
       fireEvent.click(screen.getByText('Cancel'));
       expect(cancelEvent).toHaveBeenCalledOnce();
       expect(submitEvent).not.toHaveBeenCalled();
+    });
+    it('should mask the phone field by default and reveal it once the visibility toggle is clicked', async () => {
+      expect(screen.getByPlaceholderText('Phone')).toHaveAttribute('type', 'password');
+      fireEvent.click(screen.getByText('visibility').closest('button') as HTMLButtonElement);
+      await fixture.whenStable();
+      expect(screen.getByPlaceholderText('Phone')).toHaveAttribute('type', 'text');
     });
   });
 

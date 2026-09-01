@@ -3,6 +3,7 @@ import { Component, input, linkedSignal, output } from '@angular/core';
 import { FormField, FormRoot } from '@angular/forms/signals';
 import { MatButtonModule } from '@angular/material/button';
 import { Person, UpsertPersonBody } from '@sfeir/types';
+import { Secret } from '@sfeir/ui-solution/password';
 import { CustomInput } from './custom-input/custom-input';
 import { createPersonForm } from './person-form';
 
@@ -10,7 +11,7 @@ import { createPersonForm } from './person-form';
   selector: 'sfeir-signal-form',
   templateUrl: './signal-form.html',
   styleUrl: './signal-form.scss',
-  imports: [MatButtonModule, FormField, FormRoot, NgOptimizedImage, CustomInput],
+  imports: [MatButtonModule, FormField, FormRoot, NgOptimizedImage, CustomInput, Secret],
 })
 export class SignalForm {
   public readonly person = input<Person | undefined>();

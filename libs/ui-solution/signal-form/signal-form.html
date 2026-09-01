@@ -7,8 +7,8 @@
     <section class="form-container__form">
       <sfeir-input [formField]="_form.firstname" [type]="'text'" [placeholder]="'First Name'" />
       <sfeir-input [formField]="_form.lastname" [type]="'text'" [placeholder]="'Last Name'" />
-      <sfeir-input [formField]="_form.email" [type]="'email'" [placeholder]="'Email'" />
-      <sfeir-input [formField]="_form.phone" [type]="'text'" [placeholder]="'Phone'" />
+      <sfeir-input [formField]="_form.email" [type]="'text'" [placeholder]="'Email'" />
+      <sfeir-input *sfeirSecret="let type" [formField]="_form.phone" [type]="type" [placeholder]="'Phone'" />
     </section>
   </section>
   <div class="form-user-action">
