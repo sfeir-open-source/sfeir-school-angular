@@ -1,0 +1,23 @@
+section {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttons-fab {
+  display: block;
+  height: 170px;
+  width: 90px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+.buttons-fab button {
+  transition: bottom 0.2s;
+}
+
+.buttons-fab:hover .button-add {
+  bottom: 90px;
+}

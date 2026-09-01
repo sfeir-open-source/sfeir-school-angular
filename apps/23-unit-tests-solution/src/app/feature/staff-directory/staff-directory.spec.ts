@@ -1,16 +1,16 @@
-import { DebugElement } from '@angular/core';
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { MatDialog } from '@angular/material/dialog';
-import { MatList } from '@angular/material/list';
-import { By } from '@angular/platform-browser';
-import { PEOPLE_MOCK, Person, UpsertPersonBody } from '@sfeir/types';
-import { Card } from '@sfeir/ui/card';
-import { Loader } from '@sfeir/ui/loader';
 import { fireEvent, render, screen } from '@testing-library/angular';
-import { of, Subject } from 'rxjs';
-import { People } from '../../core/provider/people';
-import { DialogPerson } from './dialog-person/dialog-person';
 import { StaffDirectory } from './staff-directory';
+import { PEOPLE_MOCK, Person, UpsertPersonBody } from '@sfeir/types';
+import { People } from '../../core/provider/people';
+import { DebugElement } from '@angular/core';
+import { By } from '@angular/platform-browser';
+import { Card } from '@sfeir/ui-solution/card';
+import { Loader } from '@sfeir/ui-solution/loader';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatList } from '@angular/material/list';
+import { of, Subject } from 'rxjs';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogPerson } from './dialog-person/dialog-person';
 
 const STUB_MOCK_PEOPLE_SERVICE = {
   getPeople: vi.fn(() => of(PEOPLE_MOCK)),

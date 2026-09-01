@@ -1,11 +1,11 @@
-import { DebugElement } from '@angular/core';
-import { ComponentFixture } from '@angular/core/testing';
-import { MatDialogRef } from '@angular/material/dialog';
-import { By } from '@angular/platform-browser';
-import { UpsertPersonBody } from '@sfeir/types';
-import { SignalForm } from '@sfeir/ui/signal-form';
 import { render } from '@testing-library/angular';
 import { DialogPerson } from './dialog-person';
+import { MatDialogRef } from '@angular/material/dialog';
+import { DebugElement } from '@angular/core';
+import { By } from '@angular/platform-browser';
+import { ComponentFixture } from '@angular/core/testing';
+import { SignalForm } from '@sfeir/ui-solution/signal-form';
+import { UpsertPersonBody } from '@sfeir/types';
 
 const STUB_MAT_DIALOG_REF = {
   close: vi.fn(),

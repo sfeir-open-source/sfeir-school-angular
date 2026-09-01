@@ -191,7 +191,9 @@
         "apps/21-teleportation/**/*",
         "apps/21-teleportation-solution/**/*",
         "apps/22-structural-directive/**/*",
-        "apps/22-structural-directive-solution/**/*"
+        "apps/22-structural-directive-solution/**/*",
+        "apps/23-unit-tests/**/*",
+        "apps/23-unit-tests-solution/**/*"
       ]
     },
     {
@@ -247,7 +249,9 @@
         "apps/21-teleportation/**/*",
         "apps/21-teleportation-solution/**/*",
         "apps/22-structural-directive/**/*",
-        "apps/22-structural-directive-solution/**/*"
+        "apps/22-structural-directive-solution/**/*",
+        "apps/23-unit-tests/**/*",
+        "apps/23-unit-tests-solution/**/*"
       ]
     }
   ]

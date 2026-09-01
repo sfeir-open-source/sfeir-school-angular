@@ -4,7 +4,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { provideRouter } from '@angular/router';
 import { PEOPLE_MOCK, UpsertPersonBody } from '@sfeir/types';
-import { SignalForm } from '@sfeir/ui/signal-form';
+import { SignalForm } from '@sfeir/ui-solution/signal-form';
 import { render } from '@testing-library/angular';
 import { of } from 'rxjs';
 import { People } from '../../../core/provider/people';
