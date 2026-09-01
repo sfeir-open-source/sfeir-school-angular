@@ -1,9 +1,9 @@
 {
-  "name": "23-unit-tests",
+  "name": "23-unit-tests-solution",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "prefix": "sfeir",
-  "sourceRoot": "apps/23-unit-tests/src",
+  "sourceRoot": "apps/23-unit-tests-solution/src",
   "tags": [],
   "targets": {
     "build": {
@@ -11,18 +11,18 @@
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
-        "outputPath": "dist/apps/23-unit-tests",
-        "browser": "apps/23-unit-tests/src/main.ts",
-        "tsConfig": "apps/23-unit-tests/tsconfig.app.json",
+        "outputPath": "dist/apps/23-unit-tests-solution",
+        "browser": "apps/23-unit-tests-solution/src/main.ts",
+        "tsConfig": "apps/23-unit-tests-solution/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
           {
             "glob": "**/*",
-            "input": "apps/23-unit-tests/public",
+            "input": "apps/23-unit-tests-solution/public",
             "output": "public"
           }
         ],
-        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/23-unit-tests/src/styles.scss"]
+        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/23-unit-tests-solution/src/styles.scss"]
       },
       "configurations": {
         "production": {
@@ -46,8 +46,8 @@
           "sourceMap": true,
           "fileReplacements": [
             {
-              "replace": "apps/23-unit-tests/src/environments/environment.ts",
-              "with": "apps/23-unit-tests/src/environments/environment.development.ts"
+              "replace": "apps/23-unit-tests-solution/src/environments/environment.ts",
+              "with": "apps/23-unit-tests-solution/src/environments/environment.development.ts"
             }
           ]
         }
@@ -65,10 +65,10 @@
       "defaultConfiguration": "development",
       "configurations": {
         "production": {
-          "buildTarget": "23-unit-tests:build:production"
+          "buildTarget": "23-unit-tests-solution:build:production"
         },
         "development": {
-          "buildTarget": "23-unit-tests:build:development"
+          "buildTarget": "23-unit-tests-solution:build:development"
         }
       }
     },
@@ -76,8 +76,8 @@
       "continuous": true,
       "executor": "@nx/web:file-server",
       "options": {
-        "buildTarget": "23-unit-tests:build",
-        "staticFilePath": "dist/apps/23-unit-tests/browser",
+        "buildTarget": "23-unit-tests-solution:build",
+        "staticFilePath": "dist/apps/23-unit-tests-solution/browser",
         "spa": true
       }
     }
