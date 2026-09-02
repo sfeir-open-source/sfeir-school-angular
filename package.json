@@ -45,6 +45,7 @@
     "@fastify/sensible": "~6.0.2",
     "@ngneat/elf": "^2.3.0",
     "@ngneat/elf-entities": "^4.4.2",
+    "@ngrx/signals": "^22.0.0",
     "@ngrx/store": "22.0.0-rc.0",
     "@ngxs/store": "^22.0.0",
     "fastify": "~5.2.1",

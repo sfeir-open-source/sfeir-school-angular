@@ -1,0 +1,8 @@
+<sfeir-loader [isLoading]="_isLoading()">
+  @if (_personResource.hasValue()) {
+    <section>
+      <sfeir-card [person]="_personResource.value()" (delete)="handleRefresh()" />
+    </section>
+  }
+  <button mat-fab color="accent" (click)="handleRefresh()" data-testid="refresh-button"><i class="material-icons">autorenew</i></button>
+</sfeir-loader>

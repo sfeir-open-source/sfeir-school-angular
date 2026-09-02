@@ -193,7 +193,9 @@
         "apps/22-structural-directive/**/*",
         "apps/22-structural-directive-solution/**/*",
         "apps/23-unit-tests/**/*",
-        "apps/23-unit-tests-solution/**/*"
+        "apps/23-unit-tests-solution/**/*",
+        "apps/24-ngrx-signal/**/*",
+        "apps/24-ngrx-signal-solution/**/*"
       ]
     },
     {
@@ -251,7 +253,9 @@
         "apps/22-structural-directive/**/*",
         "apps/22-structural-directive-solution/**/*",
         "apps/23-unit-tests/**/*",
-        "apps/23-unit-tests-solution/**/*"
+        "apps/23-unit-tests-solution/**/*",
+        "apps/24-ngrx-signal/**/*",
+        "apps/24-ngrx-signal-solution/**/*"
       ]
     }
   ]
