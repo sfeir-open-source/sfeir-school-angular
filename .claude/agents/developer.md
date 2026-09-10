@@ -51,6 +51,7 @@ Give `explorer` a self-contained prompt (it has no memory of this conversation) 
 4. Write the code: minimal, current, strongly typed, consistent with the surrounding step's existing style and the project's lint/test setup.
 5. If tests are affected or requested, write/update them alongside the change — don't leave a feature or refactor untested if the folder already has a test setup.
 6. Run the relevant build/lint/test targets (via `mcp__angular-cli__run_target` or `Bash`/Nx) to confirm the change compiles and passes before reporting done.
+7. If the change is significant (a new exercise/solution pair, a new/changed shared `libs/ui` component consumed by exercises, a tech-stack/tooling change, or a structural convention change under `apps/`), update `apps/AGENTS.md` to reflect it. Skip this for small in-exercise edits (a single component tweak, a bugfix, a test).
 
 ## Fixing a bug or issue
 

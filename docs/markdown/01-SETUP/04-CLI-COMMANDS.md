@@ -1,0 +1,115 @@
+<!-- .slide: class="transition-bg-sfeir-2" -->
+
+# The Angular CLI
+
+##==##
+
+<!-- .slide: class="with-code inconsolata" -->
+
+# Installing the CLI
+
+### Classic way
+
+```shell
+npm install -g @angular/cli
+```
+
+<!-- .element: class="big-code" -->
+
+<br/><br/>
+
+### Modern way — use your favorite package runner
+
+- npx
+- yarn
+- pnpm
+- bun
+
+##==##
+
+<!-- .slide: class="with-code inconsolata" -->
+
+# Command: create a project
+
+```shell
+ng new my-awesome-app
+
+# or with your favorite package runner
+
+npx @angular/cli new my-awesome-app
+```
+
+<!-- .element: class="big-code" -->
+
+<br/><br/>
+
+- Initializes an entire project, ready for production
+- Initializes a GIT repo, with a first commit (an option that can be disabled)
+- Installs dependencies (you can choose between npm and yarn as a package manager)
+
+Notes:
+
+- This command has many more options, such as the choice of style extension (scss, css, sass, ...). You can also choose whether or not to install routing.
+- In this workspace, apps are generated once inside the `sfeir-school-angular` Nx monorepo — you won't run `ng new` yourself during the exercises, but you should recognize what it produces.
+
+##==##
+
+<!-- .slide: class="with-code inconsolata" -->
+
+# Command: create a component
+
+```sh
+ng generate component user
+# or with your favorite package runner
+npx @angular/cli generate component user
+```
+
+<!-- .element: class="big-code" -->
+<br/>
+
+- This command generates the following files:<br/><br/>
+  - src/app/user/user.ts<br/><br/>
+  - src/app/user/user.html<br/><br/>
+  - src/app/user/user.css<br/><br/>
+  - src/app/user/user.spec.ts<br/><br/>
+
+Notes:
+
+- The style extension depends on the choice you made when initializing your project.
+- You can skip creating the test file by using the `skipTests` option.
+- A shorter command with an alias exists: `ng g component user`.
+- The generated component is **standalone** — you import it wherever you need it, there is no NgModule to update.
+
+##==##
+
+<!-- .slide: class="with-code inconsolata" -->
+
+# Command: create a service
+
+```shell
+ng generate service user
+# or with your favorite package runner
+npx @angular/cli generate service user
+```
+
+<!-- .element: class="big-code" -->
+
+<br/>
+
+- This command generates the following files:<br/><br/>
+  - src/app/user.ts<br/><br/>
+  - src/app/user.spec.ts<br/><br/>
+
+Notes:
+
+- If we type the command `ng generate service shared/user`, the CLI will create the same files as before but in the `shared` folder.
+- A shortcut for this command exists: `ng g service user`.
+
+##==##
+
+<!-- .slide: class="full-center"  -->
+
+# What else can we generate?
+
+![](assets/images/school/cli/generate_helper.png 'h-800')
+

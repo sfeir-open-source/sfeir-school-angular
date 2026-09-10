@@ -49,7 +49,7 @@ A slide is either a bare string path (always shown) or tagged with `showByDefaul
 
 ## Numbering conventions
 
-- Module folders under `markdown/` are prefixed `NN-NAME` (e.g. `13-DEPENDENCY-INJECTION`) and are ordered by that prefix across the whole training.
+- Module folders under `markdown/` are prefixed `NN-NAME` (e.g. `09-DEPENDENCY-INJECTION`) and are ordered by that prefix across the whole training.
 - Files inside a module follow their own `NN-NAME.md` sequence (e.g. `00-TRANSITION-SLIDE.md`, `01-CONCEPTS.md`, ...). `100-LAB.md` is a recurring convention for a module's hands-on lab, deliberately numbered high to sort last.
 
 ## Out of scope for this file

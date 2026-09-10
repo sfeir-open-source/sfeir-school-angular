@@ -1,6 +1,6 @@
 # agents.md — repo guide
 
-This file is the source of truth for any agent/subagent working in this repository. Read it before making changes. Subfolders may have their own `AGENTS.md` (currently `docs/AGENTS.md`) with more specific rules — those take precedence for their folder.
+This file is the source of truth for any agent/subagent working in this repository. Read it before making changes. Subfolders may have their own `AGENTS.md` (currently `apps/AGENTS.md` and `docs/AGENTS.md`) with more specific rules — those take precedence for their folder.
 
 ## What this repo is
 
@@ -13,6 +13,7 @@ This file is the source of truth for any agent/subagent working in this reposito
 
 | Path                                               | Purpose                                                                                                                                           |
 | -------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `apps/AGENTS.md`                                   | Tech stack, structure, and exercise/solution convention for `apps/`. Kept up to date by `developer` after significant changes — see its own rules.  |
 | `apps/NN-topic/`                                   | Student-facing exercise app with a `README.md` describing the task (never contains the solution).                                                 |
 | `apps/NN-topic-solution/`                          | Fully implemented reference solution for that same exercise, no `README.md`.                                                                      |
 | `apps/server/`                                     | Fastify REST API backing the exercises (`server-rest` Nx project).                                                                                |

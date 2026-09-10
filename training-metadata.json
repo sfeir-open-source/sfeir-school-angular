@@ -1,0 +1,1424 @@
+{
+  "code": "ANGULAR",
+  "languages": [
+    "en",
+    "fr"
+  ],
+  "archived_at": null,
+  "duration": {
+    "days": 4,
+    "hours": 28
+  },
+  "level": "200",
+  "provider": "SFEIR Institute",
+  "provider_reference": "ANGULAR",
+  "categories": [
+    "Frontend Development"
+  ],
+  "title": "Angular",
+  "description": "Angular is more than just a popular framework — it's the backbone of enterprise web applications worldwide. In 2026, as AI-powered development tools become essential to productivity, this training goes beyond teaching you Angular syntax.\n\nOur expert trainers (Google Developer Experts, Angular framework contributors, and NG-ZORRO maintainers) will teach you to leverage LLM tools like Claude to accelerate your development. But here's the critical difference: **using an LLM doesn't mean blindly accepting generated code**. This training emphasizes understanding every line produced, ensuring you can debug, optimize, and maintain applications effectively.\n\nWhether you're a frontend developer or full-stack engineer, you'll learn to:\n- Build robust, scalable Angular applications with modern patterns (signals, standalone components, composable architecture)\n- Write tests with 100% coverage to ensure long-term maintainability\n- Master the Angular ecosystem (dependency injection, routing, forms, state management with NgRx Signal Store)\n- Be productive with AI-assisted development while maintaining full comprehension of your codebase\n\nBy the end, you'll have hands-on experience with a complete staff directory application built progressively across exercises, passing Angular Training Level 1 & 2 certifications, and most importantly—gaining the expertise to build production-grade applications that last.",
+  "target_audience": [
+    "Frontend developers",
+    "Full-stack JavaScript / Node.js developers",
+    "Web developers building or maintaining Angular applications",
+    "Developers seeking to master modern Angular with AI-assisted workflows"
+  ],
+  "prerequisites": [
+    "Modern JavaScript (scope, arrow functions, classes, 'this' concept, asynchronous programming with promises)",
+    "Basic TypeScript knowledge (type basics, interfaces)",
+    "Understanding of Observables vs Promises"
+  ],
+  "objectives": [
+    "Develop production-ready Angular applications using modern patterns",
+    "Leverage LLM tools for productivity while understanding and maintaining generated code",
+    "Write comprehensive unit tests ensuring 100% coverage and long-term maintainability",
+    "Master the Angular ecosystem as a whole (DI, routing, forms, state management, testing)"
+  ],
+  "modules": [
+    {
+      "type": "subcourse",
+      "title": "Day 1: Foundation & First Hands-On with Angular Essentials",
+      "modules": [
+        {
+          "title": "Setup & Environment",
+          "topics": [
+            "IDE Configuration: WebStorm vs VS Code",
+            "Angular Installation and project initialization",
+            "Angular Material integration",
+            "CLI commands and modern development workflow",
+            "Build system and module bundlers"
+          ],
+          "objectives": [
+            "Set up an Angular development environment with modern tooling (IDE, CLI, build system)",
+            "Bootstrap new Angular projects with proper configuration and Material integration",
+            "Use Angular CLI commands effectively for daily development workflows"
+          ],
+          "activities": [
+            "Bootstrap an Angular application",
+            "Create your first component using the CLI",
+            "Set up development environment"
+          ]
+        },
+        {
+          "title": "Components Fundamentals",
+          "topics": [
+            "Component architecture and structure",
+            "Standalone components vs NgModules",
+            "Template interpolation and expressions",
+            "Component bootstrapping",
+            "Component lifecycle"
+          ],
+          "objectives": [
+            "Understand component structure and create components using modern standalone patterns",
+            "Use template interpolation and expressions to display dynamic data",
+            "Master component bootstrapping and lifecycle phases"
+          ],
+          "activities": [
+            "Create nested components",
+            "Understand component communication basics"
+          ]
+        },
+        {
+          "title": "Component Hierarchy",
+          "topics": [
+            "Building component trees",
+            "Parent-child component relationships",
+            "Application architecture patterns"
+          ],
+          "objectives": [
+            "Design and build hierarchical component structures for complex applications",
+            "Implement parent-child component relationships and application architecture patterns"
+          ],
+          "activities": [
+            "Build a component hierarchy for a staff directory"
+          ]
+        },
+        {
+          "title": "Reactivity & Data Binding",
+          "topics": [
+            "Signal reactivity system (signals, computed, effect)",
+            "Data binding types (interpolation, property, event, two-way)",
+            "Property vs attribute binding",
+            "Template variables",
+            "NgOptimizedImage for performance"
+          ],
+          "objectives": [
+            "Master the Signal reactivity system and create reactive templates with computed values",
+            "Apply different data binding types (interpolation, property, event, two-way) appropriately",
+            "Optimize template performance using signals and NgOptimizedImage"
+          ],
+          "activities": [
+            "Display dynamic data using signals",
+            "Create reactive templates with proper binding"
+          ]
+        },
+        {
+          "title": "Event Handling",
+          "topics": [
+            "Event binding syntax",
+            "Event objects and propagation",
+            "Two-way binding with ngModel",
+            "User interaction patterns"
+          ],
+          "objectives": [
+            "Handle user interactions and events effectively using Angular's event binding syntax",
+            "Implement two-way data binding with ngModel for form controls",
+            "Understand event propagation and build responsive user interaction patterns"
+          ],
+          "activities": [
+            "Handle button clicks and form inputs",
+            "React to user interactions with signals"
+          ]
+        },
+        {
+          "title": "Lifecycle Hooks (Bonus)",
+          "topics": [
+            "Component lifecycle phases",
+            "OnInit, OnDestroy, OnChanges hooks",
+            "Cleanup and resource management",
+            "Signal-based initialization patterns"
+          ],
+          "objectives": [
+            "Implement component lifecycle hooks for initialization and cleanup",
+            "Manage resources effectively using OnDestroy and proper cleanup patterns",
+            "Use signal-based initialization patterns for modern Angular applications"
+          ],
+          "activities": [
+            "Implement lifecycle hooks for data initialization"
+          ]
+        },
+        {
+          "title": "Input & Output Communication",
+          "topics": [
+            "Component inputs (@Input decorator)",
+            "Component outputs (@Output decorator)",
+            "Event emission patterns",
+            "Input validation and required inputs",
+            "Signal-based inputs and outputs"
+          ],
+          "objectives": [
+            "Create reusable components using @Input and @Output decorators",
+            "Implement parent-child communication patterns through inputs and output events",
+            "Use signal-based inputs/outputs for modern, type-safe component communication"
+          ],
+          "activities": [
+            "Create customizable components with inputs",
+            "Build parent-child communication patterns"
+          ]
+        },
+        {
+          "title": "Pipes",
+          "topics": [
+            "Built-in pipes (date, currency, uppercase, lowercase, etc.)",
+            "Pure vs impure pipes",
+            "Creating custom pipes",
+            "Pipe composition and chaining"
+          ],
+          "objectives": [
+            "Use built-in Angular pipes to format data in templates",
+            "Create custom pipes to extend template functionality",
+            "Apply pipes effectively with composition and chaining for data transformation"
+          ],
+          "activities": [
+            "Format dates and values with pipes",
+            "Create a custom default-value pipe"
+          ]
+        },
+        {
+          "title": "Dependency Injection Fundamentals",
+          "topics": [
+            "Services and the @Injectable decorator",
+            "Service registration and providers",
+            "Injecting services into components",
+            "Injection scopes and hierarchies",
+            "Service initialization patterns"
+          ],
+          "objectives": [
+            "Create and use services with Angular's Dependency Injection system",
+            "Understand service registration and injection scopes for application-wide functionality",
+            "Implement proper service initialization patterns and hierarchies"
+          ],
+          "activities": [
+            "Create and use your first service",
+            "Perform application-level initialization"
+          ]
+        },
+        {
+          "title": "Directives",
+          "topics": [
+            "Attribute directives vs structural directives",
+            "Built-in directives (ngIf, ngFor, ngSwitch)",
+            "Directive selectors and API",
+            "ElementRef and DOM manipulation",
+            "Host bindings and listener decorators"
+          ],
+          "objectives": [
+            "Use built-in directives to control DOM structure and styling",
+            "Create custom attribute directives to extend element behavior",
+            "Implement directive communication patterns using host bindings and ElementRef"
+          ],
+          "activities": [
+            "Create custom attribute directives",
+            "Use built-in directives effectively"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "subcourse",
+      "title": "Day 2: Building Interactive Applications with Forms & Routing",
+      "modules": [
+        {
+          "title": "Router Basics",
+          "topics": [
+            "Routing philosophy in Single Page Applications",
+            "Route configuration and definitions",
+            "Router outlets and navigation",
+            "URL patterns and parameters",
+            "Navigation methods (routerLink, Router service)"
+          ],
+          "objectives": [
+            "Configure and implement routing in Single Page Applications",
+            "Navigate between routes using both template and programmatic approaches",
+            "Pass and retrieve data through route parameters and query strings"
+          ],
+          "activities": [
+            "Configure basic routing",
+            "Navigate between routes",
+            "Pass data through route parameters"
+          ]
+        },
+        {
+          "title": "Control Flow",
+          "topics": [
+            "New Angular control flow (@if, @for, @switch)",
+            "Built-in structural directives (*ngIf, *ngFor, *ngSwitch)",
+            "Conditional rendering patterns",
+            "List rendering and performance",
+            "Migration from legacy to new syntax"
+          ],
+          "objectives": [
+            "Use modern Angular control flow syntax (@if, @for, @switch) for rendering logic",
+            "Render dynamic lists efficiently with optimal performance",
+            "Migrate from legacy structural directives to modern control flow syntax"
+          ],
+          "activities": [
+            "Render dynamic lists with @for",
+            "Handle conditional UI with @if/@switch"
+          ]
+        },
+        {
+          "title": "HTTP & Data Fetching",
+          "topics": [
+            "HttpClient setup and usage",
+            "HTTP methods (GET, POST, PUT, DELETE)",
+            "HTTP resources for reactive data loading",
+            "Response types and error handling",
+            "Bridging Observables and Signals (toSignal, resource)"
+          ],
+          "objectives": [
+            "Fetch data from REST APIs using HttpClient and HTTP resources",
+            "Handle HTTP responses and errors gracefully in applications",
+            "Bridge Observables and Signals for reactive data loading patterns"
+          ],
+          "activities": [
+            "Fetch data from a REST API",
+            "Display server data reactively",
+            "Handle HTTP errors"
+          ]
+        },
+        {
+          "title": "Template-Driven Forms",
+          "topics": [
+            "FormsModule and ngModel directive",
+            "Form state and validation",
+            "User feedback and error display",
+            "Form submission handling",
+            "Built-in validators"
+          ],
+          "objectives": [
+            "Build template-driven forms with validation and error display",
+            "Implement form state management and submission handling",
+            "Use built-in validators to ensure data integrity"
+          ],
+          "activities": [
+            "Create a person creation form",
+            "Implement form validation",
+            "Display validation error messages"
+          ]
+        },
+        {
+          "title": "Reactive Forms",
+          "topics": [
+            "ReactiveFormsModule and FormControl/FormGroup",
+            "Programmatic form building",
+            "Form validation patterns",
+            "Custom validators",
+            "Standalone reactive forms (no NgModule)"
+          ],
+          "objectives": [
+            "Build complex reactive forms using FormGroup and FormControl",
+            "Implement custom validators for domain-specific validation rules",
+            "Create reusable form components with reactive patterns"
+          ],
+          "activities": [
+            "Build forms with FormGroup/FormControl",
+            "Implement complex validation logic",
+            "Create reusable form components"
+          ]
+        },
+        {
+          "title": "Signal Forms (Modern)",
+          "topics": [
+            "Signals-based form API",
+            "Field directive and form composition",
+            "Form state management with signals",
+            "Validation with signal forms",
+            "Type-safe form handling"
+          ],
+          "objectives": [
+            "Build modern forms using Angular's signal-based form API",
+            "Implement type-safe form handling with signals for better developer experience",
+            "Create custom form controls with signal-based composition patterns"
+          ],
+          "activities": [
+            "Build forms using the modern signal form API",
+            "Implement validation patterns",
+            "Create custom form controls"
+          ]
+        },
+        {
+          "title": "Forms Summary & Comparison",
+          "topics": [
+            "Template-driven vs Reactive vs Signal forms",
+            "When to use each approach",
+            "Migration strategies",
+            "Performance considerations"
+          ],
+          "objectives": [
+            "Evaluate and choose the appropriate form approach for different use cases",
+            "Migrate existing forms between template-driven, reactive, and signal-based approaches",
+            "Optimize form performance based on project requirements"
+          ],
+          "activities": [
+            "Compare different form approaches",
+            "Choose the right form strategy for your use case"
+          ]
+        },
+        {
+          "title": "Reactive Thinking Patterns",
+          "topics": [
+            "Combining routing with data loading",
+            "Signal composition patterns",
+            "linkedSignal for computed dependencies",
+            "RxMethod and async operations",
+            "Complete CRUD workflows"
+          ],
+          "objectives": [
+            "Combine routing with reactive data loading for seamless navigation",
+            "Master signal composition patterns for complex reactive scenarios",
+            "Implement complete CRUD workflows with reactive data flow"
+          ],
+          "activities": [
+            "Build a detail/edit page with routing",
+            "Implement full CRUD operations",
+            "Master reactive data flow"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "subcourse",
+      "title": "Day 3: Advanced Patterns & Architecture",
+      "modules": [
+        {
+          "title": "Advanced Routing",
+          "topics": [
+            "Lazy loading and code splitting",
+            "Feature modules and routing",
+            "Child routes and nested routing",
+            "Route parameters and query strings",
+            "Route preloading strategies"
+          ],
+          "objectives": [
+            "Implement lazy loading and code splitting for optimal bundle size",
+            "Configure nested routing structures with child routes and feature modules",
+            "Optimize application performance using preloading strategies"
+          ],
+          "activities": [
+            "Implement lazy-loaded feature modules",
+            "Configure child routes",
+            "Optimize bundle size with lazy loading"
+          ]
+        },
+        {
+          "title": "Route Guards",
+          "topics": [
+            "Guard types (CanActivate, CanDeactivate, CanMatch)",
+            "Functional guard syntax",
+            "Authentication and authorization guards",
+            "Route redirection patterns",
+            "Guard chaining and composition"
+          ],
+          "objectives": [
+            "Implement route guards to protect routes based on authentication and authorization",
+            "Use guard chaining and composition for complex access control scenarios",
+            "Handle route redirection and prevent unsaved changes with guards"
+          ],
+          "activities": [
+            "Implement authentication guards",
+            "Protect routes based on user roles",
+            "Handle unsaved changes"
+          ]
+        },
+        {
+          "title": "Route Resolvers",
+          "topics": [
+            "Resolver pattern and pre-loading data",
+            "Resolver implementation",
+            "Functional resolvers",
+            "Component input binding with resolvers",
+            "Error handling in resolvers"
+          ],
+          "objectives": [
+            "Implement resolvers to pre-load data before route activation",
+            "Bind resolver data to component inputs for seamless data flow",
+            "Handle resolver failures gracefully with error handling patterns"
+          ],
+          "activities": [
+            "Implement resolvers for route data",
+            "Load data before component initialization",
+            "Handle resolver failures gracefully"
+          ]
+        },
+        {
+          "title": "HTTP Interceptors",
+          "topics": [
+            "Interceptor pattern and use cases",
+            "Request/response transformation",
+            "Error handling and retry logic",
+            "Authentication token injection",
+            "HTTP context for conditional behavior"
+          ],
+          "objectives": [
+            "Implement HTTP interceptors for cross-cutting concerns (auth, logging, error handling)",
+            "Transform requests and responses globally using interceptor chains",
+            "Handle errors and implement retry logic at the interceptor level"
+          ],
+          "activities": [
+            "Create an authentication interceptor",
+            "Implement request caching",
+            "Handle HTTP errors globally"
+          ]
+        },
+        {
+          "title": "Content Projection",
+          "topics": [
+            "ng-content for component composition",
+            "Named slots and multiple projections",
+            "Transparent wrapper components",
+            "Signal-based projection patterns",
+            "Loading states and overlays"
+          ],
+          "objectives": [
+            "Use content projection to create flexible and reusable components",
+            "Implement named slots for multiple content projections",
+            "Build transparent wrapper components with signal-based projection patterns"
+          ],
+          "activities": [
+            "Create a reusable overlay component",
+            "Use content projection for flexibility",
+            "Build loading state patterns"
+          ]
+        },
+        {
+          "title": "Template Outlets & References",
+          "topics": [
+            "ng-template for reusable templates",
+            "ng-container for logical grouping",
+            "ngTemplateOutlet for dynamic templates",
+            "ViewChild and template references",
+            "Content queries and generics"
+          ],
+          "objectives": [
+            "Create generic components using ngTemplateOutlet for dynamic template rendering",
+            "Use ViewChild to query and interact with template references",
+            "Build highly composable components through template-driven composition"
+          ],
+          "activities": [
+            "Create generic list components",
+            "Implement template-driven composition",
+            "Use ViewChild for component interaction"
+          ]
+        },
+        {
+          "title": "Advanced Structural Directives",
+          "topics": [
+            "Structural directive syntax (*directive)",
+            "TemplateRef and ViewContainerRef",
+            "Creating custom structural directives",
+            "Imperative component creation",
+            "Directive composition patterns"
+          ],
+          "objectives": [
+            "Create custom structural directives for advanced DOM manipulation",
+            "Use TemplateRef and ViewContainerRef for imperative component instantiation",
+            "Master directive composition patterns for complex template logic"
+          ],
+          "activities": [
+            "Create a custom structural directive",
+            "Implement conditional component instantiation",
+            "Master advanced templating patterns"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "subcourse",
+      "title": "Day 4: Testing, State Management & Advanced Topics",
+      "modules": [
+        {
+          "title": "Unit Testing",
+          "topics": [
+            "Testing tools and setup (Vitest, Angular testing utilities)",
+            "Testing components with TestBed",
+            "Component testing strategies",
+            "Testing services and HTTP calls",
+            "Testing directives and pipes",
+            "Angular Testing Library for realistic testing",
+            "Mocking and test doubles",
+            "Test coverage and best practices"
+          ],
+          "objectives": [
+            "Write comprehensive unit tests for Angular components, services, and directives",
+            "Achieve 100% code coverage with effective testing strategies",
+            "Mock HTTP calls and dependencies using Angular testing utilities"
+          ],
+          "activities": [
+            "Write comprehensive component tests",
+            "Test services with mocked HTTP",
+            "Achieve 100% code coverage"
+          ]
+        },
+        {
+          "title": "State Management with NgRx Signal Store",
+          "topics": [
+            "State management patterns and principles",
+            "NgRx Signal Store vs classic NgRx",
+            "Creating and providing stores",
+            "State selectors and computed values",
+            "withComputed for derived state",
+            "withProps for parameterized actions",
+            "withMethods and patchState for mutations",
+            "RxMethod for async operations",
+            "Store hooks for initialization",
+            "Route-scoped providers",
+            "Entity management patterns",
+            "Testing store-based components"
+          ],
+          "objectives": [
+            "Design and implement scalable state management using NgRx Signal Store",
+            "Manage complex state mutations, derived state, and async operations",
+            "Test store-backed applications with proper isolation and mocking"
+          ],
+          "activities": [
+            "Build a complete store for staff directory",
+            "Implement complex state mutations",
+            "Manage async side effects with RxMethod",
+            "Test store-backed applications"
+          ]
+        },
+        {
+          "title": "Change Detection & Zoneless",
+          "topics": [
+            "Change detection mechanism",
+            "OnPush strategy for optimization",
+            "Zoneless applications",
+            "Performance implications",
+            "Debugging change detection"
+          ],
+          "objectives": [
+            "Optimize application performance using OnPush change detection strategy",
+            "Build zoneless applications with improved performance and less JavaScript overhead",
+            "Debug change detection issues and monitor performance implications"
+          ],
+          "activities": [
+            "Optimize with OnPush strategy",
+            "Build zoneless applications"
+          ]
+        },
+        {
+          "title": "Progressive Web Apps (PWA)",
+          "topics": [
+            "PWA fundamentals and benefits",
+            "@angular/pwa package integration",
+            "Service Worker basics",
+            "Service Worker communication",
+            "Caching strategies",
+            "Offline-first patterns"
+          ],
+          "objectives": [
+            "Transform Angular applications into Progressive Web Apps with offline support",
+            "Implement Service Workers for caching strategies and background operations",
+            "Enable offline-first patterns for improved user experience"
+          ],
+          "activities": [
+            "Add PWA capabilities to an Angular app",
+            "Implement service worker communication"
+          ]
+        },
+        {
+          "title": "Server-Side Rendering (SSR)",
+          "topics": [
+            "SSR benefits and use cases",
+            "Rendering modes (development, production, prerendering)",
+            "Server-compatible code patterns",
+            "HTTP and hydration",
+            "Performance considerations",
+            "SEO optimization"
+          ],
+          "objectives": [
+            "Set up Server-Side Rendering for improved performance and SEO",
+            "Implement server-compatible code patterns and handle hydration properly",
+            "Optimize rendering strategies for different deployment scenarios"
+          ],
+          "activities": [
+            "Set up SSR for an Angular app",
+            "Handle server-side data fetching",
+            "Optimize hydration"
+          ]
+        },
+        {
+          "title": "Angular Libraries",
+          "topics": [
+            "Creating publishable libraries",
+            "Library project structure",
+            "Building and packaging with ng-packagr",
+            "Dependency management",
+            "Asset management in libraries",
+            "Documentation and versioning",
+            "Publishing to npm"
+          ],
+          "objectives": [
+            "Create and structure publishable Angular libraries for code reuse",
+            "Build, package, and distribute Angular libraries to npm",
+            "Manage dependencies and versioning for library maintainability"
+          ],
+          "activities": [
+            "Create a shared component library",
+            "Build and publish an Angular library"
+          ]
+        },
+        {
+          "title": "Native Federation & Micro-Frontends",
+          "topics": [
+            "Micro-frontend architecture",
+            "Module Federation concepts",
+            "Host and remote applications",
+            "Dependency sharing",
+            "Communication between micro-frontends",
+            "Native Federation (Angular-specific)"
+          ],
+          "objectives": [
+            "Design and implement micro-frontend architectures using Native Federation",
+            "Share dependencies efficiently between host and remote applications",
+            "Enable seamless communication between independent micro-frontend applications"
+          ],
+          "activities": [
+            "Set up a micro-frontend architecture",
+            "Share dependencies between applications"
+          ]
+        },
+        {
+          "title": "Performance Optimization",
+          "topics": [
+            "Core Web Vitals and metrics",
+            "Image optimization strategies",
+            "Lazy loading components at runtime",
+            "Deferred views for below-the-fold content",
+            "Bundle analysis and optimization",
+            "Performance monitoring"
+          ],
+          "objectives": [
+            "Optimize application performance to meet Core Web Vitals standards",
+            "Implement lazy loading and deferred views for faster initial load times",
+            "Monitor and analyze performance metrics for continuous improvement"
+          ],
+          "activities": [
+            "Optimize images for web",
+            "Implement lazy-loaded components",
+            "Defer non-critical views"
+          ]
+        }
+      ]
+    }
+  ],
+  "fr_title": "Angular",
+  "fr_description": "Angular n'est pas qu'un simple framework populaire — c'est l'épine dorsale des applications web d'entreprise mondialement utilisées. En 2026, alors que les outils de développement basés sur l'IA deviennent essentiels à la productivité, cette formation va au-delà de l'enseignement de la syntaxe Angular.\n\nNos formateurs experts (Google Developers Experts, contributeurs du framework Angular et mainteneurs de NG-ZORRO) vous enseigneront comment exploiter les outils LLM comme Claude pour accélérer votre développement. Mais voici la différence critique : **utiliser un LLM ne signifie pas accepter aveuglément le code généré**. Cette formation insiste sur la compréhension de chaque ligne produite, ce qui vous permet de déboguer, optimiser et maintenir efficacement vos applications.\n\nQue vous soyez développeur frontend ou ingénieur full-stack, vous apprendrez à :\n- Créer des applications Angular robustes et évolutives avec les patterns modernes (signaux, composants autonomes, architecture composable)\n- Écrire des tests avec 100% de couverture pour garantir la maintenabilité à long terme\n- Maîtriser l'écosystème Angular (injection de dépendances, routage, formulaires, gestion d'état avec NgRx Signal Store)\n- Être productif avec le développement assisté par IA tout en maintenant une compréhension complète de votre codebase\n\nÀ la fin, vous aurez une expérience pratique avec une application complète de répertoire de personnel construite progressivement à travers les exercices, vous pourrez passer les certifications Angular Training Level 1 & 2, et surtout — vous obtiendrez l'expertise pour construire des applications prêtes pour la production qui durent.",
+  "fr_target_audience": [
+    "Développeurs frontend",
+    "Développeurs Full-stack JavaScript / Node.js",
+    "Développeurs web construisant ou maintenant des applications Angular",
+    "Développeurs cherchant à maîtriser Angular moderne avec des workflows assistés par IA"
+  ],
+  "fr_prerequisites": [
+    "JavaScript moderne (scope, arrow functions, classes, notion du 'this', programmation asynchrone avec les promises)",
+    "Connaissances basiques en TypeScript (typage basique, interfaces)",
+    "Compréhension des Observables vs Promises"
+  ],
+  "fr_objectives": [
+    "Développer des applications Angular prêtes pour la production avec les patterns modernes",
+    "Exploiter les outils LLM pour la productivité tout en comprenant et en maintenant le code généré",
+    "Écrire des tests unitaires complets garantissant 100% de couverture et une maintenabilité à long terme",
+    "Maîtriser l'écosystème Angular dans sa globalité (DI, routage, formulaires, gestion d'état, testing)"
+  ],
+  "fr_modules": [
+    {
+      "type": "subcourse",
+      "title": "Jour 1 : Fondations & Première Prise en Main avec les Essentiels d'Angular",
+      "modules": [
+        {
+          "title": "Configuration & Environnement",
+          "topics": [
+            "Configuration de l'IDE : WebStorm vs VS Code",
+            "Installation d'Angular et initialisation de projet",
+            "Intégration d'Angular Material",
+            "Commandes CLI et workflow de développement moderne",
+            "Système de build et bundlers"
+          ],
+          "objectives": [
+            "Configurer un environnement de développement Angular avec les outils modernes (IDE, CLI, système de build)",
+            "Initialiser de nouveaux projets Angular avec une configuration appropriée et intégration de Material",
+            "Utiliser efficacement les commandes CLI d'Angular pour les workflows de développement quotidiens"
+          ],
+          "activities": [
+            "Bootstrapper une application Angular",
+            "Créer votre premier composant avec le CLI",
+            "Configurer l'environnement de développement"
+          ]
+        },
+        {
+          "title": "Fondamentaux des Composants",
+          "topics": [
+            "Architecture et structure des composants",
+            "Composants autonomes vs NgModules",
+            "Interpolation de template et expressions",
+            "Bootstrapping des composants",
+            "Cycle de vie des composants"
+          ],
+          "objectives": [
+            "Comprendre la structure des composants et créer des composants avec les patterns modernes autonomes",
+            "Utiliser l'interpolation de template et les expressions pour afficher des données dynamiques",
+            "Maîtriser le bootstrapping des composants et les phases du cycle de vie"
+          ],
+          "activities": [
+            "Créer des composants imbriqués",
+            "Comprendre les bases de la communication entre composants"
+          ]
+        },
+        {
+          "title": "Hiérarchie des Composants",
+          "topics": [
+            "Construire des arbres de composants",
+            "Relations parent-enfant",
+            "Patterns d'architecture d'application"
+          ],
+          "objectives": [
+            "Concevoir et construire des structures de composants hiérarchiques pour des applications complexes",
+            "Implémenter les relations parent-enfant et les patterns d'architecture d'application"
+          ],
+          "activities": [
+            "Construire une hiérarchie de composants pour un répertoire du personnel"
+          ]
+        },
+        {
+          "title": "Réactivité & Data Binding",
+          "topics": [
+            "Système de réactivité avec Signals (signals, computed, effect)",
+            "Types de data binding (interpolation, propriété, événement, bi-directionnel)",
+            "Différence entre propriété et attribut",
+            "Variables de template",
+            "NgOptimizedImage pour les performances"
+          ],
+          "objectives": [
+            "Maîtriser le système de réactivité Signal et créer des templates réactifs avec des valeurs calculées",
+            "Appliquer différents types de data binding (interpolation, propriété, événement, bi-directionnel) de manière appropriée",
+            "Optimiser les performances des templates en utilisant les signals et NgOptimizedImage"
+          ],
+          "activities": [
+            "Afficher des données dynamiques avec signals",
+            "Créer des templates réactifs avec le binding approprié"
+          ]
+        },
+        {
+          "title": "Gestion des Événements",
+          "topics": [
+            "Syntaxe du binding d'événements",
+            "Objets événement et propagation",
+            "Binding bi-directionnel avec ngModel",
+            "Patterns d'interaction utilisateur"
+          ],
+          "objectives": [
+            "Gérer les interactions utilisateur et les événements en utilisant efficacement la syntaxe de binding d'événements d'Angular",
+            "Implémenter le binding bi-directionnel avec ngModel pour les contrôles de formulaire",
+            "Comprendre la propagation d'événements et construire des patterns d'interaction utilisateur réactifs"
+          ],
+          "activities": [
+            "Gérer les clics de bouton et les entrées de formulaire",
+            "Réagir aux interactions utilisateur avec les signals"
+          ]
+        },
+        {
+          "title": "Lifecycle Hooks (Bonus)",
+          "topics": [
+            "Phases du cycle de vie des composants",
+            "Hooks OnInit, OnDestroy, OnChanges",
+            "Nettoyage et gestion des ressources",
+            "Patterns d'initialisation basés sur les signals"
+          ],
+          "objectives": [
+            "Implémenter les lifecycle hooks des composants pour l'initialisation et le nettoyage",
+            "Gérer les ressources efficacement en utilisant OnDestroy et les patterns de nettoyage appropriés",
+            "Utiliser les patterns d'initialisation basés sur les signals pour les applications Angular modernes"
+          ],
+          "activities": [
+            "Implémenter les lifecycle hooks pour l'initialisation des données"
+          ]
+        },
+        {
+          "title": "Inputs & Outputs - Communication",
+          "topics": [
+            "Inputs de composants (@Input decorator)",
+            "Outputs de composants (@Output decorator)",
+            "Patterns d'émission d'événements",
+            "Validation et inputs requis",
+            "Inputs et outputs basés sur les signals"
+          ],
+          "objectives": [
+            "Créer des composants réutilisables en utilisant les décorateurs @Input et @Output",
+            "Implémenter les patterns de communication parent-enfant via les inputs et les événements de sortie",
+            "Utiliser les inputs/outputs basés sur les signals pour la communication de composants moderne et type-safe"
+          ],
+          "activities": [
+            "Créer des composants personnalisables avec inputs",
+            "Construire des patterns de communication parent-enfant"
+          ]
+        },
+        {
+          "title": "Pipes",
+          "topics": [
+            "Pipes built-in (date, currency, uppercase, lowercase, etc.)",
+            "Pipes pures vs impures",
+            "Créer des pipes personnalisés",
+            "Composition et chaînage de pipes"
+          ],
+          "objectives": [
+            "Utiliser les pipes Angular intégrés pour formater les données dans les templates",
+            "Créer des pipes personnalisés pour étendre la fonctionnalité des templates",
+            "Appliquer efficacement les pipes avec la composition et le chaînage pour la transformation de données"
+          ],
+          "activities": [
+            "Formater des dates et des valeurs avec les pipes",
+            "Créer un pipe personnalisé pour les valeurs par défaut"
+          ]
+        },
+        {
+          "title": "Fondamentaux de l'Injection de Dépendances",
+          "topics": [
+            "Services et le @Injectable decorator",
+            "Enregistrement et providers des services",
+            "Injecter des services dans les composants",
+            "Scopes d'injection et hiérarchies",
+            "Patterns d'initialisation des services"
+          ],
+          "objectives": [
+            "Créer et utiliser des services avec le système d'Injection de Dépendances d'Angular",
+            "Comprendre l'enregistrement des services et les scopes d'injection pour la fonctionnalité à l'échelle de l'application",
+            "Implémenter les patterns d'initialisation appropriés et les hiérarchies de services"
+          ],
+          "activities": [
+            "Créer et utiliser votre premier service",
+            "Réaliser une initialisation au niveau de l'application"
+          ]
+        },
+        {
+          "title": "Directives",
+          "topics": [
+            "Directives d'attribut vs directives structurelles",
+            "Directives built-in (ngIf, ngFor, ngSwitch)",
+            "Sélecteurs de directives et API",
+            "ElementRef et manipulation du DOM",
+            "Host bindings et décorateurs listener"
+          ],
+          "objectives": [
+            "Utiliser les directives built-in pour contrôler la structure et le style du DOM",
+            "Créer des directives d'attribut personnalisées pour étendre le comportement des éléments",
+            "Implémenter les patterns de communication des directives en utilisant les host bindings et ElementRef"
+          ],
+          "activities": [
+            "Créer des directives d'attribut personnalisées",
+            "Utiliser efficacement les directives built-in"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "subcourse",
+      "title": "Jour 2 : Construire des Applications Interactives avec Formulaires & Routage",
+      "modules": [
+        {
+          "title": "Fondamentaux du Routage",
+          "topics": [
+            "Philosophie du routage dans les Single Page Applications",
+            "Configuration et définition des routes",
+            "Router outlets et navigation",
+            "Patterns d'URL et paramètres",
+            "Méthodes de navigation (routerLink, service Router)"
+          ],
+          "objectives": [
+            "Configurer et implémenter le routage dans les Single Page Applications",
+            "Naviguer entre les routes en utilisant à la fois les approches template et programmatiques",
+            "Passer et récupérer les données via les paramètres de route et les query strings"
+          ],
+          "activities": [
+            "Configurer un routage de base",
+            "Naviguer entre les routes",
+            "Passer des données à travers les paramètres de route"
+          ]
+        },
+        {
+          "title": "Control Flow",
+          "topics": [
+            "Nouveau control flow Angular (@if, @for, @switch)",
+            "Directives structurelles built-in (*ngIf, *ngFor, *ngSwitch)",
+            "Patterns de rendu conditionnel",
+            "Rendu de listes et performances",
+            "Migration de l'ancienne à la nouvelle syntaxe"
+          ],
+          "objectives": [
+            "Utiliser la syntaxe moderne de control flow Angular (@if, @for, @switch) pour la logique de rendu",
+            "Rendre les listes dynamiques de manière efficace avec des performances optimales",
+            "Migrer des directives structurelles héritées vers la syntaxe moderne de control flow"
+          ],
+          "activities": [
+            "Rendre des listes dynamiques avec @for",
+            "Gérer l'UI conditionnelle avec @if/@switch"
+          ]
+        },
+        {
+          "title": "HTTP & Récupération de Données",
+          "topics": [
+            "Configuration et utilisation de HttpClient",
+            "Méthodes HTTP (GET, POST, PUT, DELETE)",
+            "HTTP resources pour le chargement réactif de données",
+            "Types de réponse et gestion d'erreurs",
+            "Relier les Observables et les Signals (toSignal, resource)"
+          ],
+          "objectives": [
+            "Récupérer les données des API REST en utilisant HttpClient et HTTP resources",
+            "Gérer les réponses HTTP et les erreurs de manière élégante dans les applications",
+            "Relier les Observables et les Signals pour les patterns de chargement de données réactifs"
+          ],
+          "activities": [
+            "Récupérer des données d'une API REST",
+            "Afficher les données du serveur de manière réactive",
+            "Gérer les erreurs HTTP"
+          ]
+        },
+        {
+          "title": "Formulaires Pilotés par Template",
+          "topics": [
+            "FormsModule et directive ngModel",
+            "État du formulaire et validation",
+            "Retour utilisateur et affichage d'erreurs",
+            "Gestion de la soumission de formulaire",
+            "Validateurs built-in"
+          ],
+          "objectives": [
+            "Construire des formulaires pilotés par template avec validation et affichage d'erreurs",
+            "Implémenter la gestion de l'état du formulaire et la gestion de la soumission",
+            "Utiliser les validateurs built-in pour assurer l'intégrité des données"
+          ],
+          "activities": [
+            "Créer un formulaire de création de personne",
+            "Implémenter la validation de formulaire",
+            "Afficher les messages d'erreur de validation"
+          ]
+        },
+        {
+          "title": "Formulaires Réactifs",
+          "topics": [
+            "ReactiveFormsModule et FormControl/FormGroup",
+            "Construction de formulaires programmatique",
+            "Patterns de validation de formulaire",
+            "Validateurs personnalisés",
+            "Formulaires réactifs autonomes (sans NgModule)"
+          ],
+          "objectives": [
+            "Construire des formulaires réactifs complexes en utilisant FormGroup et FormControl",
+            "Implémenter des validateurs personnalisés pour les règles de validation spécifiques au domaine",
+            "Créer des composants de formulaire réutilisables avec les patterns réactifs"
+          ],
+          "activities": [
+            "Construire des formulaires avec FormGroup/FormControl",
+            "Implémenter une logique de validation complexe",
+            "Créer des composants de formulaire réutilisables"
+          ]
+        },
+        {
+          "title": "Signal Forms (Moderne)",
+          "topics": [
+            "API de formulaire basée sur les signals",
+            "Directive Field et composition de formulaires",
+            "Gestion d'état de formulaire avec les signals",
+            "Validation avec les signal forms",
+            "Gestion de formulaires type-safe"
+          ],
+          "objectives": [
+            "Construire des formulaires modernes en utilisant l'API de formulaire basée sur les signals d'Angular",
+            "Implémenter la gestion de formulaires type-safe avec les signals pour une meilleure expérience développeur",
+            "Créer des contrôles de formulaire personnalisés avec les patterns de composition basés sur les signals"
+          ],
+          "activities": [
+            "Construire des formulaires avec l'API moderne de signal form",
+            "Implémenter des patterns de validation",
+            "Créer des contrôles de formulaire personnalisés"
+          ]
+        },
+        {
+          "title": "Résumé & Comparaison des Formulaires",
+          "topics": [
+            "Formulaires pilotés par template vs réactifs vs signal",
+            "Quand utiliser chaque approche",
+            "Stratégies de migration",
+            "Considérations de performance"
+          ],
+          "objectives": [
+            "Évaluer et choisir l'approche de formulaire appropriée pour différents cas d'usage",
+            "Migrer les formulaires existants entre les approches pilotées par template, réactives et basées sur les signals",
+            "Optimiser les performances des formulaires en fonction des exigences du projet"
+          ],
+          "activities": [
+            "Comparer les différentes approches de formulaires",
+            "Choisir la bonne stratégie de formulaire pour votre cas d'usage"
+          ]
+        },
+        {
+          "title": "Patterns de Pensée Réactive",
+          "topics": [
+            "Combiner le routage avec le chargement de données",
+            "Patterns de composition de signals",
+            "linkedSignal pour les dépendances calculées",
+            "RxMethod et opérations asynchrones",
+            "Workflows CRUD complets"
+          ],
+          "objectives": [
+            "Combiner le routage avec le chargement de données réactif pour une navigation transparente",
+            "Maîtriser les patterns de composition de signals pour les scénarios réactifs complexes",
+            "Implémenter les workflows CRUD complets avec le flux de données réactif"
+          ],
+          "activities": [
+            "Construire une page de détail/édition avec routage",
+            "Implémenter des opérations CRUD complètes",
+            "Maîtriser le flux de données réactif"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "subcourse",
+      "title": "Jour 3 : Patterns Avancés & Architecture",
+      "modules": [
+        {
+          "title": "Routage Avancé",
+          "topics": [
+            "Lazy loading et code splitting",
+            "Feature modules et routage",
+            "Routes enfants et routage imbriqué",
+            "Paramètres de route et query strings",
+            "Stratégies de preloading de route"
+          ],
+          "objectives": [
+            "Implémenter le lazy loading et le code splitting pour une taille de bundle optimale",
+            "Configurer les structures de routage imbriquées avec les routes enfants et les feature modules",
+            "Optimiser les performances de l'application en utilisant les stratégies de preloading"
+          ],
+          "activities": [
+            "Implémenter des feature modules lazy-loaded",
+            "Configurer les routes enfants",
+            "Optimiser la taille du bundle avec le lazy loading"
+          ]
+        },
+        {
+          "title": "Guards de Route",
+          "topics": [
+            "Types de guards (CanActivate, CanDeactivate, CanMatch)",
+            "Syntaxe de guard fonctionnel",
+            "Guards d'authentification et autorisation",
+            "Patterns de redirection de route",
+            "Chaînage et composition de guards"
+          ],
+          "objectives": [
+            "Implémenter les guards de route pour protéger les routes en fonction de l'authentification et de l'autorisation",
+            "Utiliser le chaînage et la composition des guards pour les scénarios de contrôle d'accès complexes",
+            "Gérer la redirection de route et prévenir les changements non enregistrés avec les guards"
+          ],
+          "activities": [
+            "Implémenter des guards d'authentification",
+            "Protéger les routes en fonction des rôles utilisateur",
+            "Gérer les changements non enregistrés"
+          ]
+        },
+        {
+          "title": "Route Resolvers",
+          "topics": [
+            "Pattern resolver et pré-chargement de données",
+            "Implémentation de resolver",
+            "Resolvers fonctionnels",
+            "Binding d'entrée de composant avec resolvers",
+            "Gestion d'erreurs dans les resolvers"
+          ],
+          "objectives": [
+            "Implémenter les resolvers pour pré-charger les données avant l'activation de la route",
+            "Lier les données du resolver aux inputs des composants pour un flux de données transparent",
+            "Gérer les défaillances de resolver de manière élégante avec les patterns de gestion d'erreurs"
+          ],
+          "activities": [
+            "Implémenter des resolvers pour les données de route",
+            "Charger les données avant l'initialisation du composant",
+            "Gérer les défaillances de resolver gracieusement"
+          ]
+        },
+        {
+          "title": "Intercepteurs HTTP",
+          "topics": [
+            "Pattern intercepteur et cas d'usage",
+            "Transformation de requête/réponse",
+            "Gestion d'erreurs et logique de retry",
+            "Injection de token d'authentification",
+            "HTTP context pour un comportement conditionnel"
+          ],
+          "objectives": [
+            "Implémenter les intercepteurs HTTP pour les préoccupations transversales (authentification, logging, gestion d'erreurs)",
+            "Transformer les requêtes et les réponses globalement en utilisant les chaînes d'intercepteurs",
+            "Gérer les erreurs et implémenter la logique de retry au niveau de l'intercepteur"
+          ],
+          "activities": [
+            "Créer un intercepteur d'authentification",
+            "Implémenter la mise en cache de requête",
+            "Gérer les erreurs HTTP globalement"
+          ]
+        },
+        {
+          "title": "Projection de Contenu",
+          "topics": [
+            "ng-content pour la composition de composants",
+            "Slots nommés et projections multiples",
+            "Composants wrapper transparents",
+            "Patterns de projection basés sur les signals",
+            "États de chargement et overlays"
+          ],
+          "objectives": [
+            "Utiliser la projection de contenu pour créer des composants flexibles et réutilisables",
+            "Implémenter les slots nommés pour les projections de contenu multiples",
+            "Construire les composants wrappers transparents avec les patterns de projection basés sur les signals"
+          ],
+          "activities": [
+            "Créer un composant overlay réutilisable",
+            "Utiliser la projection de contenu pour la flexibilité",
+            "Construire des patterns d'état de chargement"
+          ]
+        },
+        {
+          "title": "Template Outlets & Références",
+          "topics": [
+            "ng-template pour les templates réutilisables",
+            "ng-container pour le regroupement logique",
+            "ngTemplateOutlet pour les templates dynamiques",
+            "ViewChild et références de template",
+            "Requêtes de contenu et génériques"
+          ],
+          "objectives": [
+            "Créer des composants génériques en utilisant ngTemplateOutlet pour le rendu dynamique de templates",
+            "Utiliser ViewChild pour interroger et interagir avec les références de template",
+            "Construire des composants hautement composables par la composition pilotée par template"
+          ],
+          "activities": [
+            "Créer des composants de liste générique",
+            "Implémenter la composition pilotée par template",
+            "Utiliser ViewChild pour l'interaction entre composants"
+          ]
+        },
+        {
+          "title": "Directives Structurelles Avancées",
+          "topics": [
+            "Syntaxe de directive structurelle (*directive)",
+            "TemplateRef et ViewContainerRef",
+            "Créer des directives structurelles personnalisées",
+            "Création impérative de composants",
+            "Patterns de composition de directives"
+          ],
+          "objectives": [
+            "Créer des directives structurelles personnalisées pour la manipulation avancée du DOM",
+            "Utiliser TemplateRef et ViewContainerRef pour l'instanciation impérative de composants",
+            "Maîtriser les patterns de composition de directives pour la logique de template complexe"
+          ],
+          "activities": [
+            "Créer une directive structurelle personnalisée",
+            "Implémenter l'instanciation conditionnelle de composants",
+            "Maîtriser les patterns de templating avancés"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "subcourse",
+      "title": "Jour 4 : Testing, Gestion d'État & Sujets Avancés",
+      "modules": [
+        {
+          "title": "Tests Unitaires",
+          "topics": [
+            "Outils de test et configuration (Vitest, utilitaires de test Angular)",
+            "Test de composants avec TestBed",
+            "Stratégies de test de composants",
+            "Test de services et appels HTTP",
+            "Test de directives et pipes",
+            "Angular Testing Library pour des tests réalistes",
+            "Mocking et test doubles",
+            "Couverture de test et bonnes pratiques"
+          ],
+          "objectives": [
+            "Écrire des tests unitaires complets pour les composants, services et directives Angular",
+            "Atteindre 100% de couverture de code avec des stratégies de test efficaces",
+            "Mocker les appels HTTP et les dépendances en utilisant les utilitaires de test Angular"
+          ],
+          "activities": [
+            "Écrire des tests de composant complets",
+            "Tester les services avec HTTP mocké",
+            "Atteindre 100% de couverture de code"
+          ]
+        },
+        {
+          "title": "Gestion d'État avec NgRx Signal Store",
+          "topics": [
+            "Patterns et principes de gestion d'état",
+            "NgRx Signal Store vs NgRx classique",
+            "Création et provisionnement de stores",
+            "Sélecteurs d'état et valeurs calculées",
+            "withComputed pour la dérivation d'état",
+            "withProps pour les actions paramétrées",
+            "withMethods et patchState pour les mutations",
+            "RxMethod pour les opérations asynchrones",
+            "Store hooks pour l'initialisation",
+            "Providers scoped par route",
+            "Patterns de gestion d'entités",
+            "Test des composants basés sur le store"
+          ],
+          "objectives": [
+            "Concevoir et implémenter la gestion d'état scalable en utilisant NgRx Signal Store",
+            "Gérer les mutations d'état complexes, l'état dérivé et les opérations asynchrones",
+            "Tester les applications basées sur le store avec l'isolation et le mocking appropriés"
+          ],
+          "activities": [
+            "Construire un store complet pour le répertoire du personnel",
+            "Implémenter des mutations d'état complexes",
+            "Gérer les effets secondaires asynchrones avec RxMethod",
+            "Tester les applications basées sur le store"
+          ]
+        },
+        {
+          "title": "Change Detection & Zoneless",
+          "topics": [
+            "Mécanisme de change detection",
+            "Stratégie OnPush pour l'optimisation",
+            "Applications zoneless",
+            "Implications de performance",
+            "Debugging de change detection"
+          ],
+          "objectives": [
+            "Optimiser les performances de l'application en utilisant la stratégie de change detection OnPush",
+            "Construire des applications zoneless avec des performances améliorées et moins de surcharge JavaScript",
+            "Déboguer les problèmes de change detection et surveiller les implications de performance"
+          ],
+          "activities": [
+            "Optimiser avec la stratégie OnPush",
+            "Construire des applications zoneless"
+          ]
+        },
+        {
+          "title": "Progressive Web Apps (PWA)",
+          "topics": [
+            "Fondamentaux et avantages des PWA",
+            "Intégration du package @angular/pwa",
+            "Fondamentaux des Service Workers",
+            "Communication avec les Service Workers",
+            "Stratégies de caching",
+            "Patterns offline-first"
+          ],
+          "objectives": [
+            "Transformer les applications Angular en Progressive Web Apps avec support offline",
+            "Implémenter les Service Workers pour les stratégies de caching et les opérations en arrière-plan",
+            "Activer les patterns offline-first pour une meilleure expérience utilisateur"
+          ],
+          "activities": [
+            "Ajouter les capacités PWA à une application Angular",
+            "Implémenter la communication avec les service workers"
+          ]
+        },
+        {
+          "title": "Rendu Côté Serveur (SSR)",
+          "topics": [
+            "Avantages et cas d'usage du SSR",
+            "Modes de rendu (développement, production, prérendering)",
+            "Patterns de code compatible avec le serveur",
+            "HTTP et hydratation",
+            "Considérations de performance",
+            "Optimisation SEO"
+          ],
+          "objectives": [
+            "Configurer le Server-Side Rendering pour les performances améliorées et le SEO",
+            "Implémenter les patterns de code compatibles avec le serveur et gérer correctement l'hydratation",
+            "Optimiser les stratégies de rendu pour les différents scénarios de déploiement"
+          ],
+          "activities": [
+            "Configurer SSR pour une application Angular",
+            "Gérer la récupération de données côté serveur",
+            "Optimiser l'hydratation"
+          ]
+        },
+        {
+          "title": "Librairies Angular",
+          "topics": [
+            "Créer des librairies publiables",
+            "Structure de projet de librairie",
+            "Construction et packaging avec ng-packagr",
+            "Gestion des dépendances",
+            "Gestion des assets dans les librairies",
+            "Documentation et versioning",
+            "Publication sur npm"
+          ],
+          "objectives": [
+            "Créer et structurer des librairies Angular publiables pour la réutilisation du code",
+            "Construire, empaqueter et distribuer les librairies Angular vers npm",
+            "Gérer les dépendances et le versioning pour la maintenabilité de la librairie"
+          ],
+          "activities": [
+            "Créer une librairie de composants partagés",
+            "Construire et publier une librairie Angular"
+          ]
+        },
+        {
+          "title": "Native Federation & Micro-Frontends",
+          "topics": [
+            "Architecture micro-frontends",
+            "Concepts de Module Federation",
+            "Applications hôte et distantes",
+            "Partage de dépendances",
+            "Communication entre micro-frontends",
+            "Native Federation (spécifique à Angular)"
+          ],
+          "objectives": [
+            "Concevoir et implémenter des architectures micro-frontends en utilisant Native Federation",
+            "Partager efficacement les dépendances entre les applications hôte et distantes",
+            "Activer la communication transparente entre les applications micro-frontends indépendantes"
+          ],
+          "activities": [
+            "Configurer une architecture micro-frontends",
+            "Partager des dépendances entre applications"
+          ]
+        },
+        {
+          "title": "Optimisation de Performance",
+          "topics": [
+            "Core Web Vitals et métriques",
+            "Stratégies d'optimisation d'images",
+            "Lazy loading de composants au runtime",
+            "Deferred views pour le contenu below-the-fold",
+            "Analyse et optimisation de bundle",
+            "Monitoring de performance"
+          ],
+          "objectives": [
+            "Optimiser les performances de l'application pour respecter les standards Core Web Vitals",
+            "Implémenter le lazy loading et les deferred views pour des temps de chargement initiaux plus rapides",
+            "Surveiller et analyser les métriques de performance pour l'amélioration continue"
+          ],
+          "activities": [
+            "Optimiser les images pour le web",
+            "Implémenter des composants lazy-loaded",
+            "Différer les vues non critiques"
+          ]
+        }
+      ]
+    }
+  ],
+  "provenance_en": {
+    "published_at": "2026-09-09T00:00:00Z",
+    "extracted_at": "2026-09-09T00:00:00Z",
+    "extracted_by_model": "claude-sfeir-school"
+  },
+  "provenance_fr": {
+    "published_at": "2026-09-09T00:00:00Z",
+    "extracted_at": "2026-09-09T00:00:00Z",
+    "extracted_by_model": "claude-sfeir-school"
+  }
+}

@@ -63,21 +63,12 @@ To launch a specific workshop:
 
 ```shell
 # Replace 'workshop_name' with the actual workshop name
-npm run client -- "workshop_name"
+npm run serve -- "workshop_name"
 ```
 
 <!-- .element: class="medium-code" -->
 
 <br/>
-
-### 4. Start Mock API Server
-
-```shell
-# Run this in a separate terminal
-npm run server:start
-```
-
-<!-- .element: class="medium-code" -->
 
 ##==##
 

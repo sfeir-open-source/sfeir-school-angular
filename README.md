@@ -40,7 +40,7 @@ Serve the first exercise (default project is `01-hands-on`):
 # Using Nx directly
 npx nx serve 01-hands-on
 # or using the provided script alias
-npm run client -- 01-hands-on   # npm run client -- 01-hands-on
+npm run serve -- 01-hands-on
 ```
 
 Open the browser to the URL shown by the CLI (Angular defaults to http://localhost:4200 unless configured otherwise).
@@ -50,7 +50,7 @@ The mock API listens on http://localhost:9000 (see `apps/server-express/src/main
 Run unit tests for a specific project:
 
 ```bash
-npm run client:test -- 01-hands-on   # npm run client:test -- 01-hands-on
+npm run test -- 01-hands-on
 ```
 
 Run all tests across the workspace:
@@ -98,7 +98,7 @@ The root `package.json` provides convenient aliases around Nx:
 You can pass any Angular CLI or Nx options after `--`, for example:
 
 ```bash
-npm run client -- 01-hands-on --configuration=production
+npm run serve -- 01-hands-on --configuration=production
 ```
 
 ## Credits

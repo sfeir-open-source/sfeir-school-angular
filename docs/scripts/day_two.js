@@ -2,110 +2,124 @@ import { showByDefault } from './utils.js';
 
 /** Here is all the slides for day two
  *
- * Day 2 goes from "a component that renders" to "a real feature": how Angular
- * gives your components their dependencies (providers & DI), how to transform
- * what you display (pipes), how to extend the DOM (directives) and finally how
- * to capture user input safely with the three flavours of forms
- * (template-driven -> reactive -> signal forms).
- *
- * Control flow (@if / @for / @switch) now lives on day 1, right after data
- * binding, so learners can render lists before they fetch them from a server.
+ * Day 2 follows the staff-directory app's own story, exercise by exercise:
+ * routing (09-router) turns "one hardcoded screen" into a real, URL-driven
+ * app; control flow (10-control-flow) brings the people list to life with
+ * @if/@for/@switch; HTTP (11-http) swaps the mock array for a real REST API,
+ * introducing httpResource, toSignal and merge/switchMap composition; the
+ * three forms modules (12/13/14-*-form) build the exact same "add/edit
+ * person" dialog three times — template-driven, reactive, then Signal Forms
+ * — so the summary module's side-by-side comparison actually lands; and
+ * reactive-thinking (15-reactive-thinking) closes the day by wiring routing,
+ * resources, linkedSignal and forms together into a real detail/edit page.
  */
 
-function providersSlide() {
-  const PROVIDERS = '12-PROVIDERS';
+function routerBasicsSlides() {
+  const ROUTER = '11-ROUTER-BASICS';
   return [
-    showByDefault(`${PROVIDERS}/SCHOOL-200.md`), //
-    `${PROVIDERS}/00-TRANSITION-SLIDE.md`, //
-    `${PROVIDERS}/01-INTRODUCTION.md`, //
-    `${PROVIDERS}/100-LAB.md`, //
-  ];
-}
-
-function dependencyInjectionSlides() {
-  const DEPENDENCY_INJECTION = '13-DEPENDENCY-INJECTION';
-  return [
-    `${DEPENDENCY_INJECTION}/00-TRANSITION-SLIDE.md`,
-    `${DEPENDENCY_INJECTION}/01-BASICS.md`,
-    `${DEPENDENCY_INJECTION}/02-DI-WORKING.md`,
-    `${DEPENDENCY_INJECTION}/03-DI-RESOLUTION.md`,
+    `${ROUTER}/00-TRANSITION-SLIDE.md`,
+    `${ROUTER}/01-INTRODUCTION.md`,
+    `${ROUTER}/02-ROUTES-CONFIGURATION.md`,
+    `${ROUTER}/03-PROVIDE-ROUTER.md`,
+    `${ROUTER}/100-LAB.md`,
   ].map(showByDefault);
 }
 
-function pipeSlides() {
-  const PIPE = '14-PIPE';
+function controlFlowSlides() {
+  const CONTROL_FLOW = '12-CONTROL-FLOW';
   return [
-    `${PIPE}/00-TRANSITION-SLIDE.md`,
-    `${PIPE}/01-INTRODUCTION.md`,
-    `${PIPE}/02-SYNTAX.md`,
-    `${PIPE}/100-LAB.md`,
-    `${PIPE}/03-CUSTOM-PIPE.md`,
-    `${PIPE}/101-LAB.md`,
+    `${CONTROL_FLOW}/00-TRANSITION-SLIDE.md`,
+    `${CONTROL_FLOW}/01-INTRODUCTION.md`,
+    `${CONTROL_FLOW}/02-if.md`,
+    `${CONTROL_FLOW}/03-for.md`,
+    `${CONTROL_FLOW}/04-switch.md`,
+    `${CONTROL_FLOW}/100-LAB.md`,
+    `${CONTROL_FLOW}/05-migration.md`,
   ];
 }
 
-function directiveSlides() {
-  const DIRECTIVE = '16-DIRECTIVE';
+function httpSlides() {
+  const HTTP = '13-HTTP';
   return [
-    `${DIRECTIVE}/00-TRANSITION-SLIDE.md`, //
-    `${DIRECTIVE}/01-CUSTOM-DIRECTIVE.md`, //
-    `${DIRECTIVE}/100-LAB.md`, //
+    `${HTTP}/00-TRANSITION-SLIDE.md`,
+    `${HTTP}/01-SETUP.md`,
+    `${HTTP}/02-USAGE.md`,
+    `${HTTP}/03-HTTP-RESOURCE.md`,
+    `${HTTP}/04-BRIDGE-OBSERVABLE-SIGNALS.md`,
+    `${HTTP}/100-LAB.md`,
   ].map(showByDefault);
 }
 
-function templateDrivenForms() {
-  const FORMS = '17-FORMS';
+function templateDrivenFormSlides() {
+  const FORMS = '14-FORMS-TEMPLATE-DRIVEN';
   return [
     `${FORMS}/00-TRANSITION-SLIDE.md`,
-    `${FORMS}/TEMPLATE-DRIVEN-FORMS/01-INTRODUCTION.md`,
-    `${FORMS}/TEMPLATE-DRIVEN-FORMS/100-LAB.md`,
-    `${FORMS}/TEMPLATE-DRIVEN-FORMS/02-VALIDATION.md`,
-    `${FORMS}/TEMPLATE-DRIVEN-FORMS/101-LAB.md`,
-    `${FORMS}/TEMPLATE-DRIVEN-FORMS/102-LAB.md`,
-  ].map(showByDefault);
+    `${FORMS}/01-INTRODUCTION.md`,
+    `${FORMS}/02-VALIDATION.md`,
+    `${FORMS}/100-LAB.md`,
+  ];
 }
 
 function reactiveFormSlides() {
-  const FORMS = '17-FORMS';
+  const FORMS = '15-FORMS-REACTIVE';
   return [
-    `${FORMS}/REACTIVE-FORMS/01-INTRODUCTION.md`,
-    `${FORMS}/REACTIVE-FORMS/02-VALIDATION.md`,
-    `${FORMS}/REACTIVE-FORMS/100-LAB.md`,
-    `${FORMS}/REACTIVE-FORMS/03-CUSTOM-VALIDATION.md`,
-    `${FORMS}/REACTIVE-FORMS/101-LAB.md`,
-    `${FORMS}/REACTIVE-FORMS/04-CUSTOM-CONTROL.md`, // custom control with ControlValueAccessor
-    `${FORMS}/REACTIVE-FORMS/102-LAB.md`,
-    `${FORMS}/01-SUMMARY.md`,
+    `${FORMS}/01-INTRODUCTION.md`,
+    `${FORMS}/02-VALIDATION.md`,
+    `${FORMS}/03-CUSTOM-VALIDATION.md`,
+    `${FORMS}/04-CUSTOM-CONTROL.md`,
+    `${FORMS}/100-LAB.md`,
   ];
 }
 
 function signalFormSlides() {
-  const FORMS = '17-FORMS';
+  const FORMS = '16-FORMS-SIGNAL';
   return [
-    `${FORMS}/SIGNAL-FORMS/00-TRANSITION-SLIDE.md`,
-    `${FORMS}/SIGNAL-FORMS/01-INTRODUCTION.md`,
-    `${FORMS}/SIGNAL-FORMS/02-GETTING-STARTED.md`,
-    `${FORMS}/SIGNAL-FORMS/03-FIELD-STATE.md`,
-    `${FORMS}/SIGNAL-FORMS/04-VALIDATION.md`,
-    `${FORMS}/SIGNAL-FORMS/05-CUSTOM-VALIDATION.md`,
-    `${FORMS}/SIGNAL-FORMS/06-LOGIC.md`,
-    `${FORMS}/SIGNAL-FORMS/07-SCHEMAS.md`,
-    `${FORMS}/SIGNAL-FORMS/08-ASYNC.md`,
-    `${FORMS}/SIGNAL-FORMS/09-SUBMIT.md`,
-    `${FORMS}/SIGNAL-FORMS/10-CUSTOM-CONTROLS.md`, // FormValueControl / FormCheckboxControl + CVA comparison
-    `${FORMS}/SIGNAL-FORMS/100-LAB.md`,
-    `${FORMS}/SIGNAL-FORMS/11-BEST-PRACTICES.md`,
+    `${FORMS}/00-TRANSITION-SLIDE.md`,
+    `${FORMS}/01-INTRODUCTION.md`,
+    `${FORMS}/02-GETTING-STARTED.md`,
+    `${FORMS}/03-FIELD-STATE.md`,
+    `${FORMS}/04-VALIDATION.md`,
+    `${FORMS}/05-CUSTOM-VALIDATION.md`,
+    `${FORMS}/06-LOGIC.md`,
+    `${FORMS}/07-SCHEMAS.md`,
+    `${FORMS}/08-ASYNC.md`,
+    `${FORMS}/09-SUBMIT.md`,
+    `${FORMS}/10-CUSTOM-CONTROLS.md`,
+    `${FORMS}/100-LAB.md`,
+    `${FORMS}/11-BEST-PRACTICES.md`,
+  ].map(showByDefault);
+}
+
+function formsSummarySlides() {
+  const SUMMARY = '17-FORMS-SUMMARY';
+  // Bonus/comparison module, no lab — shown on-stage; kept out of the
+  // reduced modern-2days format the same way other bonus content is.
+  return [showByDefault(`${SUMMARY}/01-SUMMARY.md`)];
+}
+
+function reactiveThinkingSlides() {
+  const REACTIVE_THINKING = '18-REACTIVE-THINKING';
+  return [
+    `${REACTIVE_THINKING}/00-TRANSITION-SLIDE.md`,
+    `${REACTIVE_THINKING}/01-INTRODUCTION.md`,
+    `${REACTIVE_THINKING}/02-ROUTER-LINK.md`,
+    `${REACTIVE_THINKING}/03-COMPONENT-INPUT-BINDING.md`,
+    `${REACTIVE_THINKING}/04-RX-RESOURCE.md`,
+    `${REACTIVE_THINKING}/05-LINKED-SIGNAL.md`,
+    `${REACTIVE_THINKING}/06-COMPLETING-THE-CRUD.md`,
+    `${REACTIVE_THINKING}/100-LAB.md`,
   ].map(showByDefault);
 }
 
 export function dayTwoSlides() {
   return [
-    ...providersSlide(),
-    ...dependencyInjectionSlides(),
-    ...pipeSlides(),
-    ...directiveSlides(),
-    ...templateDrivenForms(),
+    ...routerBasicsSlides(),
+    ...controlFlowSlides(),
+    ...httpSlides(),
+    ...templateDrivenFormSlides(),
     ...reactiveFormSlides(),
     ...signalFormSlides(),
+    ...formsSummarySlides(),
+    ...reactiveThinkingSlides(),
   ];
 }

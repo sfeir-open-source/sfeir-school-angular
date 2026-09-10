@@ -23,14 +23,13 @@ Notes:
 
 ## Multi-bullet example
 
-`docs/markdown/18-NAVIGATION-ADVANCED/02-LAZY-LOADING-ROUTE-DEFINITION.md`:
+`docs/markdown/19-ADVANCED-ROUTING/02-LAZY-LOADING-ROUTE-DEFINITION.md`:
 
 ```md
 Notes:
 
-- Note: this is the syntax for Angular version 8.
-- It is useless to try destructuring; it does not work (PeopleModule will not be defined).
-- You can also use the async/await syntax as follows: async() => (await import('./people/people.module')).PeopleModule
+- Destructuring `import()`'s return value directly (e.g. `then(({ staffDirectoryRoutes }) => staffDirectoryRoutes)`) works exactly the same as `.then(m => m.staffDirectoryRoutes)` — both just read the named export off the resolved module object.
+- A dynamic `import()` always resolves to a **module namespace object** — you must pick the named export off it, `loadChildren` never accepts the module itself as the routes array.
 ```
 
 ## Single-line example

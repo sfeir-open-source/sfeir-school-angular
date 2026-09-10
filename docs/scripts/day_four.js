@@ -1,72 +1,70 @@
-import { showByDefault } from './utils.js';
+import { showByDefault, showOnModern2days } from './utils.js';
 
-function stateManagementElf() {
-  const STATE_MANAGEMENT = '24-STATE-MANAGEMENT';
-  return [
-    `${STATE_MANAGEMENT}/ANGULAR-500.md`,
-    `${STATE_MANAGEMENT}/00-TRANSITION-SLIDE.md`,
-    `${STATE_MANAGEMENT}/01-INTRODUCTION.md`,
-    `${STATE_MANAGEMENT}/ELF/01-INTRODUCTION.md`,
-    `${STATE_MANAGEMENT}/ELF/02-STORE.md`,
-    `${STATE_MANAGEMENT}/ELF/03-ENTITIES.md`,
-    `${STATE_MANAGEMENT}/ELF/100-LAB.md`,
-  ].map(showByDefault);
+// Shown both in the full on-stage format and in the trimmed modern-2days format.
+function core(slide) {
+  return showOnModern2days(showByDefault(slide));
 }
 
-function stateManagementNgxs() {
-  const STATE_MANAGEMENT_NGXS = '24-STATE-MANAGEMENT/NGXS';
-
+function unitTestingSlides() {
+  const UNIT_TESTING = '26-UNIT-TESTING';
   return [
-    `${STATE_MANAGEMENT_NGXS}/01-INTRODUCTION.md`,
-    `${STATE_MANAGEMENT_NGXS}/02-STORE.md`,
-    `${STATE_MANAGEMENT_NGXS}/03-ACTIONS.md`,
-    `${STATE_MANAGEMENT_NGXS}/04-STATE.md`,
-    `${STATE_MANAGEMENT_NGXS}/05-SELECTORS.md`,
-    `${STATE_MANAGEMENT_NGXS}/06-NGXS-SIGNALS.md`,
-    `${STATE_MANAGEMENT_NGXS}/100-LAB.md`,
-  ].map(showByDefault);
-}
-
-function stateManagementNgrx() {
-  const STATE_MANAGEMENT_NGRX = '24-STATE-MANAGEMENT/NGRX';
-  return [
-    `${STATE_MANAGEMENT_NGRX}/01-INTRODUCTION.md`,
-    `${STATE_MANAGEMENT_NGRX}/02-ACTIONS.md`,
-    `${STATE_MANAGEMENT_NGRX}/03-STATE.md`,
-    `${STATE_MANAGEMENT_NGRX}/04-SELECTORS.md`,
-    `${STATE_MANAGEMENT_NGRX}/05-REDUCERS.md`,
-    `${STATE_MANAGEMENT_NGRX}/06-STORE.md`,
-    `${STATE_MANAGEMENT_NGRX}/07-EFFECTS.md`,
-    `${STATE_MANAGEMENT_NGRX}/100-LAB.md`,
-  ].map(showByDefault);
-}
-
-function unitTestSlides() {
-  const UNIT_TESTS = '25-UNIT-TESTS';
-  return [
-    `${UNIT_TESTS}/00-TRANSITION-SLIDE.md`,
-    `${UNIT_TESTS}/01-TOOLS.md`,
-    `${UNIT_TESTS}/02-CONCEPTS.md`,
-    `${UNIT_TESTS}/COMPONENTS/01-INTRODUCTION.md`,
-    `${UNIT_TESTS}/COMPONENTS/02-EXAMPLE.md`,
-    showByDefault(`${UNIT_TESTS}/DIRECTIVES/01-INTRODUCTION.md`),
-    showByDefault(`${UNIT_TESTS}/DIRECTIVES/02-EXAMPLE.md`),
-    `${UNIT_TESTS}/SERVICES/01-INTRODUCTION.md`,
-    `${UNIT_TESTS}/SERVICES/02-HELPERS-SERVICE.md`,
-    `${UNIT_TESTS}/SERVICES/03-HTTP-SERVICE.md`,
-    `${UNIT_TESTS}/PIPES/01-INTRODUCTION.md`,
-    `${UNIT_TESTS}/PIPES/02-EXAMPLE.md`,
-    `${UNIT_TESTS}/JEST/01-INTRODUCTION.md`,
-    `${UNIT_TESTS}/JEST/02-MOCK.md`,
-    `${UNIT_TESTS}/ANGULAR-TESTING-LIBRARY/01-INTRODUCTION.md`,
-    `${UNIT_TESTS}/ANGULAR-TESTING-LIBRARY/02-CORE-CONCEPTS.md`,
-    `${UNIT_TESTS}/ANGULAR-TESTING-LIBRARY/03-EXAMPLE.md`,
-    `${UNIT_TESTS}/100-LAB.md`,
+    core(`${UNIT_TESTING}/00-TRANSITION-SLIDE.md`),
+    core(`${UNIT_TESTING}/01-TOOLS.md`),
+    core(`${UNIT_TESTING}/02-CONCEPTS.md`),
+    core(`${UNIT_TESTING}/ANGULAR-TESTING-LIBRARY/01-INTRODUCTION.md`),
+    core(`${UNIT_TESTING}/ANGULAR-TESTING-LIBRARY/02-CORE-CONCEPTS.md`),
+    core(`${UNIT_TESTING}/COMPONENTS/01-INTRODUCTION.md`),
+    core(`${UNIT_TESTING}/COMPONENTS/02-EXAMPLE.md`),
+    core(`${UNIT_TESTING}/DIRECTIVES/01-INTRODUCTION.md`),
+    core(`${UNIT_TESTING}/DIRECTIVES/02-EXAMPLE.md`),
+    core(`${UNIT_TESTING}/MOCKING/01-TEST-DOUBLES.md`),
+    core(`${UNIT_TESTING}/SERVICES/01-INTRODUCTION.md`),
+    core(`${UNIT_TESTING}/SERVICES/02-HTTP-SERVICE.md`),
+    core(`${UNIT_TESTING}/SERVICES/03-GUARDS.md`),
+    core(`${UNIT_TESTING}/ANGULAR-TESTING-LIBRARY/03-EXAMPLE.md`),
+    showByDefault(`${UNIT_TESTING}/PIPES/01-INTRODUCTION.md`), // generic aside, no app-grounded example: trimmed from modern-2days
+    core(`${UNIT_TESTING}/100-LAB.md`),
   ];
 }
 
+function ngrxSignalStoreSlides() {
+  const NGRX_SIGNAL_STORE = '27-NGRX-SIGNAL-STORE';
+  return [
+    showByDefault(`${NGRX_SIGNAL_STORE}/ANGULAR-500.md`), // level badge slide, on-stage only (same convention as ANGULAR-300/400)
+    core(`${NGRX_SIGNAL_STORE}/00-TRANSITION-SLIDE.md`),
+    core(`${NGRX_SIGNAL_STORE}/01-INTRODUCTION.md`),
+    showByDefault(`${NGRX_SIGNAL_STORE}/02-CLASSIC-NGRX-VS-SIGNALSTORE.md`), // historical detour, trimmed from modern-2days
+    core(`${NGRX_SIGNAL_STORE}/03-CREATING-A-STORE.md`),
+    core(`${NGRX_SIGNAL_STORE}/04-PROVIDING-INJECTING.md`),
+    core(`${NGRX_SIGNAL_STORE}/05-READING-STATE.md`),
+    core(`${NGRX_SIGNAL_STORE}/06-WITH-COMPUTED.md`),
+    core(`${NGRX_SIGNAL_STORE}/07-WITH-PROPS.md`),
+    core(`${NGRX_SIGNAL_STORE}/08-WITH-METHODS-PATCHSTATE.md`),
+    core(`${NGRX_SIGNAL_STORE}/09-RXMETHOD.md`),
+    core(`${NGRX_SIGNAL_STORE}/10-RXMETHOD-STAFF-DIRECTORY.md`),
+    core(`${NGRX_SIGNAL_STORE}/11-RXMETHOD-ADVANCED.md`),
+    core(`${NGRX_SIGNAL_STORE}/12-WITH-HOOKS.md`),
+    core(`${NGRX_SIGNAL_STORE}/13-ROUTE-SCOPED-PROVIDERS.md`),
+    core(`${NGRX_SIGNAL_STORE}/14-THIN-COMPONENT.md`),
+    showByDefault(`${NGRX_SIGNAL_STORE}/15-ENTITY-MANAGEMENT.md`), // "going further" appendix, trimmed from modern-2days
+    showByDefault(`${NGRX_SIGNAL_STORE}/16-CUSTOM-FEATURES.md`), // "going further" appendix, trimmed from modern-2days
+    core(`${NGRX_SIGNAL_STORE}/17-TESTING.md`),
+    core(`${NGRX_SIGNAL_STORE}/100-LAB.md`),
+  ];
+}
+
+function changeDetectionZonelessSlides() {
+  const CHANGE_DETECTION_ZONELESS = '28-CHANGE-DETECTION-ZONELESS';
+  return [
+    `${CHANGE_DETECTION_ZONELESS}/00-TRANSITION-SLIDE.md`,
+    `${CHANGE_DETECTION_ZONELESS}/01-INTRODUCTION.md`,
+    `${CHANGE_DETECTION_ZONELESS}/02-CHANGE-DETECTION-SERVICE.md`,
+    `${CHANGE_DETECTION_ZONELESS}/03-ZONELESS.md`,
+  ].map(showByDefault);
+}
+
 function pwaSlides() {
-  const PWA = '26-PWA';
+  const PWA = '29-PWA';
   return [
     `${PWA}/00-TRANSITION-SLIDE.md`,
     `${PWA}/01-INTRODUCTION.md`,
@@ -75,27 +73,31 @@ function pwaSlides() {
   ].map(showByDefault);
 }
 
-function serverSideSlides() {
-  const SERVER_SIDE = '27-SERVER-SIDE';
+function serverSideRenderingSlides() {
+  const SERVER_SIDE_RENDERING = '30-SERVER-SIDE-RENDERING';
   return [
-    `${SERVER_SIDE}/00-TRANSITION-SLIDE.md`, //
-    `${SERVER_SIDE}/01-INTRODUCTION.md`, //
+    `${SERVER_SIDE_RENDERING}/00-TRANSITION-SLIDE.md`,
+    `${SERVER_SIDE_RENDERING}/01-INTRODUCTION.md`,
+    `${SERVER_SIDE_RENDERING}/02-SETUP-AND-RENDERING-MODES.md`,
+    `${SERVER_SIDE_RENDERING}/03-SERVER-COMPATIBLE-CODE.md`,
+    `${SERVER_SIDE_RENDERING}/04-HTTP-AND-HYDRATION.md`,
+    `${SERVER_SIDE_RENDERING}/05-BEST-PRACTICES.md`,
   ].map(showByDefault);
 }
 
-function librarySlides() {
-  const LIBRARY = '28-LIBRARY';
+function librariesSlides() {
+  const LIBRARIES = '31-LIBRARIES';
   return [
-    `${LIBRARY}/00-TRANSITION-SLIDE.md`,
-    `${LIBRARY}/01-INTRODUCTION.md`,
-    `${LIBRARY}/02-LIBRARY.md`,
-    `${LIBRARY}/03-NG-PACKAGR.md`,
-    `${LIBRARY}/04-DEPENDENCIES.md`,
+    `${LIBRARIES}/00-TRANSITION-SLIDE.md`,
+    `${LIBRARIES}/01-INTRODUCTION.md`,
+    `${LIBRARIES}/02-LIBRARY.md`,
+    `${LIBRARIES}/03-NG-PACKAGR.md`,
+    `${LIBRARIES}/04-DEPENDENCIES.md`,
   ].map(showByDefault);
 }
 
 function nativeFederationSlides() {
-  const NATIVE_FEDERATION = '29-NATIVE-FEDERATION';
+  const NATIVE_FEDERATION = '32-NATIVE-FEDERATION';
   return [
     `${NATIVE_FEDERATION}/00-TRANSITION-SLIDE.md`,
     `${NATIVE_FEDERATION}/01-INTRODUCTION.md`,
@@ -103,27 +105,25 @@ function nativeFederationSlides() {
   ].map(showByDefault);
 }
 
-function performancesSlides() {
-  const PERFORMANCES = '30-PERFORMANCES';
+function performanceSlides() {
+  const PERFORMANCE = '33-PERFORMANCE';
   return [
-    `${PERFORMANCES}/00-TRANSITION-SLIDE.md`,
-    `${PERFORMANCES}/01-IMAGES.md`,
-    `${PERFORMANCES}/02-DEFERRED-VIEWS.md`,
-    `${PERFORMANCES}/03-LAZYLOAD-COMPONENT.md`,
-    `${PERFORMANCES}/100-LAB.md`,
-  ];
+    `${PERFORMANCE}/00-TRANSITION-SLIDE.md`,
+    `${PERFORMANCE}/01-IMAGES.md`,
+    `${PERFORMANCE}/02-DEFERRED-VIEWS.md`,
+    `${PERFORMANCE}/03-LAZYLOAD-COMPONENT.md`,
+  ].map(showByDefault);
 }
 
 export function dayFourSlides() {
   return [
-    ...stateManagementElf(),
-    ...stateManagementNgxs(),
-    ...stateManagementNgrx(),
-    ...unitTestSlides(),
+    ...unitTestingSlides(),
+    ...ngrxSignalStoreSlides(),
+    ...changeDetectionZonelessSlides(),
     ...pwaSlides(),
-    ...serverSideSlides(),
-    ...librarySlides(),
+    ...serverSideRenderingSlides(),
+    ...librariesSlides(),
     ...nativeFederationSlides(),
-    ...performancesSlides(),
+    ...performanceSlides(),
   ];
 }

@@ -88,7 +88,7 @@ This app is the Nx workspace's default project, so from the **repository
 root** you can simply run:
 
 ```bash
-npm run client
+npm run serve
 ```
 
 This is equivalent to `npx nx serve 01-hands-on`. Once the dev server is

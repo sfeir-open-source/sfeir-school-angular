@@ -4,6 +4,11 @@
 
 > Since, the apparition of Signals in Angular, a new way of managing the lifecycle of the application has been introduced: **hooks**.
 
+Notes:
+
+- This module is a bonus: there's no matching `apps/` exercise for it. But `08-directive`, right after `07-provider`, uses `effect()` inside a directive's constructor to react to an input signal — this is where that pattern comes from.
+- In a signals-first codebase, most of the classic lifecycle hooks from the previous slides shrink to a niche role: `ngOnChanges` is replaced by simply reading an `input()` signal wherever you need it, `ngOnInit`'s "run once on creation" role is often just a field initializer or an `effect()`. `ngOnDestroy` and `ngAfterViewInit` still matter — signals don't touch teardown or view-query timing.
+
 ##==##
 
 # What are hooks?
@@ -46,6 +51,7 @@ export class App {
 - **effect**: runs whenever a signal it reads changes (called multiple times) <br/><br/>
 - **afterNextRender**: runs once, after the **next** render (great for DOM measurement) <br/><br/>
 - **afterEveryRender**: runs after **every** render (called multiple times) <br/><br/>
+- **afterRenderEffect**: run after a render and when the effect dependencies change (called multiple times) <br/><br/>
 
 ##==##
 
