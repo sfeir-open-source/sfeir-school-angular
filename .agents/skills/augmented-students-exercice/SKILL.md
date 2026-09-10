@@ -1,6 +1,6 @@
 ---
 name: augmented-students-exercice
-description: Realizes a workshop exercise with AI end-to-end — dispatches the developer subagent to implement the exercise from its README, then dispatches the examiner subagent to verify the student's understanding of the produced code and concepts. Trigger every time the user asks to develop, do, complete, realize, or work on an exercise/workshop (e.g. "do the exercise in apps/07-signals", "develop apps/19-interceptors", "let's do the resolver workshop").
+description: Realizes a workshop exercise with AI end-to-end — dispatches the developer subagent to implement the exercise from its README, then dispatches the examiner subagent to verify the student's understanding of the produced code and concepts. Trigger every time the user asks to develop, do, complete, make, realize, or work on an exercise/workshop (e.g. "do the exercise in apps/07-signals", "develop apps/19-interceptors", "let's do the resolver workshop", "make the bindings exercice").
 license: MIT
 metadata:
   author: sfeir-school-angular
